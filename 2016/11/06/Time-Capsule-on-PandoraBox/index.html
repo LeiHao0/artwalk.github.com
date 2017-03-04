@@ -1,0 +1,848 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="W6tSHHKonS5D5zJBZVuUw0cq8L_u_q38qoqh0UBQL8k" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PandoraBox,OpenWRT,TimeMachine,Capsule," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Artwalk's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Time Capsule on PandoraBoxMy OpenWRT is PandoraBox, and the Router is Mi miniThese are a few slight difference with the official wiki
+SoftwareSystem -&amp;gt; Software -&amp;gt; Configuration 
+repace all text">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Time Capsule on PandoraBox">
+<meta property="og:url" content="http://artwalk.github.io/2016/11/06/Time-Capsule-on-PandoraBox/index.html">
+<meta property="og:site_name" content="Artwalk's Blog">
+<meta property="og:description" content="Time Capsule on PandoraBoxMy OpenWRT is PandoraBox, and the Router is Mi miniThese are a few slight difference with the official wiki
+SoftwareSystem -&amp;gt; Software -&amp;gt; Configuration 
+repace all text">
+<meta property="og:updated_time" content="2016-11-06T06:48:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Time Capsule on PandoraBox">
+<meta name="twitter:description" content="Time Capsule on PandoraBoxMy OpenWRT is PandoraBox, and the Router is Mi miniThese are a few slight difference with the official wiki
+SoftwareSystem -&amp;gt; Software -&amp;gt; Configuration 
+repace all text">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title> Time Capsule on PandoraBox | Artwalk's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-45400676-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Artwalk's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">游走的艺术</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'ua5s4giqP1Qhp6X6k3tY','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/11/06/Time-Capsule-on-PandoraBox/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Artwalk">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/img/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Artwalk's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Artwalk's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Time Capsule on PandoraBox
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-06T11:43:03+08:00">
+                2016-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/06/Time-Capsule-on-PandoraBox/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/11/06/Time-Capsule-on-PandoraBox/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Time-Capsule-on-PandoraBox"><a href="#Time-Capsule-on-PandoraBox" class="headerlink" title="Time Capsule on PandoraBox"></a>Time Capsule on PandoraBox</h1><p>My <code>OpenWRT</code> is <code>PandoraBox</code>, and the Router is <code>Mi mini</code><br>These are a few slight difference with the official <a href="https://wiki.openwrt.org/doc/howto/timemachine" target="_blank" rel="external">wiki</a></p>
+<h2 id="Software"><a href="#Software" class="headerlink" title="Software"></a>Software</h2><p><code>System -&gt; Software -&gt; Configuration</code> </p>
+<p>repace all text to:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">dest root /</div><div class="line">dest ram /tmp</div><div class="line">lists_dir ext /var/opkg-lists</div><div class="line">option overlay_root /overlay</div><div class="line">src/gz r2_base http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/base</div><div class="line">src/gz r2_management http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/management</div><div class="line">src/gz r2_oldpackages http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/oldpackages</div><div class="line">src/gz r2_packages http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/packages</div><div class="line">src/gz r2_routing http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/routing</div><div class="line">src/gz r2_telephony http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/telephony</div><div class="line"> </div><div class="line">src/gz r2_old_packages http://downloads.openwrt.org.cn/PandoraBox/ralink/mt7620_old/packages/</div><div class="line">arch all 100</div><div class="line">arch noarch 200</div><div class="line">arch ralink 300</div></pre></td></tr></table></figure>
+<p>Then, ssh to your PandoraBox</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">opkg update</div><div class="line">opkg install shadow-useradd shadow-groupadd</div><div class="line"><span class="built_in">cd</span> /usr/lib</div><div class="line">ln <span class="_">-s</span> libgcrypt.so.20 libgcrypt.so.11</div></pre></td></tr></table></figure>
+<p>To your browser</p>
+<p><code>System -&gt; Software -&gt; Actions -&gt; Download and install package</code></p>
+<ul>
+<li>netatalk</li>
+<li>avahi-daemon</li>
+<li>kmod-usb-storage</li>
+<li>kmod-fs-hfsplus</li>
+<li>block-mount</li>
+</ul>
+<p>Don’t try <code>opkg install</code> as the <a href="https://wiki.openwrt.org/doc/howto/timemachine" target="_blank" rel="external">wiki</a> says, otherwise you’ll get error:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Configuring kmod-fs-hfsplus.</div><div class="line">//usr/lib/opkg/info/kmod-fs-hfsplus.postinst: .: line 3: can<span class="string">'t open '</span>/etc/functions.sh<span class="string">'</span></div><div class="line">Collected errors:</div><div class="line"> * pkg_run_script: package "kmod-fs-hfsplus" postinst script returned status 2.</div><div class="line"> * opkg_configure: kmod-fs-hfsplus.postinst returned 2.</div></pre></td></tr></table></figure>
+<h2 id="Format-amp-Mount"><a href="#Format-amp-Mount" class="headerlink" title="Format &amp; Mount"></a>Format &amp; Mount</h2><p>Plug your BackUp hard drive to Mi mini</p>
+<p>Use <code>blkid</code> to find your sda, this is mine:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/dev/sda3: UUID=<span class="string">"dab3d8b8-a87f-3bfb-9fed-f42934d5bcd6"</span> LABEL=<span class="string">"BackUp"</span> TYPE=<span class="string">"hfsplus"</span> PARTLABEL=<span class="string">"Basic data partition"</span> PARTUUID=<span class="string">"27db40be-8ebe-11e6-9e2e-60f81da8c0cd"</span></div></pre></td></tr></table></figure>
+<p>Format it to ext4 (Mi mini mounted <code>hfsplus</code> failed, so I tried <code>ext4</code> as a trade off)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkfs.ext4 /dev/sda3</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">groupadd timemachine</div><div class="line">useradd -M -G timemachine tmuser</div><div class="line">passwd tmuser</div><div class="line"><span class="comment"># input the passwd</span></div><div class="line"></div><div class="line">mkdir /mnt/TimeMachine</div><div class="line">chown root:timemachine /mnt/TimeMachine</div><div class="line">touch /mnt/TimeMachine/USB_DISK_NOT_PRESENT</div><div class="line">chmod 555 /mnt/TimeMachine -R</div><div class="line">chmod 444 /mnt/TimeMachine/USB_DISK_NOT_PRESENT</div></pre></td></tr></table></figure>
+<p>To the browser</p>
+<p><code>System -&gt; Mount Points -&gt; Mount Points -&gt; Add</code></p>
+<p>Select the <code>UUID</code> you get by <code>blkid</code> mount to <code>/mnt/TimeMachine</code>, remember the size <code>xxx</code> MB, <code>save</code></p>
+<p>You may see <code>/dev/sda3 /mnt/TimeMachine</code> in <code>Mounted file systems</code></p>
+<p>Then to your ssh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown -R tmuser:timemachine /mnt/TimeMachine</div></pre></td></tr></table></figure>
+<h2 id="Netatalk"><a href="#Netatalk" class="headerlink" title="Netatalk"></a>Netatalk</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/netatalk/afpd.conf</div></pre></td></tr></table></figure>
+<p>Replace all text to: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"TimeMachine"</span> -uampath /usr/lib/uams -uamlist uams_dhx2.so -nodebug -nouservol -icon -nosavepassword -mimicmodel RackMac</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/netatalk/AppleVolumes.default</div></pre></td></tr></table></figure>
+<p>Replace all text to: (fill the xxx you get previously, it’s MiB)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/mnt/TimeMachine TimeMachine volsizelimit:xxx allow:@timemachine rwlist:@timemachine cnidscheme:dbd options:searchdb,usedots,invisibledots,tm</div></pre></td></tr></table></figure>
+<h2 id="Avahi"><a href="#Avahi" class="headerlink" title="Avahi"></a>Avahi</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/avahi/avahi-daemon.conf</div></pre></td></tr></table></figure>
+<p>Replace all text to:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">[server]</div><div class="line">host-name=TimeMachine</div><div class="line"><span class="comment">#domain-name=local</span></div><div class="line">use-ipv4=<span class="literal">yes</span></div><div class="line">use-ipv6=<span class="literal">no</span></div><div class="line">check-response-ttl=<span class="literal">no</span></div><div class="line">use-iff-running=<span class="literal">no</span></div><div class="line">enable-dbus=<span class="literal">no</span> </div><div class="line">allow-interfaces=br-lan</div><div class="line"> </div><div class="line">[publish]</div><div class="line">publish-addresses=<span class="literal">yes</span></div><div class="line">publish-hinfo=<span class="literal">yes</span></div><div class="line">publish-workstation=<span class="literal">no</span></div><div class="line">publish-domain=<span class="literal">yes</span></div><div class="line"><span class="comment">#publish-dns-servers=192.168.1.1</span></div><div class="line"><span class="comment">#publish-resolv-conf-dns-servers=yes</span></div><div class="line"> </div><div class="line">[reflector]</div><div class="line">enable-reflector=<span class="literal">no</span></div><div class="line">reflect-ipv=<span class="literal">no</span></div><div class="line"> </div><div class="line">[rlimits]</div><div class="line"><span class="comment">#rlimit-as=</span></div><div class="line">rlimit-core=<span class="number">0</span></div><div class="line">rlimit-data=<span class="number">4194304</span></div><div class="line">rlimit-fsize=<span class="number">0</span></div><div class="line">rlimit-nofile=<span class="number">30</span></div><div class="line">rlimit-stack=<span class="number">4194304</span></div><div class="line">rlimit-nproc=<span class="number">3</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/avahi/services/afpd.service</div></pre></td></tr></table></figure>
+<p>replace all text to:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" standalone="no"?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE service-group SYSTEM "avahi-service.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">service-group</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">name</span> <span class="attr">replace-wildcards</span>=<span class="string">"yes"</span>&gt;</span>Time Capsule<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">service</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">type</span>&gt;</span>_afpovertcp._tcp<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">port</span>&gt;</span>548<span class="tag">&lt;/<span class="name">port</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">service</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">service</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">type</span>&gt;</span>_device-info._tcp<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">port</span>&gt;</span>0<span class="tag">&lt;/<span class="name">port</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">txt-record</span>&gt;</span>model=TimeCapsule<span class="tag">&lt;/<span class="name">txt-record</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">service</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">service</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">type</span>&gt;</span>_adisk._tcp<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">port</span>&gt;</span>9<span class="tag">&lt;/<span class="name">port</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">txt-record</span>&gt;</span>sys=waMA=XX:XX:XX:XX:XX:XX,adVF=0x100<span class="tag">&lt;/<span class="name">txt-record</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">txt-record</span>&gt;</span>dk1=adVF=0x83,adVN=TimeMachine<span class="tag">&lt;/<span class="name">txt-record</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">service</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">service-group</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>To your browser</p>
+<p><code>System -&gt; Startup</code> <code>Enable</code></p>
+<ul>
+<li><code>afpd</code></li>
+<li><code>avahi-daemon</code></li>
+</ul>
+<p>Restart you Router</p>
+<p>To your Mac, <code>System Preferences -&gt; Time Machine -&gt; Select Disk -&gt; Available Disks -&gt; on &quot;Time Capsule&quot;</code>, you can see <code>TimeMachine</code></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PandoraBox/" rel="tag"># PandoraBox</a>
+          
+            <a href="/tags/OpenWRT/" rel="tag"># OpenWRT</a>
+          
+            <a href="/tags/TimeMachine/" rel="tag"># TimeMachine</a>
+          
+            <a href="/tags/Capsule/" rel="tag"># Capsule</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/19/Reflection-in-Swift-via-Mirror/" rel="next" title="Reflection in Swift via Mirror">
+                <i class="fa fa-chevron-left"></i> Reflection in Swift via Mirror
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/20/Custom-UIViewController-Presentation-Transitions-with-UIStoryboardSegue/" rel="prev" title="Custom UIViewController Presentation Transitions with UIStoryboardSegue">
+                Custom UIViewController Presentation Transitions with UIStoryboardSegue <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/avatar.png"
+               alt="Artwalk" />
+          <p class="site-author-name" itemprop="name">Artwalk</p>
+          <p class="site-description motion-element" itemprop="description">生活在别处</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">129</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Artwalk" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/art_holy" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/Artwalk" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/Artwalk" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/Artwalk" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Time-Capsule-on-PandoraBox"><span class="nav-number">1.</span> <span class="nav-text">Time Capsule on PandoraBox</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Software"><span class="nav-number">1.1.</span> <span class="nav-text">Software</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Format-amp-Mount"><span class="nav-number">1.2.</span> <span class="nav-text">Format & Mount</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Netatalk"><span class="nav-number">1.3.</span> <span class="nav-text">Netatalk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Avahi"><span class="nav-number">1.4.</span> <span class="nav-text">Avahi</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Artwalk</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'Artwalk';
+      var disqus_identifier = '2016/11/06/Time-Capsule-on-PandoraBox/';
+
+      var disqus_title = "Time Capsule on PandoraBox";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
