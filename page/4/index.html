@@ -317,6 +317,137 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/10/19/UITextField-and-UILabel-Tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/19/UITextField-and-UILabel-Tips/" itemprop="url">
+                  UITextField And UILabel Tips
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-19T14:35:22+08:00">
+                2016-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/19/UITextField-and-UILabel-Tips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/19/UITextField-and-UILabel-Tips/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="UITextField-Tips"><a href="#UITextField-Tips" class="headerlink" title="UITextField Tips"></a>UITextField Tips</h2><h3 id="Add-a-top-Line-on-Keyboard"><a href="#Add-a-top-Line-on-Keyboard" class="headerlink" title="Add a top Line on Keyboard"></a>Add a top Line on Keyboard</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UITextField</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addTopLineOnKeyboard</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">let</span> line = <span class="type">UIView</span>(frame: <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: <span class="number">2000</span>, height: <span class="number">0.5</span>))</div><div class="line">        line.backgroundColor = <span class="string">"979797"</span>.color</div><div class="line">        </div><div class="line">        inputAccessoryView = line</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Only-allowed-a-price-number-with-exactly-two-decimals"><a href="#Only-allowed-a-price-number-with-exactly-two-decimals" class="headerlink" title="Only allowed a price number with exactly two decimals"></a>Only allowed a price number with exactly two decimals</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">    <span class="keyword">let</span> str = (textField.text! <span class="keyword">as</span> <span class="type">NSString</span>).replacingCharacters(<span class="keyword">in</span>: range, with: string)</div><div class="line">    </div><div class="line">    <span class="keyword">let</span> regex = <span class="string">"^([1-9]\\d&#123;0,7&#125;|0)(\\.\\d&#123;0,2&#125;)?$|^$"</span></div><div class="line">    <span class="keyword">let</span> predicte = <span class="type">NSPredicate</span>(format: <span class="string">"SELF MATCHES %@"</span>, regex)</div><div class="line">    </div><div class="line">    <span class="keyword">return</span>  predicte.evaluate(with: str)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Only-allowed-1-100-or-leave-blank"><a href="#Only-allowed-1-100-or-leave-blank" class="headerlink" title="Only allowed 1-100 or leave blank"></a>Only allowed 1-100 or leave blank</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">    </div><div class="line">    <span class="keyword">let</span> str = (textField.text! <span class="keyword">as</span> <span class="type">NSString</span>).replacingCharacters(<span class="keyword">in</span>: range, with: string)</div><div class="line">    </div><div class="line">    <span class="comment">// 1-100 or leave blank</span></div><div class="line">    <span class="keyword">let</span> regex = <span class="string">"^[1-9]?\\d|100|[1-9]?$"</span></div><div class="line">    <span class="keyword">let</span> predicte = <span class="type">NSPredicate</span>(format: <span class="string">"SELF MATCHES %@"</span>, regex)</div><div class="line">    </div><div class="line">    <span class="keyword">return</span>  predicte.evaluate(with: str)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="UILabel-Tips"><a href="#UILabel-Tips" class="headerlink" title="UILabel Tips"></a>UILabel Tips</h2><h3 id="Formate-cell-phone-number-to-111-1111-111"><a href="#Formate-cell-phone-number-to-111-1111-111" class="headerlink" title="Formate cell-phone number to 111 1111 111"></a>Formate cell-phone number to <code>111 1111 111</code></h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">String</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> phoneNumberFormater: <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">get</span> &#123;</div><div class="line">            <span class="keyword">var</span> s = <span class="keyword">self</span>.replacingOccurrences(of: <span class="string">" "</span>, with: <span class="string">""</span>)</div><div class="line">            <span class="keyword">let</span> <span class="built_in">count</span> = s.characters.<span class="built_in">count</span></div><div class="line">            <span class="keyword">if</span> <span class="built_in">count</span> &gt; <span class="number">7</span> &#123;</div><div class="line">                s.insert(<span class="string">" "</span>, at: s.index(s.startIndex, offsetBy: <span class="number">3</span>))</div><div class="line">                s.insert(<span class="string">" "</span>, at: s.index(s.startIndex, offsetBy: <span class="number">8</span>))</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="built_in">count</span> &gt; <span class="number">3</span> &#123;</div><div class="line">                s.insert(<span class="string">" "</span>, at: s.index(s.startIndex, offsetBy: <span class="number">3</span>))</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> s</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Highlight-UILabel’s-substring-by-given-string"><a href="#Highlight-UILabel’s-substring-by-given-string" class="headerlink" title="Highlight UILabel’s substring by given string"></a>Highlight UILabel’s substring by given string</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> userInputPhoneNumber = <span class="string">"123"</span></div><div class="line"></div><div class="line"><span class="meta">@IBOutlet</span> <span class="keyword">private</span> <span class="keyword">weak</span> <span class="keyword">var</span> phoneLabel: <span class="type">UILabel</span>!</div><div class="line"></div><div class="line"><span class="keyword">var</span> phoneNumber:  <span class="type">String</span> = <span class="string">"123456789"</span> &#123;</div><div class="line"><span class="keyword">didSet</span> &#123;</div><div class="line">    <span class="keyword">let</span> atrStr = <span class="type">NSMutableAttributedString</span>(string: phoneNumber.phoneNumberFormater)</div><div class="line">    </div><div class="line">    <span class="keyword">let</span> font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">14</span>)</div><div class="line">    <span class="keyword">let</span> range = (phoneNumber.phoneNumberFormater <span class="keyword">as</span> <span class="type">NSString</span>).range(of: userInputPhoneNumber.phoneNumberFormater)</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> range.location == <span class="number">0</span> &#123;</div><div class="line">        atrStr.addAttributes([<span class="type">NSFontAttributeName</span> :  font, <span class="type">NSForegroundColorAttributeName</span>: <span class="type">UIColor</span>.red], range: (phoneNumber.phoneNumberFormater <span class="keyword">as</span> <span class="type">NSString</span>).range(of: userInputPhoneNumber.phoneNumberFormater))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    phoneLabel.attributedText = atrStr</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/10/18/How-to-add-Xib-on-StoryBoard/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -617,145 +748,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/08/22/Sync-macOS-ssh-config-with-iCloud/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Artwalk">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Artwalk's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/22/Sync-macOS-ssh-config-with-iCloud/" itemprop="url">
-                  Sync macOS ssh config with iCloud
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-22T23:17:28+08:00">
-                2016-08-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/08/22/Sync-macOS-ssh-config-with-iCloud/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/22/Sync-macOS-ssh-config-with-iCloud/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>As a developer, I have to restore backups sometime because of the <code>beta</code> system.</p>
-<p>Fortunately, most data was on server these days. Not only Safari, Photos, Calendar, Note, Reminders, but also other apps use iCloud storage. This was great progress, I only have to re-download apps from App Store and <code>brew shell</code> after reinstall the system.</p>
-<p>But the setting of ssh, configs, etc., were really annoying, furthermore I may lose my private keys.</p>
-<p>So I new a folder which named <code>macOS</code> in iCloud Drive folder, and copied all the files without <code>.</code>, For example, <code>.gitconfig</code> ~&gt; <code>gitconfig</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~</div><div class="line">macOS=~/Library/Mobile\ Documents/com\~apple\~CloudDocs/macOS</div><div class="line"></div><div class="line">ln <span class="_">-s</span> <span class="variable">$macOS</span>/gitignore .gitignore</div><div class="line">ln <span class="_">-s</span> <span class="variable">$macOS</span>/gitignore .gitignore_global</div><div class="line"></div><div class="line">ln <span class="_">-s</span> <span class="variable">$macOS</span>/config  .config</div><div class="line">ln <span class="_">-s</span> <span class="variable">$macOS</span>/ssh  .ssh</div><div class="line"></div><div class="line">mkdir -p B<span class="built_in">log</span></div><div class="line">ln <span class="_">-s</span> <span class="variable">$macOS</span>/B<span class="built_in">log</span>/<span class="built_in">source</span> B<span class="built_in">log</span>/<span class="built_in">source</span></div></pre></td></tr></table></figure>
-<p>In fact, any cloud drive (like Dropbox) can do it, but<br>considering privacy and this letter <a href="http://www.apple.com/customer-letter/" target="_blank" rel="external">A Message to Our Customers</a> written by Tim Cook</p>
-<p>iCloud was my choice ;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -800,7 +797,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">129</span>
+                <span class="site-state-item-count">130</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

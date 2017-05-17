@@ -317,6 +317,143 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2017/05/18/Softwares-speed-up-your-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/18/Softwares-speed-up-your-learning/" itemprop="url">
+                  Softwares speed up your learning
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-18T06:23:19+08:00">
+                2017-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/18/Softwares-speed-up-your-learning/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/18/Softwares-speed-up-your-learning/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Podcasts and videos are a typical way to study online, but they are numberless and as the collect is in human’s nature, how to increase this speed become more essential.</p>
+<p>Typically, people can deal with native languages at a high speed.<br>As for me, 2x is comfortable, 3x is acceptable, 4x is fine with subtitle.</p>
+<h2 id="Desktop"><a href="#Desktop" class="headerlink" title="Desktop"></a>Desktop</h2><p>A few years ago, I used to use Windows when I was still a university student, KMPlayer was the best in all type of video players, because other players may got distorted sound while changing. Later, the author left the company and rewrote a new one with <code>C++</code> and renamed it to <a href="https://potplayer.daum.net/" target="_blank" rel="external">PotPlayer</a>.</p>
+<p>As on macOS, Movist is my first choice, which is also come from Korea. needless to say its brilliance and simplicity, it provide 4x without too much losses in audio track.<br>Other players like <a href="https://mpv.io/" target="_blank" rel="external">MPV</a>, although it provide no rate limit( yes, you can speed up to whatever you like) and open sourced, but you have to modify <code>~/.config/mpv/mpv.conf</code> each time if you want to change the default settings.</p>
+<h2 id="Mobile"><a href="#Mobile" class="headerlink" title="Mobile"></a>Mobile</h2><p>The good news is Podcasts on iPhone already have 2x (the odd thing is iTunes Podcasts don’t), and many study type apps also have this useful feature.</p>
+<p>But I haven’t found any app provide more than 2x.</p>
+<p>According to <a href="https://developer.apple.com/reference/avfoundation/avplayer#//apple_ref/occ/instp/AVPlayer/rate" target="_blank" rel="external"></a></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> player = <span class="type">AVAudioPlayer</span>()</div><div class="line">player.prepareToPlay()</div><div class="line">player.enableRate = <span class="literal">true</span></div><div class="line">player.rate = <span class="number">2.0</span></div><div class="line">player.play()</div></pre></td></tr></table></figure>
+<p>It seems merely change the <code>player.rate = 3.0</code> can do it if the audio is a file-based media. Dose this would cause distortion?</p>
+<p>I’ll try it if I spare time one day.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/12/27/Developer-Differences-Makers-vs-Menders/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -577,147 +714,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/12/24/A-primer-on-Artificial-Intelligence/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Artwalk">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Artwalk's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/24/A-primer-on-Artificial-Intelligence/" itemprop="url">
-                  A primer on Artificial Intelligence
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-24T14:07:32+08:00">
-                2016-12-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/24/A-primer-on-Artificial-Intelligence/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/24/A-primer-on-Artificial-Intelligence/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="第四次工业革命︰-人工智能入门-AI"><a href="#第四次工业革命︰-人工智能入门-AI" class="headerlink" title="第四次工业革命︰ 人工智能入门 (AI)"></a>第四次工业革命︰ 人工智能入门 (AI)</h1><p>原文：<a href="https://medium.com/mmc-writes/the-fourth-industrial-revolution-a-primer-on-artificial-intelligence-ai-ff5e7fffcae1#.xou8lwimu">The fourth industrial revolution: a primer on Artificial Intelligence (AI)</a></p>
-<blockquote>
-<p>“过去的10年是移动端的10年。未来10年是 AI 的10年”（Sundar Pichai, CEO of Google, 2016-10）</p>
-</blockquote>
-<p>TL; DR</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/24/A-primer-on-Artificial-Intelligence/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -762,7 +763,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">129</span>
+                <span class="site-state-item-count">130</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
