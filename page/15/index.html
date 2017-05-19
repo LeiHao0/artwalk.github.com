@@ -321,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/06/16/xcode-plugins-faild-to-be-loaded-after-update/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/06/23/ios-developer-account-and-app-store/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -340,7 +340,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/06/16/xcode-plugins-faild-to-be-loaded-after-update/" itemprop="url">Xcode plugins faild to be loaded after updated</a></h2>
+                <a class="post-title-link" href="/2014/06/23/ios-developer-account-and-app-store/" itemprop="url">iOS developer account and app store</a></h2>
         
 
         <div class="post-meta">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-16T21:33:02+08:00">
-                2015-06-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-23T14:52:57+08:00">
+                2014-06-23
               </time>
             
 
@@ -371,9 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/06/16/xcode-plugins-faild-to-be-loaded-after-update/#comments" itemprop="discussionUrl">
+                <a href="/2014/06/23/ios-developer-account-and-app-store/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/06/16/xcode-plugins-faild-to-be-loaded-after-update/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2014/06/23/ios-developer-account-and-app-store/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,148 +399,12 @@
 
       
         
-          
-            <p>You can type the command in terminal after Xcode updated</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I&#123;&#125; defaults write &#123;&#125; DVTPlugInCompatibilityUUIDs -array-add `defaults <span class="built_in">read</span> /Applications/Xcode.app/Contents/Info.plist DVTPlugInCompatibilityUUID`</div></pre></td></tr></table></figure>
-<p>this will added your new Xcode UUID to <code>DVTPlugInCompatibilityUUID</code>  </p>
-<p>But that is a risky way, for instance my Xcode 6.3.2 always crash after I ran this command without brain.</p>
-<p>So I had to open the folder <code>~/Library/Application Support/Developer/Shared/Xcode/Plug-ins</code> and deleted some suspicious plugins.</p>
-<p>Of course also you can check the <code>tail -f /var/log/system.log</code>, and found which plugin cause the Xcode crash exactly in <code>~/Library/Logs/DiagnosticReports/Xcode_$time_$macbookname.crash</code></p>
-<p>Finally，with my best wishes :)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/05/06/Leetcode-With-Ruby/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Artwalk">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Artwalk's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/05/06/Leetcode-With-Ruby/" itemprop="url">Leetcode With Ruby</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-05-06T20:58:02+08:00">
-                2015-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2015/05/06/Leetcode-With-Ruby/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/05/06/Leetcode-With-Ruby/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>之前用 <code>C++</code>，手动释放内存直接跪了</p>
-<p>今天突然发现支持 <code>Ruby</code> 了</p>
-<p>小试下果然如开挂了一样</p>
-<p>不过这样可能就失去 <code>Leetcode</code> 的本意了</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">"profile"</span> <span class="comment">#查看性能</span></div></pre></td></tr></table></figure>
-<h2 id="Reverse-Integer"><a href="#Reverse-Integer" class="headerlink" title="Reverse Integer"></a>Reverse Integer</h2><ul>
-<li>Ruby 中 负数 reverse 后成了正数</li>
-<li>Int 越界要返回 0 (-2^32 ~ 2^32-1)</li>
-</ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(x)</span></span></div><div class="line">  res = x.to_s.reverse.to_i</div><div class="line">  <span class="keyword">if</span> res &gt; <span class="number">2147483647</span> <span class="keyword">or</span> res &lt; -<span class="number">2147483648</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="keyword">return</span> x &lt; <span class="number">0</span> ? -res : res</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+          <h1 id="iOS-开发者账号-以及-如何上架"><a href="#iOS-开发者账号-以及-如何上架" class="headerlink" title="iOS 开发者账号 以及 如何上架"></a>iOS 开发者账号 以及 如何上架</h1><h2 id="开发者账号申请"><a href="#开发者账号申请" class="headerlink" title="开发者账号申请"></a>开发者账号申请</h2><p>中间还因提供照片耽误了一次，又赶上 <code>Swift</code> 大潮，但也只用了 4-5 天  ，效率还是很高的  </p>
+<p>开始我还以为要用双币信用卡，到处抓人要卡<br>结果时代在进步，现在（2014）普通信用卡就行，所以就十分方便了  </p>
+<p>PS:<br>99$ == 688￥ ?<br>因为要交税么…  </p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/05/06/Leetcode-With-Ruby/#more" rel="contents">
+            <a class="btn" href="/2014/06/23/ios-developer-account-and-app-store/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -586,7 +450,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/06/20/global-gitignore/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -605,7 +469,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/" itemprop="url">iOS CI (Jenkins + Phabricator + Slack)</a></h2>
+                <a class="post-title-link" href="/2014/06/20/global-gitignore/" itemprop="url">global gitignore</a></h2>
         
 
         <div class="post-meta">
@@ -617,8 +481,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-04-16T20:59:31+08:00">
-                2015-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-20T21:41:24+08:00">
+                2014-06-20
               </time>
             
 
@@ -636,9 +500,273 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/#comments" itemprop="discussionUrl">
+                <a href="/2014/06/20/global-gitignore/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2014/06/20/global-gitignore/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><code>xxx.xcodeproj/project.xcworkspace/xcuserdata/xxx.xcuserdatad/UserInterfaceState.xcuserstate</code></p>
+<p>I  was annoyed by this file.  </p>
+<p>It seems <code>xCode</code> update this file almost every second.<br>So, everytime I wanted to merge two heads, I would get a yellow conflict notification with this <em>advantage</em> function…  </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/06/20/global-gitignore/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/06/16/the-entrepreneurs-credo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/06/16/the-entrepreneurs-credo/" itemprop="url">The Entrepreneur's Credo</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-16T20:36:57+08:00">
+                2014-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2014/06/16/the-entrepreneurs-credo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2014/06/16/the-entrepreneurs-credo/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="美国企业家之信条"><a href="#美国企业家之信条" class="headerlink" title="美国企业家之信条"></a>美国企业家之信条</h1><p>看起来很鸡冻，大致意译了下，表太较真<br>做完了才发现这就是英文版的《有梦想就有希望》丫  </p>
+<blockquote>
+<p>I do not choose to be a common man, </p>
+</blockquote>
+<p>我乃被选召之人，注定生非常人</p>
+<blockquote>
+<p>It is my right to be uncommon … if I can, </p>
+</blockquote>
+<p>如果我愿意，有权特立独行</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/06/16/the-entrepreneurs-credo/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/05/11/how-to-install-reaver-on-mac-os-x/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/05/11/how-to-install-reaver-on-mac-os-x/" itemprop="url">How to install reaver on Mac OS X</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-05-11T07:35:07+08:00">
+                2014-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2014/05/11/how-to-install-reaver-on-mac-os-x/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2014/05/11/how-to-install-reaver-on-mac-os-x/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -665,42 +793,166 @@
       
         
           
-            <p><code>shell</code> 里 <code>brew install jenkins</code><br>然后 <code>jenkins</code> 启动，牛腩器中输入 127.0.0.1:8080 跳坑</p>
-<p>Jenkins 里 <code>xcode</code> 相关插件装上<br>步骤别的博客都有，Google <em>ios ci 持续集成</em>，比如：  </p>
-<ul>
-<li><a href="http://www.itiger.me/?p=30" target="_blank" rel="external">Jenkins+Github+Testflight在Mac下搭建持续集成环境</a> ，</li>
-<li><a href="http://www.jianshu.com/p/63073573e2ee" target="_blank" rel="external">iOS项目持续集成之Travis CI</a></li>
-</ul>
-<p>版本可能旧一点，但能脑补上</p>
-<p>我们这用的 Phabricator，由于是 iOS，放在本地 Mac 上而非服务器，所以私钥配好就行了，Jenkins 和 Phabricator 回调交互啥的就不管了  </p>
-<p>另外主要遇到几个问题：</p>
-<h3 id="jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><a href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe" class="headerlink" title="jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe"></a>jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe</h3><p>test 推送消息却好好的<br>弄了俩小时也不知怎么回事，睡一觉第二天正常了…</p>
-<p>貌似知道原因了，<em>Project Channel</em> 那里不能为空</p>
-<h3 id="ResourceRules-plist"><a href="#ResourceRules-plist" class="headerlink" title="ResourceRules.plist"></a>ResourceRules.plist</h3><p>第一天 提示 ResourceRules.plist 不对， 于是在工程和 Jenkins 配置里都加了这个<br><code>Custom xcodebuild arguments $(SDKROOT)/ResourceRules.plist</code>  </p>
-<p>结果第二天提示找不到 ResourceRules.plist，Jenkins 里删掉这个反而 OK 了，真奇葩  </p>
-<h3 id="iPhone-Developer-no-identity-found"><a href="#iPhone-Developer-no-identity-found" class="headerlink" title="iPhone Developer: no identity found"></a>iPhone Developer: no identity found</h3><p><code>swift-stdlib-tool failed with exit code 1</code></p>
-<p>去 developer.apple.com 下载了各种证书，都不管用<br>实在没办法，直接用 xcode 打开了 <code>~/.jenkins/jobs/****</code> 下面的工程，想做个对比，结果发现 keychain 里多出来个证书，然后就 success 了…  </p>
+            <p>update: 2015-07-27 13:14:32</p>
+<p>I wrote this in 2014-05-11, however after one year late, you can easily install reaver by using <code>Homebrew</code> right now.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install reaver</div></pre></td></tr></table></figure>
+<p>Thanks for Rustam’s tips</p>
 <hr>
-<p><del>另外企业账号还没买，Jenkins 没开账号系统，继续等坑</del></p>
-<h3 id="DUNS-邓白氏码"><a href="#DUNS-邓白氏码" class="headerlink" title="DUNS(邓白氏码)"></a>DUNS(邓白氏码)</h3><p>之前企业账号一直卡在这里，苹果邮件迟迟没回应，所以一定要去电话苹果客服，一两天就 OK 了</p>
-<h3 id="bundle-identifier"><a href="#bundle-identifier" class="headerlink" title="bundle identifier"></a>bundle identifier</h3><p>之前 company 账号中 .alpha .beta 占用掉了，企业账号这里无法创建相同的证书，只好<em>删除原来账号里</em> 或 <em>改 ID</em>  </p>
-<p>结果删除时发现需要 app 需要是其中几个状态，官方文档：<a href="https://developer.apple.com/library/mac/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/TransferringAndDeletingApps.html" target="_blank" rel="external">TransferringAndDeletingApps</a></p>
-<p>之前 beta 作为 testflight，并没上传 AppStore，Email 苹果，回复：</p>
-<blockquote>
-<p>Currently, your app does not have at least one approved version.</p>
-</blockquote>
-<p>…<br>只好改了 ID</p>
-<h3 id="over-the-air-distribution"><a href="#over-the-air-distribution" class="headerlink" title="over the air distribution"></a>over the air distribution</h3><p>万事俱备了，赶紧导出，结果发现 Xcode 6 之后，导 ipa 只有一个 .ipa 没有配套的 .plist，要自己手写…（还好 Jenkins 还能自动生成），大致长这样的：<a href="https://gist.github.com/Artwalk/f292d65163b26a2169d4" target="_blank" rel="external">plist</a> ($ $ 里对应的改一下)</p>
-<p>然后<code>python -m SimpleHTTPServer</code>，iPhone 上 Safari 打开，结果… 还是不行…</p>
-<p>后来发现服务器必须是 https 的…</p>
-<h3 id="build-number"><a href="#build-number" class="headerlink" title="build number"></a>build number</h3><p><code>targets -&gt; Build Phases -&gt; + New Run Script Phase</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">buildNumber=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleVersion&quot; &quot;$&#123;PROJECT_DIR&#125;/$&#123;INFOPLIST_FILE&#125;&quot;)</div><div class="line">buildNumber=$(($buildNumber + 1))</div><div class="line">/usr/libexec/PlistBuddy -c &quot;Set :CFBundleVersion $buildNumber&quot; &quot;$&#123;PROJECT_DIR&#125;/$&#123;INFOPLIST_FILE&#125;&quot;</div></pre></td></tr></table></figure>
-<p>这样 scheme 是 release 的时候，build 会自动 +1</p>
-<p>PS:<br>其实这个可以写到 Jenkins build 步骤的 shell 中，然后 push 到 origin/master，再把 *.ipa 上传到服务器  </p>
-<h3 id="OS-X-Server"><a href="#OS-X-Server" class="headerlink" title="OS X Server"></a>OS X Server</h3><p>坑，有时间整理一个</p>
-<h3 id="DistributionProvisioningProfiles"><a href="#DistributionProvisioningProfiles" class="headerlink" title="DistributionProvisioningProfiles"></a>DistributionProvisioningProfiles</h3><p>直接把下载的 <code>*. mobileprovision</code>，写路径发现是不行的，只好自己手动打包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xcodebuild -exportArchive -exportFormat IPA -archivePath &quot;$Yourarchive&quot; \</div><div class="line"> -exportPath imeican-Beta-xcodebuild.ipa \</div><div class="line"> -exportProvisioningProfile $YourDistributionProvisioningProfiles</div></pre></td></tr></table></figure>
-<p>总结：<br>一路走来一路坑  </p>
+<p>I always use beini in vmware, and plug an extra usb wireless adapter to my PC every time.</p>
+<p>When I have my Mac, I just copy beini’s VMX from Windows to Mac, which means I still have to use the wireless adapter.</p>
+<p>In fact, <code>minidwep</code> or <code>inflator</code> are using <code>Reaver</code> as a powerful tool to … (You know it), and Mac is a unix based system, which can run <code>Reaver</code> directly.</p>
+<ol>
+<li>Download: <a href="https://docs.google.com/file/d/0B3tHnfnS08GycG1fVENETEdvazA/edit" target="_blank" rel="external">reaver-osx.zip</a><br>( tips: the original reaver-1.4 can’t direct <code>make</code> on Mac )</li>
+<li>unzip reaver-osx.zip</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> reaver-wps/src/</div><div class="line">./configure</div><div class="line">make</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<p>Enjoin it &amp; Don’t be evil :-)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/04/19/20天学会-go-语言/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/04/19/20天学会-go-语言/" itemprop="url">20 天学会 Go 语言</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-19T08:10:05+08:00">
+                2014-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2014/04/19/20天学会-go-语言/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2014/04/19/20天学会-go-语言/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我看了下 Log，其实不到 20 天，但标题写个16，赶脚怪怪的，没有10的倍数霸气  </p>
+<p>首先谈学习时间不能脱离环境  </p>
+<p>露珠大学时深受 “先学好一门语言” 只害，结果到毕业时，仅仅了解 C，结果也没学精（别的语言会拓展你对编程的认识）</p>
+<p>所以泥们应该可以更快！！！</p>
+<p>说两句就累了 ＞﹏＜ ，赶紧帖步骤</p>
+<ol>
+<li><p><a href="http://book.douban.com/subject/24316255/" target="_blank" rel="external">Go Web编程</a></p>
+<p> 除了类型声明在后面，Golang 和 C 的语法还是比较像的，至少没 Obj-C 那么蛋疼，语法糖方面一下就能过去<br> 然后是 Web 编程方面， 仔细看看也用不了多久</p>
+</li>
+</ol>
+<ol>
+<li><p><a href="http://go-tour-zh.appspot.com/#1" target="_blank" rel="external">Go 官方 指南</a>  </p>
+<p> 这个相当于上机环境，检验一些用法</p>
+<p> 上面两步熟悉了之后，已经可以自己写点东西玩玩了<br> 比如露珠写了个 Web 版的知乎日报首页， 点 <a href="http://zhihudaily.ahorn.me/" target="_blank" rel="external">这里</a><br> 当时开发的一些情况以及源代码在 <a href="https://github.com/Artwalk/GO-ZhihuDaily" target="_blank" rel="external">这里</a>  </p>
+<p> 当然，Github 又是另外一项技能了</p>
+</li>
+<li><p>框架，露珠用的 <a href="https://github.com/go-martini/martini" target="_blank" rel="external">Martini</a> </p>
+<p> 框架感觉是另外一个东西了，即使你语音会了，基于此语音的框架，还是要耗费时间另外学习，比如 Ruby 本身 完全被 ROR 掩盖住了  </p>
+<p> 所以一开没想到用框架，后来写着写着发现路由神马的都要自己实现，就上喽</p>
+</li>
+</ol>
+<p>性能方面网上有各种讨论，就不说了  </p>
+<p>而人件是最重要的，所以从对程序员的角度来说，Golang 还是很好的，本身是静态语音某种程度上可以像动态语言那样写，除了 Json 转换的蛋疼以及不停的 checkerr 之外（我真的不是黑它！！！）  </p>
+<p>好吧，我是用了点 Ruby 后过来的，Ruby 太爽了，以至于转过来后各种难受有木有  </p>
 
           
         
@@ -739,7 +991,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -784,7 +1036,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">130</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -797,7 +1049,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

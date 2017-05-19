@@ -321,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/02/07/swift-useful-extensions/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/06/16/xcode-plugins-faild-to-be-loaded-after-update/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -340,7 +340,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/02/07/swift-useful-extensions/" itemprop="url">Swift useful extensions</a></h2>
+                <a class="post-title-link" href="/2015/06/16/xcode-plugins-faild-to-be-loaded-after-update/" itemprop="url">Xcode plugins faild to be loaded after updated</a></h2>
         
 
         <div class="post-meta">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-02-07T15:06:27+08:00">
-                2016-02-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-16T21:33:02+08:00">
+                2015-06-16
               </time>
             
 
@@ -371,9 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/02/07/swift-useful-extensions/#comments" itemprop="discussionUrl">
+                <a href="/2015/06/16/xcode-plugins-faild-to-be-loaded-after-update/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/02/07/swift-useful-extensions/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/06/16/xcode-plugins-faild-to-be-loaded-after-update/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -400,141 +400,13 @@
       
         
           
-            <h3 id="Time-interval-Int-to-formatted-String"><a href="#Time-interval-Int-to-formatted-String" class="headerlink" title="Time interval (Int) to formatted String"></a>Time interval (Int) to formatted String</h3><p>KEY: <strong><code>yyyy-MM-dd EEE HH:mm:ss.SSS</code></strong></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">var</span> yyyyMMddHHmm: <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">get</span> &#123;</div><div class="line">            <span class="keyword">let</span> date = <span class="type">NSDate</span>(timeIntervalSince1970: <span class="type">NSTimeInterval</span>(<span class="keyword">self</span>)/<span class="number">1000</span>)</div><div class="line">            <span class="keyword">let</span> dateFormatter = <span class="type">NSDateFormatter</span>()</div><div class="line">            </div><div class="line">            <span class="comment">// don't forget to set locale, otherwise you may get **周五** instead of **FRI**</span></div><div class="line">            dateFormatter.locale = <span class="type">NSLocale</span>(localeIdentifier: <span class="string">"en_US"</span>)</div><div class="line">            </div><div class="line">            dateFormatter.dateFormat = <span class="string">"yyyy-MM-dd HH:mm"</span></div><div class="line">            <span class="keyword">return</span> dateFormatter.stringFromDate(date)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Trim-decimal-point-zero"><a href="#Trim-decimal-point-zero" class="headerlink" title="Trim decimal point zero"></a>Trim decimal point zero</h3><p>KEY: <strong><code>&quot;%g&quot;</code></strong></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> trimZero: <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">get</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="type">String</span>(format: <span class="string">"%g"</span>, <span class="type">Double</span>(<span class="keyword">self</span>))</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Ramdom-alphanumberic-string"><a href="#Ramdom-alphanumberic-string" class="headerlink" title="Ramdom alphanumberic string"></a>Ramdom alphanumberic string</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> randomString: <span class="type">String</span> &#123;</div><div class="line">    <span class="keyword">get</span> &#123;</div><div class="line">        <span class="keyword">let</span> letters : <span class="type">NSString</span> = <span class="string">"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"</span></div><div class="line">        <span class="keyword">let</span> len = <span class="number">20</span> <span class="comment">// length</span></div><div class="line">        <span class="keyword">let</span> randomString : <span class="type">NSMutableString</span> = <span class="type">NSMutableString</span>(capacity: len)</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; len; i++)&#123;</div><div class="line">            <span class="keyword">let</span> length = <span class="type">UInt32</span> (letters.length)</div><div class="line">            <span class="keyword">let</span> rand = arc4random_uniform(length)</div><div class="line">            randomString.appendFormat(<span class="string">"%C"</span>, letters.characterAtIndex(<span class="type">Int</span>(rand)))</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> randomString <span class="keyword">as</span> <span class="type">String</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Add-and-remove-subviews"><a href="#Add-and-remove-subviews" class="headerlink" title="Add and remove subviews"></a>Add and remove subviews</h3><p>KEY: <strong><code>...</code></strong></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIView</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addSubviews</span><span class="params">(views: UIView...)</span></span> &#123;</div><div class="line">        <span class="comment">// addArrangedSubviews if it's a UIStackView</span></div><div class="line">       views.forEach &#123; addSubview($<span class="number">0</span>) &#125; </div><div class="line">    &#125;</div><div class="line">        </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">removeAllSubviews</span><span class="params">()</span></span> &#123;</div><div class="line">        subviews.forEach &#123; $<span class="number">0</span>.removeFromSuperview()&#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Set-text-strikethrough-and-line-height-in-UILabel"><a href="#Set-text-strikethrough-and-line-height-in-UILabel" class="headerlink" title="Set text strikethrough and line height in UILabel"></a>Set text strikethrough and line height in UILabel</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UILabel</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setStrikethrough</span><span class="params">(text:String, color:UIColor = UIColor.blackColor<span class="params">()</span></span></span>) &#123;</div><div class="line">        <span class="keyword">let</span> attributedText = <span class="type">NSAttributedString</span>(string: text , attributes: [<span class="type">NSStrikethroughStyleAttributeName</span>: <span class="type">NSUnderlineStyle</span>.<span class="type">StyleSingle</span>.rawValue, <span class="type">NSStrikethroughColorAttributeName</span>: color])</div><div class="line">        <span class="keyword">self</span>.attributedText = attributedText</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setLineHeight</span><span class="params">(lineHeight: CGFloat)</span></span> &#123;</div><div class="line">        <span class="keyword">let</span> text = <span class="keyword">self</span>.text</div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> text = text &#123;</div><div class="line">            <span class="keyword">let</span> attributeString = <span class="type">NSMutableAttributedString</span>(string: text)</div><div class="line">            <span class="keyword">let</span> style = <span class="type">NSMutableParagraphStyle</span>()</div><div class="line">            </div><div class="line">            style.lineSpacing = lineHeight</div><div class="line">            attributeString.addAttribute(<span class="type">NSParagraphStyleAttributeName</span>, value: style, range: <span class="type">NSMakeRange</span>(<span class="number">0</span>, text.characters.<span class="built_in">count</span>))</div><div class="line">            <span class="keyword">self</span>.attributedText = attributeString</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Scheme-Version-ShortVersion-BundleVersion"><a href="#Scheme-Version-ShortVersion-BundleVersion" class="headerlink" title="Scheme Version ShortVersion BundleVersion"></a>Scheme Version ShortVersion BundleVersion</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> firstScheme:<span class="type">String</span>? &#123;</div><div class="line">    <span class="keyword">get</span> &#123;</div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> schemes: <span class="type">AnyObject</span>? = <span class="type">NSBundle</span>.mainBundle().infoDictionary?[<span class="string">"CFBundleURLTypes"</span>]?[<span class="number">0</span>][<span class="string">"CFBundleURLSchemes"</span>] &#123;</div><div class="line">            <span class="keyword">if</span> <span class="keyword">let</span> scheme = schemes?[<span class="number">0</span>] <span class="keyword">as</span>? <span class="type">String</span> &#123;</div><div class="line">                <span class="keyword">return</span> scheme</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bundleShortVersion:<span class="type">String</span>? &#123;</div><div class="line">    <span class="keyword">get</span> &#123;</div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> version = <span class="type">NSBundle</span>.mainBundle().infoDictionary?[<span class="string">"CFBundleShortVersionString"</span>] <span class="keyword">as</span>? <span class="type">String</span> &#123;</div><div class="line">            <span class="keyword">return</span> version</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bundleVersion:<span class="type">String</span>? &#123;</div><div class="line">    <span class="keyword">get</span> &#123;</div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> version = <span class="type">NSBundle</span>.mainBundle().infoDictionary?[<span class="string">"CFBundleVersion"</span>] <span class="keyword">as</span>? <span class="type">String</span> &#123;</div><div class="line">            <span class="keyword">return</span> version</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/01/22/When-a-company-become-bigger/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Artwalk">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Artwalk's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/01/22/When-a-company-become-bigger/" itemprop="url">When a company become bigger</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-22T00:34:53+08:00">
-                2016-01-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/01/22/When-a-company-become-bigger/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/01/22/When-a-company-become-bigger/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>Do the right thing</strong> much more importent than <strong>doing things right</strong>. the former phrase means you have your own argument and reason. The <strong>right</strong> measures your own justice and can you responsible for your own actions. But when you joined to a big company, your manager concerned is that can you doing things right. That is why startup companies have more energy. </p>
-<p>Humans are by nature social animals, if a group has less than 140 people, it can managed by itself. Because everyone knows what others doing, they can easily have a common points of view about someone, there is no place for cribbers. But when the group become bigger, fog and shadow are appear, your ability and capability largely depend on your manager, it’s no longer based on your real contributions.</p>
-<p>Most companies have hundreds of employees, that’s why office politics so common in big companies.  How to dealing with office politics is in primary. After all, it related to your <strong>salary and promotion</strong>. If you want that, the best way is to become a politician, everyone knows what’s going on, but no one point out, just like <em>The Emperor’s New Clothes</em>. the risk is you may lose yourself. </p>
-<p>That’s why an excellent startup company so attracting, but there always will be one day, the company become big as for it’s excellent. More and more strangers are joined, not everyone are friendly. if you still be yourself, and careless about politics, that may cause inappropriate, gossip will be everywhere, and when the new year come, you have no promotion without rhyme or reason.</p>
-<p>The neutral way was working like an android, don’t share any of your emotions and feelings, that will makes your colleagues feels some kind of professional. The disadvantage is that there is no chance you will be consider as a friend. but as for the company already changed ( not a startup any more ), it’s more acceptable than the previous one.</p>
+            <p>You can type the command in terminal after Xcode updated</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I&#123;&#125; defaults write &#123;&#125; DVTPlugInCompatibilityUUIDs -array-add `defaults <span class="built_in">read</span> /Applications/Xcode.app/Contents/Info.plist DVTPlugInCompatibilityUUID`</div></pre></td></tr></table></figure>
+<p>this will added your new Xcode UUID to <code>DVTPlugInCompatibilityUUID</code>  </p>
+<p>But that is a risky way, for instance my Xcode 6.3.2 always crash after I ran this command without brain.</p>
+<p>So I had to open the folder <code>~/Library/Application Support/Developer/Shared/Xcode/Plug-ins</code> and deleted some suspicious plugins.</p>
+<p>Of course also you can check the <code>tail -f /var/log/system.log</code>, and found which plugin cause the Xcode crash exactly in <code>~/Library/Logs/DiagnosticReports/Xcode_$time_$macbookname.crash</code></p>
+<p>Finally，with my best wishes :)</p>
 
           
         
@@ -578,7 +450,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/12/07/How-to-get-the-AQI-without-API/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/05/06/Leetcode-With-Ruby/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -597,7 +469,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/12/07/How-to-get-the-AQI-without-API/" itemprop="url">How to get the AQI without API</a></h2>
+                <a class="post-title-link" href="/2015/05/06/Leetcode-With-Ruby/" itemprop="url">Leetcode With Ruby</a></h2>
         
 
         <div class="post-meta">
@@ -609,8 +481,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-07T07:18:19+08:00">
-                2015-12-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-05-06T20:58:02+08:00">
+                2015-05-06
               </time>
             
 
@@ -628,9 +500,145 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/12/07/How-to-get-the-AQI-without-API/#comments" itemprop="discussionUrl">
+                <a href="/2015/05/06/Leetcode-With-Ruby/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2015/12/07/How-to-get-the-AQI-without-API/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/05/06/Leetcode-With-Ruby/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>之前用 <code>C++</code>，手动释放内存直接跪了</p>
+<p>今天突然发现支持 <code>Ruby</code> 了</p>
+<p>小试下果然如开挂了一样</p>
+<p>不过这样可能就失去 <code>Leetcode</code> 的本意了</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">"profile"</span> <span class="comment">#查看性能</span></div></pre></td></tr></table></figure>
+<h2 id="Reverse-Integer"><a href="#Reverse-Integer" class="headerlink" title="Reverse Integer"></a>Reverse Integer</h2><ul>
+<li>Ruby 中 负数 reverse 后成了正数</li>
+<li>Int 越界要返回 0 (-2^32 ~ 2^32-1)</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(x)</span></span></div><div class="line">  res = x.to_s.reverse.to_i</div><div class="line">  <span class="keyword">if</span> res &gt; <span class="number">2147483647</span> <span class="keyword">or</span> res &lt; -<span class="number">2147483648</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="keyword">return</span> x &lt; <span class="number">0</span> ? -res : res</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/05/06/Leetcode-With-Ruby/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/" itemprop="url">iOS CI (Jenkins + Phabricator + Slack)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-04-16T20:59:31+08:00">
+                2015-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -657,16 +665,324 @@
       
         
           
-            <p>I googled and only found <a href="http://www.pm25.in" target="_blank" rel="external">pm25.in</a> provide API in China.<br>I applied the private AppKey one week ago but got no responds, So I have to think out another way.  </p>
-<p>The common idea is read the web page and parse the wanted informations:  </p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'open-uri'</span></div><div class="line"><span class="keyword">require</span> <span class="string">'nokogiri'</span></div><div class="line"></div><div class="line">html = <span class="string">'http://www.pm25.in/$YOURCITY'</span></div><div class="line">doc = Nokogiri::HTML(open(html).read)</div><div class="line"><span class="comment"># doc.encoding = 'utf-8'</span></div><div class="line"></div><div class="line"><span class="comment"># activity suggestion</span></div><div class="line">msg = doc.css(<span class="string">'.action'</span>).first.text</div><div class="line"></div><div class="line"><span class="comment"># AQI PM CO ... values</span></div><div class="line">value = <span class="string">""</span></div><div class="line">doc.css(<span class="string">'.value'</span>).each <span class="keyword">do</span> <span class="params">|node|</span></div><div class="line">	value += node.text</div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">caption = <span class="string">""</span></div><div class="line">doc.css(<span class="string">'.caption'</span>).each <span class="keyword">do</span> <span class="params">|node|</span></div><div class="line">	caption += node.text</div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">v = value.gsub(<span class="regexp">/\s+/</span>, <span class="string">' '</span>).strip.split</div><div class="line">k = caption.gsub(<span class="regexp">/\s+/</span>, <span class="string">' '</span>).strip.split</div><div class="line"></div><div class="line">text = <span class="string">""</span></div><div class="line">k.zip(v).each &#123; <span class="params">|a, b|</span> text += (((a + <span class="string">" : "</span>) + b )+ <span class="string">"\n"</span>)&#125;</div></pre></td></tr></table></figure>
-<p>Result:</p>
+            <p><code>shell</code> 里 <code>brew install jenkins</code><br>然后 <code>jenkins</code> 启动，牛腩器中输入 127.0.0.1:8080 跳坑</p>
+<p>Jenkins 里 <code>xcode</code> 相关插件装上<br>步骤别的博客都有，Google <em>ios ci 持续集成</em>，比如：  </p>
+<ul>
+<li><a href="http://www.itiger.me/?p=30" target="_blank" rel="external">Jenkins+Github+Testflight在Mac下搭建持续集成环境</a> ，</li>
+<li><a href="http://www.jianshu.com/p/63073573e2ee" target="_blank" rel="external">iOS项目持续集成之Travis CI</a></li>
+</ul>
+<p>版本可能旧一点，但能脑补上</p>
+<p>我们这用的 Phabricator，由于是 iOS，放在本地 Mac 上而非服务器，所以私钥配好就行了，Jenkins 和 Phabricator 回调交互啥的就不管了  </p>
+<p>另外主要遇到几个问题：</p>
+<h3 id="jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><a href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe" class="headerlink" title="jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe"></a>jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe</h3><p>test 推送消息却好好的<br>弄了俩小时也不知怎么回事，睡一觉第二天正常了…</p>
+<p>貌似知道原因了，<em>Project Channel</em> 那里不能为空</p>
+<h3 id="ResourceRules-plist"><a href="#ResourceRules-plist" class="headerlink" title="ResourceRules.plist"></a>ResourceRules.plist</h3><p>第一天 提示 ResourceRules.plist 不对， 于是在工程和 Jenkins 配置里都加了这个<br><code>Custom xcodebuild arguments $(SDKROOT)/ResourceRules.plist</code>  </p>
+<p>结果第二天提示找不到 ResourceRules.plist，Jenkins 里删掉这个反而 OK 了，真奇葩  </p>
+<h3 id="iPhone-Developer-no-identity-found"><a href="#iPhone-Developer-no-identity-found" class="headerlink" title="iPhone Developer: no identity found"></a>iPhone Developer: no identity found</h3><p><code>swift-stdlib-tool failed with exit code 1</code></p>
+<p>去 developer.apple.com 下载了各种证书，都不管用<br>实在没办法，直接用 xcode 打开了 <code>~/.jenkins/jobs/****</code> 下面的工程，想做个对比，结果发现 keychain 里多出来个证书，然后就 success 了…  </p>
+<hr>
+<p><del>另外企业账号还没买，Jenkins 没开账号系统，继续等坑</del></p>
+<h3 id="DUNS-邓白氏码"><a href="#DUNS-邓白氏码" class="headerlink" title="DUNS(邓白氏码)"></a>DUNS(邓白氏码)</h3><p>之前企业账号一直卡在这里，苹果邮件迟迟没回应，所以一定要去电话苹果客服，一两天就 OK 了</p>
+<h3 id="bundle-identifier"><a href="#bundle-identifier" class="headerlink" title="bundle identifier"></a>bundle identifier</h3><p>之前 company 账号中 .alpha .beta 占用掉了，企业账号这里无法创建相同的证书，只好<em>删除原来账号里</em> 或 <em>改 ID</em>  </p>
+<p>结果删除时发现需要 app 需要是其中几个状态，官方文档：<a href="https://developer.apple.com/library/mac/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/TransferringAndDeletingApps.html" target="_blank" rel="external">TransferringAndDeletingApps</a></p>
+<p>之前 beta 作为 testflight，并没上传 AppStore，Email 苹果，回复：</p>
 <blockquote>
-<p>API : 207<br>PM2.5/1h : 156<br>PM10/1h : 162<br>…</p>
+<p>Currently, your app does not have at least one approved version.</p>
 </blockquote>
-<p>And, I want post it to <code>Slack</code> to remind my coworkers that the code review will put off because of the bad weather.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'slack-notifier'</span></div><div class="line"></div><div class="line">notifier = Slack::Notifier.new <span class="string">"https://hooks.slack.com/services/$YourHook"</span>, </div><div class="line"><span class="symbol">channel:</span> <span class="string">'#YourChannel'</span>, <span class="symbol">username:</span> <span class="string">'Bot'</span></div><div class="line">notifier.ping <span class="string">"&lt;!channel&gt;\n"</span> + text + msg.strip</div></pre></td></tr></table></figure>
+<p>…<br>只好改了 ID</p>
+<h3 id="over-the-air-distribution"><a href="#over-the-air-distribution" class="headerlink" title="over the air distribution"></a>over the air distribution</h3><p>万事俱备了，赶紧导出，结果发现 Xcode 6 之后，导 ipa 只有一个 .ipa 没有配套的 .plist，要自己手写…（还好 Jenkins 还能自动生成），大致长这样的：<a href="https://gist.github.com/Artwalk/f292d65163b26a2169d4" target="_blank" rel="external">plist</a> ($ $ 里对应的改一下)</p>
+<p>然后<code>python -m SimpleHTTPServer</code>，iPhone 上 Safari 打开，结果… 还是不行…</p>
+<p>后来发现服务器必须是 https 的…</p>
+<h3 id="build-number"><a href="#build-number" class="headerlink" title="build number"></a>build number</h3><p><code>targets -&gt; Build Phases -&gt; + New Run Script Phase</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">buildNumber=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleVersion&quot; &quot;$&#123;PROJECT_DIR&#125;/$&#123;INFOPLIST_FILE&#125;&quot;)</div><div class="line">buildNumber=$(($buildNumber + 1))</div><div class="line">/usr/libexec/PlistBuddy -c &quot;Set :CFBundleVersion $buildNumber&quot; &quot;$&#123;PROJECT_DIR&#125;/$&#123;INFOPLIST_FILE&#125;&quot;</div></pre></td></tr></table></figure>
+<p>这样 scheme 是 release 的时候，build 会自动 +1</p>
+<p>PS:<br>其实这个可以写到 Jenkins build 步骤的 shell 中，然后 push 到 origin/master，再把 *.ipa 上传到服务器  </p>
+<h3 id="OS-X-Server"><a href="#OS-X-Server" class="headerlink" title="OS X Server"></a>OS X Server</h3><p>坑，有时间整理一个</p>
+<h3 id="DistributionProvisioningProfiles"><a href="#DistributionProvisioningProfiles" class="headerlink" title="DistributionProvisioningProfiles"></a>DistributionProvisioningProfiles</h3><p>直接把下载的 <code>*. mobileprovision</code>，写路径发现是不行的，只好自己手动打包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xcodebuild -exportArchive -exportFormat IPA -archivePath &quot;$Yourarchive&quot; \</div><div class="line"> -exportPath imeican-Beta-xcodebuild.ipa \</div><div class="line"> -exportProvisioningProfile $YourDistributionProvisioningProfiles</div></pre></td></tr></table></figure>
+<p>总结：<br>一路走来一路坑  </p>
+
           
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/02/22/What-I-talk-about-when-I-talk-about-running/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/02/22/What-I-talk-about-when-I-talk-about-running/" itemprop="url">What I talk about when I talk about running</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-02-22T19:52:31+08:00">
+                2015-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/02/22/What-I-talk-about-when-I-talk-about-running/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/02/22/What-I-talk-about-when-I-talk-about-running/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="http://img5.douban.com/mpic/s3211859.jpg" alt=""></p>
+<p>书中重头至尾弥漫这一种苍老的气息<br>对于时间的流逝，肉体能力的下降，却又无可奈何  </p>
+<p>与贸然抵抗，坚持不服老不同是的，作者逐渐接受这个事实，并以此为规则应对  </p>
+<p>很多我好奇的问题，作者也反思过并且更加深入  </p>
+<p>这大概就是：</p>
+<blockquote>
+<p>I’m the kind of person who likes to be by himself.</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/02/22/What-I-talk-about-when-I-talk-about-running/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/02/11/万万没想到/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/02/11/万万没想到/" itemprop="url">万万没想到</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-02-11T14:20:35+08:00">
+                2015-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/02/11/万万没想到/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/02/11/万万没想到/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="一步赶不上意味着步步赶不上"><a href="#一步赶不上意味着步步赶不上" class="headerlink" title="一步赶不上意味着步步赶不上"></a>一步赶不上意味着步步赶不上</h2><p><img src="http://img5.douban.com/mpic/s27775296.jpg" alt=""></p>
+<h4 id="常见思维误区"><a href="#常见思维误区" class="headerlink" title="常见思维误区"></a>常见思维误区</h4><p>这个平时看心理学书都基本提到过</p>
+<h4 id="如何逆袭"><a href="#如何逆袭" class="headerlink" title="如何逆袭"></a>如何逆袭</h4><p>改变规则 disagreeableness  </p>
+<h4 id="Willpower"><a href="#Willpower" class="headerlink" title="Willpower"></a>Willpower</h4><ul>
+<li>可训练的肌肉   </li>
+<li>美女</li>
+<li>口头禅   </li>
+</ul>
+<h4 id="1W-小时"><a href="#1W-小时" class="headerlink" title="1W 小时"></a>1W 小时</h4><p>老虎伍兹一旦被打扰，立即中断动作，这在高手看来无疑是惊骇的  </p>
+<p>刻意的训练无疑是枯燥的，我之前认为的可以<strong>玩中学</strong>其实是在比较肤浅的阶段，即：娱乐</p>
+<p>还好下面又说道：<strong>兴趣</strong> 可以抵消这种枯燥  </p>
+<p>并且基因有着： </p>
+<blockquote>
+<p>Experience Producing Drive theory</p>
+</blockquote>
+<p>目前《自私的基因》看了小半本，原来还有个理论  </p>
+<p>书中有段话，解释了我一直来的困惑，因为我发现无论如何努力，都和很小就开始的人有很大的差距，即我已输在了起跑线上：</p>
+<blockquote>
+<p>到 18 岁，第二组比第一组少练了 2000 多个小时——现在他们一样努力，可是已经晚了。音乐如此，体育（编程）也是如此，一步赶不上就意味着步步赶不上。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/02/11/万万没想到/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -703,7 +1019,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -748,7 +1064,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">130</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -761,7 +1077,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

@@ -321,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/01/14/hexo-landscape-没有-comment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -340,7 +340,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/" itemprop="url">Pull to Refresh UIViewController in iOS</a></h2>
+                <a class="post-title-link" href="/2014/01/14/hexo-landscape-没有-comment/" itemprop="url">hexo landscape 没有 comment.ejs</a></h2>
         
 
         <div class="post-meta">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-12-01T21:06:48+08:00">
-                2014-12-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-14T23:05:45+08:00">
+                2014-01-14
               </time>
             
 
@@ -371,9 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/#comments" itemprop="discussionUrl">
+                <a href="/2014/01/14/hexo-landscape-没有-comment/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2014/01/14/hexo-landscape-没有-comment/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,16 +399,30 @@
 
       
         
-          <p>If you force to add a <code>UIRefreshControl</code> to a <code>UIViewController</code>, you will get an error:<br><code>UIRefreshControl may only be managed by a UITableViewController</code></p>
-<p>So, here is the trick</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>1 init a tableView in your <code>UIViewController</code><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p>今天闲的蛋疼，想换个主题<br>发现hexo已经升级到 2.4.5 了<br><code>npm update -g hexo</code></p>
+<p>找来找去，发现新的 landscape 不错，按步奏操作<br><a href="https://github.com/hexojs/hexo-theme-landscape" target="_blank" rel="external">hexo-theme-landscape</a>  </p>
+<p>然后傻逼了，真是<strong>不作死就不会死</strong></p>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>首先 <code>hexo g</code> 本地服务器theme是新的，deploy到 Github 样式乱七八糟的<br><code>rm theme/light</code> 之后 g 发现还是用light的theme  </p>
+<p>后来才知道要 <code>rm db.json</code></p>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>原来设好的多说等<strong>插件</strong>统统木有了木有了，还要重新弄一遍<br>粘贴多说代码时，发现<code>comment.ejs</code>木有了</p>
+<p><code>grep -R --include=&quot;*.ejs&quot; comment</code> 发现合并到<code>article.ejs</code>里去了</p>
+<p>由于 Node.js <strong>完全不懂！！！</strong>，只能凭感觉了  </p>
+<ol>
+<li>分享<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;footer class=&quot;article-footer&quot;&gt;</div><div class="line">	...</div><div class="line">	&lt;%- partial(&apos;post/tag&apos;) %&gt;</div><div class="line">&lt;/footer&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>里的<code>Share</code> 和 <code>Comments</code> 标签删掉<br>换成<a href="http://share.baidu.com/code" target="_blank" rel="external">百度分享</a></p>
+<ol>
+<li>多说<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;!--多说代码--&gt;</div><div class="line">&lt;/section&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>最后多说框框出来是出来了，但怕有副作用，懂得童鞋留言下哈</p>
+<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p>引用的文字格式太丑了，太大不说，还居中…<br>看网页是 blockquote<br><code>grep -R --include=&quot;*.styl&quot; &#39;blockquote&#39; .</code>  </p>
+<p>发现是 <code>themes/landscape/source/css/_partial/article.styl</code></p>
+<p>把 blockquote 调整下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">font-size: 0.9em</div><div class="line">text-align: left</div></pre></td></tr></table></figure></p>
+
+          
         
       
     </div>
@@ -450,7 +464,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/11/22/xmlParseEntityRef-no-name-AND-Input-is-not-proper-UTF-8/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/01/14/为什么要学哲学/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -469,7 +483,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/11/22/xmlParseEntityRef-no-name-AND-Input-is-not-proper-UTF-8/" itemprop="url">xmlParseEntityRef no name AND Input is not proper UTF-8</a></h2>
+                <a class="post-title-link" href="/2014/01/14/为什么要学哲学/" itemprop="url">为什么要学哲学</a></h2>
         
 
         <div class="post-meta">
@@ -481,8 +495,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-11-22T00:14:28+08:00">
-                2014-11-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-14T16:47:41+08:00">
+                2014-01-14
               </time>
             
 
@@ -500,9 +514,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2014/11/22/xmlParseEntityRef-no-name-AND-Input-is-not-proper-UTF-8/#comments" itemprop="discussionUrl">
+                <a href="/2014/01/14/为什么要学哲学/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2014/11/22/xmlParseEntityRef-no-name-AND-Input-is-not-proper-UTF-8/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2014/01/14/为什么要学哲学/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -528,17 +542,15 @@
 
       
         
-          <p>I found that the RSS of my blog was dead a few days ago.  </p>
-<p>First, I thought it’s a bug of the theme, so I updated the theme today, but the problem was still there.  </p>
-<p>It yelled like this:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">This page contains the following errors:</div><div class="line"></div><div class="line">error on line 70 at column 81: xmlParseEntityRef: no name</div><div class="line">Below is a rendering of the page up to the first error.</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/11/22/xmlParseEntityRef-no-name-AND-Input-is-not-proper-UTF-8/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p>任何学科都有一个试用范围，有用没用是相对的<br>如果你人生比较顺，周围环境比较好，虽有舟舆，无所乘之，虽有甲兵，无所陈之。平时没<strong>反思</strong>过什么事情，可能没啥用  </p>
+<p>但如果一直保持好奇心并且不断寻求，无论你是从政科研还是经商，最后肯定都会遇到哲学问题<br>因为哲学是关于<strong>世界本源</strong>的  </p>
+<p>哈佛大学政治学教授Michael J.Sandel在《公正——该如何做才好？》第一课的结尾的一段话是非常非常好（好到让人像追美剧那样看完了全套）的总结：  </p>
+<blockquote>
+<p>读哲学书可以作为你们<strong>认知自我</strong>的一种练习。<br>哲学使我们原本熟悉的东西变得陌生，它不是给我们更多的新信息，而是给予我们<strong>另一种看待事物的方法</strong>。它有两种层面上的冒险：<strong>个人层面和政治层面</strong>。所谓的个人层面上的冒险就是一旦那些熟悉的东西变陌生了，他们就再也不会和以前一样了。自我认知就像一个迷路的旅人，无论他是多么混乱多么不安，你已经不能不再想它了。这个过程困难却又不得不全身心投入，道德和政治的哲学就像个故事，你不知道它将带你向何方，但你清楚的知道，这是关于你的故事。政治层面上的冒险在于，你读了这些书、参与了这些讨论之后，你将会变成一个更好的更负责的公民，你将审视那些对公共政治领域的假设，你的政治判断力将得到锻炼，你将得以更加积极的参与到公共事业当中去，但是这样可能存在片面和误导。你需要承认的是，它可能使你变成一个更坏的公民而并非好公民，或者至少会在你成为好公民前先让你变成一个坏公民。那是因为哲学，是件很久远的事，甚至会有些许破坏性。让我们看看，苏格拉底时代的一段对话。苏格拉底的朋友卡利科勒希望能说服他离开哲学。他对苏格拉底说：哲学确实美好，适度涉入它的时候才美好，可是如果你过于沉迷它，它将把你毁灭。听我的吧，放下那些哲学争论，想想什么才是生活中真正的成就，别学那些在模棱两可的哲学语句中浪费时间的人，你该看看那些真正过的好的人富足的生活，名誉等其他的东西。他是想说，哥们，放现实点吧。但科勒有一点是正确的：<strong>哲学会使我们和原先的惯例、预订的假设和固有的观念变得疏远</strong>。<br>    当面对这些问题的时候，我们有个特别的回避方式，它的名字叫怀疑主义，它的意思是，像这样的，我们才刚开始学，没有办法一下子彻底解决那些我们争论的案例或原理，而且如果亚里士多德、康德、洛克、穆勒他们用了那么多年都没有解决这些问题，我们以为我们自己是谁？就这样在sanders礼堂里待了一个学期，就能解决它们了吗？而且，这可能只是一个关于每个人各自有自己不同原则的问题，没有什么可以值得讨论的，也说不清这些问题是为什么？这就是怀疑主义的逃避方式。关于此，我想我可以这样回答：确实，这些问题已经被讨论得非常非常久了，但正是因为他们不断的被讨论，说明虽然在某种意义上他们<strong>不可能被解释</strong>，可是另一方面，他们也是<strong>不可被回避</strong>。之所以不可回避，是因为这些问题的答案就在我们的日常生活当中，所以，怀疑主义只是让你放手，放弃思考，它不会解决任何道德或哲学问题。康德对怀疑主义有一段非常精彩的描述，他写到，“<strong>怀疑主义只是人们探索过程中的暂歇之地，它让我们在一些教条中徘徊，但是它绝非是我们能够永远待着的地方</strong>。”在这里，我想简单总结一下这门课的目的是，<strong>唤醒无尽的求知和推理，看看它会将我们带向何方</strong>。</p>
+</blockquote>
+
+          
         
       
     </div>
@@ -580,7 +592,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/10/15/The-primary-principle-of-Delegate/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/01/11/如何搭建自己的博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -599,7 +611,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/10/15/The-primary-principle-of-Delegate/" itemprop="url">The primary principle of Delegate</a></h2>
+                <a class="post-title-link" href="/2014/01/11/如何搭建自己的博客/" itemprop="url">如何搭建自己的博客</a></h2>
         
 
         <div class="post-meta">
@@ -611,8 +623,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-10-15T23:03:09+08:00">
-                2014-10-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-11T22:09:18+08:00">
+                2014-01-11
               </time>
             
 
@@ -630,9 +642,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2014/10/15/The-primary-principle-of-Delegate/#comments" itemprop="discussionUrl">
+                <a href="/2014/01/11/如何搭建自己的博客/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2014/10/15/The-primary-principle-of-Delegate/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2014/01/11/如何搭建自己的博客/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -658,19 +670,307 @@
 
       
         
-          <h1 id="Delegate-原理浅析"><a href="#Delegate-原理浅析" class="headerlink" title="Delegate 原理浅析"></a>Delegate 原理浅析</h1><p>B 的一个方法运行到某处，需要把自己的一个值告诉 A，并且做一定处理</p>
-<p>怎么来实现呢？</p>
-<p>首先 B 要知道自己去告诉谁，然后再调用 A.aFunc()</p>
-<p>我知道想知道原理的不想看代码，尽量简化了</p>
-<p>A, B 类</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="type">A</span>.swift</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span> &#123;</div><div class="line">		<span class="built_in">println</span>(b.value)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="type">B</span>.swift</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</div><div class="line">	<span class="keyword">var</span> value = <span class="number">0</span></div><div class="line">	<span class="function"><span class="keyword">func</span> <span class="title">bFunc</span> <span class="params">()</span></span> &#123;</div><div class="line">        value = <span class="number">213</span> <span class="comment">// value 有变化，想通知 A 执行 aFunc()</span></div><div class="line">		a.aFunc(b) <span class="comment">// 错误</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/10/15/The-primary-principle-of-Delegate/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p>个人感觉最好的是：<br>VPS+域名 WordPress等博客框架，这样网址，后台环境什么的都是由自己来控制的</p>
+<p>要是不花钱，只能寄人篱下了<br>比如挂到 GAE 或者 SAE下</p>
+<p>还有一种最简单的是挂到Github上，<br>大致过程是</p>
+<ol>
+<li>Github 上新建一个Repository，xxx.github.com</li>
+<li>Jekyll 或者 Hexo等静态博客生成工具</li>
+<li>没有了</li>
+</ol>
+<p>对，就这么简单，并且网上教程一片片，就不重复了<br>我用的是Hexo，挂在<a href="http://artwalk.github.io/">这里</a><br>相对Jekyll，感觉更简单些</p>
+<hr>
+<p>说点不相干的：  </p>
+<p>还记得小学时，天天让写作文，那时真是被虐的体无完肤<br>每天上学放学写（chao）作业，哪来的感悟，还一天一篇，现在最多一周才能有点东西可以记录好吧<br>怎么办呢，只能抄范文喽  </p>
+<p>可惜那时没有理论指导，抄的不精，一本什么 小学生范文大全抄完之后，抄无可抄，无奈打起了语文课本的主意<br>太岁头上动土，不是早死么，结果自然是被发现喽  </p>
+<p>然后那被誉为人类灵魂工程师的三年级语文教师，拿着我的日记本当着全班同学的面狠狠地扇了我脑袋  </p>
+<p>哦（wocao），杀鸡儆猴也不用这么狠吧  </p>
+<p>当时我隐忍不发，默默提升技能，毕竟高考还是有八股文存在的，为了明天，小不忍则乱大谋（好吧，当时我很傻的，感觉老师打学生挺正常的，就像前些年还认为爸爸打儿子那样）   </p>
+<p>还好大学了终于不用写那些恶心的东西了<br>大一时有个室友鄙视我空间好烂，然后去装扮，挂了N多的Flash，卡的人家都打不开<br>后来发现有日志功能，随便写了点关于学校的事情，然后有一些同学评论，蛮开心的，然后就写着了<br>一年多后我才知道这东西叫 博客  </p>
+<p>后来编程方面的东西都挂到CSDN去了，看着那左下角的千里之外，默默离开了  </p>
+<p>快毕业时有次搜索东西，看到一丫写的东西好熟悉，看了下访问量1W多，居然还有排名，心想这是谁啊，仔细一看，居然是我…</p>
+<p>再后来就是想找个没人认识的地方，记录点东西</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/01/11/爱父母/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/01/11/爱父母/" itemprop="url">爱父母</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-11T00:00:00+08:00">
+                2014-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2014/01/11/爱父母/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2014/01/11/爱父母/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>爱父母就代表他们让你做什么就无条件服从做什么？他们说你自私，不爱他们，你就是不爱他们？这种以<strong>“爱”的名义绑架子女</strong>的现象还少见吗？  </p>
+<p>首先，就我自己来说，为什么爸妈说的一些东西我不认为是对的，并且不去做<br>其中有个原因就是他们言传身教的一些东西，他们的思维方式，并没有经过反思，而是以“周围大多数人”认为的价值观就是对的，就是阳光大道，就是真理。说难听点就是没自己的想法<br>然后，他们的思维模式得到了他们现在的生活方式  </p>
+<p>换成通俗的话来说，自己放弃治疗，把所有希望寄托在孩纸身上，不按他们的预期来，打亲情牌<br>然后教育出来的孩纸一心向外跑，丝毫不恋家，过年回家是种负担，冷漠人情，等等等等  </p>
+<p>肯定是什么地方有问题  </p>
+<p>当你作出一些损人不利己的行为模式，却不知道原因时，一般要从小时候的记忆着手<br><strong>童年</strong>，一直是心理分析的重中之重，有些东西，在你还是一张白纸无辨别能力时，顺理成章的潜入潜意识中  </p>
+<p>回想以前的我，每天唉声叹气，见不得人好，没容人之心，还沉迷于游戏不能自拔<br>大学后无意中翻了许多心理学方面的书，慢慢的有了些改变（仍然不清楚骨子里有没有变，毕竟江山易改本性难移）  </p>
+<p>不能说都是父母的原因，但他们能没有一点干系？</p>
+<p>父母与子女之间，是个永恒的话题<br>原来我是抱着包容的心态，毕竟是父母，毕竟血浓于水。含辛茹苦把我拉扯大也不容易，就好好沟通呗</p>
+<p>还记得以前我体弱多病，后来接触了中医，自己刮痧拔罐扎针，到现在感冒都不见了（也可能是青壮年期吧）<br>爸妈也到了一定年纪，总有些慢性病，给他们分享一些预防方法，以前在家就给他们按摩刮痧，后来去外地工作，就买了按摩器等等东西<br>有用吗？病了就该吃药啊，“你又不是医生，胡搞什么”，“你的方法如果有用，人家医生都饿死了”  </p>
+<p>然后我就再也提不起兴致和他们说任何关于这方面的东西了  </p>
+<p>现在再打电话，基本都要说到我没工作，以后怎么办<br>我解释间隔年是有计划进行的<br>有用吗？<strong>他们才不管你什么寻找自我这些东西，管你活着是否如猪狗一样浑浑噩噩到死了还不知道此生的意义。意义？不就是买车买房结婚造人，传宗接代，好有孙子玩实现天伦之乐省的自己退休了没任何爱好打发时间导致的空虚寂寞冷么</strong></p>
+<p>很多时候，都是他们吵我结束，拜托，还当我是小孩纸吗？还像以前那样说吵就吵想打就打？<br>以前我也顶撞，现在耐心的听，绝不还嘴（挂了电话再咆哮两句总可以吧）<br>吵有什么意义，图一时之快，攻击别人，转嫁自己的压力，获得精神上的优越感而不能解决任何问题  </p>
+<p>我一直想哄他们开心，尽量不惹他们生气<br>小事还好，但是碰到<strong>人生抉择这样的事情，绝对不能妥协！</strong>但现在的我，又无法做到圆润的处理这种事情    </p>
+<p>从那些插手的种种，我感觉到，这样下去，以后对象是谁，什么时候结婚，什么时候生小孩，都难免一番争吵了  </p>
+<p>虽然我也能理解这种担心，但是你要不要担心的这么夸张啊，一个间隔年，仿佛我是被社会唾弃了，找不着工作吃不上饭找不着老婆接不上婚过两天就露宿街头饿死了似得  </p>
+<p>然后，结合我以前的一些心理（我是在那个家庭长大的，可以说集中了他们的那种思维），渐渐意识到，这是人的问题<br>比如原来的我，就无论如何，总是悲观的，一副“天下我最惨”的，整天唉声叹气的熊样。我都不明白怎么来的，说是中医体质气郁质吧，但哈佛的《幸福课》后慢慢的好了啊  </p>
+<p>然后这次，老妈又发火，老爸“你是不是精神有问题” 并且建议我去看心理医生后，我可以说我的心再滴血吗？<br>我确实去看过心理医生，共计三次（当然原因是受《心灵捕手》启发，带着一颗好奇心去看看心理咨询什么样的，以前都是自治嘛）  </p>
+<p>据说<strong>生活中活用“关我屁事”可以处理掉80%的事情，剩下20%用“关你屁事”解决</strong><br>本来以为只是针对陌生人的，图样图森破了  </p>
+<p>从上次电话，我就一直想模拟出他们的行为模式，因为这件事情上，他们没有给孩纸任何鼓励，没有承担任何责任，相反，自己的怨言，甚至把周围人的压力，毫不保留的转嫁到孩纸身上。唯一做的事情就是伤害孩纸，然后<strong>让孩纸离开他们时，没有任何不舍</strong><br>完完全全是现代教育理念的反面嘛  </p>
+<p>莫非他们是看过《乌合之众》《爱弥儿》《超越自卑》《历史深处的忧虑》《爱的五种语言》集大成之后，知道我这种天赋平平的娃用爱的方式只会烂泥扶不上墙，“请将不如激将”，无奈之下用连打带踹外加羞辱等“苦其心志，饿其体肤，行拂乱其所为”以实现“天将降大任” </p>
+<p>我腹黑了吗？</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2014/01/10/learn-more-study-less/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2014/01/10/learn-more-study-less/" itemprop="url">Learn more study less</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-01-10T17:20:25+08:00">
+                2014-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2014/01/10/learn-more-study-less/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2014/01/10/learn-more-study-less/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://img3.douban.com/lpic/s11431342.jpg" alt=""></p>
+<p>When I was in high shool, there was a student in my class. For the first time in my life I saw an <strong>intellect</strong>.</p>
+<p>I never saw he was studing. Playing games or reading novels were all the things I can see.  </p>
+<p>There are also some <strong>studiaholics</strong>, which means they can approach the <strong>intellects</strong> on score through hard work.</p>
+<p>Sadly turth is I was none of them.</p>
+<p><img src="/img/intellect.jpeg" alt=""></p>
+<p>I studied harder and harder, but the score was still no improve.</p>
+<p>You can image how desperate I was, which means they are gifted and talented, and I was nothing. I’m a losser even when I was born. </p>
+<p>After so many years have passed, I was undertood that it was just the brain’s magic. </p>
+<p>This book, written by an intellect, describe “How the Steel was Tempered”.</p>
+<p>There Is Always Hope, Thank God.</p>
+<p>MINDMAP:</p>
+<p><img src="/img/Learn-More-Study-Less.png" alt=""></p>
+
+          
         
       
     </div>
@@ -707,7 +1007,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/18/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/20/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/18/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/20/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -752,7 +1052,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">130</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -765,7 +1065,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

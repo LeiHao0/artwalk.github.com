@@ -321,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/03/25/Chrome-to-Safari/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/11/11/How-to-build-an-iOS-CI-without-jenkins/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -340,7 +340,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/03/25/Chrome-to-Safari/" itemprop="url">Chrome to Safari</a></h2>
+                <a class="post-title-link" href="/2015/11/11/How-to-build-an-iOS-CI-without-jenkins/" itemprop="url">How to build an iOS CI without Jenkins</a></h2>
         
 
         <div class="post-meta">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-25T14:20:11+08:00">
-                2016-03-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-11T00:36:24+08:00">
+                2015-11-11
               </time>
             
 
@@ -371,9 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/03/25/Chrome-to-Safari/#comments" itemprop="discussionUrl">
+                <a href="/2015/11/11/How-to-build-an-iOS-CI-without-jenkins/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/03/25/Chrome-to-Safari/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/11/11/How-to-build-an-iOS-CI-without-jenkins/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -400,25 +400,23 @@
       
         
           
-            <p>I use Chrome from the very beginning. I was impressed by it is simplicity and variety. Even I upgrade my laptop to Macbook, I’m still using it because of three main reasons</p>
-<ul>
-<li>Plugin</li>
-<li>Shortcut</li>
-<li>Develop</li>
-<li>Flash</li>
-</ul>
-<p>But after my TL <em>amway</em> me, I tried Safari  deeply, and found:</p>
-<h2 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h2><ul>
-<li>Adblock Plus</li>
-<li>1Password</li>
-<li>Evernote</li>
-<li>AutoPagerize</li>
-<li>Clean Links for Google</li>
-</ul>
-<h2 id="Shortcut"><a href="#Shortcut" class="headerlink" title="Shortcut"></a>Shortcut</h2><p>I can use <code>opt+cmd+&gt;</code> on Chrome to change tabs, it is <code>shift+cmd+[</code> on Safari<br><code>shift+cmd+z</code> to unclose the most recent closed tabs, it’s no corresponding key on Safari, I can only use history instead.</p>
-<h2 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h2><p>I used to opt+cmd+i in chrome to simulate iPhone, I can compare iOS version with front end in this way.<br>When I got to know what’s safari’s Develop look like, (<code>cmd+, -&gt; Advanced -&gt; Show Develop menu in menu bar</code> or <code>opt+cmd+r</code>) I surrendered.</p>
-<p><img src="/img/Safari Develop.png" alt=""></p>
-<h2 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h2><p>Finally, I accept that different device have their own place. So as for most Chinese video Website still using flash, I chose chrome to watch them.</p>
+            <p>I used Jenkins with some Xcode plugins as our iOS CI half a year ago.</p>
+<p>The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to <code>Phabricator</code>,  if any of these steps is fail, it will post a notification to <code>Slack</code>.</p>
+<p>But after we are try to using <code>Carthage</code> instead of  <code>CocoaPod</code>, it need to <code>Carthage update</code> before building. The Jenkins can’t run commands before building. So I tried using shell directly.</p>
+<h2 id="update-code"><a href="#update-code" class="headerlink" title="update code"></a>update code</h2><p>First it should <code>cd</code> into the project’s folder, then checkout new commits and update new frameworks</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> $(dirname <span class="variable">$0</span>)</div><div class="line">git checkout master</div><div class="line">git reset --hard origin/master</div><div class="line"></div><div class="line">/usr/<span class="built_in">local</span>/bin/carthage update</div></pre></td></tr></table></figure>
+<p>then check that whether the last author is a coworker or the bot itself</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">author=$(git <span class="built_in">log</span> -1 | head -2 | tail -1 | cut <span class="_">-d</span> <span class="string">' '</span> <span class="_">-f</span>2)</div><div class="line"><span class="built_in">echo</span> <span class="variable">$author</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ <span class="variable">$author</span> != <span class="string">"bot"</span> ]; <span class="keyword">then</span></div><div class="line"><span class="comment"># <span class="doctag">TODO:</span></span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<p>if it’s a coworker</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">projectName=$(find . -name <span class="string">"*.xcodeproj"</span> -depth 1 | cut <span class="_">-d</span> <span class="string">'/'</span>  <span class="_">-f</span> 2 | cut <span class="_">-d</span> <span class="string">'.'</span> <span class="_">-f</span> 1)</div><div class="line">plist=$(find <span class="variable">$projectName</span> -name <span class="string">"*.plist"</span> <span class="_">-d</span> 1)</div><div class="line"></div><div class="line"><span class="comment"># buildnum +1</span></div><div class="line">shortVersion=$(/usr/libexec/PlistBuddy -c <span class="string">"Print CFBundleShortVersionString"</span> <span class="string">"<span class="variable">$&#123;plist&#125;</span>"</span>)</div><div class="line">buildnum=$(/usr/libexec/PlistBuddy -c <span class="string">"Print CFBundleVersion"</span> <span class="string">"<span class="variable">$&#123;plist&#125;</span>"</span>)</div><div class="line">buildnum=$(expr <span class="variable">$buildnum</span> + 1)</div><div class="line"></div><div class="line">/usr/libexec/Plistbuddy -c <span class="string">"Set CFBundleVersion <span class="variable">$buildnum</span>"</span> <span class="string">"<span class="variable">$&#123;plist&#125;</span>"</span></div><div class="line"></div><div class="line"><span class="comment"># for AppleWatch</span></div><div class="line">WatchAppPlist=$(find WatchApp -name <span class="string">"*.plist"</span> <span class="_">-d</span> 1)</div><div class="line">WatchAppExtensionPlist=$(find <span class="string">'WatchApp Extension'</span> -name <span class="string">"*.plist"</span> <span class="_">-d</span> 1)</div><div class="line"></div><div class="line">/usr/libexec/Plistbuddy -c <span class="string">"Set CFBundleVersion <span class="variable">$buildnum</span>"</span> <span class="string">"<span class="variable">$&#123;WatchAppPlist&#125;</span>"</span></div><div class="line">/usr/libexec/Plistbuddy -c <span class="string">"Set CFBundleVersion <span class="variable">$buildnum</span>"</span> <span class="string">"<span class="variable">$&#123;WatchAppExtensionPlist&#125;</span>"</span></div></pre></td></tr></table></figure>
+<p>Here is how to xcodebuild your ipa in the <em>build</em> folder</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">rm -rf build</div><div class="line"></div><div class="line">xcodebuild clean archive -archivePath build/<span class="variable">$YourApp</span>-Beta \</div><div class="line">-scheme <span class="variable">$YourAppScheme</span> </div><div class="line"></div><div class="line">xcodebuild -exportArchive \</div><div class="line">-exportFormat ipa \</div><div class="line">-archivePath <span class="string">"build/<span class="variable">$YourApp</span>-Beta.xcarchive"</span> \</div><div class="line">-exportPath <span class="string">"build/<span class="variable">$YourApp</span>-Beta.ipa"</span> \</div><div class="line">-exportProvisioningProfile <span class="string">"<span class="variable">$YourtProvisioningProfile</span>"</span></div></pre></td></tr></table></figure>
+<p>then you can upload your *.ipa to your server ( for instance using curl)</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">rm -rf build <span class="comment"># clean up</span></div><div class="line"></div><div class="line"><span class="comment"># push to remote</span></div><div class="line">git config user.email <span class="string">"bot@yourdomain.com"</span></div><div class="line">git config user.name <span class="string">"bot"</span></div><div class="line">git commit <span class="_">-a</span> -m <span class="string">"<span class="variable">$buildnum</span>"</span></div><div class="line">git push origin master</div></pre></td></tr></table></figure>
+<p>How to post a message to Slack</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># post2Slack $msg</span></div><div class="line"><span class="function"><span class="title">post2Slack</span></span>() &#123;</div><div class="line"></div><div class="line">	SLACK_HOSTNAME=<span class="string">"hooks.slack.com"</span></div><div class="line">	SLACK_CHANNEL=“<span class="comment">#YourChannel”</span></div><div class="line">	SLACK_BOTNAME=<span class="string">"bot"</span></div><div class="line">	ICON=<span class="string">":x:"</span></div><div class="line">	SLACK_BOTEMOJI=<span class="string">":joy:"</span></div><div class="line">	MESSAGE=<span class="variable">$1</span></div><div class="line"></div><div class="line"><span class="comment"># Send message to Slack</span></div><div class="line">PAYLOAD=<span class="string">"payload=&#123;\"channel\": \"<span class="variable">$&#123;SLACK_CHANNEL&#125;</span>\", \"username\": \"<span class="variable">$&#123;SLACK_BOTNAME&#125;</span>\", \"text\": \"<span class="variable">$&#123;ICON&#125;</span> <span class="variable">$&#123;MESSAGE&#125;</span>\", \"icon_emoji\": \"<span class="variable">$&#123;SLACK_BOTEMOJI&#125;</span>\"&#125;"</span>;</div><div class="line">curl -X POST --data-urlencode <span class="string">"<span class="variable">$PAYLOAD</span>"</span> <span class="variable">$getThisURLInYourSlackChannel</span> &#125;</div><div class="line"></div><div class="line"><span class="comment"># post2Slack &amp;&amp; exit</span></div><div class="line"><span class="function"><span class="title">post2SlackAndExitWithMsg</span></span>() &#123;</div><div class="line">	post2Slack <span class="string">"<span class="variable">$&#123;1&#125;</span>"</span> &amp;&amp; <span class="built_in">exit</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>then you can combine any commands like this:</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin master || post2SlackAndExitWithMsg <span class="string">"git push failed"</span></div></pre></td></tr></table></figure>
 
           
         
@@ -462,7 +460,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/03/06/How-to-config-mpv/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/10/10/However-no-eggs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -481,7 +479,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/03/06/How-to-config-mpv/" itemprop="url">How to config mpv</a></h2>
+                <a class="post-title-link" href="/2015/10/10/However-no-eggs/" itemprop="url">However, no eggs</a></h2>
         
 
         <div class="post-meta">
@@ -493,8 +491,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-06T18:40:24+08:00">
-                2016-03-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-10-10T00:06:39+08:00">
+                2015-10-10
               </time>
             
 
@@ -512,9 +510,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/03/06/How-to-config-mpv/#comments" itemprop="discussionUrl">
+                <a href="/2015/10/10/However-no-eggs/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/03/06/How-to-config-mpv/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/10/10/However-no-eggs/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -541,14 +539,17 @@
       
         
           
-            <p>As for lack of time, I begin to play walkthrough gameplay. Even though, the time is still luxury to me, I had to accelerate.  </p>
-<p>But <code>Movist</code> only support 4x, and <code>VLC</code> will show mosaic in 8x.  </p>
-<p>Fortunately, I found MPV.  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">brew cask install mpv</div><div class="line">mkdir -p ~/.config/mpv/</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"no-audio\nno-border\nspeed=8\nvo=opengl-hq:icc-profile-auto\nfs"</span> &gt; ~/.config/mpv/mpv.conf</div><div class="line"><span class="built_in">echo</span> <span class="string">"q quit_watch_later\nQ quit"</span> &gt; ~/.config/mpv/input.conf</div></pre></td></tr></table></figure>
-<p>the speed can be changed by <code>[</code> or <code>]</code><br>You can read the <a href="https://mpv.io/manual/stable/" target="_blank" rel="external">manual</a> for more detail.</p>
-<p>For the first time, I open <code>mpv</code> by icon, but it can only play a single video file and quit.<br>It’s hard for me to figure out how to play a playlist.<br>In fact, you can use <code>Terminal</code>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$VideoDir</span></div><div class="line">mpv .</div></pre></td></tr></table></figure>
-<p>It will play all videos under that folder automatically. 😄</p>
+            <p>I got the score last night and was shocked.</p>
+<p>For these days I always check my score, but as it’s mid-autumn festival and  National Day, they didn’t publish the score.</p>
+<p>Three months ago, I had planned to take the exam again for the third time if I do not pass the last one. I only got a 5 on the first one, But I just wanted to gauge my real level in English. the score was totally acceptable. But for this time, even though I didn’t prepare either, I do a lot about the speaking part because I had one hour class with a foreign teacher everyday. And the last time, I didn’t even finished the second part, and for this time, I talked a lot with the examiner and made him laughed, so I think it will be at least 5+. But as the result, it’s still be 4.5.</p>
+<p>For the reading and listening part, I increased them 0.5 for each, as I don’t have time to finish the second paragraph last time, it’s reasonable. But for the writing part, it’s decreased 0.5, so the total score was still 5.0.</p>
+<p>It was hard for me to accepted this fact, because it not only means that my hard work was wasted but it also indicated where my actual limit is.</p>
+<p>It made my sick for several hours, should I insist or re-plan?</p>
+<p>According to TaiJi, I should reorder my schedule and base it on the fact, not illusion.</p>
+<p>After all, I have to achieve goals step by step as a Diaosi.</p>
+<p>But, I still need a little bit of time to heal this sorrow.</p>
+<hr>
+<p>PS: the title means “然并卵” in Chinese.</p>
 
           
         
@@ -592,7 +593,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/02/25/iOS-App-Submission-Nightmare/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/09/04/Summer-Ends/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -611,7 +612,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/02/25/iOS-App-Submission-Nightmare/" itemprop="url">iOS App Submission Nightmare</a></h2>
+                <a class="post-title-link" href="/2015/09/04/Summer-Ends/" itemprop="url">Summer Ends</a></h2>
         
 
         <div class="post-meta">
@@ -623,8 +624,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-02-25T19:05:13+08:00">
-                2016-02-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-09-04T19:28:46+08:00">
+                2015-09-04
               </time>
             
 
@@ -642,9 +643,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/02/25/iOS-App-Submission-Nightmare/#comments" itemprop="discussionUrl">
+                <a href="/2015/09/04/Summer-Ends/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/02/25/iOS-App-Submission-Nightmare/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/09/04/Summer-Ends/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -671,28 +672,280 @@
       
         
           
-            <h1 id="iOS-App-Submission-Nightmare"><a href="#iOS-App-Submission-Nightmare" class="headerlink" title="iOS App Submission Nightmare"></a>iOS App Submission Nightmare</h1><h2 id="bluetooth-peripheral"><a href="#bluetooth-peripheral" class="headerlink" title="bluetooth-peripheral"></a>bluetooth-peripheral</h2><ol>
-<li>the bluetooth correlative code no longer be used after redesgin app, you should del both code and:</li>
-<li>Targets -&gt; Capabilities -&gt; bluetooth</li>
-</ol>
-<h2 id="com-apple-security-application-groups"><a href="#com-apple-security-application-groups" class="headerlink" title="com.apple.security.application-groups"></a>com.apple.security.application-groups</h2><ol>
-<li>close <code>app group</code></li>
-<li>del <code>*.entitlements</code></li>
-<li><code>grep -R --include=&quot;*.*&quot; &quot;.entitlements&quot; .</code> you’ll find hidden entitlements in <code>Xcode -&gt; imeican -&gt; build setting</code></li>
-</ol>
-<h2 id="ITMS-90394-Missing-Icon"><a href="#ITMS-90394-Missing-Icon" class="headerlink" title="ITMS-90394 Missing Icon"></a>ITMS-90394 <code>Missing Icon</code></h2><ul>
-<li>We have <code>*29x29@3x.png</code> in Xcode </li>
-<li>In fact the .png is a .svg</li>
-<li>new a real <code>*29x29@3x.png</code></li>
-</ul>
-<h2 id="ITMS-90205-90206"><a href="#ITMS-90205-90206" class="headerlink" title="ITMS-90205 90206"></a>ITMS-90205 90206</h2><p>Embed Frameworks Archive del <code>carthage copy-frameworks</code></p>
-<h2 id="bcsymbolmap-39-gt-as-expected"><a href="#bcsymbolmap-39-gt-as-expected" class="headerlink" title=".bcsymbolmap&#39;&gt; as expected"></a><code>.bcsymbolmap&#39;&gt; as expected</code></h2><ul>
-<li>Enable Bitcode</li>
-</ul>
-<h2 id="ITMS-90087-90209-x84-64-i386"><a href="#ITMS-90087-90209-x84-64-i386" class="headerlink" title="ITMS-90087 90209 x84_64 i386"></a>ITMS-90087 90209 <code>x84_64 i386</code></h2><ul>
-<li>Targets(Embed Frameworks) -&gt; Run Script</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> [ <span class="string">"$&#123;CONFIGURATION&#125;"</span> != <span class="string">"Release"</span> ]; then</div><div class="line">    /usr/local/bin/carthage copy-frameworks</div><div class="line">fi</div></pre></td></tr></table></figure>
+            <p><a href="http://music.163.com/#/song?id=26152612" target="_blank" rel="external">Summer Ends</a><br>It’s a nice music, for summer really ends.</p>
+<p>I wrote less, read less and felt bad in this year, before this, I’m in my gap year, and was productive and efficient, mind flow came up . So, I began to wonder why and try to return.</p>
+<p>For I went to the gopher China in April, and meet with one IT crop. CTO, and talk to him that maybe I’m in a bottleneck period.</p>
+<p>But it’s September now, the summer ends, I’ve been in Beijing for a most one year, and still trapping in this mass state.</p>
+<p>I tried to figure out</p>
+<h2 id="The-model"><a href="#The-model" class="headerlink" title="The model"></a>The model</h2><p>First, the style of living (surviving in deed) was not like Hangzhou, when I was in Hangzhou, I can rent a flat which company was nearby that I can walk to work, and I have my own bathroom in my room so one bother me. But in Beijing, if I still use the same model, I have to live in an old flat, which the building was even old than me! even worse, I have to live with neighbors, share the bathroom kitchen and all other things. So you have to pray for your neighbors are good.<br>For me, as an internal person, I just want to live alone. </p>
+<p>Once I resize this cause, I rent a new flat immediately and I’ll move in the end of this month, but one year past and never came back.</p>
+<h2 id="English"><a href="#English" class="headerlink" title="English"></a>English</h2><p>I read at least 10 books each month before, but for I narrowed to English edition recent months, the numbers dropped so fiercely that I hardly finished a book in one month.</p>
+<p>No books makes me feel sick, and no input, no output. That’s an important reason that I stopped posting blog and The little master series. Needless to say I forced myself all new blogs have to write in English.</p>
+<h2 id="Procrastination"><a href="#Procrastination" class="headerlink" title="Procrastination"></a>Procrastination</h2><p>It seems a universal problem. But after I read too much GTDs and found the healthy circle based on <a href="https://en.wikipedia.org/wiki/Polyphasic_sleep" target="_blank" rel="external">polyphasic sleep</a>. I can do 16+ <a href="https://book.douban.com/subject/4198078/" target="_blank" rel="external">pomodoroes</a> one day.<br>After I return to work in company, I just do what I want do, and I thought I was still efficient.</p>
+<p>Even though I already outsource apply instead DIY, preparing IELTS and working hard still a big challenge to me, not only because I unknown the starting date but also my co-workers ungelivable. I have to write almost 70% codes in the main project and even to rewrote some functions off his part. I want to figure out one way to manage our new team( for right now I like a TL assistant)</p>
+<p>So, all the apps that I used were return, and I feels it really improve my situation.</p>
+<h2 id="Slack"><a href="#Slack" class="headerlink" title="Slack"></a>Slack</h2><p>It’s not that Slack, although I have to write some code according to it’s API in future for our CI.</p>
+<p>I found something I runaround but I have to face it again in future with more effort. like hope my co-workers write more, read the translate version books, excise, etc.</p>
+<p>So, I dared not hope anymore.</p>
+<hr>
+<p>That’s all, winter is coming.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/08/04/Little-tips-about-rewrite-an-iOS-app/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/08/04/Little-tips-about-rewrite-an-iOS-app/" itemprop="url">Little tips about rewrite an iOS app</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-04T07:42:55+08:00">
+                2015-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/08/04/Little-tips-about-rewrite-an-iOS-app/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/08/04/Little-tips-about-rewrite-an-iOS-app/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I finished my Gap year and went to my current company last autumn.</p>
+<p>I did’t do much as a new comer for the first month, and there was a software engineer from AMAP with 10 years experience. Everytime I had something to ask him, he explained it in the deepest level, and inspired me by rhetorical questions patiently. But at the same time, I found thousands and thousands Copy &amp; Paste lines of code in the project. Yes, I counted it by using <a href="http://cloc.sourceforge.net/" target="_blank" rel="external">CLOC</a>, and found that it’s almost 20 thousands lines in total.</p>
+<p>As Objective-C is a excessively long and prolix programming language( which means that your have to write dozens of code to implement the same function which may only a line in Ruby 😫 ), it’s rational for the count of this project. But Copy &amp; Paste should always avoided, worse I saw global variables and magic numbers are everywhere.😰</p>
+<p>It’s odd, isn’t it? If a 10 years experienced programer who can deal with pointer easily and knows computer systems deeply, why didn’t he pay any attention to the code styles. After all, we need to prepare for adding new members in the team and new features at any time.</p>
+<p>He said that most of code was written by him, it’s quick to fix bugs. However, he went to a start company of his friend in next month. So he just left, and also, the anfractuosity code.😭😭😭</p>
+<p>to be continued…</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/07/26/Adding-Slack-User-rule-to-Shadowsocks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/07/26/Adding-Slack-User-rule-to-Shadowsocks/" itemprop="url">Adding Slack User-rule to Shadowsocks</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-26T08:30:20+08:00">
+                2015-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/07/26/Adding-Slack-User-rule-to-Shadowsocks/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/07/26/Adding-Slack-User-rule-to-Shadowsocks/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Slack was always loading even if I use shadowsocks with <code>Auto Proxy Mode</code>.</p>
+<p>I found that the domain of slack was accessible in chrome console so the real reason was <code>amazonaws</code> server was blocked.</p>
+<p>Refer to <a href="https://adblockplus.org/en/filter-cheatsheet" target="_blank" rel="external">Adblock Plus filters explained</a>, I added two rules in <code>Edit User Rule for ...</code>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">||global.ssl.fastly.net^</div><div class="line">||amazonaws.com^</div></pre></td></tr></table></figure>
+<p>And <strong>don’t forget</strong> to click <code>update PAC from ...</code> once again, otherwise the new user rules you just added won’t take effect immediately.</p>
+<p>It seems also fixed <code>trello.com</code> incidentally.</p>
+
           
         
       
@@ -730,7 +983,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -775,7 +1028,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">130</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -788,7 +1041,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

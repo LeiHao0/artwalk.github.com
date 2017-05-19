@@ -321,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/02/24/How-to-detect-2-4-GHz-and-5-GHz-Best-Channel-on-Mac-OS-X/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/07/15/how-to-batch-reverse-First-and-Last-names-in-Mac-OS-X-Contacts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -340,7 +340,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/02/24/How-to-detect-2-4-GHz-and-5-GHz-Best-Channel-on-Mac-OS-X/" itemprop="url">How to detect 2.4 GHz and 5 GHz Best Channel on Mac OS X</a></h2>
+                <a class="post-title-link" href="/2015/07/15/how-to-batch-reverse-First-and-Last-names-in-Mac-OS-X-Contacts/" itemprop="url">How to batch reverse the First and Last names in Mac OS X Contacts</a></h2>
         
 
         <div class="post-meta">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-02-24T18:09:42+08:00">
-                2016-02-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-15T16:35:52+08:00">
+                2015-07-15
               </time>
             
 
@@ -371,9 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/02/24/How-to-detect-2-4-GHz-and-5-GHz-Best-Channel-on-Mac-OS-X/#comments" itemprop="discussionUrl">
+                <a href="/2015/07/15/how-to-batch-reverse-First-and-Last-names-in-Mac-OS-X-Contacts/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/02/24/How-to-detect-2-4-GHz-and-5-GHz-Best-Channel-on-Mac-OS-X/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/07/15/how-to-batch-reverse-First-and-Last-names-in-Mac-OS-X-Contacts/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -400,35 +400,145 @@
       
         
           
-            <p>My Zeppelin Air disconnect to my router from time to time</p>
-<p>The main reason seems that my 2.4GHz channel in which has to much <em>Noise</em> with other people’s</p>
-<p>If you use Mac, you can </p>
-<p><code>alt + wifi icon</code> -&gt; <code>Open Wireless Diagnostics</code> </p>
-<p><code>Menu</code> -&gt; <code>Window</code> -&gt; <code>Scan</code> -&gt; <code>Scan Now</code></p>
-<p>your will see a window like this:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Summary</th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">…</td>
-<td style="text-align:left">…</td>
-</tr>
-<tr>
-<td style="text-align:left">Best 2.4 GHz</td>
-<td style="text-align:left">1, 2</td>
-</tr>
-<tr>
-<td style="text-align:left">Best 5 GHz</td>
-<td style="text-align:left">36, 40</td>
-</tr>
-</tbody>
-</table>
-<p>enjoy the music ~</p>
+            <p>I was wondering why the family name was always behind the given name in my Contacts, no matter when I check my iPhone or Mac. First I believe some configs was not correct, until I found I messed up the First and Last name.   </p>
+<p>In fact, given name was known as the first name, which was opposite in China.</p>
+<p>Althought only dozens of people in my Contacts, but I still don’t want to edit them manually as an iOS programmer →_→</p>
+<p>So, just open Xcode and new an <code>OS X Application -&gt; command line tool</code> and paster the snippet below to your <code>main.swift</code>, then <code>cmd + R</code> …</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> AddressBook</div><div class="line"></div><div class="line"><span class="keyword">let</span> addressBook = <span class="type">ABAddressBook</span>.sharedAddressBook()</div><div class="line"></div><div class="line"><span class="keyword">let</span> firstKey = <span class="string">"First"</span></div><div class="line"><span class="keyword">let</span> lastKey = <span class="string">"Last"</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> people <span class="keyword">in</span> addressBook.people() &#123;</div><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> p = people <span class="keyword">as</span>? <span class="type">ABPerson</span> &#123;</div><div class="line">        <span class="keyword">let</span> f: <span class="type">AnyObject</span>? = p.valueForKey(firstKey)</div><div class="line">        <span class="keyword">let</span> l: <span class="type">AnyObject</span>? = p.valueForKey(lastKey)</div><div class="line">        p.setValue(l, forKey: firstKey)</div><div class="line">        p.setValue(f, forKey: lastKey)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">addressBook.save()</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/07/13/Calculating-God/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/07/13/Calculating-God/" itemprop="url">Calculating God</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-13T18:56:59+08:00">
+                2015-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/07/13/Calculating-God/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/07/13/Calculating-God/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://img3.douban.com/lpic/s1885433.jpg" alt=""></p>
+<ol>
+<li>there is no design document at all</li>
+<li>totally depending on reverse engineering with helpless APIs</li>
+<li>an unstable, crash frequently system, the latest crash happened 65 millions years ago</li>
+<li>dead codes are everywhere</li>
+<li>prototype sourcecode and runnable binary file are all gone, only some unreliable legends</li>
+<li>a mass of ctrl c + ctrl v</li>
+<li>3 block code severe lovers</li>
+<li>zombie threads</li>
+<li>a tyro of GA(Genetic Algorithm)</li>
+<li>nobody saw the retired god after IPO</li>
+</ol>
 
           
         
@@ -472,7 +582,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/02/18/ApplePay-with-UnionPay-in-China/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/07/08/Xcode-6-x-cannot-run-on-EI-Capitan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -491,7 +601,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/02/18/ApplePay-with-UnionPay-in-China/" itemprop="url">ApplePay with UnionPay in China</a></h2>
+                <a class="post-title-link" href="/2015/07/08/Xcode-6-x-cannot-run-on-EI-Capitan/" itemprop="url">Xcode 6.x cannot run on EI Capitan</a></h2>
         
 
         <div class="post-meta">
@@ -503,8 +613,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-02-18T16:09:05+08:00">
-                2016-02-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-08T09:55:46+08:00">
+                2015-07-08
               </time>
             
 
@@ -522,9 +632,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/02/18/ApplePay-with-UnionPay-in-China/#comments" itemprop="discussionUrl">
+                <a href="/2015/07/08/Xcode-6-x-cannot-run-on-EI-Capitan/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/02/18/ApplePay-with-UnionPay-in-China/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/07/08/Xcode-6-x-cannot-run-on-EI-Capitan/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -551,12 +661,15 @@
       
         
           
-            <h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>Download The <a href="https://open.unionpay.com/ajweb/help/file/techFile?productId=80" target="_blank" rel="external">银联 ApplePay 控件开发包</a></p>
-<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>After all integrations done</p>
-<p>I got</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-[__NSCFConstantString hexToColor]: unrecognized selector sent to instance 0x</div></pre></td></tr></table></figure>
-<p>Because this project is written in Swift, so</p>
-<p><code>Targets -&gt; Build Settings -&gt; Linking -&gt; Other Linker Flags</code></p>
+            <p>I watched WWDC and updated OS X to EI Capitan(10.11).<br>Everything seemed fine until I opened Xcode:  </p>
+<blockquote>
+<p>You can’t use this version of the application “Xcode” with this version of OS X.<br>You have “Xcode” 6.x.  </p>
+</blockquote>
+<p>Swift 2.0 is awesome, but according to Apple, if you want to submit an app which written by 2.0 to App Store, you need to wait until September.</p>
+<p>Fortunately I found a hack command:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Applications/Xcode.app/Contents/MacOS/Xcode &lt; /dev/null &amp;&gt; /dev/null &amp;</div></pre></td></tr></table></figure>
+<p>Which means you run Xcode from <code>/dev/null</code> and redirect output &amp; error output to <code>/dev/null</code> in background.  </p>
+<p>Everything perfect in past several weeks.</p>
 
           
         
@@ -600,7 +713,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/02/15/This-certificate-has-expired/">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/06/17/How-to-update-homebrew-daily/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Artwalk">
@@ -619,7 +732,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/02/15/This-certificate-has-expired/" itemprop="url">This certificate has expired</a></h2>
+                <a class="post-title-link" href="/2015/06/17/How-to-update-homebrew-daily/" itemprop="url">How to update homebrew daily</a></h2>
         
 
         <div class="post-meta">
@@ -631,8 +744,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-02-15T19:13:30+08:00">
-                2016-02-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-17T13:37:48+08:00">
+                2015-06-17
               </time>
             
 
@@ -650,9 +763,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/02/15/This-certificate-has-expired/#comments" itemprop="discussionUrl">
+                <a href="/2015/06/17/How-to-update-homebrew-daily/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/02/15/This-certificate-has-expired/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/06/17/How-to-update-homebrew-daily/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -679,10 +792,161 @@
       
         
           
-            <h2 id="This-certificate-has-expired"><a href="#This-certificate-has-expired" class="headerlink" title="This certificate has expired"></a>This certificate has expired</h2><p><code>keychain -&gt; View -&gt; Show Expired Certificates -&gt; System</code></p>
-<p><code>Apple Worldwide Developer Relations Certification Authority</code><br><code>Monday, February 15, 2016 at 2:56:35 AM China Standard Time</code></p>
-<p>delete the certificates</p>
-<p>Download the new <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">AppleWWDRCA.cer</a></p>
+            <h1 id="How-to-update-homebrew-daily"><a href="#How-to-update-homebrew-daily" class="headerlink" title="How to update homebrew daily"></a>How to update homebrew daily</h1><p><a href="https://gist.github.com/Artwalk/26a056bdf830e766e3af" target="_blank" rel="external">Example</a></p>
+<p>The <code>$Path</code> must be your files full path</p>
+<p>It’s weird that <code>launchctl start</code> didn’t work, so I had to added </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;RunAtLoad&lt;/key&gt;</div><div class="line">    &lt;true/&gt;</div></pre></td></tr></table></figure>
+<p>It will run immediately after the plist be loaded.</p>
+<hr>
+<p><a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html" target="_blank" rel="external">CreatingLaunchdJobs</a><br>Apple’s document is so specific, so I just wrote some mistakes that I made</p>
+<h3 id="Be-careful-of-the-Lable"><a href="#Be-careful-of-the-Lable" class="headerlink" title="Be careful of the Lable"></a>Be careful of the <strong>Lable</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;Label&lt;/key&gt;</div><div class="line">   &lt;string&gt;com.example.hello&lt;/string&gt;</div></pre></td></tr></table></figure>
+<p>first I thought that this was unique, so I changed it</p>
+<p>but when I loaded <code>launchctl load launchd.plist</code> after I finished the plist, it yeild:</p>
+<blockquote>
+<p>launchd.plist: Invalid or missing service identifier</p>
+</blockquote>
+<p>hence the <code>&lt;key&gt;</code> can not changed</p>
+<h3 id="Owner"><a href="#Owner" class="headerlink" title="Owner"></a>Owner</h3><p>It’s puzzled <code>brew update</code> if the user of the runner shell was <strong>system</strong> instead of <strong>ME</strong>. So I tested by <code>users</code>, luckily, It was <strong>ME</strong></p>
+<p>But if you want to log your logs, it’s better to written in your personal document, after all, the owner of the <code>/var/log/</code> is <code>root wheel</code>, you’ll get the <code>Permission denied</code></p>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p>Just  write down <code>#!/usr/local/bin/zsh</code> (you can get yours by <code>which zsh</code>) at the beginning of the *.sh</p>
+<h3 id="chmod-a-x-launchd-sh"><a href="#chmod-a-x-launchd-sh" class="headerlink" title="chmod a+x $launchd.sh"></a>chmod a+x $launchd.sh</h3><p>Finally don’t forget <code>x</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2015/06/17/homebrew-cannot-run-C-compiled-programs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/06/17/homebrew-cannot-run-C-compiled-programs/" itemprop="url">Homebrew cannot run C compiled programs</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-17T09:31:07+08:00">
+                2015-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/06/17/homebrew-cannot-run-C-compiled-programs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/06/17/homebrew-cannot-run-C-compiled-programs/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I can’t resist the temptation to upgrade my Mac to 10.11, but several tragedies happened, such as:</p>
+<ul>
+<li>Proxifier - could not initialize Proxifier kext ( I already sent an email to the author, and replied that  they are working to find a real reason of this error.)</li>
+<li>istat menus - I never see it again, but can’t watching the network traffic which seems not a big deal</li>
+<li>cleanmymac - I download the newest version as it guided and sadly found that they are the same version</li>
+</ul>
+<p>but brew - configure: error: cannot run C compiled programs.</p>
+<p>so, <code>brew doctor</code> , it shows:</p>
+<blockquote>
+<p>Warning: You are using OS X 10.11.<br>We do not provide support for this pre-release version.<br>You may encounter build failures or other breakage.</p>
+<p>Warning: Your Xcode (6.3.2) is outdated<br><strong>Please update to Xcode 7.0.</strong><br>Xcode can be updated from the App Store.</p>
+</blockquote>
+<p>Then setup my Xcode-beta as the system default Xcode</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo xcode-select -switch /Applications/Xcode-beta.app/Contents/Developer/</div></pre></td></tr></table></figure>
+<p>:)</p>
 
           
         
@@ -721,7 +985,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -766,7 +1030,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">130</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -779,7 +1043,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

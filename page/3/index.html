@@ -321,150 +321,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/12/20/Custom-UIViewController-Presentation-Transitions-with-UIStoryboardSegue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Artwalk">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Artwalk's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/20/Custom-UIViewController-Presentation-Transitions-with-UIStoryboardSegue/" itemprop="url">Custom UIViewController Presentation Transitions with UIStoryboardSegue</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-20T22:37:39+08:00">
-                2016-12-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/20/Custom-UIViewController-Presentation-Transitions-with-UIStoryboardSegue/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/20/Custom-UIViewController-Presentation-Transitions-with-UIStoryboardSegue/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Custom-UIViewController-Presentation-Transitions-with-UIStoryboardSegue"><a href="#Custom-UIViewController-Presentation-Transitions-with-UIStoryboardSegue" class="headerlink" title="Custom UIViewController Presentation Transitions with UIStoryboardSegue"></a>Custom UIViewController Presentation Transitions with UIStoryboardSegue</h1><p>The most popular way is <code>UIViewControllerAnimatedTransitioning</code></p>
-<p>In order to do that, you have to: </p>
-<ul>
-<li><p>New a subclass which may called <code>XXXTransitioning</code> inherit from <code>NSObject</code> and implement two functions of protocol <code>UIViewControllerAnimatedTransitioning</code> </p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">transitionDuration</span><span class="params">(using transitionContext: UIViewControllerContextTransitioning?)</span></span> -&gt; <span class="type">TimeInterval</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">animateTransition</span><span class="params">(using transitionContext: UIViewControllerContextTransitioning)</span></span></div></pre></td></tr></table></figure>
-</li>
-<li><p>Then: </p>
-<ol>
-<li>New an instance of the <code>XXXTransitioning</code> in the <code>ViewController</code></li>
-<li>Set <code>transitioningDelegate = self</code></li>
-<li>Extension the <code>ViewController</code> with UIViewControllerTransitioningDelegate and implement</li>
-</ol>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">animationController</span><span class="params">(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController)</span></span> -&gt; <span class="type">UIViewControllerAnimatedTransitioning</span>?</div></pre></td></tr></table></figure>
-</li>
-<li><p>Do it again for dismiss</p>
-</li>
-</ul>
-<hr>
-<p>I noticed <code>Storyboard Segue</code> has a <code>Custom</code> Kind </p>
-<p><img src="img/Custom-UIViewController-Presentation-Transitions-with-UIStoryboardSegue@2x.png" alt=""></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">XXXModalSegue</span>: <span class="title">UIStoryboardSegue</span> </span>&#123;</div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">perform</span><span class="params">()</span></span> &#123;</div><div class="line">    	<span class="keyword">let</span> fromVC = source</div><div class="line">        <span class="keyword">let</span> toVC = destination</div><div class="line">        </div><div class="line">        <span class="keyword">let</span> fromView = fromVC.view!</div><div class="line">        <span class="keyword">let</span> toView  = toVC.view!</div><div class="line">        </div><div class="line">        <span class="keyword">let</span> (w, h) = (<span class="type">UIScreen</span>.main.bounds.width, <span class="type">UIScreen</span>.main.bounds.height)</div><div class="line">        </div><div class="line">        toView.alpha = <span class="number">0</span></div><div class="line">        toView.frame = <span class="type">CGRect</span>(x: w/<span class="number">2</span>, y: <span class="number">0</span>, width: w, height: h)</div><div class="line">        </div><div class="line">        <span class="keyword">let</span> window = <span class="type">UIApplication</span>.shared.keyWindow</div><div class="line">        window?.insertSubview(toView, aboveSubview: fromView)</div><div class="line">        </div><div class="line">        <span class="type">UIView</span>.animate(withDuration: <span class="number">0.4</span>, animations: &#123;</div><div class="line">            toView.alpha = <span class="number">1</span></div><div class="line">            toView.frame = toView.frame.offsetBy(dx: -w/<span class="number">2</span>, dy: <span class="number">0</span>)</div><div class="line">        &#125;) &#123; (b) <span class="keyword">in</span></div><div class="line">            </div><div class="line">            <span class="keyword">self</span>.source.present(<span class="keyword">self</span>.destination, animated: <span class="literal">false</span>, completion: <span class="literal">nil</span>)</div><div class="line">            <span class="comment">// OR: self.source.dismiss(animated: false, completion: nil)</span></div><div class="line">        s</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>That’s it, no more coding <code>delegate</code> and <code>Extension</code>. Simple and clean :)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/11/06/Time-Capsule-on-PandoraBox/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -761,11 +617,436 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/10/19/UITextField-and-UILabel-Tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/19/UITextField-and-UILabel-Tips/" itemprop="url">UITextField And UILabel Tips</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-19T14:35:22+08:00">
+                2016-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/19/UITextField-and-UILabel-Tips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/10/19/UITextField-and-UILabel-Tips/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="UITextField-Tips"><a href="#UITextField-Tips" class="headerlink" title="UITextField Tips"></a>UITextField Tips</h2><h3 id="Add-a-top-Line-on-Keyboard"><a href="#Add-a-top-Line-on-Keyboard" class="headerlink" title="Add a top Line on Keyboard"></a>Add a top Line on Keyboard</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UITextField</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addTopLineOnKeyboard</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">let</span> line = <span class="type">UIView</span>(frame: <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: <span class="number">2000</span>, height: <span class="number">0.5</span>))</div><div class="line">        line.backgroundColor = <span class="string">"979797"</span>.color</div><div class="line">        </div><div class="line">        inputAccessoryView = line</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Only-allowed-a-price-number-with-exactly-two-decimals"><a href="#Only-allowed-a-price-number-with-exactly-two-decimals" class="headerlink" title="Only allowed a price number with exactly two decimals"></a>Only allowed a price number with exactly two decimals</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">    <span class="keyword">let</span> str = (textField.text! <span class="keyword">as</span> <span class="type">NSString</span>).replacingCharacters(<span class="keyword">in</span>: range, with: string)</div><div class="line">    </div><div class="line">    <span class="keyword">let</span> regex = <span class="string">"^([1-9]\\d&#123;0,7&#125;|0)(\\.\\d&#123;0,2&#125;)?$|^$"</span></div><div class="line">    <span class="keyword">let</span> predicte = <span class="type">NSPredicate</span>(format: <span class="string">"SELF MATCHES %@"</span>, regex)</div><div class="line">    </div><div class="line">    <span class="keyword">return</span>  predicte.evaluate(with: str)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Only-allowed-1-100-or-leave-blank"><a href="#Only-allowed-1-100-or-leave-blank" class="headerlink" title="Only allowed 1-100 or leave blank"></a>Only allowed 1-100 or leave blank</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">    </div><div class="line">    <span class="keyword">let</span> str = (textField.text! <span class="keyword">as</span> <span class="type">NSString</span>).replacingCharacters(<span class="keyword">in</span>: range, with: string)</div><div class="line">    </div><div class="line">    <span class="comment">// 1-100 or leave blank</span></div><div class="line">    <span class="keyword">let</span> regex = <span class="string">"^[1-9]?\\d|100|[1-9]?$"</span></div><div class="line">    <span class="keyword">let</span> predicte = <span class="type">NSPredicate</span>(format: <span class="string">"SELF MATCHES %@"</span>, regex)</div><div class="line">    </div><div class="line">    <span class="keyword">return</span>  predicte.evaluate(with: str)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="UILabel-Tips"><a href="#UILabel-Tips" class="headerlink" title="UILabel Tips"></a>UILabel Tips</h2><h3 id="Formate-cell-phone-number-to-111-1111-111"><a href="#Formate-cell-phone-number-to-111-1111-111" class="headerlink" title="Formate cell-phone number to 111 1111 111"></a>Formate cell-phone number to <code>111 1111 111</code></h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">String</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> phoneNumberFormater: <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">get</span> &#123;</div><div class="line">            <span class="keyword">var</span> s = <span class="keyword">self</span>.replacingOccurrences(of: <span class="string">" "</span>, with: <span class="string">""</span>)</div><div class="line">            <span class="keyword">let</span> <span class="built_in">count</span> = s.characters.<span class="built_in">count</span></div><div class="line">            <span class="keyword">if</span> <span class="built_in">count</span> &gt; <span class="number">7</span> &#123;</div><div class="line">                s.insert(<span class="string">" "</span>, at: s.index(s.startIndex, offsetBy: <span class="number">3</span>))</div><div class="line">                s.insert(<span class="string">" "</span>, at: s.index(s.startIndex, offsetBy: <span class="number">8</span>))</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="built_in">count</span> &gt; <span class="number">3</span> &#123;</div><div class="line">                s.insert(<span class="string">" "</span>, at: s.index(s.startIndex, offsetBy: <span class="number">3</span>))</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> s</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Highlight-UILabel’s-substring-by-given-string"><a href="#Highlight-UILabel’s-substring-by-given-string" class="headerlink" title="Highlight UILabel’s substring by given string"></a>Highlight UILabel’s substring by given string</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> userInputPhoneNumber = <span class="string">"123"</span></div><div class="line"></div><div class="line"><span class="meta">@IBOutlet</span> <span class="keyword">private</span> <span class="keyword">weak</span> <span class="keyword">var</span> phoneLabel: <span class="type">UILabel</span>!</div><div class="line"></div><div class="line"><span class="keyword">var</span> phoneNumber:  <span class="type">String</span> = <span class="string">"123456789"</span> &#123;</div><div class="line"><span class="keyword">didSet</span> &#123;</div><div class="line">    <span class="keyword">let</span> atrStr = <span class="type">NSMutableAttributedString</span>(string: phoneNumber.phoneNumberFormater)</div><div class="line">    </div><div class="line">    <span class="keyword">let</span> font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">14</span>)</div><div class="line">    <span class="keyword">let</span> range = (phoneNumber.phoneNumberFormater <span class="keyword">as</span> <span class="type">NSString</span>).range(of: userInputPhoneNumber.phoneNumberFormater)</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> range.location == <span class="number">0</span> &#123;</div><div class="line">        atrStr.addAttributes([<span class="type">NSFontAttributeName</span> :  font, <span class="type">NSForegroundColorAttributeName</span>: <span class="type">UIColor</span>.red], range: (phoneNumber.phoneNumberFormater <span class="keyword">as</span> <span class="type">NSString</span>).range(of: userInputPhoneNumber.phoneNumberFormater))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    phoneLabel.attributedText = atrStr</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/10/18/How-to-add-Xib-on-StoryBoard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/18/How-to-add-Xib-on-StoryBoard/" itemprop="url">How to add Xib on StoryBoard</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-18T00:56:53+08:00">
+                2016-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/18/How-to-add-Xib-on-StoryBoard/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/10/18/How-to-add-Xib-on-StoryBoard/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>In the classic 1975 software project management book, The Mythical Man Month: Essays on Software Engineering, Fred Brooks states that, no matter the programming language chosen, a professional developer will write an average 10 lines of code (LoC) day.</p>
+</blockquote>
+<p>StoryBoard is good for saving code lines and improve efficiency, as  strongly recommend in each WWDC and continually improve it.</p>
+<p>I don’t understand why there are still lots of Team Leaders require their poor programmers to write the UIView in programmatic way.</p>
+<p>Maybe they thought some CustomViews are highly reuse usable, and cope paste in StoryBoard would cause the redundant side effect.</p>
+<p>So, The main idea of this solution is, cohesion the CustomViews to a Xib then add it on StoryBoard.</p>
+<p>This need a few steps as for  didn’t support it directly:</p>
+<ol>
+<li>add a IBDesignable <code>CustomView.Swift</code> and <code>CustomView.Xib</code></li>
+<li>set the <code>CustomView.xib -&gt; Placeholders -&gt; File&#39;s Owner -&gt; Custom Class</code> to <code>CustomView</code></li>
+<li>new a <code>CustomView</code> programmatically and load the root view from <code>CustomView.Xib</code></li>
+<li>add the root view with equal width and height in both horizontal and vertical center on <code>CustomView</code> in init function</li>
+<li>now you can drag a View to StoryBoard, and set it’s class to <code>CustomView</code> which can generate a snapshot for preview</li>
+</ol>
+<p>But the subviews of CustomView like UIButton can’t wire to ViewController as an <code>@IBOutlet</code></p>
+<p><code>Delegate</code> or <code>Block</code> can solve this problem.</p>
+<p>As for me, I suggest <code>Block</code> way, cause I used <code>Delegate</code> for half a year, and found</p>
+<ul>
+<li>ViewController will have too many delegates </li>
+<li><code>delegate = self</code> have to written in <code>viewDidLoad</code> and sometimes <code>=nil</code> in <code>viewDidDisappear</code></li>
+</ul>
+<p><code>Block</code> will have less code and more simpler.</p>
+<p>Here is the <a href="https://github.com/Artwalk/DesignableView" target="_blank" rel="external">example</a> which may reduce your time.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://artwalk.github.io/2016/08/29/How-to-learn-English-as-a-Chinese/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Artwalk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Artwalk's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/29/How-to-learn-English-as-a-Chinese/" itemprop="url">How to learn English as a Chinese</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-29T22:06:23+08:00">
+                2016-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/08/29/How-to-learn-English-as-a-Chinese/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/08/29/How-to-learn-English-as-a-Chinese/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I hate remember words in a brutal way as 99% of Chinese students does. When we were kid, we learned our mother tongue natural without any pain.  </p>
+<p>So when I was in my poor primary school, I never remember a word.  </p>
+<p>In fact, the truth is I can’t remember words. Believe it or not, no matter how hard I tried, I just can’t remember them. Each time it’s my row’s turn to write words on blackboard, I had to watch left and right carefully and copied each character one by one. </p>
+<p>As a teenager at that time, I’m curious that why they can do it. It must be the method incompatible with my brain.  </p>
+<p>Fortunately, I read another method on a gramma book that a former top scorer announced that she did not remember words either. All she was doing is repeat NCE 100+ times loudly.</p>
+<p>Hum, that’s great, so I tried it and this method helps me a lot, for it let me got a fair score in college entrance examination and passed the CET6 in university, even I did know what I’m reading sometimes.</p>
+<p>Until IELTS, all the English tests early were merely a joke.</p>
+<p>And there is another blind spot I realised recently, exam is exam, one should get the point and leave ASAP.</p>
+<p>Before that, I firmly believed that as long as my true level raise, I will be capable of the exam with no extra effort like do the test paper everyday.  </p>
+<p>But in fact, this required a very high quality far more than the exam required, this is an endless road.</p>
+<p>14 years passed after first time I got to know English, I feel I just make one little step after I communicated with the resident a few month ago.</p>
+<p>Now I know the language is more like an instinct of mankind, when baby grow up, the neurone cells will be cleaned by our brain cause there is no use for our ancestors to learn another language when they were kids, according to evolutionary psychology.  </p>
+<p>But we are in modern world, as far as I know, there is only two methods which sound reasonable, and more importantly, economic.</p>
+<ol>
+<li><a href="https://www.goodreads.com/book/show/18868451?from_search=true" target="_blank" rel="external">把你的英语用起来</a><ol>
+<li>赖世雄美语音标</li>
+<li>ESLPOD</li>
+<li>American Accent Training</li>
+<li>Read at least 10 original edition books per year</li>
+</ol>
+</li>
+<li><a href="http://www.geekonomics10000.com/870" target="_blank" rel="external">一点实用主义的学英语心得</a><ol>
+<li>Learn 600 GRE words per day</li>
+<li>Repeat it by Ebbinghaus forgetting curve</li>
+<li>Intensive reading</li>
+<li>Past exam paper</li>
+</ol>
+</li>
+</ol>
+<p>Now you see, ironically No. 2 kicks me to origin: I have to remember words!</p>
+<p>But at least one things is different this time, I choose it by my free will.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -810,7 +1091,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">130</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -823,7 +1104,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
