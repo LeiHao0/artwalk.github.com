@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -108,6 +108,7 @@
 <meta property="og:url" content="http://artwalk.github.io/2014/10/15/A-simple-VS-between-Sinatra-and-Martini/index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
 <meta property="og:description" content="Sinatra VS. Martini网上已经有许多对比的数据了但都不如自己来的实在   于是在 VPS 上分别用 Martini Martini 搭了两个 Hello World选了 Linux 上的 siege 作为测试工具   性能Martini1siege -q -c 1000 -r 30 -f sinatra.url">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="http://cl.ly/image/0t2P2B0T123a/sinatra.png">
 <meta property="og:image" content="http://cl.ly/image/401c0o2r1D0t/martini.png">
 <meta property="og:updated_time" content="2016-05-14T05:48:42.000Z">
@@ -123,7 +124,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -254,16 +255,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
           </a>
         </li>
       
@@ -520,6 +511,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -812,12 +804,6 @@
 
 
 	
-
-
-
-
-
-  
 
 
 

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -108,6 +108,7 @@
 <meta property="og:url" content="http://artwalk.github.io/2013/11/21/why-hexo/index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
 <meta property="og:description" content="第一次搭建的时候用的是Jekyll，Octopress没试过Jekyll 的框架设计分为 代码 + 生成网页 两部分上传到github的时候push上去的是代码部分，而hexo是本地生成好的网页，速度上应该会有一定的优势看到默认模板也比较漂亮，所以昨天换成了hexo   感觉hexo最大特点是隐藏了繁琐的各种命令用Jekyll的话，从搭建到完成至少十几条吧而写新文章至少要1234567891011">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2014-01-11T14:08:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Why hexo">
@@ -120,7 +121,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -251,16 +252,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
           </a>
         </li>
       
@@ -506,6 +497,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -773,12 +765,6 @@
 
 
 	
-
-
-
-
-
-  
 
 
 
