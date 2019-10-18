@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="shell 里 brew install jenkins然后 jenkins 启动，牛腩器中输入 127.0.0.1:8080 跳坑 Jenkins 里 xcode 相关插件装上步骤别的博客都有，Google ios ci 持续集成，比如：    Jenkins+Github+Testflight在Mac下搭建持续集成环境 ， iOS项目持续集成之Travis CI  版本可能旧一点，但能脑补上">
+<meta name="keywords" content="Programming">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS CI (Jenkins + Phabricator + Slack)">
+<meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2015&#x2F;04&#x2F;16&#x2F;iOS-CI-Jenkins-Phabricator-Slack&#x2F;index.html">
+<meta property="og:site_name" content="Artwalk&#39;s Blog">
+<meta property="og:description" content="shell 里 brew install jenkins然后 jenkins 启动，牛腩器中输入 127.0.0.1:8080 跳坑 Jenkins 里 xcode 相关插件装上步骤别的博客都有，Google ios ci 持续集成，比如：    Jenkins+Github+Testflight在Mac下搭建持续集成环境 ， iOS项目持续集成之Travis CI  版本可能旧一点，但能脑补上">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2016-05-14T05:48:42.000Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo-192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/logo-192.png">
+          
+        
+    
+    <!-- title -->
+    <title>iOS CI (Jenkins + Phabricator + Slack)</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="Artwalk&#39;s Blog" type="application/atom+xml" />
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/books/">Books</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2015/05/06/Leetcode-With-Ruby/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2015/02/22/What-I-talk-about-when-I-talk-about-running/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&text=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&is_video=false&description=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS CI (Jenkins + Phabricator + Slack)&body=Check out this article: http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/" target="_blank" rel="noopener"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&name=iOS CI (Jenkins + Phabricator + Slack)&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><span class="toc-number">1.</span> <span class="toc-text">jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ResourceRules-plist"><span class="toc-number">2.</span> <span class="toc-text">ResourceRules.plist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iPhone-Developer-no-identity-found"><span class="toc-number">3.</span> <span class="toc-text">iPhone Developer: no identity found</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DUNS-邓白氏码"><span class="toc-number">4.</span> <span class="toc-text">DUNS(邓白氏码)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bundle-identifier"><span class="toc-number">5.</span> <span class="toc-text">bundle identifier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#over-the-air-distribution"><span class="toc-number">6.</span> <span class="toc-text">over the air distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build-number"><span class="toc-number">7.</span> <span class="toc-text">build number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-X-Server"><span class="toc-number">8.</span> <span class="toc-text">OS X Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DistributionProvisioningProfiles"><span class="toc-number">9.</span> <span class="toc-text">DistributionProvisioningProfiles</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        iOS CI (Jenkins + Phabricator + Slack)
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Artwalk's Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2015-04-16T12:59:31.000Z" itemprop="datePublished">2015-04-16</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Programming/" rel="tag">Programming</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><code>shell</code> 里 <code>brew install jenkins</code><br>然后 <code>jenkins</code> 启动，牛腩器中输入 127.0.0.1:8080 跳坑</p>
+<p>Jenkins 里 <code>xcode</code> 相关插件装上<br>步骤别的博客都有，Google <em>ios ci 持续集成</em>，比如：  </p>
+<ul>
+<li><a href="http://www.itiger.me/?p=30" target="_blank" rel="noopener">Jenkins+Github+Testflight在Mac下搭建持续集成环境</a> ，</li>
+<li><a href="http://www.jianshu.com/p/63073573e2ee" target="_blank" rel="noopener">iOS项目持续集成之Travis CI</a></li>
+</ul>
+<p>版本可能旧一点，但能脑补上</p>
+<p>我们这用的 Phabricator，由于是 iOS，放在本地 Mac 上而非服务器，所以私钥配好就行了，Jenkins 和 Phabricator 回调交互啥的就不管了  </p>
+<p>另外主要遇到几个问题：</p>
+<h3 id="jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><a href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe" class="headerlink" title="jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe"></a>jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe</h3><p>test 推送消息却好好的<br>弄了俩小时也不知怎么回事，睡一觉第二天正常了…</p>
+<p>貌似知道原因了，<em>Project Channel</em> 那里不能为空</p>
+<h3 id="ResourceRules-plist"><a href="#ResourceRules-plist" class="headerlink" title="ResourceRules.plist"></a>ResourceRules.plist</h3><p>第一天 提示 ResourceRules.plist 不对， 于是在工程和 Jenkins 配置里都加了这个<br><code>Custom xcodebuild arguments $(SDKROOT)/ResourceRules.plist</code>  </p>
+<p>结果第二天提示找不到 ResourceRules.plist，Jenkins 里删掉这个反而 OK 了，真奇葩  </p>
+<h3 id="iPhone-Developer-no-identity-found"><a href="#iPhone-Developer-no-identity-found" class="headerlink" title="iPhone Developer: no identity found"></a>iPhone Developer: no identity found</h3><p><code>swift-stdlib-tool failed with exit code 1</code></p>
+<p>去 developer.apple.com 下载了各种证书，都不管用<br>实在没办法，直接用 xcode 打开了 <code>~/.jenkins/jobs/****</code> 下面的工程，想做个对比，结果发现 keychain 里多出来个证书，然后就 success 了…  </p>
+<hr>
+<p><del>另外企业账号还没买，Jenkins 没开账号系统，继续等坑</del></p>
+<h3 id="DUNS-邓白氏码"><a href="#DUNS-邓白氏码" class="headerlink" title="DUNS(邓白氏码)"></a>DUNS(邓白氏码)</h3><p>之前企业账号一直卡在这里，苹果邮件迟迟没回应，所以一定要去电话苹果客服，一两天就 OK 了</p>
+<h3 id="bundle-identifier"><a href="#bundle-identifier" class="headerlink" title="bundle identifier"></a>bundle identifier</h3><p>之前 company 账号中 .alpha .beta 占用掉了，企业账号这里无法创建相同的证书，只好<em>删除原来账号里</em> 或 <em>改 ID</em>  </p>
+<p>结果删除时发现需要 app 需要是其中几个状态，官方文档：<a href="https://developer.apple.com/library/mac/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/TransferringAndDeletingApps.html" target="_blank" rel="noopener">TransferringAndDeletingApps</a></p>
+<p>之前 beta 作为 testflight，并没上传 AppStore，Email 苹果，回复：</p>
+<blockquote>
+<p>Currently, your app does not have at least one approved version.</p>
+</blockquote>
+<p>…<br>只好改了 ID</p>
+<h3 id="over-the-air-distribution"><a href="#over-the-air-distribution" class="headerlink" title="over the air distribution"></a>over the air distribution</h3><p>万事俱备了，赶紧导出，结果发现 Xcode 6 之后，导 ipa 只有一个 .ipa 没有配套的 .plist，要自己手写…（还好 Jenkins 还能自动生成），大致长这样的：<a href="https://gist.github.com/Artwalk/f292d65163b26a2169d4" target="_blank" rel="noopener">plist</a> ($ $ 里对应的改一下)</p>
+<p>然后<code>python -m SimpleHTTPServer</code>，iPhone 上 Safari 打开，结果… 还是不行…</p>
+<p>后来发现服务器必须是 https 的…</p>
+<h3 id="build-number"><a href="#build-number" class="headerlink" title="build number"></a>build number</h3><p><code>targets -&gt; Build Phases -&gt; + New Run Script Phase</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$&#123;PROJECT_DIR&#125;/$&#123;INFOPLIST_FILE&#125;")</span><br><span class="line">buildNumber=$(($buildNumber + 1))</span><br><span class="line">/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "$&#123;PROJECT_DIR&#125;/$&#123;INFOPLIST_FILE&#125;"</span><br></pre></td></tr></table></figure>
+
+<p>这样 scheme 是 release 的时候，build 会自动 +1</p>
+<p>PS:<br>其实这个可以写到 Jenkins build 步骤的 shell 中，然后 push 到 origin/master，再把 *.ipa 上传到服务器  </p>
+<h3 id="OS-X-Server"><a href="#OS-X-Server" class="headerlink" title="OS X Server"></a>OS X Server</h3><p>坑，有时间整理一个</p>
+<h3 id="DistributionProvisioningProfiles"><a href="#DistributionProvisioningProfiles" class="headerlink" title="DistributionProvisioningProfiles"></a>DistributionProvisioningProfiles</h3><p>直接把下载的 <code>*. mobileprovision</code>，写路径发现是不行的，只好自己手动打包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xcodebuild -exportArchive -exportFormat IPA -archivePath "$Yourarchive" \</span><br><span class="line"> -exportPath imeican-Beta-xcodebuild.ipa \</span><br><span class="line"> -exportProvisioningProfile $YourDistributionProvisioningProfiles</span><br></pre></td></tr></table></figure>
+
+<p>总结：<br>一路走来一路坑  </p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/books/">Books</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><span class="toc-number">1.</span> <span class="toc-text">jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ResourceRules-plist"><span class="toc-number">2.</span> <span class="toc-text">ResourceRules.plist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iPhone-Developer-no-identity-found"><span class="toc-number">3.</span> <span class="toc-text">iPhone Developer: no identity found</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DUNS-邓白氏码"><span class="toc-number">4.</span> <span class="toc-text">DUNS(邓白氏码)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bundle-identifier"><span class="toc-number">5.</span> <span class="toc-text">bundle identifier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#over-the-air-distribution"><span class="toc-number">6.</span> <span class="toc-text">over the air distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build-number"><span class="toc-number">7.</span> <span class="toc-text">build number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-X-Server"><span class="toc-number">8.</span> <span class="toc-text">OS X Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DistributionProvisioningProfiles"><span class="toc-number">9.</span> <span class="toc-text">DistributionProvisioningProfiles</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&text=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&is_video=false&description=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=iOS CI (Jenkins + Phabricator + Slack)&body=Check out this article: http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&title=iOS CI (Jenkins + Phabricator + Slack)" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/&name=iOS CI (Jenkins + Phabricator + Slack)&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Artwalk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/books/">Books</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-45400676-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'Artwalk';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

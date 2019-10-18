@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
+<meta name="keywords" content="AI,Machine Learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Neural Networks Representation">
+<meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2018&#x2F;01&#x2F;06&#x2F;Neural-Networks-Representation&#x2F;index.html">
+<meta property="og:site_name" content="Artwalk&#39;s Blog">
+<meta property="og:description" content=".mjpage .MJX-monospace {                             font-family: monospace                             }                              .mjpage .MJX-sans-serif {">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;ailb9HX.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;arYwzJt.png">
+<meta property="og:updated_time" content="2019-10-18T02:31:12.643Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;ailb9HX.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo-192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/logo-192.png">
+          
+        
+    
+    <!-- title -->
+    <title>Neural Networks Representation</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="Artwalk&#39;s Blog" type="application/atom+xml" />
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/books/">Books</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/01/11/Neural-Networks-Learning/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/01/03/Logistic-Regression/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&text=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&is_video=false&description=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Neural Networks Representation&body=Check out this article: http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/" target="_blank" rel="noopener"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&name=Neural Networks Representation&description=&lt;html&gt;&lt;head&gt;&lt;style type=&#34;text/css&#34;&gt;
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1 id=&#34;Neural-Networks-Representation&#34;&gt;&lt;a href=&#34;#Neural-Networks-Representation&#34; class=&#34;headerlink&#34; title=&#34;Neural Networks Representation&#34;&gt;&lt;/a&gt;Neural Networks Representation&lt;/h1&gt;&lt;h2 id=&#34;1-3-Vectorizing-Logistic-Regression&#34;&gt;&lt;a href=&#34;#1-3-Vectorizing-Logistic-Regression&#34; class=&#34;headerlink&#34; title=&#34;1.3 Vectorizing Logistic Regression&#34;&gt;&lt;/a&gt;1.3 Vectorizing Logistic Regression&lt;/h2&gt;&lt;p&gt;Alright, I already used the Vectorized approach and without any loops last exercise.&lt;/p&gt;
+&lt;h2 id=&#34;1-4-One-vs-all-Classification&#34;&gt;&lt;a href=&#34;#1-4-One-vs-all-Classification&#34; class=&#34;headerlink&#34; title=&#34;1.4 One-vs-all Classification&#34;&gt;&lt;/a&gt;1.4 One-vs-all Classification&lt;/h2&gt;&lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;initial_theta = &lt;span class=&#34;built_in&#34;&gt;zeros&lt;/span&gt;(n + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;options = optimset(&lt;span class=&#34;string&#34;&gt;&#39;GradObj&#39;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&#39;on&#39;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&#39;MaxIter&#39;&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;50&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;i&lt;/span&gt; = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:num_labels&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    [theta] = fmincg(@(t)(lrCostFunction(t, X, (y == &lt;span class=&#34;built_in&#34;&gt;i&lt;/span&gt;), lambda)), initial_theta, options);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;all_theta(&lt;span class=&#34;built_in&#34;&gt;i&lt;/span&gt;,:) = [theta];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;the key points here are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;for&lt;/code&gt; is needed here to loop from &lt;code&gt;1&lt;/code&gt; to &lt;code&gt;num_labels&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;all_theta&lt;/code&gt; should assigned with &lt;code&gt;(i,:)&lt;/code&gt;, otherwise it will be a one-dimensional vector.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;1-4-1-One-vs-all-Prediction&#34;&gt;&lt;a href=&#34;#1-4-1-One-vs-all-Prediction&#34; class=&#34;headerlink&#34; title=&#34;1.4.1 One-vs-all Prediction&#34;&gt;&lt;/a&gt;1.4.1 One-vs-all Prediction&lt;/h2&gt;&lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;A = sigmoid(X * all_theta&#39;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[m, p] = &lt;span class=&#34;built_in&#34;&gt;max&lt;/span&gt;(A, [], &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;the &lt;code&gt;max&lt;/code&gt; function will return a two-dimensional vector, &lt;code&gt;m&lt;/code&gt; is the value, and &lt;code&gt;p&lt;/code&gt; is the max index in that row.&lt;/p&gt;
+&lt;h2 id=&#34;2-Neural-Networks&#34;&gt;&lt;a href=&#34;#2-Neural-Networks&#34; class=&#34;headerlink&#34; title=&#34;2 Neural Networks&#34;&gt;&lt;/a&gt;2 Neural Networks&lt;/h2&gt;&lt;p&gt;Finally, I touched the Neural Networks with so many classes after. 😳&lt;/p&gt;
+&lt;p&gt;The &lt;span class=&#34;mjpage&#34;&gt;&lt;svg xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34; width=&#34;5.54ex&#34; height=&#34;2.509ex&#34; style=&#34;vertical-align: -0.671ex;&#34; viewBox=&#34;0 -791.3 2385.2 1080.4&#34; role=&#34;img&#34; focusable=&#34;false&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; aria-labelledby=&#34;MathJax-SVG-1-Title&#34;&gt;
+&lt;title id=&#34;MathJax-SVG-1-Title&#34;&gt;\theta1, \theta2&lt;/title&gt;
+&lt;defs aria-hidden=&#34;true&#34;&gt;
+&lt;path stroke-width=&#34;1&#34; id=&#34;E1-MJMATHI-3B8&#34; d=&#34;M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z&#34;&gt;&lt;/path&gt;
+&lt;path stroke-width=&#34;1&#34; id=&#34;E1-MJMAIN-31&#34; d=&#34;M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z&#34;&gt;&lt;/path&gt;
+&lt;path stroke-width=&#34;1&#34; id=&#34;E1-MJMAIN-2C&#34; d=&#34;M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z&#34;&gt;&lt;/path&gt;
+&lt;path stroke-width=&#34;1&#34; id=&#34;E1-MJMAIN-32&#34; d=&#34;M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z&#34;&gt;&lt;/path&gt;
+&lt;/defs&gt;
+&lt;g stroke=&#34;currentColor&#34; fill=&#34;currentColor&#34; stroke-width=&#34;0&#34; transform=&#34;matrix(1 0 0 -1 0 0)&#34; aria-hidden=&#34;true&#34;&gt;
+ &lt;use xlink:href=&#34;#E1-MJMATHI-3B8&#34; x=&#34;0&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+ &lt;use xlink:href=&#34;#E1-MJMAIN-31&#34; x=&#34;469&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+ &lt;use xlink:href=&#34;#E1-MJMAIN-2C&#34; x=&#34;970&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+ &lt;use xlink:href=&#34;#E1-MJMATHI-3B8&#34; x=&#34;1415&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+ &lt;use xlink:href=&#34;#E1-MJMAIN-32&#34; x=&#34;1884&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+&lt;/g&gt;
+&lt;/svg&gt;&lt;/span&gt; are trained to predict.&lt;/p&gt;
+&lt;p&gt;Before this, I wondering what is the process of prediction with a trained model. Is it the same with the training process?&lt;/p&gt;
+&lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;a0x = &lt;span class=&#34;built_in&#34;&gt;ones&lt;/span&gt;(m, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;A1 = [a0x, X];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;A2 = [a0x, sigmoid(A1 * Theta1&#39;)];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;A3 = sigmoid(A2 * Theta2&#39;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[v, p] =  &lt;span class=&#34;built_in&#34;&gt;max&lt;/span&gt;(A3, [], &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/ailb9HX.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Amazing ha! 🤩&lt;/p&gt;
+&lt;p&gt;First I forgot to &lt;code&gt;sigmoid&lt;/code&gt; the hidden layer and output layer. The Accuracy shows&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Training Set Accuracy: 69.62&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And it will got the same accuracy if the output layer has no &lt;code&gt;sigmoid&lt;/code&gt; . It also happened in the previous &lt;strong&gt;One-vs-all Prediction&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Therefore I still have the question. 🧐&lt;/p&gt;
+&lt;p&gt;It’s time to keep on the training part. 💪&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Neural-Networks-Representation"><span class="toc-number">1.</span> <span class="toc-text">Neural Networks Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-Vectorizing-Logistic-Regression"><span class="toc-number">1.1.</span> <span class="toc-text">1.3 Vectorizing Logistic Regression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-One-vs-all-Classification"><span class="toc-number">1.2.</span> <span class="toc-text">1.4 One-vs-all Classification</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-1-One-vs-all-Prediction"><span class="toc-number">1.3.</span> <span class="toc-text">1.4.1 One-vs-all Prediction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Neural-Networks"><span class="toc-number">1.4.</span> <span class="toc-text">2 Neural Networks</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Neural Networks Representation
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Artwalk's Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-01-05T16:00:53.000Z" itemprop="datePublished">2018-01-06</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/AI/" rel="tag">AI</a>, <a class="tag-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <html><head><style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head><body><h1 id="Neural-Networks-Representation"><a href="#Neural-Networks-Representation" class="headerlink" title="Neural Networks Representation"></a>Neural Networks Representation</h1><h2 id="1-3-Vectorizing-Logistic-Regression"><a href="#1-3-Vectorizing-Logistic-Regression" class="headerlink" title="1.3 Vectorizing Logistic Regression"></a>1.3 Vectorizing Logistic Regression</h2><p>Alright, I already used the Vectorized approach and without any loops last exercise.</p>
+<h2 id="1-4-One-vs-all-Classification"><a href="#1-4-One-vs-all-Classification" class="headerlink" title="1.4 One-vs-all Classification"></a>1.4 One-vs-all Classification</h2><figure class="highlight matlab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">initial_theta = <span class="built_in">zeros</span>(n + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">options = optimset(<span class="string">'GradObj'</span>, <span class="string">'on'</span>, <span class="string">'MaxIter'</span>, <span class="number">50</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:num_labels</span><br><span class="line">    [theta] = fmincg(@(t)(lrCostFunction(t, X, (y == <span class="built_in">i</span>), lambda)), initial_theta, options);</span><br><span class="line"></span><br><span class="line">all_theta(<span class="built_in">i</span>,:) = [theta];</span><br></pre></td></tr></tbody></table></figure>
+
+<p>the key points here are:</p>
+<ul>
+<li><code>for</code> is needed here to loop from <code>1</code> to <code>num_labels</code></li>
+<li><code>all_theta</code> should assigned with <code>(i,:)</code>, otherwise it will be a one-dimensional vector.</li>
+</ul>
+<h2 id="1-4-1-One-vs-all-Prediction"><a href="#1-4-1-One-vs-all-Prediction" class="headerlink" title="1.4.1 One-vs-all Prediction"></a>1.4.1 One-vs-all Prediction</h2><figure class="highlight matlab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = sigmoid(X * all_theta');</span><br><span class="line">[m, p] = <span class="built_in">max</span>(A, [], <span class="number">2</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>the <code>max</code> function will return a two-dimensional vector, <code>m</code> is the value, and <code>p</code> is the max index in that row.</p>
+<h2 id="2-Neural-Networks"><a href="#2-Neural-Networks" class="headerlink" title="2 Neural Networks"></a>2 Neural Networks</h2><p>Finally, I touched the Neural Networks with so many classes after. 😳</p>
+<p>The <span class="mjpage"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.54ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 2385.2 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">\theta1, \theta2</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-MJMATHI-3B8" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-31" x="469" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="970" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-3B8" x="1415" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-32" x="1884" y="0"></use>
+</g>
+</svg></span> are trained to predict.</p>
+<p>Before this, I wondering what is the process of prediction with a trained model. Is it the same with the training process?</p>
+<figure class="highlight matlab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a0x = <span class="built_in">ones</span>(m, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">A1 = [a0x, X];</span><br><span class="line">A2 = [a0x, sigmoid(A1 * Theta1')];</span><br><span class="line">A3 = sigmoid(A2 * Theta2');</span><br><span class="line"></span><br><span class="line">[v, p] =  <span class="built_in">max</span>(A3, [], <span class="number">2</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://i.imgur.com/ailb9HX.png" alt=""></p>
+<p>Amazing ha! 🤩</p>
+<p>First I forgot to <code>sigmoid</code> the hidden layer and output layer. The Accuracy shows</p>
+<blockquote>
+<p>Training Set Accuracy: 69.62</p>
+</blockquote>
+<p>And it will got the same accuracy if the output layer has no <code>sigmoid</code> . It also happened in the previous <strong>One-vs-all Prediction</strong>.</p>
+<p>Therefore I still have the question. 🧐</p>
+<p>It’s time to keep on the training part. 💪</p>
+<a id="more"></a>
+
+<p><img src="https://i.imgur.com/arYwzJt.png" alt=""></p>
+</body></html>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/books/">Books</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Neural-Networks-Representation"><span class="toc-number">1.</span> <span class="toc-text">Neural Networks Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-Vectorizing-Logistic-Regression"><span class="toc-number">1.1.</span> <span class="toc-text">1.3 Vectorizing Logistic Regression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-One-vs-all-Classification"><span class="toc-number">1.2.</span> <span class="toc-text">1.4 One-vs-all Classification</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-1-One-vs-all-Prediction"><span class="toc-number">1.3.</span> <span class="toc-text">1.4.1 One-vs-all Prediction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Neural-Networks"><span class="toc-number">1.4.</span> <span class="toc-text">2 Neural Networks</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&text=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&is_video=false&description=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Neural Networks Representation&body=Check out this article: http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&title=Neural Networks Representation" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2018/01/06/Neural-Networks-Representation/&name=Neural Networks Representation&description=&lt;html&gt;&lt;head&gt;&lt;style type=&#34;text/css&#34;&gt;
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1 id=&#34;Neural-Networks-Representation&#34;&gt;&lt;a href=&#34;#Neural-Networks-Representation&#34; class=&#34;headerlink&#34; title=&#34;Neural Networks Representation&#34;&gt;&lt;/a&gt;Neural Networks Representation&lt;/h1&gt;&lt;h2 id=&#34;1-3-Vectorizing-Logistic-Regression&#34;&gt;&lt;a href=&#34;#1-3-Vectorizing-Logistic-Regression&#34; class=&#34;headerlink&#34; title=&#34;1.3 Vectorizing Logistic Regression&#34;&gt;&lt;/a&gt;1.3 Vectorizing Logistic Regression&lt;/h2&gt;&lt;p&gt;Alright, I already used the Vectorized approach and without any loops last exercise.&lt;/p&gt;
+&lt;h2 id=&#34;1-4-One-vs-all-Classification&#34;&gt;&lt;a href=&#34;#1-4-One-vs-all-Classification&#34; class=&#34;headerlink&#34; title=&#34;1.4 One-vs-all Classification&#34;&gt;&lt;/a&gt;1.4 One-vs-all Classification&lt;/h2&gt;&lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;initial_theta = &lt;span class=&#34;built_in&#34;&gt;zeros&lt;/span&gt;(n + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;options = optimset(&lt;span class=&#34;string&#34;&gt;&#39;GradObj&#39;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&#39;on&#39;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&#39;MaxIter&#39;&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;50&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;i&lt;/span&gt; = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:num_labels&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    [theta] = fmincg(@(t)(lrCostFunction(t, X, (y == &lt;span class=&#34;built_in&#34;&gt;i&lt;/span&gt;), lambda)), initial_theta, options);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;all_theta(&lt;span class=&#34;built_in&#34;&gt;i&lt;/span&gt;,:) = [theta];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;the key points here are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;for&lt;/code&gt; is needed here to loop from &lt;code&gt;1&lt;/code&gt; to &lt;code&gt;num_labels&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;all_theta&lt;/code&gt; should assigned with &lt;code&gt;(i,:)&lt;/code&gt;, otherwise it will be a one-dimensional vector.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;1-4-1-One-vs-all-Prediction&#34;&gt;&lt;a href=&#34;#1-4-1-One-vs-all-Prediction&#34; class=&#34;headerlink&#34; title=&#34;1.4.1 One-vs-all Prediction&#34;&gt;&lt;/a&gt;1.4.1 One-vs-all Prediction&lt;/h2&gt;&lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;A = sigmoid(X * all_theta&#39;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[m, p] = &lt;span class=&#34;built_in&#34;&gt;max&lt;/span&gt;(A, [], &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;the &lt;code&gt;max&lt;/code&gt; function will return a two-dimensional vector, &lt;code&gt;m&lt;/code&gt; is the value, and &lt;code&gt;p&lt;/code&gt; is the max index in that row.&lt;/p&gt;
+&lt;h2 id=&#34;2-Neural-Networks&#34;&gt;&lt;a href=&#34;#2-Neural-Networks&#34; class=&#34;headerlink&#34; title=&#34;2 Neural Networks&#34;&gt;&lt;/a&gt;2 Neural Networks&lt;/h2&gt;&lt;p&gt;Finally, I touched the Neural Networks with so many classes after. 😳&lt;/p&gt;
+&lt;p&gt;The &lt;span class=&#34;mjpage&#34;&gt;&lt;svg xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34; width=&#34;5.54ex&#34; height=&#34;2.509ex&#34; style=&#34;vertical-align: -0.671ex;&#34; viewBox=&#34;0 -791.3 2385.2 1080.4&#34; role=&#34;img&#34; focusable=&#34;false&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; aria-labelledby=&#34;MathJax-SVG-1-Title&#34;&gt;
+&lt;title id=&#34;MathJax-SVG-1-Title&#34;&gt;\theta1, \theta2&lt;/title&gt;
+&lt;defs aria-hidden=&#34;true&#34;&gt;
+&lt;path stroke-width=&#34;1&#34; id=&#34;E1-MJMATHI-3B8&#34; d=&#34;M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z&#34;&gt;&lt;/path&gt;
+&lt;path stroke-width=&#34;1&#34; id=&#34;E1-MJMAIN-31&#34; d=&#34;M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z&#34;&gt;&lt;/path&gt;
+&lt;path stroke-width=&#34;1&#34; id=&#34;E1-MJMAIN-2C&#34; d=&#34;M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z&#34;&gt;&lt;/path&gt;
+&lt;path stroke-width=&#34;1&#34; id=&#34;E1-MJMAIN-32&#34; d=&#34;M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z&#34;&gt;&lt;/path&gt;
+&lt;/defs&gt;
+&lt;g stroke=&#34;currentColor&#34; fill=&#34;currentColor&#34; stroke-width=&#34;0&#34; transform=&#34;matrix(1 0 0 -1 0 0)&#34; aria-hidden=&#34;true&#34;&gt;
+ &lt;use xlink:href=&#34;#E1-MJMATHI-3B8&#34; x=&#34;0&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+ &lt;use xlink:href=&#34;#E1-MJMAIN-31&#34; x=&#34;469&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+ &lt;use xlink:href=&#34;#E1-MJMAIN-2C&#34; x=&#34;970&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+ &lt;use xlink:href=&#34;#E1-MJMATHI-3B8&#34; x=&#34;1415&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+ &lt;use xlink:href=&#34;#E1-MJMAIN-32&#34; x=&#34;1884&#34; y=&#34;0&#34;&gt;&lt;/use&gt;
+&lt;/g&gt;
+&lt;/svg&gt;&lt;/span&gt; are trained to predict.&lt;/p&gt;
+&lt;p&gt;Before this, I wondering what is the process of prediction with a trained model. Is it the same with the training process?&lt;/p&gt;
+&lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;a0x = &lt;span class=&#34;built_in&#34;&gt;ones&lt;/span&gt;(m, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;A1 = [a0x, X];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;A2 = [a0x, sigmoid(A1 * Theta1&#39;)];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;A3 = sigmoid(A2 * Theta2&#39;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[v, p] =  &lt;span class=&#34;built_in&#34;&gt;max&lt;/span&gt;(A3, [], &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/ailb9HX.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Amazing ha! 🤩&lt;/p&gt;
+&lt;p&gt;First I forgot to &lt;code&gt;sigmoid&lt;/code&gt; the hidden layer and output layer. The Accuracy shows&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Training Set Accuracy: 69.62&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And it will got the same accuracy if the output layer has no &lt;code&gt;sigmoid&lt;/code&gt; . It also happened in the previous &lt;strong&gt;One-vs-all Prediction&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Therefore I still have the question. 🧐&lt;/p&gt;
+&lt;p&gt;It’s time to keep on the training part. 💪&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Artwalk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/books/">Books</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-45400676-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'Artwalk';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
