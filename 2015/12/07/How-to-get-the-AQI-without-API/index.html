@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="I googled and only found pm25.in provide API in China.I applied the private AppKey one week ago but got no responds, So I have to think out another way.   The common idea is read the web page and pars">
+    <meta name="description" content="I googled and only found pm25.in provide API in China.I applied the private AppKey one week ago but got no responds, So I have to think out another way. The common idea is read the web page and parse">
 <meta name="keywords" content="Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to get the AQI without API">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2015&#x2F;12&#x2F;07&#x2F;How-to-get-the-AQI-without-API&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="I googled and only found pm25.in provide API in China.I applied the private AppKey one week ago but got no responds, So I have to think out another way.   The common idea is read the web page and pars">
+<meta property="og:description" content="I googled and only found pm25.in provide API in China.I applied the private AppKey one week ago but got no responds, So I have to think out another way. The common idea is read the web page and parse">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2016-05-14T05:48:42.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:47:28.240Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -149,8 +147,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>I googled and only found <a href="http://www.pm25.in" target="_blank" rel="noopener">pm25.in</a> provide API in China.<br>I applied the private AppKey one week ago but got no responds, So I have to think out another way.  </p>
-<p>The common idea is read the web page and parse the wanted informations:  </p>
+    <p>I googled and only found <a href="http://www.pm25.in" target="_blank" rel="noopener">pm25.in</a> provide API in China.<br>I applied the private AppKey one week ago but got no responds, So I have to think out another way.</p>
+<p>The common idea is read the web page and parse the wanted informations:</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'open-uri'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'nokogiri'</span></span><br><span class="line"></span><br><span class="line">html = <span class="string">'http://www.pm25.in/$YOURCITY'</span></span><br><span class="line">doc = Nokogiri::HTML(open(html).read)</span><br><span class="line"><span class="comment"># doc.encoding = 'utf-8'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># activity suggestion</span></span><br><span class="line">msg = doc.css(<span class="string">'.action'</span>).first.text</span><br><span class="line"></span><br><span class="line"><span class="comment"># AQI PM CO ... values</span></span><br><span class="line">value = <span class="string">""</span></span><br><span class="line">doc.css(<span class="string">'.value'</span>).each <span class="keyword">do</span> <span class="params">|node|</span></span><br><span class="line">	value += node.text</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">caption = <span class="string">""</span></span><br><span class="line">doc.css(<span class="string">'.caption'</span>).each <span class="keyword">do</span> <span class="params">|node|</span></span><br><span class="line">	caption += node.text</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">v = value.gsub(<span class="regexp">/\s+/</span>, <span class="string">' '</span>).strip.split</span><br><span class="line">k = caption.gsub(<span class="regexp">/\s+/</span>, <span class="string">' '</span>).strip.split</span><br><span class="line"></span><br><span class="line">text = <span class="string">""</span></span><br><span class="line">k.zip(v).each &#123; <span class="params">|a, b|</span> text += (((a + <span class="string">" : "</span>) + b )+ <span class="string">"\n"</span>)&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Result:</p>
@@ -158,7 +156,8 @@
 <p>API : 207<br>PM2.5/1h : 156<br>PM10/1h : 162<br>…</p>
 </blockquote>
 <p>And, I want post it to <code>Slack</code> to remind my coworkers that the code review will put off because of the bad weather.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'slack-notifier'</span></span><br><span class="line"></span><br><span class="line">notifier = Slack::Notifier.new <span class="string">"https://hooks.slack.com/services/$YourHook"</span>, </span><br><span class="line"><span class="symbol">channel:</span> <span class="string">'#YourChannel'</span>, <span class="symbol">username:</span> <span class="string">'Bot'</span></span><br><span class="line">notifier.ping <span class="string">"&lt;!channel&gt;\n"</span> + text + msg.strip</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'slack-notifier'</span></span><br><span class="line"></span><br><span class="line">notifier = Slack::Notifier.new <span class="string">"https://hooks.slack.com/services/$YourHook"</span>,</span><br><span class="line"><span class="symbol">channel:</span> <span class="string">'#YourChannel'</span>, <span class="symbol">username:</span> <span class="string">'Bot'</span></span><br><span class="line">notifier.ping <span class="string">"&lt;!channel&gt;\n"</span> + text + msg.strip</span><br></pre></td></tr></table></figure>
+
   </div>
 </article>
 
@@ -179,11 +178,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -231,11 +228,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

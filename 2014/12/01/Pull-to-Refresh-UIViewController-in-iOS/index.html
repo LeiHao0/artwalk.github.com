@@ -16,7 +16,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;cl.ly&#x2F;image&#x2F;0z3z0R1D3U0Q&#x2F;Pull%20to%20Refresh%20TableView%20in%20iOS_1.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;cl.ly&#x2F;image&#x2F;0S1B040n3N2s&#x2F;Pull%20to%20Refresh%20TableView%20in%20iOS_2.png">
-<meta property="og:updated_time" content="2015-11-10T17:32:01.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:45:48.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;cl.ly&#x2F;image&#x2F;0z3z0R1D3U0Q&#x2F;Pull%20to%20Refresh%20TableView%20in%20iOS_1.png">
     
@@ -64,11 +64,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -105,7 +103,7 @@
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/&title=Pull to Refresh UIViewController in iOS" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/&name=Pull to Refresh UIViewController in iOS&description=&lt;p&gt;If you force to add a &lt;code&gt;UIRefreshControl&lt;/code&gt; to a &lt;code&gt;UIViewController&lt;/code&gt;, you will get an error:&lt;br&gt;&lt;code&gt;UIRefreshControl may only be managed by a UITableViewController&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;So, here is the trick&lt;/p&gt;
-&lt;h2 id=&#34;Code&#34;&gt;&lt;a href=&#34;#Code&#34; class=&#34;headerlink&#34; title=&#34;Code&#34;&gt;&lt;/a&gt;Code&lt;/h2&gt;&lt;p&gt;1 init a tableView in your &lt;code&gt;UIViewController&lt;/code&gt;  &lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+&lt;h2 id=&#34;Code&#34;&gt;&lt;a href=&#34;#Code&#34; class=&#34;headerlink&#34; title=&#34;Code&#34;&gt;&lt;/a&gt;Code&lt;/h2&gt;&lt;p&gt;1 init a tableView in your &lt;code&gt;UIViewController&lt;/code&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -156,16 +154,16 @@
   <div class="content" itemprop="articleBody">
     <p>If you force to add a <code>UIRefreshControl</code> to a <code>UIViewController</code>, you will get an error:<br><code>UIRefreshControl may only be managed by a UITableViewController</code></p>
 <p>So, here is the trick</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>1 init a tableView in your <code>UIViewController</code>  </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>1 init a tableView in your <code>UIViewController</code></p>
 <a id="more"></a>
 
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> refreshControl = <span class="type">UIRefreshControl</span>()</span><br><span class="line"><span class="keyword">var</span> tableView = <span class="type">UITableView</span>()</span><br></pre></td></tr></table></figure>
 
-<p>2 add <code>refreshControl</code> to <code>tableView</code>, not <code>view</code>  </p>
+<p>2 add <code>refreshControl</code> to <code>tableView</code>, not <code>view</code></p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tableView.frame = view.frame</span><br><span class="line"></span><br><span class="line">refreshControl.addTarget(<span class="keyword">self</span>, action: <span class="type">Selector</span>(<span class="string">"refreshView:"</span>), forControlEvents: .<span class="type">ValueChanged</span>)</span><br><span class="line">tableView.addSubview(refreshControl)  <span class="comment">// here it is</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span>.view.addSubview(tableView)</span><br></pre></td></tr></table></figure>
 
-<p>3 <code>refreshView</code> function  </p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">refreshView</span><span class="params">(refreshControl: UIRefreshControl)</span></span> &#123;</span><br><span class="line">    refreshControl.attributedTitle = <span class="type">NSAttributedString</span>(string: <span class="string">"Refresh"</span>)</span><br><span class="line">    refreshControl.attributedTitle = <span class="type">NSAttributedString</span>(string:<span class="string">"Last updated on"</span> + <span class="type">NSDate</span>().description)</span><br><span class="line">    </span><br><span class="line">    refreshControl.endRefreshing()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3 <code>refreshView</code> function</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">refreshView</span><span class="params">(refreshControl: UIRefreshControl)</span></span> &#123;</span><br><span class="line">    refreshControl.attributedTitle = <span class="type">NSAttributedString</span>(string: <span class="string">"Refresh"</span>)</span><br><span class="line">    refreshControl.attributedTitle = <span class="type">NSAttributedString</span>(string:<span class="string">"Last updated on"</span> + <span class="type">NSDate</span>().description)</span><br><span class="line"></span><br><span class="line">    refreshControl.endRefreshing()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="If-you-like-to-use-Storyboard-like-me"><a href="#If-you-like-to-use-Storyboard-like-me" class="headerlink" title="If you like to use Storyboard like me"></a>If you like to use <code>Storyboard</code> like me</h2><ol>
 <li>Storyboard -&gt; UITableViewController -&gt; enable Refreshing<br><img src="http://cl.ly/image/0z3z0R1D3U0Q/Pull%20to%20Refresh%20TableView%20in%20iOS_1.png" alt=""></li>
@@ -192,11 +190,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -220,7 +216,7 @@
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/&title=Pull to Refresh UIViewController in iOS" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/&name=Pull to Refresh UIViewController in iOS&description=&lt;p&gt;If you force to add a &lt;code&gt;UIRefreshControl&lt;/code&gt; to a &lt;code&gt;UIViewController&lt;/code&gt;, you will get an error:&lt;br&gt;&lt;code&gt;UIRefreshControl may only be managed by a UITableViewController&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;So, here is the trick&lt;/p&gt;
-&lt;h2 id=&#34;Code&#34;&gt;&lt;a href=&#34;#Code&#34; class=&#34;headerlink&#34; title=&#34;Code&#34;&gt;&lt;/a&gt;Code&lt;/h2&gt;&lt;p&gt;1 init a tableView in your &lt;code&gt;UIViewController&lt;/code&gt;  &lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+&lt;h2 id=&#34;Code&#34;&gt;&lt;a href=&#34;#Code&#34; class=&#34;headerlink&#34; title=&#34;Code&#34;&gt;&lt;/a&gt;Code&lt;/h2&gt;&lt;p&gt;1 init a tableView in your &lt;code&gt;UIViewController&lt;/code&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -246,11 +242,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

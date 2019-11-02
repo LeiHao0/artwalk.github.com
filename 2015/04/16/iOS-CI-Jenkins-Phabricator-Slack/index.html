@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="shell 里 brew install jenkins然后 jenkins 启动，牛腩器中输入 127.0.0.1:8080 跳坑 Jenkins 里 xcode 相关插件装上步骤别的博客都有，Google ios ci 持续集成，比如：    Jenkins+Github+Testflight在Mac下搭建持续集成环境 ， iOS项目持续集成之Travis CI  版本可能旧一点，但能脑补上">
+    <meta name="description" content="shell 里 brew install jenkins然后 jenkins 启动，牛腩器中输入 127.0.0.1:8080 跳坑 Jenkins 里 xcode 相关插件装上步骤别的博客都有，Google _ios ci 持续集成_，比如：  Jenkins+Github+Testflight 在 Mac 下搭建持续集成环境 ， iOS 项目持续集成之 Travis CI  版本可能旧一点，但">
 <meta name="keywords" content="Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS CI (Jenkins + Phabricator + Slack)">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2015&#x2F;04&#x2F;16&#x2F;iOS-CI-Jenkins-Phabricator-Slack&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="shell 里 brew install jenkins然后 jenkins 启动，牛腩器中输入 127.0.0.1:8080 跳坑 Jenkins 里 xcode 相关插件装上步骤别的博客都有，Google ios ci 持续集成，比如：    Jenkins+Github+Testflight在Mac下搭建持续集成环境 ， iOS项目持续集成之Travis CI  版本可能旧一点，但能脑补上">
+<meta property="og:description" content="shell 里 brew install jenkins然后 jenkins 启动，牛腩器中输入 127.0.0.1:8080 跳坑 Jenkins 里 xcode 相关插件装上步骤别的博客都有，Google _ios ci 持续集成_，比如：  Jenkins+Github+Testflight 在 Mac 下搭建持续集成环境 ， iOS 项目持续集成之 Travis CI  版本可能旧一点，但">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2016-05-14T05:48:42.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:46:50.110Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -105,7 +103,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><span class="toc-number">1.</span> <span class="toc-text">jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ResourceRules-plist"><span class="toc-number">2.</span> <span class="toc-text">ResourceRules.plist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iPhone-Developer-no-identity-found"><span class="toc-number">3.</span> <span class="toc-text">iPhone Developer: no identity found</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DUNS-邓白氏码"><span class="toc-number">4.</span> <span class="toc-text">DUNS(邓白氏码)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bundle-identifier"><span class="toc-number">5.</span> <span class="toc-text">bundle identifier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#over-the-air-distribution"><span class="toc-number">6.</span> <span class="toc-text">over the air distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build-number"><span class="toc-number">7.</span> <span class="toc-text">build number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-X-Server"><span class="toc-number">8.</span> <span class="toc-text">OS X Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DistributionProvisioningProfiles"><span class="toc-number">9.</span> <span class="toc-text">DistributionProvisioningProfiles</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><span class="toc-number">1.</span> <span class="toc-text">jenkins.plugins.slack.ActiveNotifier hudson.model.listeners npe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ResourceRules-plist"><span class="toc-number">2.</span> <span class="toc-text">ResourceRules.plist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iPhone-Developer-no-identity-found"><span class="toc-number">3.</span> <span class="toc-text">iPhone Developer: no identity found</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DUNS-邓白氏码"><span class="toc-number">4.</span> <span class="toc-text">DUNS(邓白氏码)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bundle-identifier"><span class="toc-number">5.</span> <span class="toc-text">bundle identifier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#over-the-air-distribution"><span class="toc-number">6.</span> <span class="toc-text">over the air distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build-number"><span class="toc-number">7.</span> <span class="toc-text">build number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-X-Server"><span class="toc-number">8.</span> <span class="toc-text">OS X Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DistributionProvisioningProfiles"><span class="toc-number">9.</span> <span class="toc-text">DistributionProvisioningProfiles</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -150,24 +148,24 @@
 
   <div class="content" itemprop="articleBody">
     <p><code>shell</code> 里 <code>brew install jenkins</code><br>然后 <code>jenkins</code> 启动，牛腩器中输入 127.0.0.1:8080 跳坑</p>
-<p>Jenkins 里 <code>xcode</code> 相关插件装上<br>步骤别的博客都有，Google <em>ios ci 持续集成</em>，比如：  </p>
+<p>Jenkins 里 <code>xcode</code> 相关插件装上<br>步骤别的博客都有，Google _ios ci 持续集成_，比如：</p>
 <ul>
-<li><a href="http://www.itiger.me/?p=30" target="_blank" rel="noopener">Jenkins+Github+Testflight在Mac下搭建持续集成环境</a> ，</li>
-<li><a href="http://www.jianshu.com/p/63073573e2ee" target="_blank" rel="noopener">iOS项目持续集成之Travis CI</a></li>
+<li><a href="http://www.itiger.me/?p=30" target="_blank" rel="noopener">Jenkins+Github+Testflight 在 Mac 下搭建持续集成环境</a> ，</li>
+<li><a href="http://www.jianshu.com/p/63073573e2ee" target="_blank" rel="noopener">iOS 项目持续集成之 Travis CI</a></li>
 </ul>
 <p>版本可能旧一点，但能脑补上</p>
-<p>我们这用的 Phabricator，由于是 iOS，放在本地 Mac 上而非服务器，所以私钥配好就行了，Jenkins 和 Phabricator 回调交互啥的就不管了  </p>
+<p>我们这用的 Phabricator，由于是 iOS，放在本地 Mac 上而非服务器，所以私钥配好就行了，Jenkins 和 Phabricator 回调交互啥的就不管了</p>
 <p>另外主要遇到几个问题：</p>
-<h3 id="jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><a href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe" class="headerlink" title="jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe"></a>jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe</h3><p>test 推送消息却好好的<br>弄了俩小时也不知怎么回事，睡一觉第二天正常了…</p>
+<h3 id="jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><a href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe" class="headerlink" title="jenkins.plugins.slack.ActiveNotifier hudson.model.listeners npe"></a>jenkins.plugins.slack.ActiveNotifier hudson.model.listeners npe</h3><p>test 推送消息却好好的<br>弄了俩小时也不知怎么回事，睡一觉第二天正常了…</p>
 <p>貌似知道原因了，<em>Project Channel</em> 那里不能为空</p>
-<h3 id="ResourceRules-plist"><a href="#ResourceRules-plist" class="headerlink" title="ResourceRules.plist"></a>ResourceRules.plist</h3><p>第一天 提示 ResourceRules.plist 不对， 于是在工程和 Jenkins 配置里都加了这个<br><code>Custom xcodebuild arguments $(SDKROOT)/ResourceRules.plist</code>  </p>
-<p>结果第二天提示找不到 ResourceRules.plist，Jenkins 里删掉这个反而 OK 了，真奇葩  </p>
+<h3 id="ResourceRules-plist"><a href="#ResourceRules-plist" class="headerlink" title="ResourceRules.plist"></a>ResourceRules.plist</h3><p>第一天 提示 ResourceRules.plist 不对， 于是在工程和 Jenkins 配置里都加了这个<br><code>Custom xcodebuild arguments $(SDKROOT)/ResourceRules.plist</code></p>
+<p>结果第二天提示找不到 ResourceRules.plist，Jenkins 里删掉这个反而 OK 了，真奇葩</p>
 <h3 id="iPhone-Developer-no-identity-found"><a href="#iPhone-Developer-no-identity-found" class="headerlink" title="iPhone Developer: no identity found"></a>iPhone Developer: no identity found</h3><p><code>swift-stdlib-tool failed with exit code 1</code></p>
-<p>去 developer.apple.com 下载了各种证书，都不管用<br>实在没办法，直接用 xcode 打开了 <code>~/.jenkins/jobs/****</code> 下面的工程，想做个对比，结果发现 keychain 里多出来个证书，然后就 success 了…  </p>
+<p>去 developer.apple.com 下载了各种证书，都不管用<br>实在没办法，直接用 xcode 打开了 <code>~/.jenkins/jobs/****</code> 下面的工程，想做个对比，结果发现 keychain 里多出来个证书，然后就 success 了…</p>
 <hr>
 <p><del>另外企业账号还没买，Jenkins 没开账号系统，继续等坑</del></p>
 <h3 id="DUNS-邓白氏码"><a href="#DUNS-邓白氏码" class="headerlink" title="DUNS(邓白氏码)"></a>DUNS(邓白氏码)</h3><p>之前企业账号一直卡在这里，苹果邮件迟迟没回应，所以一定要去电话苹果客服，一两天就 OK 了</p>
-<h3 id="bundle-identifier"><a href="#bundle-identifier" class="headerlink" title="bundle identifier"></a>bundle identifier</h3><p>之前 company 账号中 .alpha .beta 占用掉了，企业账号这里无法创建相同的证书，只好<em>删除原来账号里</em> 或 <em>改 ID</em>  </p>
+<h3 id="bundle-identifier"><a href="#bundle-identifier" class="headerlink" title="bundle identifier"></a>bundle identifier</h3><p>之前 company 账号中 .alpha .beta 占用掉了，企业账号这里无法创建相同的证书，只好<em>删除原来账号里</em> 或 <em>改 ID</em></p>
 <p>结果删除时发现需要 app 需要是其中几个状态，官方文档：<a href="https://developer.apple.com/library/mac/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/TransferringAndDeletingApps.html" target="_blank" rel="noopener">TransferringAndDeletingApps</a></p>
 <p>之前 beta 作为 testflight，并没上传 AppStore，Email 苹果，回复：</p>
 <blockquote>
@@ -181,12 +179,12 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$&#123;PROJECT_DIR&#125;/$&#123;INFOPLIST_FILE&#125;")</span><br><span class="line">buildNumber=$(($buildNumber + 1))</span><br><span class="line">/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "$&#123;PROJECT_DIR&#125;/$&#123;INFOPLIST_FILE&#125;"</span><br></pre></td></tr></table></figure>
 
 <p>这样 scheme 是 release 的时候，build 会自动 +1</p>
-<p>PS:<br>其实这个可以写到 Jenkins build 步骤的 shell 中，然后 push 到 origin/master，再把 *.ipa 上传到服务器  </p>
+<p>PS:<br>其实这个可以写到 Jenkins build 步骤的 shell 中，然后 push 到 origin/master，再把 *.ipa 上传到服务器</p>
 <h3 id="OS-X-Server"><a href="#OS-X-Server" class="headerlink" title="OS X Server"></a>OS X Server</h3><p>坑，有时间整理一个</p>
 <h3 id="DistributionProvisioningProfiles"><a href="#DistributionProvisioningProfiles" class="headerlink" title="DistributionProvisioningProfiles"></a>DistributionProvisioningProfiles</h3><p>直接把下载的 <code>*. mobileprovision</code>，写路径发现是不行的，只好自己手动打包</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xcodebuild -exportArchive -exportFormat IPA -archivePath "$Yourarchive" \</span><br><span class="line"> -exportPath imeican-Beta-xcodebuild.ipa \</span><br><span class="line"> -exportProvisioningProfile $YourDistributionProvisioningProfiles</span><br></pre></td></tr></table></figure>
 
-<p>总结：<br>一路走来一路坑  </p>
+<p>总结：<br>一路走来一路坑</p>
 
   </div>
 </article>
@@ -208,11 +206,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -220,7 +216,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><span class="toc-number">1.</span> <span class="toc-text">jenkins.plugins.slack.ActiveNotifier  hudson.model.listeners npe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ResourceRules-plist"><span class="toc-number">2.</span> <span class="toc-text">ResourceRules.plist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iPhone-Developer-no-identity-found"><span class="toc-number">3.</span> <span class="toc-text">iPhone Developer: no identity found</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DUNS-邓白氏码"><span class="toc-number">4.</span> <span class="toc-text">DUNS(邓白氏码)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bundle-identifier"><span class="toc-number">5.</span> <span class="toc-text">bundle identifier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#over-the-air-distribution"><span class="toc-number">6.</span> <span class="toc-text">over the air distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build-number"><span class="toc-number">7.</span> <span class="toc-text">build number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-X-Server"><span class="toc-number">8.</span> <span class="toc-text">OS X Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DistributionProvisioningProfiles"><span class="toc-number">9.</span> <span class="toc-text">DistributionProvisioningProfiles</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jenkins-plugins-slack-ActiveNotifier-hudson-model-listeners-npe"><span class="toc-number">1.</span> <span class="toc-text">jenkins.plugins.slack.ActiveNotifier hudson.model.listeners npe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ResourceRules-plist"><span class="toc-number">2.</span> <span class="toc-text">ResourceRules.plist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iPhone-Developer-no-identity-found"><span class="toc-number">3.</span> <span class="toc-text">iPhone Developer: no identity found</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DUNS-邓白氏码"><span class="toc-number">4.</span> <span class="toc-text">DUNS(邓白氏码)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bundle-identifier"><span class="toc-number">5.</span> <span class="toc-text">bundle identifier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#over-the-air-distribution"><span class="toc-number">6.</span> <span class="toc-text">over the air distribution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build-number"><span class="toc-number">7.</span> <span class="toc-text">build number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-X-Server"><span class="toc-number">8.</span> <span class="toc-text">OS X Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DistributionProvisioningProfiles"><span class="toc-number">9.</span> <span class="toc-text">DistributionProvisioningProfiles</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -260,11 +256,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

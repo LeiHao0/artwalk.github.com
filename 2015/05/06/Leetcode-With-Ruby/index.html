@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="之前用 C++，手动释放内存直接跪了 今天突然发现支持 Ruby 了 小试下果然如开挂了一样 不过这样可能就失去 Leetcode 的本意了 1require &quot;profile&quot; #查看性能   Reverse Integer Ruby 中 负数 reverse 后成了正数 Int 越界要返回 0 (-2^32 ~ 2^32-1)  12345678def reverse(x)  res = x.">
+    <meta name="description" content="之前用 C++，手动释放内存直接跪了 今天突然发现支持 Ruby 了 小试下果然如开挂了一样 不过这样可能就失去 Leetcode 的本意了 1require &quot;profile&quot; #查看性能  Reverse Integer Ruby 中 负数 reverse 后成了正数 Int 越界要返回 0 (-2^32 ~ 2^32-1)  12345678def reverse(x)  res = x.t">
 <meta name="keywords" content="Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode With Ruby">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2015&#x2F;05&#x2F;06&#x2F;Leetcode-With-Ruby&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="之前用 C++，手动释放内存直接跪了 今天突然发现支持 Ruby 了 小试下果然如开挂了一样 不过这样可能就失去 Leetcode 的本意了 1require &quot;profile&quot; #查看性能   Reverse Integer Ruby 中 负数 reverse 后成了正数 Int 越界要返回 0 (-2^32 ~ 2^32-1)  12345678def reverse(x)  res = x.">
+<meta property="og:description" content="之前用 C++，手动释放内存直接跪了 今天突然发现支持 Ruby 了 小试下果然如开挂了一样 不过这样可能就失去 Leetcode 的本意了 1require &quot;profile&quot; #查看性能  Reverse Integer Ruby 中 负数 reverse 后成了正数 Int 越界要返回 0 (-2^32 ~ 2^32-1)  12345678def reverse(x)  res = x.t">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2016-05-14T05:48:42.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:46:51.675Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -105,7 +103,6 @@
 &lt;p&gt;小试下果然如开挂了一样&lt;/p&gt;
 &lt;p&gt;不过这样可能就失去 &lt;code&gt;Leetcode&lt;/code&gt; 的本意了&lt;/p&gt;
 &lt;figure class=&#34;highlight ruby&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;profile&#34;&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;#查看性能&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
 
 &lt;h2 id=&#34;Reverse-Integer&#34;&gt;&lt;a href=&#34;#Reverse-Integer&#34; class=&#34;headerlink&#34; title=&#34;Reverse Integer&#34;&gt;&lt;/a&gt;Reverse Integer&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Ruby 中 负数 reverse 后成了正数&lt;/li&gt;
@@ -166,7 +163,6 @@
 <p>不过这样可能就失去 <code>Leetcode</code> 的本意了</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">"profile"</span> <span class="comment">#查看性能</span></span><br></pre></td></tr></table></figure>
 
-
 <h2 id="Reverse-Integer"><a href="#Reverse-Integer" class="headerlink" title="Reverse Integer"></a>Reverse Integer</h2><ul>
 <li>Ruby 中 负数 reverse 后成了正数</li>
 <li>Int 越界要返回 0 (-2^32 ~ 2^32-1)</li>
@@ -180,9 +176,8 @@
 </ul>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse_bits</span><span class="params">(n)</span></span></span><br><span class="line">  zero = <span class="string">"00000000000000000000000000000000"</span></span><br><span class="line">  tmp = n.to_s(<span class="number">2</span>).reverse</span><br><span class="line">  res = tmp + zero[<span class="number">0</span>, <span class="number">32</span>-tmp.size]</span><br><span class="line">  <span class="keyword">return</span> res.to_i(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
-
 <h2 id="Compare-Version-Numbers"><a href="#Compare-Version-Numbers" class="headerlink" title="Compare Version Numbers"></a>Compare Version Numbers</h2><ul>
-<li>“01” “1”   要返回 0</li>
+<li>“01” “1” 要返回 0</li>
 <li>会有多位小数点，如： “10.6.5”</li>
 </ul>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compare_version</span><span class="params">(version1, version2)</span></span></span><br><span class="line">  v1 = version1.split(<span class="string">'.'</span>)</span><br><span class="line">  v2 = version2.split(<span class="string">'.'</span>)</span><br><span class="line"></span><br><span class="line">  n = v1.size &gt; v2.size ? v1.size : v2.size</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..n</span><br><span class="line">    <span class="keyword">if</span> (res = compare_int(v1[i].to_i, v2[i].to_i)) != <span class="number">0</span></span><br><span class="line">      <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compare_int</span><span class="params">(i1, i2)</span></span></span><br><span class="line">  <span class="keyword">if</span> i1 == i2</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> i1 &gt; i2 ? <span class="number">1</span><span class="symbol">:-</span><span class="number">1</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
@@ -191,7 +186,6 @@
 <li>开挂</li>
 </ul>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_binary</span><span class="params">(a, b)</span></span></span><br><span class="line">  <span class="keyword">return</span> (a.to_i(<span class="number">2</span>) + b.to_i(<span class="number">2</span>)).to_s(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
 
 <h2 id="ZigZag-Conversion"><a href="#ZigZag-Conversion" class="headerlink" title="ZigZag Conversion"></a>ZigZag Conversion</h2><ul>
 <li>相同的一维数组 Array.new 是引用拷贝</li>
@@ -204,6 +198,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 7</span><br><span class="line">268</span><br><span class="line">359</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert</span><span class="params">(s, num_rows)</span></span></span><br><span class="line">  <span class="keyword">return</span> s <span class="keyword">if</span> num_rows &lt;= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  columns = (s.size*<span class="number">1.0</span>/num_rows).ceil * <span class="number">2</span></span><br><span class="line">  rows = num_rows-<span class="number">1</span></span><br><span class="line"></span><br><span class="line">  puts columns</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment"># arr = Array.new(num_rows)&#123; Array.new(s.size, 's')&#125; # 这种居然是地址引用...</span></span><br><span class="line">  arr = eval ([[<span class="number">0</span>] * columns] * (rows+<span class="number">1</span>)).to_s</span><br><span class="line"></span><br><span class="line">  pos = <span class="number">0</span></span><br><span class="line">  (<span class="number">0</span>..columns).each <span class="keyword">do</span> <span class="params">|i|</span></span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span></span><br><span class="line">      (<span class="number">0</span>..rows).each <span class="keyword">do</span> <span class="params">|j|</span></span><br><span class="line">        <span class="keyword">break</span> <span class="keyword">if</span> pos &gt; s.size-<span class="number">1</span></span><br><span class="line">        arr[j][i] = s[pos]</span><br><span class="line">        pos+=<span class="number">1</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      j = rows - <span class="number">1</span></span><br><span class="line">      <span class="keyword">while</span> j &gt; <span class="number">0</span></span><br><span class="line">        <span class="keyword">break</span> <span class="keyword">if</span> pos &gt; s.size-<span class="number">1</span></span><br><span class="line">        arr[j][i] = s[pos]</span><br><span class="line">        pos+=<span class="number">1</span>; j-=<span class="number">1</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  res = <span class="string">''</span></span><br><span class="line">  arr.each <span class="keyword">do</span> <span class="params">|ar|</span></span><br><span class="line">    ar.each &#123; <span class="params">|c|</span> res+=c <span class="keyword">if</span> c.is_a?(String) &#125;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
   </div>
 </article>
 
@@ -224,11 +219,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -255,7 +248,6 @@
 &lt;p&gt;小试下果然如开挂了一样&lt;/p&gt;
 &lt;p&gt;不过这样可能就失去 &lt;code&gt;Leetcode&lt;/code&gt; 的本意了&lt;/p&gt;
 &lt;figure class=&#34;highlight ruby&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;profile&#34;&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;#查看性能&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
 
 &lt;h2 id=&#34;Reverse-Integer&#34;&gt;&lt;a href=&#34;#Reverse-Integer&#34; class=&#34;headerlink&#34; title=&#34;Reverse Integer&#34;&gt;&lt;/a&gt;Reverse Integer&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Ruby 中 负数 reverse 后成了正数&lt;/li&gt;
@@ -287,11 +279,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
 <meta property="og:description" content="There are tons of pros and cons already.     Pros Cons    React Native Hot ReloadingOnline Hot Fixing Front-End friendlyCross platformFix once JavaScriptNative UI knowledge on both platformDebugging">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-15T04:17:58.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:52:40.789Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -207,9 +205,9 @@
 <p>Two years ago, I built Mattermost and changed few thing in my previous company to replace Slack, that’s the first React Native project I touched.</p>
 <p>The unhappy thing is it’s very easier to lost in code, I have to search whole project every time want to change something, there is no Storyboard let me know who shows who.</p>
 <p>I have a chat with my previous coworker who is a Sr. front-end, he helped me launched the update server which is also written in Node.js, I handover this project to him when I left.</p>
-<p>According to him, it is that he don’t know how to wrote native code, as the React Native similar to React.js, why not to use it to try both iOS &amp; Android. Then I asked if he knows how to swift, which tech will he prefer.  You can guess the answer 😄.</p>
+<p>According to him, it is that he don’t know how to wrote native code, as the React Native similar to React.js, why not to use it to try both iOS &amp; Android. Then I asked if he knows how to swift, which tech will he prefer. You can guess the answer 😄.</p>
 <p>Because from my side, sometimes features are hard to implement even in swift code, that’s absolutely a long way to achieve by other tech.</p>
-<p>Then there is an opportunity to do a demo these days which contains nested magnet scrollviews, buttons, and navigations, Instead of using native code, I step out of my comfort zone and tried React Native as well as Flutter. </p>
+<p>Then there is an opportunity to do a demo these days which contains nested magnet scrollviews, buttons, and navigations, Instead of using native code, I step out of my comfort zone and tried React Native as well as Flutter.</p>
 <p>Final I think I figured it out.</p>
 <p>Basically they shared the same ideas:</p>
 <ul>
@@ -223,12 +221,10 @@
 </ul>
 </li>
 </ul>
-<p>So if you skilled any one of them, the rest is to Google how implement it in that framework or read their manual. </p>
+<p>So if you skilled any one of them, the rest is to Google how implement it in that framework or read their manual.</p>
 <h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><p>The impressive thing in React Native is <strong>state</strong></p>
 <p>it can be achieve by didSet of an variable in Swift, and there are also many framework to do it say RxSwift, PromiseKit</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> state: <span class="type">Any</span> &#123;</span><br><span class="line">    <span class="keyword">didSet</span> &#123;</span><br><span class="line">        updateViews()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 
 <h2 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h2><p>I used to curious that some apps UX quite like developed by native, but somehow feels weird. Now I know it’s flutter.</p>
 <ul>
@@ -238,10 +234,6 @@
 <li>ugly code style( are they seriously 😠 about it? that’s an official example)</li>
 </ul>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HeroAnimation</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    timeDilation = <span class="number">5.0</span>; <span class="comment">// 1.0 means normal animation speed.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: <span class="keyword">const</span> Text(<span class="string">'Basic Hero Animation'</span>),</span><br><span class="line">      ),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: PhotoHero(</span><br><span class="line">          photo: <span class="string">'images/flippers-alpha.png'</span>,</span><br><span class="line">          width: <span class="number">300.0</span>,</span><br><span class="line">          onTap: () &#123;</span><br><span class="line">            Navigator.of(context).push(MaterialPageRoute&lt;<span class="keyword">void</span>&gt;(</span><br><span class="line">              builder: (BuildContext context) &#123;</span><br><span class="line">                <span class="keyword">return</span> Scaffold(</span><br><span class="line">                  appBar: AppBar(</span><br><span class="line">                    title: <span class="keyword">const</span> Text(<span class="string">'Flippers Page'</span>),</span><br><span class="line">                  ),</span><br><span class="line">                  body: Container(</span><br><span class="line">                    <span class="comment">// The blue background emphasizes that it's a new route.</span></span><br><span class="line">                    color: Colors.lightBlueAccent,</span><br><span class="line">                    padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">16.0</span>),</span><br><span class="line">                    alignment: Alignment.topLeft,</span><br><span class="line">                    child: PhotoHero(</span><br><span class="line">                      photo: <span class="string">'images/flippers-alpha.png'</span>,</span><br><span class="line">                      width: <span class="number">100.0</span>,</span><br><span class="line">                      onTap: () &#123;</span><br><span class="line">                        Navigator.of(context).pop();</span><br><span class="line">                      &#125;,</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                );</span><br><span class="line">              &#125;</span><br><span class="line">            ));</span><br><span class="line">          &#125;,</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
 
 <p>Anyway I’m really impressed it skip <strong>native components</strong> and written it’s own 2D rendering engine. That’s much genius than React Native.</p>
 <p>So personally I think Flutter has more potential than React Native. As well as there are so many companies roll back to native.</p>
@@ -266,11 +258,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -344,11 +334,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

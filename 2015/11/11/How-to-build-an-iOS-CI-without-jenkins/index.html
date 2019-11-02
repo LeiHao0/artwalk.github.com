@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
 <meta property="og:description" content="I used Jenkins with some Xcode plugins as our iOS CI half a year ago. The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to P">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2016-05-14T05:48:42.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:47:17.971Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -150,8 +148,8 @@
 
   <div class="content" itemprop="articleBody">
     <p>I used Jenkins with some Xcode plugins as our iOS CI half a year ago.</p>
-<p>The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to <code>Phabricator</code>,  if any of these steps is fail, it will post a notification to <code>Slack</code>.</p>
-<p>But after we are try to using <code>Carthage</code> instead of  <code>CocoaPod</code>, it need to <code>Carthage update</code> before building. The Jenkins can’t run commands before building. So I tried using shell directly.</p>
+<p>The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to <code>Phabricator</code>, if any of these steps is fail, it will post a notification to <code>Slack</code>.</p>
+<p>But after we are try to using <code>Carthage</code> instead of <code>CocoaPod</code>, it need to <code>Carthage update</code> before building. The Jenkins can’t run commands before building. So I tried using shell directly.</p>
 <h2 id="update-code"><a href="#update-code" class="headerlink" title="update code"></a>update code</h2><p>First it should <code>cd</code> into the project’s folder, then checkout new commits and update new frameworks</p>
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(dirname <span class="variable">$0</span>)</span><br><span class="line">git checkout master</span><br><span class="line">git reset --hard origin/master</span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/carthage update</span><br></pre></td></tr></table></figure>
 
@@ -162,7 +160,7 @@
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">projectName=$(find . -name <span class="string">"*.xcodeproj"</span> -depth 1 | cut -d <span class="string">'/'</span>  -f 2 | cut -d <span class="string">'.'</span> -f 1)</span><br><span class="line">plist=$(find <span class="variable">$projectName</span> -name <span class="string">"*.plist"</span> -d 1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># buildnum +1</span></span><br><span class="line">shortVersion=$(/usr/libexec/PlistBuddy -c <span class="string">"Print CFBundleShortVersionString"</span> <span class="string">"<span class="variable">$&#123;plist&#125;</span>"</span>)</span><br><span class="line">buildnum=$(/usr/libexec/PlistBuddy -c <span class="string">"Print CFBundleVersion"</span> <span class="string">"<span class="variable">$&#123;plist&#125;</span>"</span>)</span><br><span class="line">buildnum=$(expr <span class="variable">$buildnum</span> + 1)</span><br><span class="line"></span><br><span class="line">/usr/libexec/Plistbuddy -c <span class="string">"Set CFBundleVersion <span class="variable">$buildnum</span>"</span> <span class="string">"<span class="variable">$&#123;plist&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for AppleWatch</span></span><br><span class="line">WatchAppPlist=$(find WatchApp -name <span class="string">"*.plist"</span> -d 1)</span><br><span class="line">WatchAppExtensionPlist=$(find <span class="string">'WatchApp Extension'</span> -name <span class="string">"*.plist"</span> -d 1)</span><br><span class="line"></span><br><span class="line">/usr/libexec/Plistbuddy -c <span class="string">"Set CFBundleVersion <span class="variable">$buildnum</span>"</span> <span class="string">"<span class="variable">$&#123;WatchAppPlist&#125;</span>"</span></span><br><span class="line">/usr/libexec/Plistbuddy -c <span class="string">"Set CFBundleVersion <span class="variable">$buildnum</span>"</span> <span class="string">"<span class="variable">$&#123;WatchAppExtensionPlist&#125;</span>"</span></span><br></pre></td></tr></table></figure>
 
 <p>Here is how to xcodebuild your ipa in the <em>build</em> folder</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rm -rf build</span><br><span class="line"></span><br><span class="line">xcodebuild clean archive -archivePath build/<span class="variable">$YourApp</span>-Beta \</span><br><span class="line">-scheme <span class="variable">$YourAppScheme</span> </span><br><span class="line"></span><br><span class="line">xcodebuild -exportArchive \</span><br><span class="line">-exportFormat ipa \</span><br><span class="line">-archivePath <span class="string">"build/<span class="variable">$YourApp</span>-Beta.xcarchive"</span> \</span><br><span class="line">-exportPath <span class="string">"build/<span class="variable">$YourApp</span>-Beta.ipa"</span> \</span><br><span class="line">-exportProvisioningProfile <span class="string">"<span class="variable">$YourtProvisioningProfile</span>"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rm -rf build</span><br><span class="line"></span><br><span class="line">xcodebuild clean archive -archivePath build/<span class="variable">$YourApp</span>-Beta \</span><br><span class="line">-scheme <span class="variable">$YourAppScheme</span></span><br><span class="line"></span><br><span class="line">xcodebuild -exportArchive \</span><br><span class="line">-exportFormat ipa \</span><br><span class="line">-archivePath <span class="string">"build/<span class="variable">$YourApp</span>-Beta.xcarchive"</span> \</span><br><span class="line">-exportPath <span class="string">"build/<span class="variable">$YourApp</span>-Beta.ipa"</span> \</span><br><span class="line">-exportProvisioningProfile <span class="string">"<span class="variable">$YourtProvisioningProfile</span>"</span></span><br></pre></td></tr></table></figure>
 
 <p>then you can upload your *.ipa to your server ( for instance using curl)</p>
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rm -rf build <span class="comment"># clean up</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># push to remote</span></span><br><span class="line">git config user.email <span class="string">"bot@yourdomain.com"</span></span><br><span class="line">git config user.name <span class="string">"bot"</span></span><br><span class="line">git commit -a -m <span class="string">"<span class="variable">$buildnum</span>"</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
@@ -193,11 +191,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -245,11 +241,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

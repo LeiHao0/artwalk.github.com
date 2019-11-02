@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
 <meta property="og:description" content="Delegate 原理浅析B 的一个方法运行到某处，需要把自己的一个值告诉 A，并且做一定处理 怎么来实现呢？ 首先 B 要知道自己去告诉谁，然后再调用 A.aFunc() 我知道想知道原理的不想看代码，尽量简化了 A, B 类 123456789101112131415A.swiftclass A &amp;#123;	func aFunc(b:B) &amp;#123;		println(b.value)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2016-05-14T05:48:42.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:45:42.352Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -168,8 +166,8 @@
 <h2 id="Delegate"><a href="#Delegate" class="headerlink" title="Delegate"></a>Delegate</h2><p>既然是 B 要往外发送消息，就先从 B 下手：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">A</span>.swift</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span> &#123;</span><br><span class="line">		<span class="built_in">println</span>(b.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.swift</span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">BDelegate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span>  <span class="comment">// 1. 把 A 的 aFunc 声明成 BDelegate 的一个方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> delegate:<span class="type">BDelegate?</span>  <span class="comment">// 2. 声明一个 BDelegate 类型的 delegate 变量</span></span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bFunc</span> <span class="params">()</span></span> &#123;</span><br><span class="line">        value = <span class="number">213</span></span><br><span class="line">        delegate?.aFunc(<span class="keyword">self</span>) <span class="comment">// 3. 把自己 b，作为参数，调用 aFunc()</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>做了 1、2、3后，还是不行，为啥呢？<br>因为 A 不知道 B 进行了委托，两者没关联起来   </p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a.swift</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>: <span class="title">BDelegate</span> </span>&#123; <span class="comment">// 1. BDelegate</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span> &#123;</span><br><span class="line">        b.delegate = <span class="keyword">self</span> <span class="comment">// 2. 把 b 的 delegate 变量设置成 self，也就是 a</span></span><br><span class="line">        <span class="built_in">println</span>(b.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.swift</span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">BDelegate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span>  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> delegate:<span class="type">BDelegate?</span>  </span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bFunc</span> <span class="params">()</span></span> &#123;</span><br><span class="line">        value = <span class="number">213</span></span><br><span class="line">        delegate?.aFunc(<span class="keyword">self</span>) <span class="comment">// 3. 这下看懂了吧？delegate?.aFunc(self) 等价于  a.aFunc(b)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main.swift</span><br><span class="line"><span class="keyword">let</span> b = <span class="type">B</span>()</span><br><span class="line"><span class="keyword">let</span> a = <span class="type">A</span>()</span><br><span class="line">a.aFunc(b)</span><br><span class="line">b.bFunc()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个可以在 Playground 里看结果了</span></span><br></pre></td></tr></table></figure>
+<p>做了 1、2、3 后，还是不行，为啥呢？<br>因为 A 不知道 B 进行了委托，两者没关联起来</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a.swift</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>: <span class="title">BDelegate</span> </span>&#123; <span class="comment">// 1. BDelegate</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span> &#123;</span><br><span class="line">        b.delegate = <span class="keyword">self</span> <span class="comment">// 2. 把 b 的 delegate 变量设置成 self，也就是 a</span></span><br><span class="line">        <span class="built_in">println</span>(b.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.swift</span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">BDelegate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> delegate:<span class="type">BDelegate?</span></span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bFunc</span> <span class="params">()</span></span> &#123;</span><br><span class="line">        value = <span class="number">213</span></span><br><span class="line">        delegate?.aFunc(<span class="keyword">self</span>) <span class="comment">// 3. 这下看懂了吧？delegate?.aFunc(self) 等价于  a.aFunc(b)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main.swift</span><br><span class="line"><span class="keyword">let</span> b = <span class="type">B</span>()</span><br><span class="line"><span class="keyword">let</span> a = <span class="type">A</span>()</span><br><span class="line">a.aFunc(b)</span><br><span class="line">b.bFunc()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个可以在 Playground 里看结果了</span></span><br></pre></td></tr></table></figure>
 
 <p>大功告成</p>
 <p>回想下常见的代码，比如：</p>
@@ -200,11 +198,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -257,11 +253,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

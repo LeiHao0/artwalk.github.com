@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
 <meta property="og:description" content="The whole things I want to do is to download some courses which help me a lot on youtube and embed zh-Hans subtitle to the video then submit them to an Chinese website which is not support external su">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-30T16:29:45.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:52:24.488Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -75,7 +73,7 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/08/23/Top-100-Liked-Questions-Easy-Swift/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/10/18/CUDA-GPU-Accelerated-h264-h265-HEVC-Video-Encoding-with-Staxrip/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/2018/07/23/More-how-to-convert-video-to-text/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -154,18 +152,12 @@
 <h2 id="Youtube-dl-config"><a href="#Youtube-dl-config" class="headerlink" title="Youtube-dl config"></a>Youtube-dl config</h2><p>The file path is <code>~/.config/youtube-dl/config</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">--o <span class="string">'%(playlist_index)02ds - %(title)s.%(ext)s'</span></span><br><span class="line">--no-mtime</span><br><span class="line">--proxy socks5://127.0.0.1:1080</span><br><span class="line"></span><br><span class="line">--ignore-errors</span><br><span class="line"></span><br><span class="line">-f bestvideo[height&lt;=?1080]+bestaudio/best</span><br><span class="line"></span><br><span class="line">--merge-output-format <span class="string">'mkv'</span></span><br><span class="line"></span><br><span class="line">--write-auto-sub --sub-lang <span class="string">'zh-Hans'</span></span><br><span class="line"></span><br><span class="line">--convert-subs <span class="string">'ass'</span></span><br><span class="line"></span><br><span class="line">--embed-subs</span><br></pre></td></tr></table></figure>
 
-
-
 <h2 id="Download-concurrently"><a href="#Download-concurrently" class="headerlink" title="Download concurrently"></a>Download concurrently</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">playlist=<span class="string">'https://www.youtube.com/playlist?list=...'</span></span><br><span class="line">num=70</span><br><span class="line">i=1</span><br><span class="line"><span class="keyword">while</span> ((<span class="variable">$i</span> &lt;= <span class="variable">$num</span>))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    end=$(( i+1 ))</span><br><span class="line">    youtube-dl --playlist-start <span class="variable">$i</span> --playlist-end <span class="variable">$end</span> <span class="variable">$playlist</span> &gt; <span class="string">"log-<span class="variable">$i</span>-<span class="variable">$end</span>.txt"</span>  2&gt;&amp;1  &amp;</span><br><span class="line">    i=$((<span class="variable">$end</span>+1))</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-
-
 
 <h2 id="Batch-translate-filenames"><a href="#Batch-translate-filenames" class="headerlink" title="Batch translate filenames"></a>Batch translate filenames</h2><p>After downloaded all the videos in the list, get their names with</p>
 <p><code>ls | grep mkv | sed &quot;s/\.mkv//&quot;</code></p>
 <p>then copy &amp; paste to google to get the translated text, then save it to a <code>zh.txt</code></p>
 <h2 id="Batch-embed-subtitles"><a href="#Batch-embed-subtitles" class="headerlink" title="Batch embed subtitles"></a>Batch embed subtitles</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tmp=<span class="string">"tmp.mkv"</span></span><br><span class="line">mkdir -p embedSub</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> *.mkv; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">read</span> -r zh &lt;&amp;3</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$f</span>\n<span class="variable">$zh</span>"</span></span><br><span class="line">  <span class="comment"># ass="$( echo $f | sed 's/\.mkv//').zh-Hans.ass"</span></span><br><span class="line">  cp <span class="variable">$f</span> <span class="variable">$tmp</span></span><br><span class="line">  ffmpeg -nostats -loglevel 24 -n -i <span class="variable">$tmp</span> -vf subtitles=<span class="variable">$tmp</span> <span class="string">"embedSub/<span class="variable">$zh</span>.mkv"</span>;</span><br><span class="line"><span class="keyword">done</span> 3&lt;zh.txt</span><br><span class="line"></span><br><span class="line">rm <span class="variable">$tmp</span></span><br></pre></td></tr></table></figure>
-
-
 
 <p>It usually took me a whole night for 20 videos on Intel Core i7, an hour video needs 20 minutes to embed its subtitle.</p>
 
@@ -189,11 +181,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -241,11 +231,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

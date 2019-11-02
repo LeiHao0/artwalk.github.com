@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="重构不是银弹 成书时，面向对象尚是小众，而如今函数式编程已开始流行   时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 Java 程序员，更是不想知道都难发展至今，重构已经类似于编码的一部分了 此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下之后的章节大略过一下就行了">
+    <meta name="description" content="重构不是银弹 成书时，面向对象尚是小众，而如今函数式编程已开始流行 时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 Java 程序员，更是不想知道都难发展至今，重构已经类似于编码的一部分了 此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下之后的章节大略过一下就行了">
 <meta name="keywords" content="Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="refactoring is not a silver bullet">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2015&#x2F;01&#x2F;25&#x2F;refactoring-is-not-a-silver-bullet&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="重构不是银弹 成书时，面向对象尚是小众，而如今函数式编程已开始流行   时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 Java 程序员，更是不想知道都难发展至今，重构已经类似于编码的一部分了 此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下之后的章节大略过一下就行了">
+<meta property="og:description" content="重构不是银弹 成书时，面向对象尚是小众，而如今函数式编程已开始流行 时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 Java 程序员，更是不想知道都难发展至今，重构已经类似于编码的一部分了 此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下之后的章节大略过一下就行了">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;cl.ly&#x2F;image&#x2F;0M1z2O0j0k3N&#x2F;Image%202015-01-25%20at%2011.17.20%20PM.png">
-<meta property="og:updated_time" content="2016-05-14T05:48:42.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:46:17.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;cl.ly&#x2F;image&#x2F;0M1z2O0j0k3N&#x2F;Image%202015-01-25%20at%2011.17.20%20PM.png">
     
@@ -63,11 +63,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -103,9 +101,9 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2015/01/25/refactoring-is-not-a-silver-bullet/&title=refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2015/01/25/refactoring-is-not-a-silver-bullet/&title=refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2015/01/25/refactoring-is-not-a-silver-bullet/&name=refactoring is not a silver bullet&description=&lt;h1 id=&#34;重构不是银弹&#34;&gt;&lt;a href=&#34;#重构不是银弹&#34; class=&#34;headerlink&#34; title=&#34;重构不是银弹&#34;&gt;&lt;/a&gt;重构不是银弹&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://cl.ly/image/0M1z2O0j0k3N/Image%202015-01-25%20at%2011.17.20%20PM.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;成书时，面向对象尚是小众，而如今函数式编程已开始流行  &lt;/p&gt;
+&lt;p&gt;成书时，面向对象尚是小众，而如今函数式编程已开始流行&lt;/p&gt;
 &lt;p&gt;时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 &lt;code&gt;Java&lt;/code&gt; 程序员，更是不想知道都难&lt;br&gt;发展至今，重构已经类似于编码的一部分了&lt;/p&gt;
-&lt;p&gt;此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看&lt;br&gt;4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下&lt;br&gt;之后的章节大略过一下就行了  &lt;/p&gt;
+&lt;p&gt;此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看&lt;br&gt;4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下&lt;br&gt;之后的章节大略过一下就行了&lt;/p&gt;
 &lt;hr&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -156,19 +154,19 @@
 
   <div class="content" itemprop="articleBody">
     <h1 id="重构不是银弹"><a href="#重构不是银弹" class="headerlink" title="重构不是银弹"></a>重构不是银弹</h1><p><img src="http://cl.ly/image/0M1z2O0j0k3N/Image%202015-01-25%20at%2011.17.20%20PM.png" alt=""></p>
-<p>成书时，面向对象尚是小众，而如今函数式编程已开始流行  </p>
+<p>成书时，面向对象尚是小众，而如今函数式编程已开始流行</p>
 <p>时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 <code>Java</code> 程序员，更是不想知道都难<br>发展至今，重构已经类似于编码的一部分了</p>
-<p>此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看<br>4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下<br>之后的章节大略过一下就行了  </p>
+<p>此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看<br>4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下<br>之后的章节大略过一下就行了</p>
 <hr>
 <a id="more"></a>
 
-<p>曾经在学校里刷了<a href="http://book.douban.com/subject/1477390/" target="_blank" rel="noopener">《代码大全》</a>，所以，再看此书，<strong>相对</strong>就没那么重要了  </p>
-<p>比如虽然我 iOS 弱爆了，但看到现在公司的项目，上来蹭蹭蹭几百行的函数，大量的重复代码，各种神奇数字，也是醉了<br>当然这并不是说之前项目不好，毕竟大家都有被 <em>deadline</em> 逼成傻逼的时候   </p>
+<p>曾经在学校里刷了<a href="http://book.douban.com/subject/1477390/" target="_blank" rel="noopener">《代码大全》</a>，所以，再看此书，<strong>相对</strong>就没那么重要了</p>
+<p>比如虽然我 iOS 弱爆了，但看到现在公司的项目，上来蹭蹭蹭几百行的函数，大量的重复代码，各种神奇数字，也是醉了<br>当然这并不是说之前项目不好，毕竟大家都有被 <em>deadline</em> 逼成傻逼的时候</p>
 <p>总得来说，此书还是应该<strong>过一遍</strong>，毕竟封面印着：</p>
 <blockquote>
 <p>普通程序员进阶到编程高手必须修炼的秘籍</p>
 </blockquote>
-<p>因为不看的话，可能意识不到一些前人路过的坑  </p>
+<p>因为不看的话，可能意识不到一些前人路过的坑</p>
 <p>像我对临时变量的理解就不妥<br>还有以前写函数<strong>过于随意</strong>，像参数不带 <code>let</code> ，不暴露的也没加 <code>private</code></p>
 <p>比较有启发的是：</p>
 <ul>
@@ -177,9 +175,9 @@
 <li>Null Object</li>
 </ul>
 <p>目前做 iOS 的时间尚短，属于初级程序员，不懂的地方巨多，每每在试错中做功能，写的时候这些东东也就统统忽略了<br>虽然时常想着功能 OK 后立即重构，但人都有惰性，往往看到能跑了就万事大吉，然后把整理代码的希望寄托在重构上</p>
-<p>比较理想的情况是：<br>版本控制 + Review + 结对 + 重构  （目前的公司好赞啊，已实现了大半）</p>
-<p>但这又让我想起了 Fred Brooks 在1987年所发表的一篇关于软件工程的经典论文 ——<a href="http://zh.wikipedia.org/wiki/%E6%B2%A1%E6%9C%89%E9%93%B6%E5%BC%B9" target="_blank" rel="noopener">《没有银弹》</a></p>
-<p>重构当然也不是银弹  </p>
+<p>比较理想的情况是：<br>版本控制 + Review + 结对 + 重构 （目前的公司好赞啊，已实现了大半）</p>
+<p>但这又让我想起了 Fred Brooks 在 1987 年所发表的一篇关于软件工程的经典论文 ——<a href="http://zh.wikipedia.org/wiki/%E6%B2%A1%E6%9C%89%E9%93%B6%E5%BC%B9" target="_blank" rel="noopener">《没有银弹》</a></p>
+<p>重构当然也不是银弹</p>
 <p>只能重写了少年</p>
 
   </div>
@@ -202,11 +200,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -229,9 +225,9 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2015/01/25/refactoring-is-not-a-silver-bullet/&title=refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2015/01/25/refactoring-is-not-a-silver-bullet/&title=refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2015/01/25/refactoring-is-not-a-silver-bullet/&name=refactoring is not a silver bullet&description=&lt;h1 id=&#34;重构不是银弹&#34;&gt;&lt;a href=&#34;#重构不是银弹&#34; class=&#34;headerlink&#34; title=&#34;重构不是银弹&#34;&gt;&lt;/a&gt;重构不是银弹&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://cl.ly/image/0M1z2O0j0k3N/Image%202015-01-25%20at%2011.17.20%20PM.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;成书时，面向对象尚是小众，而如今函数式编程已开始流行  &lt;/p&gt;
+&lt;p&gt;成书时，面向对象尚是小众，而如今函数式编程已开始流行&lt;/p&gt;
 &lt;p&gt;时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 &lt;code&gt;Java&lt;/code&gt; 程序员，更是不想知道都难&lt;br&gt;发展至今，重构已经类似于编码的一部分了&lt;/p&gt;
-&lt;p&gt;此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看&lt;br&gt;4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下&lt;br&gt;之后的章节大略过一下就行了  &lt;/p&gt;
+&lt;p&gt;此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看&lt;br&gt;4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下&lt;br&gt;之后的章节大略过一下就行了&lt;/p&gt;
 &lt;hr&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
@@ -258,11 +254,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

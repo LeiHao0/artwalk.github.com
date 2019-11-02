@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
 <meta property="og:description" content="I was wondering why the family name was always behind the given name in my Contacts, no matter when I check my iPhone or Mac. First I believe some configs was not correct, until I found I messed up th">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2015-11-10T17:32:01.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:47:07.351Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -149,11 +147,12 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>I was wondering why the family name was always behind the given name in my Contacts, no matter when I check my iPhone or Mac. First I believe some configs was not correct, until I found I messed up the First and Last name.   </p>
+    <p>I was wondering why the family name was always behind the given name in my Contacts, no matter when I check my iPhone or Mac. First I believe some configs was not correct, until I found I messed up the First and Last name.</p>
 <p>In fact, given name was known as the first name, which was opposite in China.</p>
 <p>Althought only dozens of people in my Contacts, but I still don’t want to edit them manually as an iOS programmer →_→</p>
 <p>So, just open Xcode and new an <code>OS X Application -&gt; command line tool</code> and paster the snippet below to your <code>main.swift</code>, then <code>cmd + R</code> …</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> AddressBook</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> addressBook = <span class="type">ABAddressBook</span>.sharedAddressBook()</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> firstKey = <span class="string">"First"</span></span><br><span class="line"><span class="keyword">let</span> lastKey = <span class="string">"Last"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> people <span class="keyword">in</span> addressBook.people() &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> p = people <span class="keyword">as</span>? <span class="type">ABPerson</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> f: <span class="type">AnyObject?</span> = p.valueForKey(firstKey)</span><br><span class="line">        <span class="keyword">let</span> l: <span class="type">AnyObject?</span> = p.valueForKey(lastKey)</span><br><span class="line">        p.setValue(l, forKey: firstKey)</span><br><span class="line">        p.setValue(f, forKey: lastKey)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addressBook.save()</span><br></pre></td></tr></table></figure>
+
   </div>
 </article>
 
@@ -174,11 +173,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -226,11 +223,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

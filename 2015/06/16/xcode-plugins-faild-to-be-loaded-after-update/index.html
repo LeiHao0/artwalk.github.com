@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
 <meta property="og:description" content="You can type the command in terminal after Xcode updated 1find ~&#x2F;Library&#x2F;Application\ Support&#x2F;Developer&#x2F;Shared&#x2F;Xcode&#x2F;Plug-ins -name Info.plist -maxdepth 3 | xargs -I&amp;#123;&amp;#125; defaults write &amp;#123;&amp;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2015-11-10T17:32:01.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:46:56.105Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -151,7 +149,8 @@
   <div class="content" itemprop="articleBody">
     <p>You can type the command in terminal after Xcode updated</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I&#123;&#125; defaults write &#123;&#125; DVTPlugInCompatibilityUUIDs -array-add `defaults <span class="built_in">read</span> /Applications/Xcode.app/Contents/Info.plist DVTPlugInCompatibilityUUID`</span><br></pre></td></tr></table></figure>
-<p>this will added your new Xcode UUID to <code>DVTPlugInCompatibilityUUID</code>  </p>
+
+<p>this will added your new Xcode UUID to <code>DVTPlugInCompatibilityUUID</code></p>
 <p>But that is a risky way, for instance my Xcode 6.3.2 always crash after I ran this command without brain.</p>
 <p>So I had to open the folder <code>~/Library/Application Support/Developer/Shared/Xcode/Plug-ins</code> and deleted some suspicious plugins.</p>
 <p>Of course also you can check the <code>tail -f /var/log/system.log</code>, and found which plugin cause the Xcode crash exactly in <code>~/Library/Logs/DiagnosticReports/Xcode_$time_$macbookname.crash</code></p>
@@ -177,11 +176,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -229,11 +226,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

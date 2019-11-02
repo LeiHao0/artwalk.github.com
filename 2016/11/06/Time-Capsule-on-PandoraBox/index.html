@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Time Capsule on PandoraBoxMy OpenWRT is PandoraBox, and the Router is Mi miniThese are a few slight difference with the official wiki SoftwareSystem -&amp;gt; Software -&amp;gt; Configuration  repace all text">
+    <meta name="description" content="Time Capsule on PandoraBoxMy OpenWRT is PandoraBox, and the Router is Mi miniThese are a few slight difference with the official wiki SoftwareSystem -&amp;gt; Software -&amp;gt; Configuration repace all text">
 <meta name="keywords" content="PandoraBox,OpenWRT,TimeMachine,Capsule">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Time Capsule on PandoraBox">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2016&#x2F;11&#x2F;06&#x2F;Time-Capsule-on-PandoraBox&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="Time Capsule on PandoraBoxMy OpenWRT is PandoraBox, and the Router is Mi miniThese are a few slight difference with the official wiki SoftwareSystem -&amp;gt; Software -&amp;gt; Configuration  repace all text">
+<meta property="og:description" content="Time Capsule on PandoraBoxMy OpenWRT is PandoraBox, and the Router is Mi miniThese are a few slight difference with the official wiki SoftwareSystem -&amp;gt; Software -&amp;gt; Configuration repace all text">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2016-11-06T06:48:44.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:48:25.651Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -150,9 +148,9 @@
 
   <div class="content" itemprop="articleBody">
     <h1 id="Time-Capsule-on-PandoraBox"><a href="#Time-Capsule-on-PandoraBox" class="headerlink" title="Time Capsule on PandoraBox"></a>Time Capsule on PandoraBox</h1><p>My <code>OpenWRT</code> is <code>PandoraBox</code>, and the Router is <code>Mi mini</code><br>These are a few slight difference with the official <a href="https://wiki.openwrt.org/doc/howto/timemachine" target="_blank" rel="noopener">wiki</a></p>
-<h2 id="Software"><a href="#Software" class="headerlink" title="Software"></a>Software</h2><p><code>System -&gt; Software -&gt; Configuration</code> </p>
+<h2 id="Software"><a href="#Software" class="headerlink" title="Software"></a>Software</h2><p><code>System -&gt; Software -&gt; Configuration</code></p>
 <p>repace all text to:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext /var/opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line">src/gz r2_base http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/base</span><br><span class="line">src/gz r2_management http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/management</span><br><span class="line">src/gz r2_oldpackages http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/oldpackages</span><br><span class="line">src/gz r2_packages http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/packages</span><br><span class="line">src/gz r2_routing http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/routing</span><br><span class="line">src/gz r2_telephony http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/telephony</span><br><span class="line"> </span><br><span class="line">src/gz r2_old_packages http://downloads.openwrt.org.cn/PandoraBox/ralink/mt7620_old/packages/</span><br><span class="line">arch all 100</span><br><span class="line">arch noarch 200</span><br><span class="line">arch ralink 300</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext /var/opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line">src/gz r2_base http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/base</span><br><span class="line">src/gz r2_management http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/management</span><br><span class="line">src/gz r2_oldpackages http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/oldpackages</span><br><span class="line">src/gz r2_packages http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/packages</span><br><span class="line">src/gz r2_routing http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/routing</span><br><span class="line">src/gz r2_telephony http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/telephony</span><br><span class="line"></span><br><span class="line">src/gz r2_old_packages http://downloads.openwrt.org.cn/PandoraBox/ralink/mt7620_old/packages/</span><br><span class="line">arch all 100</span><br><span class="line">arch noarch 200</span><br><span class="line">arch ralink 300</span><br></pre></td></tr></table></figure>
 
 <p>Then, ssh to your PandoraBox</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install shadow-useradd shadow-groupadd</span><br><span class="line"><span class="built_in">cd</span> /usr/lib</span><br><span class="line">ln -s libgcrypt.so.20 libgcrypt.so.11</span><br></pre></td></tr></table></figure>
@@ -168,7 +166,6 @@
 </ul>
 <p>Don’t try <code>opkg install</code> as the <a href="https://wiki.openwrt.org/doc/howto/timemachine" target="_blank" rel="noopener">wiki</a> says, otherwise you’ll get error:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Configuring kmod-fs-hfsplus.</span><br><span class="line">//usr/lib/opkg/info/kmod-fs-hfsplus.postinst: .: line 3: can<span class="string">'t open '</span>/etc/functions.sh<span class="string">'</span></span><br><span class="line"><span class="string">Collected errors:</span></span><br><span class="line"><span class="string"> * pkg_run_script: package "kmod-fs-hfsplus" postinst script returned status 2.</span></span><br><span class="line"><span class="string"> * opkg_configure: kmod-fs-hfsplus.postinst returned 2.</span></span><br></pre></td></tr></table></figure>
-
 
 <h2 id="Format-amp-Mount"><a href="#Format-amp-Mount" class="headerlink" title="Format &amp; Mount"></a>Format &amp; Mount</h2><p>Plug your BackUp hard drive to Mi mini</p>
 <p>Use <code>blkid</code> to find your sda, this is mine:</p>
@@ -188,7 +185,7 @@
 
 <h2 id="Netatalk"><a href="#Netatalk" class="headerlink" title="Netatalk"></a>Netatalk</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/netatalk/afpd.conf</span><br></pre></td></tr></table></figure>
 
-<p>Replace all text to: </p>
+<p>Replace all text to:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"TimeMachine"</span> -uampath /usr/lib/uams -uamlist uams_dhx2.so -nodebug -nouservol -icon -nosavepassword -mimicmodel RackMac</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/netatalk/AppleVolumes.default</span><br></pre></td></tr></table></figure>
@@ -199,7 +196,7 @@
 <h2 id="Avahi"><a href="#Avahi" class="headerlink" title="Avahi"></a>Avahi</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/avahi/avahi-daemon.conf</span><br></pre></td></tr></table></figure>
 
 <p>Replace all text to:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[server]</span></span><br><span class="line"><span class="string">host-name=TimeMachine</span></span><br><span class="line"><span class="comment">#domain-name=local</span></span><br><span class="line"><span class="string">use-ipv4=yes</span></span><br><span class="line"><span class="string">use-ipv6=no</span></span><br><span class="line"><span class="string">check-response-ttl=no</span></span><br><span class="line"><span class="string">use-iff-running=no</span></span><br><span class="line"><span class="string">enable-dbus=no</span> </span><br><span class="line"><span class="string">allow-interfaces=br-lan</span></span><br><span class="line"> </span><br><span class="line"><span class="string">[publish]</span></span><br><span class="line"><span class="string">publish-addresses=yes</span></span><br><span class="line"><span class="string">publish-hinfo=yes</span></span><br><span class="line"><span class="string">publish-workstation=no</span></span><br><span class="line"><span class="string">publish-domain=yes</span></span><br><span class="line"><span class="comment">#publish-dns-servers=192.168.1.1</span></span><br><span class="line"><span class="comment">#publish-resolv-conf-dns-servers=yes</span></span><br><span class="line"> </span><br><span class="line"><span class="string">[reflector]</span></span><br><span class="line"><span class="string">enable-reflector=no</span></span><br><span class="line"><span class="string">reflect-ipv=no</span></span><br><span class="line"> </span><br><span class="line"><span class="string">[rlimits]</span></span><br><span class="line"><span class="comment">#rlimit-as=</span></span><br><span class="line"><span class="string">rlimit-core=0</span></span><br><span class="line"><span class="string">rlimit-data=4194304</span></span><br><span class="line"><span class="string">rlimit-fsize=0</span></span><br><span class="line"><span class="string">rlimit-nofile=30</span></span><br><span class="line"><span class="string">rlimit-stack=4194304</span></span><br><span class="line"><span class="string">rlimit-nproc=3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[server]</span></span><br><span class="line"><span class="string">host-name=TimeMachine</span></span><br><span class="line"><span class="comment">#domain-name=local</span></span><br><span class="line"><span class="string">use-ipv4=yes</span></span><br><span class="line"><span class="string">use-ipv6=no</span></span><br><span class="line"><span class="string">check-response-ttl=no</span></span><br><span class="line"><span class="string">use-iff-running=no</span></span><br><span class="line"><span class="string">enable-dbus=no</span></span><br><span class="line"><span class="string">allow-interfaces=br-lan</span></span><br><span class="line"></span><br><span class="line"><span class="string">[publish]</span></span><br><span class="line"><span class="string">publish-addresses=yes</span></span><br><span class="line"><span class="string">publish-hinfo=yes</span></span><br><span class="line"><span class="string">publish-workstation=no</span></span><br><span class="line"><span class="string">publish-domain=yes</span></span><br><span class="line"><span class="comment">#publish-dns-servers=192.168.1.1</span></span><br><span class="line"><span class="comment">#publish-resolv-conf-dns-servers=yes</span></span><br><span class="line"></span><br><span class="line"><span class="string">[reflector]</span></span><br><span class="line"><span class="string">enable-reflector=no</span></span><br><span class="line"><span class="string">reflect-ipv=no</span></span><br><span class="line"></span><br><span class="line"><span class="string">[rlimits]</span></span><br><span class="line"><span class="comment">#rlimit-as=</span></span><br><span class="line"><span class="string">rlimit-core=0</span></span><br><span class="line"><span class="string">rlimit-data=4194304</span></span><br><span class="line"><span class="string">rlimit-fsize=0</span></span><br><span class="line"><span class="string">rlimit-nofile=30</span></span><br><span class="line"><span class="string">rlimit-stack=4194304</span></span><br><span class="line"><span class="string">rlimit-nproc=3</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/avahi/services/afpd.service</span><br></pre></td></tr></table></figure>
 
@@ -235,11 +232,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -287,11 +282,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

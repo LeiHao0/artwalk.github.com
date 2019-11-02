@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="When I was reading iOS 7 Programming Cookbook, it occurred to me that how many lines of Obj-c codes exactly I have written.   I used to use SourceCounter to do this earlier when I was still in Windows">
+    <meta name="description" content="When I was reading iOS 7 Programming Cookbook, it occurred to me that how many lines of Obj-c codes exactly I have written. I used to use SourceCounter to do this earlier when I was still in Windows O">
 <meta name="keywords" content="Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Count Lines of Code">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2014&#x2F;08&#x2F;19&#x2F;count-lines-of-code&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="When I was reading iOS 7 Programming Cookbook, it occurred to me that how many lines of Obj-c codes exactly I have written.   I used to use SourceCounter to do this earlier when I was still in Windows">
+<meta property="og:description" content="When I was reading iOS 7 Programming Cookbook, it occurred to me that how many lines of Obj-c codes exactly I have written. I used to use SourceCounter to do this earlier when I was still in Windows O">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2016-05-14T05:48:42.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:44:49.708Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -100,10 +98,10 @@
   <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&title=Count Lines of Code" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&title=Count Lines of Code" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&title=Count Lines of Code" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&name=Count Lines of Code&description=&lt;p&gt;When I was reading &lt;em&gt;iOS 7 Programming Cookbook&lt;/em&gt;, it occurred to me that how many lines of Obj-c codes exactly I have written.  &lt;/p&gt;
-&lt;p&gt;I used to use &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; to do this earlier when I was still in Windows OS.  &lt;/p&gt;
-&lt;p&gt;But &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; do not support Mac OS X.  &lt;/p&gt;
-&lt;p&gt;So, I found and interesting commond line:  &lt;/p&gt;
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&name=Count Lines of Code&description=&lt;p&gt;When I was reading &lt;em&gt;iOS 7 Programming Cookbook&lt;/em&gt;, it occurred to me that how many lines of Obj-c codes exactly I have written.&lt;/p&gt;
+&lt;p&gt;I used to use &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; to do this earlier when I was still in Windows OS.&lt;/p&gt;
+&lt;p&gt;But &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; do not support Mac OS X.&lt;/p&gt;
+&lt;p&gt;So, I found and interesting commond line:&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;find . -name &lt;span class=&#34;string&#34;&gt;&#34;*.m&#34;&lt;/span&gt; -or -name &lt;span class=&#34;string&#34;&gt;&#34;*.h&#34;&lt;/span&gt; | xargs grep -v &lt;span class=&#34;string&#34;&gt;&#34;^$&#34;&lt;/span&gt; | wc -l&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -153,23 +151,25 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>When I was reading <em>iOS 7 Programming Cookbook</em>, it occurred to me that how many lines of Obj-c codes exactly I have written.  </p>
-<p>I used to use <a href="https://code.google.com/p/boomworks/" target="_blank" rel="noopener">SourceCounter</a> to do this earlier when I was still in Windows OS.  </p>
-<p>But <a href="https://code.google.com/p/boomworks/" target="_blank" rel="noopener">SourceCounter</a> do not support Mac OS X.  </p>
-<p>So, I found and interesting commond line:  </p>
+    <p>When I was reading <em>iOS 7 Programming Cookbook</em>, it occurred to me that how many lines of Obj-c codes exactly I have written.</p>
+<p>I used to use <a href="https://code.google.com/p/boomworks/" target="_blank" rel="noopener">SourceCounter</a> to do this earlier when I was still in Windows OS.</p>
+<p>But <a href="https://code.google.com/p/boomworks/" target="_blank" rel="noopener">SourceCounter</a> do not support Mac OS X.</p>
+<p>So, I found and interesting commond line:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">"*.m"</span> -or -name <span class="string">"*.h"</span> | xargs grep -v <span class="string">"^$"</span> | wc -l</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
-<p>“^$” means blank line<br>“wc -l” means WordCount line</p>
+<p>“^$“ means blank line<br>“wc -l” means WordCount line</p>
 <hr>
-<p>I still recommend another tool which is written by <code>Perl</code>:  </p>
+<p>I still recommend another tool which is written by <code>Perl</code>:</p>
 <p><a href="http://cloc.sourceforge.net/" target="_blank" rel="noopener">CLOC - Count Lines of Code</a></p>
 <h4 id="Install"><a href="#Install" class="headerlink" title="Install:"></a>Install:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install cloc</span><br></pre></td></tr></table></figure>
+
 <h4 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cloc --exclude-dir=<span class="comment">#excludeDir, #dir1 #dir2 ...</span></span><br></pre></td></tr></table></figure>
 
-<p>Here is result of my codes   </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">2014-08-19  </span><br><span class="line"></span><br><span class="line">http://cloc.sourceforge.net v 1.60  T=20.51 s (67.8 files/s, 4427.5 lines/s)</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">Language                     files          blank        comment           code</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">C++                            409           5440           4917          21968</span><br><span class="line">C/C++ Header                   250           2997           3436          10458</span><br><span class="line">Objective C                    298           3999           3720           9616</span><br><span class="line">XML                            184            408             97           6725</span><br><span class="line">HTML                            27            851             13           4743</span><br><span class="line">Java                           110            732            985           4082</span><br><span class="line">C                               54            492            533           2046</span><br><span class="line">Assembly                        23            234             16            600</span><br><span class="line">Python                          19            200            117            435</span><br><span class="line">Go                               2            109             21            303</span><br><span class="line">CSS                              2             33              7            223</span><br><span class="line">JSP                              4             10              0             66</span><br><span class="line">Javascript                       2              0              9             49</span><br><span class="line">YAML                             5             16             16             44</span><br><span class="line">Ruby                             1             13              3             11</span><br><span class="line">Bourne Shell                     1              4              1              7</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">SUM:                          1391          15538          13891          61376</span><br><span class="line">-------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+<p>Here is result of my codes</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">2014-08-19</span><br><span class="line"></span><br><span class="line">http://cloc.sourceforge.net v 1.60  T=20.51 s (67.8 files/s, 4427.5 lines/s)</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">Language                     files          blank        comment           code</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">C++                            409           5440           4917          21968</span><br><span class="line">C/C++ Header                   250           2997           3436          10458</span><br><span class="line">Objective C                    298           3999           3720           9616</span><br><span class="line">XML                            184            408             97           6725</span><br><span class="line">HTML                            27            851             13           4743</span><br><span class="line">Java                           110            732            985           4082</span><br><span class="line">C                               54            492            533           2046</span><br><span class="line">Assembly                        23            234             16            600</span><br><span class="line">Python                          19            200            117            435</span><br><span class="line">Go                               2            109             21            303</span><br><span class="line">CSS                              2             33              7            223</span><br><span class="line">JSP                              4             10              0             66</span><br><span class="line">Javascript                       2              0              9             49</span><br><span class="line">YAML                             5             16             16             44</span><br><span class="line">Ruby                             1             13              3             11</span><br><span class="line">Bourne Shell                     1              4              1              7</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">SUM:                          1391          15538          13891          61376</span><br><span class="line">-------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
   </div>
 </article>
 
@@ -190,11 +190,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -216,10 +214,10 @@
   <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&title=Count Lines of Code" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&title=Count Lines of Code" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&title=Count Lines of Code" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&name=Count Lines of Code&description=&lt;p&gt;When I was reading &lt;em&gt;iOS 7 Programming Cookbook&lt;/em&gt;, it occurred to me that how many lines of Obj-c codes exactly I have written.  &lt;/p&gt;
-&lt;p&gt;I used to use &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; to do this earlier when I was still in Windows OS.  &lt;/p&gt;
-&lt;p&gt;But &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; do not support Mac OS X.  &lt;/p&gt;
-&lt;p&gt;So, I found and interesting commond line:  &lt;/p&gt;
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2014/08/19/count-lines-of-code/&name=Count Lines of Code&description=&lt;p&gt;When I was reading &lt;em&gt;iOS 7 Programming Cookbook&lt;/em&gt;, it occurred to me that how many lines of Obj-c codes exactly I have written.&lt;/p&gt;
+&lt;p&gt;I used to use &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; to do this earlier when I was still in Windows OS.&lt;/p&gt;
+&lt;p&gt;But &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; do not support Mac OS X.&lt;/p&gt;
+&lt;p&gt;So, I found and interesting commond line:&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;find . -name &lt;span class=&#34;string&#34;&gt;&#34;*.m&#34;&lt;/span&gt; -or -name &lt;span class=&#34;string&#34;&gt;&#34;*.h&#34;&lt;/span&gt; | xargs grep -v &lt;span class=&#34;string&#34;&gt;&#34;^$&#34;&lt;/span&gt; | wc -l&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
@@ -246,11 +244,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         

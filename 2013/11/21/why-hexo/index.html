@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="第一次搭建的时候用的是Jekyll，Octopress没试过Jekyll 的框架设计分为 代码 + 生成网页 两部分上传到github的时候push上去的是代码部分，而hexo是本地生成好的网页，速度上应该会有一定的优势看到默认模板也比较漂亮，所以昨天换成了hexo   感觉hexo最大特点是隐藏了繁琐的各种命令用Jekyll的话，从搭建到完成至少十几条吧而写新文章至少要   1234567891">
+    <meta name="description" content="第一次搭建的时候用的是 Jekyll，Octopress 没试过Jekyll 的框架设计分为 代码 + 生成网页 两部分上传到 github 的时候 push 上去的是代码部分，而 hexo 是本地生成好的网页，速度上应该会有一定的优势看到默认模板也比较漂亮，所以昨天换成了 hexo 感觉 hexo 最大特点是隐藏了繁琐的各种命令用 Jekyll 的话，从搭建到完成至少十几条吧而写新文章至少要 1">
 <meta name="keywords" content="blog,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Why hexo">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2013&#x2F;11&#x2F;21&#x2F;why-hexo&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="第一次搭建的时候用的是Jekyll，Octopress没试过Jekyll 的框架设计分为 代码 + 生成网页 两部分上传到github的时候push上去的是代码部分，而hexo是本地生成好的网页，速度上应该会有一定的优势看到默认模板也比较漂亮，所以昨天换成了hexo   感觉hexo最大特点是隐藏了繁琐的各种命令用Jekyll的话，从搭建到完成至少十几条吧而写新文章至少要   1234567891">
+<meta property="og:description" content="第一次搭建的时候用的是 Jekyll，Octopress 没试过Jekyll 的框架设计分为 代码 + 生成网页 两部分上传到 github 的时候 push 上去的是代码部分，而 hexo 是本地生成好的网页，速度上应该会有一定的优势看到默认模板也比较漂亮，所以昨天换成了 hexo 感觉 hexo 最大特点是隐藏了繁琐的各种命令用 Jekyll 的话，从搭建到完成至少十几条吧而写新文章至少要 1">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2014-01-11T14:08:23.000Z">
+<meta property="og:updated_time" content="2019-11-02T05:38:32.690Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -61,11 +61,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -149,9 +147,14 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>第一次搭建的时候用的是Jekyll，Octopress没试过<br>Jekyll 的框架设计分为 代码 + 生成网页 两部分<br>上传到github的时候push上去的是代码部分，而hexo是本地生成好的网页，速度上应该会有一定的优势<br>看到默认模板也比较漂亮，所以昨天换成了hexo  </p>
-<p>感觉hexo最大特点是隐藏了繁琐的各种命令<br>用Jekyll的话，从搭建到完成至少十几条吧<br>而写新文章至少要  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">jekyll new post xxx</span><br><span class="line">vim _post/<span class="variable">$time</span>-xxx</span><br><span class="line">git commit -a -m xxx  </span><br><span class="line">git push remote master</span><br><span class="line">``` </span><br><span class="line">也许在不少人看来，已经很简单了  </span><br><span class="line"></span><br><span class="line">但要知道有些人**并不是攻城狮**，他只是想不用脑子搭个博客，重点是在 **写作** 上面  </span><br><span class="line">而写之前要帕拉帕拉打那么多命令，万一脑抽忘了一条，或者少个参数，还得-h，万一英文不好，还得google，被墙，还得baidu，等到真正写作的时候，不知道都几个番茄钟了  </span><br><span class="line">并且jekyll至少要有点git的概念，如果写中文博客的话，还要去改ruby（utf-8）   </span><br><span class="line">天天天天天天天哪！  </span><br><span class="line"></span><br><span class="line">而hexo真是简单到爆啊，全程仅仅需要知道8个字母  </span><br><span class="line">``` bash</span><br><span class="line">hexo n <span class="comment"># new</span></span><br><span class="line">hexo g <span class="comment"># generate</span></span><br><span class="line">hexo s <span class="comment"># server</span></span><br><span class="line">hexo d <span class="comment"># deploy</span></span><br></pre></td></tr></table></figure>
+    <p>第一次搭建的时候用的是 Jekyll，Octopress 没试过<br>Jekyll 的框架设计分为 代码 + 生成网页 两部分<br>上传到 github 的时候 push 上去的是代码部分，而 hexo 是本地生成好的网页，速度上应该会有一定的优势<br>看到默认模板也比较漂亮，所以昨天换成了 hexo</p>
+<p>感觉 hexo 最大特点是隐藏了繁琐的各种命令<br>用 Jekyll 的话，从搭建到完成至少十几条吧<br>而写新文章至少要</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jekyll new post xxx</span><br><span class="line">vim _post/<span class="variable">$time</span>-xxx</span><br><span class="line">git commit -a -m xxx</span><br><span class="line">git push remote master</span><br></pre></td></tr></table></figure>
+
+<p>也许在不少人看来，已经很简单了</p>
+<p>但要知道有些人<strong>并不是攻城狮</strong>，他只是想不用脑子搭个博客，重点是在 <strong>写作</strong> 上面<br>而写之前要帕拉帕拉打那么多命令，万一脑抽忘了一条，或者少个参数，还得-h，万一英文不好，还得 google，被墙，还得 baidu，等到真正写作的时候，不知道都几个番茄钟了<br>并且 jekyll 至少要有点 git 的概念，如果写中文博客的话，还要去改 ruby（utf-8）<br>天天天天天天天哪！</p>
+<p>而 hexo 真是简单到爆啊，全程仅仅需要知道 8 个字母</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="comment"># new</span></span><br><span class="line">hexo g <span class="comment"># generate</span></span><br><span class="line">hexo s <span class="comment"># server</span></span><br><span class="line">hexo d <span class="comment"># deploy</span></span><br></pre></td></tr></table></figure>
 
 <p>对于我等非专业攻城狮来说，用起来真是爽到泪流满面呐</p>
 
@@ -175,11 +178,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
@@ -227,11 +228,9 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Archives</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/books/">Books</a></li>
          
           <li><a href="/search/">Search</a></li>
         
