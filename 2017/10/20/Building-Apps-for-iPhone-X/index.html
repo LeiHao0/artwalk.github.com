@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="First, Watching Building Apps for iPhone X with 2x speed to get a glance, it will speed 13&#x2F;2 minutes.  The key point is to open Safe Area in Storyboard. The LayoutConstraint attracted to superview can">
+    <meta name="description" content="First, Watching Building Apps for iPhone X with 2x speed to get a glance, it will speed 13&#x2F;2 minutes.  The critical point is to open the Safe Area in Storyboard. The LayoutConstraint attracted to Supe">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Building Apps for iPhone X">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2017&#x2F;10&#x2F;20&#x2F;Building-Apps-for-iPhone-X&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="First, Watching Building Apps for iPhone X with 2x speed to get a glance, it will speed 13&#x2F;2 minutes.  The key point is to open Safe Area in Storyboard. The LayoutConstraint attracted to superview can">
+<meta property="og:description" content="First, Watching Building Apps for iPhone X with 2x speed to get a glance, it will speed 13&#x2F;2 minutes.  The critical point is to open the Safe Area in Storyboard. The LayoutConstraint attracted to Supe">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-02T05:51:47.820Z">
+<meta property="og:updated_time" content="2020-01-11T13:51:33.885Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -102,8 +102,8 @@
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2017/10/20/Building-Apps-for-iPhone-X/&title=Building Apps for iPhone X" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2017/10/20/Building-Apps-for-iPhone-X/&name=Building Apps for iPhone X&description=&lt;p&gt;First, Watching &lt;a href=&#34;https://developer.apple.com/videos/play/fall2017/201/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Building Apps for iPhone X&lt;/a&gt; with 2x speed to get a glance, it will speed 13/2 minutes.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The key point is to open Safe Area in Storyboard.&lt;/li&gt;
-&lt;li&gt;The LayoutConstraint attracted to superview can beyond the Safe Area.&lt;/li&gt;
+&lt;li&gt;The critical point is to open the Safe Area in Storyboard.&lt;/li&gt;
+&lt;li&gt;The LayoutConstraint attracted to Superview can beyond the Safe Area.&lt;/li&gt;
 &lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -155,20 +155,20 @@
   <div class="content" itemprop="articleBody">
     <p>First, Watching <a href="https://developer.apple.com/videos/play/fall2017/201/" target="_blank" rel="noopener">Building Apps for iPhone X</a> with 2x speed to get a glance, it will speed 13/2 minutes.</p>
 <ul>
-<li>The key point is to open Safe Area in Storyboard.</li>
-<li>The LayoutConstraint attracted to superview can beyond the Safe Area.</li>
+<li>The critical point is to open the Safe Area in Storyboard.</li>
+<li>The LayoutConstraint attracted to Superview can beyond the Safe Area.</li>
 </ul>
 <a id="more"></a>
 
 <p>My current app has 17 Storyboards and 28 ViewControllers.</p>
-<p>In each ViewController, the previous develepers used an UIView on top to cover the system’s navigationController to do some tricks, which means the constraint of the view has a <code>height == 64</code>, and <code>top == superview.top</code>.</p>
-<p>Although it’s a little disgusting, but it works on previous devices which navigationbar’s height are always 64.</p>
-<p>But on iPhone X, it need to use Safe Area. Which means I have better to delete the fake navigationView. But that means move all the buttons, actions, animations to the system’s navigationController if the segue kind is <code>push</code>.</p>
-<p>Honestly to say, it’s much easier than I thought after all works done.</p>
-<p>For the segue kind is <code>present modally</code>, the fake view still do its job by changed it’s height only if the device is iPhone X.</p>
+<p>In each ViewController, the previous developers used an UIView on top to cover the system’s navigationController to do some tricks, which means the constraint of the view has a <code>height == 64</code>, and <code>top == superview.top</code>.</p>
+<p>Although it’s a little disgusting, it works on previous devices in which the navigation bar’s height is always 64.</p>
+<p>But on iPhone X, it needs to use Safe Area. Which means I have better to delete the fake navigation view. But that means it moves all the buttons, actions, animations to the system’s navigationController if the segue kind is <code>push</code>.</p>
+<p>Honestly, to say, it’s much easier than I thought after all the works are done.</p>
+<p>For the segue kind is <code>present modally</code>, the fake view still does its job by changed it’s height only if the device is iPhone X.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSubviews</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">super</span>.layoutSubviews()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> #available(iOS <span class="number">11.0</span>, *) &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> top = <span class="type">UIApplication</span>.shared.keyWindow?.safeAreaInsets.top, top &gt; <span class="number">0</span> &#123;</span><br><span class="line">      viewHeight.constant = <span class="number">88</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Other usefull tools</p>
+<p>Other useful tools</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">navigationItem.setHidesBackButton(<span class="literal">true</span>, animated: <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line">navigationController?.interactivePopGestureRecognizer?.isEnabled = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span>.navigationController?.navigationBar.layer.zPosition = -<span class="number">1</span> <span class="comment">// put the navigationBar under the vc'view</span></span><br></pre></td></tr></table></figure>
 
   </div>
@@ -219,8 +219,8 @@
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2017/10/20/Building-Apps-for-iPhone-X/&title=Building Apps for iPhone X" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2017/10/20/Building-Apps-for-iPhone-X/&name=Building Apps for iPhone X&description=&lt;p&gt;First, Watching &lt;a href=&#34;https://developer.apple.com/videos/play/fall2017/201/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Building Apps for iPhone X&lt;/a&gt; with 2x speed to get a glance, it will speed 13/2 minutes.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The key point is to open Safe Area in Storyboard.&lt;/li&gt;
-&lt;li&gt;The LayoutConstraint attracted to superview can beyond the Safe Area.&lt;/li&gt;
+&lt;li&gt;The critical point is to open the Safe Area in Storyboard.&lt;/li&gt;
+&lt;li&gt;The LayoutConstraint attracted to Superview can beyond the Safe Area.&lt;/li&gt;
 &lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
@@ -239,7 +239,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2019 Artwalk
+    Copyright &copy; 2020 Artwalk
   </div>
   <div class="footer-right">
     <nav>

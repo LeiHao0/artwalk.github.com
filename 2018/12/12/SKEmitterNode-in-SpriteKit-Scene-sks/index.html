@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Particles on iOS needs SpriteKit.  Add a file MyScene.sks in project Drag a SpriteKit View into Storyboard Drag two Emitters into MyScene.sks Setup Emitter properties Drag actions you want to add on">
+    <meta name="description" content="Particles on iOS need SpriteKit.  Add a file MyScene.sks in project Drag a SpriteKit View into Storyboard Drag two Emitters into MyScene.sks Setup Emitter properties Drag actions you want to add on ea">
 <meta name="keywords" content="Xcode,SpriteKit">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SKEmitterNode in SpriteKit Scene sks">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2018&#x2F;12&#x2F;12&#x2F;SKEmitterNode-in-SpriteKit-Scene-sks&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="Particles on iOS needs SpriteKit.  Add a file MyScene.sks in project Drag a SpriteKit View into Storyboard Drag two Emitters into MyScene.sks Setup Emitter properties Drag actions you want to add on">
+<meta property="og:description" content="Particles on iOS need SpriteKit.  Add a file MyScene.sks in project Drag a SpriteKit View into Storyboard Drag two Emitters into MyScene.sks Setup Emitter properties Drag actions you want to add on ea">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;33lUmpg.gif">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;LYmt4PZ.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;eL15HjC.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;PHiz4VU.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;qtYdAsH.png">
-<meta property="og:updated_time" content="2019-11-02T05:52:48.138Z">
+<meta property="og:updated_time" content="2020-01-11T10:31:15.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;33lUmpg.gif">
     
@@ -106,8 +106,7 @@
   <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&title=SKEmitterNode in SpriteKit Scene sks" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&title=SKEmitterNode in SpriteKit Scene sks" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&title=SKEmitterNode in SpriteKit Scene sks" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&name=SKEmitterNode in SpriteKit Scene sks&description=&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/33lUmpg.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Particles on iOS needs SpriteKit.&lt;/p&gt;
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&name=SKEmitterNode in SpriteKit Scene sks&description=&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/33lUmpg.gif&#34; alt=&#34;&#34;&gt;&lt;br&gt;Particles on iOS need SpriteKit.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Add a file &lt;code&gt;MyScene.sks&lt;/code&gt; in project&lt;/li&gt;
 &lt;li&gt;Drag a SpriteKit View into Storyboard&lt;/li&gt;
@@ -115,13 +114,13 @@
 &lt;li&gt;Setup Emitter properties&lt;/li&gt;
 &lt;li&gt;Drag actions you want to add on each Emitter&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;My previous understanding is that&lt;/p&gt;
+&lt;p&gt;My previous understanding is that.&lt;/p&gt;
 &lt;figure class=&#34;highlight swift&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; node = &lt;span class=&#34;type&#34;&gt;SKEmitterNode&lt;/span&gt;(fileNamed: &lt;span class=&#34;string&#34;&gt;&#34;Fire&#34;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; scene = &lt;span class=&#34;type&#34;&gt;SKScene&lt;/span&gt;(fileNamed: &lt;span class=&#34;string&#34;&gt;&#34;MyScene&#34;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;scene?.addChild(node)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// SKAction(...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;To me surprise is that the SpriteKit can have a similar development experience just like using Storyboard.&lt;/p&gt;
-&lt;p&gt;The main reason I surrender to iOS Dev is Storyboard, when I saw Paul Hegarty ctrl drag a button to code in his class.&lt;/p&gt;
-&lt;p&gt;That’s amazing!!!&lt;/p&gt;
-&lt;p&gt;Also I saw many UIDynamic things I used to setup by code.&lt;/p&gt;
+&lt;p&gt;To me, the surprise is that SpriteKit can have similar development experience, just like using Storyboard.&lt;/p&gt;
+&lt;p&gt;The main reason I surrender to iOS Dev is Storyboard when I saw Paul Hegarty ctrl drag a button to code in his class.&lt;/p&gt;
+&lt;p&gt;That’s amazing!&lt;/p&gt;
+&lt;p&gt;Also, I saw many UIDynamic things I used to set up by code.&lt;/p&gt;
 &lt;p&gt;Glad 😄 to have this brief exploring.&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -171,8 +170,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p><img src="https://i.imgur.com/33lUmpg.gif" alt=""></p>
-<p>Particles on iOS needs SpriteKit.</p>
+    <p><img src="https://i.imgur.com/33lUmpg.gif" alt=""><br>Particles on iOS need SpriteKit.</p>
 <ol>
 <li>Add a file <code>MyScene.sks</code> in project</li>
 <li>Drag a SpriteKit View into Storyboard</li>
@@ -180,13 +178,13 @@
 <li>Setup Emitter properties</li>
 <li>Drag actions you want to add on each Emitter</li>
 </ol>
-<p>My previous understanding is that</p>
+<p>My previous understanding is that.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> node = <span class="type">SKEmitterNode</span>(fileNamed: <span class="string">"Fire"</span>)</span><br><span class="line"><span class="keyword">let</span> scene = <span class="type">SKScene</span>(fileNamed: <span class="string">"MyScene"</span>)</span><br><span class="line">scene?.addChild(node)</span><br><span class="line"><span class="comment">// SKAction(...</span></span><br></pre></td></tr></table></figure>
 
-<p>To me surprise is that the SpriteKit can have a similar development experience just like using Storyboard.</p>
-<p>The main reason I surrender to iOS Dev is Storyboard, when I saw Paul Hegarty ctrl drag a button to code in his class.</p>
-<p>That’s amazing!!!</p>
-<p>Also I saw many UIDynamic things I used to setup by code.</p>
+<p>To me, the surprise is that SpriteKit can have similar development experience, just like using Storyboard.</p>
+<p>The main reason I surrender to iOS Dev is Storyboard when I saw Paul Hegarty ctrl drag a button to code in his class.</p>
+<p>That’s amazing!</p>
+<p>Also, I saw many UIDynamic things I used to set up by code.</p>
 <p>Glad 😄 to have this brief exploring.</p>
 <a id="more"></a>
 
@@ -241,8 +239,7 @@
   <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&title=SKEmitterNode in SpriteKit Scene sks" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&title=SKEmitterNode in SpriteKit Scene sks" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&title=SKEmitterNode in SpriteKit Scene sks" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&name=SKEmitterNode in SpriteKit Scene sks&description=&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/33lUmpg.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Particles on iOS needs SpriteKit.&lt;/p&gt;
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/&name=SKEmitterNode in SpriteKit Scene sks&description=&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/33lUmpg.gif&#34; alt=&#34;&#34;&gt;&lt;br&gt;Particles on iOS need SpriteKit.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Add a file &lt;code&gt;MyScene.sks&lt;/code&gt; in project&lt;/li&gt;
 &lt;li&gt;Drag a SpriteKit View into Storyboard&lt;/li&gt;
@@ -250,13 +247,13 @@
 &lt;li&gt;Setup Emitter properties&lt;/li&gt;
 &lt;li&gt;Drag actions you want to add on each Emitter&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;My previous understanding is that&lt;/p&gt;
+&lt;p&gt;My previous understanding is that.&lt;/p&gt;
 &lt;figure class=&#34;highlight swift&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; node = &lt;span class=&#34;type&#34;&gt;SKEmitterNode&lt;/span&gt;(fileNamed: &lt;span class=&#34;string&#34;&gt;&#34;Fire&#34;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; scene = &lt;span class=&#34;type&#34;&gt;SKScene&lt;/span&gt;(fileNamed: &lt;span class=&#34;string&#34;&gt;&#34;MyScene&#34;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;scene?.addChild(node)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// SKAction(...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;To me surprise is that the SpriteKit can have a similar development experience just like using Storyboard.&lt;/p&gt;
-&lt;p&gt;The main reason I surrender to iOS Dev is Storyboard, when I saw Paul Hegarty ctrl drag a button to code in his class.&lt;/p&gt;
-&lt;p&gt;That’s amazing!!!&lt;/p&gt;
-&lt;p&gt;Also I saw many UIDynamic things I used to setup by code.&lt;/p&gt;
+&lt;p&gt;To me, the surprise is that SpriteKit can have similar development experience, just like using Storyboard.&lt;/p&gt;
+&lt;p&gt;The main reason I surrender to iOS Dev is Storyboard when I saw Paul Hegarty ctrl drag a button to code in his class.&lt;/p&gt;
+&lt;p&gt;That’s amazing!&lt;/p&gt;
+&lt;p&gt;Also, I saw many UIDynamic things I used to set up by code.&lt;/p&gt;
 &lt;p&gt;Glad 😄 to have this brief exploring.&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
@@ -275,7 +272,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2019 Artwalk
+    Copyright &copy; 2020 Artwalk
   </div>
   <div class="footer-right">
     <nav>

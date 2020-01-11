@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Updates: 2018-04-15 As the Xcode updated to 9.3, the NamedColors will cause error instead of warning, the shell don’t have to much value. And there is a fast way to do it by click the color in Storybo">
+    <meta name="description" content="Updates: 2018-04-15 As the Xcode updated to 9.3, the NamedColors will cause an error instead of a warning; the shell doesn’t have to much value. And there is a fast way to do it by click the color in">
 <meta name="keywords" content="Xcode,iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Batch replace NamedColors to RGB in Storyboard">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2017&#x2F;10&#x2F;23&#x2F;Batch-replace-NamedColors-to-RGB-in-Storyboard&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="Updates: 2018-04-15 As the Xcode updated to 9.3, the NamedColors will cause error instead of warning, the shell don’t have to much value. And there is a fast way to do it by click the color in Storybo">
+<meta property="og:description" content="Updates: 2018-04-15 As the Xcode updated to 9.3, the NamedColors will cause an error instead of a warning; the shell doesn’t have to much value. And there is a fast way to do it by click the color in">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-02T05:51:50.121Z">
+<meta property="og:updated_time" content="2020-01-11T13:47:22.982Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -101,16 +101,15 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2017/10/23/Batch-replace-NamedColors-to-RGB-in-Storyboard/&title=Batch replace NamedColors to RGB in Storyboard" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2017/10/23/Batch-replace-NamedColors-to-RGB-in-Storyboard/&title=Batch replace NamedColors to RGB in Storyboard" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2017/10/23/Batch-replace-NamedColors-to-RGB-in-Storyboard/&name=Batch replace NamedColors to RGB in Storyboard&description=&lt;p&gt;Updates: 2018-04-15&lt;/p&gt;
-&lt;p&gt;As the Xcode updated to 9.3, the NamedColors will cause error instead of warning, the shell don’t have to much value.&lt;/p&gt;
-&lt;p&gt;And there is a fast way to do it by click the color in Storyboard and touch the &lt;code&gt;Hex Color #&lt;/code&gt; say “FFFFFF” after you choosed the NamedColor.&lt;/p&gt;
+&lt;p&gt;As the Xcode updated to 9.3, the NamedColors will cause an error instead of a warning; the shell doesn’t have to much value.&lt;/p&gt;
+&lt;p&gt;And there is a fast way to do it by click the color in Storyboard and touch the &lt;code&gt;Hex Color #&lt;/code&gt; say “FFFFFF” after you chose the NamedColor.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;NamedColors is a new feature that really convenient for developers to use in Xcode&lt;br&gt;But it is only a available on iOS 11, and it will cause app crash on iOS 10, 9…&lt;/p&gt;
+&lt;p&gt;NamedColors is a new feature that convenient for developers to use in Xcode&lt;br&gt;But it is only available on iOS 11, and it will cause app crash on iOS 10, 9…&lt;/p&gt;
 &lt;p&gt;The main idea is:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Use NamedColors in StoryBoard to avoid fill color every time to benefit the new feature.&lt;/li&gt;
-&lt;li&gt;Replace all NamedColors’ attributes to RGB in StoryBoard when build the project to avoid crash on iOS old version.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;First, save it as &lt;code&gt;NamedColors2RGB.py&lt;/code&gt; in your project root folder.&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+&lt;li&gt;Replace all NamedColors’ attributes to RGB in StoryBoard when building the project to prevent crash on an old iOS version.&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -160,16 +159,15 @@
 
   <div class="content" itemprop="articleBody">
     <p>Updates: 2018-04-15</p>
-<p>As the Xcode updated to 9.3, the NamedColors will cause error instead of warning, the shell don’t have to much value.</p>
-<p>And there is a fast way to do it by click the color in Storyboard and touch the <code>Hex Color #</code> say “FFFFFF” after you choosed the NamedColor.</p>
+<p>As the Xcode updated to 9.3, the NamedColors will cause an error instead of a warning; the shell doesn’t have to much value.</p>
+<p>And there is a fast way to do it by click the color in Storyboard and touch the <code>Hex Color #</code> say “FFFFFF” after you chose the NamedColor.</p>
 <hr>
-<p>NamedColors is a new feature that really convenient for developers to use in Xcode<br>But it is only a available on iOS 11, and it will cause app crash on iOS 10, 9…</p>
+<p>NamedColors is a new feature that convenient for developers to use in Xcode<br>But it is only available on iOS 11, and it will cause app crash on iOS 10, 9…</p>
 <p>The main idea is:</p>
 <ul>
 <li>Use NamedColors in StoryBoard to avoid fill color every time to benefit the new feature.</li>
-<li>Replace all NamedColors’ attributes to RGB in StoryBoard when build the project to avoid crash on iOS old version.</li>
+<li>Replace all NamedColors’ attributes to RGB in StoryBoard when building the project to prevent crash on an old iOS version.</li>
 </ul>
-<p>First, save it as <code>NamedColors2RGB.py</code> in your project root folder.</p>
 <a id="more"></a>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os, json</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.getcwd()</span><br><span class="line"></span><br><span class="line">colorDict = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># read all colorset</span></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(<span class="string">"./"</span>):</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> dirs:</span><br><span class="line">        <span class="keyword">if</span> d.endswith(<span class="string">".colorset"</span>):</span><br><span class="line">            colorK = d.split(<span class="string">"."</span>)[<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"found "</span> + colorK</span><br><span class="line">            <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">                <span class="keyword">if</span> file == <span class="string">"Contents.json"</span>:</span><br><span class="line">                    f = open(os.path.join(root, d, file))</span><br><span class="line">                    jd = json.load(f)</span><br><span class="line">                    rgb = jd[<span class="string">"colors"</span>][<span class="number">0</span>][<span class="string">"color"</span>][<span class="string">"components"</span>]</span><br><span class="line">                    colorDict[colorK] = <span class="string">'red="&#123;&#125;" green="&#123;&#125;" blue="&#123;&#125;" alpha="&#123;&#125;" colorSpace="calibratedRGB"'</span>.format(rgb[<span class="string">"red"</span>], rgb[<span class="string">"green"</span>], rgb[<span class="string">"blue"</span>], rgb[<span class="string">"alpha"</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">""</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># replacing</span></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(<span class="string">"./"</span>):</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">        <span class="keyword">if</span> file.endswith((<span class="string">".storyboard"</span>, <span class="string">".xib"</span>)):</span><br><span class="line">            path = os.path.join(root, file)</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"Replacing namedColor in "</span> + path</span><br><span class="line">            f = open(path)</span><br><span class="line">            nf = f.read()</span><br><span class="line">            f.close()</span><br><span class="line"></span><br><span class="line">            nf = re.sub(<span class="string">r" +&lt;namedColor name=.*\n.*\n +&lt;/namedColor&gt;\n"</span>, <span class="string">''</span>, nf)</span><br><span class="line">            nf = re.sub(<span class="string">r" +&lt;capability name=\"Named colors\" minToolsVersion=\".*\n"</span>, <span class="string">''</span>, nf)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> k, v <span class="keyword">in</span> colorDict.items():</span><br><span class="line">                nf = re.sub(<span class="string">r'name="&#123;&#125;"'</span>.format(k), v, nf)</span><br><span class="line"></span><br><span class="line">            f = open(path, <span class="string">'w'</span>)</span><br><span class="line">            f.write(nf)</span><br><span class="line">            f.close()</span><br></pre></td></tr></table></figure>
@@ -177,7 +175,7 @@
 <p>Then, <code>Xcode -&gt; Project File -&gt; Build Phases -&gt; Add Build Phase -&gt; Add Run Script</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$&#123;CONFIGURATION&#125;</span>"</span> = <span class="string">"Release"</span> ]; <span class="keyword">then</span></span><br><span class="line">    python NamedColors2RGB.py</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 
-<p>If you found anyway to reverse it back to NamedColors, please leave a msg to me.</p>
+<p>If you found any way to reverse it back to NamedColors, please leave a msg to me.</p>
 <p>After all, once the NamedColors changed, all the color in the interface builder should be changed too.</p>
 
   </div>
@@ -227,16 +225,15 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2017/10/23/Batch-replace-NamedColors-to-RGB-in-Storyboard/&title=Batch replace NamedColors to RGB in Storyboard" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2017/10/23/Batch-replace-NamedColors-to-RGB-in-Storyboard/&title=Batch replace NamedColors to RGB in Storyboard" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2017/10/23/Batch-replace-NamedColors-to-RGB-in-Storyboard/&name=Batch replace NamedColors to RGB in Storyboard&description=&lt;p&gt;Updates: 2018-04-15&lt;/p&gt;
-&lt;p&gt;As the Xcode updated to 9.3, the NamedColors will cause error instead of warning, the shell don’t have to much value.&lt;/p&gt;
-&lt;p&gt;And there is a fast way to do it by click the color in Storyboard and touch the &lt;code&gt;Hex Color #&lt;/code&gt; say “FFFFFF” after you choosed the NamedColor.&lt;/p&gt;
+&lt;p&gt;As the Xcode updated to 9.3, the NamedColors will cause an error instead of a warning; the shell doesn’t have to much value.&lt;/p&gt;
+&lt;p&gt;And there is a fast way to do it by click the color in Storyboard and touch the &lt;code&gt;Hex Color #&lt;/code&gt; say “FFFFFF” after you chose the NamedColor.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;NamedColors is a new feature that really convenient for developers to use in Xcode&lt;br&gt;But it is only a available on iOS 11, and it will cause app crash on iOS 10, 9…&lt;/p&gt;
+&lt;p&gt;NamedColors is a new feature that convenient for developers to use in Xcode&lt;br&gt;But it is only available on iOS 11, and it will cause app crash on iOS 10, 9…&lt;/p&gt;
 &lt;p&gt;The main idea is:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Use NamedColors in StoryBoard to avoid fill color every time to benefit the new feature.&lt;/li&gt;
-&lt;li&gt;Replace all NamedColors’ attributes to RGB in StoryBoard when build the project to avoid crash on iOS old version.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;First, save it as &lt;code&gt;NamedColors2RGB.py&lt;/code&gt; in your project root folder.&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+&lt;li&gt;Replace all NamedColors’ attributes to RGB in StoryBoard when building the project to prevent crash on an old iOS version.&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -254,7 +251,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2019 Artwalk
+    Copyright &copy; 2020 Artwalk
   </div>
   <div class="footer-right">
     <nav>

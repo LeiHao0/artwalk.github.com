@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
 <meta property="og:description" content="First open Terminal on your Mac and copy and paste these command lines as follows: Send iMessage by Shell1234file=&quot;$HOME&#x2F;Documents&#x2F;sendiMessage.sh&quot;str=&amp;apos;tell application &quot;Messages&quot; to send &quot;TEXT&quot; to bu">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-02T05:52:07.583Z">
+<meta property="og:updated_time" content="2020-01-11T14:30:50.174Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -165,10 +165,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">00    10    *   *    *        command to be executed</span><br><span class="line">-     -     -   -    -</span><br><span class="line">|     |     |   |    |</span><br><span class="line">|     |     |   |    +----- day of week (0 - 6) (Sunday=0)</span><br><span class="line">|     |     |   +------- month (1 - 12)</span><br><span class="line">|     |     +--------- day of        month (1 - 31)</span><br><span class="line">|     +----------- hour (0 - 23)</span><br><span class="line">+------------- min (0 - 59)</span><br></pre></td></tr></table></figure>
 
 <p>This shell means your Mac will send the iMessage on 10:00 Mar. 25.</p>
-<p>Modify it to you ideal time then</p>
+<p>Modify it to your ideal time then.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
 
-<p>The following step you are using <code>vim</code>, I think that is the hardest part.</p>
+<p>In the following step, you are using <code>vim</code>, and I think that is the hardest part.</p>
 <ol>
 <li>Press <code>i</code>, you will see <code>-- INSERT --</code> on the left bottom of the <code>Terminal</code></li>
 <li>Paste <code>00 10 25 3 * zsh ~/Documents/sendiMessage.sh</code></li>
@@ -241,7 +241,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2019 Artwalk
+    Copyright &copy; 2020 Artwalk
   </div>
   <div class="footer-right">
     <nav>

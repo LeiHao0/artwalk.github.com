@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1234brew info tesseracttesseract: stable 3.05.01 (bottled), HEADOCR (Optical Character Recognition) engine  The result of recognition on Chinese - Simplified is a little bit terrifying.I noticed that">
+    <meta name="description" content="1234brew info tesseracttesseract: stable 3.05.01 (bottled), HEADOCR (Optical Character Recognition) engine  The result of the recognition of Chinese - Simplified is a little bit terrifying.I noticed t">
 <meta name="keywords" content="AI,LSTM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to build tesseract 4 beta on macOS">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2018&#x2F;05&#x2F;06&#x2F;How-to-build-tesseract-4-beta-on-macOS&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="1234brew info tesseracttesseract: stable 3.05.01 (bottled), HEADOCR (Optical Character Recognition) engine  The result of recognition on Chinese - Simplified is a little bit terrifying.I noticed that">
+<meta property="og:description" content="1234brew info tesseracttesseract: stable 3.05.01 (bottled), HEADOCR (Optical Character Recognition) engine  The result of the recognition of Chinese - Simplified is a little bit terrifying.I noticed t">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-02T05:52:12.044Z">
+<meta property="og:updated_time" content="2020-01-11T14:30:54.851Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -151,7 +151,7 @@
   <div class="content" itemprop="articleBody">
     <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew info tesseract</span><br><span class="line"></span><br><span class="line">tesseract: stable 3.05.01 (bottled), HEAD</span><br><span class="line">OCR (Optical Character Recognition) engine</span><br></pre></td></tr></table></figure>
 
-<p>The result of recognition on <code>Chinese - Simplified</code> is a little bit terrifying.<br>I noticed that it added a new neural network system based on LSTMs after 4.0.0+<br>But it need to be build from source code on macOS.<br>Thankfully, the manul is quit specify on their README.md</p>
+<p>The result of the recognition of <code>Chinese - Simplified</code> is a little bit terrifying.<br>I noticed that it added a new neural network system based on LSTMs after 4.0.0+<br>But it needs to be built from source code on macOS.<br>Thankfully, the manual is quite specifying on their README.md</p>
 <h2 id="Install-dependencies"><a href="#Install-dependencies" class="headerlink" title="Install dependencies"></a>Install dependencies</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">brew install automake autoconf autoconf-archive libtool</span><br><span class="line">brew install pkgconfig</span><br><span class="line">brew install icu4c</span><br><span class="line">brew install leptonica</span><br><span class="line">brew install gcc</span><br></pre></td></tr></table></figure>
 
 <h2 id="Compile"><a href="#Compile" class="headerlink" title="Compile"></a>Compile</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/tesseract-ocr/tesseract/</span><br><span class="line"><span class="built_in">cd</span> tesseract</span><br><span class="line">./autogen.sh</span><br><span class="line">./configure CC=gcc CXX=g++ CPPFLAGS=-I/usr/<span class="built_in">local</span>/opt/icu4c/include LDFLAGS=-L/usr/<span class="built_in">local</span>/opt/icu4c/lib</span><br><span class="line">make -j</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
@@ -159,7 +159,7 @@
 <p>Their best trained <a href="https://github.com/tesseract-ocr/tessdata_best" target="_blank" rel="noopener">modes</a>, download the language <code>chi_sim.traineddata</code> and put it under <code>tesseract/4.0.0.1/tessdata/</code></p>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tesseract image.png image -l chi_sim</span><br><span class="line">cat image.txt</span><br></pre></td></tr></table></figure>
 
-<p>OK, it is still terrible under the <code>Song typeface</code> font. It need to be trained a new model by myself.</p>
+<p>OK, it is still terrible under the <code>Song typeface</code> font. It needs to be trained with a new model by myself.</p>
 <hr>
 <p>Finally, ignoring the <code>tesseract</code>, I found drag the <strong>image</strong> to <strong>OneNote</strong>, and <code>Ctrl + Click</code> -&gt; <code>Copy Text from Picture</code> will get more Accuracy. 😓</p>
 
@@ -227,7 +227,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2019 Artwalk
+    Copyright &copy; 2020 Artwalk
   </div>
   <div class="footer-right">
     <nav>

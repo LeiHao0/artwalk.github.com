@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="The whole things I want to do is to download some courses which help me a lot on youtube and embed zh-Hans subtitle to the video then submit them to an Chinese website which is not support external su">
+    <meta name="description" content="The whole thing I want to do is to download some courses which help me a lot on youtube and embed Zh-Hans subtitle to the video then submit them to a Chinese website which does not support external su">
 <meta name="keywords" content="youtube,ffmpeg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to download videos concurrently from youtube and batch embed their subtitles">
 <meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2018&#x2F;08&#x2F;10&#x2F;How-to-download-videos-concurrently-from-youtube-and-batch-embed-their-subtitles&#x2F;index.html">
 <meta property="og:site_name" content="Artwalk&#39;s Blog">
-<meta property="og:description" content="The whole things I want to do is to download some courses which help me a lot on youtube and embed zh-Hans subtitle to the video then submit them to an Chinese website which is not support external su">
+<meta property="og:description" content="The whole thing I want to do is to download some courses which help me a lot on youtube and embed Zh-Hans subtitle to the video then submit them to a Chinese website which does not support external su">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-02T05:52:24.488Z">
+<meta property="og:updated_time" content="2020-01-11T13:04:45.552Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -149,19 +149,19 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>The whole things I want to do is to download some courses which help me a lot on youtube and embed zh-Hans subtitle to the video then submit them to an Chinese website which is not support external subtile.</p>
-<p>This thing, may helps the students in China who don’t have a well English and cannot access youtube.</p>
+    <p>The whole thing I want to do is to download some courses which help me a lot on youtube and embed Zh-Hans subtitle to the video then submit them to a Chinese website which does not support external subtitle.</p>
+<p>This thing may help the students in China who cannot speak English well and cannot access youtube.</p>
 <h2 id="Youtube-dl-config"><a href="#Youtube-dl-config" class="headerlink" title="Youtube-dl config"></a>Youtube-dl config</h2><p>The file path is <code>~/.config/youtube-dl/config</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">--o <span class="string">'%(playlist_index)02ds - %(title)s.%(ext)s'</span></span><br><span class="line">--no-mtime</span><br><span class="line">--proxy socks5://127.0.0.1:1080</span><br><span class="line"></span><br><span class="line">--ignore-errors</span><br><span class="line"></span><br><span class="line">-f bestvideo[height&lt;=?1080]+bestaudio/best</span><br><span class="line"></span><br><span class="line">--merge-output-format <span class="string">'mkv'</span></span><br><span class="line"></span><br><span class="line">--write-auto-sub --sub-lang <span class="string">'zh-Hans'</span></span><br><span class="line"></span><br><span class="line">--convert-subs <span class="string">'ass'</span></span><br><span class="line"></span><br><span class="line">--embed-subs</span><br></pre></td></tr></table></figure>
 
 <h2 id="Download-concurrently"><a href="#Download-concurrently" class="headerlink" title="Download concurrently"></a>Download concurrently</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">playlist=<span class="string">'https://www.youtube.com/playlist?list=...'</span></span><br><span class="line">num=70</span><br><span class="line">i=1</span><br><span class="line"><span class="keyword">while</span> ((<span class="variable">$i</span> &lt;= <span class="variable">$num</span>))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    end=$(( i+1 ))</span><br><span class="line">    youtube-dl --playlist-start <span class="variable">$i</span> --playlist-end <span class="variable">$end</span> <span class="variable">$playlist</span> &gt; <span class="string">"log-<span class="variable">$i</span>-<span class="variable">$end</span>.txt"</span>  2&gt;&amp;1  &amp;</span><br><span class="line">    i=$((<span class="variable">$end</span>+1))</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Batch-translate-filenames"><a href="#Batch-translate-filenames" class="headerlink" title="Batch translate filenames"></a>Batch translate filenames</h2><p>After downloaded all the videos in the list, get their names with</p>
+<h2 id="Batch-translate-filenames"><a href="#Batch-translate-filenames" class="headerlink" title="Batch translate filenames"></a>Batch translate filenames</h2><p>After downloading all the videos in the list, get their names with</p>
 <p><code>ls | grep mkv | sed &quot;s/\.mkv//&quot;</code></p>
 <p>then copy &amp; paste to google to get the translated text, then save it to a <code>zh.txt</code></p>
 <h2 id="Batch-embed-subtitles"><a href="#Batch-embed-subtitles" class="headerlink" title="Batch embed subtitles"></a>Batch embed subtitles</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tmp=<span class="string">"tmp.mkv"</span></span><br><span class="line">mkdir -p embedSub</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> *.mkv; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">read</span> -r zh &lt;&amp;3</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$f</span>\n<span class="variable">$zh</span>"</span></span><br><span class="line">  <span class="comment"># ass="$( echo $f | sed 's/\.mkv//').zh-Hans.ass"</span></span><br><span class="line">  cp <span class="variable">$f</span> <span class="variable">$tmp</span></span><br><span class="line">  ffmpeg -nostats -loglevel 24 -n -i <span class="variable">$tmp</span> -vf subtitles=<span class="variable">$tmp</span> <span class="string">"embedSub/<span class="variable">$zh</span>.mkv"</span>;</span><br><span class="line"><span class="keyword">done</span> 3&lt;zh.txt</span><br><span class="line"></span><br><span class="line">rm <span class="variable">$tmp</span></span><br></pre></td></tr></table></figure>
 
-<p>It usually took me a whole night for 20 videos on Intel Core i7, an hour video needs 20 minutes to embed its subtitle.</p>
+<p>It usually took me a whole night for 20 videos on Intel Core i7, and an hour video needs 20 minutes to embed its subtitle.</p>
 
   </div>
 </article>
@@ -227,7 +227,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2019 Artwalk
+    Copyright &copy; 2020 Artwalk
   </div>
   <div class="footer-right">
     <nav>
