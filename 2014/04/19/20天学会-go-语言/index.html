@@ -10,8 +10,8 @@
 <meta name="keywords" content="Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20 天学会 Go 语言">
-<meta property="og:url" content="http:&#x2F;&#x2F;artwalk.github.io&#x2F;2014&#x2F;04&#x2F;19&#x2F;20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80&#x2F;index.html">
-<meta property="og:site_name" content="Artwalk&#39;s Blog">
+<meta property="og:url" content="https:&#x2F;&#x2F;leihao.github.com&#x2F;2014&#x2F;04&#x2F;19&#x2F;20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80&#x2F;index.html">
+<meta property="og:site_name" content="LeiHao&#39;s Blog">
 <meta property="og:description" content="我看了下 Log，其实不到 20 天，但标题写个 16，赶脚怪怪的，没有 10 的倍数霸气 首先谈学习时间不能脱离环境 露珠大学时深受 “先学好一门语言” 只害，结果到毕业时，仅仅了解 C，结果也没学精（别的语言会拓展你对编程的认识） 所以泥们应该可以更快！！！ 说两句就累了 ＞﹏＜ ，赶紧帖步骤  Go Web 编程 除了类型声明在后面，Golang 和 C 的语法还是比较像的，至少没 Obj-">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-11-02T05:31:42.000Z">
@@ -45,7 +45,7 @@
     <!-- rss -->
     
     
-      <link rel="alternate" href="/atom.xml" title="Artwalk&#39;s Blog" type="application/atom+xml" />
+      <link rel="alternate" href="/atom.xml" title="LeiHao&#39;s Blog" type="application/atom+xml" />
     
 </head>
 
@@ -91,16 +91,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&text=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&is_video=false&description=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=20 天学会 Go 语言&body=Check out this article: http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/" target="_blank" rel="noopener"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&name=20 天学会 Go 语言&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&text=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&is_video=false&description=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=20 天学会 Go 语言&body=Check out this article: https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/" target="_blank" rel="noopener"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&name=20 天学会 Go 语言&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -124,7 +124,7 @@
 
     <div class="meta">
       <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Artwalk's Blog</span>
+        <span itemprop="name">LeiHao's Blog</span>
       </span>
       
     <div class="postdate">
@@ -207,16 +207,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&text=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&is_video=false&description=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=20 天学会 Go 语言&body=Check out this article: http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://artwalk.github.io/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&name=20 天学会 Go 语言&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&text=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&is_video=false&description=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=20 天学会 Go 语言&body=Check out this article: https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&title=20 天学会 Go 语言" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao.github.com/2014/04/19/20%E5%A4%A9%E5%AD%A6%E4%BC%9A-go-%E8%AF%AD%E8%A8%80/&name=20 天学会 Go 语言&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -234,7 +234,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2020 Artwalk
+    Copyright &copy; 2020 LeiHao
   </div>
   <div class="footer-right">
     <nav>
