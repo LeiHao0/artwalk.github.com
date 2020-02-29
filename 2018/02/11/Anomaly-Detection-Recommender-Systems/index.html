@@ -694,6 +694,7 @@
 &lt;g stroke=&#34;currentColor&#34; fill=&#34;currentColor&#34; stroke-width=&#34;0&#34; transform=&#34;matrix(1 0 0 -1 0 0)&#34; aria-hidden=&#34;true&#34;&gt;&lt;/g&gt;
 &lt;/svg&gt;&lt;/span&gt;\dfrac{\partial J}{\partial \theta &lt;em&gt;{k}^{(j)}} = \sum&lt;/em&gt;{i:r(i,j)=1}^{ }((\theta ^{(j)})^Tx^{(i)} -y^{(i,j)} )x _{k}^{(i)} + \lambda \theta _{k}^{(j)}$$&lt;/p&gt;
 &lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;X_grad = X_grad + lambda*X;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Theta_grad = Theta_grad + lambda*Theta;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2018/02/11/Anomaly-Detection-Recommender-Systems/&t=Anomaly Detection &amp; Recommender Systems" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -1976,6 +1977,7 @@
 &lt;g stroke=&#34;currentColor&#34; fill=&#34;currentColor&#34; stroke-width=&#34;0&#34; transform=&#34;matrix(1 0 0 -1 0 0)&#34; aria-hidden=&#34;true&#34;&gt;&lt;/g&gt;
 &lt;/svg&gt;&lt;/span&gt;\dfrac{\partial J}{\partial \theta &lt;em&gt;{k}^{(j)}} = \sum&lt;/em&gt;{i:r(i,j)=1}^{ }((\theta ^{(j)})^Tx^{(i)} -y^{(i,j)} )x _{k}^{(i)} + \lambda \theta _{k}^{(j)}$$&lt;/p&gt;
 &lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;X_grad = X_grad + lambda*X;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Theta_grad = Theta_grad + lambda*Theta;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2018/02/11/Anomaly-Detection-Recommender-Systems/&t=Anomaly Detection &amp; Recommender Systems" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -2032,10 +2034,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

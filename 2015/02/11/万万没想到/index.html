@@ -119,6 +119,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;到 18 岁，第二组比第一组少练了 2000 多个小时——现在他们一样努力，可是已经晚了。音乐如此，体育（编程）也是如此，一步赶不上就意味着步步赶不上。&lt;/p&gt;
 &lt;/blockquote&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2015/02/11/%E4%B8%87%E4%B8%87%E6%B2%A1%E6%83%B3%E5%88%B0/&t=万万没想到" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -276,6 +277,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;到 18 岁，第二组比第一组少练了 2000 多个小时——现在他们一样努力，可是已经晚了。音乐如此，体育（编程）也是如此，一步赶不上就意味着步步赶不上。&lt;/p&gt;
 &lt;/blockquote&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2015/02/11/%E4%B8%87%E4%B8%87%E6%B2%A1%E6%83%B3%E5%88%B0/&t=万万没想到" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -332,10 +334,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

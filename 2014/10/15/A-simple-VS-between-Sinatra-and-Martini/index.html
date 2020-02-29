@@ -106,6 +106,7 @@
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/10/15/A-simple-VS-between-Sinatra-and-Martini/&name=A simple VS. between Sinatra and Martini&description=&lt;h1 id=&#34;Sinatra-VS-Martini&#34;&gt;&lt;a href=&#34;#Sinatra-VS-Martini&#34; class=&#34;headerlink&#34; title=&#34;Sinatra VS. Martini&#34;&gt;&lt;/a&gt;Sinatra VS. Martini&lt;/h1&gt;&lt;p&gt;网上已经有许多对比的数据了&lt;br&gt;但都不如自己来的实在&lt;/p&gt;
 &lt;p&gt;于是在 &lt;code&gt;VPS&lt;/code&gt; 上分别用 &lt;code&gt;Martini&lt;/code&gt; &lt;code&gt;Martini&lt;/code&gt; 搭了两个 &lt;code&gt;Hello World&lt;/code&gt;&lt;br&gt;选了 &lt;code&gt;Linux&lt;/code&gt; 上的 &lt;code&gt;siege&lt;/code&gt; 作为测试工具&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;&lt;a href=&#34;#性能&#34; class=&#34;headerlink&#34; title=&#34;性能&#34;&gt;&lt;/a&gt;性能&lt;/h2&gt;&lt;h3 id=&#34;Martini&#34;&gt;&lt;a href=&#34;#Martini&#34; class=&#34;headerlink&#34; title=&#34;Martini&#34;&gt;&lt;/a&gt;Martini&lt;/h3&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;siege -q -c 1000 -r 30 -f sinatra.url&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/10/15/A-simple-VS-between-Sinatra-and-Martini/&t=A simple VS. between Sinatra and Martini" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -225,6 +226,7 @@
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/10/15/A-simple-VS-between-Sinatra-and-Martini/&name=A simple VS. between Sinatra and Martini&description=&lt;h1 id=&#34;Sinatra-VS-Martini&#34;&gt;&lt;a href=&#34;#Sinatra-VS-Martini&#34; class=&#34;headerlink&#34; title=&#34;Sinatra VS. Martini&#34;&gt;&lt;/a&gt;Sinatra VS. Martini&lt;/h1&gt;&lt;p&gt;网上已经有许多对比的数据了&lt;br&gt;但都不如自己来的实在&lt;/p&gt;
 &lt;p&gt;于是在 &lt;code&gt;VPS&lt;/code&gt; 上分别用 &lt;code&gt;Martini&lt;/code&gt; &lt;code&gt;Martini&lt;/code&gt; 搭了两个 &lt;code&gt;Hello World&lt;/code&gt;&lt;br&gt;选了 &lt;code&gt;Linux&lt;/code&gt; 上的 &lt;code&gt;siege&lt;/code&gt; 作为测试工具&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;&lt;a href=&#34;#性能&#34; class=&#34;headerlink&#34; title=&#34;性能&#34;&gt;&lt;/a&gt;性能&lt;/h2&gt;&lt;h3 id=&#34;Martini&#34;&gt;&lt;a href=&#34;#Martini&#34; class=&#34;headerlink&#34; title=&#34;Martini&#34;&gt;&lt;/a&gt;Martini&lt;/h3&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;siege -q -c 1000 -r 30 -f sinatra.url&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/10/15/A-simple-VS-between-Sinatra-and-Martini/&t=A simple VS. between Sinatra and Martini" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -281,10 +283,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

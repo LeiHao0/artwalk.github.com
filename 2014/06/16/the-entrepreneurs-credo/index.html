@@ -109,6 +109,7 @@
 &lt;p&gt;It is my right to be uncommon … if I can,&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;如果我愿意，有权特立独行&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/06/16/the-entrepreneurs-credo/&t=The Entrepreneur&#39;s Credo" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -303,6 +304,7 @@
 &lt;p&gt;It is my right to be uncommon … if I can,&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;如果我愿意，有权特立独行&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/06/16/the-entrepreneurs-credo/&t=The Entrepreneur&#39;s Credo" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -359,10 +361,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

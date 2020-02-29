@@ -103,6 +103,7 @@
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/06/23/ios-developer-account-and-app-store/&name=iOS developer account and app store&description=&lt;h1 id=&#34;iOS-开发者账号-以及-如何上架&#34;&gt;&lt;a href=&#34;#iOS-开发者账号-以及-如何上架&#34; class=&#34;headerlink&#34; title=&#34;iOS 开发者账号 以及 如何上架&#34;&gt;&lt;/a&gt;iOS 开发者账号 以及 如何上架&lt;/h1&gt;&lt;h2 id=&#34;开发者账号申请&#34;&gt;&lt;a href=&#34;#开发者账号申请&#34; class=&#34;headerlink&#34; title=&#34;开发者账号申请&#34;&gt;&lt;/a&gt;开发者账号申请&lt;/h2&gt;&lt;p&gt;中间还因提供照片耽误了一次，又赶上 &lt;code&gt;Swift&lt;/code&gt; 大潮，但也只用了 4-5 天 ，效率还是很高的&lt;/p&gt;
 &lt;p&gt;开始我还以为要用双币信用卡，到处抓人要卡&lt;br&gt;结果时代在进步，现在（2014）普通信用卡就行，所以就十分方便了&lt;/p&gt;
 &lt;p&gt;PS:&lt;br&gt;99$ == 688 ￥ ?&lt;br&gt;因为要交税么…&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/06/23/ios-developer-account-and-app-store/&t=iOS developer account and app store" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -226,6 +227,7 @@
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/06/23/ios-developer-account-and-app-store/&name=iOS developer account and app store&description=&lt;h1 id=&#34;iOS-开发者账号-以及-如何上架&#34;&gt;&lt;a href=&#34;#iOS-开发者账号-以及-如何上架&#34; class=&#34;headerlink&#34; title=&#34;iOS 开发者账号 以及 如何上架&#34;&gt;&lt;/a&gt;iOS 开发者账号 以及 如何上架&lt;/h1&gt;&lt;h2 id=&#34;开发者账号申请&#34;&gt;&lt;a href=&#34;#开发者账号申请&#34; class=&#34;headerlink&#34; title=&#34;开发者账号申请&#34;&gt;&lt;/a&gt;开发者账号申请&lt;/h2&gt;&lt;p&gt;中间还因提供照片耽误了一次，又赶上 &lt;code&gt;Swift&lt;/code&gt; 大潮，但也只用了 4-5 天 ，效率还是很高的&lt;/p&gt;
 &lt;p&gt;开始我还以为要用双币信用卡，到处抓人要卡&lt;br&gt;结果时代在进步，现在（2014）普通信用卡就行，所以就十分方便了&lt;/p&gt;
 &lt;p&gt;PS:&lt;br&gt;99$ == 688 ￥ ?&lt;br&gt;因为要交税么…&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/06/23/ios-developer-account-and-app-store/&t=iOS developer account and app store" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -282,10 +284,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

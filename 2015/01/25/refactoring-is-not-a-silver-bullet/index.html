@@ -107,6 +107,7 @@
 &lt;p&gt;时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 &lt;code&gt;Java&lt;/code&gt; 程序员，更是不想知道都难&lt;br&gt;发展至今，重构已经类似于编码的一部分了&lt;/p&gt;
 &lt;p&gt;此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看&lt;br&gt;4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下&lt;br&gt;之后的章节大略过一下就行了&lt;/p&gt;
 &lt;hr&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2015/01/25/refactoring-is-not-a-silver-bullet/&t=refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -233,6 +234,7 @@
 &lt;p&gt;时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 &lt;code&gt;Java&lt;/code&gt; 程序员，更是不想知道都难&lt;br&gt;发展至今，重构已经类似于编码的一部分了&lt;/p&gt;
 &lt;p&gt;此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看&lt;br&gt;4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下&lt;br&gt;之后的章节大略过一下就行了&lt;/p&gt;
 &lt;hr&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2015/01/25/refactoring-is-not-a-silver-bullet/&t=refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -289,10 +291,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

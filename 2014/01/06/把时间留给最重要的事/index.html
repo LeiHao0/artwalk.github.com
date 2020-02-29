@@ -104,6 +104,7 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/2014/01/06/%E6%8A%8A%E6%97%B6%E9%97%B4%E7%95%99%E7%BB%99%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B/&title=把时间留给最重要的事" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/2014/01/06/%E6%8A%8A%E6%97%B6%E9%97%B4%E7%95%99%E7%BB%99%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B/&title=把时间留给最重要的事" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/01/06/%E6%8A%8A%E6%97%B6%E9%97%B4%E7%95%99%E7%BB%99%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B/&name=把时间留给最重要的事&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/01/06/%E6%8A%8A%E6%97%B6%E9%97%B4%E7%95%99%E7%BB%99%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B/&t=把时间留给最重要的事" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -236,6 +237,7 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/2014/01/06/%E6%8A%8A%E6%97%B6%E9%97%B4%E7%95%99%E7%BB%99%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B/&title=把时间留给最重要的事" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/2014/01/06/%E6%8A%8A%E6%97%B6%E9%97%B4%E7%95%99%E7%BB%99%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B/&title=把时间留给最重要的事" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/01/06/%E6%8A%8A%E6%97%B6%E9%97%B4%E7%95%99%E7%BB%99%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B/&name=把时间留给最重要的事&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/01/06/%E6%8A%8A%E6%97%B6%E9%97%B4%E7%95%99%E7%BB%99%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B/&t=把时间留给最重要的事" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -292,10 +294,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

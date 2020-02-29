@@ -449,6 +449,7 @@
 &lt;p&gt;It take me hours 💥 to figure out why should I using &lt;code&gt;X&#39; * ((X * theta) - y))&lt;/code&gt;&lt;br&gt;Because all the variables X, theta , y, each of them is a vector, X’ * (…) equal to &lt;code&gt;sum()&lt;/code&gt; part as the formula shows.&lt;/p&gt;
 &lt;p&gt;I am still a little bit confused, although I passed the test. 😵&lt;/p&gt;
 &lt;h2 id=&#34;3-Logistic-Regression&#34;&gt;&lt;a href=&#34;#3-Logistic-Regression&#34; class=&#34;headerlink&#34; title=&#34;3 Logistic Regression&#34;&gt;&lt;/a&gt;3 Logistic Regression&lt;/h2&gt;&lt;p&gt;To Be Continued…&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2017/12/29/Machine-Learning-by-Stanford-University/&t=Machine Learning by Stanford University" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -1240,6 +1241,7 @@
 &lt;p&gt;It take me hours 💥 to figure out why should I using &lt;code&gt;X&#39; * ((X * theta) - y))&lt;/code&gt;&lt;br&gt;Because all the variables X, theta , y, each of them is a vector, X’ * (…) equal to &lt;code&gt;sum()&lt;/code&gt; part as the formula shows.&lt;/p&gt;
 &lt;p&gt;I am still a little bit confused, although I passed the test. 😵&lt;/p&gt;
 &lt;h2 id=&#34;3-Logistic-Regression&#34;&gt;&lt;a href=&#34;#3-Logistic-Regression&#34; class=&#34;headerlink&#34; title=&#34;3 Logistic Regression&#34;&gt;&lt;/a&gt;3 Logistic Regression&lt;/h2&gt;&lt;p&gt;To Be Continued…&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2017/12/29/Machine-Learning-by-Stanford-University/&t=Machine Learning by Stanford University" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -1296,10 +1298,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

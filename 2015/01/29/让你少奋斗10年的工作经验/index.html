@@ -104,6 +104,7 @@
 &lt;p&gt;不想第一准则就是：&lt;br&gt;&lt;strong&gt;绝不亲自用电脑工作&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在看第二准则居然是：&lt;br&gt;&lt;strong&gt;视专业知识为绊脚石&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;作为一个码农，我只能呵呵了&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2015/01/29/%E8%AE%A9%E4%BD%A0%E5%B0%91%E5%A5%8B%E6%96%9710%E5%B9%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C/&t=让你少奋斗 10 年的工作经验" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -231,6 +232,7 @@
 &lt;p&gt;不想第一准则就是：&lt;br&gt;&lt;strong&gt;绝不亲自用电脑工作&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在看第二准则居然是：&lt;br&gt;&lt;strong&gt;视专业知识为绊脚石&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;作为一个码农，我只能呵呵了&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2015/01/29/%E8%AE%A9%E4%BD%A0%E5%B0%91%E5%A5%8B%E6%96%9710%E5%B9%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C/&t=让你少奋斗 10 年的工作经验" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -287,10 +289,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

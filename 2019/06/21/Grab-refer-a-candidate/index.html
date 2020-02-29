@@ -111,6 +111,7 @@
 &lt;li&gt;其他的我忘了&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;整体来说中规中矩偏上的一家公司吧&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2019/06/21/Grab-refer-a-candidate/&t=Grab refer a candidate" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -279,6 +280,7 @@
 &lt;li&gt;其他的我忘了&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;整体来说中规中矩偏上的一家公司吧&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2019/06/21/Grab-refer-a-candidate/&t=Grab refer a candidate" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -335,10 +337,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

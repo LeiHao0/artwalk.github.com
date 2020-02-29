@@ -294,6 +294,7 @@
 &lt;h2 id=&#34;2-3-2-Reconstructing-an-approximation-of-the-data&#34;&gt;&lt;a href=&#34;#2-3-2-Reconstructing-an-approximation-of-the-data&#34; class=&#34;headerlink&#34; title=&#34;2.3.2 Reconstructing an approximation of the data&#34;&gt;&lt;/a&gt;2.3.2 Reconstructing an approximation of the data&lt;/h2&gt;&lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;X_rec = Z * U(:,&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:K)&#39;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://i.imgur.com/TjyYT8G.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2018/01/30/Unsupervised-Learning/&t=Unsupervised Learning" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -773,6 +774,7 @@
 &lt;h2 id=&#34;2-3-2-Reconstructing-an-approximation-of-the-data&#34;&gt;&lt;a href=&#34;#2-3-2-Reconstructing-an-approximation-of-the-data&#34; class=&#34;headerlink&#34; title=&#34;2.3.2 Reconstructing an approximation of the data&#34;&gt;&lt;/a&gt;2.3.2 Reconstructing an approximation of the data&lt;/h2&gt;&lt;figure class=&#34;highlight matlab&#34;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;X_rec = Z * U(:,&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:K)&#39;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://i.imgur.com/TjyYT8G.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2018/01/30/Unsupervised-Learning/&t=Unsupervised Learning" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -829,10 +831,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

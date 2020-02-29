@@ -105,6 +105,7 @@
 &lt;li&gt;Protocols do not allow generic parameters; use associated types instead&lt;/li&gt;
 &lt;li&gt;cannot specialize non-generic type&lt;/li&gt;
 &lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2016/12/27/Swift-Generics-in-protocol-and-enum/&t=Swift Generics in protocol and enum" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -213,6 +214,7 @@
 &lt;li&gt;Protocols do not allow generic parameters; use associated types instead&lt;/li&gt;
 &lt;li&gt;cannot specialize non-generic type&lt;/li&gt;
 &lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2016/12/27/Swift-Generics-in-protocol-and-enum/&t=Swift Generics in protocol and enum" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -269,10 +271,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

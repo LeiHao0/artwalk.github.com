@@ -102,6 +102,7 @@
   <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/2014/12/14/why-are-we-tend-to-be-conservation/&title=why are we tend to be conserved" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/12/14/why-are-we-tend-to-be-conservation/&name=why are we tend to be conserved&description=&lt;h1 id=&#34;为什么我们会渐渐趋于保守&#34;&gt;&lt;a href=&#34;#为什么我们会渐渐趋于保守&#34; class=&#34;headerlink&#34; title=&#34;为什么我们会渐渐趋于保守&#34;&gt;&lt;/a&gt;为什么我们会渐渐趋于保守&lt;/h1&gt;&lt;p&gt;有那么一个阶段，总感觉父母属于老顽固，嫌弃不愿意接触新的东西，由于年少无知，还曾经嘲笑过他们&lt;/p&gt;
 &lt;p&gt;今天当我为了 IE8，搞了一上午，终于把 Win 8.1 换成 Win7 ，（至于为什么，我是说俩字：网银），并且想以后不到万不得已再也不用新系统时，心中一惊&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/12/14/why-are-we-tend-to-be-conservation/&t=why are we tend to be conserved" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -218,6 +219,7 @@
   <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/2014/12/14/why-are-we-tend-to-be-conservation/&title=why are we tend to be conserved" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/12/14/why-are-we-tend-to-be-conservation/&name=why are we tend to be conserved&description=&lt;h1 id=&#34;为什么我们会渐渐趋于保守&#34;&gt;&lt;a href=&#34;#为什么我们会渐渐趋于保守&#34; class=&#34;headerlink&#34; title=&#34;为什么我们会渐渐趋于保守&#34;&gt;&lt;/a&gt;为什么我们会渐渐趋于保守&lt;/h1&gt;&lt;p&gt;有那么一个阶段，总感觉父母属于老顽固，嫌弃不愿意接触新的东西，由于年少无知，还曾经嘲笑过他们&lt;/p&gt;
 &lt;p&gt;今天当我为了 IE8，搞了一上午，终于把 Win 8.1 换成 Win7 ，（至于为什么，我是说俩字：网银），并且想以后不到万不得已再也不用新系统时，心中一惊&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/12/14/why-are-we-tend-to-be-conservation/&t=why are we tend to be conserved" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -274,10 +276,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

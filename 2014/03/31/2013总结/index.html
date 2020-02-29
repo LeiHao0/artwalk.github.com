@@ -103,6 +103,7 @@
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/03/31/2013%E6%80%BB%E7%BB%93/&name=2013 总结&description=&lt;h3 id=&#34;2014-03-31-13-47-59&#34;&gt;&lt;a href=&#34;#2014-03-31-13-47-59&#34; class=&#34;headerlink&#34; title=&#34;2014-03-31 13:47:59&#34;&gt;&lt;/a&gt;2014-03-31 13:47:59&lt;/h3&gt;&lt;p&gt;嗯~ o(*￣ ▽ ￣*)o ，我果然又拖到三月了，赞一个先&lt;/p&gt;
 &lt;p&gt;背后的原因应该是，对进入人生下一个阶段的恐惧&lt;br&gt;非得等到生日过了才算自己进入 24&lt;/p&gt;
 &lt;p&gt;另外一个也因为《黄帝内经》中把男子以 8 年为一周期&lt;br&gt;16 岁那年，感觉自己有明显的变化，这次肿么木有呢，怕怕&lt;br&gt;但 24 还是不可避免的到来啦，而且一眨眼已经过去几天啦&lt;del&gt;~&lt;/del&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/03/31/2013%E6%80%BB%E7%BB%93/&t=2013 总结" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -266,6 +267,7 @@
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/03/31/2013%E6%80%BB%E7%BB%93/&name=2013 总结&description=&lt;h3 id=&#34;2014-03-31-13-47-59&#34;&gt;&lt;a href=&#34;#2014-03-31-13-47-59&#34; class=&#34;headerlink&#34; title=&#34;2014-03-31 13:47:59&#34;&gt;&lt;/a&gt;2014-03-31 13:47:59&lt;/h3&gt;&lt;p&gt;嗯~ o(*￣ ▽ ￣*)o ，我果然又拖到三月了，赞一个先&lt;/p&gt;
 &lt;p&gt;背后的原因应该是，对进入人生下一个阶段的恐惧&lt;br&gt;非得等到生日过了才算自己进入 24&lt;/p&gt;
 &lt;p&gt;另外一个也因为《黄帝内经》中把男子以 8 年为一周期&lt;br&gt;16 岁那年，感觉自己有明显的变化，这次肿么木有呢，怕怕&lt;br&gt;但 24 还是不可避免的到来啦，而且一眨眼已经过去几天啦&lt;del&gt;~&lt;/del&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/03/31/2013%E6%80%BB%E7%BB%93/&t=2013 总结" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -322,10 +324,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

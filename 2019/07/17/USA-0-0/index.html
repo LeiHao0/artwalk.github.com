@@ -111,6 +111,7 @@
 &lt;p&gt;小法师站在 半月湾 Poplar Beach，遥望着无垠的太平洋说道&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://i.imgur.com/URN2Df5.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;那时小法师英语还很差，后来才知道应该 F**k Me&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2019/07/17/USA-0-0/&t=USA-0-0" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -244,6 +245,7 @@
 &lt;p&gt;小法师站在 半月湾 Poplar Beach，遥望着无垠的太平洋说道&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://i.imgur.com/URN2Df5.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;那时小法师英语还很差，后来才知道应该 F**k Me&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2019/07/17/USA-0-0/&t=USA-0-0" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -300,10 +302,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

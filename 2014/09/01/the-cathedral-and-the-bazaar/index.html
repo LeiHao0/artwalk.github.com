@@ -105,6 +105,7 @@
 &lt;p&gt;这也让我很困惑，甚至有段时间我发自内心的不认同这个标签&lt;/p&gt;
 &lt;p&gt;因为纵观国外的一些大牛，他们除了代码精湛之外，还写 Blog、出书、营销、开公司、拉风投、潜水、登山、旅行…&lt;br&gt;而且并非浅尝辄止，只能用逆天来形容&lt;br&gt;这…还是程序员么&lt;/p&gt;
 &lt;p&gt;看了此书才明白，此人种名曰：黑客（Hacker）&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/09/01/the-cathedral-and-the-bazaar/&t=The Cathedral and the Bazaar" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -332,6 +333,7 @@
 &lt;p&gt;这也让我很困惑，甚至有段时间我发自内心的不认同这个标签&lt;/p&gt;
 &lt;p&gt;因为纵观国外的一些大牛，他们除了代码精湛之外，还写 Blog、出书、营销、开公司、拉风投、潜水、登山、旅行…&lt;br&gt;而且并非浅尝辄止，只能用逆天来形容&lt;br&gt;这…还是程序员么&lt;/p&gt;
 &lt;p&gt;看了此书才明白，此人种名曰：黑客（Hacker）&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/09/01/the-cathedral-and-the-bazaar/&t=The Cathedral and the Bazaar" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -388,10 +390,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

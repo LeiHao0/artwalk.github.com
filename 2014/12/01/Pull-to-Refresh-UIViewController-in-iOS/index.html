@@ -106,6 +106,7 @@
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/&name=Pull to Refresh UIViewController in iOS&description=&lt;p&gt;If you force to add a &lt;code&gt;UIRefreshControl&lt;/code&gt; to a &lt;code&gt;UIViewController&lt;/code&gt;, you will get an error:&lt;br&gt;&lt;code&gt;UIRefreshControl may only be managed by a UITableViewController&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;So, here is the trick&lt;/p&gt;
 &lt;h2 id=&#34;Code&#34;&gt;&lt;a href=&#34;#Code&#34; class=&#34;headerlink&#34; title=&#34;Code&#34;&gt;&lt;/a&gt;Code&lt;/h2&gt;&lt;p&gt;1 init a tableView in your &lt;code&gt;UIViewController&lt;/code&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/&t=Pull to Refresh UIViewController in iOS" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -221,6 +222,7 @@
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/&name=Pull to Refresh UIViewController in iOS&description=&lt;p&gt;If you force to add a &lt;code&gt;UIRefreshControl&lt;/code&gt; to a &lt;code&gt;UIViewController&lt;/code&gt;, you will get an error:&lt;br&gt;&lt;code&gt;UIRefreshControl may only be managed by a UITableViewController&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;So, here is the trick&lt;/p&gt;
 &lt;h2 id=&#34;Code&#34;&gt;&lt;a href=&#34;#Code&#34; class=&#34;headerlink&#34; title=&#34;Code&#34;&gt;&lt;/a&gt;Code&lt;/h2&gt;&lt;p&gt;1 init a tableView in your &lt;code&gt;UIViewController&lt;/code&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/&t=Pull to Refresh UIViewController in iOS" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -277,10 +279,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

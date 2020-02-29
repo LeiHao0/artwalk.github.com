@@ -100,6 +100,7 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/2013/11/21/how-to-quit-the-game/&title=如何戒掉游戏" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/2013/11/21/how-to-quit-the-game/&title=如何戒掉游戏" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2013/11/21/how-to-quit-the-game/&name=如何戒掉游戏&description=&lt;p&gt;这真是一个漫长的话题，其难度不亚于许多人戒烟吧。&lt;br&gt;目前有点想法，逐渐在尝试，慢慢记录下来" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2013/11/21/how-to-quit-the-game/&t=如何戒掉游戏" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -201,6 +202,7 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/2013/11/21/how-to-quit-the-game/&title=如何戒掉游戏" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/2013/11/21/how-to-quit-the-game/&title=如何戒掉游戏" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2013/11/21/how-to-quit-the-game/&name=如何戒掉游戏&description=&lt;p&gt;这真是一个漫长的话题，其难度不亚于许多人戒烟吧。&lt;br&gt;目前有点想法，逐渐在尝试，慢慢记录下来" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2013/11/21/how-to-quit-the-game/&t=如何戒掉游戏" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -257,10 +259,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

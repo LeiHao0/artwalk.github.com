@@ -106,6 +106,7 @@
 &lt;p&gt;其实除了魔法的提升以外， Senior 还有一项神奇的技能&lt;/p&gt;
 &lt;p&gt;——反馈&lt;/p&gt;
 &lt;p&gt;此法先予以对方肯定（pengsha）&lt;br&gt;然后委婉指出有待加强的地方（quedian)&lt;br&gt;最终达到把对方的法力值清零的效果&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2019/07/16/26/&t=Feedback" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -261,6 +262,7 @@
 &lt;p&gt;其实除了魔法的提升以外， Senior 还有一项神奇的技能&lt;/p&gt;
 &lt;p&gt;——反馈&lt;/p&gt;
 &lt;p&gt;此法先予以对方肯定（pengsha）&lt;br&gt;然后委婉指出有待加强的地方（quedian)&lt;br&gt;最终达到把对方的法力值清零的效果&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2019/07/16/26/&t=Feedback" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -317,10 +319,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

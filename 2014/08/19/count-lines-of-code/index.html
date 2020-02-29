@@ -105,6 +105,7 @@
 &lt;p&gt;But &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; do not support Mac OS X.&lt;/p&gt;
 &lt;p&gt;So, I found and interesting commond line:&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;find . -name &lt;span class=&#34;string&#34;&gt;&#34;*.m&#34;&lt;/span&gt; -or -name &lt;span class=&#34;string&#34;&gt;&#34;*.h&#34;&lt;/span&gt; | xargs grep -v &lt;span class=&#34;string&#34;&gt;&#34;^$&#34;&lt;/span&gt; | wc -l&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/08/19/count-lines-of-code/&t=Count Lines of Code" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -223,6 +224,7 @@
 &lt;p&gt;But &lt;a href=&#34;https://code.google.com/p/boomworks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SourceCounter&lt;/a&gt; do not support Mac OS X.&lt;/p&gt;
 &lt;p&gt;So, I found and interesting commond line:&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;find . -name &lt;span class=&#34;string&#34;&gt;&#34;*.m&#34;&lt;/span&gt; -or -name &lt;span class=&#34;string&#34;&gt;&#34;*.h&#34;&lt;/span&gt; | xargs grep -v &lt;span class=&#34;string&#34;&gt;&#34;^$&#34;&lt;/span&gt; | wc -l&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/08/19/count-lines-of-code/&t=Count Lines of Code" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -279,10 +281,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {

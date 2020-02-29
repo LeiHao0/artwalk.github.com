@@ -101,6 +101,7 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/2014/08/28/ios-7-programming-cookbook/&title=iOS 7 Programming Cookbook" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/2014/08/28/ios-7-programming-cookbook/&title=iOS 7 Programming Cookbook" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/08/28/ios-7-programming-cookbook/&name=iOS 7 Programming Cookbook&description=&lt;h1 id=&#34;如何刷-Cookbook&#34;&gt;&lt;a href=&#34;#如何刷-Cookbook&#34; class=&#34;headerlink&#34; title=&#34;如何刷 Cookbook&#34;&gt;&lt;/a&gt;如何刷 Cookbook&lt;/h1&gt;&lt;p&gt;天哪，终于翻完了，1k 多页啊！！！&lt;br&gt;把里面 80% 的代码手打了一遍，发现了代码中的两个 BUG&lt;br&gt;另外有错误的，童鞋们可以在 Github 上 &lt;code&gt;Pull Requests&lt;/code&gt; 给 &lt;a href=&#34;https://github.com/oreillymedia/iOS7_Programming_Cookbook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;oreillymedia/iOS7_Programming_Cookbook&lt;/a&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/08/28/ios-7-programming-cookbook/&t=iOS 7 Programming Cookbook" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -222,6 +223,7 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/2014/08/28/ios-7-programming-cookbook/&title=iOS 7 Programming Cookbook" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/2014/08/28/ios-7-programming-cookbook/&title=iOS 7 Programming Cookbook" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/2014/08/28/ios-7-programming-cookbook/&name=iOS 7 Programming Cookbook&description=&lt;h1 id=&#34;如何刷-Cookbook&#34;&gt;&lt;a href=&#34;#如何刷-Cookbook&#34; class=&#34;headerlink&#34; title=&#34;如何刷 Cookbook&#34;&gt;&lt;/a&gt;如何刷 Cookbook&lt;/h1&gt;&lt;p&gt;天哪，终于翻完了，1k 多页啊！！！&lt;br&gt;把里面 80% 的代码手打了一遍，发现了代码中的两个 BUG&lt;br&gt;另外有错误的，童鞋们可以在 Github 上 &lt;code&gt;Pull Requests&lt;/code&gt; 给 &lt;a href=&#34;https://github.com/oreillymedia/iOS7_Programming_Cookbook&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;oreillymedia/iOS7_Programming_Cookbook&lt;/a&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/2014/08/28/ios-7-programming-cookbook/&t=iOS 7 Programming Cookbook" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -278,10 +280,10 @@
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
-    $(".highlight .code pre").before(btn);
+    $(".highlight table").before(btn);
     var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
     clip.on('success', function(e) {
