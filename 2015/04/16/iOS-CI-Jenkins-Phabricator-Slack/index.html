@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
 <meta property="og:description" content="shell 里 brew install jenkins然后 jenkins 启动，牛腩器中输入 127.0.0.1:8080 跳坑 Jenkins 里 xcode 相关插件装上步骤别的博客都有，Google _ios ci 持续集成_，比如：  Jenkins+Github+Testflight 在 Mac 下搭建持续集成环境 ， iOS 项目持续集成之 Travis CI  版本可能旧一点，但">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-02T05:46:50.000Z">
+<meta property="og:updated_time" content="2020-03-16T06:07:14.000Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -175,7 +175,7 @@
 <p>Currently, your app does not have at least one approved version.</p>
 </blockquote>
 <p>…<br>只好改了 ID</p>
-<h3 id="over-the-air-distribution"><a href="#over-the-air-distribution" class="headerlink" title="over the air distribution"></a>over the air distribution</h3><p>万事俱备了，赶紧导出，结果发现 Xcode 6 之后，导 ipa 只有一个 .ipa 没有配套的 .plist，要自己手写…（还好 Jenkins 还能自动生成），大致长这样的：<a href="https://gist.github.com/Artwalk/f292d65163b26a2169d4" target="_blank" rel="noopener">plist</a> ($ $ 里对应的改一下)</p>
+<h3 id="over-the-air-distribution"><a href="#over-the-air-distribution" class="headerlink" title="over the air distribution"></a>over the air distribution</h3><p>万事俱备了，赶紧导出，结果发现 Xcode 6 之后，导 ipa 只有一个 .ipa 没有配套的 .plist，要自己手写…（还好 Jenkins 还能自动生成），大致长这样的：<a href="https://gist.github.com/leihao0/f292d65163b26a2169d4" target="_blank" rel="noopener">plist</a> ($ $ 里对应的改一下)</p>
 <p>然后<code>python -m SimpleHTTPServer</code>，iPhone 上 Safari 打开，结果… 还是不行…</p>
 <p>后来发现服务器必须是 https 的…</p>
 <h3 id="build-number"><a href="#build-number" class="headerlink" title="build number"></a>build number</h3><p><code>targets -&gt; Build Phases -&gt; + New Run Script Phase</code></p>
