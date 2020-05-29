@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://leihao0.github.io/iOS-Token-Based-APNs/</loc>
+        <lastmod>2020-05-29T17:23:18.983Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/Japan-2-1-0/</loc>
+        <lastmod>2020-05-29T08:43:27.490Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/Reading-Plan/</loc>
         <lastmod>2020-05-29T03:45:13.361Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1370,14 +1386,6 @@
     <url>
         <loc>https://leihao0.github.io/swift-useful-extensions/</loc>
         <lastmod>2019-11-02T05:47:34.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/Japan-2-1-0/</loc>
-        <lastmod>2019-10-23T15:56:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

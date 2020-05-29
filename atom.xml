@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leihao0.github.io/"/>
-  <updated>2020-05-29T03:15:46.061Z</updated>
+  <updated>2020-05-29T17:23:18.983Z</updated>
   <id>https://leihao0.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS Token-Based APNs</title>
+    <link href="https://leihao0.github.io/iOS-Token-Based-APNs/"/>
+    <id>https://leihao0.github.io/iOS-Token-Based-APNs/</id>
+    <published>2020-05-29T09:23:18.000Z</published>
+    <updated>2020-05-29T17:23:18.983Z</updated>
+    
+    <content type="html"><![CDATA[<p>Apple provides a new way (Authentication Tokens) to do APNs.</p><p>Comparing to the previous way (Provider Certificates) which cert <code>*.p12</code> will expire each year</p><p>The Token-Based <code>*.p8</code> will <strong>never expired</strong></p><ul><li><a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_token-based_connection_to_apns" target="_blank" rel="noopener">Establishing a Token-Based Connection to APNs</a></li><li><a href="https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CommunicatingwithAPNs.html" target="_blank" rel="noopener">Communicating with APNs</a></li></ul><h2 id="For-Client"><a href="#For-Client" class="headerlink" title="For Client"></a>For Client</h2><p>The only different things for the client-side are</p><ol><li>Creating an authentication token signing key on <a href="https://developer.apple.com/" target="_blank" rel="noopener">https://developer.apple.com/</a></li><li>Download the <code>*.p8</code> and send it to backend engineer</li></ol><h2 id="For-Backend"><a href="#For-Backend" class="headerlink" title="For Backend"></a>For Backend</h2><p>Many frameworks have support <code>*.p8</code>.</p><p>For example:</p><p><a href="https://firebase.google.com/docs/cloud-messaging/ios/certs" target="_blank" rel="noopener">Firebase</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Apple provides a new way (Authentication Tokens) to do APNs.&lt;/p&gt;
+&lt;p&gt;Comparing to the previous way (Provider Certificates) which cert &lt;cod
+      
+    
+    </summary>
+    
+    
+    
+      <category term="iOS" scheme="https://leihao0.github.io/tags/iOS/"/>
+    
+      <category term="APNs" scheme="https://leihao0.github.io/tags/APNs/"/>
+    
+  </entry>
   
   <entry>
     <title>Threading Programming Guide</title>
@@ -388,9 +415,9 @@
     <link href="https://leihao0.github.io/Japan-2-1-0/"/>
     <id>https://leihao0.github.io/Japan-2-1-0/</id>
     <published>2019-10-16T14:38:42.000Z</published>
-    <updated>2019-10-23T15:56:37.000Z</updated>
+    <updated>2020-05-29T08:43:27.490Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="箱根-0"><a href="#箱根-0" class="headerlink" title="箱根 0"></a>箱根 0</h1><p>就選這個酒店吧，我去過幾次，已經算箱根很不錯的了<br>小法師的壕朋友說到</p><p>看了下價格，小法師不禁問到</p><p>‘我自己一個人去，住那麼好的酒店幹什麼呢’<br>因為好的酒店會蓋在溫泉 ♨️ 泉眼上，次一點的需要引水，溫度沒保障</p><p>‘一個人去，為什麼要住那麼好的酒店’<br>這個酒店可以選陽台上有溫泉的 ♨️ 房間，不用去男湯女湯，非常 privacy</p><p>‘我是自己去哎’<br>連續工作了這麼久，去放鬆下啊，就當畢業旅行 🎓 ✈️ 嘛</p><p>然後小法師禁不住誘惑，訂下了箱根小涌園天悠<br>聽名字就很悠然自得呢</p><hr><h2 id="天悠"><a href="#天悠" class="headerlink" title="天悠"></a>天悠</h2><p>小法師被 shuttle 拉到在酒店後，因為下雨，行李已經濕了<br>接待員小姊姊拿出了一條嶄新的毛巾給擦行李 🧳，並幫著送到了房間</p><p>小法師心裡感覺是沒必要的，加上爬了很久的山路，已經沒力氣了說話了，只能感嘆服務真好</p><p>和壕說的一樣，溫泉在陽台上<br>旁邊有個小按鈕，按一下散發著硫磺味道的溫泉就冒出來啦<br>去販賣機買了很多功能飲料以防脫水，然後就開始煮肉</p><p>陽台外飄著小雨，起了霧，山風吹著窗簾嘩嘩作響</p><p>小法師待在溫泉裡看著升騰的熱氣直到深夜，聽著外面的風聲雨聲，感覺一切都值了</p><hr><p>第二天醒來霧還沒有散去</p><video width="720" autoplay loop muted="true" ><source type="video/mp4" src="/images/Japan21000.mp4"></video><p>小法師很害羞，不喜歡見人<br>本來打算在陽台上躺屍兩天</p><p>然餓抱著去看一眼的心態，去了頂樓的男湯<br>瞬間就驚呆了</p><p>雖然 iPhone X 📱 防水<br>雖然池子裡只有一個人，看到小法師來，還走掉了</p><p>但這種坦誠相待的場所，只能盜官方圖了</p><p><img src="/images/Japan21020.jpg" alt=""></p><p>哇很有坡縣濱海灣金沙的無邊泳池的感覺耶<br>只不過泳池換成了溫泉</p><p>然後小法師眺望遠處的群山，以為隔壁是女湯<br>下樓發現女湯其實樓下，另外每天男女會調換下<br>不知是不是 ☯️ 有陰陽調和的講究</p><p>所以應該就沒法像頂樓這樣，而只可以在屋子裡看群山了</p><p>那好沒意思，小法師打算第二天不出房間了</p><p>然餓事實是<br>五樓是個小池塘，漂著落葉 🍂<br>旁邊十多米的小山有瀑布流下來<br>這瀑布就是熱氣騰騰的溫泉啦</p><p>無奈官方也沒給圖<br>算是一個大驚喜吧</p><p>早餐也超讚<br>可以自己選日式或西式<br>對著窗戶，外面是竹林</p><hr><h2 id="小王子"><a href="#小王子" class="headerlink" title="小王子"></a>小王子</h2><p>畢竟再煮就熟了<br>小法師只好出來逛了逛</p><p>驚奇的發現旁邊有座小王子的廟(博物館)</p><p>PS：話說小法師的初戀超喜歡小王子</p><p><img src="/images/Japan21000.jpg" alt=""></p><p>早在 3102 年 1 月小法師就拜讀過小王子<br>這個系列的時間線也發生在後面<br>所以取名多多少少受到了一些啟發</p><h3 id="小王子飛機"><a href="#小王子飛機" class="headerlink" title="小王子飛機"></a>小王子飛機</h3><p><img src="/images/Japan21001.jpg" alt=""></p><h3 id="小王子玫瑰"><a href="#小王子玫瑰" class="headerlink" title="小王子玫瑰"></a>小王子玫瑰</h3><blockquote><p>我那朵玫瑰，別人以為她和你們一樣，但她單獨一朵就勝過你們全部。因為她是我澆灌的。因為她是我放在花罩中的。因為她是我用屏風保護起來的。因為她身上的毛毛蟲是我除掉的。因為我傾聽過她的哀怨，她的吹噓，有時甚至是她的沉默。因為她是我的玫瑰。</p></blockquote><blockquote><p>如果你愛著一朵盛開在浩瀚星海裡的花，那麼，當你抬頭仰望繁星時，便會感到心滿意足</p></blockquote><p><img src="/images/Japan21002.jpg" alt=""></p><hr><p>然餓初戀在魔法學院讓小法師苦苦等待三年<br>然後終於在一起然後一週就把他甩掉了<br>所以小法師恨屋及烏對小王子並沒什麼好感<br>完全不明白為什麼在全球範圍受到這等推崇</p><p><img src="/images/Japan21003.jpg" alt=""></p><p>轉了一圈就出來去水晶博物館了</p><h2 id="箱根ガラスの森美術館"><a href="#箱根ガラスの森美術館" class="headerlink" title="箱根ガラスの森美術館"></a>箱根ガラスの森美術館</h2><p>據說是應該這樣的：</p><p><img src="/images/Japan21020.jpg" alt=""></p><p>小法師看到的是這樣的：</p><p><img src="/images/Japan21022.jpg" alt=""></p><p>只有這裏像是童話<br><img src="/images/Japan21004.jpg" alt=""></p><h2 id="強羅公園"><a href="#強羅公園" class="headerlink" title="強羅公園"></a>強羅公園</h2><p>據說是應該這樣的：</p><p><img src="/images/Japan-2106.jpg" alt=""></p><p>小法師興沖沖的跑過去看到的是這樣的：</p><p>關門大吉的茶室</p><p><img src="/images/Japan21011.jpg" alt=""></p><p>光禿禿的苔庭</p><p><img src="/images/Japan21023.jpg" alt=""></p><p>一點都不浪漫的玫瑰園 🌹🌹🌹</p><p><img src="/images/Japan21009.jpg" alt=""></p><p>所以最近小法師一直纏著大姊姊讓她教如何 P 成宣傳手冊裡那樣的圖<br>🐶🐶🐶</p><hr><p>即便如此，小法師還是看到了青苔竹林參天大樹白雲</p><p><img src="/images/Japan21008.jpg" alt=""><br><img src="/images/Japan21006.jpg" alt=""><br><img src="/images/Japan21010.jpg" alt=""></p><p>同樣的景色在先秦的古人筆下是這樣的</p><blockquote><p>白華菅兮，白茅束兮。之子之遠，俾我獨兮！<br>英英白雲，露彼菅茅。天步艱難，之子不猶！<br>——《小雅·白華》</p></blockquote><hr><p>季節來的不對，有得必有失嘛</p><p>還是回去煮肉好了<br>小法師安慰自己到</p><p>然後被一位德國 🇩🇪 的妹紙強行安利了一款飲料 🥤</p><p><img src="/images/Japan21005.jpg" alt=""></p><p>那就多買了一罐帶回去做禮物 🎁 好了</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="箱根-0"><a href="#箱根-0" class="headerlink" title="箱根 0"></a>箱根 0</h1><p>就選這個酒店吧，我去過幾次，已經算箱根很不錯的了<br>小法師的壕朋友說到</p><p>看了下價格，小法師不禁問到</p><p>‘我自己一個人去，住那麼好的酒店幹什麼呢’<br>因為好的酒店會蓋在溫泉 ♨️ 泉眼上，次一點的需要引水，溫度沒保障</p><p>‘一個人去，為什麼要住那麼好的酒店’<br>這個酒店可以選陽台上有溫泉的 ♨️ 房間，不用去男湯女湯，非常 privacy</p><p>‘我是自己去哎’<br>連續工作了這麼久，去放鬆下啊，就當畢業旅行 🎓 ✈️ 嘛</p><p>然後小法師禁不住誘惑，訂下了箱根小涌園天悠<br>聽名字就很悠然自得呢</p><hr><h2 id="天悠"><a href="#天悠" class="headerlink" title="天悠"></a>天悠</h2><p>小法師被 shuttle 拉到在酒店後，因為下雨，行李已經濕了<br>接待員小姊姊拿出了一條嶄新的毛巾給擦行李 🧳，並幫著送到了房間</p><p>小法師心裡感覺是沒必要的，加上爬了很久的山路，已經沒力氣了說話了，只能感嘆服務真好</p><p>和壕說的一樣，溫泉在陽台上<br>旁邊有個小按鈕，按一下散發著硫磺味道的溫泉就冒出來啦<br>去販賣機買了很多功能飲料以防脫水，然後就開始煮肉</p><p>陽台外飄著小雨，起了霧，山風吹著窗簾嘩嘩作響</p><p>小法師待在溫泉裡看著升騰的熱氣直到深夜，聽著外面的風聲雨聲，感覺一切都值了</p><hr><p>第二天醒來霧還沒有散去</p><video width="720" autoplay loop muted="true" ><source type="video/mp4" src="/images/Japan21000.mp4"></video><p>小法師很害羞，不喜歡見人<br>本來打算在陽台上躺屍兩天</p><p>然餓抱著去看一眼的心態，去了頂樓的男湯<br>瞬間就驚呆了</p><p>雖然 iPhone X 📱 防水<br>雖然池子裡只有一個人，看到小法師來，還走掉了</p><p>但這種坦誠相待的場所，只能盜官方圖了</p><p><img src="/images/Japan21020.jpg" alt=""></p><p>哇很有坡縣濱海灣金沙的無邊泳池的感覺耶<br>只不過泳池換成了溫泉</p><p>然後小法師眺望遠處的群山，以為隔壁是女湯<br>下樓發現女湯其實樓下，另外每天男女會調換下<br>不知是不是 ☯️ 有陰陽調和的講究</p><p>所以應該就沒法像頂樓這樣，而只可以在屋子裡看群山了</p><p>那好沒意思，小法師打算第二天不出房間了</p><p>然餓事實是<br>五樓是個小池塘，漂著落葉 🍂<br>旁邊十多米的小山有瀑布流下來<br>這瀑布就是熱氣騰騰的溫泉啦</p><p>無奈官方也沒給圖<br>算是一個大驚喜吧</p><p>早餐也超讚<br>可以自己選日式或西式<br>對著窗戶，外面是竹林</p><hr><h2 id="小王子"><a href="#小王子" class="headerlink" title="小王子"></a>小王子</h2><p>畢竟再煮就熟了<br>小法師只好出來逛了逛</p><p>驚奇的發現旁邊有座小王子的廟(博物館)</p><p>PS：話說小法師的初戀超喜歡小王子</p><p><img src="/images/Japan21000.jpg" alt=""></p><p>早在 3102 年 1 月小法師就拜讀過小王子<br>這個系列的時間線也發生在後面<br>所以取名多多少少受到了一些啟發</p><h3 id="小王子飛機"><a href="#小王子飛機" class="headerlink" title="小王子飛機"></a>小王子飛機</h3><p><img src="/images/Japan21001.jpg" alt=""></p><h3 id="小王子玫瑰"><a href="#小王子玫瑰" class="headerlink" title="小王子玫瑰"></a>小王子玫瑰</h3><blockquote><p>我那朵玫瑰，別人以為她和你們一樣，但她單獨一朵就勝過你們全部。因為她是我澆灌的。因為她是我放在花罩中的。因為她是我用屏風保護起來的。因為她身上的毛毛蟲是我除掉的。因為我傾聽過她的哀怨，她的吹噓，有時甚至是她的沉默。因為她是我的玫瑰。</p></blockquote><blockquote><p>如果你愛著一朵盛開在浩瀚星海裡的花，那麼，當你抬頭仰望繁星時，便會感到心滿意足</p></blockquote><p><img src="/images/Japan21002.jpg" alt=""></p><hr><p>然餓初戀在魔法學院讓小法師苦苦等待三年<br>然後終於在一起然後一週就把他甩掉了<br>所以小法師恨屋及烏對小王子並沒什麼好感<br>完全不明白為什麼在全球範圍受到這等推崇</p><p><img src="/images/Japan21003.jpg" alt=""></p><p>轉了一圈就出來去水晶博物館了</p><h2 id="箱根ガラスの森美術館"><a href="#箱根ガラスの森美術館" class="headerlink" title="箱根ガラスの森美術館"></a>箱根ガラスの森美術館</h2><p>據說是應該這樣的：</p><p><img src="/images/Japan21021.jpg" alt=""></p><p>小法師看到的是這樣的：</p><p><img src="/images/Japan21022.jpg" alt=""></p><p>只有這裏像是童話<br><img src="/images/Japan21004.jpg" alt=""></p><h2 id="強羅公園"><a href="#強羅公園" class="headerlink" title="強羅公園"></a>強羅公園</h2><p>據說是應該這樣的：</p><p><img src="/images/Japan-2106.jpg" alt=""></p><p>小法師興沖沖的跑過去看到的是這樣的：</p><p>關門大吉的茶室</p><p><img src="/images/Japan21011.jpg" alt=""></p><p>光禿禿的苔庭</p><p><img src="/images/Japan21023.jpg" alt=""></p><p>一點都不浪漫的玫瑰園 🌹🌹🌹</p><p><img src="/images/Japan21009.jpg" alt=""></p><p>所以最近小法師一直纏著大姊姊讓她教如何 P 成宣傳手冊裡那樣的圖<br>🐶🐶🐶</p><hr><p>即便如此，小法師還是看到了青苔竹林參天大樹白雲</p><p><img src="/images/Japan21008.jpg" alt=""><br><img src="/images/Japan21006.jpg" alt=""><br><img src="/images/Japan21010.jpg" alt=""></p><p>同樣的景色在先秦的古人筆下是這樣的</p><blockquote><p>白華菅兮，白茅束兮。之子之遠，俾我獨兮！<br>英英白雲，露彼菅茅。天步艱難，之子不猶！<br>——《小雅·白華》</p></blockquote><hr><p>季節來的不對，有得必有失嘛</p><p>還是回去煮肉好了<br>小法師安慰自己到</p><p>然後被一位德國 🇩🇪 的妹紙強行安利了一款飲料 🥤</p><p><img src="/images/Japan21005.jpg" alt=""></p><p>那就多買了一罐帶回去做禮物 🎁 好了</p>]]></content>
     
     <summary type="html">
     
@@ -533,32 +560,6 @@
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/KjaOW87.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;出示护照可以领 Badge&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/16fBzy1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="LittleMaster" scheme="https://leihao0.github.io/tags/LittleMaster/"/>
-    
-      <category term="USA" scheme="https://leihao0.github.io/tags/USA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>USA-0-0</title>
-    <link href="https://leihao0.github.io/USA-0-0/"/>
-    <id>https://leihao0.github.io/USA-0-0/</id>
-    <published>2019-07-17T15:32:13.000Z</published>
-    <updated>2019-11-02T05:53:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="美帝-0-0-🇺🇸"><a href="#美帝-0-0-🇺🇸" class="headerlink" title="美帝-0-0 🇺🇸"></a>美帝-0-0 🇺🇸</h1><p>F**k My Life</p><p>小法师站在 半月湾 Poplar Beach，遥望着无垠的太平洋说道</p><p><img src="https://i.imgur.com/URN2Df5.jpg" alt=""></p><p>那时小法师英语还很差，后来才知道应该 F**k Me</p><a id="more"></a><hr><p>小法师出生在大陆内部，从来没见过海<br>各种小说电影中却又塑造了一个非常浪漫的场景<br>所以一直以来，去看海就成了小法师的一个梦想<br>当然，最好是和妹纸一起去，小法师傻傻的想</p><p>然鹅 20 多年过去了，妹纸不仅没找 (pian) 到，海也没看上<br>在拜读了 <a href="https://book.douban.com/subject/26786519/" target="_blank" rel="noopener">《无后为大》</a> <a href="https://book.douban.com/subject/26235729/" target="_blank" rel="noopener">《单身社会》</a> 等等书籍 📚 后</p><p>小法师终于顿悟了<br>——我自己去</p><p>然鹅当他真的看到海平线时，却发出了开篇的感叹</p><p>让我们把时间线拉前一些看看发生了什么</p><hr><p>机票时小法师不知道美联航评价并不好，还多花了一些钱放弃国航选了美联航<br>并且那时还没发生臭名昭著的殴打亚裔事件</p><p>其实无论哪个航班，连续 12 个小时的飞行，都会让小法师变成尸体<br>美联航没那么严格让关机 📴，✈️ 上 小法师拍了张地平线</p><p><img src="https://i.imgur.com/SK2dR5y.jpg" alt=""></p><p>下了飞机后，入关</p><p>一直以来小法师不知怎么有种幻觉，海关后面埋伏着一群狙击手<br>发现嫌疑人就会当场击毙<br>小法师由于是第一次入关，还是有些紧张的</p><p>海关问了几个常见问题，比如来干嘛，呆几天<br>小法师根据签证的情况，没说是 Conference，说是 Developer Meeting</p><p>然后海关啪的给盖了个章<br>小法师拿回护照后连小伙伴也顾不上了，便快速的往里走<br>生怕被击毙</p><p>等看到一些接机的人后，才想起小伙伴还没出来<br>等了半天以为小伙伴 GG 了时，看到了他<br>原来也是说 Conference 被 Check 了一会儿</p><p>然后出机场去取车</p><p>小法师看到车时惊呆了，感叹这种闪耀着金属光芒的车竟然才卖 20W</p><p><img src="https://i.imgur.com/cSxOHcq.jpg" alt=""></p><p>反观国内看着像是塑料的 🚗 都要 30W 起步了</p><hr><p>他们先去 Airbnb 放行李 🧳</p><p>从三番机场 ✈️ 到 Downtown 还是挺远的<br>然鹅这种在帝都要堵上一万年的距离，20 分钟就到了<br>住的 House 有个后花园，非常 Nice</p><p><img src="https://i.imgur.com/yVJY9tg.jpg" alt=""></p><p>由于提前去了两天，加上租了车，没有驾照的小法师全靠抱队友大腿，在三藩附近逛了逛<br>更加神奇的是，第二天小法师见到了 OS X Yosemite 的壁纸</p><p><img src="https://i.imgur.com/r0LDATz.jpg" alt=""></p><p>真的不可思议呢</p><p>小法师在回去的路上看着夕阳 🌇 发呆</p><p><img src="https://i.imgur.com/z9NnYKR.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;美帝-0-0-🇺🇸&quot;&gt;&lt;a href=&quot;#美帝-0-0-🇺🇸&quot; class=&quot;headerlink&quot; title=&quot;美帝-0-0 🇺🇸&quot;&gt;&lt;/a&gt;美帝-0-0 🇺🇸&lt;/h1&gt;&lt;p&gt;F**k My Life&lt;/p&gt;
-&lt;p&gt;小法师站在 半月湾 Poplar Beach，遥望着无垠的太平洋说道&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/URN2Df5.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;那时小法师英语还很差，后来才知道应该 F**k Me&lt;/p&gt;
     
     </summary>
     
