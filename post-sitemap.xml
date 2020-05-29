@@ -1,0 +1,1403 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://leihao0.github.io</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2020/05/27/Threading-Programming-Guide/</loc>
+        <lastmod>2020-05-29T03:15:46.061Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/11/03/How-to-auto-reply-send-msg-with-telegram/</loc>
+        <lastmod>2020-05-29T03:15:25.677Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/07/09/Rendezvous-with-Rama/</loc>
+        <lastmod>2020-05-29T03:14:32.644Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/01/11/Neural-Networks-Learning/</loc>
+        <lastmod>2020-05-29T03:13:24.389Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/01/03/Logistic-Regression/</loc>
+        <lastmod>2020-05-29T03:13:13.296Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2017/10/23/Batch-replace-NamedColors-to-RGB-in-Storyboard/</loc>
+        <lastmod>2020-05-29T03:13:09.198Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2017/09/09/Codility/</loc>
+        <lastmod>2020-05-29T03:13:04.611Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2017/06/07/How-to-trust-MitM-Certificate-on-iPhone-Simulator/</loc>
+        <lastmod>2020-05-29T03:13:01.524Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2017/05/18/Softwares-speed-up-your-learning/</loc>
+        <lastmod>2020-05-29T03:12:59.576Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/12/20/Custom-UIViewController-Presentation-Transitions-with-UIStoryboardSegue/</loc>
+        <lastmod>2020-05-29T03:12:42.769Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/11/06/Time-Capsule-on-PandoraBox/</loc>
+        <lastmod>2020-05-29T03:12:35.921Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/10/19/UITextField-and-UILabel-Tips/</loc>
+        <lastmod>2020-05-29T03:12:32.424Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/10/19/Reflection-in-Swift-via-Mirror/</loc>
+        <lastmod>2020-05-29T03:12:29.367Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/10/18/How-to-add-Xib-on-StoryBoard/</loc>
+        <lastmod>2020-05-29T03:12:26.088Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/08/29/How-to-learn-English-as-a-Chinese/</loc>
+        <lastmod>2020-05-29T03:12:22.938Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/08/22/Sync-macOS-ssh-config-with-iCloud/</loc>
+        <lastmod>2020-05-29T03:12:19.818Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/07/26/Use-AppleScript-as-AutoHotkey-On-Mac/</loc>
+        <lastmod>2020-05-29T03:12:14.979Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/07/19/Nothing-To-Say/</loc>
+        <lastmod>2020-05-29T02:59:42.803Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/05/17/View-blurred-after-CGAffineTransformMakeRotation/</loc>
+        <lastmod>2020-05-29T02:59:38.516Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/05/17/The-side-effect-of-Polyphasic-sleep/</loc>
+        <lastmod>2020-05-29T02:59:33.957Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/04/20/Proxy-Settings-on-Mac-for-Terminal/</loc>
+        <lastmod>2020-05-29T02:59:29.403Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/04/03/Segmentation-fault-11/</loc>
+        <lastmod>2020-05-29T02:59:21.057Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/04/03/Observer/</loc>
+        <lastmod>2020-05-29T02:59:07.969Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/03/25/Chrome-to-Safari/</loc>
+        <lastmod>2020-05-29T02:58:57.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/03/06/How-to-config-mpv/</loc>
+        <lastmod>2020-05-29T02:58:54.216Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/02/25/iOS-App-Submission-Nightmare/</loc>
+        <lastmod>2020-05-29T02:58:50.121Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/02/24/How-to-detect-2-4-GHz-and-5-GHz-Best-Channel-on-Mac-OS-X/</loc>
+        <lastmod>2020-05-29T02:58:46.714Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/02/18/ApplePay-with-UnionPay-in-China/</loc>
+        <lastmod>2020-05-29T02:58:40.993Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/01/22/When-a-company-become-bigger/</loc>
+        <lastmod>2020-05-29T02:58:08.663Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/12/07/How-to-get-the-AQI-without-API/</loc>
+        <lastmod>2020-05-29T02:57:59.178Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/11/29/Harvard-Positive-Psychology/</loc>
+        <lastmod>2020-05-29T02:57:54.291Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/11/16/How-to-update-the-default-ruby-on-Mac-OS-X/</loc>
+        <lastmod>2020-05-29T02:57:47.378Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/11/11/How-to-build-an-iOS-CI-without-jenkins/</loc>
+        <lastmod>2020-05-29T02:57:42.873Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/10/10/However-no-eggs/</loc>
+        <lastmod>2020-05-29T02:57:35.407Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/09/04/Summer-Ends/</loc>
+        <lastmod>2020-05-29T02:57:19.694Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/08/04/Little-tips-about-rewrite-an-iOS-app/</loc>
+        <lastmod>2020-05-29T02:57:09.127Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/07/26/Adding-Slack-User-rule-to-Shadowsocks/</loc>
+        <lastmod>2020-05-29T02:57:04.425Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/07/15/how-to-batch-reverse-First-and-Last-names-in-Mac-OS-X-Contacts/</loc>
+        <lastmod>2020-05-29T02:56:57.579Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/07/13/Calculating-God/</loc>
+        <lastmod>2020-05-29T02:56:53.784Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/07/08/Xcode-6-x-cannot-run-on-EI-Capitan/</loc>
+        <lastmod>2020-05-29T02:56:46.715Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/06/17/How-to-update-homebrew-daily/</loc>
+        <lastmod>2020-05-29T02:56:33.782Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/06/17/homebrew-cannot-run-C-compiled-programs/</loc>
+        <lastmod>2020-05-29T02:56:24.301Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/06/16/xcode-plugins-faild-to-be-loaded-after-update/</loc>
+        <lastmod>2020-05-29T02:56:19.282Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/05/06/Leetcode-With-Ruby/</loc>
+        <lastmod>2020-05-29T02:55:55.029Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/04/16/iOS-CI-Jenkins-Phabricator-Slack/</loc>
+        <lastmod>2020-05-29T02:55:47.682Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/02/22/What-I-talk-about-when-I-talk-about-running/</loc>
+        <lastmod>2020-05-29T02:55:35.338Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/02/11/Never%20Expected/</loc>
+        <lastmod>2020-05-29T02:54:15.517Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/02/01/The-Non-Designer-s-Design-Book/</loc>
+        <lastmod>2020-05-29T02:53:27.543Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/01/29/Ten%20years%20of%20work%20experience/</loc>
+        <lastmod>2020-05-29T02:53:22.362Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/12/23/An%20indigestible%20programming%20language%20is%20a%20bad%20language/</loc>
+        <lastmod>2020-05-29T02:51:46.424Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/01/25/Refactoring-is-not-a-silver-bullet/</loc>
+        <lastmod>2020-05-29T02:49:52.030Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/12/31/SB-on-Rails/</loc>
+        <lastmod>2020-05-29T02:49:18.133Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/12/14/why-are-we-tend-to-be-conservation/</loc>
+        <lastmod>2020-05-29T02:48:56.316Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/12/12/How-to-manipulate-Filco-keyboard-layout-to-Mac-OSX/</loc>
+        <lastmod>2020-05-29T02:48:49.641Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/12/01/Pull-to-Refresh-UIViewController-in-iOS/</loc>
+        <lastmod>2020-05-29T02:48:34.915Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/11/22/xmlParseEntityRef-no-name-AND-Input-is-not-proper-UTF-8/</loc>
+        <lastmod>2020-05-29T02:48:25.116Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/10/15/The-primary-principle-of-Delegate/</loc>
+        <lastmod>2020-05-29T02:48:09.162Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/10/15/A-simple-VS-between-Sinatra-and-Martini/</loc>
+        <lastmod>2020-05-29T02:48:04.727Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/09/10/How-to-Get-the-Most-out-of-Your-University-Years/</loc>
+        <lastmod>2020-05-29T02:47:46.192Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/08/28/ios-7-programming-cookbook/</loc>
+        <lastmod>2020-05-29T02:47:38.990Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/09/01/the-cathedral-and-the-bazaar/</loc>
+        <lastmod>2020-05-29T02:47:29.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/09/03/what-technology-wants/</loc>
+        <lastmod>2020-05-29T02:47:23.134Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/06/26/ios-programming---big-nerd-ranch-guides/</loc>
+        <lastmod>2020-05-29T02:46:50.130Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/03/16/Self%20Healing/</loc>
+        <lastmod>2020-05-29T02:46:12.728Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/03/09/Single%20Forever/</loc>
+        <lastmod>2020-05-29T02:45:52.607Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/03/06/Go%20Web/</loc>
+        <lastmod>2020-05-29T02:43:48.358Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/08/19/count-lines-of-code/</loc>
+        <lastmod>2020-05-29T02:43:07.854Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/07/02/enhance-your-lifestyle/</loc>
+        <lastmod>2020-05-29T02:42:58.268Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/03/31/2013%20Summary/</loc>
+        <lastmod>2020-05-29T02:41:40.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/03/02/911/</loc>
+        <lastmod>2020-05-29T02:41:24.667Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/10/15/Two%20bottles%20of%20blood%20caused%20by%20Jiaduobao/</loc>
+        <lastmod>2020-05-29T02:39:47.178Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/29/Free%20Will/</loc>
+        <lastmod>2020-05-29T02:39:47.148Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/02/03/The-Grandmaster/</loc>
+        <lastmod>2020-05-29T02:39:47.135Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/11/29/Mum%20Dad/</loc>
+        <lastmod>2020-05-29T02:39:47.135Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2012/07/08/FEEL-Training/</loc>
+        <lastmod>2020-05-29T02:39:47.134Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/01/12/About-choice/</loc>
+        <lastmod>2020-05-29T02:39:47.134Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/03/27/For-2012/</loc>
+        <lastmod>2020-05-29T02:39:47.134Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/11/Filial%20Piety/</loc>
+        <lastmod>2020-05-29T02:39:19.142Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/11/06/Games/</loc>
+        <lastmod>2020-05-29T02:34:48.919Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/06/23/ios-developer-account-and-app-store/</loc>
+        <lastmod>2020-05-28T15:20:32.188Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/06/20/global-gitignore/</loc>
+        <lastmod>2020-05-28T15:20:11.254Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/06/16/the-entrepreneurs-credo/</loc>
+        <lastmod>2020-05-28T15:19:57.824Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/05/11/how-to-install-reaver-on-mac-os-x/</loc>
+        <lastmod>2020-05-28T15:19:14.295Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/04/19/Learn%20Go%20in%2020%20days/</loc>
+        <lastmod>2020-05-28T15:19:05.703Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/04/05/Reading%20Plan/</loc>
+        <lastmod>2020-05-28T15:17:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/06/Time%20Management/</loc>
+        <lastmod>2020-05-28T15:17:42.232Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/14/Why%20we%20learn%20Philosophy/</loc>
+        <lastmod>2020-05-28T15:14:48.166Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/11/How%20to%20build%20Blog/</loc>
+        <lastmod>2020-05-28T15:14:09.392Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/10/learn-more-study-less/</loc>
+        <lastmod>2020-05-28T15:09:07.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/09/Difficult%20Conversations%20with%20Parents/</loc>
+        <lastmod>2020-05-28T15:08:57.396Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/12/31/Codecademy/</loc>
+        <lastmod>2020-05-28T15:05:51.748Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/12/21/Mac%20VS%20windows%20shortcuts/</loc>
+        <lastmod>2020-05-28T15:05:35.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/12/19/Life%20Should%20not%20be%20so%20Boring/</loc>
+        <lastmod>2020-05-28T15:05:02.661Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/12/18/My%20First%20Macbook%20Pro/</loc>
+        <lastmod>2020-05-28T15:01:51.168Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/12/19/Time%20Management/</loc>
+        <lastmod>2020-05-28T15:01:13.759Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/11/21/why-hexo/</loc>
+        <lastmod>2020-05-28T14:52:56.927Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/11/21/How%20to%20quit%20games/</loc>
+        <lastmod>2020-05-28T14:52:44.416Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/11/21/cool-tts-on-pcs/</loc>
+        <lastmod>2020-05-28T14:51:40.032Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/09/21/use-github-pages-as-a-blog/</loc>
+        <lastmod>2020-05-28T14:51:13.523Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2012/05/26/QSearch/</loc>
+        <lastmod>2020-05-28T14:50:39.022Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2012/07/01/Before-graduation/</loc>
+        <lastmod>2020-05-28T14:50:36.493Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2012/09/17/Bye-my-college/</loc>
+        <lastmod>2020-05-28T14:50:26.529Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/05/05/So%20Young/</loc>
+        <lastmod>2020-05-28T14:50:06.105Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/05/26/Thinking%20in%20one%20year%20of%20working/</loc>
+        <lastmod>2020-05-28T14:50:01.825Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/07/28/How%20to%20Learn%20Shuangpin/</loc>
+        <lastmod>2020-05-28T14:49:45.142Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/08/05/UX%20of%20Kindle%20Paperwhite%20/</loc>
+        <lastmod>2020-05-28T14:49:34.005Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/09/04/Travel%20to%20Beijing/</loc>
+        <lastmod>2020-05-28T14:49:30.250Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2013/09/11/Warm%20Acupuncture%20Therapy/</loc>
+        <lastmod>2020-05-28T14:49:24.422Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2020/05/07/The-Graveyard-Book/</loc>
+        <lastmod>2020-05-28T11:36:06.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/07/16/Feedback/</loc>
+        <lastmod>2020-05-28T11:31:34.142Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/05/28/WWDC%2016%20Guide%200/</loc>
+        <lastmod>2020-05-28T11:31:23.726Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/02/12/High%20Templar/</loc>
+        <lastmod>2020-05-28T11:31:07.420Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/02/10/Soylent/</loc>
+        <lastmod>2020-05-28T11:30:58.061Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/02/06/Chinese%20New%20Year/</loc>
+        <lastmod>2020-05-28T11:30:50.536Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/02/06/Friends%20with%20Benefits/</loc>
+        <lastmod>2020-05-28T11:30:37.843Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/06/14/Blue%20Sky%20and%20Sea/</loc>
+        <lastmod>2020-05-28T11:30:21.691Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/06/13/How%20to%20Learn%20English/</loc>
+        <lastmod>2020-05-28T11:30:06.280Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2015/06/09/Painless%20Acupuncture/</loc>
+        <lastmod>2020-05-28T11:29:45.201Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/10/08/BeiJing/</loc>
+        <lastmod>2020-05-28T11:29:29.749Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/09/08/Willpower/</loc>
+        <lastmod>2020-05-28T11:29:19.727Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/05/12/Highway%20to%20Heaven/</loc>
+        <lastmod>2020-05-28T11:28:53.764Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/05/01/Lucid%20Dream/</loc>
+        <lastmod>2020-05-28T11:28:30.505Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/05/01/Sleep%20Paralysis/</loc>
+        <lastmod>2020-05-28T11:28:13.026Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/04/17/Polyphasic%20Sleep/</loc>
+        <lastmod>2020-05-28T11:27:55.321Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/04/15/The%20Interpretation%20of%20Dreams/</loc>
+        <lastmod>2020-05-28T11:27:41.688Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/03/28/Side%20Story/</loc>
+        <lastmod>2020-05-28T11:27:16.863Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/03/13/Complications-of-Lovelorn/</loc>
+        <lastmod>2020-05-28T11:23:42.690Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/02/25/Framework-of-Magic/</loc>
+        <lastmod>2020-05-28T11:22:44.968Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/02/14/Mon-and-Dad/</loc>
+        <lastmod>2020-05-28T11:22:19.840Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/02/03/Spare%20Tyre/</loc>
+        <lastmod>2020-05-28T11:22:03.143Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/21/Goddess/</loc>
+        <lastmod>2020-05-28T11:21:38.725Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/19/Resurrection/</loc>
+        <lastmod>2020-05-28T11:21:23.627Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/01/17/The%20Beginning%20of%20The%20Story/</loc>
+        <lastmod>2020-05-28T11:21:02.107Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2020/05/27/Concurrency-Programming-Guide/</loc>
+        <lastmod>2020-05-27T06:28:31.264Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2020/04/24/SwiftUI-Tips/</loc>
+        <lastmod>2020-04-24T12:39:39.434Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2020/03/30/How-to-reduce-iCloud-storage-by-shrink-videos/</loc>
+        <lastmod>2020-04-01T16:16:47.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/10/03/Uber-Booking-Animation/</loc>
+        <lastmod>2020-03-16T06:07:14.643Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/06/21/Grab-refer-a-candidate/</loc>
+        <lastmod>2020-03-16T06:07:03.805Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/04/16/Struct-Codable-Alamofire-Generics/</loc>
+        <lastmod>2020-03-16T06:05:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/10/20/Japan-2-1-1/</loc>
+        <lastmod>2020-03-16T06:05:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/11/30/Deep-Learning-Course-4/</loc>
+        <lastmod>2020-01-11T14:31:10.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/10/18/CUDA-GPU-Accelerated-h264-h265-HEVC-Video-Encoding-with-Staxrip/</loc>
+        <lastmod>2020-01-11T14:31:08.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/07/22/How-to-convert-video-to-text/</loc>
+        <lastmod>2020-01-11T14:31:03.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/05/06/How-to-build-tesseract-4-beta-on-macOS/</loc>
+        <lastmod>2020-01-11T14:30:54.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/03/25/How-to-schedule-iMessages-on-Mac/</loc>
+        <lastmod>2020-01-11T14:30:50.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/02/26/Programming-Assignment-Scrooge-Coin/</loc>
+        <lastmod>2020-01-11T14:30:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/01/19/Support-Vector-Machines/</loc>
+        <lastmod>2020-01-11T14:30:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/01/06/Neural-Networks-Representation/</loc>
+        <lastmod>2020-01-11T14:30:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2017/12/29/Machine-Learning-by-Stanford-University/</loc>
+        <lastmod>2020-01-11T14:30:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2017/10/20/Building-Apps-for-iPhone-X/</loc>
+        <lastmod>2020-01-11T13:51:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/12/03/Deep-Learning-Course-5/</loc>
+        <lastmod>2020-01-11T13:25:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/07/23/More-how-to-convert-video-to-text/</loc>
+        <lastmod>2020-01-11T13:07:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/08/10/How-to-download-videos-concurrently-from-youtube-and-batch-embed-their-subtitles/</loc>
+        <lastmod>2020-01-11T13:04:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/12/03/React-Native-Flutter/</loc>
+        <lastmod>2020-01-11T10:37:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/12/12/SKEmitterNode-in-SpriteKit-Scene-sks/</loc>
+        <lastmod>2020-01-11T10:31:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/11/24/Deep-Learning-Course-2/</loc>
+        <lastmod>2019-11-24T17:21:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/11/03/Japan-2-3-1/</loc>
+        <lastmod>2019-11-03T07:59:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/11/02/Japan-2-3-0/</loc>
+        <lastmod>2019-11-03T05:41:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/10/21/Japan-2-2-0/</loc>
+        <lastmod>2019-11-02T08:33:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/10/14/Japan-2-0/</loc>
+        <lastmod>2019-11-02T05:53:23.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/08/28/LeetCode-Easy-100/</loc>
+        <lastmod>2019-11-02T05:53:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/08/07/USA-0-1/</loc>
+        <lastmod>2019-11-02T05:53:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/07/17/USA-0-0/</loc>
+        <lastmod>2019-11-02T05:53:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/12/20/Audio-File-to-Text-via-SFSpeechRecognizer/</loc>
+        <lastmod>2019-11-02T05:53:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/12/17/Swift-4-Snippets/</loc>
+        <lastmod>2019-11-02T05:52:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/02/11/Anomaly-Detection-Recommender-Systems/</loc>
+        <lastmod>2019-11-02T05:51:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/01/30/Unsupervised-Learning/</loc>
+        <lastmod>2019-11-02T05:51:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2018/01/16/Advice-for-Applying-Machine-Learning/</loc>
+        <lastmod>2019-11-02T05:51:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/12/27/Swift-Generics-in-protocol-and-enum/</loc>
+        <lastmod>2019-11-02T05:48:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/02/15/This-certificate-has-expired/</loc>
+        <lastmod>2019-11-02T05:47:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2016/02/07/swift-useful-extensions/</loc>
+        <lastmod>2019-11-02T05:47:34.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/10/16/Japan-2-1-0/</loc>
+        <lastmod>2019-10-23T15:56:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2019/10/22/Japan-2-2-1/</loc>
+        <lastmod>2019-10-22T17:49:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/2014/04/07/harry-potter-and-the-goblet-of-fire/</loc>
+        <lastmod>2015-11-10T17:34:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->
