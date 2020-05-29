@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="重构不是银弹 成书时，面向对象尚是小众，而如今函数式编程已开始流行 时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 Java 程序员，更是不想知道都难发展至今，重构已经类似于编码的一部分了 此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下之后的章节大略过一下就行了">
+<meta name="keywords" content="Programming,Books">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Refactoring is not a silver bullet">
+<meta property="og:url" content="https:&#x2F;&#x2F;leihao0.github.io&#x2F;Refactoring-is-not-a-silver-bullet&#x2F;index.html">
+<meta property="og:site_name" content="LeiHao&#39;s Blog">
+<meta property="og:description" content="重构不是银弹 成书时，面向对象尚是小众，而如今函数式编程已开始流行 时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 Java 程序员，更是不想知道都难发展至今，重构已经类似于编码的一部分了 此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下之后的章节大略过一下就行了">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;cl.ly&#x2F;image&#x2F;0M1z2O0j0k3N&#x2F;Image%202015-01-25%20at%2011.17.20%20PM.png">
+<meta property="og:updated_time" content="2020-05-29T02:49:52.030Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;cl.ly&#x2F;image&#x2F;0M1z2O0j0k3N&#x2F;Image%202015-01-25%20at%2011.17.20%20PM.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo-192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/logo-192.png">
+          
+        
+    
+    <!-- title -->
+    <title>Refactoring is not a silver bullet</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="LeiHao&#39;s Blog" type="application/atom+xml" />
+    
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container {
+  overflow: auto hidden;
+}
+
+mjx-container + br {
+  display: none;
+}
+</style><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container {
+  overflow: auto hidden;
+}
+
+mjx-container + br {
+  display: none;
+}
+</style></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/donate/">Donate</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/Ten-years-of-work-experience/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/SB-on-Rails/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&text=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&is_video=false&description=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Refactoring is not a silver bullet&body=Check out this article: https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/" target="_blank" rel="noopener"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&name=Refactoring is not a silver bullet&description=&lt;h1 id=&#34;重构不是银弹&#34;&gt;&lt;a href=&#34;#重构不是银弹&#34; class=&#34;headerlink&#34; title=&#34;重构不是银弹&#34;&gt;&lt;/a&gt;重构不是银弹&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://cl.ly/image/0M1z2O0j0k3N/Image%202015-01-25%20at%2011.17.20%20PM.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;成书时，面向对象尚是小众，而如今函数式编程已开始流行&lt;/p&gt;
+&lt;p&gt;时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 &lt;code&gt;Java&lt;/code&gt; 程序员，更是不想知道都难&lt;br&gt;发展至今，重构已经类似于编码的一部分了&lt;/p&gt;
+&lt;p&gt;此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看&lt;br&gt;4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下&lt;br&gt;之后的章节大略过一下就行了&lt;/p&gt;
+&lt;hr&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&t=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#重构不是银弹"><span class="toc-number">1.</span> <span class="toc-text">重构不是银弹</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Refactoring is not a silver bullet
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">LeiHao's Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2015-01-25T15:29:48.000Z" itemprop="datePublished">2015-01-25</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Books/" rel="tag">Books</a>, <a class="tag-link" href="/tags/Programming/" rel="tag">Programming</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="重构不是银弹"><a href="#重构不是银弹" class="headerlink" title="重构不是银弹"></a>重构不是银弹</h1><p><img src="http://cl.ly/image/0M1z2O0j0k3N/Image%202015-01-25%20at%2011.17.20%20PM.png" alt=""></p>
+<p>成书时，面向对象尚是小众，而如今函数式编程已开始流行</p>
+<p>时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 <code>Java</code> 程序员，更是不想知道都难<br>发展至今，重构已经类似于编码的一部分了</p>
+<p>此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看<br>4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下<br>之后的章节大略过一下就行了</p>
+<hr>
+<a id="more"></a>
+
+<p>曾经在学校里刷了<a href="http://book.douban.com/subject/1477390/" target="_blank" rel="noopener">《代码大全》</a>，所以，再看此书，<strong>相对</strong>就没那么重要了</p>
+<p>比如虽然我 iOS 弱爆了，但看到现在公司的项目，上来蹭蹭蹭几百行的函数，大量的重复代码，各种神奇数字，也是醉了<br>当然这并不是说之前项目不好，毕竟大家都有被 <em>deadline</em> 逼成傻逼的时候</p>
+<p>总得来说，此书还是应该<strong>过一遍</strong>，毕竟封面印着：</p>
+<blockquote>
+<p>普通程序员进阶到编程高手必须修炼的秘籍</p>
+</blockquote>
+<p>因为不看的话，可能意识不到一些前人路过的坑</p>
+<p>像我对临时变量的理解就不妥<br>还有以前写函数<strong>过于随意</strong>，像参数不带 <code>let</code> ，不暴露的也没加 <code>private</code></p>
+<p>比较有启发的是：</p>
+<ul>
+<li>消除 临时变量</li>
+<li>多态 替换 Switch</li>
+<li>Null Object</li>
+</ul>
+<p>目前做 iOS 的时间尚短，属于初级程序员，不懂的地方巨多，每每在试错中做功能，写的时候这些东东也就统统忽略了<br>虽然时常想着功能 OK 后立即重构，但人都有惰性，往往看到能跑了就万事大吉，然后把整理代码的希望寄托在重构上</p>
+<p>比较理想的情况是：<br>版本控制 + Review + 结对 + 重构 （目前的公司好赞啊，已实现了大半）</p>
+<p>但这又让我想起了 Fred Brooks 在 1987 年所发表的一篇关于软件工程的经典论文 ——<a href="http://zh.wikipedia.org/wiki/%E6%B2%A1%E6%9C%89%E9%93%B6%E5%BC%B9" target="_blank" rel="noopener">《没有银弹》</a></p>
+<p>重构当然也不是银弹</p>
+<p>只能重写了少年</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/donate/">Donate</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#重构不是银弹"><span class="toc-number">1.</span> <span class="toc-text">重构不是银弹</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&text=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&is_video=false&description=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Refactoring is not a silver bullet&body=Check out this article: https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&title=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&name=Refactoring is not a silver bullet&description=&lt;h1 id=&#34;重构不是银弹&#34;&gt;&lt;a href=&#34;#重构不是银弹&#34; class=&#34;headerlink&#34; title=&#34;重构不是银弹&#34;&gt;&lt;/a&gt;重构不是银弹&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://cl.ly/image/0M1z2O0j0k3N/Image%202015-01-25%20at%2011.17.20%20PM.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;成书时，面向对象尚是小众，而如今函数式编程已开始流行&lt;/p&gt;
+&lt;p&gt;时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 &lt;code&gt;Java&lt;/code&gt; 程序员，更是不想知道都难&lt;br&gt;发展至今，重构已经类似于编码的一部分了&lt;/p&gt;
+&lt;p&gt;此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看&lt;br&gt;4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下&lt;br&gt;之后的章节大略过一下就行了&lt;/p&gt;
+&lt;hr&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/&t=Refactoring is not a silver bullet" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2012-2020
+    LeiHao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/donate/">Donate</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159363268-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'Artwalk';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
