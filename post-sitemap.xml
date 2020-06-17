@@ -9,7 +9,23 @@
 
     <url>
         <loc>https://leihao0.github.io/Raspberry-Pi-4/</loc>
-        <lastmod>2020-06-12T04:47:12.251Z</lastmod>
+        <lastmod>2020-06-17T17:18:21.793Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/Rendezvous-with-Rama/</loc>
+        <lastmod>2020-06-17T16:44:36.802Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/The-Graveyard-Book/</loc>
+        <lastmod>2020-06-17T16:44:05.541Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -90,14 +106,6 @@
     <url>
         <loc>https://leihao0.github.io/How-to-auto-reply-send-msg-with-telegram/</loc>
         <lastmod>2020-05-29T03:15:25.677Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/Rendezvous-with-Rama/</loc>
-        <lastmod>2020-05-29T03:14:32.644Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -890,14 +898,6 @@
     <url>
         <loc>https://leihao0.github.io/Warm-Acupuncture-Therapy/</loc>
         <lastmod>2020-05-28T14:49:24.422Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/The-Graveyard-Book/</loc>
-        <lastmod>2020-05-28T11:36:06.485Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
