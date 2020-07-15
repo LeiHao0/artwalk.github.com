@@ -8,16 +8,8 @@
     </url>
 
     <url>
-        <loc>https://leihao0.github.io/LeetCode-Linked-List/</loc>
-        <lastmod>2020-07-14T16:02:57.304Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/LeetCode-Hash-Table/</loc>
-        <lastmod>2020-07-14T08:04:20.476Z</lastmod>
+        <loc>https://leihao0.github.io/LeetCode-Binary-Tree/</loc>
+        <lastmod>2020-07-15T15:34:35.356Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +17,23 @@
 
     <url>
         <loc>https://leihao0.github.io/Raspberry-Pi-4/</loc>
-        <lastmod>2020-07-13T18:56:15.130Z</lastmod>
+        <lastmod>2020-07-15T14:29:04.661Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/LeetCode-Hash-Table/</loc>
+        <lastmod>2020-07-15T01:19:39.887Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/LeetCode-Linked-List/</loc>
+        <lastmod>2020-07-14T16:02:57.304Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -736,7 +744,7 @@
     </url>
 
     <url>
-        <loc>https://leihao0.github.io/For-2012/</loc>
+        <loc>https://leihao0.github.io/About-choice/</loc>
         <lastmod>2020-05-29T02:39:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -752,7 +760,7 @@
     </url>
 
     <url>
-        <loc>https://leihao0.github.io/About-choice/</loc>
+        <loc>https://leihao0.github.io/For-2012/</loc>
         <lastmod>2020-05-29T02:39:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
