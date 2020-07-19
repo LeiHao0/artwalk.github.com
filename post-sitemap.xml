@@ -8,8 +8,32 @@
     </url>
 
     <url>
+        <loc>https://leihao0.github.io/LeetCode-Recursion-2/</loc>
+        <lastmod>2020-07-19T11:56:37.732Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/LeetCode-Recursion-1/</loc>
+        <lastmod>2020-07-19T11:53:23.110Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/LeetCode-Arrays-101/</loc>
+        <lastmod>2020-07-19T11:48:36.972Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/LeetCode-Binary-Tree/</loc>
-        <lastmod>2020-07-19T10:20:54.928Z</lastmod>
+        <lastmod>2020-07-19T11:21:04.725Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -752,7 +776,7 @@
     </url>
 
     <url>
-        <loc>https://leihao0.github.io/The-Grandmaster/</loc>
+        <loc>https://leihao0.github.io/For-2012/</loc>
         <lastmod>2020-05-29T02:39:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -760,7 +784,7 @@
     </url>
 
     <url>
-        <loc>https://leihao0.github.io/For-2012/</loc>
+        <loc>https://leihao0.github.io/The-Grandmaster/</loc>
         <lastmod>2020-05-29T02:39:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
