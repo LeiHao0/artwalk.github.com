@@ -7,15 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="257. Binary Tree Paths123456789class Solution &amp;#123;    func binaryTreePaths(_ root: TreeNode?) -&amp;gt; [String] &amp;#123;        guard let root = root else &amp;#123; return [] &amp;#125;        if root.left == n">
-<meta name="keywords" content="LeetCode">
+    <meta name="description" content="257. Binary Tree Paths123456789class Solution &amp;#123;    func binaryTreePaths(_ root: TreeNode?) -&gt; [String] &amp;#123;        guard let root &#x3D; root else &amp;#123; return [] &amp;#125;        if root.left &#x3D;&#x3D; n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode Easy 100">
-<meta property="og:url" content="https:&#x2F;&#x2F;leihao0.github.io&#x2F;LeetCode-Easy-100&#x2F;index.html">
+<meta property="og:url" content="https://leihao0.github.io/LeetCode-Easy-100/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="257. Binary Tree Paths123456789class Solution &amp;#123;    func binaryTreePaths(_ root: TreeNode?) -&amp;gt; [String] &amp;#123;        guard let root = root else &amp;#123; return [] &amp;#125;        if root.left == n">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-02T05:53:19.000Z">
+<meta property="og:description" content="257. Binary Tree Paths123456789class Solution &amp;#123;    func binaryTreePaths(_ root: TreeNode?) -&gt; [String] &amp;#123;        guard let root &#x3D; root else &amp;#123; return [] &amp;#125;        if root.left &#x3D;&#x3D; n">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-08-27T22:01:00.000Z">
+<meta property="article:modified_time" content="2019-11-02T05:53:19.000Z">
+<meta property="article:author" content="LeiHao">
+<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
     
     
@@ -38,17 +40,21 @@
     <!-- title -->
     <title>LeetCode Easy 100</title>
     <!-- styles -->
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/css/style.css">
+
     <!-- persian styles -->
     
-      <link rel="stylesheet" href="/css/rtl.css">
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
     
     <!-- rss -->
     
     
       <link rel="alternate" href="/atom.xml" title="LeiHao&#39;s Blog" type="application/atom+xml" />
     
-<style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 4.2.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -158,11 +164,11 @@ foreignObject[data-mjx-xml] {
   stroke-width: 3;
 }
 
-mjx-container {
+mjx-container[display="true"] {
   overflow: auto hidden;
 }
 
-mjx-container + br {
+mjx-container[display="true"] + br {
   display: none;
 }
 </style><style>mjx-container[jax="SVG"] {
@@ -275,11 +281,11 @@ foreignObject[data-mjx-xml] {
   stroke-width: 3;
 }
 
-mjx-container {
+mjx-container[display="true"] {
   overflow: auto hidden;
 }
 
-mjx-container + br {
+mjx-container[display="true"] + br {
   display: none;
 }
 </style></head>
@@ -330,7 +336,7 @@ mjx-container + br {
   <li><a class="icon" href="https://twitter.com/share?url=https://leihao0.github.io/LeetCode-Easy-100/&text=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://leihao0.github.io/LeetCode-Easy-100/&title=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://leihao0.github.io/LeetCode-Easy-100/&is_video=false&description=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=LeetCode Easy 100&body=Check out this article: https://leihao0.github.io/LeetCode-Easy-100/" target="_blank" rel="noopener"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LeetCode Easy 100&body=Check out this article: https://leihao0.github.io/LeetCode-Easy-100/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://getpocket.com/save?url=https://leihao0.github.io/LeetCode-Easy-100/&title=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://reddit.com/submit?url=https://leihao0.github.io/LeetCode-Easy-100/&title=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/LeetCode-Easy-100/&title=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
@@ -357,9 +363,9 @@ mjx-container + br {
 
 &lt;h2 id=&#34;202-Happy-Number&#34;&gt;&lt;a href=&#34;#202-Happy-Number&#34; class=&#34;headerlink&#34; title=&#34;202. Happy Number&#34;&gt;&lt;/a&gt;202. Happy Number&lt;/h2&gt;&lt;figure class=&#34;highlight swift&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;class&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Solution&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;isHappy&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;number&#34;&gt;_&lt;/span&gt; n: Int)&lt;/span&gt;&lt;/span&gt; -&amp;gt; &lt;span class=&#34;type&#34;&gt;Bool&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; si = &lt;span class=&#34;type&#34;&gt;Set&lt;/span&gt;&amp;lt;&lt;span class=&#34;type&#34;&gt;Int&lt;/span&gt;&amp;gt;(), i = n&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; !si.&lt;span class=&#34;built_in&#34;&gt;contains&lt;/span&gt;(i) &amp;amp;&amp;amp; i != &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            si.insert(i)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            i = &lt;span class=&#34;type&#34;&gt;String&lt;/span&gt;(i).&lt;span class=&#34;built_in&#34;&gt;reduce&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &amp;#123;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; j = &lt;span class=&#34;type&#34;&gt;Int&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;String&lt;/span&gt;($&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;))!; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; $&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; + j*j &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; i == &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;Runtime&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;8&lt;/span&gt; ms, faster than &lt;span class=&#34;number&#34;&gt;78.26&lt;/span&gt;%&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;Memory&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;Usage&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;20.6&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;MB&lt;/span&gt;, less than &lt;span class=&#34;number&#34;&gt;100.00&lt;/span&gt;%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h2 id=&#34;197-Rising-Temperature&#34;&gt;&lt;a href=&#34;#197-Rising-Temperature&#34; class=&#34;headerlink&#34; title=&#34;197. Rising Temperature&#34;&gt;&lt;/a&gt;197. Rising Temperature&lt;/h2&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SELECT w2.Id&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;FROM Weather AS w1, Weather AS w2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;where datediff(w2.RecordDate, w1.RecordDate)=1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;AND w1.Temperature &amp;lt; w2.Temperature&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 336 ms, faster than 68.06%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;197-Rising-Temperature&#34;&gt;&lt;a href=&#34;#197-Rising-Temperature&#34; class=&#34;headerlink&#34; title=&#34;197. Rising Temperature&#34;&gt;&lt;/a&gt;197. Rising Temperature&lt;/h2&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SELECT w2.Id&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;FROM Weather AS w1, Weather AS w2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;where datediff(w2.RecordDate, w1.RecordDate)&amp;#x3D;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;AND w1.Temperature &amp;lt; w2.Temperature&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 336 ms, faster than 68.06%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h2 id=&#34;196-Delete-Duplicate-Emails&#34;&gt;&lt;a href=&#34;#196-Delete-Duplicate-Emails&#34; class=&#34;headerlink&#34; title=&#34;196. Delete Duplicate Emails&#34;&gt;&lt;/a&gt;196. Delete Duplicate Emails&lt;/h2&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;DELETE p1 FROM Person p1, Person p2 WHERE p1.Email=p2.Email AND p1.Id &amp;gt; p2.Id;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 1074 ms, faster than 13.38%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;196-Delete-Duplicate-Emails&#34;&gt;&lt;a href=&#34;#196-Delete-Duplicate-Emails&#34; class=&#34;headerlink&#34; title=&#34;196. Delete Duplicate Emails&#34;&gt;&lt;/a&gt;196. Delete Duplicate Emails&lt;/h2&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;DELETE p1 FROM Person p1, Person p2 WHERE p1.Email&amp;#x3D;p2.Email AND p1.Id &amp;gt; p2.Id;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 1074 ms, faster than 13.38%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;195-Tenth-Line&#34;&gt;&lt;a href=&#34;#195-Tenth-Line&#34; class=&#34;headerlink&#34; title=&#34;195. Tenth Line&#34;&gt;&lt;/a&gt;195. Tenth Line&lt;/h2&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cat file.txt | sed -n &lt;span class=&#34;string&#34;&gt;&#39;10p&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 0 ms, faster than 100.00%&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Memory Usage: 3.7 MB, less than 85.71%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -439,9 +445,9 @@ mjx-container + br {
 
 <h2 id="202-Happy-Number"><a href="#202-Happy-Number" class="headerlink" title="202. Happy Number"></a>202. Happy Number</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">isHappy</span><span class="params">(<span class="number">_</span> n: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> si = <span class="type">Set</span>&lt;<span class="type">Int</span>&gt;(), i = n</span><br><span class="line">        <span class="keyword">while</span> !si.<span class="built_in">contains</span>(i) &amp;&amp; i != <span class="number">1</span> &#123;</span><br><span class="line">            si.insert(i)</span><br><span class="line">            i = <span class="type">String</span>(i).<span class="built_in">reduce</span>(<span class="number">0</span>, &#123;<span class="keyword">let</span> j = <span class="type">Int</span>(<span class="type">String</span>($<span class="number">1</span>))!; <span class="keyword">return</span> $<span class="number">0</span> + j*j &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> i == <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">Runtime</span>: <span class="number">8</span> ms, faster than <span class="number">78.26</span>%</span><br><span class="line"><span class="type">Memory</span> <span class="type">Usage</span>: <span class="number">20.6</span> <span class="type">MB</span>, less than <span class="number">100.00</span>%</span><br></pre></td></tr></table></figure>
 
-<h2 id="197-Rising-Temperature"><a href="#197-Rising-Temperature" class="headerlink" title="197. Rising Temperature"></a>197. Rising Temperature</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT w2.Id</span><br><span class="line">FROM Weather AS w1, Weather AS w2</span><br><span class="line">where datediff(w2.RecordDate, w1.RecordDate)=1</span><br><span class="line">AND w1.Temperature &lt; w2.Temperature</span><br><span class="line"></span><br><span class="line">Runtime: 336 ms, faster than 68.06%</span><br></pre></td></tr></table></figure>
+<h2 id="197-Rising-Temperature"><a href="#197-Rising-Temperature" class="headerlink" title="197. Rising Temperature"></a>197. Rising Temperature</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT w2.Id</span><br><span class="line">FROM Weather AS w1, Weather AS w2</span><br><span class="line">where datediff(w2.RecordDate, w1.RecordDate)&#x3D;1</span><br><span class="line">AND w1.Temperature &lt; w2.Temperature</span><br><span class="line"></span><br><span class="line">Runtime: 336 ms, faster than 68.06%</span><br></pre></td></tr></table></figure>
 
-<h2 id="196-Delete-Duplicate-Emails"><a href="#196-Delete-Duplicate-Emails" class="headerlink" title="196. Delete Duplicate Emails"></a>196. Delete Duplicate Emails</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELETE p1 FROM Person p1, Person p2 WHERE p1.Email=p2.Email AND p1.Id &gt; p2.Id;</span><br><span class="line"></span><br><span class="line">Runtime: 1074 ms, faster than 13.38%</span><br></pre></td></tr></table></figure>
+<h2 id="196-Delete-Duplicate-Emails"><a href="#196-Delete-Duplicate-Emails" class="headerlink" title="196. Delete Duplicate Emails"></a>196. Delete Duplicate Emails</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELETE p1 FROM Person p1, Person p2 WHERE p1.Email&#x3D;p2.Email AND p1.Id &gt; p2.Id;</span><br><span class="line"></span><br><span class="line">Runtime: 1074 ms, faster than 13.38%</span><br></pre></td></tr></table></figure>
 
 <h2 id="195-Tenth-Line"><a href="#195-Tenth-Line" class="headerlink" title="195. Tenth Line"></a>195. Tenth Line</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat file.txt | sed -n <span class="string">'10p'</span></span><br><span class="line"></span><br><span class="line">Runtime: 0 ms, faster than 100.00%</span><br><span class="line">Memory Usage: 3.7 MB, less than 85.71%</span><br></pre></td></tr></table></figure>
 
@@ -530,7 +536,7 @@ mjx-container + br {
   <li><a class="icon" href="https://twitter.com/share?url=https://leihao0.github.io/LeetCode-Easy-100/&text=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://leihao0.github.io/LeetCode-Easy-100/&title=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://leihao0.github.io/LeetCode-Easy-100/&is_video=false&description=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=LeetCode Easy 100&body=Check out this article: https://leihao0.github.io/LeetCode-Easy-100/" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=LeetCode Easy 100&body=Check out this article: https://leihao0.github.io/LeetCode-Easy-100/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="https://getpocket.com/save?url=https://leihao0.github.io/LeetCode-Easy-100/&title=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://reddit.com/submit?url=https://leihao0.github.io/LeetCode-Easy-100/&title=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://leihao0.github.io/LeetCode-Easy-100/&title=LeetCode Easy 100" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
@@ -557,9 +563,9 @@ mjx-container + br {
 
 &lt;h2 id=&#34;202-Happy-Number&#34;&gt;&lt;a href=&#34;#202-Happy-Number&#34; class=&#34;headerlink&#34; title=&#34;202. Happy Number&#34;&gt;&lt;/a&gt;202. Happy Number&lt;/h2&gt;&lt;figure class=&#34;highlight swift&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;class&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Solution&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;isHappy&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;number&#34;&gt;_&lt;/span&gt; n: Int)&lt;/span&gt;&lt;/span&gt; -&amp;gt; &lt;span class=&#34;type&#34;&gt;Bool&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; si = &lt;span class=&#34;type&#34;&gt;Set&lt;/span&gt;&amp;lt;&lt;span class=&#34;type&#34;&gt;Int&lt;/span&gt;&amp;gt;(), i = n&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; !si.&lt;span class=&#34;built_in&#34;&gt;contains&lt;/span&gt;(i) &amp;amp;&amp;amp; i != &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            si.insert(i)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            i = &lt;span class=&#34;type&#34;&gt;String&lt;/span&gt;(i).&lt;span class=&#34;built_in&#34;&gt;reduce&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &amp;#123;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; j = &lt;span class=&#34;type&#34;&gt;Int&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;String&lt;/span&gt;($&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;))!; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; $&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; + j*j &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; i == &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;Runtime&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;8&lt;/span&gt; ms, faster than &lt;span class=&#34;number&#34;&gt;78.26&lt;/span&gt;%&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;Memory&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;Usage&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;20.6&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;MB&lt;/span&gt;, less than &lt;span class=&#34;number&#34;&gt;100.00&lt;/span&gt;%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h2 id=&#34;197-Rising-Temperature&#34;&gt;&lt;a href=&#34;#197-Rising-Temperature&#34; class=&#34;headerlink&#34; title=&#34;197. Rising Temperature&#34;&gt;&lt;/a&gt;197. Rising Temperature&lt;/h2&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SELECT w2.Id&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;FROM Weather AS w1, Weather AS w2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;where datediff(w2.RecordDate, w1.RecordDate)=1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;AND w1.Temperature &amp;lt; w2.Temperature&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 336 ms, faster than 68.06%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;197-Rising-Temperature&#34;&gt;&lt;a href=&#34;#197-Rising-Temperature&#34; class=&#34;headerlink&#34; title=&#34;197. Rising Temperature&#34;&gt;&lt;/a&gt;197. Rising Temperature&lt;/h2&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SELECT w2.Id&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;FROM Weather AS w1, Weather AS w2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;where datediff(w2.RecordDate, w1.RecordDate)&amp;#x3D;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;AND w1.Temperature &amp;lt; w2.Temperature&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 336 ms, faster than 68.06%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h2 id=&#34;196-Delete-Duplicate-Emails&#34;&gt;&lt;a href=&#34;#196-Delete-Duplicate-Emails&#34; class=&#34;headerlink&#34; title=&#34;196. Delete Duplicate Emails&#34;&gt;&lt;/a&gt;196. Delete Duplicate Emails&lt;/h2&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;DELETE p1 FROM Person p1, Person p2 WHERE p1.Email=p2.Email AND p1.Id &amp;gt; p2.Id;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 1074 ms, faster than 13.38%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;196-Delete-Duplicate-Emails&#34;&gt;&lt;a href=&#34;#196-Delete-Duplicate-Emails&#34; class=&#34;headerlink&#34; title=&#34;196. Delete Duplicate Emails&#34;&gt;&lt;/a&gt;196. Delete Duplicate Emails&lt;/h2&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;DELETE p1 FROM Person p1, Person p2 WHERE p1.Email&amp;#x3D;p2.Email AND p1.Id &amp;gt; p2.Id;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 1074 ms, faster than 13.38%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;195-Tenth-Line&#34;&gt;&lt;a href=&#34;#195-Tenth-Line&#34; class=&#34;headerlink&#34; title=&#34;195. Tenth Line&#34;&gt;&lt;/a&gt;195. Tenth Line&lt;/h2&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cat file.txt | sed -n &lt;span class=&#34;string&#34;&gt;&#39;10p&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Runtime: 0 ms, faster than 100.00%&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Memory Usage: 3.7 MB, less than 85.71%&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -613,15 +619,25 @@ mjx-container + br {
 
     </div>
     <!-- styles -->
+
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
 <link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
 
+
     <!-- jquery -->
+
 <script src="/lib/jquery/jquery.min.js"></script>
+
+
 <script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
 <!-- clipboard -->
 
-  <script src="/lib/clipboard/clipboard.min.js"></script>
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
@@ -642,7 +658,9 @@ mjx-container + br {
   })
   </script>
 
+
 <script src="/js/main.js"></script>
+
 <!-- search -->
 
 <!-- Google Analytics -->
