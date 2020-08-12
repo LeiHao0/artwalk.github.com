@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leihao0.github.io/"/>
-  <updated>2020-08-10T15:35:05.021Z</updated>
+  <updated>2020-08-12T05:39:12.732Z</updated>
   <id>https://leihao0.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python vs Java for Kids</title>
+    <link href="https://leihao0.github.io/Python-vs-Java-for-Kids/"/>
+    <id>https://leihao0.github.io/Python-vs-Java-for-Kids/</id>
+    <published>2020-08-12T05:33:04.000Z</published>
+    <updated>2020-08-12T05:39:12.732Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>This</em> <a href="https://junilearning.com/blog/guide/python-vs-java/" target="_blank" rel="noopener"><em>article</em></a> <em>originally appeared on</em> <a href="https://junilearning.com/" target="_blank" rel="noopener"><em>junilearning.com</em></a></p><h1 id="Python-vs-Java-Uses-Performance-Learning"><a href="#Python-vs-Java-Uses-Performance-Learning" class="headerlink" title="Python vs. Java: Uses, Performance, Learning"></a>Python vs. Java: Uses, Performance, Learning</h1><p>In the world of computer science, there are many programming languages, and no single language is superior to another. In other words, <strong>each language is best suited to solve certain problems</strong>, and in fact there is often no one best language to choose for a given programming project. For this reason, it is important for students who wish to develop software or to solve interesting problems through code to have <strong>strong computer science fundamentals that will apply across any programming language</strong>.</p><p>Programming languages tend to share certain characteristics in how they function, for example in the way they deal with memory usage or how heavily they use objects. Students will start seeing these patterns as they are exposed to more languages. This article will focus primarily on Python versus Java, which are two of the most widely used programming languages in the world. While it is hard to measure exactly the rate at which each programming language is growing, <strong>these are two of the most popular programming languages used in industry today</strong>.</p><p>One major difference between Python and Java is that Python is <strong>dynamically typed</strong>, while Java is <strong>statically typed</strong>. Loosely, this means that Java is much more strict about how variables are defined and used in code. <strong>As a result, Java tends to be more verbose in its syntax, which is one of the reasons we recommend learning Python before Java for beginners.</strong> For example, here is how you would create a variable named <code>numbers</code> that holds the numbers 0 through 9 in Python:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">numbers.append(i)</span><br></pre></td></tr></table></figure><p>Here’s how you would do the same thing in Java:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ArrayList numbers = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    numbers.add(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Another major difference is that Java generally runs programs more quickly than Python, as it is a <strong>compiled language</strong>. This means that before a program is actually run, the compiler translates the Java code into machine-level code. By contrast, Python is an <strong>interpreted</strong> language, meaning there is no compile step.</p><h2 id="Usage-and-Practicality"><a href="#Usage-and-Practicality" class="headerlink" title="Usage and Practicality"></a>Usage and Practicality</h2><p>Historically, Java has been the more popular language in part due to its lengthy legacy. However, Python is rapidly gaining ground. According to <a href="https://octoverse.github.com/" target="_blank" rel="noopener">Github’s State of the Octoberst Report</a>, it has recently surpassed Java as the most widely used programming language. As per the 2018 developer survey, <strong>Python is now the fastest-growing computer programing language</strong>.</p><p>Both Python and Java have large communities of developers to answer questions on websites like <a href="https://stackoverflow.com/" target="_blank" rel="noopener">Stack Overflow</a>. As you can see from <a href="https://insights.stackoverflow.com/trends?tags=python%2Cjava" target="_blank" rel="noopener">Stack Overflow trends</a>, <strong>Python surpassed Java in terms the percentage of questions asked about it on Stack Overflow in 2017</strong>. At the time of writing, about 13% of the questions on Stack Overflow are tagged with Python, while about 8% are tagged with Java!</p><h2 id="Web-Development"><a href="#Web-Development" class="headerlink" title="Web Development"></a>Web Development</h2><p><strong>Python and Java can both be used for backend web development</strong>. Typically developers will use the <a href="https://stackify.com/python-frameworks/" target="_blank" rel="noopener">Django and Flask</a> frameworks for Python and <a href="https://spring.io/" target="_blank" rel="noopener">Spring</a> for Java. Python is known for its code readability, meaning Python code is clean, readable, and concise. Python also has a large, comprehensive set of modules, packages, and libraries that exist beyond its standard library, developed by the community of Python enthusiasts. Java has a similar ecosystem, although perhaps to a lesser extent.</p><h2 id="Mobile-App-Development"><a href="#Mobile-App-Development" class="headerlink" title="Mobile App Development"></a>Mobile App Development</h2><p><strong>In terms of mobile app development, Java dominates the field</strong>, as it is the primary langauge used for building Android apps and games. Thanks to the aforementioned tailored libraries, developers have the option to write Android apps by leveraging robust frameworks and development tools built specifically for the operating system. Currently, Python is not used commonly for mobile development, although there are tools like <a href="https://kivy.org/" target="_blank" rel="noopener">Kivy</a>and <a href="https://beeware.org/" target="_blank" rel="noopener">BeeWare</a> that allow you to write code once and deploy apps across Windows, OS X, iOS, and Android.</p><h2 id="Machine-Learning-and-Big-Data"><a href="#Machine-Learning-and-Big-Data" class="headerlink" title="Machine Learning and Big Data"></a>Machine Learning and Big Data</h2><p>Conversely, in the world of machine learning and <a href="https://junilearning.com/blog/coding-and-data-science" target="_blank" rel="noopener">data science</a>, Python is the most popular language. Python is often used for big data, scientific computing, and artificial intelligence (A.I.) projects. <strong>The vast majority of data scientists and machine learning programmers opt for Python over Java while working on projects that involve sentiment analysis</strong>. At the same time, it is important to note that many machine learning programmers may choose to use Java while they work on projects related to network security, cyber attack prevention, and fraud detection.</p><h2 id="Where-to-Start"><a href="#Where-to-Start" class="headerlink" title="Where to Start"></a>Where to Start</h2><p>When it comes to learning the foundations of programming, <strong>many studies have concluded that it is easier to <a href="https://junilearning.com/coding" target="_blank" rel="noopener">learn Python</a> over Java</strong>, due to Python’s simple and intuitive syntax, as seen in the earlier example. Java programs often have more boilerplate code - sections of code that have to be included in many places with little or no alteration - than Python. That being said, there are some notable advantages to Java, in particular its speed as a compiled language. <strong>Learning both Python and Java will give students exposure to two languages that lay their foundation on similar computer science concepts, yet differ in educational ways.</strong></p><p>Overall, it is clear that both Python and Java are powerful programming languages in practice, and it would be advisable for any aspiring software developer to learn both languages proficiently. Programmers should compare Python and Java based on the specific needs of each software development project, as opposed to simply learning the one language that they prefer. In short, <strong>neither language is superior to another, and programmers should aim to have both in their coding experience</strong>.</p><table><thead><tr><th></th><th>Python</th><th>Java</th></tr></thead><tbody><tr><td>Runtime Performance</td><td></td><td>Winner</td></tr><tr><td>Ease of Learning</td><td>Winner</td><td></td></tr><tr><td>Practical Agility</td><td>Tie</td><td>Tie</td></tr><tr><td>Mobile App Development</td><td></td><td>Winner</td></tr><tr><td>Big Data</td><td>Winner</td><td></td></tr></tbody></table><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;em&gt;This&lt;/em&gt; &lt;a href=&quot;https://junilearning.com/blog/guide/python-vs-java/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;em&gt;article&lt;/em&gt;&lt;/a&gt; &lt;em&gt;origi
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="https://leihao0.github.io/tags/Python/"/>
+    
+      <category term="Java" scheme="https://leihao0.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Raspberry Pi 4</title>
@@ -495,33 +521,6 @@
       
         &lt;h2 id=&quot;原鉄道模型博物館&quot;&gt;&lt;a href=&quot;#原鉄道模型博物館&quot; class=&quot;headerlink&quot; title=&quot;原鉄道模型博物館&quot;&gt;&lt;/a&gt;原鉄道模型博物館&lt;/h2&gt;&lt;p&gt;Hara Model Railway Museum&lt;/p&gt;
 &lt;p&gt;突然看到一個超大的樓&lt;br
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LittleMaster" scheme="https://leihao0.github.io/tags/LittleMaster/"/>
-    
-      <category term="Japan" scheme="https://leihao0.github.io/tags/Japan/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Japan-2-3-0</title>
-    <link href="https://leihao0.github.io/Japan-2-3-0/"/>
-    <id>https://leihao0.github.io/Japan-2-3-0/</id>
-    <published>2019-11-02T08:25:51.000Z</published>
-    <updated>2020-06-30T16:22:28.041Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="橫濱"><a href="#橫濱" class="headerlink" title="橫濱"></a>橫濱</h1><p>一瞬間小法師以為自己回到帝都了呢</p><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23000.jpg" alt=""></p><p>因為當時已在帝都艱難的生存了 3.5 年<br>所以對中華街沒有任何興趣<br>嗯，即使是日本的也沒興趣</p><p>萬萬沒想到<br>飛了這麼遠還能看到北京飯店<br>直接忽略去 Check in 午休</p><p>由於 Monterey 就在海邊<br>不知睡了多久，被遠遠的汽笛聲叫醒<br>拉開窗簾看了下<br>感覺加個濾鏡就是博物館看到的油畫了</p><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23001.jpg" alt=""></p><p>因為被汽笛叫醒的感覺非常棒<br>就出來在海邊走了走</p><p>岸邊有一些可愛的小鴨子漂在水面上<br>準備 📷 時，小 🦆 竟然一頭扎進水裡捕魚 🐟 去了<br>呃，原來 🦆 可以潛水 🤿 啊</p><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23003.jpg" alt=""></p><p>日本的海很乾淨，沒有什麼腥味呢</p><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23002.jpg" alt=""></p><h2 id="氷川丸"><a href="#氷川丸" class="headerlink" title="氷川丸"></a>氷川丸</h2><p>NYK Hikawamaru<br>日本郵船氷川丸</p><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23004.jpg" alt=""></p><p>原來這船能上去參觀<br>最早是郵輪，後來參與了二戰<br>退役後就回到了故鄉</p><p>這是之前的汽笛聲？<br><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23009.jpg" alt=""></p><p>今後就沒女廁所了<br>還好小法師是男的</p><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23007.jpg" alt=""></p><p>頭等艙有多個大窗戶可以吃飯可以讀書甚至可以洗澡 🛀<br><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23008.jpg" alt=""></p><p>三等艙像是小法師 233 魔法學院的宿舍只能擠擠睡<br><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23010.jpg" alt=""></p><p>唉 昭和 16 年就已經差距這麼大了麼</p><h2 id="象の鼻防波堤"><a href="#象の鼻防波堤" class="headerlink" title="象の鼻防波堤"></a>象の鼻防波堤</h2><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23005.jpg" alt=""></p><h2 id="大さん橋ホール"><a href="#大さん橋ホール" class="headerlink" title="大さん橋ホール"></a>大さん橋ホール</h2><p>自從在羽田機場的樓頂看過飛機起降後<br>就知道 🇯🇵 多數大型建築樓頂必然可以觀光</p><p>但這裏只是個碼頭哎<br>愣是做出了劇院的感覺也是厲害</p><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23006.jpg" alt=""></p><hr><p>冰川丸附近可以買橫濱觀光船票<br>在海上 1 - 2 小時，船上提供晚餐，不會餓肚子</p><p>飲料 🥤 後面是個蠟燭 🕯️，燭光隨著船 🚢 搖曳</p><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23000.gif" alt=""></p><p>看起來浪漫的不行<br>確實別的桌子都是成雙成對的<br>只有小法師這裏是煢煢孑立形影相弔一個人</p><p>唉，要是有妹紙就好了</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;橫濱&quot;&gt;&lt;a href=&quot;#橫濱&quot; class=&quot;headerlink&quot; title=&quot;橫濱&quot;&gt;&lt;/a&gt;橫濱&lt;/h1&gt;&lt;p&gt;一瞬間小法師以為自己回到帝都了呢&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Le
       
     
     </summary>
