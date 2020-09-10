@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>https://leihao0.github.io/tags/Macbook/</loc>
+        <lastmod>2020-09-10T10:53:51.728Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/tags/LittleMaster/</loc>
+        <lastmod>2020-09-09T17:54:14.250Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/tags/AAU/</loc>
         <lastmod>2020-09-09T13:53:18.555Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -75,13 +89,6 @@
     <url>
         <loc>https://leihao0.github.io/tags/Hexo/</loc>
         <lastmod>2020-09-09T13:49:43.513Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/tags/LittleMaster/</loc>
-        <lastmod>2020-09-09T13:48:34.676Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
