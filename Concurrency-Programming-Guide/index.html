@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -11,11 +9,11 @@
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="rbaH_zC-qBwXaawJ10Mno3FHzv9HRFHGFdXx2f1BwyI">
 
-<link rel="stylesheet" href="/css/main.css">
 
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+
+
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
@@ -26,7 +24,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Concurrency Programming Guide">
 <meta property="og:url" content="https://leihao0.github.io/Concurrency-Programming-Guide/index.html">
-<meta property="og:site_name" content="LeiHao&#39;s Blog">
+<meta property="og:site_name" content="LeiHao's Blog">
 <meta property="og:description" content="Concurrency Programming Guide感觉线程相关的面试题都能在 👆 这个 🔗 里找到答案呢">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-27T06:07:04.000Z">
@@ -52,7 +50,7 @@
 
   <title>Concurrency Programming Guide | LeiHao's Blog</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
     <script>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
@@ -76,7 +74,3005 @@
 
 
 
-  <noscript>
+  <style>:root {
+  --body-bg-color: #f5f7f9;
+  --content-bg-color: #fff;
+  --card-bg-color: #f5f5f5;
+  --text-color: #555;
+  --blockquote-color: #666;
+  --link-color: #555;
+  --link-hover-color: #222;
+  --brand-color: #fff;
+  --brand-hover-color: #fff;
+  --table-row-odd-bg-color: #f9f9f9;
+  --table-row-hover-bg-color: #f5f5f5;
+  --menu-item-bg-color: #f5f5f5;
+  --btn-default-bg: #fff;
+  --btn-default-color: #555;
+  --btn-default-border-color: #555;
+  --btn-default-hover-bg: #222;
+  --btn-default-hover-color: #fff;
+  --btn-default-hover-border-color: #222;
+  --highlight-background: #f0f0f0;
+  --highlight-foreground: #444;
+  --highlight-gutter-background: #dedede;
+  --highlight-gutter-foreground: #555;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg-color: #282828;
+    --content-bg-color: #333;
+    --card-bg-color: #555;
+    --text-color: #ccc;
+    --blockquote-color: #bbb;
+    --link-color: #ccc;
+    --link-hover-color: #eee;
+    --brand-color: #ddd;
+    --brand-hover-color: #ddd;
+    --table-row-odd-bg-color: #282828;
+    --table-row-hover-bg-color: #363636;
+    --menu-item-bg-color: #555;
+    --btn-default-bg: #222;
+    --btn-default-color: #ccc;
+    --btn-default-border-color: #555;
+    --btn-default-hover-bg: #666;
+    --btn-default-hover-color: #ccc;
+    --btn-default-hover-border-color: #666;
+    --highlight-background: #1d1f21;
+    --highlight-foreground: #c5c8c6;
+    --highlight-gutter-background: #2d2f31;
+    --highlight-gutter-foreground: #b4b7b5;
+  }
+  img {
+    opacity: 0.75;
+  }
+  img:hover {
+    opacity: 0.9;
+  }
+}
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+body {
+  margin: 0;
+}
+main {
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+a {
+  background: transparent;
+}
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+button,
+input {
+/* 1 */
+  overflow: visible;
+}
+button,
+select {
+/* 1 */
+  text-transform: none;
+}
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+progress {
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+}
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+[type='search'] {
+  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+}
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  font: inherit; /* 2 */
+  -webkit-appearance: button; /* 1 */
+}
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+::selection {
+  background: #262a30;
+  color: #eee;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: var(--body-bg-color);
+  color: var(--text-color);
+  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1em;
+  line-height: 2;
+  min-height: 100%;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 20px 0 15px;
+}
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.375em;
+}
+h3 {
+  font-size: 1.25em;
+}
+h4 {
+  font-size: 1.125em;
+}
+h5 {
+  font-size: 1em;
+}
+h6 {
+  font-size: 0.875em;
+}
+p {
+  margin: 0 0 20px 0;
+}
+a,
+span.exturl {
+  border-bottom: 1px solid #999;
+  color: var(--link-color);
+  outline: 0;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  cursor: pointer;
+}
+a:hover,
+span.exturl:hover {
+  border-bottom-color: var(--link-hover-color);
+  color: var(--link-hover-color);
+}
+iframe,
+img,
+video,
+embed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+hr {
+  background-image: repeating-linear-gradient(-45deg, #ddd, #ddd 4px, transparent 4px, transparent 8px);
+  border: 0;
+  height: 3px;
+  margin: 40px 0;
+}
+blockquote {
+  border-left: 4px solid #ddd;
+  color: var(--blockquote-color);
+  margin: 0;
+  padding: 0 15px;
+}
+blockquote cite::before {
+  content: '-';
+  padding: 0 5px;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0;
+  padding: 0;
+}
+.table-container {
+  overflow: auto;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.875em;
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+tbody tr:nth-of-type(odd) {
+  background: var(--table-row-odd-bg-color);
+}
+tbody tr:hover {
+  background: var(--table-row-hover-bg-color);
+}
+caption,
+th,
+td {
+  padding: 8px;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  border-bottom: 3px solid #ddd;
+}
+th {
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+td {
+  border-bottom-width: 1px;
+}
+.btn {
+  background: var(--btn-default-bg);
+  border: 2px solid var(--btn-default-border-color);
+  border-radius: 2px;
+  color: var(--btn-default-color);
+  display: inline-block;
+  font-size: 0.875em;
+  line-height: 2;
+  padding: 0 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+.btn:hover {
+  background: var(--btn-default-hover-bg);
+  border-color: var(--btn-default-hover-border-color);
+  color: var(--btn-default-hover-color);
+}
+.btn + .btn {
+  margin: 0 0 8px 8px;
+}
+.btn .fa-fw {
+  text-align: left;
+  width: 1.285714285714286em;
+}
+.toggle {
+  line-height: 0;
+}
+.toggle .toggle-line {
+  background: #fff;
+  display: block;
+  height: 2px;
+  left: 0;
+  position: relative;
+  top: 0;
+  transition: all 0.4s;
+  width: 100%;
+}
+.toggle .toggle-line:not(:first-child) {
+  margin-top: 3px;
+}
+.toggle.toggle-arrow .toggle-line:first-child {
+  left: 50%;
+  top: 2px;
+  transform: rotate(45deg);
+  width: 50%;
+}
+.toggle.toggle-arrow .toggle-line:last-child {
+  left: 50%;
+  top: -2px;
+  transform: rotate(-45deg);
+  width: 50%;
+}
+.toggle.toggle-close .toggle-line:nth-child(2) {
+  opacity: 0;
+}
+.toggle.toggle-close .toggle-line:first-child {
+  top: 5px;
+  transform: rotate(45deg);
+}
+.toggle.toggle-close .toggle-line:last-child {
+  top: -5px;
+  transform: rotate(-45deg);
+}
+/*
+
+Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #F0F0F0;
+}
+
+
+/* Base color: saturation 0; */
+
+.hljs,
+.hljs-subst {
+  color: #444;
+}
+
+.hljs-comment {
+  color: #888888;
+}
+
+.hljs-keyword,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-meta-keyword,
+.hljs-doctag,
+.hljs-name {
+  font-weight: bold;
+}
+
+
+/* User color: hue: 0 */
+
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+  color: #880000;
+}
+
+.hljs-title,
+.hljs-section {
+  color: #880000;
+  font-weight: bold;
+}
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #BC6060;
+}
+
+
+/* Language color: hue: 90; */
+
+.hljs-literal {
+  color: #78A960;
+}
+
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+  color: #397300;
+}
+
+
+/* Meta color: hue: 200 */
+
+.hljs-meta {
+  color: #1f7199;
+}
+
+.hljs-meta-string {
+  color: #4d99bf;
+}
+
+
+/* Misc effects */
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+/* Tomorrow Night Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #969896;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #cc6666;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #de935f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+  color: #f0c674;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #b5bd68;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+  color: #81a2be;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #b294bb;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #1d1f21;
+  color: #c5c8c6;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+}
+code,
+kbd,
+figure.highlight,
+pre {
+  background: var(--highlight-background);
+  color: var(--highlight-foreground);
+}
+figure.highlight,
+pre {
+  line-height: 1.6;
+  margin: 0 auto 20px;
+}
+pre,
+code {
+  font-family: consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
+}
+code {
+  border-radius: 3px;
+  font-size: 0.875em;
+  padding: 2px 4px;
+  overflow-wrap: break-word;
+}
+kbd {
+  border: 2px solid #ccc;
+  border-radius: 0.2em;
+  box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+  font-family: inherit;
+  padding: 0.1em 0.3em;
+  white-space: nowrap;
+}
+figure.highlight {
+  position: relative;
+}
+figure.highlight pre {
+  border: 0;
+  margin: 0;
+  padding: 10px 0;
+}
+figure.highlight table {
+  border: 0;
+  margin: 0;
+  width: auto;
+}
+figure.highlight td {
+  border: 0;
+  padding: 0;
+}
+figure.highlight figcaption,
+pre .caption,
+pre figcaption {
+  background: var(--highlight-gutter-background);
+  color: var(--highlight-foreground);
+  display: flow-root;
+  font-size: 0.875em;
+  line-height: 1.2;
+  padding: 0.5em;
+}
+figure.highlight figcaption a,
+pre .caption a,
+pre figcaption a {
+  color: var(--highlight-foreground);
+  float: right;
+}
+figure.highlight figcaption a:hover,
+pre .caption a:hover,
+pre figcaption a:hover {
+  border-bottom-color: var(--highlight-foreground);
+}
+figure.highlight .gutter {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+figure.highlight .gutter pre {
+  background: var(--highlight-gutter-background);
+  color: var(--highlight-gutter-foreground);
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+}
+figure.highlight .code pre {
+  padding-left: 10px;
+  width: 100%;
+}
+pre .caption,
+pre figcaption {
+  margin-bottom: 10px;
+}
+.gist table {
+  width: auto;
+}
+.gist table td {
+  border: 0;
+}
+pre {
+  overflow: auto;
+  padding: 10px;
+  position: relative;
+}
+pre code {
+  background: none;
+  padding: 0;
+  text-shadow: none;
+}
+.blockquote-center {
+  border-left: none;
+  margin: 40px 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+.blockquote-center::before,
+.blockquote-center::after {
+  left: 0;
+  line-height: 1;
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+}
+.blockquote-center::before {
+  border-top: 1px solid #ccc;
+  text-align: left;
+  top: -20px;
+  content: '\f10d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.blockquote-center::after {
+  border-bottom: 1px solid #ccc;
+  bottom: -20px;
+  text-align: right;
+  content: '\f10e';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.blockquote-center p,
+.blockquote-center div {
+  text-align: center;
+}
+.group-picture {
+  margin-bottom: 20px;
+}
+.group-picture .group-picture-row {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 3px;
+}
+.group-picture .group-picture-column {
+  flex: 1;
+}
+.group-picture .group-picture-column img {
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  width: 100%;
+}
+.post-body .label {
+  color: #555;
+  padding: 0 2px;
+}
+.post-body .label.default {
+  background: #f0f0f0;
+}
+.post-body .label.primary {
+  background: #efe6f7;
+}
+.post-body .label.info {
+  background: #e5f2f8;
+}
+.post-body .label.success {
+  background: #e7f4e9;
+}
+.post-body .label.warning {
+  background: #fcf6e1;
+}
+.post-body .label.danger {
+  background: #fae8eb;
+}
+.post-body .link-grid {
+  display: grid;
+  gap: 1.5rem 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+  padding: 1rem;
+}
+@media (max-width: 767px) {
+  .post-body .link-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.post-body .link-grid .link-grid-container {
+  border: solid #ddd;
+  box-shadow: 1rem 1rem 0.5rem rgba(0,0,0,0.5);
+  min-height: 5rem;
+  min-width: 0;
+  padding: 0.5rem;
+  position: relative;
+  transition: background 0.3s;
+}
+.post-body .link-grid .link-grid-container:hover {
+  animation: next-shake 0.5s;
+  background: var(--card-bg-color);
+}
+.post-body .link-grid .link-grid-container:active {
+  box-shadow: 0.5rem 0.5rem 0.25rem rgba(0,0,0,0.5);
+  transform: translate(0.2rem, 0.2rem);
+}
+.post-body .link-grid .link-grid-container .link-grid-image {
+  background-clip: content-box;
+  background-origin: content-box;
+  background-size: cover;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 5rem;
+  padding: 3px;
+  position: absolute;
+  width: 5rem;
+}
+.post-body .link-grid .link-grid-container p {
+  margin: 0 1rem 0 6rem;
+}
+.post-body .link-grid .link-grid-container p:first-of-type {
+  font-size: 1.2em;
+}
+.post-body .link-grid .link-grid-container p:last-of-type {
+  font-size: 0.8em;
+  line-height: 1.3rem;
+  opacity: 0.7;
+}
+.post-body .link-grid .link-grid-container a {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@-moz-keyframes next-shake {
+  0% {
+    transform: translate(1pt, 1pt) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1pt, -2pt) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3pt, 0pt) rotate(1deg);
+  }
+  30% {
+    transform: translate(3pt, 2pt) rotate(0deg);
+  }
+  40% {
+    transform: translate(1pt, -1pt) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1pt, 2pt) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3pt, 1pt) rotate(0deg);
+  }
+  70% {
+    transform: translate(3pt, 1pt) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1pt, -1pt) rotate(1deg);
+  }
+  90% {
+    transform: translate(1pt, 2pt) rotate(0deg);
+  }
+  100% {
+    transform: translate(1pt, -2pt) rotate(-1deg);
+  }
+}
+@-webkit-keyframes next-shake {
+  0% {
+    transform: translate(1pt, 1pt) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1pt, -2pt) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3pt, 0pt) rotate(1deg);
+  }
+  30% {
+    transform: translate(3pt, 2pt) rotate(0deg);
+  }
+  40% {
+    transform: translate(1pt, -1pt) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1pt, 2pt) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3pt, 1pt) rotate(0deg);
+  }
+  70% {
+    transform: translate(3pt, 1pt) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1pt, -1pt) rotate(1deg);
+  }
+  90% {
+    transform: translate(1pt, 2pt) rotate(0deg);
+  }
+  100% {
+    transform: translate(1pt, -2pt) rotate(-1deg);
+  }
+}
+@-o-keyframes next-shake {
+  0% {
+    transform: translate(1pt, 1pt) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1pt, -2pt) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3pt, 0pt) rotate(1deg);
+  }
+  30% {
+    transform: translate(3pt, 2pt) rotate(0deg);
+  }
+  40% {
+    transform: translate(1pt, -1pt) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1pt, 2pt) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3pt, 1pt) rotate(0deg);
+  }
+  70% {
+    transform: translate(3pt, 1pt) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1pt, -1pt) rotate(1deg);
+  }
+  90% {
+    transform: translate(1pt, 2pt) rotate(0deg);
+  }
+  100% {
+    transform: translate(1pt, -2pt) rotate(-1deg);
+  }
+}
+@keyframes next-shake {
+  0% {
+    transform: translate(1pt, 1pt) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1pt, -2pt) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3pt, 0pt) rotate(1deg);
+  }
+  30% {
+    transform: translate(3pt, 2pt) rotate(0deg);
+  }
+  40% {
+    transform: translate(1pt, -1pt) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1pt, 2pt) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3pt, 1pt) rotate(0deg);
+  }
+  70% {
+    transform: translate(3pt, 1pt) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1pt, -1pt) rotate(1deg);
+  }
+  90% {
+    transform: translate(1pt, 2pt) rotate(0deg);
+  }
+  100% {
+    transform: translate(1pt, -2pt) rotate(-1deg);
+  }
+}
+.post-body .tabs {
+  margin-bottom: 20px;
+}
+.post-body .tabs,
+.tabs-comment {
+  padding-top: 10px;
+}
+.post-body .tabs ul.nav-tabs,
+.tabs-comment ul.nav-tabs {
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 413px) {
+  .post-body .tabs ul.nav-tabs,
+  .tabs-comment ul.nav-tabs {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+.post-body .tabs ul.nav-tabs li.tab,
+.tabs-comment ul.nav-tabs li.tab {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 3px solid transparent;
+  flex-grow: 1;
+  list-style-type: none;
+  border-radius: 0 0 0 0;
+}
+@media (max-width: 413px) {
+  .post-body .tabs ul.nav-tabs li.tab,
+  .tabs-comment ul.nav-tabs li.tab {
+    border-bottom: 1px solid transparent;
+    border-left: 3px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
+  }
+}
+@media (max-width: 413px) {
+  .post-body .tabs ul.nav-tabs li.tab,
+  .tabs-comment ul.nav-tabs li.tab {
+    border-radius: 0;
+  }
+}
+.post-body .tabs ul.nav-tabs li.tab a,
+.tabs-comment ul.nav-tabs li.tab a {
+  border-bottom: initial;
+  display: block;
+  line-height: 1.8;
+  padding: 0.25em 0.75em;
+  text-align: center;
+  transition: all 0.2s ease-out;
+}
+.post-body .tabs ul.nav-tabs li.tab a i,
+.tabs-comment ul.nav-tabs li.tab a i {
+  width: 1.285714285714286em;
+}
+.post-body .tabs ul.nav-tabs li.tab.active,
+.tabs-comment ul.nav-tabs li.tab.active {
+  border-bottom-color: transparent;
+  border-left-color: #ddd;
+  border-right-color: #ddd;
+  border-top-color: #fc6423;
+}
+@media (max-width: 413px) {
+  .post-body .tabs ul.nav-tabs li.tab.active,
+  .tabs-comment ul.nav-tabs li.tab.active {
+    border-bottom-color: #ddd;
+    border-left-color: #fc6423;
+    border-right-color: #ddd;
+    border-top-color: #ddd;
+  }
+}
+.post-body .tabs ul.nav-tabs li.tab.active a,
+.tabs-comment ul.nav-tabs li.tab.active a {
+  cursor: default;
+}
+.post-body .tabs .tab-content,
+.tabs-comment .tab-content {
+  border: 1px solid #ddd;
+  border-top-color: transparent;
+  border-radius: 0 0 0 0;
+}
+@media (max-width: 413px) {
+  .post-body .tabs .tab-content,
+  .tabs-comment .tab-content {
+    border-radius: 0;
+    border-top-color: #ddd;
+  }
+}
+.post-body .tabs .tab-content .tab-pane,
+.tabs-comment .tab-content .tab-pane {
+  padding: 20px 20px 0 20px;
+}
+.post-body .tabs .tab-content .tab-pane:not(.active),
+.tabs-comment .tab-content .tab-pane:not(.active) {
+  display: none;
+}
+.post-body .note {
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 1em;
+  position: relative;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+}
+.post-body .note summary {
+  cursor: pointer;
+  outline: 0;
+}
+.post-body .note summary p {
+  display: inline;
+}
+.post-body .note h2,
+.post-body .note h3,
+.post-body .note h4,
+.post-body .note h5,
+.post-body .note h6 {
+  border-bottom: initial;
+  margin: 0;
+  padding-top: 0;
+}
+.post-body .note p:first-child,
+.post-body .note ul:first-child,
+.post-body .note ol:first-child,
+.post-body .note table:first-child,
+.post-body .note pre:first-child,
+.post-body .note blockquote:first-child,
+.post-body .note img:first-child {
+  margin-top: 0;
+}
+.post-body .note p:last-child,
+.post-body .note ul:last-child,
+.post-body .note ol:last-child,
+.post-body .note table:last-child,
+.post-body .note pre:last-child,
+.post-body .note blockquote:last-child,
+.post-body .note img:last-child {
+  margin-bottom: 0;
+}
+.post-body .note.default {
+  border-left-color: #777;
+}
+.post-body .note.default h2,
+.post-body .note.default h3,
+.post-body .note.default h4,
+.post-body .note.default h5,
+.post-body .note.default h6 {
+  color: #777;
+}
+.post-body .note.primary {
+  border-left-color: #6f42c1;
+}
+.post-body .note.primary h2,
+.post-body .note.primary h3,
+.post-body .note.primary h4,
+.post-body .note.primary h5,
+.post-body .note.primary h6 {
+  color: #6f42c1;
+}
+.post-body .note.info {
+  border-left-color: #428bca;
+}
+.post-body .note.info h2,
+.post-body .note.info h3,
+.post-body .note.info h4,
+.post-body .note.info h5,
+.post-body .note.info h6 {
+  color: #428bca;
+}
+.post-body .note.success {
+  border-left-color: #5cb85c;
+}
+.post-body .note.success h2,
+.post-body .note.success h3,
+.post-body .note.success h4,
+.post-body .note.success h5,
+.post-body .note.success h6 {
+  color: #5cb85c;
+}
+.post-body .note.warning {
+  border-left-color: #f0ad4e;
+}
+.post-body .note.warning h2,
+.post-body .note.warning h3,
+.post-body .note.warning h4,
+.post-body .note.warning h5,
+.post-body .note.warning h6 {
+  color: #f0ad4e;
+}
+.post-body .note.danger {
+  border-left-color: #d9534f;
+}
+.post-body .note.danger h2,
+.post-body .note.danger h3,
+.post-body .note.danger h4,
+.post-body .note.danger h5,
+.post-body .note.danger h6 {
+  color: #d9534f;
+}
+.pagination .prev,
+.pagination .next,
+.pagination .page-number,
+.pagination .space {
+  display: inline-block;
+  margin: -1px 10px 0 10px;
+  padding: 0 10px;
+}
+@media (max-width: 767px) {
+  .pagination .prev,
+  .pagination .next,
+  .pagination .page-number,
+  .pagination .space {
+    margin: 0 5px;
+  }
+}
+.pagination {
+  border-top: 1px solid #eee;
+  margin: 120px 0 0;
+  text-align: center;
+}
+.pagination .prev,
+.pagination .next,
+.pagination .page-number {
+  border-bottom: 0;
+  border-top: 1px solid #eee;
+  transition: border-color 0.2s ease-in-out;
+}
+.pagination .prev:hover,
+.pagination .next:hover,
+.pagination .page-number:hover {
+  border-top-color: var(--link-hover-color);
+}
+@media (max-width: 767px) {
+  .pagination {
+    border-top: 0;
+  }
+  .pagination .prev,
+  .pagination .next,
+  .pagination .page-number {
+    border-bottom: 1px solid #eee;
+    border-top: 0;
+  }
+  .pagination .prev:hover,
+  .pagination .next:hover,
+  .pagination .page-number:hover {
+    border-bottom-color: var(--link-hover-color);
+  }
+}
+.pagination .space {
+  margin: 0;
+  padding: 0;
+}
+.pagination .page-number.current {
+  background: #ccc;
+  border-color: #ccc;
+  color: var(--content-bg-color);
+}
+.comments {
+  margin-top: 60px;
+  overflow: hidden;
+}
+.comment-button-group {
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: center;
+  margin: 1em 0;
+}
+.comment-button-group .comment-button {
+  margin: 0.1em 0.2em;
+}
+.comment-button-group .comment-button.active {
+  background: var(--btn-default-hover-bg);
+  border-color: var(--btn-default-hover-border-color);
+  color: var(--btn-default-hover-color);
+}
+.comment-position {
+  display: none;
+}
+.comment-position.active {
+  display: block;
+}
+.tabs-comment {
+  margin-top: 4em;
+  padding-top: 0;
+}
+.tabs-comment .comments {
+  margin-top: 0;
+  padding-top: 0;
+}
+.headband {
+  background: #222;
+  height: 3px;
+}
+@media (max-width: 991px) {
+  .headband {
+    display: none;
+  }
+}
+.header {
+  background: transparent;
+}
+.header-inner {
+  margin: 0 auto;
+  width: calc(100% - 20px);
+}
+@media (min-width: 1200px) {
+  .header-inner {
+    width: 1160px;
+  }
+}
+@media (min-width: 1600px) {
+  .header-inner {
+    width: 73%;
+  }
+}
+.site-brand-container {
+  display: flex;
+  flex-shrink: 0;
+  padding: 0 10px;
+}
+.use-motion .header,
+.use-motion .site-brand-container .toggle {
+  opacity: 0;
+}
+.site-meta {
+  flex-grow: 1;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .site-meta {
+    text-align: center;
+  }
+}
+.custom-logo-image {
+  margin-top: 20px;
+}
+@media (max-width: 991px) {
+  .custom-logo-image {
+    display: none;
+  }
+}
+.brand {
+  border-bottom: none;
+  color: var(--brand-color);
+  display: inline-block;
+  padding: 0 40px;
+}
+.brand:hover {
+  color: var(--brand-hover-color);
+}
+.site-title {
+  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1.375em;
+  font-weight: normal;
+  margin: 0;
+}
+.site-subtitle {
+  color: #ddd;
+  font-size: 0.8125em;
+  margin: 10px 0;
+}
+.use-motion .site-title,
+.use-motion .site-subtitle,
+.use-motion .custom-logo-image {
+  opacity: 0;
+  position: relative;
+  top: -10px;
+}
+.site-nav-toggle,
+.site-nav-right {
+  display: none;
+}
+@media (max-width: 767px) {
+  .site-nav-toggle,
+  .site-nav-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.site-nav-toggle .toggle,
+.site-nav-right .toggle {
+  color: var(--text-color);
+  padding: 10px;
+  width: 22px;
+}
+.site-nav-toggle .toggle .toggle-line,
+.site-nav-right .toggle .toggle-line {
+  background: var(--text-color);
+  border-radius: 1px;
+}
+@media (max-width: 767px) {
+  .site-nav {
+    display: none;
+  }
+}
+.site-nav-on .site-nav {
+  display: block;
+}
+.menu {
+  margin: 0;
+  padding: 1em 0;
+  text-align: center;
+}
+.menu-item {
+  display: inline-block;
+  list-style: none;
+  margin: 0 10px;
+}
+@media (max-width: 767px) {
+  .menu-item {
+    display: block;
+    margin-top: 10px;
+  }
+  .menu-item.menu-item-search {
+    display: none;
+  }
+}
+.menu-item a,
+.menu-item span.exturl {
+  border-bottom: 0;
+  display: block;
+  font-size: 0.8125em;
+  transition: border-color 0.2s ease-in-out;
+}
+.menu-item a:hover,
+.menu-item span.exturl:hover,
+.menu-item a.menu-item-active,
+.menu-item span.exturl.menu-item-active {
+  background: var(--menu-item-bg-color);
+}
+.menu-item .fa,
+.menu-item .fab,
+.menu-item .far,
+.menu-item .fas {
+  margin-right: 8px;
+}
+.menu-item .badge {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 0.35em;
+  margin-top: 0.35em;
+  text-align: center;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .menu-item .badge {
+    float: right;
+    margin-left: 0;
+  }
+}
+.use-motion .menu-item {
+  visibility: hidden;
+}
+.sidebar-inner {
+  color: #999;
+  padding: 18px 10px;
+  text-align: center;
+}
+.cc-license {
+  margin-top: 10px;
+}
+.cc-license .cc-opacity {
+  border-bottom: none;
+  opacity: 0.7;
+}
+.cc-license .cc-opacity:hover {
+  opacity: 0.9;
+}
+.cc-license img {
+  display: inline-block;
+}
+.site-author-image {
+  border: 1px solid #eee;
+  max-width: 120px;
+  padding: 2px;
+}
+.site-author-name {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0;
+}
+.site-description {
+  color: #999;
+  font-size: 0.8125em;
+  margin-top: 0;
+}
+.links-of-author a,
+.links-of-author span.exturl {
+  font-size: 0.8125em;
+}
+.sidebar-button {
+  margin-top: 15px;
+}
+.sidebar-button a {
+  border: 1px solid #fc6423;
+  border-radius: 4px;
+  color: #fc6423;
+  display: inline-block;
+  padding: 0 15px;
+}
+.sidebar-button a .fa,
+.sidebar-button a .fab,
+.sidebar-button a .far,
+.sidebar-button a .fas {
+  margin-right: 5px;
+}
+.sidebar-button a:hover {
+  background: #fc6423;
+  border: 1px solid #fc6423;
+  color: #fff;
+}
+.sidebar-button a:hover .fa,
+.sidebar-button a:hover .fab,
+.sidebar-button a:hover .far,
+.sidebar-button a:hover .fas {
+  color: #fff;
+}
+.links-of-blogroll {
+  font-size: 0.8125em;
+  margin-top: 10px;
+}
+.links-of-blogroll-title {
+  font-size: 0.875em;
+  font-weight: 600;
+  margin-top: 0;
+}
+.links-of-blogroll-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-dimmer {
+  display: none;
+}
+@media (max-width: 767px) {
+  .sidebar-dimmer {
+    background: #000;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: visibility 0.4s, opacity 0.4s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1100;
+  }
+  .sidebar-active .sidebar-dimmer {
+    opacity: 0.7;
+    visibility: visible;
+  }
+}
+.sidebar-nav {
+  display: none;
+  margin: 0;
+  padding-bottom: 20px;
+  padding-left: 0;
+}
+.sidebar-nav-active .sidebar-nav {
+  display: block;
+}
+.sidebar-nav li {
+  border-bottom: 1px solid transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875em;
+}
+.sidebar-nav li.sidebar-nav-overview {
+  margin-left: 10px;
+}
+.sidebar-nav li:hover {
+  color: #fc6423;
+}
+.sidebar-toc-active .sidebar-nav-toc,
+.sidebar-overview-active .sidebar-nav-overview {
+  border-bottom-color: #fc6423;
+  color: #fc6423;
+}
+.sidebar-toc-active .sidebar-nav-toc:hover,
+.sidebar-overview-active .sidebar-nav-overview:hover {
+  color: #fc6423;
+}
+.sidebar-panel {
+  display: none;
+  max-height: var(--sidebar-wrapper-height);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.sidebar-toc-active .post-toc-wrap,
+.sidebar-overview-active .site-overview-wrap {
+  display: block;
+}
+.sidebar-toggle {
+  bottom: 45px;
+  height: 12px;
+  padding: 6px 5px;
+  width: 14px;
+  background: #222;
+  cursor: pointer;
+  opacity: 0.6;
+  position: fixed;
+  z-index: 1300;
+  right: 30px;
+}
+@media (max-width: 991px) {
+  .sidebar-toggle {
+    right: 20px;
+  }
+}
+.sidebar-toggle:hover {
+  opacity: 0.8;
+}
+@media (max-width: 991px) {
+  .sidebar-toggle {
+    opacity: 0.8;
+  }
+}
+.sidebar-toggle:hover .toggle-line {
+  background: #fc6423;
+}
+@media (any-hover: hover) {
+  body:not(.sidebar-active) .sidebar-toggle:hover .toggle-line:first-child {
+    left: 50%;
+    top: 2px;
+    transform: rotate(45deg);
+    width: 50%;
+  }
+  body:not(.sidebar-active) .sidebar-toggle:hover .toggle-line:last-child {
+    left: 50%;
+    top: -2px;
+    transform: rotate(-45deg);
+    width: 50%;
+  }
+}
+.sidebar-active .sidebar-toggle .toggle-line:nth-child(2) {
+  opacity: 0;
+}
+.sidebar-active .sidebar-toggle .toggle-line:first-child {
+  top: 5px;
+  transform: rotate(45deg);
+}
+.sidebar-active .sidebar-toggle .toggle-line:last-child {
+  top: -5px;
+  transform: rotate(-45deg);
+}
+.post-toc {
+  font-size: 0.875em;
+}
+.post-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0 2px 5px 10px;
+  text-align: left;
+}
+.post-toc ol > ol {
+  padding-left: 0;
+}
+.post-toc ol a {
+  transition: all 0.2s ease-in-out;
+}
+.post-toc .nav-item {
+  line-height: 1.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.post-toc .nav .nav-child {
+  display: none;
+}
+.post-toc .nav .active > .nav-child {
+  display: block;
+}
+.post-toc .nav .active-current > .nav-child {
+  display: block;
+}
+.post-toc .nav .active-current > .nav-child > .nav-item {
+  display: block;
+}
+.post-toc .nav .active > a {
+  border-bottom-color: #fc6423;
+  color: #fc6423;
+}
+.post-toc .nav .active-current > a {
+  color: #fc6423;
+}
+.post-toc .nav .active-current > a:hover {
+  color: #fc6423;
+}
+.site-state {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+.site-state-item a {
+  border-bottom: none;
+  display: block;
+  padding: 0 15px;
+}
+.site-state-item-count {
+  display: block;
+  font-size: 1em;
+  font-weight: 600;
+}
+.site-state-item-name {
+  color: #999;
+  font-size: 0.8125em;
+}
+.footer {
+  color: #999;
+  font-size: 0.875em;
+  padding: 20px 0;
+}
+.footer.footer-fixed {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+.footer-inner {
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: calc(100% - 20px);
+}
+@media (min-width: 1200px) {
+  .footer-inner {
+    width: 1160px;
+  }
+}
+@media (min-width: 1600px) {
+  .footer-inner {
+    width: 73%;
+  }
+}
+.use-motion .footer {
+  opacity: 0;
+}
+.languages {
+  display: inline-block;
+  font-size: 1.125em;
+  position: relative;
+}
+.languages .lang-select-label span {
+  margin: 0 0.5em;
+}
+.languages .lang-select {
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.with-love {
+  color: #CCCCCC;
+  display: inline-block;
+  margin: 0 5px;
+  animation: icon-animate 1.33s ease-in-out infinite;
+}
+@-moz-keyframes icon-animate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    transform: scale(1.1);
+  }
+}
+@-webkit-keyframes icon-animate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    transform: scale(1.1);
+  }
+}
+@-o-keyframes icon-animate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    transform: scale(1.1);
+  }
+}
+@keyframes icon-animate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    transform: scale(1.1);
+  }
+}
+.back-to-top {
+  font-size: 12px;
+}
+.back-to-top span {
+  display: none;
+}
+.back-to-top {
+  bottom: -100px;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 0 6px;
+  transition: bottom 0.2s ease-in-out;
+  background: #222;
+  cursor: pointer;
+  opacity: 0.6;
+  position: fixed;
+  z-index: 1300;
+  right: 30px;
+  width: 24px;
+}
+@media (max-width: 991px) {
+  .back-to-top {
+    right: 20px;
+  }
+}
+.back-to-top:hover {
+  opacity: 0.8;
+}
+@media (max-width: 991px) {
+  .back-to-top {
+    opacity: 0.8;
+  }
+}
+.back-to-top:hover {
+  color: #fc6423;
+}
+.back-to-top.back-to-top-on {
+  bottom: 30px;
+}
+.noscript-warning {
+  background-color: #f55;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1500;
+}
+.rtl.post-body p,
+.rtl.post-body a,
+.rtl.post-body h1,
+.rtl.post-body h2,
+.rtl.post-body h3,
+.rtl.post-body h4,
+.rtl.post-body h5,
+.rtl.post-body h6,
+.rtl.post-body li,
+.rtl.post-body ul,
+.rtl.post-body ol {
+  direction: rtl;
+  font-family: UKIJ Ekran;
+}
+.rtl.post-title {
+  font-family: UKIJ Ekran;
+}
+.post-button {
+  margin-top: 40px;
+  text-align: center;
+}
+.use-motion .post-block,
+.use-motion .pagination,
+.use-motion .comments {
+  visibility: hidden;
+}
+.use-motion .post-header {
+  visibility: hidden;
+}
+.use-motion .post-body {
+  visibility: hidden;
+}
+.use-motion .collection-header {
+  visibility: hidden;
+}
+.posts-collapse .post-content {
+  margin-bottom: 35px;
+  margin-left: 35px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .posts-collapse .post-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.posts-collapse .post-content .collection-title {
+  font-size: 1.125em;
+  position: relative;
+}
+.posts-collapse .post-content .collection-title::before {
+  background: #999;
+  border: 1px solid #fff;
+  margin-left: -6px;
+  margin-top: -4px;
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  content: ' ';
+  height: 10px;
+  width: 10px;
+}
+.posts-collapse .post-content .collection-year {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 60px 0;
+  position: relative;
+}
+.posts-collapse .post-content .collection-year::before {
+  background: #bbb;
+  margin-left: -4px;
+  margin-top: -4px;
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  content: ' ';
+  height: 8px;
+  width: 8px;
+}
+.posts-collapse .post-content .collection-header {
+  display: block;
+  margin-left: 20px;
+}
+.posts-collapse .post-content .collection-header small {
+  color: #bbb;
+  margin-left: 5px;
+}
+.posts-collapse .post-content .post-header {
+  border-bottom: 1px dashed #ccc;
+  margin: 30px 2px 0;
+  padding-left: 15px;
+  position: relative;
+  transition: border 0.2s ease-in-out;
+}
+.posts-collapse .post-content .post-header::before {
+  background: #bbb;
+  border: 1px solid #fff;
+  left: -6px;
+  position: absolute;
+  top: 0.75em;
+  transition: background 0.2s ease-in-out;
+  border-radius: 50%;
+  content: ' ';
+  height: 6px;
+  width: 6px;
+}
+.posts-collapse .post-content .post-header:hover {
+  border-bottom-color: #666;
+}
+.posts-collapse .post-content .post-header:hover::before {
+  background: #222;
+}
+.posts-collapse .post-content .post-meta-container {
+  display: inline;
+  font-size: 0.75em;
+  margin-right: 10px;
+}
+.posts-collapse .post-content .post-title {
+  display: inline;
+}
+.posts-collapse .post-content .post-title a,
+.posts-collapse .post-content .post-title span.exturl {
+  border-bottom: none;
+  color: var(--link-color);
+}
+.posts-collapse .post-content .post-title .fa-external-link-alt {
+  font-size: 0.875em;
+  margin-left: 5px;
+}
+.posts-collapse .post-content::before {
+  background: #f5f5f5;
+  content: ' ';
+  height: 100%;
+  margin-left: -2px;
+  position: absolute;
+  top: 1.25em;
+  width: 4px;
+}
+.post-body {
+  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
+  overflow-wrap: break-word;
+}
+@media (min-width: 1200px) {
+  .post-body {
+    font-size: 1.125em;
+  }
+}
+@media (min-width: 992px) {
+  .post-body {
+    text-align: justify;
+  }
+}
+@media (max-width: 991px) {
+  .post-body {
+    text-align: justify;
+  }
+}
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  padding-top: 10px;
+}
+.post-body h1 .header-anchor,
+.post-body h2 .header-anchor,
+.post-body h3 .header-anchor,
+.post-body h4 .header-anchor,
+.post-body h5 .header-anchor,
+.post-body h6 .header-anchor,
+.post-body h1 .headerlink,
+.post-body h2 .headerlink,
+.post-body h3 .headerlink,
+.post-body h4 .headerlink,
+.post-body h5 .headerlink,
+.post-body h6 .headerlink {
+  border-bottom-style: none;
+  color: inherit;
+  float: right;
+  font-size: 0.875em;
+  margin-left: 10px;
+  opacity: 0;
+}
+.post-body h1 .header-anchor::before,
+.post-body h2 .header-anchor::before,
+.post-body h3 .header-anchor::before,
+.post-body h4 .header-anchor::before,
+.post-body h5 .header-anchor::before,
+.post-body h6 .header-anchor::before,
+.post-body h1 .headerlink::before,
+.post-body h2 .headerlink::before,
+.post-body h3 .headerlink::before,
+.post-body h4 .headerlink::before,
+.post-body h5 .headerlink::before,
+.post-body h6 .headerlink::before {
+  content: '\f0c1';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.post-body h1:hover .header-anchor,
+.post-body h2:hover .header-anchor,
+.post-body h3:hover .header-anchor,
+.post-body h4:hover .header-anchor,
+.post-body h5:hover .header-anchor,
+.post-body h6:hover .header-anchor,
+.post-body h1:hover .headerlink,
+.post-body h2:hover .headerlink,
+.post-body h3:hover .headerlink,
+.post-body h4:hover .headerlink,
+.post-body h5:hover .headerlink,
+.post-body h6:hover .headerlink {
+  opacity: 0.5;
+}
+.post-body h1:hover .header-anchor:hover,
+.post-body h2:hover .header-anchor:hover,
+.post-body h3:hover .header-anchor:hover,
+.post-body h4:hover .header-anchor:hover,
+.post-body h5:hover .header-anchor:hover,
+.post-body h6:hover .header-anchor:hover,
+.post-body h1:hover .headerlink:hover,
+.post-body h2:hover .headerlink:hover,
+.post-body h3:hover .headerlink:hover,
+.post-body h4:hover .headerlink:hover,
+.post-body h5:hover .headerlink:hover,
+.post-body h6:hover .headerlink:hover {
+  opacity: 1;
+}
+.post-body .exturl .fa {
+  font-size: 0.875em;
+  margin-left: 4px;
+}
+.post-body .image-caption,
+.post-body .figure .caption {
+  color: #999;
+  font-size: 0.875em;
+  font-weight: bold;
+  line-height: 1;
+  margin: -20px auto 15px;
+  text-align: center;
+}
+.post-body iframe,
+.post-body img,
+.post-body video,
+.post-body embed {
+  margin-bottom: 20px;
+}
+.post-body .video-container {
+  height: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding-top: 75%;
+  position: relative;
+  width: 100%;
+}
+.post-body .video-container iframe,
+.post-body .video-container object,
+.post-body .video-container embed {
+  height: 100%;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.post-gallery {
+  display: flex;
+  min-height: 200px;
+}
+.post-gallery .post-gallery-image {
+  flex: 1;
+}
+.post-gallery .post-gallery-image:not(:first-child) {
+  clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
+  margin-left: -20px;
+}
+.post-gallery .post-gallery-image:not(:last-child) {
+  margin-right: -20px;
+}
+.post-gallery .post-gallery-image img {
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  width: 100%;
+}
+.posts-expand .post-gallery {
+  margin-bottom: 60px;
+}
+.posts-collapse .post-gallery {
+  margin: 15px 0;
+}
+.posts-expand .post-header {
+  font-size: 1.125em;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.posts-expand .post-title {
+  font-size: 1.5em;
+  font-weight: normal;
+  margin: initial;
+  overflow-wrap: break-word;
+}
+.posts-expand .post-title-link {
+  border-bottom: none;
+  color: var(--link-color);
+  display: inline-block;
+  position: relative;
+}
+.posts-expand .post-title-link::before {
+  background: var(--link-color);
+  bottom: 0;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+  width: 100%;
+}
+.posts-expand .post-title-link:hover::before {
+  transform: scaleX(1);
+}
+.posts-expand .post-title-link .fa-external-link-alt {
+  font-size: 0.875em;
+  margin-left: 5px;
+}
+.post-sticky-flag {
+  display: inline-block;
+  transform: rotate(30deg);
+}
+.posts-expand .post-meta-container {
+  color: #999;
+  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.75em;
+  margin-top: 3px;
+}
+.posts-expand .post-meta-container .post-description {
+  font-size: 0.875em;
+  margin-top: 2px;
+}
+.posts-expand .post-meta-container time {
+  border-bottom: 1px dashed #999;
+  cursor: pointer;
+}
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.post-meta-item:not(:first-child)::before {
+  content: '|';
+  margin: 0 0.5em;
+}
+.post-meta-item-icon {
+  margin-right: 3px;
+}
+@media (max-width: 991px) {
+  .post-meta-item-text {
+    display: none;
+  }
+}
+.post-nav {
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  margin-top: 1em;
+  padding: 10px 5px 0;
+}
+.post-nav-item {
+  flex: 1;
+}
+.post-nav-item a {
+  border-bottom: none;
+  display: block;
+  font-size: 0.875em;
+  line-height: 1.6;
+}
+.post-nav-item a:active {
+  top: 2px;
+}
+.post-nav-item .fa {
+  font-size: 0.75em;
+}
+.post-nav-item:first-child .fa {
+  margin-right: 5px;
+}
+.post-nav-item:last-child {
+  text-align: right;
+}
+.post-nav-item:last-child .fa {
+  margin-left: 5px;
+}
+.post-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.post-eof {
+  background: #ccc;
+  height: 1px;
+  margin: 80px auto 60px;
+  width: 8%;
+}
+.post-block:last-of-type .post-eof {
+  display: none;
+}
+.post-tags {
+  margin-top: 40px;
+  text-align: center;
+}
+.post-tags a {
+  display: inline-block;
+  font-size: 0.8125em;
+}
+.post-tags a:not(:last-child) {
+  margin-right: 10px;
+}
+.post-widgets {
+  border-top: 1px solid #eee;
+  margin-top: 15px;
+  text-align: center;
+}
+.wp_rating {
+  height: 20px;
+  line-height: 20px;
+  margin-top: 10px;
+  padding-top: 6px;
+  text-align: center;
+}
+.social-like {
+  display: flex;
+  font-size: 0.875em;
+  justify-content: center;
+  text-align: center;
+}
+.reward-container {
+  margin: 1em 0 0;
+  padding: 1em 0;
+  text-align: center;
+}
+.reward-container button {
+  background: transparent;
+  border: 2px solid #fc6423;
+  border-radius: 2px;
+  color: #fc6423;
+  cursor: pointer;
+  line-height: 2;
+  outline: 0;
+  padding: 0 15px;
+  transition: all 0.2s ease-in-out;
+  vertical-align: text-top;
+}
+.reward-container button:hover {
+  background: #fc6423;
+  border: 2px solid transparent;
+  color: #fff;
+}
+.post-reward {
+  display: none;
+  padding-top: 20px;
+}
+.post-reward.active {
+  display: block;
+}
+.post-reward div {
+  display: inline-block;
+}
+.post-reward div span {
+  display: block;
+}
+.post-reward div:hover span {
+  animation: next-roll 0.1s infinite linear;
+  pointer-events: none;
+}
+.post-reward img {
+  display: inline-block;
+  margin: 0.8em 2em 0 2em;
+  max-width: 100%;
+  width: 180px;
+}
+@-moz-keyframes next-roll {
+  from {
+    transform: rotateZ(30deg);
+  }
+  to {
+    transform: rotateZ(-30deg);
+  }
+}
+@-webkit-keyframes next-roll {
+  from {
+    transform: rotateZ(30deg);
+  }
+  to {
+    transform: rotateZ(-30deg);
+  }
+}
+@-o-keyframes next-roll {
+  from {
+    transform: rotateZ(30deg);
+  }
+  to {
+    transform: rotateZ(-30deg);
+  }
+}
+@keyframes next-roll {
+  from {
+    transform: rotateZ(30deg);
+  }
+  to {
+    transform: rotateZ(-30deg);
+  }
+}
+.category-all-page .category-all-title {
+  text-align: center;
+}
+.category-all-page .category-all {
+  margin-top: 20px;
+}
+.category-all-page .category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.category-all-page .category-list-item {
+  margin: 5px 10px;
+}
+.category-all-page .category-list-count {
+  color: #bbb;
+}
+.category-all-page .category-list-count::before {
+  content: ' (';
+}
+.category-all-page .category-list-count::after {
+  content: ') ';
+}
+.category-all-page .category-list-child {
+  padding-left: 10px;
+}
+.event-list hr {
+  background: #222;
+  margin: 20px 0 45px 0;
+}
+.event-list hr::after {
+  background: #222;
+  color: #fff;
+  content: 'NOW';
+  display: inline-block;
+  font-weight: bold;
+  padding: 0 5px;
+}
+.event-list .event {
+  --event-background: #222;
+  --event-foreground: #bbb;
+  --event-title: #fff;
+  background: var(--event-background);
+  padding: 15px;
+}
+.event-list .event .event-summary {
+  border-bottom: 0;
+  color: var(--event-title);
+  margin: 0;
+  padding: 0 0 0 35px;
+  position: relative;
+}
+.event-list .event .event-summary::before {
+  animation: dot-flash 1s alternate infinite ease-in-out;
+  background: var(--event-title);
+  left: 0;
+  margin-top: -6px;
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  content: ' ';
+  height: 12px;
+  width: 12px;
+}
+.event-list .event:nth-of-type(odd) .event-summary::before {
+  animation-delay: 0.5s;
+}
+.event-list .event:not(:last-child) {
+  margin-bottom: 20px;
+}
+.event-list .event .event-relative-time {
+  color: var(--event-foreground);
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  padding-left: 12px;
+}
+.event-list .event .event-details {
+  color: var(--event-foreground);
+  display: block;
+  line-height: 18px;
+  padding: 6px 0 6px 35px;
+}
+.event-list .event .event-details::before {
+  color: var(--event-foreground);
+  display: inline-block;
+  margin-right: 9px;
+  width: 14px;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.event-list .event .event-details.event-location::before {
+  content: '\f041';
+}
+.event-list .event .event-details.event-duration::before {
+  content: '\f017';
+}
+.event-list .event .event-details.event-description::before {
+  content: '\f024';
+}
+.event-list .event-past {
+  --event-background: #f5f5f5;
+  --event-foreground: #999;
+  --event-title: #222;
+}
+@-moz-keyframes dot-flash {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+@-webkit-keyframes dot-flash {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+@-o-keyframes dot-flash {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+@keyframes dot-flash {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+ul.breadcrumb {
+  font-size: 0.75em;
+  list-style: none;
+  margin: 1em 0;
+  padding: 0 2em;
+  text-align: center;
+}
+ul.breadcrumb li {
+  display: inline;
+}
+ul.breadcrumb li:not(:first-child)::before {
+  content: '/\00a0';
+  font-weight: normal;
+  padding: 0.5em;
+}
+ul.breadcrumb li:last-child {
+  font-weight: bold;
+}
+.tag-cloud {
+  text-align: center;
+}
+.tag-cloud a {
+  display: inline-block;
+  margin: 10px;
+}
+.tag-cloud-0 {
+  border-bottom-color: #aaa;
+  color: #aaa;
+}
+.tag-cloud-1 {
+  border-bottom-color: #9a9a9a;
+  color: #9a9a9a;
+}
+.tag-cloud-2 {
+  border-bottom-color: #8b8b8b;
+  color: #8b8b8b;
+}
+.tag-cloud-3 {
+  border-bottom-color: #7c7c7c;
+  color: #7c7c7c;
+}
+.tag-cloud-4 {
+  border-bottom-color: #6c6c6c;
+  color: #6c6c6c;
+}
+.tag-cloud-5 {
+  border-bottom-color: #5d5d5d;
+  color: #5d5d5d;
+}
+.tag-cloud-6 {
+  border-bottom-color: #4e4e4e;
+  color: #4e4e4e;
+}
+.tag-cloud-7 {
+  border-bottom-color: #3e3e3e;
+  color: #3e3e3e;
+}
+.tag-cloud-8 {
+  border-bottom-color: #2f2f2f;
+  color: #2f2f2f;
+}
+.tag-cloud-9 {
+  border-bottom-color: #202020;
+  color: #202020;
+}
+.tag-cloud-10 {
+  border-bottom-color: #111;
+  color: #111;
+}
+@media (prefers-color-scheme: dark) {
+  .tag-cloud-0 {
+    border-bottom-color: #555;
+    color: #555;
+  }
+  .tag-cloud-1 {
+    border-bottom-color: #646464;
+    color: #646464;
+  }
+  .tag-cloud-2 {
+    border-bottom-color: #737373;
+    color: #737373;
+  }
+  .tag-cloud-3 {
+    border-bottom-color: #828282;
+    color: #828282;
+  }
+  .tag-cloud-4 {
+    border-bottom-color: #929292;
+    color: #929292;
+  }
+  .tag-cloud-5 {
+    border-bottom-color: #a1a1a1;
+    color: #a1a1a1;
+  }
+  .tag-cloud-6 {
+    border-bottom-color: #b0b0b0;
+    color: #b0b0b0;
+  }
+  .tag-cloud-7 {
+    border-bottom-color: #c0c0c0;
+    color: #c0c0c0;
+  }
+  .tag-cloud-8 {
+    border-bottom-color: #cfcfcf;
+    color: #cfcfcf;
+  }
+  .tag-cloud-9 {
+    border-bottom-color: #dedede;
+    color: #dedede;
+  }
+  .tag-cloud-10 {
+    border-bottom-color: #eee;
+    color: #eee;
+  }
+}
+.search-active {
+  overflow: hidden;
+}
+.search-pop-overlay {
+  background: rgba(0,0,0,0);
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: visibility 0.4s, background 0.4s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1400;
+}
+.search-active .search-pop-overlay {
+  background: rgba(0,0,0,0.3);
+  visibility: visible;
+}
+.search-popup {
+  background: var(--card-bg-color);
+  border-radius: 5px;
+  height: 80%;
+  margin: auto;
+  transform: scale(0);
+  transition: transform 0.4s;
+  width: 700px;
+}
+.search-active .search-popup {
+  transform: scale(1);
+}
+@media (max-width: 767px) {
+  .search-popup {
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+.search-popup .search-icon,
+.search-popup .popup-btn-close {
+  color: #999;
+  font-size: 18px;
+  padding: 0 10px;
+}
+.search-popup .popup-btn-close {
+  cursor: pointer;
+}
+.search-popup .popup-btn-close:hover .fa {
+  color: #222;
+}
+.search-popup .search-header {
+  background: #eee;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  padding: 5px;
+}
+.search-popup input.search-input {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  width: 100%;
+}
+.search-popup input.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+.search-popup .search-result-container {
+  height: calc(100% - 55px);
+  overflow: auto;
+  padding: 5px 25px;
+}
+.search-popup .search-result-container hr {
+  margin: 5px 0 10px;
+}
+.search-popup .search-result-container hr:first-child {
+  display: none;
+}
+.search-popup .search-result-list {
+  margin: 0 5px;
+  padding: 0;
+}
+.search-popup a.search-result-title {
+  font-weight: bold;
+}
+.search-popup p.search-result {
+  border-bottom: 1px dashed #ccc;
+  padding: 5px 0;
+}
+.search-popup .search-input-container {
+  flex-grow: 1;
+  padding: 2px;
+}
+.search-popup .no-result {
+  display: flex;
+}
+.search-popup .search-result-list {
+  width: 100%;
+}
+.search-popup .search-result-icon {
+  color: #ccc;
+  margin: auto;
+}
+mark.search-keyword {
+  background: transparent;
+  border-bottom: 1px dashed #ff2a2a;
+  color: #ff2a2a;
+  font-weight: bold;
+}
+.popular-posts-header {
+  border-bottom: 1px solid #eee;
+  font-size: 1.125em;
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+.popular-posts {
+  padding: 0;
+}
+.popular-posts .popular-posts-item {
+  margin-left: 2em;
+}
+.popular-posts .popular-posts-item .popular-posts-title {
+  font-size: 0.875em;
+  font-weight: normal;
+  line-height: 2.4;
+  margin: 0;
+}
+mjx-container[jax="CHTML"][display="true"],
+.has-jax {
+  overflow: auto hidden;
+}
+mjx-container[display="true"] + br {
+  display: none;
+}
+.use-motion .animated {
+  animation-fill-mode: none;
+  visibility: inherit;
+}
+.use-motion .sidebar .animated {
+  animation-fill-mode: both;
+}
+.header-inner {
+  background: var(--content-bg-color);
+  border-radius: initial;
+  box-shadow: initial;
+  width: 240px;
+}
+@media (max-width: 991px) {
+  .header-inner {
+    border-radius: initial;
+    width: auto;
+  }
+}
+.main {
+  align-items: stretch;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: calc(100% - 20px);
+}
+@media (min-width: 1200px) {
+  .main {
+    width: 1160px;
+  }
+}
+@media (min-width: 1600px) {
+  .main {
+    width: 73%;
+  }
+}
+@media (max-width: 991px) {
+  .main {
+    display: block;
+    width: auto;
+  }
+}
+.main-inner {
+  border-radius: initial;
+  box-sizing: border-box;
+  width: calc(100% - 252px);
+}
+@media (max-width: 991px) {
+  .main-inner {
+    border-radius: initial;
+    width: 100%;
+  }
+}
+.footer-inner {
+  padding-left: 252px;
+}
+@media (max-width: 991px) {
+  .footer-inner {
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
+  }
+}
+.site-brand-container {
+  background: #222;
+}
+@media (max-width: 991px) {
+  .site-nav-on .site-brand-container {
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  }
+}
+.site-meta {
+  padding: 20px 0;
+}
+.brand {
+  padding: 0;
+}
+.site-subtitle {
+  margin: 10px 10px 0;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .site-nav-toggle,
+  .site-nav-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.site-nav-toggle .toggle,
+.site-nav-right .toggle {
+  color: #fff;
+}
+.site-nav-toggle .toggle .toggle-line,
+.site-nav-right .toggle .toggle-line {
+  background: #fff;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .site-nav {
+    display: none;
+  }
+}
+.menu .menu-item {
+  display: block;
+  margin: 0;
+}
+.menu .menu-item a,
+.menu .menu-item span.exturl {
+  padding: 5px 20px;
+  position: relative;
+  text-align: left;
+  transition-property: background-color;
+}
+@media (max-width: 991px) {
+  .menu .menu-item.menu-item-search {
+    display: none;
+  }
+}
+.menu .menu-item .badge {
+  background: #ccc;
+  border-radius: 10px;
+  color: var(--content-bg-color);
+  float: right;
+  padding: 2px 5px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+}
+.main-menu .menu-item-active::after {
+  background: #bbb;
+  border-radius: 50%;
+  content: ' ';
+  height: 6px;
+  margin-top: -3px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  width: 6px;
+}
+.sub-menu {
+  margin: 0;
+  padding: 6px 0;
+}
+.sub-menu .menu-item {
+  display: inline-block;
+}
+.sub-menu .menu-item a,
+.sub-menu .menu-item span.exturl {
+  background: transparent;
+  margin: 5px 10px;
+  padding: initial;
+}
+.sub-menu .menu-item a:hover,
+.sub-menu .menu-item span.exturl:hover {
+  background: transparent;
+  color: #fc6423;
+}
+.sub-menu .menu-item-active {
+  border-bottom-color: #fc6423;
+  color: #fc6423;
+}
+.sub-menu .menu-item-active:hover {
+  border-bottom-color: #fc6423;
+}
+.sidebar {
+  margin-top: 12px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 12px;
+  width: 240px;
+}
+@media (max-width: 991px) {
+  .sidebar {
+    display: none;
+  }
+}
+.sidebar-toggle {
+  display: none;
+}
+.sidebar-inner {
+  background: var(--content-bg-color);
+  border-radius: initial;
+  box-shadow: initial;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+.site-state-item a {
+  padding: 0 10px;
+}
+.sidebar-button {
+  border-bottom: 1px dotted #ccc;
+  border-top: 1px dotted #ccc;
+  margin-top: 10px;
+}
+.sidebar-button a {
+  border: 0;
+  color: #fc6423;
+  display: block;
+}
+.sidebar-button a:hover {
+  background: none;
+  border: 0;
+  color: #e34603;
+}
+.sidebar-button a:hover .fa,
+.sidebar-button a:hover .fab,
+.sidebar-button a:hover .far,
+.sidebar-button a:hover .fas {
+  color: #e34603;
+}
+.links-of-author {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.links-of-author-item {
+  margin: 5px 0 0;
+}
+.links-of-author-item a,
+.links-of-author-item span.exturl {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.links-of-author-item a,
+.links-of-author-item span.exturl {
+  border-bottom: none;
+  border-radius: 4px;
+  display: block;
+}
+.links-of-author-item a:hover,
+.links-of-author-item span.exturl:hover {
+  background: var(--body-bg-color);
+}
+.main-inner {
+  background: var(--content-bg-color);
+  box-shadow: initial;
+  padding: 40px;
+}
+@media (max-width: 991px) {
+  .main-inner {
+    padding: 20px;
+  }
+}
+.sub-menu {
+  border-bottom: 1px solid #ddd;
+}
+.post-block:first-of-type {
+  padding-top: 40px;
+}
+@media (max-width: 767px) {
+  .pagination {
+    margin-bottom: 10px;
+  }
+}
+</style><noscript>
   <style>
   body { margin-top: 2rem; }
 
@@ -229,13 +3225,13 @@ mjx-container[display="true"] + br {
   display: none;
 }
 </style><link rel="alternate" href="/atom.xml" title="LeiHao's Blog" type="application/atom+xml">
-</head>
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}</script><noscript><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css"></noscript></head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope="" itemtype="http://schema.org/WebPage">
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
@@ -301,9 +3297,7 @@ mjx-container[display="true"] + br {
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -341,12 +3335,12 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Concurrency-Programming-Guide"><span class="nav-number">1.</span> <span class="nav-text">Concurrency Programming Guide</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%84%E7%BB%87"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">本文件的组织</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E5%85%B3%E6%9C%AF%E8%AF%AD%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">有关术语的注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%9C%8B%E7%9C%8B"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">也可以看看</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.2.</span> <span class="nav-text">并发与应用程序设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9C%E7%A6%BB%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">远离线程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.2.0.1.0.1.</span> <span class="nav-text">调度队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B4%BE%E9%81%A3%E6%9D%A5%E6%BA%90"><span class="nav-number">1.2.0.1.0.2.</span> <span class="nav-text">派遣来源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E9%98%9F%E5%88%97"><span class="nav-number">1.2.0.1.0.3.</span> <span class="nav-text">操作队列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">异步设计技术</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%A2%84%E6%9C%9F%E8%A1%8C%E4%B8%BA"><span class="nav-number">1.2.0.2.0.1.</span> <span class="nav-text">定义应用程序的预期行为</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8E%92%E9%99%A4%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8D%95%E5%85%83"><span class="nav-number">1.2.0.2.0.2.</span> <span class="nav-text">排除可执行的工作单元</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E6%82%A8%E9%9C%80%E8%A6%81%E7%9A%84%E9%98%9F%E5%88%97"><span class="nav-number">1.2.0.2.0.3.</span> <span class="nav-text">确定您需要的队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="nav-number">1.2.0.2.0.4.</span> <span class="nav-text">提高效率的技巧</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8D"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">性能影响</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E5%92%8C%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">并发和其他技术</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#OpenCL-%E5%92%8C%E5%B9%B6%E5%8F%91"><span class="nav-number">1.2.0.4.0.1.</span> <span class="nav-text">OpenCL 和并发</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.2.0.4.0.2.</span> <span class="nav-text">何时使用线程</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E9%98%9F%E5%88%97-1"><span class="nav-number">1.3.</span> <span class="nav-text">操作队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">关于操作对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E8%A1%8C%E4%B8%8E%E9%9D%9E%E5%B9%B6%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">并行与非并行操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA-NSInvocationOperation-%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">创建一个 NSInvocationOperation 对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA-NSBlockOperation-%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">创建一个 NSBlockOperation 对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E8%87%AA%E5%AE%9A%E4%B9%89%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.0.5.</span> <span class="nav-text">定义自定义操作对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.3.0.5.0.1.</span> <span class="nav-text">执行主要任务</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%8F%96%E6%B6%88%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.3.0.5.0.2.</span> <span class="nav-text">响应取消事件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%8F%91%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.5.0.3.</span> <span class="nav-text">配置并发执行操作</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BF%9D%E6%8C%81-KVO-%E5%90%88%E8%A7%84%E6%80%A7"><span class="nav-number">1.3.0.5.0.4.</span> <span class="nav-text">保持 KVO 合规性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A7%E8%A1%8C%E8%A1%8C%E4%B8%BA"><span class="nav-number">1.3.0.6.</span> <span class="nav-text">自定义操作对象的执行行为</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%BA%92%E6%93%8D%E4%BD%9C%E4%BE%9D%E8%B5%96%E6%80%A7"><span class="nav-number">1.3.0.6.0.1.</span> <span class="nav-text">配置互操作依赖性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%B7%A5%E5%BA%8F%E7%9A%84%E6%89%A7%E8%A1%8C%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.3.0.6.0.2.</span> <span class="nav-text">更改工序的执行优先级</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%BA%95%E5%B1%82%E7%BA%BF%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.3.0.6.0.3.</span> <span class="nav-text">更改底层线程优先级</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E5%AE%9A%E5%AE%8C%E6%88%90%E5%8C%BA%E5%9D%97"><span class="nav-number">1.3.0.6.0.4.</span> <span class="nav-text">设定完成区块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E6%96%BD%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="nav-number">1.3.0.7.</span> <span class="nav-text">实施操作对象的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98"><span class="nav-number">1.3.0.7.0.1.</span> <span class="nav-text">管理操作对象中的内存</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="nav-number">1.3.0.7.0.2.</span> <span class="nav-text">处理错误和异常</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%80%82%E5%BD%93%E8%8C%83%E5%9B%B4"><span class="nav-number">1.3.0.8.</span> <span class="nav-text">确定操作对象的适当范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.9.</span> <span class="nav-text">执行操作</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%86%E6%93%8D%E4%BD%9C%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%93%8D%E4%BD%9C%E9%98%9F%E5%88%97"><span class="nav-number">1.3.0.9.0.1.</span> <span class="nav-text">将操作添加到操作队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.9.0.2.</span> <span class="nav-text">手动执行操作</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.9.0.3.</span> <span class="nav-text">取消操作</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E6%93%8D%E4%BD%9C%E5%AE%8C%E6%88%90"><span class="nav-number">1.3.0.9.0.4.</span> <span class="nav-text">等待操作完成</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8C%82%E8%B5%B7%E5%92%8C%E6%81%A2%E5%A4%8D%E9%98%9F%E5%88%97"><span class="nav-number">1.3.0.9.0.5.</span> <span class="nav-text">挂起和恢复队列</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97-1"><span class="nav-number">1.4.</span> <span class="nav-text">调度队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">关于调度队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">队列相关技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9D%97%E5%AE%9E%E7%8E%B0%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">使用块实现任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E7%AE%A1%E7%90%86%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.4.</span> <span class="nav-text">创建和管理调度队列</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%85%A8%E5%B1%80%E5%B9%B6%E5%8F%91%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.4.0.1.</span> <span class="nav-text">获取全局并发调度队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%B2%E8%A1%8C%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.4.0.2.</span> <span class="nav-text">创建串行调度队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9C%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E8%8E%B7%E5%8F%96%E9%80%9A%E7%94%A8%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.4.0.3.</span> <span class="nav-text">在运行时获取通用队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-number">1.4.0.4.0.4.</span> <span class="nav-text">调度队列的内存管理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97%E5%AD%98%E5%82%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF"><span class="nav-number">1.4.0.4.0.5.</span> <span class="nav-text">使用队列存储自定义上下文信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E4%BE%9B%E9%98%9F%E5%88%97%E7%9A%84%E6%B8%85%E7%90%86%E5%8A%9F%E8%83%BD"><span class="nav-number">1.4.0.4.0.6.</span> <span class="nav-text">提供队列的清理功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E4%BB%BB%E5%8A%A1%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.5.</span> <span class="nav-text">将任务添加到队列</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%86%E5%8D%95%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.5.0.1.</span> <span class="nav-text">将单个任务添加到队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%8C%E6%88%90%E4%BB%BB%E5%8A%A1%E5%90%8E%E6%89%A7%E8%A1%8C%E8%A1%A5%E5%85%A8"><span class="nav-number">1.4.0.5.0.2.</span> <span class="nav-text">完成任务后执行补全</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%90%8C%E6%97%B6%E6%89%A7%E8%A1%8C%E5%BE%AA%E7%8E%AF%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.4.0.5.0.3.</span> <span class="nav-text">同时执行循环迭代</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B%E4%B8%8A%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.4.0.5.0.4.</span> <span class="nav-text">在主线程上执行任务</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9C%A8%E4%BB%BB%E5%8A%A1%E4%B8%AD%E4%BD%BF%E7%94%A8-Objective-C-%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.4.0.5.0.5.</span> <span class="nav-text">在任务中使用 Objective-C 对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%82%E8%B5%B7%E5%92%8C%E6%81%A2%E5%A4%8D%E9%98%9F%E5%88%97-1"><span class="nav-number">1.4.0.6.</span> <span class="nav-text">挂起和恢复队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%B0%83%E5%BA%A6%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9D%A5%E8%B0%83%E8%8A%82%E6%9C%89%E9%99%90%E8%B5%84%E6%BA%90%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.4.0.7.</span> <span class="nav-text">使用调度信号量来调节有限资源的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E6%8E%92%E9%98%9F%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%BB%84"><span class="nav-number">1.4.0.8.</span> <span class="nav-text">等待排队的任务组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97%E5%92%8C%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">1.4.0.9.</span> <span class="nav-text">调度队列和线程安全</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B4%BE%E9%81%A3%E6%9D%A5%E6%BA%90-1"><span class="nav-number">1.5.</span> <span class="nav-text">派遣来源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%B0%83%E5%BA%A6%E6%BA%90"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">关于调度源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%B0%83%E5%BA%A6%E6%BA%90"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">创建调度源</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%92%8C%E5%AE%89%E8%A3%85%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.5.0.2.0.1.</span> <span class="nav-text">编写和安装事件处理程序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%8F%96%E6%B6%88%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.5.0.2.0.2.</span> <span class="nav-text">安装取消处理程序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E7%9B%AE%E6%A0%87%E9%98%9F%E5%88%97"><span class="nav-number">1.5.0.2.0.3.</span> <span class="nav-text">更改目标队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%86%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E4%B8%8E%E8%B0%83%E5%BA%A6%E6%BA%90%E5%85%B3%E8%81%94"><span class="nav-number">1.5.0.2.0.4.</span> <span class="nav-text">将自定义数据与调度源关联</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E6%BA%90%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-number">1.5.0.2.0.5.</span> <span class="nav-text">调度源的内存管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E6%BA%90%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">调度源示例</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%AE%A1%E6%97%B6%E5%99%A8"><span class="nav-number">1.5.0.3.0.1.</span> <span class="nav-text">创建一个计时器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%8E%E6%8F%8F%E8%BF%B0%E7%AC%A6%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">1.5.0.3.0.2.</span> <span class="nav-text">从描述符读取数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%86%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">1.5.0.3.0.3.</span> <span class="nav-text">将数据写入描述符</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%9B%91%E8%A7%86%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.5.0.3.0.4.</span> <span class="nav-text">监视文件系统对象</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E4%BF%A1%E5%8F%B7"><span class="nav-number">1.5.0.3.0.5.</span> <span class="nav-text">监控信号</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E8%BF%87%E7%A8%8B"><span class="nav-number">1.5.0.3.0.6.</span> <span class="nav-text">监控过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E6%B4%BE%E9%81%A3%E6%BA%90"><span class="nav-number">1.5.0.4.</span> <span class="nav-text">取消派遣源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%82%E8%B5%B7%E5%92%8C%E6%81%A2%E5%A4%8D%E6%B4%BE%E9%81%A3%E6%BA%90"><span class="nav-number">1.5.0.5.</span> <span class="nav-text">挂起和恢复派遣源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A6%BB%E7%BA%BF%E7%A8%8B-1"><span class="nav-number">1.6.</span> <span class="nav-text">远离线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97%E6%9B%BF%E6%8D%A2%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">用调度队列替换线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%88%E9%99%A4%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">消除基于锁的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E9%94%81"><span class="nav-number">1.6.0.2.0.1.</span> <span class="nav-text">实现异步锁</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%89%A7%E8%A1%8C%E5%85%B3%E9%94%AE%E9%83%A8%E5%88%86"><span class="nav-number">1.6.0.2.0.2.</span> <span class="nav-text">同步执行关键部分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B%E5%BE%AA%E7%8E%AF%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.0.3.</span> <span class="nav-text">改进循环代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E7%BA%BF%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.6.0.4.</span> <span class="nav-text">替换线程连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E5%AE%9E%E6%96%BD"><span class="nav-number">1.6.0.5.</span> <span class="nav-text">更改生产者-消费者实施</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E4%BF%A1%E5%8F%B7%E9%87%8F%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.0.6.</span> <span class="nav-text">替换信号量代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.0.7.</span> <span class="nav-text">替换运行循环代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E-POSIX-%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="nav-number">1.6.0.8.</span> <span class="nav-text">与 POSIX 线程的兼容性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87%E8%A1%A8"><span class="nav-number">1.7.</span> <span class="nav-text">词汇表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E4%BF%AE%E8%AE%A2%E5%8E%86%E5%8F%B2"><span class="nav-number">1.8.</span> <span class="nav-text">文档修订历史</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Concurrency-Programming-Guide"><span class="nav-number">1.</span> <span class="nav-text">Concurrency Programming Guide</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%84%E7%BB%87"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">本文件的组织</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E5%85%B3%E6%9C%AF%E8%AF%AD%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">有关术语的注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%9C%8B%E7%9C%8B"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">也可以看看</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.2.</span> <span class="nav-text">并发与应用程序设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9C%E7%A6%BB%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">远离线程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.2.0.1.0.1.</span> <span class="nav-text">调度队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B4%BE%E9%81%A3%E6%9D%A5%E6%BA%90"><span class="nav-number">1.2.0.1.0.2.</span> <span class="nav-text">派遣来源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E9%98%9F%E5%88%97"><span class="nav-number">1.2.0.1.0.3.</span> <span class="nav-text">操作队列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">异步设计技术</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%A2%84%E6%9C%9F%E8%A1%8C%E4%B8%BA"><span class="nav-number">1.2.0.2.0.1.</span> <span class="nav-text">定义应用程序的预期行为</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8E%92%E9%99%A4%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8D%95%E5%85%83"><span class="nav-number">1.2.0.2.0.2.</span> <span class="nav-text">排除可执行的工作单元</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E6%82%A8%E9%9C%80%E8%A6%81%E7%9A%84%E9%98%9F%E5%88%97"><span class="nav-number">1.2.0.2.0.3.</span> <span class="nav-text">确定您需要的队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="nav-number">1.2.0.2.0.4.</span> <span class="nav-text">提高效率的技巧</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8D"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">性能影响</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E5%92%8C%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">并发和其他技术</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#OpenCL-%E5%92%8C%E5%B9%B6%E5%8F%91"><span class="nav-number">1.2.0.4.0.1.</span> <span class="nav-text">OpenCL 和并发</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.2.0.4.0.2.</span> <span class="nav-text">何时使用线程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E9%98%9F%E5%88%97-1"><span class="nav-number">1.3.</span> <span class="nav-text">操作队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">关于操作对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E8%A1%8C%E4%B8%8E%E9%9D%9E%E5%B9%B6%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">并行与非并行操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA-NSInvocationOperation-%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">创建一个 NSInvocationOperation 对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA-NSBlockOperation-%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">创建一个 NSBlockOperation 对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E8%87%AA%E5%AE%9A%E4%B9%89%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.0.5.</span> <span class="nav-text">定义自定义操作对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.3.0.5.0.1.</span> <span class="nav-text">执行主要任务</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%8F%96%E6%B6%88%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.3.0.5.0.2.</span> <span class="nav-text">响应取消事件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%8F%91%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.5.0.3.</span> <span class="nav-text">配置并发执行操作</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BF%9D%E6%8C%81-KVO-%E5%90%88%E8%A7%84%E6%80%A7"><span class="nav-number">1.3.0.5.0.4.</span> <span class="nav-text">保持 KVO 合规性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A7%E8%A1%8C%E8%A1%8C%E4%B8%BA"><span class="nav-number">1.3.0.6.</span> <span class="nav-text">自定义操作对象的执行行为</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%BA%92%E6%93%8D%E4%BD%9C%E4%BE%9D%E8%B5%96%E6%80%A7"><span class="nav-number">1.3.0.6.0.1.</span> <span class="nav-text">配置互操作依赖性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%B7%A5%E5%BA%8F%E7%9A%84%E6%89%A7%E8%A1%8C%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.3.0.6.0.2.</span> <span class="nav-text">更改工序的执行优先级</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%BA%95%E5%B1%82%E7%BA%BF%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.3.0.6.0.3.</span> <span class="nav-text">更改底层线程优先级</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E5%AE%9A%E5%AE%8C%E6%88%90%E5%8C%BA%E5%9D%97"><span class="nav-number">1.3.0.6.0.4.</span> <span class="nav-text">设定完成区块</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E6%96%BD%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="nav-number">1.3.0.7.</span> <span class="nav-text">实施操作对象的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98"><span class="nav-number">1.3.0.7.0.1.</span> <span class="nav-text">管理操作对象中的内存</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="nav-number">1.3.0.7.0.2.</span> <span class="nav-text">处理错误和异常</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%80%82%E5%BD%93%E8%8C%83%E5%9B%B4"><span class="nav-number">1.3.0.8.</span> <span class="nav-text">确定操作对象的适当范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.9.</span> <span class="nav-text">执行操作</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%86%E6%93%8D%E4%BD%9C%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%93%8D%E4%BD%9C%E9%98%9F%E5%88%97"><span class="nav-number">1.3.0.9.0.1.</span> <span class="nav-text">将操作添加到操作队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.9.0.2.</span> <span class="nav-text">手动执行操作</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.0.9.0.3.</span> <span class="nav-text">取消操作</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E6%93%8D%E4%BD%9C%E5%AE%8C%E6%88%90"><span class="nav-number">1.3.0.9.0.4.</span> <span class="nav-text">等待操作完成</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8C%82%E8%B5%B7%E5%92%8C%E6%81%A2%E5%A4%8D%E9%98%9F%E5%88%97"><span class="nav-number">1.3.0.9.0.5.</span> <span class="nav-text">挂起和恢复队列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97-1"><span class="nav-number">1.4.</span> <span class="nav-text">调度队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">关于调度队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">队列相关技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9D%97%E5%AE%9E%E7%8E%B0%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">使用块实现任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E7%AE%A1%E7%90%86%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.4.</span> <span class="nav-text">创建和管理调度队列</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%85%A8%E5%B1%80%E5%B9%B6%E5%8F%91%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.4.0.1.</span> <span class="nav-text">获取全局并发调度队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%B2%E8%A1%8C%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.4.0.2.</span> <span class="nav-text">创建串行调度队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9C%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E8%8E%B7%E5%8F%96%E9%80%9A%E7%94%A8%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.4.0.3.</span> <span class="nav-text">在运行时获取通用队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-number">1.4.0.4.0.4.</span> <span class="nav-text">调度队列的内存管理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%98%9F%E5%88%97%E5%AD%98%E5%82%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF"><span class="nav-number">1.4.0.4.0.5.</span> <span class="nav-text">使用队列存储自定义上下文信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E4%BE%9B%E9%98%9F%E5%88%97%E7%9A%84%E6%B8%85%E7%90%86%E5%8A%9F%E8%83%BD"><span class="nav-number">1.4.0.4.0.6.</span> <span class="nav-text">提供队列的清理功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E4%BB%BB%E5%8A%A1%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.5.</span> <span class="nav-text">将任务添加到队列</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%86%E5%8D%95%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%98%9F%E5%88%97"><span class="nav-number">1.4.0.5.0.1.</span> <span class="nav-text">将单个任务添加到队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%8C%E6%88%90%E4%BB%BB%E5%8A%A1%E5%90%8E%E6%89%A7%E8%A1%8C%E8%A1%A5%E5%85%A8"><span class="nav-number">1.4.0.5.0.2.</span> <span class="nav-text">完成任务后执行补全</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%90%8C%E6%97%B6%E6%89%A7%E8%A1%8C%E5%BE%AA%E7%8E%AF%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.4.0.5.0.3.</span> <span class="nav-text">同时执行循环迭代</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B%E4%B8%8A%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.4.0.5.0.4.</span> <span class="nav-text">在主线程上执行任务</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9C%A8%E4%BB%BB%E5%8A%A1%E4%B8%AD%E4%BD%BF%E7%94%A8-Objective-C-%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.4.0.5.0.5.</span> <span class="nav-text">在任务中使用 Objective-C 对象</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%82%E8%B5%B7%E5%92%8C%E6%81%A2%E5%A4%8D%E9%98%9F%E5%88%97-1"><span class="nav-number">1.4.0.6.</span> <span class="nav-text">挂起和恢复队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%B0%83%E5%BA%A6%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9D%A5%E8%B0%83%E8%8A%82%E6%9C%89%E9%99%90%E8%B5%84%E6%BA%90%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.4.0.7.</span> <span class="nav-text">使用调度信号量来调节有限资源的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E6%8E%92%E9%98%9F%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%BB%84"><span class="nav-number">1.4.0.8.</span> <span class="nav-text">等待排队的任务组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97%E5%92%8C%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">1.4.0.9.</span> <span class="nav-text">调度队列和线程安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B4%BE%E9%81%A3%E6%9D%A5%E6%BA%90-1"><span class="nav-number">1.5.</span> <span class="nav-text">派遣来源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%B0%83%E5%BA%A6%E6%BA%90"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">关于调度源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%B0%83%E5%BA%A6%E6%BA%90"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">创建调度源</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%92%8C%E5%AE%89%E8%A3%85%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.5.0.2.0.1.</span> <span class="nav-text">编写和安装事件处理程序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%8F%96%E6%B6%88%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.5.0.2.0.2.</span> <span class="nav-text">安装取消处理程序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E7%9B%AE%E6%A0%87%E9%98%9F%E5%88%97"><span class="nav-number">1.5.0.2.0.3.</span> <span class="nav-text">更改目标队列</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%86%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E4%B8%8E%E8%B0%83%E5%BA%A6%E6%BA%90%E5%85%B3%E8%81%94"><span class="nav-number">1.5.0.2.0.4.</span> <span class="nav-text">将自定义数据与调度源关联</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E6%BA%90%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-number">1.5.0.2.0.5.</span> <span class="nav-text">调度源的内存管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E6%BA%90%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">调度源示例</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%AE%A1%E6%97%B6%E5%99%A8"><span class="nav-number">1.5.0.3.0.1.</span> <span class="nav-text">创建一个计时器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%8E%E6%8F%8F%E8%BF%B0%E7%AC%A6%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">1.5.0.3.0.2.</span> <span class="nav-text">从描述符读取数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%86%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">1.5.0.3.0.3.</span> <span class="nav-text">将数据写入描述符</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%9B%91%E8%A7%86%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.5.0.3.0.4.</span> <span class="nav-text">监视文件系统对象</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E4%BF%A1%E5%8F%B7"><span class="nav-number">1.5.0.3.0.5.</span> <span class="nav-text">监控信号</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E8%BF%87%E7%A8%8B"><span class="nav-number">1.5.0.3.0.6.</span> <span class="nav-text">监控过程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E6%B4%BE%E9%81%A3%E6%BA%90"><span class="nav-number">1.5.0.4.</span> <span class="nav-text">取消派遣源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%82%E8%B5%B7%E5%92%8C%E6%81%A2%E5%A4%8D%E6%B4%BE%E9%81%A3%E6%BA%90"><span class="nav-number">1.5.0.5.</span> <span class="nav-text">挂起和恢复派遣源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A6%BB%E7%BA%BF%E7%A8%8B-1"><span class="nav-number">1.6.</span> <span class="nav-text">远离线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E8%B0%83%E5%BA%A6%E9%98%9F%E5%88%97%E6%9B%BF%E6%8D%A2%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">用调度队列替换线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%88%E9%99%A4%E5%9F%BA%E4%BA%8E%E9%94%81%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">消除基于锁的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E9%94%81"><span class="nav-number">1.6.0.2.0.1.</span> <span class="nav-text">实现异步锁</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%89%A7%E8%A1%8C%E5%85%B3%E9%94%AE%E9%83%A8%E5%88%86"><span class="nav-number">1.6.0.2.0.2.</span> <span class="nav-text">同步执行关键部分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B%E5%BE%AA%E7%8E%AF%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.0.3.</span> <span class="nav-text">改进循环代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E7%BA%BF%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.6.0.4.</span> <span class="nav-text">替换线程连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E5%AE%9E%E6%96%BD"><span class="nav-number">1.6.0.5.</span> <span class="nav-text">更改生产者-消费者实施</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E4%BF%A1%E5%8F%B7%E9%87%8F%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.0.6.</span> <span class="nav-text">替换信号量代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.0.7.</span> <span class="nav-text">替换运行循环代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E-POSIX-%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="nav-number">1.6.0.8.</span> <span class="nav-text">与 POSIX 线程的兼容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87%E8%A1%A8"><span class="nav-number">1.7.</span> <span class="nav-text">词汇表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E4%BF%AE%E8%AE%A2%E5%8E%86%E5%8F%B2"><span class="nav-number">1.8.</span> <span class="nav-text">文档修订历史</span></a></li></div>
       </section>
       <!--/noindex-->
 
       <section class="site-overview-wrap sidebar-panel">
-        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div class="site-author animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">LeiHao</p>
   <div class="site-description" itemprop="description">😃😃😃</div>
 </div>
@@ -368,13 +3362,13 @@ mjx-container[display="true"] + br {
 </div>
   <div class="links-of-author animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/leihao0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+        <a href="https://github.com/leihao0" title="GitHub → https://github.com/leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/leihao0" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+        <a href="https://twitter.com/leihao0" title="Twitter → https://twitter.com/leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https://www.linkedin.com/in/leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
       </span>
   </div>
   <div class="cc-license animated" itemprop="license">
@@ -410,16 +3404,16 @@ mjx-container[display="true"] + br {
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/Concurrency-Programming-Guide/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="LeiHao">
       <meta itemprop="description" content="😃😃😃">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="LeiHao's Blog">
     </span>
 
@@ -476,7 +3470,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span class="post-meta-item-text">Reading time ≈</span>
       <span>52 mins.</span>
     </span>
 </div>
@@ -624,7 +3618,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>-（NSOperation *）taskWithData：（id）data &#123;</code></td>
+<td><code>-（NSOperation *）taskWithData：（id）data {</code></td>
 </tr>
 <tr>
 <td><code>NSInvocationOperation * theOp = [[NSInvocationOperation alloc] initWithTarget：self</code></td>
@@ -639,7 +3633,7 @@ mjx-container[display="true"] + br {
 <td><code>返回theOp;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -648,13 +3642,13 @@ mjx-container[display="true"] + br {
 <td><code>//这是执行任务实际工作的方法。</code></td>
 </tr>
 <tr>
-<td><code>-（void）myTaskMethod：（id）data &#123;</code></td>
+<td><code>-（void）myTaskMethod：（id）data {</code></td>
 </tr>
 <tr>
 <td><code>//执行任务。</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td><code>@结束</code></td>
@@ -667,7 +3661,7 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th><code>NSBlockOperation * theOp = [NSBlockOperation blockOperationWithBlock：^ &#123;</code></th>
+<th><code>NSBlockOperation * theOp = [NSBlockOperation blockOperationWithBlock：^ {</code></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -677,7 +3671,7 @@ mjx-container[display="true"] + br {
 <td><code>// 做一些工作。</code></td>
 </tr>
 <tr>
-<td><code>&#125;];</code></td>
+<td><code>}];</code></td>
 </tr>
 </tbody></table>
 <p>创建块操作对象后，可以使用该<code>addExecutionBlock:</code>方法向其添加更多块。如果需要顺序执行块，则必须将它们直接提交给所需的调度队列。</p>
@@ -718,7 +3712,7 @@ mjx-container[display="true"] + br {
 <td><code>@implementation MyNonConcurrentOperation</code></td>
 </tr>
 <tr>
-<td><code>-（id）initWithData：（id）data &#123;</code></td>
+<td><code>-（id）initWithData：（id）data {</code></td>
 </tr>
 <tr>
 <td><code>如果（自我= [超级初始化]）</code></td>
@@ -730,34 +3724,34 @@ mjx-container[display="true"] + br {
 <td><code>返回自我</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
 </tr>
 <tr>
-<td><code>-（void）main &#123;</code></td>
+<td><code>-（void）main {</code></td>
 </tr>
 <tr>
-<td><code>@尝试&#123;</code></td>
+<td><code>@尝试{</code></td>
 </tr>
 <tr>
 <td><code>//对myData做一些工作并报告结果。</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>@catch（...）&#123;</code></td>
+<td><code>@catch（...）{</code></td>
 </tr>
 <tr>
 <td><code>//不要抛出异常。</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td><code>@结束</code></td>
@@ -779,11 +3773,11 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th><code>-（void）main &#123;</code></th>
+<th><code>-（void）main {</code></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>@尝试&#123;</code></td>
+<td><code>@尝试{</code></td>
 </tr>
 <tr>
 <td><code>BOOL isDone = NO;</code></td>
@@ -792,28 +3786,28 @@ mjx-container[display="true"] + br {
 <td>``</td>
 </tr>
 <tr>
-<td><code>while（！[self isCancelled] &amp;&amp;！isDone）&#123;</code></td>
+<td><code>while（！[self isCancelled] &amp;&amp;！isDone）{</code></td>
 </tr>
 <tr>
 <td><code>//做一些工作，完成后将isDone设置为YES</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>@catch（...）&#123;</code></td>
+<td><code>@catch（...）{</code></td>
 </tr>
 <tr>
 <td><code>//不要抛出异常。</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <p>尽管前面的示例不包含清除代码，但是您自己的代码应确保释放您的自定义代码分配的所有资源。</p>
@@ -849,7 +3843,7 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th><code>@interface MyOperation：NSOperation &#123;</code></th>
+<th><code>@interface MyOperation：NSOperation {</code></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -859,7 +3853,7 @@ mjx-container[display="true"] + br {
 <td><code>BOOL完成；</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td><code>-（void）completeOperation；</code></td>
@@ -874,13 +3868,13 @@ mjx-container[display="true"] + br {
 <td><code>@implementation MyOperation</code></td>
 </tr>
 <tr>
-<td><code>-（id）init &#123;</code></td>
+<td><code>-（id）init {</code></td>
 </tr>
 <tr>
 <td><code>自我= [超级初始化];</code></td>
 </tr>
 <tr>
-<td><code>如果（自己）&#123;</code></td>
+<td><code>如果（自己）{</code></td>
 </tr>
 <tr>
 <td><code>执行=否;</code></td>
@@ -889,49 +3883,49 @@ mjx-container[display="true"] + br {
 <td><code>完成=否；</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td><code>返回自我</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
 </tr>
 <tr>
-<td><code>-（BOOL）是并发&#123;</code></td>
+<td><code>-（BOOL）是并发{</code></td>
 </tr>
 <tr>
 <td><code>返回是；</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
 </tr>
 <tr>
-<td><code>-（BOOL）正在执行&#123;</code></td>
+<td><code>-（BOOL）正在执行{</code></td>
 </tr>
 <tr>
 <td><code>返回执行；</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
 </tr>
 <tr>
-<td><code>-（BOOL）已完成&#123;</code></td>
+<td><code>-（BOOL）已完成{</code></td>
 </tr>
 <tr>
 <td><code>返回完成；</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td><code>@结束</code></td>
@@ -942,7 +3936,7 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th><code>-（void）开始&#123;</code></th>
+<th><code>-（void）开始{</code></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -952,7 +3946,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（[self isCancelled]）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>//如果取消操作，则必须将操作移至完成状态。</code></td>
@@ -970,7 +3964,7 @@ mjx-container[display="true"] + br {
 <td><code>返回;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -991,7 +3985,7 @@ mjx-container[display="true"] + br {
 <td><code>[self didChangeValueForKey：@“ isExecuting”];</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <p>清单 2-7 显示了<code>MyOperation</code>该类的其余实现。如<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW11">清单 2-6 所示</a>，该<code>main</code>方法是新线程的入口点。它执行与操作对象关联的工作，并在<code>completeOperation</code>最终完成该工作时调用自定义方法。<code>completeOperation</code>然后，该方法为<code>isExecuting</code>和<code>isFinished</code>路径生成所需的 KVO 通知，以反映操作状态的变化。</p>
@@ -999,11 +3993,11 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th><code>-（void）main &#123;</code></th>
+<th><code>-（void）main {</code></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>@尝试&#123;</code></td>
+<td><code>@尝试{</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -1018,25 +4012,25 @@ mjx-container[display="true"] + br {
 <td><code>[自我完成操作];</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>@catch（...）&#123;</code></td>
+<td><code>@catch（...）{</code></td>
 </tr>
 <tr>
 <td><code>//不要抛出异常。</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
 </tr>
 <tr>
-<td><code>-（void）completeOperation &#123;</code></td>
+<td><code>-（void）completeOperation {</code></td>
 </tr>
 <tr>
 <td><code>[self willChangeValueForKey：@“ isFinished”]；</code></td>
@@ -1063,7 +4057,7 @@ mjx-container[display="true"] + br {
 <td><code>[self didChangeValueForKey：@“ isFinished”]；</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <p>即使取消了操作，也应始终通知 KVO 观察者您的操作现已完成。当一个操作对象依赖于其他操作对象的完成时，它将监视<code>isFinished</code>那些对象的键路径。仅当所有对象都报告它们完成时，相关操作才会发出信号，表明它已准备好运行。因此，无法生成完成通知可能会阻止应用程序中其他操作的执行。</p>
@@ -1125,7 +4119,7 @@ mjx-container[display="true"] + br {
 <h4 id="执行操作"><a href="#执行操作" class="headerlink" title="执行操作"></a>执行操作</h4><p>最终，您的应用程序需要执行操作才能完成关联的工作。在本节中，您将学习几种执行操作的方法，以及如何在运行时操纵操作的执行。</p>
 <h6 id="将操作添加到操作队列"><a href="#将操作添加到操作队列" class="headerlink" title="将操作添加到操作队列"></a>将操作添加到操作队列</h6><p>到目前为止，执行操作的最简单方法是使用操作队列，它是<code>NSOperationQueue</code>类的实例。您的应用程序负责创建和维护打算使用的任何操作队列。一个应用程序可以有任意数量的队列，但是在给定的时间点可能要执行多少操作有实际的限制。操作队列与系统一起使用，以将并发操作的数量限制为适合于可用核心和系统负载的值。因此，创建其他队列并不意味着您可以执行其他操作。</p>
 <p>要创建队列，可以像在任何其他对象中一样在应用程序中分配它：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSOperationQueue * aQueue &#x3D; [[NSOperationQueue alloc] init];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSOperationQueue * aQueue = [[NSOperationQueue alloc] init];</span><br></pre></td></tr></tbody></table></figure>
 
 <p>要将操作添加到队列，请使用<code>addOperation:</code>方法。在 OS X v10.6 和更高版本中，您可以使用<code>addOperations:waitUntilFinished:</code>方法添加操作组，也可以使用以下方法将块对象直接添加到队列中（没有相应的操作对象）<code>addOperationWithBlock:</code>方法。这些方法中的每一个都将一个操作（或多个操作）排队，并通知队列它应该开始处理它们。在大多数情况下，操作会在添加到队列后立即执行，但是由于多种原因，操作队列可能会延迟排队操作的执行。具体来说，如果排队的操作依赖于尚未完成的其他操作，则执行可能会延迟。如果操作队列本身被挂起或已经在执行其最大数量的并发操作，则执行也可能会延迟。以下示例显示了将操作添加到队列的基本语法。</p>
 <table>
@@ -1138,13 +4132,13 @@ mjx-container[display="true"] + br {
 <td><code>[aQueue addOperations：anArrayOfOps waitUntilFinished：NO]；//添加多个操作</code></td>
 </tr>
 <tr>
-<td><code>[aQueue addOperationWithBlock：^ &#123;</code></td>
+<td><code>[aQueue addOperationWithBlock：^ {</code></td>
 </tr>
 <tr>
 <td><code>/* 做一点事。* /</code></td>
 </tr>
 <tr>
-<td><code>&#125;];</code></td>
+<td><code>}];</code></td>
 </tr>
 </tbody></table>
 <p><strong>重要：</strong></p>
@@ -1164,7 +4158,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>BOOL ranIt = NO;</code></td>
@@ -1176,7 +4170,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（[anOp isReady] &amp;&amp;！[anOp isCancelled]）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>如果（！[anOp isConcurrent]）</code></td>
@@ -1197,13 +4191,13 @@ mjx-container[display="true"] + br {
 <td><code>ranIt =是；</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td><code>否则，如果（[anOp isCancelled]）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>//如果在开始之前已将其取消，</code></td>
@@ -1242,13 +4236,13 @@ mjx-container[display="true"] + br {
 <td><code>ranIt =是；</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td><code>返回ranIt;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <h6 id="取消操作"><a href="#取消操作" class="headerlink" title="取消操作"></a>取消操作</h6><p>一旦添加到操作队列中，操作对象将有效地归队列所有，并且无法删除。使操作出队的唯一方法是取消操作。您可以通过调用单个操作对象的<code>cancel</code>方法来取消它，也可以通过调用<code>cancelAllOperations</code>队列对象的方法来取消队列中的所有操作对象。</p>
@@ -1334,13 +4328,13 @@ mjx-container[display="true"] + br {
 <td><code>//块声明和赋值</code></td>
 </tr>
 <tr>
-<td><code>无效（^ aBlock）（int）= ^（int z）&#123;</code></td>
+<td><code>无效（^ aBlock）（int）= ^（int z）{</code></td>
 </tr>
 <tr>
 <td><code>printf（“％d％d％d \ n”，x，y，z）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;;</code></td>
+<td><code>};</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -1364,7 +4358,7 @@ mjx-container[display="true"] + br {
 <h4 id="创建和管理调度队列"><a href="#创建和管理调度队列" class="headerlink" title="创建和管理调度队列"></a>创建和管理调度队列</h4><p>在将任务添加到队列之前，必须确定要使用的队列类型以及打算如何使用它。调度队列可以串行或并行执行任务。另外，如果您对队列有特定的用途，则可以相应地配置队列属性。以下各节说明如何创建调度队列并配置它们以供使用。</p>
 <h6 id="获取全局并发调度队列"><a href="#获取全局并发调度队列" class="headerlink" title="获取全局并发调度队列"></a>获取全局并发调度队列</h6><p>当您有多个可以并行运行的任务时，并发调度队列很有用。并发队列仍然是一个队列，因为它按照先进先出的顺序使任务出队。但是，并发队列可能会在其他先前任务完成之前使其他任务出队。并发队列在任何给定时刻执行的实际任务数是可变的，并且可以随着应用程序条件的变化而动态变化。许多因素会影响并发队列执行的任务数量，包括可用核心的数量，其他进程正在完成的工作量以及其他串行调度队列中任务的数量和优先级。</p>
 <p>系统为每个应用程序提供四个并发调度队列。这些队列对于应用程序是全局的，仅按优先级进行区分。因为它们是全局的，所以您无需显式创建它们。相反，您可以使用<code>dispatch_get_global_queue</code>函数来请求队列之一，如以下示例所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t aQueue &#x3D; dispatch_get_global_queue（DISPATCH_QUEUE_PRIORITY_DEFAULT，0）;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t aQueue = dispatch_get_global_queue（DISPATCH_QUEUE_PRIORITY_DEFAULT，0）;</span><br></pre></td></tr></tbody></table></figure>
 
 <p>除了获取默认的并发队列外，还可以通过将<code>DISPATCH_QUEUE_PRIORITY_HIGH</code>和<code>DISPATCH_QUEUE_PRIORITY_LOW</code>常量传递给函数来获取高优先级和低优先级级别的队列，或者通过传递常量来获取背景队列<code>DISPATCH_QUEUE_PRIORITY_BACKGROUND</code>。如您所料，高优先级并发队列中的任务比默认队列和低优先级队列中的任务先执行。同样，默认队列中的任务在低优先级队列中的任务之前执行。</p>
 <p><strong>注意：</strong> 该<code>dispatch_get_global_queue</code>函数的第二个参数保留给以后的扩展。现在，您应该始终通过<code>0</code>此参数。</p>
@@ -1406,7 +4400,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>MyDataContext * theData =（MyDataContext *）上下文;</code></td>
@@ -1430,7 +4424,7 @@ mjx-container[display="true"] + br {
 <td><code>免费（theData）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -1439,7 +4433,7 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_queue_t createMyQueue（）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>MyDataContext *数据=（MyDataContext *）malloc（sizeof（MyDataContext））;</code></td>
@@ -1469,7 +4463,7 @@ mjx-container[display="true"] + br {
 <td><code>返回serialQueue;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <h4 id="将任务添加到队列"><a href="#将任务添加到队列" class="headerlink" title="将任务添加到队列"></a>将任务添加到队列</h4><p>要执行任务，必须将其分派到适当的分派队列。您可以同步或异步分配任务，也可以单个或成组分配任务。进入队列后，鉴于队列的约束和队列中已有的任务，该队列将负责尽快执行您的任务。本节介绍了一些将任务分配到队列的技术，并介绍了每种方法的优点。</p>
@@ -1490,13 +4484,13 @@ mjx-container[display="true"] + br {
 <td>``</td>
 </tr>
 <tr>
-<td><code>dispatch_async（myCustomQueue，^ &#123;</code></td>
+<td><code>dispatch_async（myCustomQueue，^ {</code></td>
 </tr>
 <tr>
 <td><code>printf（“在这里做一些工作。\ n”）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -1508,13 +4502,13 @@ mjx-container[display="true"] + br {
 <td>``</td>
 </tr>
 <tr>
-<td><code>dispatch_sync（myCustomQueue，^ &#123;</code></td>
+<td><code>dispatch_sync（myCustomQueue，^ {</code></td>
 </tr>
 <tr>
 <td><code>printf（“在这里做更多的工作。\ n”）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td><code>printf（“两个块都已完成。\ n”）;</code></td>
@@ -1534,7 +4528,7 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_queue_t队列，无效（^ block）（int））</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>//保留用户提供的队列</code></td>
@@ -1558,13 +4552,13 @@ mjx-container[display="true"] + br {
 <td><code>//用结果调用用户提供的块。</code></td>
 </tr>
 <tr>
-<td><code>dispatch_async（dispatch_get_global_queue（DISPATCH_QUEUE_PRIORITY_DEFAULT，0），^ &#123;</code></td>
+<td><code>dispatch_async（dispatch_get_global_queue（DISPATCH_QUEUE_PRIORITY_DEFAULT，0），^ {</code></td>
 </tr>
 <tr>
 <td><code>int avg = average（data，len）;</code></td>
 </tr>
 <tr>
-<td><code>dispatch_async（queue，^ &#123;block（avg）;&#125;）;</code></td>
+<td><code>dispatch_async（queue，^ {block（avg）;}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -1576,10 +4570,10 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_release（queue）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <h6 id="同时执行循环迭代"><a href="#同时执行循环迭代" class="headerlink" title="同时执行循环迭代"></a>同时执行循环迭代</h6><p>并发调度队列可能会提高性能的一个地方是您的循环执行固定数量的迭代。例如，假设您有一个<code>for</code>循环，该循环在每次循环迭代中都完成了一些工作：</p>
@@ -1593,7 +4587,7 @@ mjx-container[display="true"] + br {
 <td><code>printf（“％u \ n”，i）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <p>如果在每次迭代过程中执行的工作与在所有其他迭代过程中执行的工作不同，并且每个连续循环的完成顺序并不重要，则可以使用<code>dispatch_apply</code>或<code>dispatch_apply_f</code>函数的调用来替换循环。这些函数为每次循环迭代将指定的块或函数提交到队列一次。因此，当调度到并发队列时，可以同时执行多个循环迭代。</p>
@@ -1612,13 +4606,13 @@ mjx-container[display="true"] + br {
 <td>``</td>
 </tr>
 <tr>
-<td><code>dispatch_apply（count，queue，^（size_t i）&#123;</code></td>
+<td><code>dispatch_apply（count，queue，^（size_t i）{</code></td>
 </tr>
 <tr>
 <td><code>printf（“％u \ n”，i）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 </tbody></table>
 <p>您应该确保您的任务代码在每次迭代中都进行合理的工作量。与您调度到队列中的任何块或函数一样，安排该代码执行的开销。如果循环的每次迭代仅执行少量工作，则调度代码的开销可能会超过将其分派到队列可能带来的性能收益。如果在测试期间发现这是正确的，则可以使用跨步来增加每次循环迭代期间执行的工作量。通过跨步，您可以将原始循环的多个迭代组合到一个块中，并按比例减少迭代计数。例如，如果您最初执行 100 次迭代，但决定使用 4 的步幅，则现在从每个块执行 4 次循环迭代，您的迭代计数为 25。<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/ThreadMigration/ThreadMigration.html#//apple_ref/doc/uid/TP40008091-CH105-SW2">循环代码的改进</a>。</p>
@@ -1692,13 +4686,13 @@ mjx-container[display="true"] + br {
 <td><code>//将任务添加到组</code></td>
 </tr>
 <tr>
-<td><code>dispatch_group_async（group，queue，^ &#123;</code></td>
+<td><code>dispatch_group_async（group，queue，^ {</code></td>
 </tr>
 <tr>
 <td><code>//一些异步工作</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -1806,7 +4800,7 @@ mjx-container[display="true"] + br {
 <td><code>myDescriptor，0，myQueue）；</code></td>
 </tr>
 <tr>
-<td><code>dispatch_source_set_event_handler（source，^ &#123;</code></td>
+<td><code>dispatch_source_set_event_handler（source，^ {</code></td>
 </tr>
 <tr>
 <td><code>//从捕获的源变量中获取一些数据</code></td>
@@ -1824,7 +4818,7 @@ mjx-container[display="true"] + br {
 <td><code>//继续阅读描述符...</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td><code>dispatch_resume（源）;</code></td>
@@ -1858,14 +4852,14 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th><code>dispatch_source_set_cancel_handler（mySource，^ &#123;</code></th>
+<th><code>dispatch_source_set_cancel_handler（mySource，^ {</code></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>关闭（FD）; //关闭先前打开的文件描述符。</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 </tbody></table>
 <p>要查看使用取消处理程序的调度源的完整代码示例，请参阅<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/GCDWorkQueues/GCDWorkQueues.html#//apple_ref/doc/uid/TP40008091-CH103-SW6">从描述符读取数据</a>。</p>
@@ -1898,7 +4892,7 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_block_t块）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>dispatch_source_t计时器= dispatch_source_create（DISPATCH_SOURCE_TYPE_TIMER，</code></td>
@@ -1910,7 +4904,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（定时器）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>dispatch_source_set_timer（timer，dispatch_walltime（NULL，0），interval，leeway）;</code></td>
@@ -1922,13 +4916,13 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_resume（timer）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td><code>返回计时器；</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -1937,7 +4931,7 @@ mjx-container[display="true"] + br {
 <td><code>无效的MyCreateTimer（）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>dispatch_source_t aTimer = CreateDispatchTimer（30ull * NSEC_PER_SEC，</code></td>
@@ -1949,7 +4943,7 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_get_main_queue（），</code></td>
 </tr>
 <tr>
-<td><code>^ &#123;MyPeriodicTask（）; &#125;）;</code></td>
+<td><code>^ {MyPeriodicTask（）; }）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -1961,16 +4955,16 @@ mjx-container[display="true"] + br {
 <td><code>如果（aTimer）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>MyStoreTimer（aTimer）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -1988,7 +4982,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>//准备要读取的文件。</code></td>
@@ -2021,7 +5015,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（！readSource）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>关闭（FD）;</code></td>
@@ -2030,7 +5024,7 @@ mjx-container[display="true"] + br {
 <td><code>返回NULL;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -2039,7 +5033,7 @@ mjx-container[display="true"] + br {
 <td><code>//安装事件处理程序</code></td>
 </tr>
 <tr>
-<td><code>dispatch_source_set_event_handler（readSource，^ &#123;</code></td>
+<td><code>dispatch_source_set_event_handler（readSource，^ {</code></td>
 </tr>
 <tr>
 <td><code>估计的size_t = dispatch_source_get_data（readSource）+ 1;</code></td>
@@ -2054,7 +5048,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（缓冲区）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>ssize_t actual = read（fd，buffer，（estimated））;</code></td>
@@ -2084,10 +5078,10 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_source_cancel（readSource）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -2096,7 +5090,7 @@ mjx-container[display="true"] + br {
 <td><code>//安装取消处理程序</code></td>
 </tr>
 <tr>
-<td><code>dispatch_source_set_cancel_handler（readSource，^ &#123;close（fd）;&#125;）;</code></td>
+<td><code>dispatch_source_set_cancel_handler（readSource，^ {close（fd）;}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -2111,7 +5105,7 @@ mjx-container[display="true"] + br {
 <td><code>返回readSource;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <p>在前面的示例中，自定义<code>MyProcessFileData</code>函数确定何时已读取足够的文件数据以及可以取消调度源。默认情况下，配置为从描述符读取的调度源在仍有数据需要读取的情况下重复调度其事件处理程序。如果套接字连接关闭或到达文件末尾，则调度源将自动停止调度事件处理程序。如果您知道自己不需要调度源，则可以直接取消它。</p>
@@ -2126,7 +5120,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td>`int fd = open（filename，O_WRONLY</td>
@@ -2159,7 +5153,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（！writeSource）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>关闭（FD）;</code></td>
@@ -2168,13 +5162,13 @@ mjx-container[display="true"] + br {
 <td><code>返回NULL;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td>``</td>
 </tr>
 <tr>
-<td><code>dispatch_source_set_event_handler（writeSource，^ &#123;</code></td>
+<td><code>dispatch_source_set_event_handler（writeSource，^ {</code></td>
 </tr>
 <tr>
 <td><code>size_t bufferSize = MyGetDataSize（）;</code></td>
@@ -2207,13 +5201,13 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_source_cancel（writeSource）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
 </tr>
 <tr>
-<td><code>dispatch_source_set_cancel_handler（writeSource，^ &#123;close（fd）;&#125;）;</code></td>
+<td><code>dispatch_source_set_cancel_handler（writeSource，^ {close（fd）;}）;</code></td>
 </tr>
 <tr>
 <td><code>dispatch_resume（writeSource）;</code></td>
@@ -2222,7 +5216,7 @@ mjx-container[display="true"] + br {
 <td><code>返回（writeSource）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <h6 id="监视文件系统对象"><a href="#监视文件系统对象" class="headerlink" title="监视文件系统对象"></a>监视文件系统对象</h6><p>如果要监视文件系统对象的更改，则可以设置类型的调度源<code>DISPATCH_SOURCE_TYPE_VNODE</code>。当文件被删除，写入或重命名时，可以使用这种类型的调度源来接收通知。当文件的特定类型的元信息（例如文件的大小和链接数）发生变化时，您还可以使用它来发出警报。</p>
@@ -2236,7 +5230,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>int fd = open（文件名，O_EVTONLY）;</code></td>
@@ -2263,7 +5257,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（来源）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>//复制文件名以供以后使用。</code></td>
@@ -2287,7 +5281,7 @@ mjx-container[display="true"] + br {
 <td><code>//安装事件处理程序以处理名称更改</code></td>
 </tr>
 <tr>
-<td><code>dispatch_source_set_event_handler（source，^ &#123;</code></td>
+<td><code>dispatch_source_set_event_handler（source，^ {</code></td>
 </tr>
 <tr>
 <td><code>const char * oldFilename =（char *）dispatch_get_context（源）;</code></td>
@@ -2296,7 +5290,7 @@ mjx-container[display="true"] + br {
 <td><code>MyUpdateFileName（oldFilename，fd）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -2308,7 +5302,7 @@ mjx-container[display="true"] + br {
 <td><code>//和存储的字符串。</code></td>
 </tr>
 <tr>
-<td><code>dispatch_source_set_cancel_handler（来源，^ &#123;</code></td>
+<td><code>dispatch_source_set_cancel_handler（来源，^ {</code></td>
 </tr>
 <tr>
 <td><code>char * fileStr =（char *）dispatch_get_context（源）;</code></td>
@@ -2320,7 +5314,7 @@ mjx-container[display="true"] + br {
 <td><code>关闭（FD）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -2332,7 +5326,7 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_resume（源）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
 <td><code>其他</code></td>
@@ -2347,7 +5341,7 @@ mjx-container[display="true"] + br {
 <td><code>返回源</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <h6 id="监控信号"><a href="#监控信号" class="headerlink" title="监控信号"></a>监控信号</h6><p>UNIX 信号允许从其域外部操纵应用程序。应用程序可以接收许多不同类型的信号，范围从不可恢复的错误（例如非法指令）到有关重要信息的通知（例如子进程退出时）。传统上，应用程序使用该<code>sigaction</code>功能来安装信号处理程序功能，该功能在信号到达后立即进行同步处理。如果您只想收到信号到达的通知，而实际上却不想处理该信号，则可以使用信号分配源来异步处理信号。</p>
@@ -2362,7 +5356,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>//确保信号不会终止应用程序。</code></td>
@@ -2386,16 +5380,16 @@ mjx-container[display="true"] + br {
 <td><code>如果（来源）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
-<td><code>dispatch_source_set_event_handler（source，^ &#123;</code></td>
+<td><code>dispatch_source_set_event_handler（source，^ {</code></td>
 </tr>
 <tr>
 <td><code>MyProcessSIGHUP（）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -2407,10 +5401,10 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_resume（源）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <p>如果您正在为自定义框架开发代码，则使用信号分发源的优点是您的代码可以独立于与其链接的任何应用程序监视信号。信号调度源不会干扰应用程序可能已安装的其他调度源或任何同步信号处理程序。</p>
@@ -2425,7 +5419,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>pid_t parentPID = getppid（）;</code></td>
@@ -2446,10 +5440,10 @@ mjx-container[display="true"] + br {
 <td><code>如果（来源）</code></td>
 </tr>
 <tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
-<td><code>dispatch_source_set_event_handler（source，^ &#123;</code></td>
+<td><code>dispatch_source_set_event_handler（source，^ {</code></td>
 </tr>
 <tr>
 <td><code>MySetAppExitFlag（）;</code></td>
@@ -2461,16 +5455,16 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_release（源代码）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td><code>dispatch_resume（源）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <h4 id="取消派遣源"><a href="#取消派遣源" class="headerlink" title="取消派遣源"></a>取消派遣源</h4><p>调度源将保持活动状态，直到您使用该<code>dispatch_source_cancel</code>功能明确取消它们为止。取消调度源将停止新事件的传递，并且无法撤消。因此，通常您取消调度源，然后立即释放它，如下所示：</p>
@@ -2481,7 +5475,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>&#123;</code></td>
+<td><code>{</code></td>
 </tr>
 <tr>
 <td><code>dispatch_source_cancel（mySource）;</code></td>
@@ -2490,7 +5484,7 @@ mjx-container[display="true"] + br {
 <td><code>dispatch_release（mySource）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;</code></td>
+<td><code>}</code></td>
 </tr>
 </tbody></table>
 <p>取消调度源是异步操作。尽管在调用<code>dispatch_source_cancel</code>函数后没有任何新事件被处理，但是调度源已经处理的事件将继续被处理。完成任何最终事件的处理后，如果存在一个派发源，则派发源执行其取消处理程序。</p>
@@ -2537,14 +5531,14 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th><code>dispatch_async（obj-&gt; serial_queue，^ &#123;</code></th>
+<th><code>dispatch_async（obj-&gt; serial_queue，^ {</code></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>//关键部分</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 </tbody></table>
 <h6 id="同步执行关键部分"><a href="#同步执行关键部分" class="headerlink" title="同步执行关键部分"></a>同步执行关键部分</h6><p>如果在给定任务完成之前当前代码无法继续，则可以使用<code>dispatch_sync</code>函数同步提交任务。此函数将任务添加到调度队列，然后阻塞当前线程，直到任务完成执行。分派队列本身可以是串行或并发队列，具体取决于您的需求。由于此函数会阻止当前线程，因此，仅应在必要时使用它。清单 5-2 显示了使用来包装代码的关键部分的技术<code>dispatch_sync</code>。</p>
@@ -2552,14 +5546,14 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th><code>dispatch_sync（my_queue，^ &#123;</code></th>
+<th><code>dispatch_sync（my_queue，^ {</code></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>//关键部分</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 </tbody></table>
 <p>如果您已经在使用串行队列来保护共享资源，则与异步分发相比，同步分派到该队列不会更多地保护共享资源。同步分派的唯一原因是防止当前代码在关键部分结束之前继续执行。例如，如果您想从共享资源中获取一些价值并立即使用它，则需要同步调度。如果当前代码不需要等待关键部分完成，或者可以简单地将其他后续任务提交到同一串行队列，则通常首选异步提交。</p>
@@ -2574,13 +5568,13 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>dispatch_apply（count，queue，^（size_t i）&#123;</code></td>
+<td><code>dispatch_apply（count，queue，^（size_t i）{</code></td>
 </tr>
 <tr>
 <td><code>printf（“％u \ n”，i）;</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 </tbody></table>
 <p>尽管前面的示例是一个简单的示例，但是它演示了使用分派队列替换循环的基本技术。尽管这可能是提高基于循环的代码性能的好方法，但仍必须谨慎地使用此技术。尽管分派队列的开销非常低，但是在线程上安排每次循环迭代仍然有成本。因此，您应该确保您的循环代码能够完成足够的工作以保证成本。您到底需要做多少工作，这是您必须使用性能工具来衡量的。</p>
@@ -2599,7 +5593,7 @@ mjx-container[display="true"] + br {
 <td>``</td>
 </tr>
 <tr>
-<td><code>dispatch_apply（计数/步幅，队列，^（size_t idx）&#123;</code></td>
+<td><code>dispatch_apply（计数/步幅，队列，^（size_t idx）{</code></td>
 </tr>
 <tr>
 <td><code>size_t j = idx *步幅；</code></td>
@@ -2608,7 +5602,7 @@ mjx-container[display="true"] + br {
 <td><code>size_t j_stop = j +步幅；</code></td>
 </tr>
 <tr>
-<td><code>做&#123;</code></td>
+<td><code>做{</code></td>
 </tr>
 <tr>
 <td><code>printf（“％u \ n”，（unsigned int）j ++）;</code></td>
@@ -2617,7 +5611,7 @@ mjx-container[display="true"] + br {
 <td>` }同时（j</td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -2667,21 +5661,21 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th><code>dispatch_async（queue，^ &#123;</code></th>
+<th><code>dispatch_async（queue，^ {</code></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>//处理工作项。</code></td>
 </tr>
 <tr>
-<td><code>&#125;）;</code></td>
+<td><code>}）;</code></td>
 </tr>
 </tbody></table>
 <p>当您的生产者有工作要做时，它要做的就是将工作添加到队列中，并让队列处理该项目。前面代码中唯一更改的部分是队列类型。如果生产者生成的任务需要按特定顺序执行，则可以使用串行队列。如果生产者生成的任务可以同时执行，则可以将它们添加到并发队列中，并让系统同时执行尽可能多的任务。</p>
 <h4 id="替换信号量代码"><a href="#替换信号量代码" class="headerlink" title="替换信号量代码"></a>替换信号量代码</h4><p>如果当前正在使用信号量来限制对共享资源的访问，则应考虑使用调度信号量。传统的信号量始终要求调用内核来测试信号量。相反，调度信号量会在用户空间中快速测试信号量状态，并仅在测试失败并且需要阻塞调用线程时才捕获到内核中。这种情况导致在没有争议的情况下，调度信号量比传统信号量快得多。但是，在所有其他方面，调度信号量提供的行为与传统信号量相同。</p>
 <p>有关如何使用调度信号量的示例，请参见<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationQueues/OperationQueues.html#//apple_ref/doc/uid/TP40008091-CH102-SW24">使用调度信号量来调节有限资源的使用</a>。</p>
 <h4 id="替换运行循环代码"><a href="#替换运行循环代码" class="headerlink" title="替换运行循环代码"></a>替换运行循环代码</h4><p>如果您使用运行循环来管理在一个或多个线程上执行的工作，则可能会发现队列的实现和维护更加简单。设置自定义运行循环涉及设置基础线程和运行循环本身。运行循环代码包括设置一个或多个运行循环源以及编写回调以处理到达这些源的事件。除了完成所有工作之外，您只需创建一个串行队列并将任务分派给它即可。因此，您可以用一行代码替换所有线程和运行循环创建代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t myNewRunLoop &#x3D; dispatch_queue_create（“ com.apple.MyQueue”，NULL）;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t myNewRunLoop = dispatch_queue_create（“ com.apple.MyQueue”，NULL）;</span><br></pre></td></tr></tbody></table></figure>
 
 <p>因为队列自动执行添加到队列中的所有任务，所以不需要额外的代码来管理队列。您不必创建或配置线程，也不必创建或附加任何运行循环源。此外，您只需在队列中添加任务即可执行新的工作类型。要对运行循环执行相同的操作，您将需要修改现有的运行循环源或创建一个新的源来处理新数据。</p>
 <p>运行循环的一种常见配置是处理异步到达网络套接字的数据。您可以将调度源附加到所需的队列，而不是为此类型的行为配置运行循环。与传统的运行循环源相比，调度源还提供了更多的数据处理选项。除了处理计时器和网络端口事件，您还可以使用调度源来读取和写入文件，监视文件系统对象，监视进程和监视信号。您甚至可以定义自定义调度源，并从代码的其他部分异步触发它们。有关设置调度源的更多信息，请参见<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/GCDWorkQueues/GCDWorkQueues.html#//apple_ref/doc/uid/TP40008091-CH103-SW1">调度源</a>。</p>
@@ -2958,8 +5952,8 @@ mjx-container[display="true"] + br {
 </div>
 
           <div class="post-tags">
-              <a href="/tags/iOS/" rel="tag"># iOS</a>
-              <a href="/tags/Interview/" rel="tag"># Interview</a>
+              <a href="/tags/ios/" rel="tag"># iOS</a>
+              <a href="/tags/interview/" rel="tag"># Interview</a>
           </div>
 
         
@@ -3026,7 +6020,7 @@ mjx-container[display="true"] + br {
 
 <div class="copyright">
   
-  &copy; 2012 – 
+  © 2012 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
@@ -3038,13 +6032,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">432k</span>
+    <span title="Symbols count total">436k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">6:33</span>
+    <span title="Reading time total">6:36</span>
   </span>
 </div>
 
@@ -3053,22 +6047,9 @@ mjx-container[display="true"] + br {
 
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
 
   
-
-
-
-
-  <script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
 
 
 
@@ -3082,13 +6063,31 @@ mjx-container[display="true"] + br {
 
 
 
+
+
+
+
   
+
+
+
+
+
+
+
 
   
 
   
 
-<script>
+  
+
+
+
+
+
+
+<script src="/bundle.js"></script><script>
   function loadCount() {
     var d = document, s = d.createElement('script');
     s.src = 'https://Artwalk.disqus.com/count.js';
@@ -3097,8 +6096,8 @@ mjx-container[display="true"] + br {
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
-</script>
-<script>
+;
+
   var disqus_config = function() {
     this.page.url = "https://leihao0.github.io/Concurrency-Programming-Guide/";
     this.page.identifier = "Concurrency-Programming-Guide/";
@@ -3117,7 +6116,4 @@ mjx-container[display="true"] + br {
       (d.head || d.body).appendChild(s);
     }
   });
-</script>
-
-</body>
-</html>
+</script></body></html>

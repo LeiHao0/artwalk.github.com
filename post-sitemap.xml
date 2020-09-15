@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://leihao0.github.io/What-is-Python-Used-for/</loc>
+        <lastmod>2020-09-15T17:13:16.033Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/Python-vs-Java-for-Kids/</loc>
+        <lastmod>2020-09-15T17:10:22.925Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/Raspberry-Pi-4/</loc>
+        <lastmod>2020-09-15T03:42:22.074Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/QSearch/</loc>
         <lastmod>2020-09-14T17:48:29.268Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1264,24 +1288,8 @@
     </url>
 
     <url>
-        <loc>https://leihao0.github.io/Raspberry-Pi-4/</loc>
-        <lastmod>2020-09-09T10:59:06.287Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://leihao0.github.io/iOS-Token-Based-APNs/</loc>
         <lastmod>2020-09-09T10:58:39.961Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/CN-Python-vs-Java-for-Kids/</loc>
-        <lastmod>2020-09-03T00:53:46.925Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1298,14 +1306,6 @@
     <url>
         <loc>https://leihao0.github.io/Threading-Programming-Guide/</loc>
         <lastmod>2020-09-03T00:53:27.996Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/Python-vs-Java-for-Kids/</loc>
-        <lastmod>2020-09-03T00:53:05.604Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
