@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>What is Python Used for</title>
+      <title>Python 的用途是什么</title>
       <link href="/cn/What-is-Python-Used-for/"/>
       <url>/cn/What-is-Python-Used-for/</url>
       
@@ -23,7 +23,7 @@
     
     
     <entry>
-      <title>How to Clean MacBook Dust &amp; Fan</title>
+      <title>如何清洁 MacBook 灰尘和风扇</title>
       <link href="/cn/How-to-Clean-MacBook-Dust-Fan/"/>
       <url>/cn/How-to-Clean-MacBook-Dust-Fan/</url>
       
@@ -42,7 +42,7 @@
     
     
     <entry>
-      <title>Python vs Java for Kids</title>
+      <title>适用于儿童的 Python vs Java</title>
       <link href="/cn/Python-vs-Java-for-Kids/"/>
       <url>/cn/Python-vs-Java-for-Kids/</url>
       
@@ -63,7 +63,7 @@
     
     
     <entry>
-      <title>Raspberry Pi 4</title>
+      <title>树莓派 4</title>
       <link href="/cn/Raspberry-Pi-4/"/>
       <url>/cn/Raspberry-Pi-4/</url>
       
@@ -82,7 +82,7 @@
     
     
     <entry>
-      <title>基于 iOS 令牌的APN</title>
+      <title>基于 iOS 令牌的 APN</title>
       <link href="/cn/iOS-Token-Based-APNs/"/>
       <url>/cn/iOS-Token-Based-APNs/</url>
       
@@ -103,7 +103,7 @@
     
     
     <entry>
-      <title>Threading Programming Guide</title>
+      <title>线程编程指南</title>
       <link href="/cn/Threading-Programming-Guide/"/>
       <url>/cn/Threading-Programming-Guide/</url>
       
@@ -124,7 +124,7 @@
     
     
     <entry>
-      <title>Concurrency Programming Guide</title>
+      <title>并发编程指南</title>
       <link href="/cn/Concurrency-Programming-Guide/"/>
       <url>/cn/Concurrency-Programming-Guide/</url>
       
@@ -145,7 +145,7 @@
     
     
     <entry>
-      <title>The Graveyard Book</title>
+      <title>坟场之书</title>
       <link href="/cn/The-Graveyard-Book/"/>
       <url>/cn/The-Graveyard-Book/</url>
       
@@ -471,11 +471,11 @@
     
     
     <entry>
-      <title>Feedback</title>
+      <title>反馈</title>
       <link href="/cn/Feedback/"/>
       <url>/cn/Feedback/</url>
       
-        <content type="html"><![CDATA[<h1 id="反馈"><a href="#反馈" class="headerlink" title="反馈"></a>反馈</h1><p>我们在一万年前的 第 24 节 <a href="https://leihao0.github.io/2016/02/12/24/">高阶圣堂法师</a> 中提到过如何进阶</p><p>其实除了魔法的提升以外， Senior 还有一项神奇的技能</p><p>——反馈</p><p>此法先予以对方肯定（pengsha）<br>然后委婉指出有待加强的地方（quedian)<br>最终达到把对方的法力值清零的效果</p><a id="more"></a><hr><p>纵观小法师几个较 Senior 的盆友们<br>也是拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖到死线 来临<br>才会施展此法</p><p>这么看来，反馈确实属于一项高阶技能</p><p>可惜我们的小法师处于并且长期处于 Junior 阶段</p><p>再加上如下两项原因：</p><ol><li>垃圾口语</li><li>社交恐惧</li></ol><p>反馈便成了小法师无法逾越的障碍</p><hr><p>某天下午小法师正在发愁死线疯狂的摄入咖啡<br>在咖啡因的作用下，突发奇想<br>虽然自己比较弱<br>但也不代表完全无法召唤神龙</p><p>比如 炼丹术（shenduxuexi) 里的 RNN 就非常适合现在的情况</p><h2 id="炼丹"><a href="#炼丹" class="headerlink" title="炼丹"></a>炼丹</h2><p>说到炼丹，最早还挺神秘兮兮的<br>只有少部分法师了解其中的奥秘</p><p>小法师在不明真相的情况下<br>刷掉了 Andrew Ng 在 Coursera 的 ML 课程并且买了证书 📄 以示清白<br>虽然早就忘光了，但还是多多少少有些概念</p><p>并且如今已经 9012 年了<br>已经简化到只要无脑准备材料就可以</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir feedback</span><br><span class="line">cd feedback</span><br><span class="line">mkdir -p datasets weights outputs</span><br></pre></td></tr></table></figure><p>小法师先搜了下，发现了 <a href="https://status.net/articles/performance-review-phrases-examples/">phrases examples</a></p><p>就无脑把内容 Copy 到 <code>datasets/data.txt</code> 里</p><p>然后过滤出 正反馈 和 负反馈</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> datasets</span><br><span class="line"></span><br><span class="line">cat data.txt | grep ✓ | sed <span class="string">&#x27;s/✓ //&#x27;</span> &gt; 👍.txt</span><br><span class="line">cat data.txt | grep ✗ | sed <span class="string">&#x27;s/✗ //&#x27;</span> &gt; 👎.txt</span><br></pre></td></tr></table></figure><p>材料准备好后，就可以搭丹炉了</p><p>小法师找了下，感觉 <a href="https://github.com/minimaxir/textgenrnn">textgenrnn</a> 不错，简单易懂</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">pip3 install -I textgenrnn tensorflow</span><br></pre></td></tr></table></figure><p>设置好炼丹步骤</p><p>开炼</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3 training.py</span></span><br><span class="line">from textgenrnn import textgenrnn</span><br><span class="line"></span><br><span class="line">textgen = textgenrnn()</span><br><span class="line"></span><br><span class="line">textgen.train_from_file(<span class="string">&#x27;datasets/👍.txt&#x27;</span>, num_epochs=1)</span><br><span class="line">textgen.save(<span class="string">&#x27;weights/👍.hdf5&#x27;</span>)</span><br><span class="line"></span><br><span class="line">textgen.train_from_file(<span class="string">&#x27;datasets/👎.txt&#x27;</span>, num_epochs=1)</span><br><span class="line">textgen.save(<span class="string">&#x27;weights/👎.hdf5&#x27;</span>)</span><br></pre></td></tr></table></figure><p>然后小法师的 MBP 的 CPU 疯转，迸出了欢乐的花火 🎆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Instructions for updating:</span><br><span class="line">Use tf.where in 2.0, which has the same broadcast rule as np.where</span><br><span class="line">Epoch 1&#x2F;1</span><br><span class="line">328&#x2F;559 [&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;.............] - ETA: 36s - loss: 1.2788</span><br></pre></td></tr></table></figure><p>载入练好的 🥚 看看</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3 testing.py</span></span><br><span class="line"><span class="keyword">from</span> textgenrnn <span class="keyword">import</span> textgenrnn</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;👍&#x27;</span>)</span><br><span class="line">textgenrnn(<span class="string">&#x27;weights/👍.hdf5&#x27;</span>).generate_samples(prefix=<span class="string">&quot;He&quot;</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;👎&#x27;</span>)</span><br><span class="line">textgenrnn(<span class="string">&#x27;weights/👎.hdf5&#x27;</span>).generate_samples(prefix=<span class="string">&quot;He&quot;</span>)</span><br></pre></td></tr></table></figure><p>emmmmmmmmmmmm</p><p>然鹅 结果十分辣眼睛 💔💔💔</p><p><img src="https://i.imgur.com/RT2msrl.gif" alt=""></p><hr><p>计划不通</p><p>没有继续实验<br>但增加 epochs 或 layers 或许会有提高</p><p>Repo: <a href="https://github.com/leihao0/feedback">Feedback</a></p><p>但：</p><blockquote><p>肯定是数据量不够</p></blockquote><p>小法师斩钉截铁的说到</p><p>😠😠😠</p>]]></content>
+        <content type="html"><![CDATA[<p>我们在一万年前的 第 24 节 <a href="https://leihao0.github.io/2016/02/12/24/">高阶圣堂法师</a> 中提到过如何进阶</p><p>其实除了魔法的提升以外， Senior 还有一项神奇的技能</p><p>——反馈</p><p>此法先予以对方肯定（pengsha）<br>然后委婉指出有待加强的地方（quedian)<br>最终达到把对方的法力值清零的效果</p><a id="more"></a><hr><p>纵观小法师几个较 Senior 的盆友们<br>也是拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖拖到死线 来临<br>才会施展此法</p><p>这么看来，反馈确实属于一项高阶技能</p><p>可惜我们的小法师处于并且长期处于 Junior 阶段</p><p>再加上如下两项原因：</p><ol><li>垃圾口语</li><li>社交恐惧</li></ol><p>反馈便成了小法师无法逾越的障碍</p><hr><p>某天下午小法师正在发愁死线疯狂的摄入咖啡<br>在咖啡因的作用下，突发奇想<br>虽然自己比较弱<br>但也不代表完全无法召唤神龙</p><p>比如 炼丹术（shenduxuexi) 里的 RNN 就非常适合现在的情况</p><h2 id="炼丹"><a href="#炼丹" class="headerlink" title="炼丹"></a>炼丹</h2><p>说到炼丹，最早还挺神秘兮兮的<br>只有少部分法师了解其中的奥秘</p><p>小法师在不明真相的情况下<br>刷掉了 Andrew Ng 在 Coursera 的 ML 课程并且买了证书 📄 以示清白<br>虽然早就忘光了，但还是多多少少有些概念</p><p>并且如今已经 9012 年了<br>已经简化到只要无脑准备材料就可以</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir feedback</span><br><span class="line">cd feedback</span><br><span class="line">mkdir -p datasets weights outputs</span><br></pre></td></tr></table></figure><p>小法师先搜了下，发现了 <a href="https://status.net/articles/performance-review-phrases-examples/">phrases examples</a></p><p>就无脑把内容 Copy 到 <code>datasets/data.txt</code> 里</p><p>然后过滤出 正反馈 和 负反馈</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> datasets</span><br><span class="line"></span><br><span class="line">cat data.txt | grep ✓ | sed <span class="string">&#x27;s/✓ //&#x27;</span> &gt; 👍.txt</span><br><span class="line">cat data.txt | grep ✗ | sed <span class="string">&#x27;s/✗ //&#x27;</span> &gt; 👎.txt</span><br></pre></td></tr></table></figure><p>材料准备好后，就可以搭丹炉了</p><p>小法师找了下，感觉 <a href="https://github.com/minimaxir/textgenrnn">textgenrnn</a> 不错，简单易懂</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">pip3 install -I textgenrnn tensorflow</span><br></pre></td></tr></table></figure><p>设置好炼丹步骤</p><p>开炼</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3 training.py</span></span><br><span class="line">from textgenrnn import textgenrnn</span><br><span class="line"></span><br><span class="line">textgen = textgenrnn()</span><br><span class="line"></span><br><span class="line">textgen.train_from_file(<span class="string">&#x27;datasets/👍.txt&#x27;</span>, num_epochs=1)</span><br><span class="line">textgen.save(<span class="string">&#x27;weights/👍.hdf5&#x27;</span>)</span><br><span class="line"></span><br><span class="line">textgen.train_from_file(<span class="string">&#x27;datasets/👎.txt&#x27;</span>, num_epochs=1)</span><br><span class="line">textgen.save(<span class="string">&#x27;weights/👎.hdf5&#x27;</span>)</span><br></pre></td></tr></table></figure><p>然后小法师的 MBP 的 CPU 疯转，迸出了欢乐的花火 🎆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Instructions for updating:</span><br><span class="line">Use tf.where in 2.0, which has the same broadcast rule as np.where</span><br><span class="line">Epoch 1&#x2F;1</span><br><span class="line">328&#x2F;559 [&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;.............] - ETA: 36s - loss: 1.2788</span><br></pre></td></tr></table></figure><p>载入练好的 🥚 看看</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3 testing.py</span></span><br><span class="line"><span class="keyword">from</span> textgenrnn <span class="keyword">import</span> textgenrnn</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;👍&#x27;</span>)</span><br><span class="line">textgenrnn(<span class="string">&#x27;weights/👍.hdf5&#x27;</span>).generate_samples(prefix=<span class="string">&quot;He&quot;</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;👎&#x27;</span>)</span><br><span class="line">textgenrnn(<span class="string">&#x27;weights/👎.hdf5&#x27;</span>).generate_samples(prefix=<span class="string">&quot;He&quot;</span>)</span><br></pre></td></tr></table></figure><p>emmmmmmmmmmmm</p><p>然鹅 结果十分辣眼睛 💔💔💔</p><p><img src="https://i.imgur.com/RT2msrl.gif" alt=""></p><hr><p>计划不通</p><p>没有继续实验<br>但增加 epochs 或 layers 或许会有提高</p><p>Repo: <a href="https://github.com/leihao0/feedback">Feedback</a></p><p>但：</p><blockquote><p>肯定是数据量不够</p></blockquote><p>小法师斩钉截铁的说到</p><p>😠😠😠</p>]]></content>
       
       
       
@@ -492,7 +492,7 @@
     
     
     <entry>
-      <title>Grab refer a candidate</title>
+      <title>Grab 内推</title>
       <link href="/cn/Grab-refer-a-candidate/"/>
       <url>/cn/Grab-refer-a-candidate/</url>
       
@@ -511,11 +511,11 @@
     
     
     <entry>
-      <title>WWDC 16 Guide 0</title>
+      <title>WWDC 16 指北 0</title>
       <link href="/cn/WWDC-16-Guide-0/"/>
       <url>/cn/WWDC-16-Guide-0/</url>
       
-        <content type="html"><![CDATA[<h1 id="WWDC-16-指北-0"><a href="#WWDC-16-指北-0" class="headerlink" title="WWDC 16 指北 0"></a>WWDC 16 指北 0</h1><p>现在已经 9102 年了，大会地址早已从<a href="https://www.vice.com/en_us/article/3k45py/san-fransiscos-homeless-crisis-is-now-a-poop-crisis?utm_source=wanqu.co&utm_campaign=Wanqu+Daily&utm_medium=website">遍地狗屎 💩 的圣弗朗西斯科</a>挪到了圣何塞</p><p>RN Flutter 等各种跨平台框架层出不穷，大陆为了在运行时搞事情死守 Objective-C<br>小法师所擅长的 Swift 已然凉凉，在大陆完全找不到工作<br>反观 微软、Google IO 惊呼连连，WWDC 貌似也快丢掉了科技界春晚的符号</p><p>不过鉴于每年还是有不少开不明真相的少年少女走上这条不归路<br>小法师决定还是客观公正的记录下当年的参会经历，给后人一个参考</p><a id="more"></a><h2 id="抽奖"><a href="#抽奖" class="headerlink" title="抽奖"></a>抽奖</h2><p>梦回 2016，小法师写了一年多的 Swift 后，被告知去看 WWDC<br>小法师莫名其妙，不知道 WWDC 是什么，查了下，惊奇的发现视频里  的讲解方式竟然貌似能听懂<br>遥想当年的 Android 视频，完全云里雾里<br>于是乎对这个大会充满了好感，挖坟把 15 年的大部分视频刷了一遍</p><p>后续了解到只要有开发者账号，和 Visa/MC 信用卡，就可以抽奖，只要 1599 刀<br>抽中后不管你去不去，反正钱先扣了，并且肯定不退<br>就算美签拒签，被拒入境，大病等等，反正钱就是不退<br>票禁止转让，最多给同一公司开发者账号下的小组成员<br>总之，抽中了就别想退钱</p><p>那时  开发还如日中天，一票难求， 哪像现在白给都不想去</p><p>一般开放注册在三月初，只有一周的时间，注意别错过了<br>8102 的时候小法师就因为换工作导致没注意错过了时间，结果省了很多钱<br>7102 年小法师再次抽奖，结果被拒，同样省了很多钱</p><p>所以业界有个传说是当年中奖后，第二年基本 GG，第三年基本中签招揽回头客</p><p>当然 2016 年的小法师是不知道这些的，当时的他抱着试一试的心态在网上注册了下<br>反正抽不到，点两下走个流程看看怎么回事</p><p>抽签结果大概在三月底前公布<br>小法师当时是在夜里收到盗刷锁卡电话，连忙向银行证明自己是自己<br>然后就安心的睡了</p><h2 id="签证"><a href="#签证" class="headerlink" title="签证"></a>签证</h2><p>麻烦才刚刚开始<br>首先是 签证<br>不同于上来就人在国外刚下飞机的那些人们<br>小法师之前哪里都没去过，白本一本<br>要不是 15 年回老家探望父母时顺带的办了，差点连护照都没有</p><p>由于时间比较紧迫，小法师各种淘宝美签加急<br>这时小法师的一个小伙伴表示虽然没抽到票，但也想去看一看<br>他发现可以直接在大使馆注册提交一堆材料，比淘宝加急还快一些<br>然后给了小法师一个看着像是钓鱼网站的美签付款中信银行链接<br>然后预约面签，北京的美国大使馆在朝阳区那边</p><h2 id="面签"><a href="#面签" class="headerlink" title="面签"></a>面签</h2><p>面签那天早早的就去了，之前小法师只在春运见过这么长的队<br>曲曲折折 山路十八弯，大概等了 3 、4 个小时，终于看到了面签的窗口</p><p>大概有 5-6 个窗口，可以说中文，1 个英文窗口<br>小法师的小伙伴不想等，说去英文的窗口，反正都会说英语<br>小法师也等的没耐心，就答应了</p><p>然鹅这里奉劝大家一定要去中文的窗口，至于为什么…</p><p>面试官是个老奶奶，当时具体说了什么已经记不清了，只记得小法师说<br> invite us to join their conference<br>老奶奶吃惊的说道<br>Are you working for Apple?<br>小：No, it’s a developer conference.<br>老：Why they invite you?</p><p>小法师准备打开文件夹拿出  的 Invitation letter，<br>老奶奶已经不耐烦了，指了指旁边的中文窗口，让小法师和他的小伙伴一边去<br>旁边维持秩序的保安小姐姐听到这种情况，叹了口气，让小法师他们在她旁边等一会儿</p><hr><p>然后中文面试的是个外国的小姐姐<br>不过她也很困惑 Conference<br>小法师猜测可能是非 IT 圈的人并不清楚 Conference 放到 IT 圈来是什么<br>于是拿出邀请函，小姐姐表示不看，并让小法师解释下为什么<br>小法师惊呆了，要说之前可能因为语言问题，这次为啥也不看材料呢<br>直到 9012 年小法师还是想不通</p><p>因为别人面签林林总总，只听说过没带材料被拒签的，还没听说过带了材料面试官就是不看的<br>还好小法师的小伙伴说是 Developer Meeting，小姐姐秒懂了（😓…）</p><p>然后问了问美帝有没有亲人，去多久，啥时候回来，住哪<br>最后问了问既然是可以提升自己的会议，为啥公司不报销呢</p><p>小法师说票真的很贵<br>然后大家都沉默了</p><p>大概半分钟后<br>小姐姐说恭喜你们，签证通过了，大概几个工作日后会收到邮寄护照</p><p>经历了那么多，小法师也没特别高兴，表示了感谢，就和小伙伴回家了</p><p>后来小法师的另一个有美签的小伙伴听说有中文面试，小法师还是两个人一起面的，甚至还有一家子拖家带口一起面的，下巴都掉下来了<br>美签，已经沦陷了<br>他说道</p>]]></content>
+        <content type="html"><![CDATA[<p>现在已经 9102 年了，大会地址早已从<a href="https://www.vice.com/en_us/article/3k45py/san-fransiscos-homeless-crisis-is-now-a-poop-crisis?utm_source=wanqu.co&utm_campaign=Wanqu+Daily&utm_medium=website">遍地狗屎 💩 的圣弗朗西斯科</a>挪到了圣何塞</p><p>RN Flutter 等各种跨平台框架层出不穷，大陆为了在运行时搞事情死守 Objective-C<br>小法师所擅长的 Swift 已然凉凉，在大陆完全找不到工作<br>反观 微软、Google IO 惊呼连连，WWDC 貌似也快丢掉了科技界春晚的符号</p><p>不过鉴于每年还是有不少开不明真相的少年少女走上这条不归路<br>小法师决定还是客观公正的记录下当年的参会经历，给后人一个参考</p><a id="more"></a><h2 id="抽奖"><a href="#抽奖" class="headerlink" title="抽奖"></a>抽奖</h2><p>梦回 2016，小法师写了一年多的 Swift 后，被告知去看 WWDC<br>小法师莫名其妙，不知道 WWDC 是什么，查了下，惊奇的发现视频里  的讲解方式竟然貌似能听懂<br>遥想当年的 Android 视频，完全云里雾里<br>于是乎对这个大会充满了好感，挖坟把 15 年的大部分视频刷了一遍</p><p>后续了解到只要有开发者账号，和 Visa/MC 信用卡，就可以抽奖，只要 1599 刀<br>抽中后不管你去不去，反正钱先扣了，并且肯定不退<br>就算美签拒签，被拒入境，大病等等，反正钱就是不退<br>票禁止转让，最多给同一公司开发者账号下的小组成员<br>总之，抽中了就别想退钱</p><p>那时  开发还如日中天，一票难求， 哪像现在白给都不想去</p><p>一般开放注册在三月初，只有一周的时间，注意别错过了<br>8102 的时候小法师就因为换工作导致没注意错过了时间，结果省了很多钱<br>7102 年小法师再次抽奖，结果被拒，同样省了很多钱</p><p>所以业界有个传说是当年中奖后，第二年基本 GG，第三年基本中签招揽回头客</p><p>当然 2016 年的小法师是不知道这些的，当时的他抱着试一试的心态在网上注册了下<br>反正抽不到，点两下走个流程看看怎么回事</p><p>抽签结果大概在三月底前公布<br>小法师当时是在夜里收到盗刷锁卡电话，连忙向银行证明自己是自己<br>然后就安心的睡了</p><h2 id="签证"><a href="#签证" class="headerlink" title="签证"></a>签证</h2><p>麻烦才刚刚开始<br>首先是 签证<br>不同于上来就人在国外刚下飞机的那些人们<br>小法师之前哪里都没去过，白本一本<br>要不是 15 年回老家探望父母时顺带的办了，差点连护照都没有</p><p>由于时间比较紧迫，小法师各种淘宝美签加急<br>这时小法师的一个小伙伴表示虽然没抽到票，但也想去看一看<br>他发现可以直接在大使馆注册提交一堆材料，比淘宝加急还快一些<br>然后给了小法师一个看着像是钓鱼网站的美签付款中信银行链接<br>然后预约面签，北京的美国大使馆在朝阳区那边</p><h2 id="面签"><a href="#面签" class="headerlink" title="面签"></a>面签</h2><p>面签那天早早的就去了，之前小法师只在春运见过这么长的队<br>曲曲折折 山路十八弯，大概等了 3 、4 个小时，终于看到了面签的窗口</p><p>大概有 5-6 个窗口，可以说中文，1 个英文窗口<br>小法师的小伙伴不想等，说去英文的窗口，反正都会说英语<br>小法师也等的没耐心，就答应了</p><p>然鹅这里奉劝大家一定要去中文的窗口，至于为什么…</p><p>面试官是个老奶奶，当时具体说了什么已经记不清了，只记得小法师说<br> invite us to join their conference<br>老奶奶吃惊的说道<br>Are you working for Apple?<br>小：No, it’s a developer conference.<br>老：Why they invite you?</p><p>小法师准备打开文件夹拿出  的 Invitation letter，<br>老奶奶已经不耐烦了，指了指旁边的中文窗口，让小法师和他的小伙伴一边去<br>旁边维持秩序的保安小姐姐听到这种情况，叹了口气，让小法师他们在她旁边等一会儿</p><hr><p>然后中文面试的是个外国的小姐姐<br>不过她也很困惑 Conference<br>小法师猜测可能是非 IT 圈的人并不清楚 Conference 放到 IT 圈来是什么<br>于是拿出邀请函，小姐姐表示不看，并让小法师解释下为什么<br>小法师惊呆了，要说之前可能因为语言问题，这次为啥也不看材料呢<br>直到 9012 年小法师还是想不通</p><p>因为别人面签林林总总，只听说过没带材料被拒签的，还没听说过带了材料面试官就是不看的<br>还好小法师的小伙伴说是 Developer Meeting，小姐姐秒懂了（😓…）</p><p>然后问了问美帝有没有亲人，去多久，啥时候回来，住哪<br>最后问了问既然是可以提升自己的会议，为啥公司不报销呢</p><p>小法师说票真的很贵<br>然后大家都沉默了</p><p>大概半分钟后<br>小姐姐说恭喜你们，签证通过了，大概几个工作日后会收到邮寄护照</p><p>经历了那么多，小法师也没特别高兴，表示了感谢，就和小伙伴回家了</p><p>后来小法师的另一个有美签的小伙伴听说有中文面试，小法师还是两个人一起面的，甚至还有一家子拖家带口一起面的，下巴都掉下来了<br>美签，已经沦陷了<br>他说道</p>]]></content>
       
       
       
@@ -696,7 +696,7 @@
     
     
     <entry>
-      <title>Rendezvous with Rama</title>
+      <title>与罗摩相会</title>
       <link href="/cn/Rendezvous-with-Rama/"/>
       <url>/cn/Rendezvous-with-Rama/</url>
       
