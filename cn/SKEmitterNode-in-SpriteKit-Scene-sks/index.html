@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/cn/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Particles on iOS need SpriteKit.">
+  <meta name="description" content="iOS 上的粒子需要 SpriteKit。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SKEmitterNode in SpriteKit Scene sks">
 <meta property="og:url" content="https://leihao0.github.io/cn/SKEmitterNode-in-SpriteKit-Scene-sks/index.html">
 <meta property="og:site_name" content="LeiHao's Blog">
-<meta property="og:description" content="Particles on iOS need SpriteKit.">
+<meta property="og:description" content="iOS 上的粒子需要 SpriteKit。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.imgur.com/33lUmpg.gif">
 <meta property="og:image" content="https://i.imgur.com/LYmt4PZ.png">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://i.imgur.com/PHiz4VU.png">
 <meta property="og:image" content="https://i.imgur.com/qtYdAsH.png">
 <meta property="article:published_time" content="2018-12-12T15:24:48.000Z">
-<meta property="article:modified_time" content="2020-09-09T11:23:32.302Z">
+<meta property="article:modified_time" content="2020-09-16T13:59:46.303Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="Xcode">
 <meta property="article:tag" content="SpriteKit">
@@ -3444,7 +3444,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-09-09 19:23:32" itemprop="dateModified" datetime="2020-09-09T19:23:32+08:00">2020-09-09</time>
+        <time title="修改时间：2020-09-16 21:59:46" itemprop="dateModified" datetime="2020-09-16T21:59:46+08:00">2020-09-16</time>
       </span>
 
   
@@ -3469,7 +3469,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>618</span>
+      <span>397</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -3487,24 +3487,24 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img src="https://i.imgur.com/33lUmpg.gif" alt=""><br>Particles on iOS need SpriteKit.</p>
+        <p><img src="https://i.imgur.com/33lUmpg.gif" alt=""><br>iOS 上的粒子需要 SpriteKit。</p>
 <a id="more"></a>
 
 <ol>
-<li>Add a file <code>MyScene.sks</code> in project</li>
-<li>Drag a SpriteKit View into Storyboard</li>
-<li>Drag two Emitters into <code>MyScene.sks</code></li>
-<li>Setup Emitter properties</li>
-<li>Drag actions you want to add on each Emitter</li>
+<li>在项目中添加文件 MyScene.sks</li>
+<li>将 SpriteKit 视图拖到情节提要中</li>
+<li>将两个发射器拖到 <code>MyScene.sks</code> 中</li>
+<li>设置发射器属性</li>
+<li>在每个发射器上拖动要添加的动作</li>
 </ol>
-<p>My previous understanding is that.</p>
+<p>我以前的理解是。</p>
 <figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> node = <span class="type">SKEmitterNode</span>(fileNamed: <span class="string">"Fire"</span>)</span><br><span class="line"><span class="keyword">let</span> scene = <span class="type">SKScene</span>(fileNamed: <span class="string">"MyScene"</span>)</span><br><span class="line">scene?.addChild(node)</span><br><span class="line"><span class="comment">// SKAction(...</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>To me, the surprise is that SpriteKit can have similar development experience, just like using Storyboard.</p>
-<p>The main reason I surrender to iOS Dev is Storyboard when I saw Paul Hegarty ctrl drag a button to code in his class.</p>
-<p>That’s amazing!</p>
-<p>Also, I saw many UIDynamic things I used to set up by code.</p>
-<p>Glad 😄 to have this brief exploring.</p>
+<p>对我来说，令人惊讶的是 SpriteKit 可以像使用 Storyboard 一样具有类似的开发经验。</p>
+<p>当我看到 Paul Hegarty ctrl 拖动按钮在他的班级进行编码时，我投降到 iOS Dev 的主要原因是 Storyboard。</p>
+<p>棒极了！</p>
+<p>另外，我看到了很多我以前通过代码设置的 UIDynamic 东西。</p>
+<p>很高兴进行此简短的探索。</p>
 <p><img src="https://i.imgur.com/LYmt4PZ.png" alt=""></p>
 <p><img src="https://i.imgur.com/eL15HjC.png" alt=""></p>
 <p><img src="https://i.imgur.com/PHiz4VU.png" alt=""></p>
@@ -3637,13 +3637,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">430k</span>
+    <span title="站点总字数">425k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:31</span>
+    <span title="站点阅读时长">6:26</span>
   </span>
 </div>
 

@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/cn/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="I found XFyun FlySpeechRecognizer do a quite good job on this thing if the audio is mandarin Chinese, it even can recognize some simple English words in hybrid language audio. There is no need to trai">
+  <meta name="description" content="如果音频是普通话，我发现 XFyun FlySpeechRecognizer 在这件事上做得很好，它甚至可以识别混合语言音频中的一些简单英语单词。 不需要从一开始就训练机器学习模型来做这样的事情。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to convert video to text">
+<meta property="og:title" content="如何将视频转换为文本">
 <meta property="og:url" content="https://leihao0.github.io/cn/How-to-convert-video-to-text/index.html">
 <meta property="og:site_name" content="LeiHao's Blog">
-<meta property="og:description" content="I found XFyun FlySpeechRecognizer do a quite good job on this thing if the audio is mandarin Chinese, it even can recognize some simple English words in hybrid language audio. There is no need to trai">
+<meta property="og:description" content="如果音频是普通话，我发现 XFyun FlySpeechRecognizer 在这件事上做得很好，它甚至可以识别混合语言音频中的一些简单英语单词。 不需要从一开始就训练机器学习模型来做这样的事情。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-07-22T07:30:23.000Z">
-<meta property="article:modified_time" content="2020-09-09T11:25:39.100Z">
+<meta property="article:modified_time" content="2020-09-16T14:06:43.964Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="Machine Learning">
 <meta name="twitter:card" content="summary">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>How to convert video to text | LeiHao's Blog</title>
+  <title>如何将视频转换为文本 | LeiHao's Blog</title>
   
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
     <script>
@@ -3419,7 +3419,7 @@ mjx-container[display="true"] + br {
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          How to convert video to text
+          如何将视频转换为文本
         </h1>
 
         <div class="post-meta-container">
@@ -3437,7 +3437,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-09-09 19:25:39" itemprop="dateModified" datetime="2020-09-09T19:25:39+08:00">2020-09-09</time>
+        <time title="修改时间：2020-09-16 22:06:43" itemprop="dateModified" datetime="2020-09-16T22:06:43+08:00">2020-09-16</time>
       </span>
 
   
@@ -3462,7 +3462,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
+      <span>2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -3480,16 +3480,16 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>I found XFyun FlySpeechRecognizer do a quite good job on this thing if the audio is mandarin Chinese, it even can recognize some simple English words in hybrid language audio.</p>
-<p>There is no need to train a Machine Learning model from the very beginning to do such things.</p>
+        <p>如果音频是普通话，我发现 XFyun FlySpeechRecognizer 在这件事上做得很好，它甚至可以识别混合语言音频中的一些简单英语单词。</p>
+<p>不需要从一开始就训练机器学习模型来做这样的事情。</p>
 <a id="more"></a>
 
-<p>XFyun API has some limitations that the size should &lt;= 2MB, audio length &lt;= the 60s.</p>
+<p>XFyun API 有一些限制，大小应小于等于 2MB，音频长度小于等于 60s。</p>
 <p>Usage <code>./test.sh test.mp4</code></p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/zsh</span></span><br><span class="line">filename=$(<span class="built_in">echo</span> <span class="variable">$1</span> | cut -d. -f1)</span><br><span class="line"><span class="built_in">type</span>=$(<span class="built_in">echo</span> <span class="variable">$1</span> | cut -d. -f2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print $filename.$type</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># split video &lt;= 2MB</span></span><br><span class="line">mp4box -splits 2000 <span class="variable">$filename</span>.<span class="variable">$type</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># echo video → audio pcm</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> <span class="variable">$filename</span>\_*.<span class="variable">$type</span>; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">print</span> <span class="string">"ffmpeg <span class="variable">$name</span> to pcm"</span></span><br><span class="line">  ffmpeg -y  -i <span class="variable">$name</span> -acodec pcm_s16le -f s16le -ac 1 -ar 16000 <span class="variable">$name</span>.pcm</span><br><span class="line">  rm <span class="variable">$name</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># audio to text</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> <span class="variable">$filename</span>\_*.pcm; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">print</span> <span class="string">"xfyun.py <span class="variable">$name</span>"</span></span><br><span class="line">  python3 xfyun.py <span class="variable">$name</span></span><br><span class="line">  rm <span class="variable">$name</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>Now we can use XFyun to recognize audio.</p>
-<p>Here is their document <a target="_blank" rel="noopener" href="https://doc.xfyun.cn/rest_api/%E8%AF%AD%E9%9F%B3%E5%90%AC%E5%86%99.html">XFyun IFlySpeechRecognizer</a>, but their sample code can not be executed, so I do some fixes.</p>
+<p>现在我们可以使用 XFyun 识别音频。</p>
+<p>这是他们的文件 <a target="_blank" rel="noopener" href="https://doc.xfyun.cn/rest_api/%E8%AF%AD%E9%9F%B3%E5%90%AC%E5%86%99.html">XFyun IFlySpeechRecognizer</a>, 但无法执行其示例代码，因此我进行了一些修复。</p>
 <p><code>xfyun.py</code> with <code>Python3</code>:</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">argv</span>):</span></span><br><span class="line">    f = open(argv[<span class="number">1</span>], <span class="string">'rb'</span>)</span><br><span class="line">    file_content = f.read()</span><br><span class="line">    base64_audio = base64.b64encode(file_content)</span><br><span class="line">    body = urllib.parse.urlencode({<span class="string">'audio'</span>: base64_audio}).encode(<span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line">    url = <span class="string">'http://api.xfyun.cn/v1/service/v1/iat'</span></span><br><span class="line">    api_key = <span class="string">''</span></span><br><span class="line">    x_appid = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    param = {<span class="string">"engine_type"</span>: <span class="string">"sms16k"</span>, <span class="string">"aue"</span>: <span class="string">"raw"</span>}</span><br><span class="line"></span><br><span class="line">    param_str = json.dumps(param)</span><br><span class="line">    param_utf8 = param_str.replace(<span class="string">' '</span>, <span class="string">''</span>).encode(<span class="string">'utf8'</span>)</span><br><span class="line">    param_b64 = base64.b64encode(param_utf8)</span><br><span class="line">    param_b64str = param_b64.decode(<span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line">    x_time = str(int(time.time()))</span><br><span class="line">    checksum = (api_key + x_time + param_b64str).encode(<span class="string">'utf8'</span>)</span><br><span class="line">    x_checksum = hashlib.md5(checksum).hexdigest()</span><br><span class="line">    x_header = {<span class="string">'X-Appid'</span>: x_appid,</span><br><span class="line">                <span class="string">'X-CurTime'</span>: x_time,</span><br><span class="line">                <span class="string">'X-Param'</span>: param_b64str,</span><br><span class="line">                <span class="string">'X-CheckSum'</span>: x_checksum}</span><br><span class="line"></span><br><span class="line">    req = urllib.request.Request(url, data=body, headers=x_header)</span><br><span class="line">    response = urllib.request.urlopen(req)</span><br><span class="line">    result = response.read().decode(<span class="string">'utf8'</span>)</span><br><span class="line">    data = json.loads(result)[<span class="string">'data'</span>]</span><br><span class="line">    <span class="keyword">print</span> (data)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main(sys.argv)</span><br></pre></td></tr></tbody></table></figure>
 
@@ -3555,8 +3555,8 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/cn/More-how-to-convert-video-to-text/" rel="next" title="More how to convert video to text">
-                  More how to convert video to text <i class="fa fa-chevron-right"></i>
+                <a href="/cn/More-how-to-convert-video-to-text/" rel="next" title="更多如何将视频转换为文本">
+                  更多如何将视频转换为文本 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -3622,13 +3622,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">430k</span>
+    <span title="站点总字数">425k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:31</span>
+    <span title="站点阅读时长">6:26</span>
   </span>
 </div>
 
@@ -3691,7 +3691,7 @@ mjx-container[display="true"] + br {
   var disqus_config = function() {
     this.page.url = "https://leihao0.github.io/cn/How-to-convert-video-to-text/";
     this.page.identifier = "How-to-convert-video-to-text/";
-    this.page.title = "How to convert video to text";
+    this.page.title = "如何将视频转换为文本";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

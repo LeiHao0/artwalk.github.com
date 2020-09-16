@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/cn/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="I wrote Swift Generics in protocol and enum a half a year ago to solve the network responds data to a Generics type. After Swift 4, the JSONSerialization way is a bit out of style. In updating progres">
+  <meta name="description" content="我半年前写了协议和枚举中的 Swift 泛型，以解决网络响应问题数据转换为泛型类型。 在 Swift 4 之后，JSONSerialization方法有点过时了 在更新进度时，我找到了一种更好的方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Struct Codable Alamofire Generics">
 <meta property="og:url" content="https://leihao0.github.io/cn/Struct-Codable-Alamofire-Generics/index.html">
 <meta property="og:site_name" content="LeiHao's Blog">
-<meta property="og:description" content="I wrote Swift Generics in protocol and enum a half a year ago to solve the network responds data to a Generics type. After Swift 4, the JSONSerialization way is a bit out of style. In updating progres">
+<meta property="og:description" content="我半年前写了协议和枚举中的 Swift 泛型，以解决网络响应问题数据转换为泛型类型。 在 Swift 4 之后，JSONSerialization方法有点过时了 在更新进度时，我找到了一种更好的方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-16T12:16:23.000Z">
-<meta property="article:modified_time" content="2020-09-09T11:26:51.057Z">
+<meta property="article:modified_time" content="2020-09-16T17:17:25.259Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="Swift">
 <meta property="article:tag" content="iOS">
@@ -3335,7 +3335,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">1.</span> <span class="nav-text">Tools:</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">1.</span> <span class="nav-text">Tools</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -3439,7 +3439,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-09-09 19:26:51" itemprop="dateModified" datetime="2020-09-09T19:26:51+08:00">2020-09-09</time>
+        <time title="修改时间：2020-09-17 01:17:25" itemprop="dateModified" datetime="2020-09-17T01:17:25+08:00">2020-09-17</time>
       </span>
 
   
@@ -3464,7 +3464,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.2k</span>
+      <span>2.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -3482,12 +3482,12 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>I wrote <a href="http://leihao0.github.io/2016/12/27/Swift-Generics-in-protocol-and-enum/">Swift Generics in protocol and enum</a> a half a year ago to solve the network responds data to a Generics type.</p>
-<p>After Swift 4, the <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/foundation/jsonserialization">JSONSerialization</a> way is a bit out of style.</p>
-<p>In updating progress, I found a better way to do it.</p>
+        <p>我半年前写了<a href="https://leihao0.github.io/Swift-Generics-in-protocol-and-enum/">协议和枚举中的 Swift 泛型</a>，以解决网络响应问题数据转换为泛型类型。</p>
+<p>在 Swift 4 之后，<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/foundation/jsonserialization">JSONSerialization</a>方法有点过时了</p>
+<p>在更新进度时，我找到了一种更好的方法</p>
 <a id="more"></a>
 
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools:"></a>Tools:</h2><ul>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://app.quicktype.io">Quicktype</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/Alamofire/Alamofire">Alamofire</a></li>
 </ul>
@@ -3499,17 +3499,17 @@ mjx-container[display="true"] + br {
 
 <figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">import</span> Alamofire</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span>: <span class="title">Codable</span> </span>{</span><br><span class="line">    <span class="keyword">let</span> id: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">let</span> list: [<span class="type">Int</span>]? <span class="comment">// optional, in case some date has no list</span></span><br><span class="line">    <span class="keyword">let</span> <span class="built_in">c</span>: <span class="type">C</span></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">CodingKeys</span>: <span class="title">String</span>, <span class="title">CodingKey</span> </span>{</span><br><span class="line">        <span class="keyword">case</span> id</span><br><span class="line">        <span class="keyword">case</span> list = <span class="string">"List"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="built_in">c</span> = <span class="string">"C"</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">C</span>: <span class="title">Codable</span> </span>{</span><br><span class="line">    <span class="keyword">let</span> id: <span class="type">Int</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// MARK: - Alamofire response handlers</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">DataRequest</span> </span>{</span><br><span class="line">    <span class="keyword">fileprivate</span> <span class="function"><span class="keyword">func</span> <span class="title">decodableResponseSerializer</span>&lt;T: Decodable&gt;<span class="params">()</span></span> -&gt; <span class="type">DataResponseSerializer</span>&lt;<span class="type">T</span>&gt; {</span><br><span class="line">        <span class="keyword">return</span> <span class="type">DataResponseSerializer</span> { <span class="number">_</span>, response, data, error <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">guard</span> error == <span class="literal">nil</span> <span class="keyword">else</span> { <span class="keyword">return</span> .failure(error!) }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> {</span><br><span class="line">                <span class="keyword">return</span> .failure(<span class="type">AFError</span>.responseSerializationFailed(reason: .inputDataNil))</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="type">Result</span> { <span class="keyword">try</span> <span class="type">JSONDecoder</span>().decode(<span class="type">T</span>.<span class="keyword">self</span>, from: data) }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@discardableResult</span></span><br><span class="line">    <span class="keyword">fileprivate</span> <span class="function"><span class="keyword">func</span> <span class="title">responseDecodable</span>&lt;T: Decodable&gt;<span class="params">(queue: DispatchQueue? = <span class="literal">nil</span>, completionHandler: @escaping <span class="params">(DataResponse&lt;T&gt;)</span></span></span> -&gt; <span class="type">Void</span>) -&gt; <span class="type">Self</span> {</span><br><span class="line">        <span class="keyword">return</span> response(queue: queue, responseSerializer: decodableResponseSerializer(), completionHandler: completionHandler)</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@discardableResult</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">responseA</span><span class="params">(queue: DispatchQueue? = <span class="literal">nil</span>, completionHandler: @escaping <span class="params">(DataResponse&lt;A&gt;)</span></span></span> -&gt; <span class="type">Void</span>) -&gt; <span class="type">Self</span> {</span><br><span class="line">        <span class="keyword">return</span> responseDecodable(queue: queue, completionHandler: completionHandler)</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>Notice the <code>func responseA</code> is a static type only suitable for the spacial API, which responsed the JSON you pasted. Therefore we need a generics type for all APIs.</p>
-<p>Therefore we can delete the <code>func responseA</code> and define a protocol <code>MYRequest</code> as follows:</p>
+<p>请注意，<code>func responseA</code>是静态类型，仅适用于响应您粘贴的 JSON 的空间 API。因此，我们需要所有 API 的泛型类型。</p>
+<p>因此我们可以删除<code>func responseA</code>并定义一个协议<code>MYRequest</code>，如下所示：</p>
 <figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">MYRequest</span> </span>{</span><br><span class="line">    <span class="keyword">var</span> router: <span class="type">String</span> { <span class="keyword">get</span> }</span><br><span class="line">    <span class="keyword">var</span> api: <span class="type">String</span> { <span class="keyword">get</span> }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">associatedtype</span> <span class="type">T</span>: <span class="type">Decodable</span> <span class="comment">// generics type</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">MYRequest</span> </span>{</span><br><span class="line">    <span class="keyword">var</span> api: <span class="type">String</span> { <span class="keyword">return</span> <span class="string">"v1"</span> }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> domain: <span class="type">String</span> {</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"https://domain.com"</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// T is used in DataResponse&lt;T&gt;</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">request</span><span class="params">(completionHandler: @escaping <span class="params">(DataResponse&lt;T&gt;)</span></span></span> -&gt; <span class="type">Void</span>) {</span><br><span class="line">        <span class="keyword">let</span> url = <span class="string">"\(domain)/\(api)/\(router)"</span></span><br><span class="line">        <span class="type">Alamofire</span>.request(url).responseDecodable(completionHandler: completionHandler)</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>Now we can implement different Requset as we want:</p>
+<p>现在，我们可以根据需要实现不同的 Requset：</p>
 <figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ARequset</span>: <span class="title">MYRequest</span> </span>{</span><br><span class="line">    <span class="keyword">let</span> router = <span class="string">"a"</span></span><br><span class="line">    <span class="keyword">typealias</span> <span class="type">T</span> = <span class="type">A</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BRequset</span>: <span class="title">MYRequest</span> </span>{</span><br><span class="line">    <span class="keyword">let</span> router = <span class="string">"b"</span></span><br><span class="line">    <span class="keyword">typealias</span> <span class="type">T</span> = <span class="type">B</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>Also, we can define another protocol which has the same <code>var api: String { get }</code> in MYRequest in case we have a new <code>CRequset</code> and API upgraded to v2,</p>
+<p>另外，我们可以定义另一个具有相同协议的协议 <code>var api: String { get }</code> 在 <code>MYRequest</code> 如果我们有一个新的 <code>CRequset</code> 和 API 升级到 v2</p>
 <figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">V2</span> </span>{</span><br><span class="line">    <span class="keyword">var</span> api: <span class="type">String</span> { <span class="keyword">get</span> }</span><br><span class="line">}</span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">V2</span> </span>{</span><br><span class="line">    <span class="keyword">var</span> api: <span class="type">String</span> { <span class="keyword">return</span> <span class="string">"v2"</span> }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">C</span>: <span class="title">Request</span>, <span class="title">V2</span> </span>{</span><br><span class="line">    <span class="keyword">let</span> router = <span class="string">"c"</span></span><br><span class="line">    <span class="keyword">typealias</span> <span class="type">T</span> = <span class="type">C</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>Finally, the request in ViewController would like this:</p>
+<p>最后，ViewController 中的请求将如下所示：</p>
 <figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ARequset</span>().request { [<span class="keyword">weak</span> <span class="keyword">self</span>] response <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> a = response.result.value { <span class="comment">// a is A, not Any</span></span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="type">BRequset</span>().request { [<span class="keyword">weak</span> <span class="keyword">self</span>] response <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> b = response.result.value { <span class="comment">// b is B, not Any</span></span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
     </div>
@@ -3642,13 +3642,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">430k</span>
+    <span title="站点总字数">425k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:31</span>
+    <span title="站点阅读时长">6:26</span>
   </span>
 </div>
 
