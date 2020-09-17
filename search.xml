@@ -5209,7 +5209,7 @@
   <entry>
     <title>🇯🇵-2-4-0</title>
     <url>/Japan-2-4-0/</url>
-    <content><![CDATA[<h1 id="东京"><a href="#东京" class="headerlink" title="东京"></a>东京</h1><div id="googleMap1710" style="
+    <content><![CDATA[<h1 id="Tokyo"><a href="#Tokyo" class="headerlink" title="Tokyo"></a>Tokyo</h1><div id="googleMap4579" style="
             height: 450px;
             width: 100%;
             margin: 0px;
@@ -5219,13 +5219,13 @@
 <style>.gmnoprint img {max-width: none !important;}</style>
 <script defer="defer">
   window.hexoGmaps = window.hexoGmaps || { maps: {}};
-  window.hexoGmaps.maps['initgoogleMap1710'] = function init() {
+  window.hexoGmaps.maps['initgoogleMap4579'] = function init() {
     var mapOptions = {
        'scrollwheel': false,
        'zoom': 11,
        'center': new window.google.maps.LatLng( 35.710 , 139.808 ),
      },
-     target = document.getElementById('googleMap1710'),
+     target = document.getElementById('googleMap4579'),
      map = new window.google.maps.Map(target, mapOptions);
       
      
@@ -5326,6 +5326,8 @@
 </script>
 
 <h2 id="Tokyo-Skytree"><a href="#Tokyo-Skytree" class="headerlink" title="Tokyo Skytree"></a>Tokyo Skytree</h2><p>It was already noon when I arrived in Tokyo<br>This time I stayed at the Richmond Hotel next to it, the room is as always small + exquisite<br>Across the road is the clear sky tree<br>The hotel’s special restaurant is actually Sizzler, a frequent visitor in Beijing</p>
+<a id="more"></a>
+
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-00.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-01.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-02.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-03.jpg" alt=""></div></div></div>
 
 <p>When I came last time, I went up and took a look. At that time, there was the theme of Attacking Giant, but unfortunately I didn’t know the Captain.</p>

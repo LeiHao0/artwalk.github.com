@@ -5209,7 +5209,7 @@
   <entry>
     <title>🇯🇵-2-4-0</title>
     <url>/cn/Japan-2-4-0/</url>
-    <content><![CDATA[<h1 id="东京"><a href="#东京" class="headerlink" title="东京"></a>东京</h1><div id="googleMap2070" style="
+    <content><![CDATA[<h1 id="东京"><a href="#东京" class="headerlink" title="东京"></a>东京</h1><div id="googleMap834" style="
             height: 450px;
             width: 100%;
             margin: 0px;
@@ -5219,13 +5219,13 @@
 <style>.gmnoprint img {max-width: none !important;}</style>
 <script defer="defer">
   window.hexoGmaps = window.hexoGmaps || { maps: {}};
-  window.hexoGmaps.maps['initgoogleMap2070'] = function init() {
+  window.hexoGmaps.maps['initgoogleMap834'] = function init() {
     var mapOptions = {
        'scrollwheel': false,
        'zoom': 11,
        'center': new window.google.maps.LatLng( 35.710 , 139.808 ),
      },
-     target = document.getElementById('googleMap2070'),
+     target = document.getElementById('googleMap834'),
      map = new window.google.maps.Map(target, mapOptions);
       
      
@@ -5326,6 +5326,8 @@
 </script>
 
 <h2 id="东京晴空塔"><a href="#东京晴空塔" class="headerlink" title="东京晴空塔"></a>东京晴空塔</h2><p>到东京时已经中午了<br>这次住在了旁边的 Richmond Hotel，房间也是一如既往的 小 + 精致<br>马路对面就是 晴空树<br>宾馆特供餐厅居然是在北京时常去的 Sizzler 时时乐</p>
+<a id="more"></a>
+
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-00.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-01.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-02.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-03.jpg" alt=""></div></div></div>
 
 <p>上次来的时候，特意上去看了下，当时还有 进击的巨人 主题，可惜当时还不认识 兵长</p>
