@@ -4861,7 +4861,7 @@
 <hr>
 <p>第二天醒來霧還沒有散去</p>
 <video width="720" autoplay loop muted="true" >
-<source type="video/mp4" src="/images/Japan21000.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan21000.mp4">
 </video>
 
 <p>小法師很害羞，不喜歡見人<br>本來打算在陽台上躺屍兩天</p>
@@ -4951,7 +4951,7 @@
 <p>由於富士山 🗻 並非二次元，所以不能直接用，需要對公式做一下變形，並且可以刪除 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.489ex" xmlns="http://www.w3.org/2000/svg" width="1.364ex" height="1.489ex" role="img" focusable="false" viewBox="0 -442 603 658"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D707" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"></path></g></g></g></svg></mjx-container></p>
 <p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.308ex" xmlns="http://www.w3.org/2000/svg" width="35.462ex" height="6.521ex" role="img" focusable="false" viewBox="0 -1862.2 15674.3 2882.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D467" d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z"></path></g><g data-mml-node="mo" transform="translate(742.8, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msup" transform="translate(1798.6, 0)"><g data-mml-node="mfrac"><g data-mml-node="mn" transform="translate(967, 676)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path></g><g data-mml-node="mrow" transform="translate(220, -915)"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="msqrt" transform="translate(571, 0)"><g transform="translate(853, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500, 0)"><path data-c="1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path></g></g><g data-mml-node="mo" transform="translate(0, 95)"><path data-c="221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path></g><rect width="1070" height="60" x="853" y="835"></rect></g></g><rect width="2694" height="60" x="120" y="220"></rect></g><g data-mml-node="TeXAtom" transform="translate(2934, 1069.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mfrac" transform="translate(778, 0)"><g data-mml-node="msup" transform="translate(330.3, 394) scale(0.707)"><g data-mml-node="mi"><path data-c="1D445" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(759, 363)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g><g data-mml-node="mrow" transform="translate(220, -515.3) scale(0.707)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="msup" transform="translate(500, 0)"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(571, 289)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></g><rect width="1346.2" height="60" x="120" y="220"></rect></g></g></g><g data-mml-node="mo" transform="translate(6454.3, 0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(6899, 0)"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="mo" transform="translate(7747.8, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(8803.5, 0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(9303.5, 0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(9748.2, 0)"><path data-c="1D445" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path></g><g data-mml-node="mo" transform="translate(10785, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msqrt" transform="translate(11840.8, 0)"><g transform="translate(1020, 0)"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="TeXAtom" transform="translate(572, 289) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g><g data-mml-node="mo" transform="translate(1197.8, 0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g><g data-mml-node="msup" transform="translate(1920, 0)"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="TeXAtom" transform="translate(490, 289) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></g><g data-mml-node="mo" transform="translate(0, 142.7)"><path data-c="221A" d="M263 249Q264 249 315 130T417 -108T470 -228L725 302Q981 837 982 839Q989 850 1001 850Q1008 850 1013 844T1020 832V826L741 243Q645 43 540 -176Q479 -303 469 -324T453 -348Q449 -350 436 -350L424 -349L315 -96Q206 156 205 156L171 130Q138 104 137 104L111 130L263 249Z"></path></g><rect width="2813.6" height="60" x="1020" y="932.7"></rect></g></g></g></svg></mjx-container></p>
 <video width="720" autoplay="" loop="" muted="true">
-<source type="video/mp4" src="/images/Japan21100.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan21100.mp4">
 </video>
 
 <p>當然高度和坡度都不對<br>可以用線形回歸試出來，自然不想人肉調，<br>當然 🗻 頂上是凹下去的，需要疊加一個微笑曲線</p>
@@ -4959,7 +4959,7 @@
 <p>就在這時纜車 🚠 過了最高點</p>
 <p>山風一下子猛吹過來， 🚠 開始劇烈搖晃<br>下面的 ⛰ 山竟然還冒煙<br>雖然很高，但還是能聞到刺鼻的硫磺味</p>
 <video width="720" autoplay="" loop="" muted="true">
-<source type="video/mp4" src="/images/Japan21101.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan21101.mp4">
 </video>
 
 <p>怪不得這裏有溫泉 ♨️ 呢</p>
@@ -4980,7 +4980,7 @@
 <p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan21102.jpg" alt=""></p>
 <p>這個就更神奇了<br>下面是個花唉<br>所以這是萬<strong>花</strong>筒名字但由來嘛？</p>
 <video width="720" autoplay="" loop="" muted="true">
-<source type="video/mp4" src="/images/Japan21102.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan21102.mp4">
 </video>
 
 <p>好漂亮好安靜的雪景</p>
@@ -5035,7 +5035,7 @@
 <p>然後剛剛看到的尾翼從裡面看發現是窗戶，而且可以爬上去向外看 ╮(￣ ▽ ￣””)╭</p>
 <h2 id="鎌倉高校"><a href="#鎌倉高校" class="headerlink" title="鎌倉高校"></a>鎌倉高校</h2><p>搭乘江ノ島電鉄</p>
 <video width="720" autoplay loop muted="true" >
-<source type="video/mp4" src="/images/Japan22000.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan22000.mp4">
 </video>
 
 <p>去鎌倉高校前</p>
@@ -5059,7 +5059,7 @@
 
 <p>左邊 👈 的梯子塌掉了<br>因為 颱風 🌀 還是 地震</p>
 <h2 id="稚児ヶ淵（ちごがふち）"><a href="#稚児ヶ淵（ちごがふち）" class="headerlink" title="稚児ヶ淵（ちごがふち）"></a>稚児ヶ淵（ちごがふち）</h2><video width="720" autoplay loop muted="true" >
-<source type="video/mp4" src="/images/Japan-2210.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan-2210.mp4">
 </video>
 
 <p>不過外面也很美啦<br>而且岩石上有非常多的小水窪<br>每個都是海水一波波的 🌊 衝上來形成的</p>
@@ -5081,7 +5081,7 @@
 <p>實際小法師恐高，站在觀景台上，風一吹腳都在抖</p>
 <p>看下時間快到日落 🌄 了<br>還記得第一次是在 🇮🇹 的天使堡</p>
 <video width="720" autoplay loop muted="true" >
-<source type="video/mp4" src="/images/Japan-2211.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan-2211.mp4">
 </video>
 
 <p>這次也很漂亮呢</p>
@@ -5158,18 +5158,18 @@
 <p>還有在天上的<br><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23105.jpg" alt=""></p>
 <p>後面真的震驚了<br>整整一個超大的屋子<br>有 假山 隧道 城市 鄉村 中央車站</p>
 <video width="720" autoplay loop muted="true" >
-<source type="video/mp4" src="/images/Japan23100.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23100.mp4">
 </video>
 
 <p>剛開始看到後面的天線以為是高壓電纜<br>後來發現有輛纜車 🚠 緩緩從假山 ⛰️ 上下來</p>
 <video width="720" autoplay loop muted="true" >
-<source type="video/mp4" src="/images/Japan23102.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23102.mp4">
 </video>
 
 <p>要是有小朋友的話還可以去當調度員<br>控制鐵軌 🛤️ 走向</p>
 <p>再後面還有整個橫濱的模型<br>摩天輪 🎡 上有時間，大約 3 分鐘是一天<br>6 點發車，到晚上 10 點地鐵 🚇 準時停運，超越 996，233</p>
 <video width="720" autoplay loop muted="true" >
-<source type="video/mp4" src="/images/Japan23101.mp4">
+<source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/Japan23101.mp4">
 </video>
 
 <p>只能說，真的碉堡了<br>如果是男孩子的話超級推薦</p>
@@ -5209,7 +5209,175 @@
   <entry>
     <title>🇯🇵-2-4-0</title>
     <url>/Japan-2-4-0/</url>
-    <content><![CDATA[<h1 id="Tokyo-东京"><a href="#Tokyo-东京" class="headerlink" title="Tokyo 东京"></a>Tokyo 东京</h1>]]></content>
+    <content><![CDATA[<h1 id="东京"><a href="#东京" class="headerlink" title="东京"></a>东京</h1><div id="googleMap1710" style="
+            height: 450px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px
+            ">
+</div>
+<style>.gmnoprint img {max-width: none !important;}</style>
+<script defer="defer">
+  window.hexoGmaps = window.hexoGmaps || { maps: {}};
+  window.hexoGmaps.maps['initgoogleMap1710'] = function init() {
+    var mapOptions = {
+       'scrollwheel': false,
+       'zoom': 11,
+       'center': new window.google.maps.LatLng( 35.710 , 139.808 ),
+     },
+     target = document.getElementById('googleMap1710'),
+     map = new window.google.maps.Map(target, mapOptions);
+      
+     
+     
+     var opts0 = {
+        'position': new window.google.maps.LatLng( 35.7100627 , 139.8085117 ),
+        'map': map,
+        'title': 'Tokyo Skytree',
+        'zIndex' : 0,
+        'icon': ''
+      };
+
+     var infowindow0 = new window.google.maps.InfoWindow({
+       content: 'Tokyo Skytree'
+     });
+
+     var marker0 = new window.google.maps.Marker(opts0);
+
+     marker0.addListener('click', function(){
+       infowindow0.open(map, marker0)
+     })
+     
+     
+     var opts1 = {
+        'position': new window.google.maps.LatLng( 35.6267108 , 139.8828892 ),
+        'map': map,
+        'title': 'Tokyo DisneySea',
+        'zIndex' : 1,
+        'icon': ''
+      };
+
+     var infowindow1 = new window.google.maps.InfoWindow({
+       content: 'Tokyo DisneySea'
+     });
+
+     var marker1 = new window.google.maps.Marker(opts1);
+
+     marker1.addListener('click', function(){
+       infowindow1.open(map, marker1)
+     })
+     
+     
+     var opts2 = {
+        'position': new window.google.maps.LatLng( 35.6398972 , 139.859985 ),
+        'map': map,
+        'title': 'Tokyo Sea Life Park',
+        'zIndex' : 2,
+        'icon': ''
+      };
+
+     var infowindow2 = new window.google.maps.InfoWindow({
+       content: 'Tokyo Sea Life Park'
+     });
+
+     var marker2 = new window.google.maps.Marker(opts2);
+
+     marker2.addListener('click', function(){
+       infowindow2.open(map, marker2)
+     })
+     
+     
+     var opts3 = {
+        'position': new window.google.maps.LatLng( 35.6193359 , 139.7742108 ),
+        'map': map,
+        'title': 'National Museum of Emerging Science and Innovation',
+        'zIndex' : 3,
+        'icon': ''
+      };
+
+     var infowindow3 = new window.google.maps.InfoWindow({
+       content: 'National Museum of Emerging Science and Innovation'
+     });
+
+     var marker3 = new window.google.maps.Marker(opts3);
+
+     marker3.addListener('click', function(){
+       infowindow3.open(map, marker3)
+     })
+   
+
+  }
+  function makeMaps() {
+    for (var map in window.hexoGmaps.maps) {
+       console.log('map #', map);
+       window.hexoGmaps.maps[map]();
+    }
+  }
+  function loadScript() {
+    window.hexoGmaps.googleScriptLoaded = true;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+        script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&callback=makeMaps&key=AIzaSyB6JxSOGlpKd-7pPtKKG_BIEOiLlaRHxMQ';
+    document.body.appendChild(script);
+  }
+  if (!window.hexoGmaps.googleScriptLoaded) {
+    loadScript();
+  }
+</script>
+
+<h2 id="Tokyo-Skytree"><a href="#Tokyo-Skytree" class="headerlink" title="Tokyo Skytree"></a>Tokyo Skytree</h2><p>It was already noon when I arrived in Tokyo<br>This time I stayed at the Richmond Hotel next to it, the room is as always small + exquisite<br>Across the road is the clear sky tree<br>The hotel’s special restaurant is actually Sizzler, a frequent visitor in Beijing</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-00.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-01.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-02.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-03.jpg" alt=""></div></div></div>
+
+<p>When I came last time, I went up and took a look. At that time, there was the theme of Attacking Giant, but unfortunately I didn’t know the Captain.</p>
+<p>Also because of the short time, I didn’t realize that there was a huge mall below.</p>
+<p>After a nap, I woke up in the evening 🌆, I went to the mall for a stroll</p>
+<p>I found that I was doing Harry Potter’s theme</p>
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-04.jpg" alt=""></p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-05.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-06.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-07.jpg" alt=""></div></div></div>
+
+<p>There are many more Pokemon<br>Because I have only seen the special Pokemon, I only know the first generation of Pokemon<br>Jenny Turtle, Fat Ding, Wonder Frog Tadpole, Gauss, Little Fire Dragon, Fast Dragon, Pikachu, Kabimon, etc.</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-08.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-09.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-10.jpg" alt=""></div></div></div>
+
+<p>What anime is the last one? Love Live! Sunshine? then what?</p>
+<h2 id="Tokyo-DisneySea"><a href="#Tokyo-DisneySea" class="headerlink" title="Tokyo DisneySea"></a>Tokyo DisneySea</h2><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-11.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-12.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-13.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-14.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-15.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-16.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-17.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-18.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-19.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-20.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-21.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-22.jpg" alt=""></div></div></div>
+
+<p>🇯🇵 Said to be the only DisneySea theme park in the world<br>So I didn’t go to the Disney park next to it</p>
+<p>Titanic, volcano 🌋, temple 🛕</p>
+<p>But it was raining<br>Although the staff is still enthusiastic to create an atmosphere<br>But can’t stand the swish weather<br>Refreshing</p>
+<p>Plus no express ticket<br>Popcorn 🍿️ It takes an hour to line up<br>Other projects like bumper boats for two hours</p>
+<p>Turn around<br>Came out</p>
+<p>Very poor experience<br>Far, far, far less fun than the Universal Studio in Osaka last time</p>
+<p>I thought Disney could play for a day<br>The result came out at 10 o’clock<br>Too embarrassing, I can only just walk around</p>
+<h2 id="Tokyo-Sea-Life-Park"><a href="#Tokyo-Sea-Life-Park" class="headerlink" title="Tokyo Sea Life Park"></a>Tokyo Sea Life Park</h2><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-23.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-24.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-25.jpg" alt=""></div></div></div>
+
+<p>I thought it was an observatory from a distance<br>Big face, are you smiling 😂<br>And little penguin</p>
+<h2 id="National-Museum-of-Emerging-Science-and-Innovation"><a href="#National-Museum-of-Emerging-Science-and-Innovation" class="headerlink" title="National Museum of Emerging Science and Innovation"></a>National Museum of Emerging Science and Innovation</h2><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-26.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-27.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-28.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-29.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-30.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-31.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-32.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-33.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-34.jpg" alt=""></div></div></div>
+
+<p>BSOD, AI Horror Valley, Fetus</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-36.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-37.jpg" alt=""></div></div></div>
+
+<p>I came out and found a boat next to me 🚢<br>If you look closely, it turned out to be a building, a ship’s science museum<br>Unfortunately it’s closed</p>
+<p>The ball in the middle of the building behind is the planetarium</p>
+<h2 id="Odaiba-Statue-of-Liberty-Replica"><a href="#Odaiba-Statue-of-Liberty-Replica" class="headerlink" title="Odaiba Statue of Liberty Replica"></a>Odaiba Statue of Liberty Replica</h2><p>Keep going around<br>Seen from afar 👀, wait, is that the Statue of Liberty 🗽? ? ?<br>The one behind is the Golden Gate Bridge? ? ?</p>
+<p>I walked in and took a look, really…<br>My mind 🧠 flashed the Gilgamesh sentence <strong>faker</strong></p>
+<p><a href="https://en.wikipedia.org/wiki/Replicas_of_the_Statue_of_Liberty">Replicas of the Statue of Liberty</a></p>
+<blockquote>
+<p>The French Statue of Liberty from the Île aux Cygnes came to Odaiba, Tokyo, from April 1998 to May 1999 in commemoration of “The French year in Japan”.[3] Because of its popularity, in 2000 a replica of the French Statue of Liberty was erected at the same place. Also in Japan, a small Statue of Liberty is in the Amerika-mura (American Village) shopping district in Osaka, Japan. Another replica is in Oirase[71] near the town of Shimoda south of Misawa in Aomori Prefecture, where the United States has an 8,000-person U.S. Air Force base. A replica of the Statue of Liberty in Ishinomaki, Miyagi Prefecture, was damaged by the 2011 Tōhoku earthquake and tsunami.[72] There is also a replica in Oyabe, Toyama.[73]</p>
+</blockquote>
+<p>That’s it</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-38.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-40.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-39.jpg" alt=""></div></div></div>
+
+<h2 id="Gundam"><a href="#Gundam" class="headerlink" title="Gundam"></a>Gundam</h2><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-42.jpg" alt=""></div></div></div>
+
+<p>Wow</p>
+<p>Remember to watch Gundam Seed or borrow a disc from a classmate 👨‍🎓 when I was in high school 💽 secretly watch at home<br>A few years ago, there was a remake, but I haven’t seen it before, after all<br>My youth is over</p>
+<p>I can’t remember the plot or something now<br>Just remember Kira’s freedom Gundam<br>Single machine breaks through the atmosphere<br>Cut a lot of sticks<br>Then flew away</p>
+<p>But this one in front of Uniqlo<br>See halo and corner<br>This should be a unicorn 🦄️<br>Fortunately, I watched the UC movie later, Laplace’s undead or something, otherwise I don’t know it again</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-43.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-44.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-41.jpg" alt=""></div></div></div>
+
+<p>There are Garage Kit in the shop next to it</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-45.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-240-46.jpg" alt=""></div></div></div>
+]]></content>
       <tags>
         <tag>Travel</tag>
         <tag>LittleMaster</tag>

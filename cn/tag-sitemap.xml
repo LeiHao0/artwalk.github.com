@@ -3,6 +3,34 @@
 
 
     <url>
+        <loc>https://leihao0.github.io/cn/tags/%25F0%259F%2587%25AF%25F0%259F%2587%25B5/</loc>
+        <lastmod>2020-09-17T05:03:43.084Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/cn/tags/japan/</loc>
+        <lastmod>2020-09-17T05:03:43.084Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/cn/tags/littlemaster/</loc>
+        <lastmod>2020-09-17T05:03:43.084Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/cn/tags/travel/</loc>
+        <lastmod>2020-09-17T05:03:43.084Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/cn/tags/books/</loc>
         <lastmod>2020-09-16T18:22:33.008Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -11,13 +39,6 @@
 
     <url>
         <loc>https://leihao0.github.io/cn/tags/machine-learning/</loc>
-        <lastmod>2020-09-16T18:21:52.439Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/cn/tags/littlemaster/</loc>
         <lastmod>2020-09-16T18:21:52.439Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -250,27 +271,6 @@
     <url>
         <loc>https://leihao0.github.io/cn/tags/programming/</loc>
         <lastmod>2020-09-14T17:48:29.268Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/cn/tags/%25F0%259F%2587%25AF%25F0%259F%2587%25B5/</loc>
-        <lastmod>2020-09-14T16:50:34.710Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/cn/tags/japan/</loc>
-        <lastmod>2020-09-14T16:50:34.710Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/cn/tags/travel/</loc>
-        <lastmod>2020-09-14T16:50:34.710Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
