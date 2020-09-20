@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://leihao0.github.io/cn/Japan-2-4-1/</loc>
+        <lastmod>2020-09-20T09:21:05.999Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/cn/Japan-2-4-0/</loc>
         <lastmod>2020-09-17T05:23:48.910Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -146,6 +154,14 @@
     <url>
         <loc>https://leihao0.github.io/cn/What-is-Python-Used-for/</loc>
         <lastmod>2020-09-16T18:20:00.598Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/cn/Japan-2-0/</loc>
+        <lastmod>2020-09-16T17:21:29.159Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -298,14 +314,6 @@
     <url>
         <loc>https://leihao0.github.io/cn/Japan-2-3-0/</loc>
         <lastmod>2020-09-14T05:34:04.174Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/cn/Japan-2-0/</loc>
-        <lastmod>2020-09-14T05:11:18.077Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
