@@ -3867,40 +3867,148 @@
   <entry>
     <title>🇺🇸-0-0</title>
     <url>/USA-0-0/</url>
-    <content><![CDATA[<h1 id="美帝-0-0"><a href="#美帝-0-0" class="headerlink" title="美帝-0-0"></a>美帝-0-0</h1><p>F**k My Life</p>
-<p>小法师站在 半月湾 Poplar Beach，遥望着无垠的太平洋说道</p>
-<p><img src="https://i.imgur.com/URN2Df5.jpg" alt=""></p>
-<p>那时小法师英语还很差，后来才知道应该 F**k Me</p>
+    <content><![CDATA[<h1 id="USA-0-0"><a href="#USA-0-0" class="headerlink" title="USA-0-0"></a>USA-0-0</h1><div id="googleMap1180" style="
+            height: 450px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px
+            ">
+</div>
+<style>.gmnoprint img {max-width: none !important;}</style>
+<script defer="defer">
+  window.hexoGmaps = window.hexoGmaps || { maps: {}};
+  window.hexoGmaps.maps['initgoogleMap1180'] = function init() {
+    var mapOptions = {
+       'scrollwheel': false,
+       'zoom': 10,
+       'center': new window.google.maps.LatLng( 37.6938029 , -122.4740425 ),
+     },
+     target = document.getElementById('googleMap1180'),
+     map = new window.google.maps.Map(target, mapOptions);
+      
+     
+     
+     var opts0 = {
+        'position': new window.google.maps.LatLng( 37.6213129 , -122.3811441 ),
+        'map': map,
+        'title': 'San Francisco International Airport',
+        'zIndex' : 0,
+        'icon': ''
+      };
+
+     var infowindow0 = new window.google.maps.InfoWindow({
+       content: 'San Francisco International Airport'
+     });
+
+     var marker0 = new window.google.maps.Marker(opts0);
+
+     marker0.addListener('click', function(){
+       infowindow0.open(map, marker0)
+     })
+     
+     
+     var opts1 = {
+        'position': new window.google.maps.LatLng( 37.7505427 , -122.4136408 ),
+        'map': map,
+        'title': '1225 York St',
+        'zIndex' : 1,
+        'icon': ''
+      };
+
+     var infowindow1 = new window.google.maps.InfoWindow({
+       content: '1225 York St'
+     });
+
+     var marker1 = new window.google.maps.Marker(opts1);
+
+     marker1.addListener('click', function(){
+       infowindow1.open(map, marker1)
+     })
+   
+
+  }
+  function makeMaps() {
+    for (var map in window.hexoGmaps.maps) {
+       console.log('map #', map);
+       window.hexoGmaps.maps[map]();
+    }
+  }
+  function loadScript() {
+    window.hexoGmaps.googleScriptLoaded = true;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+        script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&callback=makeMaps&key=AIzaSyB6JxSOGlpKd-7pPtKKG_BIEOiLlaRHxMQ';
+    document.body.appendChild(script);
+  }
+  if (!window.hexoGmaps.googleScriptLoaded) {
+    loadScript();
+  }
+</script>
+
 <a id="more"></a>
 
-<hr>
-<p>小法师出生在大陆内部，从来没见过海<br>各种小说电影中却又塑造了一个非常浪漫的场景<br>所以一直以来，去看海就成了小法师的一个梦想<br>当然，最好是和妹纸一起去，小法师傻傻的想</p>
-<p>然鹅 20 多年过去了，妹纸不仅没找 (pian) 到，海也没看上<br>在拜读了 <a href="https://book.douban.com/subject/26786519/">《无后为大》</a> <a href="https://book.douban.com/subject/26235729/">《单身社会》</a> 等等书籍 📚 后</p>
-<p>小法师终于顿悟了<br>——我自己去</p>
-<p>然鹅当他真的看到海平线时，却发出了开篇的感叹</p>
-<p>让我们把时间线拉前一些看看发生了什么</p>
-<hr>
-<p>机票时小法师不知道美联航评价并不好，还多花了一些钱放弃国航选了美联航<br>并且那时还没发生臭名昭著的殴打亚裔事件</p>
-<p>其实无论哪个航班，连续 12 个小时的飞行，都会让小法师变成尸体<br>美联航没那么严格让关机 📴，✈️ 上 小法师拍了张地平线</p>
-<p><img src="https://i.imgur.com/SK2dR5y.jpg" alt=""></p>
-<p>下了飞机后，入关</p>
-<p>一直以来小法师不知怎么有种幻觉，海关后面埋伏着一群狙击手<br>发现嫌疑人就会当场击毙<br>小法师由于是第一次入关，还是有些紧张的</p>
-<p>海关问了几个常见问题，比如来干嘛，呆几天<br>小法师根据签证的情况，没说是 Conference，说是 Developer Meeting</p>
-<p>然后海关啪的给盖了个章<br>小法师拿回护照后连小伙伴也顾不上了，便快速的往里走<br>生怕被击毙</p>
-<p>等看到一些接机的人后，才想起小伙伴还没出来<br>等了半天以为小伙伴 GG 了时，看到了他<br>原来也是说 Conference 被 Check 了一会儿</p>
-<p>然后出机场去取车</p>
-<p>小法师看到车时惊呆了，感叹这种闪耀着金属光芒的车竟然才卖 20W</p>
-<p><img src="https://i.imgur.com/cSxOHcq.jpg" alt=""></p>
-<p>反观国内看着像是塑料的 🚗 都要 30W 起步了</p>
-<hr>
-<p>他们先去 Airbnb 放行李 🧳</p>
-<p>从三番机场 ✈️ 到 Downtown 还是挺远的<br>然鹅这种在帝都要堵上一万年的距离，20 分钟就到了<br>住的 House 有个后花园，非常 Nice</p>
-<p><img src="https://i.imgur.com/yVJY9tg.jpg" alt=""></p>
-<p>由于提前去了两天，加上租了车，没有驾照的小法师全靠抱队友大腿，在三藩附近逛了逛<br>更加神奇的是，第二天小法师见到了 OS X Yosemite 的壁纸</p>
-<p><img src="https://i.imgur.com/r0LDATz.jpg" alt=""></p>
-<p>真的不可思议呢</p>
-<p>小法师在回去的路上看着夕阳 🌇 发呆</p>
-<p><img src="https://i.imgur.com/z9NnYKR.jpg" alt=""></p>
+<h2 id="Lucky-draw"><a href="#Lucky-draw" class="headerlink" title="Lucky draw"></a>Lucky draw</h2><p>In ‘15 Little Master had been writing Swift for over a year and was told to go to the WWDC session<br>The little mage was baffled, didn’t know what WWDC was, looked it up and clicked on a section<br>I was surprised to find out that even though I’m not good at English, I can make a plausible guess.<br>Thinking back to the days of Android tutorials, totally cloudy<br>So instantly filled with good feelings, went through most of the videos from that year, and benefited a lot!</p>
+<p>Follow up to learn that with a developer account, Visa/MC credit card, you can draw a prize!<br>Register at the beginning of March each year at <a href="https://developer.apple.com/wwdc20/">official website</a> for one week only, so make sure you don’t miss out!</p>
+<p>Due to the large number of people, Apple will randomly select some lucky (company reimbursement) or unlucky (self-pay) leeks to give 10,000 tickets!<br>After that, we’ll deduct the money whether we go or not.<br>No matter if the US visa is denied, denied entry, etc., the money is non-refundable.<br>Tickets are also forbidden to be transferred, only to other developer accounts of the same company.<br>Anyway, if you win the lottery, you don’t get your money back, so think carefully about the draw.</p>
+<p>But luck was never his turn for this kind of thing, so he signed up for the no-brainer</p>
+<h2 id="Bingo"><a href="#Bingo" class="headerlink" title="Bingo"></a>Bingo</h2><p>The results of the lottery will be announced around the end of March.</p>
+<p>I got a $1,599 chargeback text from China Merchants Bank in the middle of the night and a stolen lock card phone call.<br>Too busy proving to the bank that he is himself.<br>I woke up the next day at noon to a confirmation email.<br>Busy calling the little ones and being told to hurry up with visa and hotel preparations!</p>
+<p>Apple is offering hotels near the venue, and the price of a goose is Apple, with the cheapest costing $229 a night.<br>Thinking that one person is still close by, I had to make an appointment.</p>
+<p>Luckily, one of my colleagues said he didn’t get the lottery, but he wanted to go.<br>Plus he’s got two buddies from Canada 🇨So_1F1E6 and So_1F1F8 from the middle of the United States who can fly to San Francisco for fun!</p>
+<p>So checked out of the hotel and made a reservation with an Airbnb that looked pretty good.</p>
+<p>And the little one will drive. We have a reservation for Herz.</p>
+<p>It’s perfect.</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-00.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-01.jpg" alt=""></div></div></div>
+
+<h2 id="Visa"><a href="#Visa" class="headerlink" title="Visa"></a>Visa</h2><p>First you have to have a passport.<br>Unlike the people who come up here and just get off the plane in a foreign country.<br>The little mage has never been anywhere before. A blank book.<br>Luckily, I got it when I went home to visit my parents in 15 years.</p>
+<p>Then make a reservation at <a href="https://www.ustraveldocs.com/cn_zh/index.html">official website</a>.<br>Pay online and make an appointment for an interview</p>
+<p>Prove yourself to apply a little faster than Taobao agent!<br>The payment page redirects to CITIC Bank<br>At first glance, the page looks like a phishing site…</p>
+<h2 id="Interview"><a href="#Interview" class="headerlink" title="Interview"></a>Interview</h2><p>The imperial capital, the U.S. Embassy in Beijing, is in Sanyuanqiao, Chaoyang District.</p>
+<p>Leave the afternoon of the interview.<br>When I got to the embassy, I was amazed. I’ve only seen long lines like this at the Spring Festival.<br>The people waiting for their visas were twisting and turning, with 10,000 zigzagging queues of people waiting for their visas.<br>Crawling on my belly for 3 hours before I see the window for the visa.</p>
+<p>A total of 5-6 Chinese interview windows and 1 quiet English window.</p>
+<p>My friend suddenly said he knew English, so he went to the English window without waiting.<br>The little mage thought about it and decided to give it a try.</p>
+<p>The interviewer was a grandmother, and I can’t remember exactly what was said, but it was something along the lines of.</p>
+<p>…<br> invite us to join their conference</p>
+<p>The old grandmother said in surprise:<br>Are you working for Apple?</p>
+<p>(Little Mage thought: emmm, 2019 really, but unfortunately the current timeline is only 2016, so I had to say)<br>No, it’s a developer conference.</p>
+<p>grandmother：Why they invite you?<br>…</p>
+<p>Open the folder to take out the Invitation Letter.<br>The grandmother pointed them to the Chinese window off to the side</p>
+<p>The security lady who kept order next to them saw that they were kicked down and asked what happened.<br>Sighed at this situation, but thankfully didn’t just say no and let them wait next to her for a while</p>
+<p>Then the Chinese interview was with a foreign girl.<br>She’s confused, too. Conference.<br>Guess people who are not in the IT world don’t know what the conference is.<br>So she took out the invitation, and the lady said she didn’t want to read it, and proceeded to ask him to explain why</p>
+<p>The little mage was stunned, if it might have been because of the language before, why not read the material this time as well?<br>I’ve only heard of people who have been rejected for not bringing documents, but I’ve never heard of people who have documents that they don’t read.<br>Fortunately, the partner said it was a Developer Meeting, and the lady understood in a second (😓…)</p>
+<p>I’m not going to be able to do anything about it.</p>
+<p>It was a long half-minute wait.<br>The little sister smiled and said congratulations, your visas are approved.<br>You’ll get your passport in the mail in a few business days.</p>
+<p>It’s a lot of twists and turns, and I’m not particularly happy about it.<br>I thanked him and went home with my partner.</p>
+<p>Then the tycoon who used to live in Boston heard about the Chinese interview.<br>We can both meet together.<br>We can even bring the whole family together.<br>His jaw is dropping.</p>
+<p>US visa<br>It’s fallen.<br>He said.</p>
+<h2 id="Air-tickets"><a href="#Air-tickets" class="headerlink" title="Air tickets"></a>Air tickets</h2><p>When the ticket was unaware that United was not well rated, the worshipful abandonment of the national airline<br>And that was before the infamous beating of Asians.</p>
+<p>In fact, on any flight, 12 hours straight would have turned the little mage into a corpse!<br>United isn’t that strict about turning off cell phones. ✈️ Go. Little wizard took a picture of the horizon.</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-02.jpg" alt=""></div></div></div>
+
+<p>I never would have guessed that UA888, the flight number, would be encountered four years later in FANNG’s Assignment.</p>
+<h2 id="Entry"><a href="#Entry" class="headerlink" title="Entry"></a>Entry</h2><p>Getting off the plane, entering the country</p>
+<p>Somehow I had a vision that there were snipers lurking behind customs.<br>If we find the suspect, we’ll shoot him on sight.<br>Plus, it’s the first time I’ve set foot in another country, so I’m still a little nervous.</p>
+<p>Customs asks the usual questions, like why you’re here, how long you’re staying.<br>According to the visa, it didn’t say it was a conference, it said it was a Developer Meeting.<br>Then customs stamped it.</p>
+<p>The little mage took back his passport and immediately appeared calm and relaxed, but in reality, he accelerated his pace to go inside<br>Fear of being shot.</p>
+<p>After seeing some of the pickups, I remembered that my little friend hadn’t come out yet.<br>I waited half a day, thinking my partner was GG, and then I saw him.<br>So the conference was checked out for a while.</p>
+<p>Conference is really toxic 😂</p>
+<h2 id="Downtown"><a href="#Downtown" class="headerlink" title="Downtown"></a>Downtown</h2><p>Pick up your car from the airport, drop off your bags at Airbnb.</p>
+<p>It’s still a long way to Downtown from San Francisco ✈️.<br>I didn’t expect to arrive in 20 minutes, a distance that would take 10,000 years in the capital.</p>
+<p>It’s exactly as Airbnb saw it, no fraud!<br>Except that the House is two stories, like a wood-paneled structure, with another tenant upstairs, which makes a lot of noise when running.<br>There’s a garden in the back. Very nice.</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-03.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-04.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-05.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-06.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-07.jpg" alt=""></div></div></div>
+
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-08.jpg" alt=""></div></div></div>
+
+<h2 id="Yosemite"><a href="#Yosemite" class="headerlink" title="Yosemite"></a>Yosemite</h2><blockquote>
+<p>Selected as a World Heritage Site in 1984, Yosemite is internationally recognized for its spectacular granite cliffs, waterfalls, crystal-clear streams, giant redwood forests and biodiversity.</p>
+</blockquote>
+<p>On the way out to Yosemite, about 3 hours by car, I saw a bunch of big windmills.<br>Turning the corner, I suddenly saw the OS X Yosemite wallpaper.<br>All I’ve seen in China before are dirt mountains, but this is the first time I’ve seen this kind of bare, steep granite.<br>So much so that it’s a mistake to think that foreign mountains are harder than Chinese ones.</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-25.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-10.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-12.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-13.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-14.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-20.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-18.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-19.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-21.jpg" alt=""></div></div></div>
+
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-22.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-00-24.jpg" alt=""></div></div></div>
+
+<p>It’s incredible.</p>
+<p>The little mage was staring at the sunset on the way back.</p>
 ]]></content>
       <tags>
         <tag>Travel</tag>
@@ -3912,47 +4020,189 @@
   <entry>
     <title>🇺🇸-0-1</title>
     <url>/USA-0-1/</url>
-    <content><![CDATA[<h1 id="美帝-0-1"><a href="#美帝-0-1" class="headerlink" title="美帝-0-1"></a>美帝-0-1</h1><h2 id="Badge"><a href="#Badge" class="headerlink" title="Badge"></a>Badge</h2><p>第二天去 Bill Graham Civic Auditorium</p>
-<p><img src="https://i.imgur.com/KjaOW87.jpg" alt=""></p>
-<p>出示护照可以领 Badge</p>
-<p><img src="https://i.imgur.com/16fBzy1.jpg" alt=""></p>
+    <content><![CDATA[<h1 id="USA-0-1"><a href="#USA-0-1" class="headerlink" title="USA-0-1"></a>USA-0-1</h1><div id="googleMap9099" style="
+            height: 450px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px
+            ">
+</div>
+<style>.gmnoprint img {max-width: none !important;}</style>
+<script defer="defer">
+  window.hexoGmaps = window.hexoGmaps || { maps: {}};
+  window.hexoGmaps.maps['initgoogleMap9099'] = function init() {
+    var mapOptions = {
+       'scrollwheel': false,
+       'zoom': 12.5,
+       'center': new window.google.maps.LatLng( 37.781577 , -122.456913 ),
+     },
+     target = document.getElementById('googleMap9099'),
+     map = new window.google.maps.Map(target, mapOptions);
+      
+     
+     
+     var opts0 = {
+        'position': new window.google.maps.LatLng( 37.7781302 , -122.4175138 ),
+        'map': map,
+        'title': 'Bill Graham Civic Auditorium',
+        'zIndex' : 0,
+        'icon': ''
+      };
+
+     var infowindow0 = new window.google.maps.InfoWindow({
+       content: 'Bill Graham Civic Auditorium'
+     });
+
+     var marker0 = new window.google.maps.Marker(opts0);
+
+     marker0.addListener('click', function(){
+       infowindow0.open(map, marker0)
+     })
+     
+     
+     var opts1 = {
+        'position': new window.google.maps.LatLng( 37.8019619 , -122.4192982 ),
+        'map': map,
+        'title': 'Lombard Street',
+        'zIndex' : 1,
+        'icon': ''
+      };
+
+     var infowindow1 = new window.google.maps.InfoWindow({
+       content: 'Lombard Street'
+     });
+
+     var marker1 = new window.google.maps.Marker(opts1);
+
+     marker1.addListener('click', function(){
+       infowindow1.open(map, marker1)
+     })
+     
+     
+     var opts2 = {
+        'position': new window.google.maps.LatLng( 37.8085488 , -122.41018 ),
+        'map': map,
+        'title': 'Fisherman&#39;s Wharf',
+        'zIndex' : 2,
+        'icon': ''
+      };
+
+     var infowindow2 = new window.google.maps.InfoWindow({
+       content: 'Fisherman&#39;s Wharf'
+     });
+
+     var marker2 = new window.google.maps.Marker(opts2);
+
+     marker2.addListener('click', function(){
+       infowindow2.open(map, marker2)
+     })
+     
+     
+     var opts3 = {
+        'position': new window.google.maps.LatLng( 37.7591086 , -122.5116423 ),
+        'map': map,
+        'title': 'Ocean Beach',
+        'zIndex' : 3,
+        'icon': ''
+      };
+
+     var infowindow3 = new window.google.maps.InfoWindow({
+       content: 'Ocean Beach'
+     });
+
+     var marker3 = new window.google.maps.Marker(opts3);
+
+     marker3.addListener('click', function(){
+       infowindow3.open(map, marker3)
+     })
+   
+
+  }
+  function makeMaps() {
+    for (var map in window.hexoGmaps.maps) {
+       console.log('map #', map);
+       window.hexoGmaps.maps[map]();
+    }
+  }
+  function loadScript() {
+    window.hexoGmaps.googleScriptLoaded = true;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+        script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&callback=makeMaps&key=AIzaSyB6JxSOGlpKd-7pPtKKG_BIEOiLlaRHxMQ';
+    document.body.appendChild(script);
+  }
+  if (!window.hexoGmaps.googleScriptLoaded) {
+    loadScript();
+  }
+</script>
+
 <a id="more"></a>
 
-<p>后面几天进入会场需要刷 Badge</p>
-<p>丢了的话，嗯…自认倒霉， 不赔不管</p>
-<p>同时发了一件价值 1W RMB 的丑丑的外套 🧥，小法师也不明白这么热为什么不发 T 桖而是外套</p>
-<p>之后发现三藩很奇特，在太阳下热的要死<br>走进楼房的阴影中，海风一吹又瑟瑟发抖<br>所以那件丑丑的外套 🧥 发挥了重要的作用</p>
-<p>晚上再次路过时，会场变成了这样：</p>
-<p><img src="https://i.imgur.com/wob5z8Q.jpg" alt=""></p>
-<h2 id="LGBT🏳️‍🌈"><a href="#LGBT🏳️‍🌈" class="headerlink" title="LGBT🏳️‍🌈"></a>LGBT🏳️‍🌈</h2><p>小法师很早就注意到周边挂满了小彩旗 🏳️‍🌈，刚开始只是觉得很好玩，并且思维惯性奇怪为什么不是 🇺🇸 国旗</p>
-<p>从另一个州飞过来的 T 告诉小法师这面小旗帜是 LGBT</p>
-<p>并且月底会有 <a href="https://en.wikipedia.org/wiki/San_Francisco_Pride">The SF LGBT Parade and Celebration</a>，此活动从 1970 年就开始了</p>
-<p>稍后这位 T 小姐说自己有一位女朋友</p>
-<p>单身了一万年的小法师沉默良久无言以对</p>
-<h2 id="九曲花街"><a href="#九曲花街" class="headerlink" title="九曲花街"></a>九曲花街</h2><p>又叫 伦巴底街（Lombard Street）</p>
-<p>有八个接近 180 度的下破急弯</p>
-<p>相信看过头文字 D 的盆友们无论如何都会想到<br><a href="https://www.bilibili.com/bangumi/play/ep4643">头文字 D Third Stage</a> 里<br>拓海 vs 小柏海，Toyota AE86 vs. MR-2<br>第 55 分 55 秒的过弯方式</p>
-<p>可惜上面 👆 只是动漫</p>
-<p>在真实世界中他们怂的不行<br>首先小法师那时还没驾照，同行的小伙伴也对自己过弯没有自信<br>所以最终他们把车 🚗 停在了路边，然后叫了辆 Uber 去渔人码头<br>并且特意嘱咐司机，最好从九曲花街过</p>
-<p>司机很善解人意的表示理解，并且过弯时放慢了速度</p>
-<p><img src="https://i.imgur.com/bG62NqB.jpg" alt=""></p>
-<p>阳光明媚，青翠欲滴，花簇锦攒，姹紫嫣红</p>
-<p>BTW： 记得带滤(mo)镜 🕶️</p>
-<h2 id="渔人码头"><a href="#渔人码头" class="headerlink" title="渔人码头"></a>渔人码头</h2><p>广场上有个大螃蟹 🦀️</p>
-<p>旁边的杂货店充满了各种 Made in China 的小商品</p>
-<p>广场上有些人在弹奏音乐 🎵</p>
-<p>小法师印象很深的是有个老爷爷在那里很专注的演奏一个很欢乐的曲子，仿佛周围没有行人<br>这就是心流嘛，小法师感叹到，以至于产生了去给小费的冲动<br>此事也成为的一个久久不能释怀的遗憾</p>
-<p>码头 ⛵️ 旁边有艘二战退役的军舰和潜水艇</p>
-<p>其他的都忘却了，只记得<br>天，像中毒了一样的蓝</p>
-<p><img src="https://i.imgur.com/rXqIiyj.jpg" alt=""></p>
-<h2 id="Infinite-Loop"><a href="#Infinite-Loop" class="headerlink" title="Infinite Loop"></a>Infinite Loop</h2><p>小法师之前一直以为那个太空船是 Infinite Loop<br>顾名思义嘛，一圈一圈的无限循环</p>
-<p>然鹅并不是</p>
-<p><img src="https://i.imgur.com/aCyQyR9.jpg" alt=""></p>
-<p>实际是个园区，有个 Visitor Center</p>
-<p>小法师不知道只有这里有 纪念款 T 桖<br>选了个 Metal 的草草了事</p>
-<p>至于 Park</p>
-<p><img src="https://i.imgur.com/4uYiWrf.jpg" alt=""></p>
-<p>还在建设中…</p>
+<h2 id="Badge"><a href="#Badge" class="headerlink" title="Badge"></a>Badge</h2><p>The next day, Bill Graham Civic Auditorium.<br>Produce your passport for Badge.</p>
+<p>Pictured next to <a href="https://en.wikipedia.org/wiki/San_Francisco_City_Hall">San Francisco City Hall</a></p>
+<blockquote>
+<p>San Francisco City Hall is the seat of government for the City and County of San Francisco, California. Re-opened in 1915 in its open space area in the city’s Civic Center, it is a Beaux-Arts monument to the City Beautiful movement that epitomized the high-minded American Renaissance of the 1880s to 1917. The structure’s dome is taller than that of the United States Capitol by 42 feet.</p>
+</blockquote>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-01.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-02.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-00.jpg" alt=""></div></div></div>
+
+<p>You’ll need to paint Badge to get into the venue in the next few days.</p>
+<p>If you lose it, well… That’s too bad. Apple won’t pay for it.</p>
+<p>And an ugly jacket at the same time.<br>I don’t understand why they don’t issue t shirts instead of jackets in this heat.</p>
+<p>Then I understood the peculiarities of San Francisco… and died in the sun.<br>In the shadows, the sea breeze blows and shivers again.<br>That’s why that ugly jacket served such an important purpose.</p>
+<p>When I passed by again at night, the venue was LGBT.</p>
+<h2 id="LGBT-🏳️‍🌈"><a href="#LGBT-🏳️‍🌈" class="headerlink" title="LGBT 🏳️‍🌈"></a>LGBT 🏳️‍🌈</h2><p>Noticed early on that there were little flags hanging around the perimeter, and at first just thought it was funny and inertia wondering why it wasn’t an American flag!<br>T, flying in from another state, said it was LGBT.<br>And there will be <a href="https://en.wikipedia.org/wiki/San_Francisco_Pride">The SF LGBT Parade and Celebration</a> at the end of the month</p>
+<blockquote>
+<p>The San Francisco Lesbian, Gay, Bisexual, and Transgender Pride Celebration (formerly International Lesbian &amp; Gay Freedom Day, Gay Freedom Day, Christopher Street West), usually known as San Francisco Pride, is a parade and festival held at the end of June each year in San Francisco, California, to celebrate the lesbian, gay, bisexual, and transgender (LGBT) people and their allies. The 49th annual parade in 2019 included 289 parade contingents, and is described on the official website as “the largest gathering of LGBT people and allies in the nation”.</p>
+</blockquote>
+<p>Later on, Miss T said she had a girlfriend.<br>The little mage who had been single for 10,000 years was silent for a long time.</p>
+<h2 id="Lombard-Street"><a href="#Lombard-Street" class="headerlink" title="Lombard Street"></a><a href="https://en.wikipedia.org/wiki/Lombard_Street_(San_Francisco)">Lombard Street</a></h2><blockquote>
+<p>Lombard Street is known for the one-way block on Russian Hill between Hyde and Leavenworth Streets, where eight sharp turns are said to make it the most crooked street in the world. The design, first suggested by property owner Carl Henry[4] and built in 1922,[5] was intended to reduce the hill’s natural 27 percent grade,[6] which was too steep for most vehicles. The crooked block is about 600 feet (180 m) long (412.5 feet (125.7 m) straightline), is one-way (downhill) and is paved with red bricks. The sign at the top recommends 5 mph (8 km/h).</p>
+</blockquote>
+<p>I’m sure that those of you who have read Initial D will be thinking of<br>In <a href="https://www.bilibili.com/bangumi/play/ep4643">Initial D Third Stage</a><br>Takumi vs. Kobayashi, Toyota AE86 vs. MR-2<br>The 55th minute and 55th second approach to the corner</p>
+<p>Too bad it’s just an anime.</p>
+<p>In the real world, they’re wimps.<br>I didn’t have a driver’s license yet, and my partner didn’t have confidence in his curves.<br>So they ended up parking on the side of the road and hailing an Uber to Fisherman’s Wharf.<br>And specifically instructed the driver to cross from Nine Quarters Flower Street.</p>
+<p>The driver was understanding and slowed down for the curve</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-03.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-04.jpg" alt=""></div></div></div>
+
+<p>The sun is shining, the greenery is dripping, the flowers are clustered, and the flowers are beautiful.</p>
+<p>BTW, remember to wear sunglasses. 🕶️</p>
+<h2 id="Fisherman’s-Wharf-amp-Alcatraz-Island"><a href="#Fisherman’s-Wharf-amp-Alcatraz-Island" class="headerlink" title="Fisherman’s Wharf &amp; Alcatraz Island"></a><a href="https://en.wikipedia.org/wiki/Fisherman%27s_Wharf,_San_Francisco">Fisherman’s Wharf</a> &amp; <a href="https://en.wikipedia.org/wiki/Alcatraz_Island">Alcatraz Island</a></h2><blockquote>
+<p>San Francisco’s Fisherman’s Wharf gets its name and neighborhood characteristics from the city’s early days of the mid to later 1800s when Italian immigrant fishermen came to the city to take advantage of the influx of population due to the gold rush. Most of the Italian immigrant fishermen settled in the North Beach area close to the wharf and fished for the local delicacies and dungeness crab. From then until the present day the wharf remained the center of operations for San Francisco’s fishing fleet. Despite its redevelopment into a tourist attraction during the 1970s and 1980s, the area is still home to many active fishermen and their fleets.</p>
+</blockquote>
+<p>There’s a big crab in the square. 🦀️</p>
+<p>The grocery store next door is filled with all kinds of Made in China gadgets.</p>
+<p>Alcatraz. 😈</p>
+<blockquote>
+<p>Visitors can reach the island in a little under 15 minutes by ferry ride from Pier 33, located between the San Francisco Ferry Building and Fisherman’s Wharf, San Francisco</p>
+</blockquote>
+<p>There’s a World War II hero, a decommissioned warship and a submarine next to the pier.</p>
+<p>There’s some people playing music in the square. 🎵<br>I was very impressed that there was a grandfather there very intently playing a very happy tune, as if there were no pedestrians around<br>Is this the heart flow? The little mage exclaimed to the point of creating the urge to go and tip him<br>It’s also a long-standing regret.</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-05.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-06.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-07.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-08.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-09.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-10.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-12.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-13.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-14.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-15.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-17.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-18.jpg" alt=""></div></div></div>
+
+<p>God, it’s blue as poison.</p>
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-16.jpg" alt=""></p>
+<h2 id="Infinite-Loop"><a href="#Infinite-Loop" class="headerlink" title="Infinite Loop"></a>Infinite Loop</h2><p>I always thought the ship was an Infinite Loop.<br>As the name implies, it goes round and round in an infinite circle.<br>The goose is not.<br>It’s actually a park. There’s a Visitor Center.</p>
+<p>I didn’t know this was the only place that had a souvenir t shirt.<br>Picked Metal’s sloppily.</p>
+<p>As for Apple Park.<br>It’s still under construction…</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-19.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-20.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-21.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-22.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-23.jpg" alt=""></div></div></div>
+
+<h2 id="Stanford"><a href="#Stanford" class="headerlink" title="Stanford"></a>Stanford</h2><p>It came out in a circle.<br>I feel like I was brought here as a child.<br>Maybe I can get 50 more points on the SAT.</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-26.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-27.jpg" alt=""></div></div></div>
+
+<h2 id="California-State-Route-1"><a href="#California-State-Route-1" class="headerlink" title="California State Route 1"></a>California State Route 1</h2><p>The sea in the movie is so romantic, holding hands and walking slowly along the beach.<br>For the little mages who have been living in the inner continent<br>It’s always been a dream to find a girl and go see the sea.</p>
+<p>I saw the Pacific Ocean before I saw the sea.<br>The Beaches of Goose California<br>The sand is very sticky.<br>If you’re not paying attention, the water will come up past your trouser legs.<br>The frightened little mage recoiled.<br>The sea breeze is salty and foul, and the beach is littered with kelp carcasses.<br>There was no epiphany at sea level.<br>It’s the sunlight that’s particularly harsh.<br>He and his buddy went back at night with varying degrees of sunburn.</p>
+<blockquote>
+<p>Any exposed part of your body — including your earlobes, scalp and lips — can burn. Even covered areas can burn if, for example, your clothing has a loose weave that allows ultraviolet (UV) light through. Your eyes, which are extremely sensitive to the sun’s UV light, also can burn.</p>
+<p>When a UV photon strikes the skin, it can damage the DNA in the body’s cells. It does this by breaking the orderly bonds between the four nucleotides, adenosine, thymine and guanine. So-called thymine dimers form, when two thymine nucleotides bind together, throwing the whole shape of the DNA molecule out of whack.<br>The cell with the messed-up DNA usually then commits suicide, a process called apoptosis. “The cells receive so much radiation that they undergo apoptosis,”</p>
+</blockquote>
+<p>Awkward 😅<br>Very poor experience<br>It’s not romantic…<br>It’s all lies in the movies.</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-31.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-35.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-36.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-37.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-38.jpg" alt=""></div></div></div>
+
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-34.jpg" alt=""></p>
+<h2 id="Soylent-amp-iRobot"><a href="#Soylent-amp-iRobot" class="headerlink" title="Soylent &amp; iRobot"></a>Soylent &amp; iRobot</h2><p>Before that, the tycoon kept saying that the Xiaomi robot didn’t have enough suction power, so he had to buy the iRobot.<br>It’s a great deal, and just in time for Amazon’s 700 series sale, I got it for over $3,000.</p>
+<p>But there was no 900 series with visual navigation back then.<br>It’s still a random collision algorithm, so if you’re at home, you’ll think the robot is stupid.<br>But I usually come home from work and find the robot still at the charging station.<br>If the floor wasn’t clean, I’d think I was slacking off.<br>Also the quality is pretty good, knocked the humidifier over once when I wasn’t there.<br>I came home and found that I had sucked in a bellyful of water and thought it was broken, but it turned out to be fine.</p>
+<p>Bottles of Soylent with free in-country shipping, I bought a case for breakfast in case I’m too lazy to get to the venue in the morning.</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-25.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/usa-01-24.jpg" alt=""></div></div></div>
 ]]></content>
       <tags>
         <tag>Travel</tag>
