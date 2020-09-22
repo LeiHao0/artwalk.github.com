@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/cn/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="In the classic 1975 software project management book, The Mythical Man Month: Essays on Software Engineering, Fred Brooks states that, no matter the programming language chosen, a professional develo">
+  <meta name="description" content="在 1975 年的经典软件项目管理书籍《神话人月。Essays on Software Engineering》中，Fred Brooks 指出，无论选择哪种编程语言，一个专业的开发人员平均每天要写 10 行代码（LoC）。  StoryBoard 有利于节省代码行，提高效率，苹果在每次 WWDC 上都会大力推荐，并不断改进。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to add Xib on StoryBoard">
+<meta property="og:title" content="如何在 StoryBoard 上添加 Xib">
 <meta property="og:url" content="https://leihao0.github.io/cn/How-to-add-Xib-on-StoryBoard/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="In the classic 1975 software project management book, The Mythical Man Month: Essays on Software Engineering, Fred Brooks states that, no matter the programming language chosen, a professional develo">
+<meta property="og:description" content="在 1975 年的经典软件项目管理书籍《神话人月。Essays on Software Engineering》中，Fred Brooks 指出，无论选择哪种编程语言，一个专业的开发人员平均每天要写 10 行代码（LoC）。  StoryBoard 有利于节省代码行，提高效率，苹果在每次 WWDC 上都会大力推荐，并不断改进。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2016-10-17T16:56:53.000Z">
-<meta property="article:modified_time" content="2020-09-09T13:20:59.050Z">
+<meta property="article:modified_time" content="2020-09-22T12:48:05.739Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Xcode">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>How to add Xib on StoryBoard | LeiHao's Blog</title>
+  <title>如何在 StoryBoard 上添加 Xib | LeiHao's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
     <script>
@@ -365,7 +365,7 @@ mjx-container[display="true"] + br {
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/cn/tags/">
-        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-count">82</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -431,7 +431,7 @@ mjx-container[display="true"] + br {
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          How to add Xib on StoryBoard
+          如何在 StoryBoard 上添加 Xib
         </h1>
 
         <div class="post-meta-container">
@@ -449,7 +449,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-09-09 21:20:59" itemprop="dateModified" datetime="2020-09-09T21:20:59+08:00">2020-09-09</time>
+        <time title="修改时间：2020-09-22 20:48:05" itemprop="dateModified" datetime="2020-09-22T20:48:05+08:00">2020-09-22</time>
       </span>
 
   
@@ -474,7 +474,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
+      <span>778</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -493,31 +493,31 @@ mjx-container[display="true"] + br {
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>
-<p>In the classic 1975 software project management book, The Mythical Man Month: Essays on Software Engineering, Fred Brooks states that, no matter the programming language chosen, a professional developer will write an average 10 lines of code (LoC) day.</p>
+<p>在 1975 年的经典软件项目管理书籍《神话人月。Essays on Software Engineering》中，Fred Brooks 指出，无论选择哪种编程语言，一个专业的开发人员平均每天要写 10 行代码（LoC）。</p>
 </blockquote>
-<p>StoryBoard is good for saving code lines and improve efficiency, as  strongly recommend in each WWDC and continually improve it.</p>
+<p>StoryBoard 有利于节省代码行，提高效率，苹果在每次 WWDC 上都会大力推荐，并不断改进。</p>
 <a id="more"></a>
 
-<p>I don’t understand why there are still lots of Team Leaders require their poor programmers to write the UIView in programmatic way.</p>
-<p>Maybe they thought some CustomViews are highly reuse usable, and cope paste in StoryBoard would cause the redundant side effect.</p>
-<p>So, The main idea of this solution is, cohesion the CustomViews to a Xib then add it on StoryBoard.</p>
-<p>This need a few steps as for  didn’t support it directly:</p>
+<p>我不明白为什么还有很多团队负责人要求他们可怜的程序员用编程的方式来写 UIView。</p>
+<p>也许他们认为有些 CustomViews 的重用性很强，如果将其粘贴到 StoryBoard 中，会造成多余的副作用。</p>
+<p>所以，这个解决方案的主要思路是，将 CustomViews 凝聚到 Xib 中，然后添加到 StoryBoard 中。</p>
+<p>这需要几个步骤，因为苹果并不直接支持它。</p>
 <ol>
-<li>add a IBDesignable <code>CustomView.Swift</code> and <code>CustomView.Xib</code></li>
-<li>set the <code>CustomView.xib -&gt; Placeholders -&gt; File&#39;s Owner -&gt; Custom Class</code> to <code>CustomView</code></li>
-<li>new a <code>CustomView</code> programmatically and load the root view from <code>CustomView.Xib</code></li>
-<li>add the root view with equal width and height in both horizontal and vertical center on <code>CustomView</code> in init function</li>
-<li>now you can drag a View to StoryBoard, and set it’s class to <code>CustomView</code> which can generate a snapshot for preview</li>
+<li>添加一个 IBDesignable<code>CustomView.Swift</code>和<code>CustomView.Xib</code></li>
+<li>将<code>CustomView.xib-&gt;占位符-&gt;文件的所有者-&gt;自定义类</code>设置为<code>CustomView</code></li>
+<li>以编程方式新建一个 CustomView 并从 CustomView.Xib 加载根视图</li>
+<li>在 init 函数的<code>CustomView</code>上在水平和垂直中心添加宽度和高度相等的根视图</li>
+<li>现在您可以将 View 拖到 StoryBoard，并将其类设置为<code>CustomView</code>，这可以生成快照以进行预览</li>
 </ol>
-<p>But the subviews of CustomView like UIButton can’t wire to ViewController as an <code>@IBOutlet</code></p>
-<p><code>Delegate</code> or <code>Block</code> can solve this problem.</p>
-<p>As for me, I suggest <code>Block</code> way, cause I used <code>Delegate</code> for half a year, and found</p>
+<p>但是 CustomView 的子视图（如 UIButton）无法连接到 ViewController<code>@IBOutlet</code></p>
+<p><code>Delegate</code> or <code>Block</code> 可以解决这个问题。</p>
+<p>至于我，我建议 <code>Block</code> 方式, 因为我用过 <code>Delegate</code> 半年了，发现</p>
 <ul>
-<li>ViewController will have too many delegates</li>
-<li><code>delegate = self</code> have to written in <code>viewDidLoad</code> and sometimes <code>=nil</code> in <code>viewDidDisappear</code></li>
+<li>ViewController 会有太多 delegates</li>
+<li><code>delegate = self</code> 必须写 <code>viewDidLoad</code> 而有时 <code>=nil</code> 在 <code>viewDidDisappear</code></li>
 </ul>
-<p><code>Block</code> will have less code and more simpler.</p>
-<p>Here is the <a target="_blank" rel="noopener" href="https://github.com/leihao0/DesignableView">example</a> which may reduce your time.</p>
+<p><code>Block</code>的代码会更少，更简单。</p>
+<p>下面是<a target="_blank" rel="noopener" href="https://github.com/leihao0/DesignableView">例子</a>，可能会减少你的时间。</p>
 
     </div>
 
@@ -531,7 +531,7 @@ mjx-container[display="true"] + br {
       <div class="popular-posts-title"><a href="/cn/UITextField-and-UILabel-Tips/" rel="bookmark">UITextField And UILabel Tips</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/cn/Batch-replace-NamedColors-to-RGB-in-Storyboard/" rel="bookmark">Batch replace NamedColors to RGB in Storyboard</a></div>
+      <div class="popular-posts-title"><a href="/cn/Batch-replace-NamedColors-to-RGB-in-Storyboard/" rel="bookmark">在Storyboard中，将NamedColors批量替换为RGB</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/cn/ios-7-programming-cookbook/" rel="bookmark">iOS 7 Programming Cookbook</a></div>
@@ -577,8 +577,8 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/cn/How-to-learn-English-as-a-Chinese/" rel="prev" title="How to learn English as a Chinese">
-                  <i class="fa fa-chevron-left"></i> How to learn English as a Chinese
+                <a href="/cn/How-to-learn-English-as-a-Chinese/" rel="prev" title="中国人如何学习英语">
+                  <i class="fa fa-chevron-left"></i> 中国人如何学习英语
                 </a>
             </div>
             <div class="post-nav-item">
@@ -649,13 +649,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">437k</span>
+    <span title="站点总字数">420k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:37</span>
+    <span title="站点阅读时长">6:22</span>
   </span>
 </div>
 
@@ -713,7 +713,7 @@ mjx-container[display="true"] + br {
   var disqus_config = function() {
     this.page.url = "https://leihao0.github.io/cn/How-to-add-Xib-on-StoryBoard/";
     this.page.identifier = "How-to-add-Xib-on-StoryBoard/";
-    this.page.title = "How to add Xib on StoryBoard";
+    this.page.title = "如何在 StoryBoard 上添加 Xib";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

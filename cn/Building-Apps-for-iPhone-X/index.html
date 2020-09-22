@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/cn/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="First, Watching Building Apps for iPhone X with 2x speed to get a glance, it will speed 13&#x2F;2 minutes.  The critical point is to open the Safe Area in Storyboard. The LayoutConstraint attracted to Supe">
+  <meta name="description" content="首先，观看 为 iPhone X 构建应用程序 以 2 倍的速度一览无余，它将加快 13&#x2F;2 分钟。  关键点是在 Storyboard 中打开安全区域。 吸引到 Superview 的 LayoutConstraint 可以超越安全区。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Building Apps for iPhone X">
+<meta property="og:title" content="为iPhone X构建应用程序">
 <meta property="og:url" content="https://leihao0.github.io/cn/Building-Apps-for-iPhone-X/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="First, Watching Building Apps for iPhone X with 2x speed to get a glance, it will speed 13&#x2F;2 minutes.  The critical point is to open the Safe Area in Storyboard. The LayoutConstraint attracted to Supe">
+<meta property="og:description" content="首先，观看 为 iPhone X 构建应用程序 以 2 倍的速度一览无余，它将加快 13&#x2F;2 分钟。  关键点是在 Storyboard 中打开安全区域。 吸引到 Superview 的 LayoutConstraint 可以超越安全区。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-10-20T14:37:50.000Z">
-<meta property="article:modified_time" content="2020-01-11T13:51:33.000Z">
+<meta property="article:modified_time" content="2020-09-22T13:00:36.544Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>Building Apps for iPhone X | LeiHao's Blog</title>
+  <title>为iPhone X构建应用程序 | LeiHao's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
     <script>
@@ -364,7 +364,7 @@ mjx-container[display="true"] + br {
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/cn/tags/">
-        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-count">82</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -430,7 +430,7 @@ mjx-container[display="true"] + br {
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Building Apps for iPhone X
+          为iPhone X构建应用程序
         </h1>
 
         <div class="post-meta-container">
@@ -448,7 +448,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-01-11 21:51:33" itemprop="dateModified" datetime="2020-01-11T21:51:33+08:00">2020-01-11</time>
+        <time title="修改时间：2020-09-22 21:00:36" itemprop="dateModified" datetime="2020-09-22T21:00:36+08:00">2020-09-22</time>
       </span>
 
   
@@ -473,7 +473,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
+      <span>925</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -491,22 +491,22 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>First, Watching <a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/fall2017/201/">Building Apps for iPhone X</a> with 2x speed to get a glance, it will speed 13/2 minutes.</p>
+        <p>首先，观看 <a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/fall2017/201/">为 iPhone X 构建应用程序</a> 以 2 倍的速度一览无余，它将加快 13/2 分钟。</p>
 <ul>
-<li>The critical point is to open the Safe Area in Storyboard.</li>
-<li>The LayoutConstraint attracted to Superview can beyond the Safe Area.</li>
+<li>关键点是在 Storyboard 中打开安全区域。</li>
+<li>吸引到 Superview 的 LayoutConstraint 可以超越安全区。</li>
 </ul>
 <a id="more"></a>
 
-<p>My current app has 17 Storyboards and 28 ViewControllers.</p>
-<p>In each ViewController, the previous developers used an UIView on top to cover the system’s navigationController to do some tricks, which means the constraint of the view has a <code>height == 64</code>, and <code>top == superview.top</code>.</p>
-<p>Although it’s a little disgusting, it works on previous devices in which the navigation bar’s height is always 64.</p>
-<p>But on iPhone X, it needs to use Safe Area. Which means I have better to delete the fake navigation view. But that means it moves all the buttons, actions, animations to the system’s navigationController if the segue kind is <code>push</code>.</p>
-<p>Honestly, to say, it’s much easier than I thought after all the works are done.</p>
-<p>For the segue kind is <code>present modally</code>, the fake view still does its job by changed it’s height only if the device is iPhone X.</p>
+<p>我现在的 app 有 17 个 Storyboards 和 28 个 ViewController。</p>
+<p>在每个 ViewController 中，之前的开发者用一个 UIView 在上面盖住系统的 navigationController 做了一些小动作，也就是视图的约束条件有<code>height == 64</code>，<code>top == superview.top</code>。</p>
+<p>虽然有点恶心，但在以前的设备上，导航栏的高度一直是 64，这也是可行的。</p>
+<p>但是在 iPhone X 上，它需要使用安全区域。这意味着我最好删除假的导航视图。但这意味着，如果转场方式是 “推 “的话，它就会把所有的按钮、动作、动画都移到系统的 navigationController 上。</p>
+<p>说实话，要说，所有的工程做完后，比我想象的要简单得多。</p>
+<p>对于 segue 种类是 “present modally “的情况，只有当设备是 iPhone X 时，假视图仍然通过改变它的高度来完成它的工作。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">layoutSubviews</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">super</span>.layoutSubviews()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> #available(iOS <span class="number">11.0</span>, *) &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> top = <span class="type">UIApplication</span>.shared.keyWindow?.safeAreaInsets.top, top &gt; <span class="number">0</span> &#123;</span><br><span class="line">      viewHeight.constant = <span class="number">88</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Other useful tools</p>
+<p>其他有用的工具</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">navigationItem.setHidesBackButton(<span class="literal">true</span>, animated: <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line">navigationController?.interactivePopGestureRecognizer?.isEnabled = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span>.navigationController?.navigationBar.layer.zPosition = -<span class="number">1</span> <span class="comment">// put the navigationBar under the vc&#x27;view</span></span><br></pre></td></tr></table></figure>
 
     </div>
@@ -530,7 +530,7 @@ mjx-container[display="true"] + br {
       <div class="popular-posts-title"><a href="/cn/View-blurred-after-CGAffineTransformMakeRotation/" rel="bookmark">View blurred after CGAffineTransformMakeRotation</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/cn/How-to-add-Xib-on-StoryBoard/" rel="bookmark">How to add Xib on StoryBoard</a></div>
+      <div class="popular-posts-title"><a href="/cn/How-to-add-Xib-on-StoryBoard/" rel="bookmark">如何在 StoryBoard 上添加 Xib</a></div>
     </li>
   </ul>
 
@@ -566,13 +566,13 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/cn/How-to-trust-MitM-Certificate-on-iPhone-Simulator/" rel="prev" title="How to trust MitM Certificate on iPhone Simulator">
-                  <i class="fa fa-chevron-left"></i> How to trust MitM Certificate on iPhone Simulator
+                <a href="/cn/How-to-trust-MitM-Certificate-on-iPhone-Simulator/" rel="prev" title="如何在 iPhone 模拟器上信任 MitM 证书">
+                  <i class="fa fa-chevron-left"></i> 如何在 iPhone 模拟器上信任 MitM 证书
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/cn/Batch-replace-NamedColors-to-RGB-in-Storyboard/" rel="next" title="Batch replace NamedColors to RGB in Storyboard">
-                  Batch replace NamedColors to RGB in Storyboard <i class="fa fa-chevron-right"></i>
+                <a href="/cn/Batch-replace-NamedColors-to-RGB-in-Storyboard/" rel="next" title="在Storyboard中，将NamedColors批量替换为RGB">
+                  在Storyboard中，将NamedColors批量替换为RGB <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -638,13 +638,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">437k</span>
+    <span title="站点总字数">420k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:37</span>
+    <span title="站点阅读时长">6:22</span>
   </span>
 </div>
 
@@ -702,7 +702,7 @@ mjx-container[display="true"] + br {
   var disqus_config = function() {
     this.page.url = "https://leihao0.github.io/cn/Building-Apps-for-iPhone-X/";
     this.page.identifier = "Building-Apps-for-iPhone-X/";
-    this.page.title = "Building Apps for iPhone X";
+    this.page.title = "为iPhone X构建应用程序";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

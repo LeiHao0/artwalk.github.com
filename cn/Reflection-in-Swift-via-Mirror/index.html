@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/cn/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Mirror  value: access to the original reflected value, but with type Any. valueType: the Type of the original reflected value—equivalent to value.dynamicType.   I didn’t find any method can assign a">
+  <meta name="description" content="Mirror  value: 访问原始反射值，但类型为 Any。 valueType: 原始反射值的类型，相当于 value.dynamicType。   我没有发现任何方法可以用纯 Swift 对象给$0.value赋值，所以Class继承NSObject为KVC。  我忽略了简化的可选情况。  递归生成字典或对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reflection in Swift via Mirror">
+<meta property="og:title" content="通过镜像在Swift中进行反射">
 <meta property="og:url" content="https://leihao0.github.io/cn/Reflection-in-Swift-via-Mirror/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="Mirror  value: access to the original reflected value, but with type Any. valueType: the Type of the original reflected value—equivalent to value.dynamicType.   I didn’t find any method can assign a">
+<meta property="og:description" content="Mirror  value: 访问原始反射值，但类型为 Any。 valueType: 原始反射值的类型，相当于 value.dynamicType。   我没有发现任何方法可以用纯 Swift 对象给$0.value赋值，所以Class继承NSObject为KVC。  我忽略了简化的可选情况。  递归生成字典或对象">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2016-10-19T12:56:20.000Z">
-<meta property="article:modified_time" content="2020-09-09T13:21:04.039Z">
+<meta property="article:modified_time" content="2020-09-22T12:44:58.484Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="Swift">
 <meta property="article:tag" content="iOS">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>Reflection in Swift via Mirror | LeiHao's Blog</title>
+  <title>通过镜像在Swift中进行反射 | LeiHao's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
     <script>
@@ -365,7 +365,7 @@ mjx-container[display="true"] + br {
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/cn/tags/">
-        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-count">82</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -431,7 +431,7 @@ mjx-container[display="true"] + br {
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Reflection in Swift via Mirror
+          通过镜像在Swift中进行反射
         </h1>
 
         <div class="post-meta-container">
@@ -449,7 +449,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-09-09 21:21:04" itemprop="dateModified" datetime="2020-09-09T21:21:04+08:00">2020-09-09</time>
+        <time title="修改时间：2020-09-22 20:44:58" itemprop="dateModified" datetime="2020-09-22T20:44:58+08:00">2020-09-22</time>
       </span>
 
   
@@ -474,7 +474,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -495,15 +495,15 @@ mjx-container[display="true"] + br {
         <ul>
 <li><p>Mirror</p>
 <ul>
-<li><code>value</code>: access to the original reflected value, but with type Any.</li>
-<li><code>valueType</code>: the Type of the original reflected value—equivalent to value.dynamicType.</li>
+<li><code>value</code>: 访问原始反射值，但类型为 Any。</li>
+<li><code>valueType</code>: 原始反射值的类型，相当于 value.dynamicType。</li>
 </ul>
 </li>
-<li><p>I didn’t find any method can assign a value to <code>$0.value</code> with pure Swift Object, so <code>Class</code> inherit <code>NSObject</code> for <code>KVC</code></p>
+<li><p>我没有发现任何方法可以用纯 Swift 对象给<code>$0.value</code>赋值，所以<code>Class</code>继承<code>NSObject</code>为<code>KVC</code>。</p>
 </li>
-<li><p>I ignore the Optional case for simplify.</p>
+<li><p>我忽略了简化的可选情况。</p>
 </li>
-<li><p>Generate Dictionary or Object recursively</p>
+<li><p>递归生成字典或对象</p>
 </li>
 </ul>
 <a id="more"></a>
@@ -519,7 +519,7 @@ mjx-container[display="true"] + br {
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/cn/Swift-Generics-in-protocol-and-enum/" rel="bookmark">Swift Generics in protocol and enum</a></div>
+      <div class="popular-posts-title"><a href="/cn/Swift-Generics-in-protocol-and-enum/" rel="bookmark">协议和枚举中的Swift通用</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/cn/Struct-Codable-Alamofire-Generics/" rel="bookmark">Struct Codable Alamofire Generics</a></div>
@@ -573,8 +573,8 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/cn/Time-Capsule-on-PandoraBox/" rel="next" title="Time Capsule on PandoraBox">
-                  Time Capsule on PandoraBox <i class="fa fa-chevron-right"></i>
+                <a href="/cn/Time-Capsule-on-PandoraBox/" rel="next" title="PandoraBox上的时间胶囊">
+                  PandoraBox上的时间胶囊 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -640,13 +640,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">437k</span>
+    <span title="站点总字数">420k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:37</span>
+    <span title="站点阅读时长">6:22</span>
   </span>
 </div>
 
@@ -704,7 +704,7 @@ mjx-container[display="true"] + br {
   var disqus_config = function() {
     this.page.url = "https://leihao0.github.io/cn/Reflection-in-Swift-via-Mirror/";
     this.page.identifier = "Reflection-in-Swift-via-Mirror/";
-    this.page.title = "Reflection in Swift via Mirror";
+    this.page.title = "通过镜像在Swift中进行反射";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {
