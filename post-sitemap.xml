@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://leihao0.github.io/leetcode-n-ary-tree/</loc>
+        <lastmod>2020-09-27T08:28:46.175Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/LeetCode-Binary-Search/</loc>
+        <lastmod>2020-09-27T08:10:12.742Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/dali-0/</loc>
         <lastmod>2020-09-25T06:06:44.158Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1322,14 +1338,6 @@
     <url>
         <loc>https://leihao0.github.io/LeetCode-Recursion-2/</loc>
         <lastmod>2020-09-09T11:09:39.508Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/LeetCode-Binary-Search/</loc>
-        <lastmod>2020-09-09T11:09:09.283Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

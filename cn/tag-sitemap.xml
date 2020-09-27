@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>https://leihao0.github.io/cn/tags/swift/</loc>
+        <lastmod>2020-09-27T08:30:40.103Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/cn/tags/leetcode/</loc>
+        <lastmod>2020-09-27T08:30:40.103Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/cn/tags/%25F0%259F%2587%25A8%25F0%259F%2587%25B3/</loc>
         <lastmod>2020-09-25T05:59:34.454Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -187,13 +201,6 @@
     <url>
         <loc>https://leihao0.github.io/cn/tags/macos/</loc>
         <lastmod>2020-09-22T12:49:37.337Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/cn/tags/swift/</loc>
-        <lastmod>2020-09-22T12:45:49.939Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -565,13 +572,6 @@
     <url>
         <loc>https://leihao0.github.io/cn/tags/autolayout/</loc>
         <lastmod>2020-09-09T11:22:58.482Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/cn/tags/leetcode/</loc>
-        <lastmod>2020-09-09T11:10:38.132Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

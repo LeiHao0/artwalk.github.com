@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="zh-CN"><head>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -9,11 +11,11 @@
   <link rel="mask-icon" href="/cn/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="rbaH_zC-qBwXaawJ10Mno3FHzv9HRFHGFdXx2f1BwyI">
 
+<link rel="stylesheet" href="/cn/css/main.css">
 
 
 
-
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
@@ -24,7 +26,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="线程编程指南">
 <meta property="og:url" content="https://leihao0.github.io/cn/Threading-Programming-Guide/index.html">
-<meta property="og:site_name" content="LeiHao's Blog">
+<meta property="og:site_name" content="LeiHao&#39;s Blog">
 <meta property="og:description" content="Threading Programming Guide 最近总是被问到 Runloop那么什么是 运行循环 呢直接看  2014-07-15 就停止修订的文档吧 👆 ～～～ 官方解说 异常清晰呢">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Art/runloop.jpg">
@@ -53,7 +55,7 @@
 
   <title>线程编程指南 | LeiHao's Blog</title>
   
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
     <script>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
@@ -77,3005 +79,7 @@
 
 
 
-  <style>:root {
-  --body-bg-color: #f5f7f9;
-  --content-bg-color: #fff;
-  --card-bg-color: #f5f5f5;
-  --text-color: #555;
-  --blockquote-color: #666;
-  --link-color: #555;
-  --link-hover-color: #222;
-  --brand-color: #fff;
-  --brand-hover-color: #fff;
-  --table-row-odd-bg-color: #f9f9f9;
-  --table-row-hover-bg-color: #f5f5f5;
-  --menu-item-bg-color: #f5f5f5;
-  --btn-default-bg: #fff;
-  --btn-default-color: #555;
-  --btn-default-border-color: #555;
-  --btn-default-hover-bg: #222;
-  --btn-default-hover-color: #fff;
-  --btn-default-hover-border-color: #222;
-  --highlight-background: #f0f0f0;
-  --highlight-foreground: #444;
-  --highlight-gutter-background: #dedede;
-  --highlight-gutter-foreground: #555;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-bg-color: #282828;
-    --content-bg-color: #333;
-    --card-bg-color: #555;
-    --text-color: #ccc;
-    --blockquote-color: #bbb;
-    --link-color: #ccc;
-    --link-hover-color: #eee;
-    --brand-color: #ddd;
-    --brand-hover-color: #ddd;
-    --table-row-odd-bg-color: #282828;
-    --table-row-hover-bg-color: #363636;
-    --menu-item-bg-color: #555;
-    --btn-default-bg: #222;
-    --btn-default-color: #ccc;
-    --btn-default-border-color: #555;
-    --btn-default-hover-bg: #666;
-    --btn-default-hover-color: #ccc;
-    --btn-default-hover-border-color: #666;
-    --highlight-background: #1d1f21;
-    --highlight-foreground: #c5c8c6;
-    --highlight-gutter-background: #2d2f31;
-    --highlight-gutter-foreground: #b4b7b5;
-  }
-  img {
-    opacity: 0.75;
-  }
-  img:hover {
-    opacity: 0.9;
-  }
-}
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
-body {
-  margin: 0;
-}
-main {
-  display: block;
-}
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-a {
-  background: transparent;
-}
-abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
-}
-b,
-strong {
-  font-weight: bolder;
-}
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-small {
-  font-size: 80%;
-}
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
-img {
-  border-style: none;
-}
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
-}
-button,
-input {
-/* 1 */
-  overflow: visible;
-}
-button,
-select {
-/* 1 */
-  text-transform: none;
-}
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-}
-button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
-}
-progress {
-  vertical-align: baseline;
-}
-textarea {
-  overflow: auto;
-}
-[type='checkbox'],
-[type='radio'] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
-}
-[type='search'] {
-  outline-offset: -2px; /* 2 */
-  -webkit-appearance: textfield; /* 1 */
-}
-[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-::-webkit-file-upload-button {
-  font: inherit; /* 2 */
-  -webkit-appearance: button; /* 1 */
-}
-details {
-  display: block;
-}
-summary {
-  display: list-item;
-}
-template {
-  display: none;
-}
-[hidden] {
-  display: none;
-}
-::selection {
-  background: #262a30;
-  color: #eee;
-}
-html,
-body {
-  height: 100%;
-}
-body {
-  background: var(--body-bg-color);
-  color: var(--text-color);
-  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 1em;
-  line-height: 2;
-  min-height: 100%;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-weight: bold;
-  line-height: 1.5;
-  margin: 20px 0 15px;
-}
-h1 {
-  font-size: 1.5em;
-}
-h2 {
-  font-size: 1.375em;
-}
-h3 {
-  font-size: 1.25em;
-}
-h4 {
-  font-size: 1.125em;
-}
-h5 {
-  font-size: 1em;
-}
-h6 {
-  font-size: 0.875em;
-}
-p {
-  margin: 0 0 20px 0;
-}
-a,
-span.exturl {
-  border-bottom: 1px solid #999;
-  color: var(--link-color);
-  outline: 0;
-  text-decoration: none;
-  overflow-wrap: break-word;
-  cursor: pointer;
-}
-a:hover,
-span.exturl:hover {
-  border-bottom-color: var(--link-hover-color);
-  color: var(--link-hover-color);
-}
-iframe,
-img,
-video,
-embed {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-}
-hr {
-  background-image: repeating-linear-gradient(-45deg, #ddd, #ddd 4px, transparent 4px, transparent 8px);
-  border: 0;
-  height: 3px;
-  margin: 40px 0;
-}
-blockquote {
-  border-left: 4px solid #ddd;
-  color: var(--blockquote-color);
-  margin: 0;
-  padding: 0 15px;
-}
-blockquote cite::before {
-  content: '-';
-  padding: 0 5px;
-}
-dt {
-  font-weight: bold;
-}
-dd {
-  margin: 0;
-  padding: 0;
-}
-.table-container {
-  overflow: auto;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 0.875em;
-  margin: 0 0 20px 0;
-  width: 100%;
-}
-tbody tr:nth-of-type(odd) {
-  background: var(--table-row-odd-bg-color);
-}
-tbody tr:hover {
-  background: var(--table-row-hover-bg-color);
-}
-caption,
-th,
-td {
-  padding: 8px;
-}
-th,
-td {
-  border: 1px solid #ddd;
-  border-bottom: 3px solid #ddd;
-}
-th {
-  font-weight: 700;
-  padding-bottom: 10px;
-}
-td {
-  border-bottom-width: 1px;
-}
-.btn {
-  background: var(--btn-default-bg);
-  border: 2px solid var(--btn-default-border-color);
-  border-radius: 2px;
-  color: var(--btn-default-color);
-  display: inline-block;
-  font-size: 0.875em;
-  line-height: 2;
-  padding: 0 20px;
-  transition: background-color 0.2s ease-in-out;
-}
-.btn:hover {
-  background: var(--btn-default-hover-bg);
-  border-color: var(--btn-default-hover-border-color);
-  color: var(--btn-default-hover-color);
-}
-.btn + .btn {
-  margin: 0 0 8px 8px;
-}
-.btn .fa-fw {
-  text-align: left;
-  width: 1.285714285714286em;
-}
-.toggle {
-  line-height: 0;
-}
-.toggle .toggle-line {
-  background: #fff;
-  display: block;
-  height: 2px;
-  left: 0;
-  position: relative;
-  top: 0;
-  transition: all 0.4s;
-  width: 100%;
-}
-.toggle .toggle-line:not(:first-child) {
-  margin-top: 3px;
-}
-.toggle.toggle-arrow .toggle-line:first-child {
-  left: 50%;
-  top: 2px;
-  transform: rotate(45deg);
-  width: 50%;
-}
-.toggle.toggle-arrow .toggle-line:last-child {
-  left: 50%;
-  top: -2px;
-  transform: rotate(-45deg);
-  width: 50%;
-}
-.toggle.toggle-close .toggle-line:nth-child(2) {
-  opacity: 0;
-}
-.toggle.toggle-close .toggle-line:first-child {
-  top: 5px;
-  transform: rotate(45deg);
-}
-.toggle.toggle-close .toggle-line:last-child {
-  top: -5px;
-  transform: rotate(-45deg);
-}
-/*
-
-Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #F0F0F0;
-}
-
-
-/* Base color: saturation 0; */
-
-.hljs,
-.hljs-subst {
-  color: #444;
-}
-
-.hljs-comment {
-  color: #888888;
-}
-
-.hljs-keyword,
-.hljs-attribute,
-.hljs-selector-tag,
-.hljs-meta-keyword,
-.hljs-doctag,
-.hljs-name {
-  font-weight: bold;
-}
-
-
-/* User color: hue: 0 */
-
-.hljs-type,
-.hljs-string,
-.hljs-number,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
-  color: #880000;
-}
-
-.hljs-title,
-.hljs-section {
-  color: #880000;
-  font-weight: bold;
-}
-
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #BC6060;
-}
-
-
-/* Language color: hue: 90; */
-
-.hljs-literal {
-  color: #78A960;
-}
-
-.hljs-built_in,
-.hljs-bullet,
-.hljs-code,
-.hljs-addition {
-  color: #397300;
-}
-
-
-/* Meta color: hue: 200 */
-
-.hljs-meta {
-  color: #1f7199;
-}
-
-.hljs-meta-string {
-  color: #4d99bf;
-}
-
-
-/* Misc effects */
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-@media (prefers-color-scheme: dark) {
-/* Tomorrow Night Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-  color: #969896;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-  color: #cc6666;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-  color: #de935f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-  color: #f0c674;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-  color: #b5bd68;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-  color: #81a2be;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #b294bb;
-}
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  background: #1d1f21;
-  color: #c5c8c6;
-  padding: 0.5em;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-}
-code,
-kbd,
-figure.highlight,
-pre {
-  background: var(--highlight-background);
-  color: var(--highlight-foreground);
-}
-figure.highlight,
-pre {
-  line-height: 1.6;
-  margin: 0 auto 20px;
-}
-pre,
-code {
-  font-family: consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
-}
-code {
-  border-radius: 3px;
-  font-size: 0.875em;
-  padding: 2px 4px;
-  overflow-wrap: break-word;
-}
-kbd {
-  border: 2px solid #ccc;
-  border-radius: 0.2em;
-  box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
-  font-family: inherit;
-  padding: 0.1em 0.3em;
-  white-space: nowrap;
-}
-figure.highlight {
-  position: relative;
-}
-figure.highlight pre {
-  border: 0;
-  margin: 0;
-  padding: 10px 0;
-}
-figure.highlight table {
-  border: 0;
-  margin: 0;
-  width: auto;
-}
-figure.highlight td {
-  border: 0;
-  padding: 0;
-}
-figure.highlight figcaption,
-pre .caption,
-pre figcaption {
-  background: var(--highlight-gutter-background);
-  color: var(--highlight-foreground);
-  display: flow-root;
-  font-size: 0.875em;
-  line-height: 1.2;
-  padding: 0.5em;
-}
-figure.highlight figcaption a,
-pre .caption a,
-pre figcaption a {
-  color: var(--highlight-foreground);
-  float: right;
-}
-figure.highlight figcaption a:hover,
-pre .caption a:hover,
-pre figcaption a:hover {
-  border-bottom-color: var(--highlight-foreground);
-}
-figure.highlight .gutter {
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-figure.highlight .gutter pre {
-  background: var(--highlight-gutter-background);
-  color: var(--highlight-gutter-foreground);
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: right;
-}
-figure.highlight .code pre {
-  padding-left: 10px;
-  width: 100%;
-}
-pre .caption,
-pre figcaption {
-  margin-bottom: 10px;
-}
-.gist table {
-  width: auto;
-}
-.gist table td {
-  border: 0;
-}
-pre {
-  overflow: auto;
-  padding: 10px;
-  position: relative;
-}
-pre code {
-  background: none;
-  padding: 0;
-  text-shadow: none;
-}
-.blockquote-center {
-  border-left: none;
-  margin: 40px 0;
-  padding: 0;
-  position: relative;
-  text-align: center;
-}
-.blockquote-center::before,
-.blockquote-center::after {
-  left: 0;
-  line-height: 1;
-  opacity: 0.6;
-  position: absolute;
-  width: 100%;
-}
-.blockquote-center::before {
-  border-top: 1px solid #ccc;
-  text-align: left;
-  top: -20px;
-  content: '\f10d';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-.blockquote-center::after {
-  border-bottom: 1px solid #ccc;
-  bottom: -20px;
-  text-align: right;
-  content: '\f10e';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-.blockquote-center p,
-.blockquote-center div {
-  text-align: center;
-}
-.group-picture {
-  margin-bottom: 20px;
-}
-.group-picture .group-picture-row {
-  display: flex;
-  gap: 3px;
-  margin-bottom: 3px;
-}
-.group-picture .group-picture-column {
-  flex: 1;
-}
-.group-picture .group-picture-column img {
-  height: 100%;
-  margin: 0;
-  object-fit: cover;
-  width: 100%;
-}
-.post-body .label {
-  color: #555;
-  padding: 0 2px;
-}
-.post-body .label.default {
-  background: #f0f0f0;
-}
-.post-body .label.primary {
-  background: #efe6f7;
-}
-.post-body .label.info {
-  background: #e5f2f8;
-}
-.post-body .label.success {
-  background: #e7f4e9;
-}
-.post-body .label.warning {
-  background: #fcf6e1;
-}
-.post-body .label.danger {
-  background: #fae8eb;
-}
-.post-body .link-grid {
-  display: grid;
-  gap: 1.5rem 1.5rem;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 20px;
-  padding: 1rem;
-}
-@media (max-width: 767px) {
-  .post-body .link-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.post-body .link-grid .link-grid-container {
-  border: solid #ddd;
-  box-shadow: 1rem 1rem 0.5rem rgba(0,0,0,0.5);
-  min-height: 5rem;
-  min-width: 0;
-  padding: 0.5rem;
-  position: relative;
-  transition: background 0.3s;
-}
-.post-body .link-grid .link-grid-container:hover {
-  animation: next-shake 0.5s;
-  background: var(--card-bg-color);
-}
-.post-body .link-grid .link-grid-container:active {
-  box-shadow: 0.5rem 0.5rem 0.25rem rgba(0,0,0,0.5);
-  transform: translate(0.2rem, 0.2rem);
-}
-.post-body .link-grid .link-grid-container .link-grid-image {
-  background-clip: content-box;
-  background-origin: content-box;
-  background-size: cover;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  box-sizing: border-box;
-  height: 5rem;
-  padding: 3px;
-  position: absolute;
-  width: 5rem;
-}
-.post-body .link-grid .link-grid-container p {
-  margin: 0 1rem 0 6rem;
-}
-.post-body .link-grid .link-grid-container p:first-of-type {
-  font-size: 1.2em;
-}
-.post-body .link-grid .link-grid-container p:last-of-type {
-  font-size: 0.8em;
-  line-height: 1.3rem;
-  opacity: 0.7;
-}
-.post-body .link-grid .link-grid-container a {
-  border: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-@-moz-keyframes next-shake {
-  0% {
-    transform: translate(1pt, 1pt) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1pt, -2pt) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3pt, 0pt) rotate(1deg);
-  }
-  30% {
-    transform: translate(3pt, 2pt) rotate(0deg);
-  }
-  40% {
-    transform: translate(1pt, -1pt) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1pt, 2pt) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3pt, 1pt) rotate(0deg);
-  }
-  70% {
-    transform: translate(3pt, 1pt) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1pt, -1pt) rotate(1deg);
-  }
-  90% {
-    transform: translate(1pt, 2pt) rotate(0deg);
-  }
-  100% {
-    transform: translate(1pt, -2pt) rotate(-1deg);
-  }
-}
-@-webkit-keyframes next-shake {
-  0% {
-    transform: translate(1pt, 1pt) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1pt, -2pt) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3pt, 0pt) rotate(1deg);
-  }
-  30% {
-    transform: translate(3pt, 2pt) rotate(0deg);
-  }
-  40% {
-    transform: translate(1pt, -1pt) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1pt, 2pt) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3pt, 1pt) rotate(0deg);
-  }
-  70% {
-    transform: translate(3pt, 1pt) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1pt, -1pt) rotate(1deg);
-  }
-  90% {
-    transform: translate(1pt, 2pt) rotate(0deg);
-  }
-  100% {
-    transform: translate(1pt, -2pt) rotate(-1deg);
-  }
-}
-@-o-keyframes next-shake {
-  0% {
-    transform: translate(1pt, 1pt) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1pt, -2pt) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3pt, 0pt) rotate(1deg);
-  }
-  30% {
-    transform: translate(3pt, 2pt) rotate(0deg);
-  }
-  40% {
-    transform: translate(1pt, -1pt) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1pt, 2pt) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3pt, 1pt) rotate(0deg);
-  }
-  70% {
-    transform: translate(3pt, 1pt) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1pt, -1pt) rotate(1deg);
-  }
-  90% {
-    transform: translate(1pt, 2pt) rotate(0deg);
-  }
-  100% {
-    transform: translate(1pt, -2pt) rotate(-1deg);
-  }
-}
-@keyframes next-shake {
-  0% {
-    transform: translate(1pt, 1pt) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1pt, -2pt) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3pt, 0pt) rotate(1deg);
-  }
-  30% {
-    transform: translate(3pt, 2pt) rotate(0deg);
-  }
-  40% {
-    transform: translate(1pt, -1pt) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1pt, 2pt) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3pt, 1pt) rotate(0deg);
-  }
-  70% {
-    transform: translate(3pt, 1pt) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1pt, -1pt) rotate(1deg);
-  }
-  90% {
-    transform: translate(1pt, 2pt) rotate(0deg);
-  }
-  100% {
-    transform: translate(1pt, -2pt) rotate(-1deg);
-  }
-}
-.post-body .tabs {
-  margin-bottom: 20px;
-}
-.post-body .tabs,
-.tabs-comment {
-  padding-top: 10px;
-}
-.post-body .tabs ul.nav-tabs,
-.tabs-comment ul.nav-tabs {
-  display: flex;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-@media (max-width: 413px) {
-  .post-body .tabs ul.nav-tabs,
-  .tabs-comment ul.nav-tabs {
-    display: block;
-    margin-bottom: 5px;
-  }
-}
-.post-body .tabs ul.nav-tabs li.tab,
-.tabs-comment ul.nav-tabs li.tab {
-  border-bottom: 1px solid #ddd;
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-top: 3px solid transparent;
-  flex-grow: 1;
-  list-style-type: none;
-  border-radius: 0 0 0 0;
-}
-@media (max-width: 413px) {
-  .post-body .tabs ul.nav-tabs li.tab,
-  .tabs-comment ul.nav-tabs li.tab {
-    border-bottom: 1px solid transparent;
-    border-left: 3px solid transparent;
-    border-right: 1px solid transparent;
-    border-top: 1px solid transparent;
-  }
-}
-@media (max-width: 413px) {
-  .post-body .tabs ul.nav-tabs li.tab,
-  .tabs-comment ul.nav-tabs li.tab {
-    border-radius: 0;
-  }
-}
-.post-body .tabs ul.nav-tabs li.tab a,
-.tabs-comment ul.nav-tabs li.tab a {
-  border-bottom: initial;
-  display: block;
-  line-height: 1.8;
-  padding: 0.25em 0.75em;
-  text-align: center;
-  transition: all 0.2s ease-out;
-}
-.post-body .tabs ul.nav-tabs li.tab a i,
-.tabs-comment ul.nav-tabs li.tab a i {
-  width: 1.285714285714286em;
-}
-.post-body .tabs ul.nav-tabs li.tab.active,
-.tabs-comment ul.nav-tabs li.tab.active {
-  border-bottom-color: transparent;
-  border-left-color: #ddd;
-  border-right-color: #ddd;
-  border-top-color: #fc6423;
-}
-@media (max-width: 413px) {
-  .post-body .tabs ul.nav-tabs li.tab.active,
-  .tabs-comment ul.nav-tabs li.tab.active {
-    border-bottom-color: #ddd;
-    border-left-color: #fc6423;
-    border-right-color: #ddd;
-    border-top-color: #ddd;
-  }
-}
-.post-body .tabs ul.nav-tabs li.tab.active a,
-.tabs-comment ul.nav-tabs li.tab.active a {
-  cursor: default;
-}
-.post-body .tabs .tab-content,
-.tabs-comment .tab-content {
-  border: 1px solid #ddd;
-  border-top-color: transparent;
-  border-radius: 0 0 0 0;
-}
-@media (max-width: 413px) {
-  .post-body .tabs .tab-content,
-  .tabs-comment .tab-content {
-    border-radius: 0;
-    border-top-color: #ddd;
-  }
-}
-.post-body .tabs .tab-content .tab-pane,
-.tabs-comment .tab-content .tab-pane {
-  padding: 20px 20px 0 20px;
-}
-.post-body .tabs .tab-content .tab-pane:not(.active),
-.tabs-comment .tab-content .tab-pane:not(.active) {
-  display: none;
-}
-.post-body .note {
-  border-radius: 3px;
-  margin-bottom: 20px;
-  padding: 1em;
-  position: relative;
-  border: 1px solid #eee;
-  border-left-width: 5px;
-}
-.post-body .note summary {
-  cursor: pointer;
-  outline: 0;
-}
-.post-body .note summary p {
-  display: inline;
-}
-.post-body .note h2,
-.post-body .note h3,
-.post-body .note h4,
-.post-body .note h5,
-.post-body .note h6 {
-  border-bottom: initial;
-  margin: 0;
-  padding-top: 0;
-}
-.post-body .note p:first-child,
-.post-body .note ul:first-child,
-.post-body .note ol:first-child,
-.post-body .note table:first-child,
-.post-body .note pre:first-child,
-.post-body .note blockquote:first-child,
-.post-body .note img:first-child {
-  margin-top: 0;
-}
-.post-body .note p:last-child,
-.post-body .note ul:last-child,
-.post-body .note ol:last-child,
-.post-body .note table:last-child,
-.post-body .note pre:last-child,
-.post-body .note blockquote:last-child,
-.post-body .note img:last-child {
-  margin-bottom: 0;
-}
-.post-body .note.default {
-  border-left-color: #777;
-}
-.post-body .note.default h2,
-.post-body .note.default h3,
-.post-body .note.default h4,
-.post-body .note.default h5,
-.post-body .note.default h6 {
-  color: #777;
-}
-.post-body .note.primary {
-  border-left-color: #6f42c1;
-}
-.post-body .note.primary h2,
-.post-body .note.primary h3,
-.post-body .note.primary h4,
-.post-body .note.primary h5,
-.post-body .note.primary h6 {
-  color: #6f42c1;
-}
-.post-body .note.info {
-  border-left-color: #428bca;
-}
-.post-body .note.info h2,
-.post-body .note.info h3,
-.post-body .note.info h4,
-.post-body .note.info h5,
-.post-body .note.info h6 {
-  color: #428bca;
-}
-.post-body .note.success {
-  border-left-color: #5cb85c;
-}
-.post-body .note.success h2,
-.post-body .note.success h3,
-.post-body .note.success h4,
-.post-body .note.success h5,
-.post-body .note.success h6 {
-  color: #5cb85c;
-}
-.post-body .note.warning {
-  border-left-color: #f0ad4e;
-}
-.post-body .note.warning h2,
-.post-body .note.warning h3,
-.post-body .note.warning h4,
-.post-body .note.warning h5,
-.post-body .note.warning h6 {
-  color: #f0ad4e;
-}
-.post-body .note.danger {
-  border-left-color: #d9534f;
-}
-.post-body .note.danger h2,
-.post-body .note.danger h3,
-.post-body .note.danger h4,
-.post-body .note.danger h5,
-.post-body .note.danger h6 {
-  color: #d9534f;
-}
-.pagination .prev,
-.pagination .next,
-.pagination .page-number,
-.pagination .space {
-  display: inline-block;
-  margin: -1px 10px 0 10px;
-  padding: 0 10px;
-}
-@media (max-width: 767px) {
-  .pagination .prev,
-  .pagination .next,
-  .pagination .page-number,
-  .pagination .space {
-    margin: 0 5px;
-  }
-}
-.pagination {
-  border-top: 1px solid #eee;
-  margin: 120px 0 0;
-  text-align: center;
-}
-.pagination .prev,
-.pagination .next,
-.pagination .page-number {
-  border-bottom: 0;
-  border-top: 1px solid #eee;
-  transition: border-color 0.2s ease-in-out;
-}
-.pagination .prev:hover,
-.pagination .next:hover,
-.pagination .page-number:hover {
-  border-top-color: var(--link-hover-color);
-}
-@media (max-width: 767px) {
-  .pagination {
-    border-top: 0;
-  }
-  .pagination .prev,
-  .pagination .next,
-  .pagination .page-number {
-    border-bottom: 1px solid #eee;
-    border-top: 0;
-  }
-  .pagination .prev:hover,
-  .pagination .next:hover,
-  .pagination .page-number:hover {
-    border-bottom-color: var(--link-hover-color);
-  }
-}
-.pagination .space {
-  margin: 0;
-  padding: 0;
-}
-.pagination .page-number.current {
-  background: #ccc;
-  border-color: #ccc;
-  color: var(--content-bg-color);
-}
-.comments {
-  margin-top: 60px;
-  overflow: hidden;
-}
-.comment-button-group {
-  display: flex;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  justify-content: center;
-  margin: 1em 0;
-}
-.comment-button-group .comment-button {
-  margin: 0.1em 0.2em;
-}
-.comment-button-group .comment-button.active {
-  background: var(--btn-default-hover-bg);
-  border-color: var(--btn-default-hover-border-color);
-  color: var(--btn-default-hover-color);
-}
-.comment-position {
-  display: none;
-}
-.comment-position.active {
-  display: block;
-}
-.tabs-comment {
-  margin-top: 4em;
-  padding-top: 0;
-}
-.tabs-comment .comments {
-  margin-top: 0;
-  padding-top: 0;
-}
-.headband {
-  background: #222;
-  height: 3px;
-}
-@media (max-width: 991px) {
-  .headband {
-    display: none;
-  }
-}
-.header {
-  background: transparent;
-}
-.header-inner {
-  margin: 0 auto;
-  width: calc(100% - 20px);
-}
-@media (min-width: 1200px) {
-  .header-inner {
-    width: 1160px;
-  }
-}
-@media (min-width: 1600px) {
-  .header-inner {
-    width: 73%;
-  }
-}
-.site-brand-container {
-  display: flex;
-  flex-shrink: 0;
-  padding: 0 10px;
-}
-.use-motion .header,
-.use-motion .site-brand-container .toggle {
-  opacity: 0;
-}
-.site-meta {
-  flex-grow: 1;
-  text-align: center;
-}
-@media (max-width: 767px) {
-  .site-meta {
-    text-align: center;
-  }
-}
-.custom-logo-image {
-  margin-top: 20px;
-}
-@media (max-width: 991px) {
-  .custom-logo-image {
-    display: none;
-  }
-}
-.brand {
-  border-bottom: none;
-  color: var(--brand-color);
-  display: inline-block;
-  padding: 0 40px;
-}
-.brand:hover {
-  color: var(--brand-hover-color);
-}
-.site-title {
-  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 1.375em;
-  font-weight: normal;
-  margin: 0;
-}
-.site-subtitle {
-  color: #ddd;
-  font-size: 0.8125em;
-  margin: 10px 0;
-}
-.use-motion .site-title,
-.use-motion .site-subtitle,
-.use-motion .custom-logo-image {
-  opacity: 0;
-  position: relative;
-  top: -10px;
-}
-.site-nav-toggle,
-.site-nav-right {
-  display: none;
-}
-@media (max-width: 767px) {
-  .site-nav-toggle,
-  .site-nav-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-.site-nav-toggle .toggle,
-.site-nav-right .toggle {
-  color: var(--text-color);
-  padding: 10px;
-  width: 22px;
-}
-.site-nav-toggle .toggle .toggle-line,
-.site-nav-right .toggle .toggle-line {
-  background: var(--text-color);
-  border-radius: 1px;
-}
-@media (max-width: 767px) {
-  .site-nav {
-    display: none;
-  }
-}
-.site-nav-on .site-nav {
-  display: block;
-}
-.menu {
-  margin: 0;
-  padding: 1em 0;
-  text-align: center;
-}
-.menu-item {
-  display: inline-block;
-  list-style: none;
-  margin: 0 10px;
-}
-@media (max-width: 767px) {
-  .menu-item {
-    display: block;
-    margin-top: 10px;
-  }
-  .menu-item.menu-item-search {
-    display: none;
-  }
-}
-.menu-item a,
-.menu-item span.exturl {
-  border-bottom: 0;
-  display: block;
-  font-size: 0.8125em;
-  transition: border-color 0.2s ease-in-out;
-}
-.menu-item a:hover,
-.menu-item span.exturl:hover,
-.menu-item a.menu-item-active,
-.menu-item span.exturl.menu-item-active {
-  background: var(--menu-item-bg-color);
-}
-.menu-item .fa,
-.menu-item .fab,
-.menu-item .far,
-.menu-item .fas {
-  margin-right: 8px;
-}
-.menu-item .badge {
-  display: inline-block;
-  font-weight: bold;
-  line-height: 1;
-  margin-left: 0.35em;
-  margin-top: 0.35em;
-  text-align: center;
-  white-space: nowrap;
-}
-@media (max-width: 767px) {
-  .menu-item .badge {
-    float: right;
-    margin-left: 0;
-  }
-}
-.use-motion .menu-item {
-  visibility: hidden;
-}
-.sidebar-inner {
-  color: #999;
-  padding: 18px 10px;
-  text-align: center;
-}
-.cc-license {
-  margin-top: 10px;
-}
-.cc-license .cc-opacity {
-  border-bottom: none;
-  opacity: 0.7;
-}
-.cc-license .cc-opacity:hover {
-  opacity: 0.9;
-}
-.cc-license img {
-  display: inline-block;
-}
-.site-author-image {
-  border: 1px solid #eee;
-  max-width: 120px;
-  padding: 2px;
-}
-.site-author-name {
-  color: var(--text-color);
-  font-weight: 600;
-  margin: 0;
-}
-.site-description {
-  color: #999;
-  font-size: 0.8125em;
-  margin-top: 0;
-}
-.links-of-author a,
-.links-of-author span.exturl {
-  font-size: 0.8125em;
-}
-.sidebar-button {
-  margin-top: 15px;
-}
-.sidebar-button a {
-  border: 1px solid #fc6423;
-  border-radius: 4px;
-  color: #fc6423;
-  display: inline-block;
-  padding: 0 15px;
-}
-.sidebar-button a .fa,
-.sidebar-button a .fab,
-.sidebar-button a .far,
-.sidebar-button a .fas {
-  margin-right: 5px;
-}
-.sidebar-button a:hover {
-  background: #fc6423;
-  border: 1px solid #fc6423;
-  color: #fff;
-}
-.sidebar-button a:hover .fa,
-.sidebar-button a:hover .fab,
-.sidebar-button a:hover .far,
-.sidebar-button a:hover .fas {
-  color: #fff;
-}
-.links-of-blogroll {
-  font-size: 0.8125em;
-  margin-top: 10px;
-}
-.links-of-blogroll-title {
-  font-size: 0.875em;
-  font-weight: 600;
-  margin-top: 0;
-}
-.links-of-blogroll-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.sidebar-dimmer {
-  display: none;
-}
-@media (max-width: 767px) {
-  .sidebar-dimmer {
-    background: #000;
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    transition: visibility 0.4s, opacity 0.4s;
-    visibility: hidden;
-    width: 100%;
-    z-index: 1100;
-  }
-  .sidebar-active .sidebar-dimmer {
-    opacity: 0.7;
-    visibility: visible;
-  }
-}
-.sidebar-nav {
-  display: none;
-  margin: 0;
-  padding-bottom: 20px;
-  padding-left: 0;
-}
-.sidebar-nav-active .sidebar-nav {
-  display: block;
-}
-.sidebar-nav li {
-  border-bottom: 1px solid transparent;
-  color: var(--text-color);
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.875em;
-}
-.sidebar-nav li.sidebar-nav-overview {
-  margin-left: 10px;
-}
-.sidebar-nav li:hover {
-  color: #fc6423;
-}
-.sidebar-toc-active .sidebar-nav-toc,
-.sidebar-overview-active .sidebar-nav-overview {
-  border-bottom-color: #fc6423;
-  color: #fc6423;
-}
-.sidebar-toc-active .sidebar-nav-toc:hover,
-.sidebar-overview-active .sidebar-nav-overview:hover {
-  color: #fc6423;
-}
-.sidebar-panel {
-  display: none;
-  max-height: var(--sidebar-wrapper-height);
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.sidebar-toc-active .post-toc-wrap,
-.sidebar-overview-active .site-overview-wrap {
-  display: block;
-}
-.sidebar-toggle {
-  bottom: 45px;
-  height: 12px;
-  padding: 6px 5px;
-  width: 14px;
-  background: #222;
-  cursor: pointer;
-  opacity: 0.6;
-  position: fixed;
-  z-index: 1300;
-  right: 30px;
-}
-@media (max-width: 991px) {
-  .sidebar-toggle {
-    right: 20px;
-  }
-}
-.sidebar-toggle:hover {
-  opacity: 0.8;
-}
-@media (max-width: 991px) {
-  .sidebar-toggle {
-    opacity: 0.8;
-  }
-}
-.sidebar-toggle:hover .toggle-line {
-  background: #fc6423;
-}
-@media (any-hover: hover) {
-  body:not(.sidebar-active) .sidebar-toggle:hover .toggle-line:first-child {
-    left: 50%;
-    top: 2px;
-    transform: rotate(45deg);
-    width: 50%;
-  }
-  body:not(.sidebar-active) .sidebar-toggle:hover .toggle-line:last-child {
-    left: 50%;
-    top: -2px;
-    transform: rotate(-45deg);
-    width: 50%;
-  }
-}
-.sidebar-active .sidebar-toggle .toggle-line:nth-child(2) {
-  opacity: 0;
-}
-.sidebar-active .sidebar-toggle .toggle-line:first-child {
-  top: 5px;
-  transform: rotate(45deg);
-}
-.sidebar-active .sidebar-toggle .toggle-line:last-child {
-  top: -5px;
-  transform: rotate(-45deg);
-}
-.post-toc {
-  font-size: 0.875em;
-}
-.post-toc ol {
-  list-style: none;
-  margin: 0;
-  padding: 0 2px 5px 10px;
-  text-align: left;
-}
-.post-toc ol > ol {
-  padding-left: 0;
-}
-.post-toc ol a {
-  transition: all 0.2s ease-in-out;
-}
-.post-toc .nav-item {
-  line-height: 1.8;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.post-toc .nav .nav-child {
-  display: none;
-}
-.post-toc .nav .active > .nav-child {
-  display: block;
-}
-.post-toc .nav .active-current > .nav-child {
-  display: block;
-}
-.post-toc .nav .active-current > .nav-child > .nav-item {
-  display: block;
-}
-.post-toc .nav .active > a {
-  border-bottom-color: #fc6423;
-  color: #fc6423;
-}
-.post-toc .nav .active-current > a {
-  color: #fc6423;
-}
-.post-toc .nav .active-current > a:hover {
-  color: #fc6423;
-}
-.site-state {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  line-height: 1.4;
-  margin-top: 10px;
-}
-.site-state-item a {
-  border-bottom: none;
-  display: block;
-  padding: 0 15px;
-}
-.site-state-item-count {
-  display: block;
-  font-size: 1em;
-  font-weight: 600;
-}
-.site-state-item-name {
-  color: #999;
-  font-size: 0.8125em;
-}
-.footer {
-  color: #999;
-  font-size: 0.875em;
-  padding: 20px 0;
-}
-.footer.footer-fixed {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-}
-.footer-inner {
-  box-sizing: border-box;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  width: calc(100% - 20px);
-}
-@media (min-width: 1200px) {
-  .footer-inner {
-    width: 1160px;
-  }
-}
-@media (min-width: 1600px) {
-  .footer-inner {
-    width: 73%;
-  }
-}
-.use-motion .footer {
-  opacity: 0;
-}
-.languages {
-  display: inline-block;
-  font-size: 1.125em;
-  position: relative;
-}
-.languages .lang-select-label span {
-  margin: 0 0.5em;
-}
-.languages .lang-select {
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-.with-love {
-  color: #CCCCCC;
-  display: inline-block;
-  margin: 0 5px;
-  animation: icon-animate 1.33s ease-in-out infinite;
-}
-@-moz-keyframes icon-animate {
-  0%, 100% {
-    transform: scale(1);
-  }
-  10%, 30% {
-    transform: scale(0.9);
-  }
-  20%, 40%, 60%, 80% {
-    transform: scale(1.1);
-  }
-  50%, 70% {
-    transform: scale(1.1);
-  }
-}
-@-webkit-keyframes icon-animate {
-  0%, 100% {
-    transform: scale(1);
-  }
-  10%, 30% {
-    transform: scale(0.9);
-  }
-  20%, 40%, 60%, 80% {
-    transform: scale(1.1);
-  }
-  50%, 70% {
-    transform: scale(1.1);
-  }
-}
-@-o-keyframes icon-animate {
-  0%, 100% {
-    transform: scale(1);
-  }
-  10%, 30% {
-    transform: scale(0.9);
-  }
-  20%, 40%, 60%, 80% {
-    transform: scale(1.1);
-  }
-  50%, 70% {
-    transform: scale(1.1);
-  }
-}
-@keyframes icon-animate {
-  0%, 100% {
-    transform: scale(1);
-  }
-  10%, 30% {
-    transform: scale(0.9);
-  }
-  20%, 40%, 60%, 80% {
-    transform: scale(1.1);
-  }
-  50%, 70% {
-    transform: scale(1.1);
-  }
-}
-.back-to-top {
-  font-size: 12px;
-}
-.back-to-top span {
-  display: none;
-}
-.back-to-top {
-  bottom: -100px;
-  box-sizing: border-box;
-  color: #fff;
-  padding: 0 6px;
-  transition: bottom 0.2s ease-in-out;
-  background: #222;
-  cursor: pointer;
-  opacity: 0.6;
-  position: fixed;
-  z-index: 1300;
-  right: 30px;
-  width: 24px;
-}
-@media (max-width: 991px) {
-  .back-to-top {
-    right: 20px;
-  }
-}
-.back-to-top:hover {
-  opacity: 0.8;
-}
-@media (max-width: 991px) {
-  .back-to-top {
-    opacity: 0.8;
-  }
-}
-.back-to-top:hover {
-  color: #fc6423;
-}
-.back-to-top.back-to-top-on {
-  bottom: 30px;
-}
-.noscript-warning {
-  background-color: #f55;
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  left: 0;
-  position: fixed;
-  text-align: center;
-  top: 0;
-  width: 100%;
-  z-index: 1500;
-}
-.rtl.post-body p,
-.rtl.post-body a,
-.rtl.post-body h1,
-.rtl.post-body h2,
-.rtl.post-body h3,
-.rtl.post-body h4,
-.rtl.post-body h5,
-.rtl.post-body h6,
-.rtl.post-body li,
-.rtl.post-body ul,
-.rtl.post-body ol {
-  direction: rtl;
-  font-family: UKIJ Ekran;
-}
-.rtl.post-title {
-  font-family: UKIJ Ekran;
-}
-.post-button {
-  margin-top: 40px;
-  text-align: center;
-}
-.use-motion .post-block,
-.use-motion .pagination,
-.use-motion .comments {
-  visibility: hidden;
-}
-.use-motion .post-header {
-  visibility: hidden;
-}
-.use-motion .post-body {
-  visibility: hidden;
-}
-.use-motion .collection-header {
-  visibility: hidden;
-}
-.posts-collapse .post-content {
-  margin-bottom: 35px;
-  margin-left: 35px;
-  position: relative;
-}
-@media (max-width: 767px) {
-  .posts-collapse .post-content {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-.posts-collapse .post-content .collection-title {
-  font-size: 1.125em;
-  position: relative;
-}
-.posts-collapse .post-content .collection-title::before {
-  background: #999;
-  border: 1px solid #fff;
-  margin-left: -6px;
-  margin-top: -4px;
-  position: absolute;
-  top: 50%;
-  border-radius: 50%;
-  content: ' ';
-  height: 10px;
-  width: 10px;
-}
-.posts-collapse .post-content .collection-year {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: 60px 0;
-  position: relative;
-}
-.posts-collapse .post-content .collection-year::before {
-  background: #bbb;
-  margin-left: -4px;
-  margin-top: -4px;
-  position: absolute;
-  top: 50%;
-  border-radius: 50%;
-  content: ' ';
-  height: 8px;
-  width: 8px;
-}
-.posts-collapse .post-content .collection-header {
-  display: block;
-  margin-left: 20px;
-}
-.posts-collapse .post-content .collection-header small {
-  color: #bbb;
-  margin-left: 5px;
-}
-.posts-collapse .post-content .post-header {
-  border-bottom: 1px dashed #ccc;
-  margin: 30px 2px 0;
-  padding-left: 15px;
-  position: relative;
-  transition: border 0.2s ease-in-out;
-}
-.posts-collapse .post-content .post-header::before {
-  background: #bbb;
-  border: 1px solid #fff;
-  left: -6px;
-  position: absolute;
-  top: 0.75em;
-  transition: background 0.2s ease-in-out;
-  border-radius: 50%;
-  content: ' ';
-  height: 6px;
-  width: 6px;
-}
-.posts-collapse .post-content .post-header:hover {
-  border-bottom-color: #666;
-}
-.posts-collapse .post-content .post-header:hover::before {
-  background: #222;
-}
-.posts-collapse .post-content .post-meta-container {
-  display: inline;
-  font-size: 0.75em;
-  margin-right: 10px;
-}
-.posts-collapse .post-content .post-title {
-  display: inline;
-}
-.posts-collapse .post-content .post-title a,
-.posts-collapse .post-content .post-title span.exturl {
-  border-bottom: none;
-  color: var(--link-color);
-}
-.posts-collapse .post-content .post-title .fa-external-link-alt {
-  font-size: 0.875em;
-  margin-left: 5px;
-}
-.posts-collapse .post-content::before {
-  background: #f5f5f5;
-  content: ' ';
-  height: 100%;
-  margin-left: -2px;
-  position: absolute;
-  top: 1.25em;
-  width: 4px;
-}
-.post-body {
-  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
-  overflow-wrap: break-word;
-}
-@media (min-width: 1200px) {
-  .post-body {
-    font-size: 1.125em;
-  }
-}
-@media (min-width: 992px) {
-  .post-body {
-    text-align: justify;
-  }
-}
-@media (max-width: 991px) {
-  .post-body {
-    text-align: justify;
-  }
-}
-.post-body h1,
-.post-body h2,
-.post-body h3,
-.post-body h4,
-.post-body h5,
-.post-body h6 {
-  padding-top: 10px;
-}
-.post-body h1 .header-anchor,
-.post-body h2 .header-anchor,
-.post-body h3 .header-anchor,
-.post-body h4 .header-anchor,
-.post-body h5 .header-anchor,
-.post-body h6 .header-anchor,
-.post-body h1 .headerlink,
-.post-body h2 .headerlink,
-.post-body h3 .headerlink,
-.post-body h4 .headerlink,
-.post-body h5 .headerlink,
-.post-body h6 .headerlink {
-  border-bottom-style: none;
-  color: inherit;
-  float: right;
-  font-size: 0.875em;
-  margin-left: 10px;
-  opacity: 0;
-}
-.post-body h1 .header-anchor::before,
-.post-body h2 .header-anchor::before,
-.post-body h3 .header-anchor::before,
-.post-body h4 .header-anchor::before,
-.post-body h5 .header-anchor::before,
-.post-body h6 .header-anchor::before,
-.post-body h1 .headerlink::before,
-.post-body h2 .headerlink::before,
-.post-body h3 .headerlink::before,
-.post-body h4 .headerlink::before,
-.post-body h5 .headerlink::before,
-.post-body h6 .headerlink::before {
-  content: '\f0c1';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-.post-body h1:hover .header-anchor,
-.post-body h2:hover .header-anchor,
-.post-body h3:hover .header-anchor,
-.post-body h4:hover .header-anchor,
-.post-body h5:hover .header-anchor,
-.post-body h6:hover .header-anchor,
-.post-body h1:hover .headerlink,
-.post-body h2:hover .headerlink,
-.post-body h3:hover .headerlink,
-.post-body h4:hover .headerlink,
-.post-body h5:hover .headerlink,
-.post-body h6:hover .headerlink {
-  opacity: 0.5;
-}
-.post-body h1:hover .header-anchor:hover,
-.post-body h2:hover .header-anchor:hover,
-.post-body h3:hover .header-anchor:hover,
-.post-body h4:hover .header-anchor:hover,
-.post-body h5:hover .header-anchor:hover,
-.post-body h6:hover .header-anchor:hover,
-.post-body h1:hover .headerlink:hover,
-.post-body h2:hover .headerlink:hover,
-.post-body h3:hover .headerlink:hover,
-.post-body h4:hover .headerlink:hover,
-.post-body h5:hover .headerlink:hover,
-.post-body h6:hover .headerlink:hover {
-  opacity: 1;
-}
-.post-body .exturl .fa {
-  font-size: 0.875em;
-  margin-left: 4px;
-}
-.post-body .image-caption,
-.post-body .figure .caption {
-  color: #999;
-  font-size: 0.875em;
-  font-weight: bold;
-  line-height: 1;
-  margin: -20px auto 15px;
-  text-align: center;
-}
-.post-body iframe,
-.post-body img,
-.post-body video,
-.post-body embed {
-  margin-bottom: 20px;
-}
-.post-body .video-container {
-  height: 0;
-  margin-bottom: 20px;
-  overflow: hidden;
-  padding-top: 75%;
-  position: relative;
-  width: 100%;
-}
-.post-body .video-container iframe,
-.post-body .video-container object,
-.post-body .video-container embed {
-  height: 100%;
-  left: 0;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-.post-gallery {
-  display: flex;
-  min-height: 200px;
-}
-.post-gallery .post-gallery-image {
-  flex: 1;
-}
-.post-gallery .post-gallery-image:not(:first-child) {
-  clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
-  margin-left: -20px;
-}
-.post-gallery .post-gallery-image:not(:last-child) {
-  margin-right: -20px;
-}
-.post-gallery .post-gallery-image img {
-  height: 100%;
-  object-fit: cover;
-  opacity: 1;
-  width: 100%;
-}
-.posts-expand .post-gallery {
-  margin-bottom: 60px;
-}
-.posts-collapse .post-gallery {
-  margin: 15px 0;
-}
-.posts-expand .post-header {
-  font-size: 1.125em;
-  margin-bottom: 60px;
-  text-align: center;
-}
-.posts-expand .post-title {
-  font-size: 1.5em;
-  font-weight: normal;
-  margin: initial;
-  overflow-wrap: break-word;
-}
-.posts-expand .post-title-link {
-  border-bottom: none;
-  color: var(--link-color);
-  display: inline-block;
-  position: relative;
-}
-.posts-expand .post-title-link::before {
-  background: var(--link-color);
-  bottom: 0;
-  content: '';
-  height: 2px;
-  left: 0;
-  position: absolute;
-  transform: scaleX(0);
-  transition: transform 0.2s ease-in-out;
-  width: 100%;
-}
-.posts-expand .post-title-link:hover::before {
-  transform: scaleX(1);
-}
-.posts-expand .post-title-link .fa-external-link-alt {
-  font-size: 0.875em;
-  margin-left: 5px;
-}
-.post-sticky-flag {
-  display: inline-block;
-  transform: rotate(30deg);
-}
-.posts-expand .post-meta-container {
-  color: #999;
-  font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 0.75em;
-  margin-top: 3px;
-}
-.posts-expand .post-meta-container .post-description {
-  font-size: 0.875em;
-  margin-top: 2px;
-}
-.posts-expand .post-meta-container time {
-  border-bottom: 1px dashed #999;
-  cursor: pointer;
-}
-.post-meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.post-meta-item:not(:first-child)::before {
-  content: '|';
-  margin: 0 0.5em;
-}
-.post-meta-item-icon {
-  margin-right: 3px;
-}
-@media (max-width: 991px) {
-  .post-meta-item-text {
-    display: none;
-  }
-}
-.post-nav {
-  border-top: 1px solid #eee;
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-  margin-top: 1em;
-  padding: 10px 5px 0;
-}
-.post-nav-item {
-  flex: 1;
-}
-.post-nav-item a {
-  border-bottom: none;
-  display: block;
-  font-size: 0.875em;
-  line-height: 1.6;
-}
-.post-nav-item a:active {
-  top: 2px;
-}
-.post-nav-item .fa {
-  font-size: 0.75em;
-}
-.post-nav-item:first-child .fa {
-  margin-right: 5px;
-}
-.post-nav-item:last-child {
-  text-align: right;
-}
-.post-nav-item:last-child .fa {
-  margin-left: 5px;
-}
-.post-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.post-eof {
-  background: #ccc;
-  height: 1px;
-  margin: 80px auto 60px;
-  width: 8%;
-}
-.post-block:last-of-type .post-eof {
-  display: none;
-}
-.post-tags {
-  margin-top: 40px;
-  text-align: center;
-}
-.post-tags a {
-  display: inline-block;
-  font-size: 0.8125em;
-}
-.post-tags a:not(:last-child) {
-  margin-right: 10px;
-}
-.post-widgets {
-  border-top: 1px solid #eee;
-  margin-top: 15px;
-  text-align: center;
-}
-.wp_rating {
-  height: 20px;
-  line-height: 20px;
-  margin-top: 10px;
-  padding-top: 6px;
-  text-align: center;
-}
-.social-like {
-  display: flex;
-  font-size: 0.875em;
-  justify-content: center;
-  text-align: center;
-}
-.reward-container {
-  margin: 1em 0 0;
-  padding: 1em 0;
-  text-align: center;
-}
-.reward-container button {
-  background: transparent;
-  border: 2px solid #fc6423;
-  border-radius: 2px;
-  color: #fc6423;
-  cursor: pointer;
-  line-height: 2;
-  outline: 0;
-  padding: 0 15px;
-  transition: all 0.2s ease-in-out;
-  vertical-align: text-top;
-}
-.reward-container button:hover {
-  background: #fc6423;
-  border: 2px solid transparent;
-  color: #fff;
-}
-.post-reward {
-  display: none;
-  padding-top: 20px;
-}
-.post-reward.active {
-  display: block;
-}
-.post-reward div {
-  display: inline-block;
-}
-.post-reward div span {
-  display: block;
-}
-.post-reward div:hover span {
-  animation: next-roll 0.1s infinite linear;
-  pointer-events: none;
-}
-.post-reward img {
-  display: inline-block;
-  margin: 0.8em 2em 0 2em;
-  max-width: 100%;
-  width: 180px;
-}
-@-moz-keyframes next-roll {
-  from {
-    transform: rotateZ(30deg);
-  }
-  to {
-    transform: rotateZ(-30deg);
-  }
-}
-@-webkit-keyframes next-roll {
-  from {
-    transform: rotateZ(30deg);
-  }
-  to {
-    transform: rotateZ(-30deg);
-  }
-}
-@-o-keyframes next-roll {
-  from {
-    transform: rotateZ(30deg);
-  }
-  to {
-    transform: rotateZ(-30deg);
-  }
-}
-@keyframes next-roll {
-  from {
-    transform: rotateZ(30deg);
-  }
-  to {
-    transform: rotateZ(-30deg);
-  }
-}
-.category-all-page .category-all-title {
-  text-align: center;
-}
-.category-all-page .category-all {
-  margin-top: 20px;
-}
-.category-all-page .category-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.category-all-page .category-list-item {
-  margin: 5px 10px;
-}
-.category-all-page .category-list-count {
-  color: #bbb;
-}
-.category-all-page .category-list-count::before {
-  content: ' (';
-}
-.category-all-page .category-list-count::after {
-  content: ') ';
-}
-.category-all-page .category-list-child {
-  padding-left: 10px;
-}
-.event-list hr {
-  background: #222;
-  margin: 20px 0 45px 0;
-}
-.event-list hr::after {
-  background: #222;
-  color: #fff;
-  content: 'NOW';
-  display: inline-block;
-  font-weight: bold;
-  padding: 0 5px;
-}
-.event-list .event {
-  --event-background: #222;
-  --event-foreground: #bbb;
-  --event-title: #fff;
-  background: var(--event-background);
-  padding: 15px;
-}
-.event-list .event .event-summary {
-  border-bottom: 0;
-  color: var(--event-title);
-  margin: 0;
-  padding: 0 0 0 35px;
-  position: relative;
-}
-.event-list .event .event-summary::before {
-  animation: dot-flash 1s alternate infinite ease-in-out;
-  background: var(--event-title);
-  left: 0;
-  margin-top: -6px;
-  position: absolute;
-  top: 50%;
-  border-radius: 50%;
-  content: ' ';
-  height: 12px;
-  width: 12px;
-}
-.event-list .event:nth-of-type(odd) .event-summary::before {
-  animation-delay: 0.5s;
-}
-.event-list .event:not(:last-child) {
-  margin-bottom: 20px;
-}
-.event-list .event .event-relative-time {
-  color: var(--event-foreground);
-  display: inline-block;
-  font-size: 12px;
-  font-weight: normal;
-  padding-left: 12px;
-}
-.event-list .event .event-details {
-  color: var(--event-foreground);
-  display: block;
-  line-height: 18px;
-  padding: 6px 0 6px 35px;
-}
-.event-list .event .event-details::before {
-  color: var(--event-foreground);
-  display: inline-block;
-  margin-right: 9px;
-  width: 14px;
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-.event-list .event .event-details.event-location::before {
-  content: '\f041';
-}
-.event-list .event .event-details.event-duration::before {
-  content: '\f017';
-}
-.event-list .event .event-details.event-description::before {
-  content: '\f024';
-}
-.event-list .event-past {
-  --event-background: #f5f5f5;
-  --event-foreground: #999;
-  --event-title: #222;
-}
-@-moz-keyframes dot-flash {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-}
-@-webkit-keyframes dot-flash {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-}
-@-o-keyframes dot-flash {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-}
-@keyframes dot-flash {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-}
-ul.breadcrumb {
-  font-size: 0.75em;
-  list-style: none;
-  margin: 1em 0;
-  padding: 0 2em;
-  text-align: center;
-}
-ul.breadcrumb li {
-  display: inline;
-}
-ul.breadcrumb li:not(:first-child)::before {
-  content: '/\00a0';
-  font-weight: normal;
-  padding: 0.5em;
-}
-ul.breadcrumb li:last-child {
-  font-weight: bold;
-}
-.tag-cloud {
-  text-align: center;
-}
-.tag-cloud a {
-  display: inline-block;
-  margin: 10px;
-}
-.tag-cloud-0 {
-  border-bottom-color: #aaa;
-  color: #aaa;
-}
-.tag-cloud-1 {
-  border-bottom-color: #9a9a9a;
-  color: #9a9a9a;
-}
-.tag-cloud-2 {
-  border-bottom-color: #8b8b8b;
-  color: #8b8b8b;
-}
-.tag-cloud-3 {
-  border-bottom-color: #7c7c7c;
-  color: #7c7c7c;
-}
-.tag-cloud-4 {
-  border-bottom-color: #6c6c6c;
-  color: #6c6c6c;
-}
-.tag-cloud-5 {
-  border-bottom-color: #5d5d5d;
-  color: #5d5d5d;
-}
-.tag-cloud-6 {
-  border-bottom-color: #4e4e4e;
-  color: #4e4e4e;
-}
-.tag-cloud-7 {
-  border-bottom-color: #3e3e3e;
-  color: #3e3e3e;
-}
-.tag-cloud-8 {
-  border-bottom-color: #2f2f2f;
-  color: #2f2f2f;
-}
-.tag-cloud-9 {
-  border-bottom-color: #202020;
-  color: #202020;
-}
-.tag-cloud-10 {
-  border-bottom-color: #111;
-  color: #111;
-}
-@media (prefers-color-scheme: dark) {
-  .tag-cloud-0 {
-    border-bottom-color: #555;
-    color: #555;
-  }
-  .tag-cloud-1 {
-    border-bottom-color: #646464;
-    color: #646464;
-  }
-  .tag-cloud-2 {
-    border-bottom-color: #737373;
-    color: #737373;
-  }
-  .tag-cloud-3 {
-    border-bottom-color: #828282;
-    color: #828282;
-  }
-  .tag-cloud-4 {
-    border-bottom-color: #929292;
-    color: #929292;
-  }
-  .tag-cloud-5 {
-    border-bottom-color: #a1a1a1;
-    color: #a1a1a1;
-  }
-  .tag-cloud-6 {
-    border-bottom-color: #b0b0b0;
-    color: #b0b0b0;
-  }
-  .tag-cloud-7 {
-    border-bottom-color: #c0c0c0;
-    color: #c0c0c0;
-  }
-  .tag-cloud-8 {
-    border-bottom-color: #cfcfcf;
-    color: #cfcfcf;
-  }
-  .tag-cloud-9 {
-    border-bottom-color: #dedede;
-    color: #dedede;
-  }
-  .tag-cloud-10 {
-    border-bottom-color: #eee;
-    color: #eee;
-  }
-}
-.search-active {
-  overflow: hidden;
-}
-.search-pop-overlay {
-  background: rgba(0,0,0,0);
-  display: flex;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transition: visibility 0.4s, background 0.4s;
-  visibility: hidden;
-  width: 100%;
-  z-index: 1400;
-}
-.search-active .search-pop-overlay {
-  background: rgba(0,0,0,0.3);
-  visibility: visible;
-}
-.search-popup {
-  background: var(--card-bg-color);
-  border-radius: 5px;
-  height: 80%;
-  margin: auto;
-  transform: scale(0);
-  transition: transform 0.4s;
-  width: 700px;
-}
-.search-active .search-popup {
-  transform: scale(1);
-}
-@media (max-width: 767px) {
-  .search-popup {
-    border-radius: 0;
-    height: 100%;
-    width: 100%;
-  }
-}
-.search-popup .search-icon,
-.search-popup .popup-btn-close {
-  color: #999;
-  font-size: 18px;
-  padding: 0 10px;
-}
-.search-popup .popup-btn-close {
-  cursor: pointer;
-}
-.search-popup .popup-btn-close:hover .fa {
-  color: #222;
-}
-.search-popup .search-header {
-  background: #eee;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  display: flex;
-  padding: 5px;
-}
-.search-popup input.search-input {
-  background: transparent;
-  border: 0;
-  outline: 0;
-  width: 100%;
-}
-.search-popup input.search-input::-webkit-search-cancel-button {
-  display: none;
-}
-.search-popup .search-result-container {
-  height: calc(100% - 55px);
-  overflow: auto;
-  padding: 5px 25px;
-}
-.search-popup .search-result-container hr {
-  margin: 5px 0 10px;
-}
-.search-popup .search-result-container hr:first-child {
-  display: none;
-}
-.search-popup .search-result-list {
-  margin: 0 5px;
-  padding: 0;
-}
-.search-popup a.search-result-title {
-  font-weight: bold;
-}
-.search-popup p.search-result {
-  border-bottom: 1px dashed #ccc;
-  padding: 5px 0;
-}
-.search-popup .search-input-container {
-  flex-grow: 1;
-  padding: 2px;
-}
-.search-popup .no-result {
-  display: flex;
-}
-.search-popup .search-result-list {
-  width: 100%;
-}
-.search-popup .search-result-icon {
-  color: #ccc;
-  margin: auto;
-}
-mark.search-keyword {
-  background: transparent;
-  border-bottom: 1px dashed #ff2a2a;
-  color: #ff2a2a;
-  font-weight: bold;
-}
-.popular-posts-header {
-  border-bottom: 1px solid #eee;
-  font-size: 1.125em;
-  margin-bottom: 10px;
-  margin-top: 60px;
-}
-.popular-posts {
-  padding: 0;
-}
-.popular-posts .popular-posts-item {
-  margin-left: 2em;
-}
-.popular-posts .popular-posts-item .popular-posts-title {
-  font-size: 0.875em;
-  font-weight: normal;
-  line-height: 2.4;
-  margin: 0;
-}
-mjx-container[jax="CHTML"][display="true"],
-.has-jax {
-  overflow: auto hidden;
-}
-mjx-container[display="true"] + br {
-  display: none;
-}
-.use-motion .animated {
-  animation-fill-mode: none;
-  visibility: inherit;
-}
-.use-motion .sidebar .animated {
-  animation-fill-mode: both;
-}
-.header-inner {
-  background: var(--content-bg-color);
-  border-radius: initial;
-  box-shadow: initial;
-  width: 240px;
-}
-@media (max-width: 991px) {
-  .header-inner {
-    border-radius: initial;
-    width: auto;
-  }
-}
-.main {
-  align-items: stretch;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: calc(100% - 20px);
-}
-@media (min-width: 1200px) {
-  .main {
-    width: 1160px;
-  }
-}
-@media (min-width: 1600px) {
-  .main {
-    width: 73%;
-  }
-}
-@media (max-width: 991px) {
-  .main {
-    display: block;
-    width: auto;
-  }
-}
-.main-inner {
-  border-radius: initial;
-  box-sizing: border-box;
-  width: calc(100% - 252px);
-}
-@media (max-width: 991px) {
-  .main-inner {
-    border-radius: initial;
-    width: 100%;
-  }
-}
-.footer-inner {
-  padding-left: 252px;
-}
-@media (max-width: 991px) {
-  .footer-inner {
-    padding-left: 0;
-    padding-right: 0;
-    width: auto;
-  }
-}
-.site-brand-container {
-  background: #222;
-}
-@media (max-width: 991px) {
-  .site-nav-on .site-brand-container {
-    box-shadow: 0 0 16px rgba(0,0,0,0.5);
-  }
-}
-.site-meta {
-  padding: 20px 0;
-}
-.brand {
-  padding: 0;
-}
-.site-subtitle {
-  margin: 10px 10px 0;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .site-nav-toggle,
-  .site-nav-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-.site-nav-toggle .toggle,
-.site-nav-right .toggle {
-  color: #fff;
-}
-.site-nav-toggle .toggle .toggle-line,
-.site-nav-right .toggle .toggle-line {
-  background: #fff;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .site-nav {
-    display: none;
-  }
-}
-.menu .menu-item {
-  display: block;
-  margin: 0;
-}
-.menu .menu-item a,
-.menu .menu-item span.exturl {
-  padding: 5px 20px;
-  position: relative;
-  text-align: left;
-  transition-property: background-color;
-}
-@media (max-width: 991px) {
-  .menu .menu-item.menu-item-search {
-    display: none;
-  }
-}
-.menu .menu-item .badge {
-  background: #ccc;
-  border-radius: 10px;
-  color: var(--content-bg-color);
-  float: right;
-  padding: 2px 5px;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
-}
-.main-menu .menu-item-active::after {
-  background: #bbb;
-  border-radius: 50%;
-  content: ' ';
-  height: 6px;
-  margin-top: -3px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  width: 6px;
-}
-.sub-menu {
-  margin: 0;
-  padding: 6px 0;
-}
-.sub-menu .menu-item {
-  display: inline-block;
-}
-.sub-menu .menu-item a,
-.sub-menu .menu-item span.exturl {
-  background: transparent;
-  margin: 5px 10px;
-  padding: initial;
-}
-.sub-menu .menu-item a:hover,
-.sub-menu .menu-item span.exturl:hover {
-  background: transparent;
-  color: #fc6423;
-}
-.sub-menu .menu-item-active {
-  border-bottom-color: #fc6423;
-  color: #fc6423;
-}
-.sub-menu .menu-item-active:hover {
-  border-bottom-color: #fc6423;
-}
-.sidebar {
-  margin-top: 12px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 12px;
-  width: 240px;
-}
-@media (max-width: 991px) {
-  .sidebar {
-    display: none;
-  }
-}
-.sidebar-toggle {
-  display: none;
-}
-.sidebar-inner {
-  background: var(--content-bg-color);
-  border-radius: initial;
-  box-shadow: initial;
-  box-sizing: border-box;
-  color: var(--text-color);
-}
-.site-state-item a {
-  padding: 0 10px;
-}
-.sidebar-button {
-  border-bottom: 1px dotted #ccc;
-  border-top: 1px dotted #ccc;
-  margin-top: 10px;
-}
-.sidebar-button a {
-  border: 0;
-  color: #fc6423;
-  display: block;
-}
-.sidebar-button a:hover {
-  background: none;
-  border: 0;
-  color: #e34603;
-}
-.sidebar-button a:hover .fa,
-.sidebar-button a:hover .fab,
-.sidebar-button a:hover .far,
-.sidebar-button a:hover .fas {
-  color: #e34603;
-}
-.links-of-author {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.links-of-author-item {
-  margin: 5px 0 0;
-}
-.links-of-author-item a,
-.links-of-author-item span.exturl {
-  box-sizing: border-box;
-  display: inline-block;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0 5px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.links-of-author-item a,
-.links-of-author-item span.exturl {
-  border-bottom: none;
-  border-radius: 4px;
-  display: block;
-}
-.links-of-author-item a:hover,
-.links-of-author-item span.exturl:hover {
-  background: var(--body-bg-color);
-}
-.main-inner {
-  background: var(--content-bg-color);
-  box-shadow: initial;
-  padding: 40px;
-}
-@media (max-width: 991px) {
-  .main-inner {
-    padding: 20px;
-  }
-}
-.sub-menu {
-  border-bottom: 1px solid #ddd;
-}
-.post-block:first-of-type {
-  padding-top: 40px;
-}
-@media (max-width: 767px) {
-  .pagination {
-    margin-bottom: 10px;
-  }
-}
-</style><noscript>
+  <noscript>
   <style>
   body { margin-top: 2rem; }
 
@@ -3228,13 +232,13 @@ mjx-container[display="true"] + br {
   display: none;
 }
 </style><link rel="alternate" href="/cn/atom.xml" title="LeiHao's Blog" type="application/atom+xml">
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}</script><noscript><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css"></noscript></head>
+</head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
@@ -3305,7 +309,9 @@ mjx-container[display="true"] + br {
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -3343,12 +349,12 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%84%E7%BB%87"><span class="nav-number">1.0.1.</span> <span class="nav-text">本文件的组织</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%9C%8B%E7%9C%8B"><span class="nav-number">1.0.2.</span> <span class="nav-text">也可以看看</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">线程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%88%90%E6%9C%AC"><span class="nav-number">2.0.1.</span> <span class="nav-text">线程成本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.2.</span> <span class="nav-text">创建一个线程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-NSThread"><span class="nav-number">2.0.2.0.1.</span> <span class="nav-text">使用 NSThread</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-POSIX-%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.2.0.2.</span> <span class="nav-text">使用 POSIX 线程</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-NSObject-%E7%94%9F%E6%88%90%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.2.0.3.</span> <span class="nav-text">使用 NSObject 生成线程</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9C%A8-Cocoa-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%BD%BF%E7%94%A8-POSIX-%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.2.0.4.</span> <span class="nav-text">在 Cocoa 应用程序中使用 POSIX 线程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7"><span class="nav-number">2.0.3.</span> <span class="nav-text">配置线程属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%A0%86%E6%A0%88%E5%A4%A7%E5%B0%8F"><span class="nav-number">2.0.3.0.1.</span> <span class="nav-text">配置线程的堆栈大小</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BA%BF%E7%A8%8B%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8"><span class="nav-number">2.0.3.0.2.</span> <span class="nav-text">配置线程本地存储</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%86%E7%A6%BB%E7%8A%B6%E6%80%81"><span class="nav-number">2.0.3.0.3.</span> <span class="nav-text">设置线程的分离状态</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%BA%BF%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">2.0.3.0.4.</span> <span class="nav-text">设置线程优先级</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E7%BA%BF%E7%A8%8B%E8%BE%93%E5%85%A5%E4%BE%8B%E7%A8%8B"><span class="nav-number">2.0.4.</span> <span class="nav-text">编写线程输入例程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E9%87%8A%E6%94%BE%E6%B1%A0"><span class="nav-number">2.0.4.0.1.</span> <span class="nav-text">创建一个自动释放池</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.0.4.0.2.</span> <span class="nav-text">设置异常处理程序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.0.4.0.3.</span> <span class="nav-text">设置运行循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%88%E6%AD%A2%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.5.</span> <span class="nav-text">终止线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.</span> <span class="nav-text">运行循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E7%9A%84%E8%A7%A3%E5%89%96"><span class="nav-number">3.0.1.</span> <span class="nav-text">运行循环的解剖</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.0.1.0.1.</span> <span class="nav-text">运行循环模式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%BA%90"><span class="nav-number">3.0.1.0.2.</span> <span class="nav-text">输入源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%A1%E6%97%B6%E5%99%A8%E6%9D%A5%E6%BA%90"><span class="nav-number">3.0.1.0.3.</span> <span class="nav-text">计时器来源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E8%A7%82%E5%AF%9F%E8%80%85"><span class="nav-number">3.0.1.0.4.</span> <span class="nav-text">运行循环观察者</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E5%BA%8F%E5%88%97"><span class="nav-number">3.0.1.0.5.</span> <span class="nav-text">事件的运行循环序列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%EF%BC%9F"><span class="nav-number">3.0.2.</span> <span class="nav-text">什么时候使用运行循环？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.0.3.</span> <span class="nav-text">使用运行循环对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.0.3.0.1.</span> <span class="nav-text">获取运行循环对象</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.0.3.0.2.</span> <span class="nav-text">配置运行循环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.0.3.0.3.</span> <span class="nav-text">启动运行循环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%80%80%E5%87%BA%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.0.3.0.4.</span> <span class="nav-text">退出运行循环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8C%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.0.3.0.5.</span> <span class="nav-text">线程安全和运行循环对象</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E6%BA%90"><span class="nav-number">3.0.4.</span> <span class="nav-text">配置运行循环源</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E6%BA%90"><span class="nav-number">3.0.4.0.1.</span> <span class="nav-text">定义自定义输入源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%AE%A1%E6%97%B6%E5%99%A8%E6%BA%90"><span class="nav-number">3.0.4.0.2.</span> <span class="nav-text">配置计时器源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%9F%BA%E4%BA%8E%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BE%93%E5%85%A5%E6%BA%90"><span class="nav-number">3.0.4.0.3.</span> <span class="nav-text">配置基于端口的输入源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">同步化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7"><span class="nav-number">4.0.1.</span> <span class="nav-text">同步工具</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C"><span class="nav-number">4.0.1.0.1.</span> <span class="nav-text">原子操作</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%A3%81%E5%9E%92%E5%92%8C%E6%98%93%E5%A4%B1%E6%80%A7%E5%8F%98%E9%87%8F"><span class="nav-number">4.0.1.0.2.</span> <span class="nav-text">内存壁垒和易失性变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%94%81%E5%85%B7"><span class="nav-number">4.0.1.0.3.</span> <span class="nav-text">锁具</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.0.1.0.4.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%80%89%E6%8B%A9%E5%99%A8%E4%BE%8B%E7%A8%8B"><span class="nav-number">4.0.1.0.5.</span> <span class="nav-text">执行选择器例程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%88%90%E6%9C%AC%E5%92%8C%E6%80%A7%E8%83%BD"><span class="nav-number">4.0.2.</span> <span class="nav-text">同步成本和性能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8C%E4%BF%A1%E5%8F%B7"><span class="nav-number">4.0.3.</span> <span class="nav-text">线程安全和信号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%8F%90%E7%A4%BA"><span class="nav-number">4.0.4.</span> <span class="nav-text">线程安全设计的提示</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E9%81%BF%E5%85%8D%E5%90%8C%E6%AD%A5"><span class="nav-number">4.0.4.0.1.</span> <span class="nav-text">完全避免同步</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E5%90%8C%E6%AD%A5%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="nav-number">4.0.4.0.2.</span> <span class="nav-text">了解同步的局限性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BB%A3%E7%A0%81%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E5%A8%81%E8%83%81"><span class="nav-number">4.0.4.0.3.</span> <span class="nav-text">注意代码正确性的威胁</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BD%93%E5%BF%83%E6%AD%BB%E9%94%81%E5%92%8C%E6%B4%BB%E9%94%81"><span class="nav-number">4.0.4.0.4.</span> <span class="nav-text">当心死锁和活锁</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%98%93%E5%A4%B1%E6%80%A7%E5%8F%98%E9%87%8F"><span class="nav-number">4.0.4.0.5.</span> <span class="nav-text">正确使用易失性变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C"><span class="nav-number">4.0.5.</span> <span class="nav-text">使用原子操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%94%81"><span class="nav-number">4.0.6.</span> <span class="nav-text">使用锁</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-POSIX-%E4%BA%92%E6%96%A5%E9%94%81"><span class="nav-number">4.0.6.0.1.</span> <span class="nav-text">使用 POSIX 互斥锁</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-NSLock-%E7%B1%BB"><span class="nav-number">4.0.6.0.2.</span> <span class="nav-text">使用 NSLock 类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-synchronized-%E6%8C%87%E4%BB%A4"><span class="nav-number">4.0.6.0.3.</span> <span class="nav-text">使用@synchronized 指令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E5%8F%AF%E5%8F%AF%E9%94%81"><span class="nav-number">4.0.6.0.4.</span> <span class="nav-text">使用其他可可锁</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.0.7.</span> <span class="nav-text">使用条件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-NSCondition-%E7%B1%BB"><span class="nav-number">4.0.7.0.1.</span> <span class="nav-text">使用 NSCondition 类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-POSIX-%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.0.7.0.2.</span> <span class="nav-text">使用 POSIX 条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%91%98%E8%A6%81"><span class="nav-number">5.</span> <span class="nav-text">线程安全摘要</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E5%8F%AF"><span class="nav-number">5.0.1.</span> <span class="nav-text">可可</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">5.0.1.0.1.</span> <span class="nav-text">基础框架线程安全</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%A5%97%E4%BB%B6%E6%A1%86%E6%9E%B6%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">5.0.1.0.2.</span> <span class="nav-text">应用套件框架线程安全</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6"><span class="nav-number">5.0.1.0.3.</span> <span class="nav-text">核心数据框架</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80"><span class="nav-number">5.0.2.</span> <span class="nav-text">核心基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87%E8%A1%A8"><span class="nav-number">6.</span> <span class="nav-text">词汇表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E4%BF%AE%E8%AE%A2%E5%8E%86%E5%8F%B2"><span class="nav-number">7.</span> <span class="nav-text">文档修订历史</span></a></li></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%84%E7%BB%87"><span class="nav-number">1.0.1.</span> <span class="nav-text">本文件的组织</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%9C%8B%E7%9C%8B"><span class="nav-number">1.0.2.</span> <span class="nav-text">也可以看看</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">线程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%88%90%E6%9C%AC"><span class="nav-number">2.0.1.</span> <span class="nav-text">线程成本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.2.</span> <span class="nav-text">创建一个线程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-NSThread"><span class="nav-number">2.0.2.0.1.</span> <span class="nav-text">使用 NSThread</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-POSIX-%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.2.0.2.</span> <span class="nav-text">使用 POSIX 线程</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-NSObject-%E7%94%9F%E6%88%90%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.2.0.3.</span> <span class="nav-text">使用 NSObject 生成线程</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9C%A8-Cocoa-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%BD%BF%E7%94%A8-POSIX-%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.2.0.4.</span> <span class="nav-text">在 Cocoa 应用程序中使用 POSIX 线程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7"><span class="nav-number">2.0.3.</span> <span class="nav-text">配置线程属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%A0%86%E6%A0%88%E5%A4%A7%E5%B0%8F"><span class="nav-number">2.0.3.0.1.</span> <span class="nav-text">配置线程的堆栈大小</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BA%BF%E7%A8%8B%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8"><span class="nav-number">2.0.3.0.2.</span> <span class="nav-text">配置线程本地存储</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%88%86%E7%A6%BB%E7%8A%B6%E6%80%81"><span class="nav-number">2.0.3.0.3.</span> <span class="nav-text">设置线程的分离状态</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%BA%BF%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">2.0.3.0.4.</span> <span class="nav-text">设置线程优先级</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E7%BA%BF%E7%A8%8B%E8%BE%93%E5%85%A5%E4%BE%8B%E7%A8%8B"><span class="nav-number">2.0.4.</span> <span class="nav-text">编写线程输入例程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E9%87%8A%E6%94%BE%E6%B1%A0"><span class="nav-number">2.0.4.0.1.</span> <span class="nav-text">创建一个自动释放池</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.0.4.0.2.</span> <span class="nav-text">设置异常处理程序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.0.4.0.3.</span> <span class="nav-text">设置运行循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%88%E6%AD%A2%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.0.5.</span> <span class="nav-text">终止线程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.</span> <span class="nav-text">运行循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E7%9A%84%E8%A7%A3%E5%89%96"><span class="nav-number">3.0.1.</span> <span class="nav-text">运行循环的解剖</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.0.1.0.1.</span> <span class="nav-text">运行循环模式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%BA%90"><span class="nav-number">3.0.1.0.2.</span> <span class="nav-text">输入源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%A1%E6%97%B6%E5%99%A8%E6%9D%A5%E6%BA%90"><span class="nav-number">3.0.1.0.3.</span> <span class="nav-text">计时器来源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E8%A7%82%E5%AF%9F%E8%80%85"><span class="nav-number">3.0.1.0.4.</span> <span class="nav-text">运行循环观察者</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E5%BA%8F%E5%88%97"><span class="nav-number">3.0.1.0.5.</span> <span class="nav-text">事件的运行循环序列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%EF%BC%9F"><span class="nav-number">3.0.2.</span> <span class="nav-text">什么时候使用运行循环？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.0.3.</span> <span class="nav-text">使用运行循环对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.0.3.0.1.</span> <span class="nav-text">获取运行循环对象</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.0.3.0.2.</span> <span class="nav-text">配置运行循环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.0.3.0.3.</span> <span class="nav-text">启动运行循环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%80%80%E5%87%BA%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.0.3.0.4.</span> <span class="nav-text">退出运行循环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8C%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.0.3.0.5.</span> <span class="nav-text">线程安全和运行循环对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8C%E5%BE%AA%E7%8E%AF%E6%BA%90"><span class="nav-number">3.0.4.</span> <span class="nav-text">配置运行循环源</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E6%BA%90"><span class="nav-number">3.0.4.0.1.</span> <span class="nav-text">定义自定义输入源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%AE%A1%E6%97%B6%E5%99%A8%E6%BA%90"><span class="nav-number">3.0.4.0.2.</span> <span class="nav-text">配置计时器源</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%9F%BA%E4%BA%8E%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BE%93%E5%85%A5%E6%BA%90"><span class="nav-number">3.0.4.0.3.</span> <span class="nav-text">配置基于端口的输入源</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">同步化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7"><span class="nav-number">4.0.1.</span> <span class="nav-text">同步工具</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C"><span class="nav-number">4.0.1.0.1.</span> <span class="nav-text">原子操作</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%A3%81%E5%9E%92%E5%92%8C%E6%98%93%E5%A4%B1%E6%80%A7%E5%8F%98%E9%87%8F"><span class="nav-number">4.0.1.0.2.</span> <span class="nav-text">内存壁垒和易失性变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%94%81%E5%85%B7"><span class="nav-number">4.0.1.0.3.</span> <span class="nav-text">锁具</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.0.1.0.4.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%80%89%E6%8B%A9%E5%99%A8%E4%BE%8B%E7%A8%8B"><span class="nav-number">4.0.1.0.5.</span> <span class="nav-text">执行选择器例程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%88%90%E6%9C%AC%E5%92%8C%E6%80%A7%E8%83%BD"><span class="nav-number">4.0.2.</span> <span class="nav-text">同步成本和性能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8C%E4%BF%A1%E5%8F%B7"><span class="nav-number">4.0.3.</span> <span class="nav-text">线程安全和信号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%8F%90%E7%A4%BA"><span class="nav-number">4.0.4.</span> <span class="nav-text">线程安全设计的提示</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E9%81%BF%E5%85%8D%E5%90%8C%E6%AD%A5"><span class="nav-number">4.0.4.0.1.</span> <span class="nav-text">完全避免同步</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E5%90%8C%E6%AD%A5%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="nav-number">4.0.4.0.2.</span> <span class="nav-text">了解同步的局限性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BB%A3%E7%A0%81%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E5%A8%81%E8%83%81"><span class="nav-number">4.0.4.0.3.</span> <span class="nav-text">注意代码正确性的威胁</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BD%93%E5%BF%83%E6%AD%BB%E9%94%81%E5%92%8C%E6%B4%BB%E9%94%81"><span class="nav-number">4.0.4.0.4.</span> <span class="nav-text">当心死锁和活锁</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%98%93%E5%A4%B1%E6%80%A7%E5%8F%98%E9%87%8F"><span class="nav-number">4.0.4.0.5.</span> <span class="nav-text">正确使用易失性变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C"><span class="nav-number">4.0.5.</span> <span class="nav-text">使用原子操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%94%81"><span class="nav-number">4.0.6.</span> <span class="nav-text">使用锁</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-POSIX-%E4%BA%92%E6%96%A5%E9%94%81"><span class="nav-number">4.0.6.0.1.</span> <span class="nav-text">使用 POSIX 互斥锁</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-NSLock-%E7%B1%BB"><span class="nav-number">4.0.6.0.2.</span> <span class="nav-text">使用 NSLock 类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-synchronized-%E6%8C%87%E4%BB%A4"><span class="nav-number">4.0.6.0.3.</span> <span class="nav-text">使用@synchronized 指令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E5%8F%AF%E5%8F%AF%E9%94%81"><span class="nav-number">4.0.6.0.4.</span> <span class="nav-text">使用其他可可锁</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.0.7.</span> <span class="nav-text">使用条件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-NSCondition-%E7%B1%BB"><span class="nav-number">4.0.7.0.1.</span> <span class="nav-text">使用 NSCondition 类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-POSIX-%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.0.7.0.2.</span> <span class="nav-text">使用 POSIX 条件</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%91%98%E8%A6%81"><span class="nav-number">5.</span> <span class="nav-text">线程安全摘要</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E5%8F%AF"><span class="nav-number">5.0.1.</span> <span class="nav-text">可可</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">5.0.1.0.1.</span> <span class="nav-text">基础框架线程安全</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%A5%97%E4%BB%B6%E6%A1%86%E6%9E%B6%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">5.0.1.0.2.</span> <span class="nav-text">应用套件框架线程安全</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6"><span class="nav-number">5.0.1.0.3.</span> <span class="nav-text">核心数据框架</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80"><span class="nav-number">5.0.2.</span> <span class="nav-text">核心基础</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87%E8%A1%A8"><span class="nav-number">6.</span> <span class="nav-text">词汇表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E4%BF%AE%E8%AE%A2%E5%8E%86%E5%8F%B2"><span class="nav-number">7.</span> <span class="nav-text">文档修订历史</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
       <section class="site-overview-wrap sidebar-panel">
-        <div class="site-author animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">LeiHao</p>
   <div class="site-description" itemprop="description">😃😃😃</div>
 </div>
@@ -3357,7 +363,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/cn/archives/">
         
-          <span class="site-state-item-count">184</span>
+          <span class="site-state-item-count">185</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -3370,13 +376,13 @@ mjx-container[display="true"] + br {
 </div>
   <div class="links-of-author animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/leihao0" title="GitHub → https://github.com/leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+        <a href="https://github.com/leihao0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/leihao0" title="Twitter → https://twitter.com/leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+        <a href="https://twitter.com/leihao0" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https://www.linkedin.com/in/leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
       </span>
   </div>
   <div class="cc-license animated" itemprop="license">
@@ -3412,16 +418,16 @@ mjx-container[display="true"] + br {
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/cn/Threading-Programming-Guide/">
 
-    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/cn/images/avatar.gif">
       <meta itemprop="name" content="LeiHao">
       <meta itemprop="description" content="😃😃😃">
     </span>
 
-    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="LeiHao's Blog">
     </span>
 
@@ -3478,7 +484,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
-      <span class="post-meta-item-text">阅读时长 ≈</span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
       <span>51 分钟</span>
     </span>
 </div>
@@ -3549,7 +555,7 @@ mjx-container[display="true"] + br {
 </ul>
 <p>两种技术都会在您的应用程序中创建一个分离线程。分离的线程意味着线程退出时系统会自动回收线程的资源。这也意味着您的代码以后不必与线程显式连接。</p>
 <p>由于该<code>detachNewThreadSelector:toTarget:withObject:</code>方法在 OS X 的所有版本中均受支持，因此经常在使用线程的现有 Cocoa 应用程序中找到。要分离新线程，只需提供要用作线程入口点的方法名称（指定为选择器），定义该方法的对象以及要在启动时传递给线程的任何数据。 。以下示例显示了此方法的基本调用，该调用使用当前对象的自定义方法生成一个线程。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[NSThread detachNewThreadSelector：@selector（myThreadMainMethod :) toTarget：self withObject：nil];</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[NSThread detachNewThreadSelector：@selector（myThreadMainMethod :) toTarget：self withObject：nil];</span><br></pre></td></tr></table></figure>
 
 <p>在 OS X v10.5 之前，您<code>NSThread</code>主要使用该类生成线程。尽管您可以获取<code>NSThread</code>对象并访问某些线程属性，但是只能在线程运行之后从线程本身进行操作。在 OS X v10.5 中，添加了对创建<code>NSThread</code>对象的支持，而无需立即产生相应的新线程。（此支持在 iOS 中也可用。）此支持使得可以在启动线程之前获取和设置各种线程属性。这也使得以后可以使用该线程对象来引用正在运行的线程。</p>
 <p><code>NSThread</code>在 OS X v10.5 及更高版本中初始化对象的简单方法是使用该<code>initWithTarget:selector:object:</code>方法。此方法<code>detachNewThreadSelector:toTarget:withObject:</code>使用与该方法完全相同的信息，并使用它来初始化新<code>NSThread</code>实例。但是，它不会启动线程。要启动线程，请<code>start</code>显式调用线程对象的方法，如以下示例所示：</p>
@@ -3592,7 +598,7 @@ mjx-container[display="true"] + br {
 <td><code>void * PosixThreadMainRoutine（void *数据）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//在这里做一些工作。</code></td>
@@ -3604,7 +610,7 @@ mjx-container[display="true"] + br {
 <td><code>返回NULL;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -3613,7 +619,7 @@ mjx-container[display="true"] + br {
 <td><code>无效LaunchThread（）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//使用POSIX例程创建线程。</code></td>
@@ -3661,23 +667,23 @@ mjx-container[display="true"] + br {
 <td><code>如果（threadError！= 0）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//报告错误。</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>如果将上述清单中的代码添加到一个源文件中并调用该<code>LaunchThread</code>函数，它将在您的应用程序中创建一个新的分离线程。当然，使用此代码创建的新线程将无用。线程将启动，几乎立即退出。为了使事情变得更有趣，您需要向该<code>PosixThreadMainRoutine</code>函数添加代码以完成一些实际工作。为了确保线程知道要执行的工作，可以在创建时将其传递给一些数据的指针。您将此指针作为<code>pthread_create</code>函数的最后一个参数传递。</p>
 <p>要将信息从新创建的线程传递回应用程序的主线程，您需要在目标线程之间建立通信路径。对于基于 C 的应用程序，有多种方法可以在线程之间进行通信，包括使用端口，条件或共享内存。对于寿命长的线程，几乎应该始终设置某种线程间通信机制，以为应用程序的主线程提供一种检查线程状态或在应用程序退出时将其干净关闭的方法。</p>
 <p>有关 POSIX 线程功能的更多信息，请参见<code>pthread</code>手册页。</p>
 <h6 id="使用-NSObject-生成线程"><a href="#使用-NSObject-生成线程" class="headerlink" title="使用 NSObject 生成线程"></a>使用 NSObject 生成线程</h6><p>在 iOS 和 OS X v10.5 及更高版本中，所有对象都可以生成新线程并使用它执行其方法之一。该<code>performSelectorInBackground:withObject:</code>方法创建一个新的分离线程，并使用指定的方法作为新线程的入口点。例如，如果您有某个对象（由表示<code>myObj</code>），并且该对象具有一个<code>doSomething</code>要在后台线程中运行的方法，则可以使用以下代码来执行该操作：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[myObj performSelectorInBackground：@selector（doSomething）withObject：nil];</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[myObj performSelectorInBackground：@selector（doSomething）withObject：nil];</span><br></pre></td></tr></table></figure>
 
 <p>调用此方法的效果是一样的，如果你调用<code>detachNewThreadSelector:toTarget:withObject:</code>的方法<code>NSThread</code>与当前对象，选择和参数对象作为参数。立即使用默认配置生成新线程并开始运行。在选择器内部，必须像配置任何线程一样配置线程。例如，如果您打算使用自动释放池（如果您不使用垃圾回收），则需要设置它，并配置线程的运行循环。有关如何配置新线程的信息，请参阅“ <a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/CreatingThreads/CreatingThreads.html#//apple_ref/doc/uid/10000057i-CH15-SW8">配置线程属性”</a>。</p>
 <h6 id="在-Cocoa-应用程序中使用-POSIX-线程"><a href="#在-Cocoa-应用程序中使用-POSIX-线程" class="headerlink" title="在 Cocoa 应用程序中使用 POSIX 线程"></a>在 Cocoa 应用程序中使用 POSIX 线程</h6><p>尽管<code>NSThread</code>该类是在 Cocoa 应用程序中创建线程的主要接口，但是您可以自由使用 POSIX 线程，如果这样做对您更方便。例如，如果您已经有使用 POSIX 线程的代码并且不想重写它，则可以使用。如果确实打算在 Cocoa 应用程序中使用 POSIX 线程，则仍应了解 Cocoa 和线程之间的交互作用，并遵守以下各节中的准则。</p>
@@ -3731,7 +737,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init]; //顶级池</code></td>
@@ -3749,7 +755,7 @@ mjx-container[display="true"] + br {
 <td><code>[池释放]; //释放池中的对象。</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>由于顶级自动释放池在线程退出之前不会释放其对象，因此长寿命的线程应创建其他自动释放池以更频繁地释放对象。例如，使用运行循环的线程可能每次通过该运行循环都会创建并释放一个自动释放池。更频繁地释放对象可以防止应用程序的内存占用量过大，从而可能导致性能问题。但是，与任何与性能相关的行为一样，您应该测量代码的实际性能，并适当调整自动释放池的使用。</p>
@@ -3770,7 +776,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>BOOL moreWorkToDo = YES;</code></td>
@@ -3809,7 +815,7 @@ mjx-container[display="true"] + br {
 <td><code>同时（moreWorkToDo &amp;&amp;！exitNow）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//在这里做一大块工作。</code></td>
@@ -3836,10 +842,10 @@ mjx-container[display="true"] + br {
 <td><code>exitNow = [[threadDict valueForKey：@“ ThreadShouldExitNow”] boolValue];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <h2 id="运行循环"><a href="#运行循环" class="headerlink" title="运行循环"></a>运行循环</h2><p>运行循环是与线程关联的基础架构的一部分。一个<em>运行循环</em>是一个事件处理循环，你用它来安排工作，并协调接收传入的事件。运行循环的目的是在有工作要做时让线程忙，而在没有工作时让线程进入睡眠状态。</p>
@@ -4001,7 +1007,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//该应用程序使用垃圾回收，因此不需要自动释放池。</code></td>
@@ -4016,7 +1022,7 @@ mjx-container[display="true"] + br {
 <td><code>//创建一个运行循环观察器，并将其附加到运行循环。</code></td>
 </tr>
 <tr>
-<td><code>CFRunLoopObserverContext context = {0，self，NULL，NULL，NULL};</code></td>
+<td><code>CFRunLoopObserverContext context = &#123;0，self，NULL，NULL，NULL&#125;;</code></td>
 </tr>
 <tr>
 <td><code>CFRunLoopObserverRef观察者= CFRunLoopObserverCreate（kCFAllocatorDefault，</code></td>
@@ -4031,7 +1037,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（观察者）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>CFRunLoopRef cfLoop = [myRunLoop getCFRunLoop];</code></td>
@@ -4040,7 +1046,7 @@ mjx-container[display="true"] + br {
 <td><code>CFRunLoopAddObserver（cfLoop，观察者，kCFRunLoopDefaultMode）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -4064,7 +1070,7 @@ mjx-container[display="true"] + br {
 <td><code>做</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//运行运行循环10次以使计时器启动。</code></td>
@@ -4076,13 +1082,13 @@ mjx-container[display="true"] + br {
 <td><code>loopCount--;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td><code>while（loopCount）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>为长寿命线程配置运行循环时，最好添加至少一个输入源以接收消息。尽管您可以仅连接一个计时器即可进入运行循环，但是一旦计时器触发，它通常就会失效，这将导致运行循环退出。附加重复计时器可以使运行循环在更长的时间内运行，但是会涉及定期触发计时器以唤醒线程，这实际上是轮询的另一种形式。相比之下，输入源会等待事件发生，使线程保持睡眠状态直到事件发生。</p>
@@ -4105,7 +1111,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//如果不使用垃圾回收，请在此处设置一个自动释放池。</code></td>
@@ -4126,7 +1132,7 @@ mjx-container[display="true"] + br {
 <td><code>做</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//开始运行循环，但在处理完每个源之后返回。</code></td>
@@ -4159,7 +1165,7 @@ mjx-container[display="true"] + br {
 <td><code>//根据需要完成变量。</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td><code>同时（！完成）;</code></td>
@@ -4171,7 +1177,7 @@ mjx-container[display="true"] + br {
 <td><code>//在此处清理代码。确保释放所有分配的自动释放池。</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>可以递归运行运行循环。换句话说，您可以在输入源或计时器的处理程序例程中调用<code>CFRunLoopRun</code>，<code>CFRunLoopRunInMode</code>或任何<code>NSRunLoop</code>用于启动运行循环的方法。这样做时，可以使用任何要运行嵌套运行循环的模式，包括外部运行循环使用的模式。</p>
@@ -4208,7 +1214,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>CFRunLoopSourceRef runLoopSource;</code></td>
@@ -4217,7 +1223,7 @@ mjx-container[display="true"] + br {
 <td><code>NSMutableArray *命令；</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -4283,7 +1289,7 @@ mjx-container[display="true"] + br {
 <td><code>@interface RunLoopContext：NSObject</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>CFRunLoopRef runLoop;</code></td>
@@ -4292,7 +1298,7 @@ mjx-container[display="true"] + br {
 <td><code>RunLoopSource *源；</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td><code>@property（只读）CFRunLoopRef runLoop;</code></td>
@@ -4319,7 +1325,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>RunLoopSource * obj =（RunLoopSource *）info;</code></td>
@@ -4340,7 +1346,7 @@ mjx-container[display="true"] + br {
 <td><code>withObject：theContext waitUntilDone：NO];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>最重要的回调例程之一是当输入源被信号通知时用于处理自定义数据的例程。清单 3-5 显示了与<code>RunLoopSource</code>对象关联的 perform 回调例程。该功能只是将完成工作的请求转发给<code>sourceFired</code>方法，该方法然后处理命令缓冲区中存在的所有命令。</p>
@@ -4352,7 +1358,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>RunLoopSource * obj =（RunLoopSource *）info;</code></td>
@@ -4361,7 +1367,7 @@ mjx-container[display="true"] + br {
 <td><code>[obj sourceFired];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>如果使用该<code>CFRunLoopSourceInvalidate</code>功能从运行循环中删除输入源，系统将调用输入源的取消例程。您可以使用此例程来通知客户端您的输入源不再有效，并且他们应删除对其的任何引用。 清单 3-6 显示了向该<code>RunLoopSource</code>对象注册的取消回调例程。此函数将另一个<code>RunLoopContext</code>对象发送给应用程序委托，但这一次要求委托删除对运行循环源的引用。</p>
@@ -4373,7 +1379,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>RunLoopSource * obj =（RunLoopSource *）info;</code></td>
@@ -4394,7 +1400,7 @@ mjx-container[display="true"] + br {
 <td><code>withObject：theContext waitUntilDone：YES];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p><strong>注意：</strong><a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW37">与输入源的客户端协调中</a>显示 了应用程序委托<code>registerSource:</code>和<code>removeSource:</code>方法<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW37">的代码</a>。</p>
@@ -4408,10 +1414,10 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
-<td><code>CFRunLoopSourceContext context = {0，self，NULL，NULL，NULL，NULL，NULL，</code></td>
+<td><code>CFRunLoopSourceContext context = &#123;0，self，NULL，NULL，NULL，NULL，NULL，</code></td>
 </tr>
 <tr>
 <td><code>＆RunLoopSourceScheduleRoutine，</code></td>
@@ -4420,7 +1426,7 @@ mjx-container[display="true"] + br {
 <td><code>RunLoopSourceCancelRoutine，</code></td>
 </tr>
 <tr>
-<td><code>RunLoopSourcePerformRoutine};</code></td>
+<td><code>RunLoopSourcePerformRoutine&#125;;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -4438,7 +1444,7 @@ mjx-container[display="true"] + br {
 <td><code>返回自我</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -4447,7 +1453,7 @@ mjx-container[display="true"] + br {
 <td><code>-（void）addToCurrentRunLoop</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>CFRunLoopRef runLoop = CFRunLoopGetCurrent（）;</code></td>
@@ -4456,7 +1462,7 @@ mjx-container[display="true"] + br {
 <td><code>CFRunLoopAddSource（runLoop，runLoopSource，kCFRunLoopDefaultMode）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>######## 与输入源的客户协调</p>
@@ -4470,13 +1476,13 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>[sourcesToPing addObject：sourceInfo];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -4485,7 +1491,7 @@ mjx-container[display="true"] + br {
 <td><code>-（无效）removeSource：（RunLoopContext *）sourceInfo</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>id objToRemove = nil;</code></td>
@@ -4497,13 +1503,13 @@ mjx-container[display="true"] + br {
 <td><code>用于（SourcesToPing中的RunLoopContext *上下文）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>如果（[context isEqual：sourceInfo]）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>objToRemove =上下文；</code></td>
@@ -4512,10 +1518,10 @@ mjx-container[display="true"] + br {
 <td><code>打破;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -4527,7 +1533,7 @@ mjx-container[display="true"] + br {
 <td><code>[sourcesToPing removeObject：objToRemove];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p><strong>注意：</strong><a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW32">清单 3-4</a>和<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW34">清单 3-6</a> 中显示了调用前面清单中的方法的回调函数。</p>
@@ -4542,7 +1548,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>CFRunLoopSourceSignal（runLoopSource）;</code></td>
@@ -4551,7 +1557,7 @@ mjx-container[display="true"] + br {
 <td><code>CFRunLoopWakeUp（runloop）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p><strong>注意：</strong> 永远不要尝试<code>SIGHUP</code>通过传递自定义输入源来处理一个或其他类型的过程级信号。唤醒运行循环的 Core Foundation 函数不是信号安全的，不应在应用程序的信号处理程序例程中使用。有关信号处理程序例程的更多信息，请参见<code>sigaction</code>手册页。</p>
@@ -4630,7 +1636,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>CFRunLoopTimerContext context = {0，NULL，NULL，NULL，NULL};</code></td>
+<td><code>CFRunLoopTimerContext context = &#123;0，NULL，NULL，NULL，NULL&#125;;</code></td>
 </tr>
 <tr>
 <td><code>CFRunLoopTimerRef timer = CFRunLoopTimerCreate（kCFAllocatorDefault，0.1，0.3，0，0，</code></td>
@@ -4658,7 +1664,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>NSPort * myPort = [NSMachPort端口]；</code></td>
@@ -4667,7 +1673,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（myPort）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//此类处理传入的端口消息。</code></td>
@@ -4697,10 +1703,10 @@ mjx-container[display="true"] + br {
 <td><code>toTarget：[MyWorkerClass class] withObject：myPort];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>为了在线程之间建立双向通信通道，您可能希望工作线程在签入消息中将其自己的本地端口发送到主线程。接收到签入消息可以使您的主线程知道在启动第二个线程时一切进展顺利，还为您提供了一种向该线程发送更多消息的方法。</p>
@@ -4722,7 +1728,7 @@ mjx-container[display="true"] + br {
 <td><code>-（void）handlePortMessage：（NSPortMessage *）portMessage</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>unsigned int消息= [portMessage msgid];</code></td>
@@ -4737,7 +1743,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（消息== kCheckinMessage）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//获取辅助线程的通信端口。</code></td>
@@ -4755,22 +1761,22 @@ mjx-container[display="true"] + br {
 <td><code>[self storeDistantPort：distantPort];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td><code>其他</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//处理其他消息。</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>########## 实施辅助线程代码</p>
@@ -4784,7 +1790,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];</code></td>
@@ -4820,7 +1826,7 @@ mjx-container[display="true"] + br {
 <td><code>做</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>[[NSRunLoop currentRunLoop] runMode：NSDefaultRunLoopMode</code></td>
@@ -4829,7 +1835,7 @@ mjx-container[display="true"] + br {
 <td><code>beforeDate：[NSDate distantFuture]];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td><code>while（！[workerObj shouldExit]）;</code></td>
@@ -4844,7 +1850,7 @@ mjx-container[display="true"] + br {
 <td><code>[池释放];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>使用时<code>NSMachPort</code>，本地线程和远程线程可以将相同的端口对象用于线程之间的单向通信。换句话说，一个线程创建的本地端口对象成为另一线程的远程端口对象。</p>
@@ -4860,7 +1866,7 @@ mjx-container[display="true"] + br {
 <td><code>-（void）sendCheckinMessage：（NSPort *）outPort</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//保留并保存远程端口以备将来使用。</code></td>
@@ -4902,7 +1908,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（messageObj）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//完成消息配置并立即发送。</code></td>
@@ -4914,10 +1920,10 @@ mjx-container[display="true"] + br {
 <td><code>[messageObj sendBeforeDate：[NSDate date]]；</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>######## 配置 NSMessagePort 对象</p>
@@ -4974,7 +1980,7 @@ mjx-container[display="true"] + br {
 <td><code>OSStatus MySpawnThread（）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//创建一个本地端口以接收响应。</code></td>
@@ -4989,7 +1995,7 @@ mjx-container[display="true"] + br {
 <td><code>CFRunLoopSourceRef rlSource;</code></td>
 </tr>
 <tr>
-<td><code>CFMessagePortContext context = {0，NULL，NULL，NULL，NULL};</code></td>
+<td><code>CFMessagePortContext context = &#123;0，NULL，NULL，NULL，NULL&#125;;</code></td>
 </tr>
 <tr>
 <td><code>布尔值shouldFreeInfo;</code></td>
@@ -5031,7 +2037,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（myPort！= NULL）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//端口已成功创建。</code></td>
@@ -5049,7 +2055,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（rlSource）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//将源添加到当前的运行循环中。</code></td>
@@ -5070,10 +2076,10 @@ mjx-container[display="true"] + br {
 <td><code>CFRelease（rlSource）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -5109,7 +2115,7 @@ mjx-container[display="true"] + br {
 <td><code>＆taskID））;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>安装端口并启动线程后，主线程可以在等待线程检入的同时继续其常规执行。当检入消息到达时，它将分派给主线程的<code>MainThreadResponseHandler</code>函数，如清单 3-18 所示。。此函数提取工作线程的端口名，并创建用于将来通信的管道。</p>
@@ -5139,13 +2145,13 @@ mjx-container[display="true"] + br {
 <td><code>无效*信息）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>如果（msgid == kCheckinMessage）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>CFMessagePortRef messagePort;</code></td>
@@ -5184,7 +2190,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（messagePort）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//保留并保存线程的通讯端口，以备将来参考。</code></td>
@@ -5205,7 +2211,7 @@ mjx-container[display="true"] + br {
 <td><code>CFRelease（messagePort）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -5220,19 +2226,19 @@ mjx-container[display="true"] + br {
 <td><code>CFAllocatorDeallocate（NULL，buffer）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td><code>其他</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//处理其他消息。</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -5241,7 +2247,7 @@ mjx-container[display="true"] + br {
 <td><code>返回NULL;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>配置了主线程后，剩下的唯一事情就是新创建的工作线程创建自己的端口并签入。清单 3-19 显示了工作线程的入口点函数。该函数提取主线程的端口名，并使用它来创建返回到主线程的远程连接。然后，该函数为其自身创建一个本地端口，将该端口安装在线程的运行循环上，并向主线程发送包含本地端口名称的签入消息。</p>
@@ -5253,7 +2259,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//创建到主线程的远程端口。</code></td>
@@ -5295,7 +2301,7 @@ mjx-container[display="true"] + br {
 <td><code>//将端口存储在此线程的上下文信息中，以供以后参考。</code></td>
 </tr>
 <tr>
-<td><code>CFMessagePortContext context = {0，mainThreadPort，NULL，NULL，NULL};</code></td>
+<td><code>CFMessagePortContext context = &#123;0，mainThreadPort，NULL，NULL，NULL&#125;;</code></td>
 </tr>
 <tr>
 <td><code>布尔值shouldFreeInfo;</code></td>
@@ -5328,7 +2334,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（shouldFreeInfo）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//无法创建本地端口，因此请终止线程。</code></td>
@@ -5337,7 +2343,7 @@ mjx-container[display="true"] + br {
 <td><code>MPExit（0）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -5349,7 +2355,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（！rlSource）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//无法创建本地端口，因此请终止线程。</code></td>
@@ -5358,7 +2364,7 @@ mjx-container[display="true"] + br {
 <td><code>MPExit（0）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -5460,7 +2466,7 @@ mjx-container[display="true"] + br {
 <td><code>CFRunLoopRun（）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>一旦进入运行循环，该<code>ProcessClientRequest</code>函数将处理所有将来发送到线程端口的事件。该函数的实现取决于线程执行的工作类型，此处未显示。</p>
@@ -5783,13 +2789,13 @@ mjx-container[display="true"] + br {
 <td><code>void MyInitFunction（）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>pthread_mutex_init（＆mutex，NULL）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -5798,7 +2804,7 @@ mjx-container[display="true"] + br {
 <td><code>void MyLockingFunction（）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>pthread_mutex_lock（＆mutex）;</code></td>
@@ -5810,7 +2816,7 @@ mjx-container[display="true"] + br {
 <td><code>pthread_mutex_unlock（＆mutex）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p><strong>注意：</strong> 前面的代码是一个简化的示例，旨在显示 POSIX 线程互斥函数的基本用法。您自己的代码应检查这些函数返回的错误代码并进行适当处理。</p>
@@ -5830,7 +2836,7 @@ mjx-container[display="true"] + br {
 <td><code>...</code></td>
 </tr>
 <tr>
-<td><code>而（moreToDo）{</code></td>
+<td><code>而（moreToDo）&#123;</code></td>
 </tr>
 <tr>
 <td><code>/ *再进行一次计算* /</code></td>
@@ -5839,7 +2845,7 @@ mjx-container[display="true"] + br {
 <td><code>/ *，直到没有其他事情可做为止。* /</code></td>
 </tr>
 <tr>
-<td><code>如果（[theLock tryLock]）{</code></td>
+<td><code>如果（[theLock tryLock]）&#123;</code></td>
 </tr>
 <tr>
 <td><code>/ *更新所有线程使用的显示。* /</code></td>
@@ -5848,10 +2854,10 @@ mjx-container[display="true"] + br {
 <td><code>[theLock解锁]；</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <h6 id="使用-synchronized-指令"><a href="#使用-synchronized-指令" class="headerlink" title="使用@synchronized 指令"></a>使用@synchronized 指令</h6><p>该<code>@synchronized</code>指令是在 Objective-C 代码中动态创建互斥锁的便捷方法。该<code>@synchronized</code>指令执行任何其他互斥锁将执行的操作-防止不同的线程同时获取同一锁。但是，在这种情况下，您不必直接创建互斥量或锁定对象。相反，您只需将任何 Objective-C 对象用作锁定令牌，如以下示例所示：</p>
@@ -5862,22 +2868,22 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>@synchronized（anObj）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//大括号之间的所有内容均受@synchronized指令保护。</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>传递给<code>@synchronized</code>指令的对象是用于区分受保护块的唯一标识符。如果在两个不同的线程中执行上述方法，并<code>anObj</code>在每个线程上为参数传递一个不同的对象，则每个线程将获得其锁并继续进行处理而不会被另一个线程阻塞。但是，如果在两种情况下都传递相同的对象，则其中一个线程将首先获取锁，而另一个线程将阻塞，直到第一个线程完成关键部分。</p>
@@ -5900,7 +2906,7 @@ mjx-container[display="true"] + br {
 <td><code>void MyRecursiveFunction（int value）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>[theLock锁];</code></td>
@@ -5909,7 +2915,7 @@ mjx-container[display="true"] + br {
 <td><code>如果（值！= 0）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>- 值;</code></td>
@@ -5918,13 +2924,13 @@ mjx-container[display="true"] + br {
 <td><code>MyRecursiveFunction（value）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td><code>[theLock解锁]；</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -5952,7 +2958,7 @@ mjx-container[display="true"] + br {
 <td><code>而（真）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>[condLock锁定]；</code></td>
@@ -5964,7 +2970,7 @@ mjx-container[display="true"] + br {
 <td><code>[condLock unlockWithCondition：HAS_DATA];</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>因为锁的初始条件设置为<code>NO_DATA</code>，所以生产者线程应该在最初获取锁时没有任何麻烦。它用数据填充队列，并将条件设置为<code>HAS_DATA</code>。在后续迭代期间，生产者线程可以在到达时添加新数据，而不管队列是空还是仍有一些数据。它唯一阻止的时间是使用者线程从队列中提取数据。</p>
@@ -5976,7 +2982,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>[condLock lockWhenCondition：HAS_DATA];</code></td>
@@ -5994,7 +3000,7 @@ mjx-container[display="true"] + br {
 <td><code>//在本地处理数据。</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>######## 使用 NSDistributedLock 对象</p>
@@ -6079,7 +3085,7 @@ mjx-container[display="true"] + br {
 <td><code>void MyCondInitFunction（）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>pthread_mutex_init（＆mutex）;</code></td>
@@ -6088,7 +3094,7 @@ mjx-container[display="true"] + br {
 <td><code>pthread_cond_init（＆condition，NULL）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -6097,7 +3103,7 @@ mjx-container[display="true"] + br {
 <td><code>void MyWaitOnConditionFunction（）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//锁定互斥锁。</code></td>
@@ -6118,13 +3124,13 @@ mjx-container[display="true"] + br {
 <td><code>while（ready_to_go == false）</code></td>
 </tr>
 <tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>pthread_cond_wait（＆condition，＆mutex）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 <tr>
 <td>``</td>
@@ -6145,7 +3151,7 @@ mjx-container[display="true"] + br {
 <td><code>pthread_mutex_unlock（＆mutex）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p>信令线程既负责设置谓词，也负责将信号发送到条件锁。 清单 4-6 显示了实现此行为的代码。在此示例中，条件在互斥锁内部发出信号，以防止在等待条件的线程之间发生竞争条件。</p>
@@ -6157,7 +3163,7 @@ mjx-container[display="true"] + br {
 </tr>
 </thead>
 <tbody><tr>
-<td><code>{</code></td>
+<td><code>&#123;</code></td>
 </tr>
 <tr>
 <td><code>//此时，应该有另一个线程要做的工作。</code></td>
@@ -6184,7 +3190,7 @@ mjx-container[display="true"] + br {
 <td><code>pthread_mutex_unlock（＆mutex）;</code></td>
 </tr>
 <tr>
-<td><code>}</code></td>
+<td><code>&#125;</code></td>
 </tr>
 </tbody></table>
 <p><strong>注意：</strong> 前面的代码是一个简化的示例，旨在显示 POSIX 线程条件函数的基本用法。您自己的代码应检查这些函数返回的错误代码并进行适当处理。</p>
@@ -6652,7 +3658,7 @@ mjx-container[display="true"] + br {
 
 <div class="copyright">
   
-  © 2012 – 
+  &copy; 2012 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
@@ -6664,13 +3670,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">420k</span>
+    <span title="站点总字数">423k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:22</span>
+    <span title="站点阅读时长">6:25</span>
   </span>
 </div>
 
@@ -6679,27 +3685,18 @@ mjx-container[display="true"] + br {
 
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
-
-
-  
-
-
-
+<script src="/cn/js/utils.js"></script><script src="/cn/js/next-boot.js"></script>
 
   
 
 
 
 
+  <script src="/cn/js/local-search.js"></script>
 
 
 
 
-
-
-
-
-  
 
 
 
@@ -6710,16 +3707,20 @@ mjx-container[display="true"] + br {
 
   
 
+
+
+
+
+
+
+
+  
+
   
 
   
 
-
-
-
-
-
-<script src="/cn/bundle.js"></script><script>
+<script>
   function loadCount() {
     var d = document, s = d.createElement('script');
     s.src = 'https://Artwalk.disqus.com/count.js';
@@ -6728,8 +3729,8 @@ mjx-container[display="true"] + br {
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
-;
-
+</script>
+<script>
   var disqus_config = function() {
     this.page.url = "https://leihao0.github.io/cn/Threading-Programming-Guide/";
     this.page.identifier = "Threading-Programming-Guide/";
@@ -6748,4 +3749,7 @@ mjx-container[display="true"] + br {
       (d.head || d.body).appendChild(s);
     }
   });
-</script></body></html>
+</script>
+
+</body>
+</html>
