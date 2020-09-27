@@ -13116,4 +13116,150 @@
         <tag>Swift</tag>
       </tags>
   </entry>
+  <entry>
+    <title>🇯🇵-0-0</title>
+    <url>/cn/japan-0-0/</url>
+    <content><![CDATA[<div id="googleMap2031" style="
+            height: 450px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px
+            ">
+</div>
+<style>.gmnoprint img {max-width: none !important;}</style>
+<script defer="defer">
+  window.hexoGmaps = window.hexoGmaps || { maps: {}};
+  window.hexoGmaps.maps['initgoogleMap2031'] = function init() {
+    var mapOptions = {
+       'scrollwheel': false,
+       'zoom': 11,
+       'center': new window.google.maps.LatLng( 35.6388171 , 139.6897329 ),
+     },
+     target = document.getElementById('googleMap2031'),
+     map = new window.google.maps.Map(target, mapOptions);
+      
+     
+     
+     var opts0 = {
+        'position': new window.google.maps.LatLng( 35.665289 , 139.7241853 ),
+        'map': map,
+        'title': 'The National Art Center',
+        'zIndex' : 0,
+        'icon': ''
+      };
+
+     var infowindow0 = new window.google.maps.InfoWindow({
+       content: 'The National Art Center'
+     });
+
+     var marker0 = new window.google.maps.Marker(opts0);
+
+     marker0.addListener('click', function(){
+       infowindow0.open(map, marker0)
+     })
+     
+     
+     var opts1 = {
+        'position': new window.google.maps.LatLng( 35.5471701 , 139.7683526 ),
+        'map': map,
+        'title': 'Haneda Airport',
+        'zIndex' : 1,
+        'icon': ''
+      };
+
+     var infowindow1 = new window.google.maps.InfoWindow({
+       content: 'Haneda Airport'
+     });
+
+     var marker1 = new window.google.maps.Marker(opts1);
+
+     marker1.addListener('click', function(){
+       infowindow1.open(map, marker1)
+     })
+     
+     
+     var opts2 = {
+        'position': new window.google.maps.LatLng( 35.695398 , 139.7018829 ),
+        'map': map,
+        'title': 'Hotel Gracery Shinjuku',
+        'zIndex' : 2,
+        'icon': ''
+      };
+
+     var infowindow2 = new window.google.maps.InfoWindow({
+       content: 'Hotel Gracery Shinjuku'
+     });
+
+     var marker2 = new window.google.maps.Marker(opts2);
+
+     marker2.addListener('click', function(){
+       infowindow2.open(map, marker2)
+     })
+   
+
+  }
+  function makeMaps() {
+    for (var map in window.hexoGmaps.maps) {
+       console.log('map #', map);
+       window.hexoGmaps.maps[map]();
+    }
+  }
+  function loadScript() {
+    window.hexoGmaps.googleScriptLoaded = true;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+        script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&callback=makeMaps&key=AIzaSyB6JxSOGlpKd-7pPtKKG_BIEOiLlaRHxMQ';
+    document.body.appendChild(script);
+  }
+  if (!window.hexoGmaps.googleScriptLoaded) {
+    loadScript();
+  }
+</script>
+
+<a id="more"></a>
+
+<h2 id="三年往返签证"><a href="#三年往返签证" class="headerlink" title="三年往返签证"></a>三年往返签证</h2><p>和美签不同，无法自己预约，只能通过指定旅行社办理</p>
+<ul>
+<li>税后 25W+</li>
+<li>淘宝邮寄护照和税单等材料</li>
+</ul>
+<p>整个过程全靠邮寄，以为会丢件<br>没想到两周就顺利办下来了</p>
+<h2 id="商务舱"><a href="#商务舱" class="headerlink" title="商务舱"></a>商务舱</h2><p>大多数亚洲航空公司的 商务舱 和 头等舱 是一样的</p>
+<p>比如这个 波音 787 机型， 一排只有四个座位 💺<br>两旁靠窗，没有邻居，中间情侣座<br>1 商务舱座椅所占面积 == 6 经济舱</p>
+<p>因为 全日空 做活动 票价只贵了一倍 所以还是蛮划算的</p>
+<p>上机提供热毛巾，后续香槟 🍾️ 及各种饮料<br>午餐可以提前预约日式料理或西餐<br>餐具换成了厚重的瓷盘和金属刀叉 🍴</p>
+<p>最棒的是座椅按小按钮可以放平成 180 度<br>WC 🚾 再也不是门庭若市络绎不绝<br>碰的的孩子们也彬彬有礼，一路没有哭闹</p>
+<p>引擎的轰鸣也小了很多，默认耳机 🎧 是 Bose QC 25</p>
+<p>因为帝都直飞东京只需 3 小时</p>
+<p>基本流程是<br>上飞机吃顿饭喝点饮料<br>看会你的名字<br>躺平睡一觉<br>就到了</p>
+<p>整体体验超赞</p>
+<p>不过商务舱后面空空如也<br>一度担心 下次再去日本<br>全日空 不会就倒闭了吧</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-04.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-03.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-06.jpg" alt=""></div></div></div>
+
+<h2 id="羽田空港"><a href="#羽田空港" class="headerlink" title="羽田空港"></a>羽田空港</h2><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-08.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-10.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-11.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-15.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-18.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-19.jpg" alt=""></div></div></div>
+
+<h2 id="观景台"><a href="#观景台" class="headerlink" title="观景台"></a>观景台</h2><p>羽田空港楼顶有个巨大的观景台<br>可以看飞机起降，感受比 IMAX 还要真实的引擎轰鸣</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-12.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-13.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-14.jpg" alt=""></div></div></div>
+
+<h2 id="ホテルグレイスリー新宿"><a href="#ホテルグレイスリー新宿" class="headerlink" title="ホテルグレイスリー新宿"></a>ホテルグレイスリー新宿</h2><p>因为方便，住在了新宿站<br>没想到是哥斯拉酒店<br>上面有个很大的头<br>平时在国内见惯了盗版<br>碰到正版的还听不习惯</p>
+<p>旁边是歌舞伎町<br>有一家一兰拉面很好吃<br>夜里 11 点下楼夜宵还排了很长的队伍</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-24.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-25.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-26.jpg" alt=""></div></div></div>
+
+<h2 id="かに道楽-amp-鳗鱼饭"><a href="#かに道楽-amp-鳗鱼饭" class="headerlink" title="かに道楽 &amp; 鳗鱼饭"></a>かに道楽 &amp; 鳗鱼饭</h2><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-31.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-34.jpg" alt=""></div></div></div>
+
+<p>日本真的好干净呀<br>不，应该说是洁净<br>这个公寓让人想起了<br>小林家的龙女仆</p>
+<p>感觉能住在这里多幸福<br>不知租金要多少呢</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-36.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-37.jpg" alt=""></div></div></div>
+
+<h2 id="国立新美術館"><a href="#国立新美術館" class="headerlink" title="国立新美術館"></a>国立新美術館</h2><p>第一次逛美术馆 🎨<br>完全看不懂<br>不过这不就是逛美术馆的目的吗</p>
+<p>出来看到张海报<br>不知是广告还是公益活动</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-38.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-39.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-40.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-42.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-43.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-44.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-45.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-46.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-48.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-49.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-50.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-51.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-52.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-54.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-55.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-56.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-57.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-0-62.jpg" alt=""></div></div></div>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+        <tag>LittleMaster</tag>
+        <tag>Japan</tag>
+        <tag>🇯🇵</tag>
+      </tags>
+  </entry>
 </search>
