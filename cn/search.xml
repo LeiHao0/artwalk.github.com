@@ -13430,4 +13430,271 @@
         <tag>🇯🇵</tag>
       </tags>
   </entry>
+  <entry>
+    <title>🇮🇹-0-0</title>
+    <url>/cn/italy-0-0/</url>
+    <content><![CDATA[<div id="googleMap8438" style="
+            height: 450px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px
+            ">
+</div>
+<style>.gmnoprint img {max-width: none !important;}</style>
+<script defer="defer">
+  window.hexoGmaps = window.hexoGmaps || { maps: {}};
+  window.hexoGmaps.maps['initgoogleMap8438'] = function init() {
+    var mapOptions = {
+       'scrollwheel': false,
+       'zoom': 10,
+       'center': new window.google.maps.LatLng( 40.6973724 , 14.1294367 ),
+     },
+     target = document.getElementById('googleMap8438'),
+     map = new window.google.maps.Map(target, mapOptions);
+      
+     
+     
+     var opts0 = {
+        'position': new window.google.maps.LatLng( 40.853053 , 14.1791543 ),
+        'map': map,
+        'title': 'Naples',
+        'zIndex' : 0,
+        'icon': ''
+      };
+
+     var infowindow0 = new window.google.maps.InfoWindow({
+       content: 'Naples'
+     });
+
+     var marker0 = new window.google.maps.Marker(opts0);
+
+     marker0.addListener('click', function(){
+       infowindow0.open(map, marker0)
+     })
+     
+     
+     var opts1 = {
+        'position': new window.google.maps.LatLng( 40.8223812 , 14.4113963 ),
+        'map': map,
+        'title': 'Mount Vesuvius',
+        'zIndex' : 1,
+        'icon': ''
+      };
+
+     var infowindow1 = new window.google.maps.InfoWindow({
+       content: 'Mount Vesuvius'
+     });
+
+     var marker1 = new window.google.maps.Marker(opts1);
+
+     marker1.addListener('click', function(){
+       infowindow1.open(map, marker1)
+     })
+     
+     
+     var opts2 = {
+        'position': new window.google.maps.LatLng( 40.7466183 , 14.4761726 ),
+        'map': map,
+        'title': 'Pompei',
+        'zIndex' : 2,
+        'icon': ''
+      };
+
+     var infowindow2 = new window.google.maps.InfoWindow({
+       content: 'Pompei'
+     });
+
+     var marker2 = new window.google.maps.Marker(opts2);
+
+     marker2.addListener('click', function(){
+       infowindow2.open(map, marker2)
+     })
+     
+     
+     var opts3 = {
+        'position': new window.google.maps.LatLng( 40.6237862 , 14.3576818 ),
+        'map': map,
+        'title': 'Sorrento',
+        'zIndex' : 3,
+        'icon': ''
+      };
+
+     var infowindow3 = new window.google.maps.InfoWindow({
+       content: 'Sorrento'
+     });
+
+     var marker3 = new window.google.maps.Marker(opts3);
+
+     marker3.addListener('click', function(){
+       infowindow3.open(map, marker3)
+     })
+     
+     
+     var opts4 = {
+        'position': new window.google.maps.LatLng( 40.5489025 , 14.1960389 ),
+        'map': map,
+        'title': 'Capri',
+        'zIndex' : 4,
+        'icon': ''
+      };
+
+     var infowindow4 = new window.google.maps.InfoWindow({
+       content: 'Capri'
+     });
+
+     var marker4 = new window.google.maps.Marker(opts4);
+
+     marker4.addListener('click', function(){
+       infowindow4.open(map, marker4)
+     })
+     
+     
+     var opts5 = {
+        'position': new window.google.maps.LatLng( 0.6295773 , 14.4769233 ),
+        'map': map,
+        'title': 'Positano',
+        'zIndex' : 5,
+        'icon': ''
+      };
+
+     var infowindow5 = new window.google.maps.InfoWindow({
+       content: 'Positano'
+     });
+
+     var marker5 = new window.google.maps.Marker(opts5);
+
+     marker5.addListener('click', function(){
+       infowindow5.open(map, marker5)
+     })
+   
+
+  }
+  function makeMaps() {
+    for (var map in window.hexoGmaps.maps) {
+       console.log('map #', map);
+       window.hexoGmaps.maps[map]();
+    }
+  }
+  function loadScript() {
+    window.hexoGmaps.googleScriptLoaded = true;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+        script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&callback=makeMaps&key=AIzaSyB6JxSOGlpKd-7pPtKKG_BIEOiLlaRHxMQ';
+    document.body.appendChild(script);
+  }
+  if (!window.hexoGmaps.googleScriptLoaded) {
+    loadScript();
+  }
+</script>
+
+<a id="more"></a>
+
+<p>从日本 🇯🇵 回来不到三个月赶上国庆大长假</p>
+<p>因为办了美帝签证和日本三年往返签证<br>材料准备的一堆继续用<br>所以申根签证没怎么担心</p>
+<h2 id="罗马"><a href="#罗马" class="headerlink" title="罗马"></a>罗马</h2><p>从帝都做意大利航空经过 11 小时飞到罗马 🇷🇴</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-00.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-03.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-04.jpg" alt=""></div></div></div>
+
+<h2 id="索伦托"><a href="#索伦托" class="headerlink" title="索伦托"></a>索伦托</h2><p>不同于常见的第一次飞意大利的向北<br>罗马-弗洛伦萨-米兰-威尼斯 路线</p>
+<p>小伙伴们反向操作<br>做小火车一路往南来到 索伦托</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-05.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-07.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-09.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-13.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-14.jpg" alt=""></div></div></div>
+
+<p>远处的那个小山包应该就是 维苏威 了</p>
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -1.334ex" xmlns="http://www.w3.org/2000/svg" width="25.282ex" height="4.68ex" role="img" focusable="false" viewBox="0 -1479 11174.6 2068.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D467" d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z"></path></g><g data-mml-node="mo" transform="translate(742.8, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msup" transform="translate(1798.6, 0)"><g data-mml-node="mfrac"><g data-mml-node="mn" transform="translate(925, 394) scale(0.707)"><path data-c="37" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z"></path></g><g data-mml-node="mrow" transform="translate(220, -515.3) scale(0.707)"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="msqrt" transform="translate(571, 0)"><g transform="translate(853, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500, 0)"><path data-c="1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path></g></g><g data-mml-node="mo" transform="translate(0, 112.6)"><path data-c="221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path></g><rect width="1070" height="42.4" x="853" y="870.1"></rect></g></g><rect width="1963.5" height="60" x="120" y="220"></rect></g><g data-mml-node="TeXAtom" transform="translate(2203.5, 599.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mfrac" transform="translate(778, 0)"><g data-mml-node="mrow" transform="translate(220, 516.8) scale(0.707)"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="msup" transform="translate(389, 0)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(572, 363)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g><g data-mml-node="mo" transform="translate(1511, 0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="msup" transform="translate(2289, 0)"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(490, 363)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g><g data-mml-node="msup" transform="translate(3329, 0)"><g data-mml-node="mo"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(389, 363)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></g><g data-mml-node="mrow" transform="translate(1155.9, -515.3) scale(0.707)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="msup" transform="translate(500, 0)"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(571, 289)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></g><rect width="3217.9" height="60" x="120" y="220"></rect></g></g></g><g data-mml-node="mo" transform="translate(7047.3, 0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(7492, 0)"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="mo" transform="translate(8340.8, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(9396.6, 0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500, 0)"></path><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z" transform="translate(778, 0)"></path><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z" transform="translate(1278, 0)"></path></g></g></g></svg></mjx-container></p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-15.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-100.jpg" alt=""></div></div></div>
+
+<h2 id="庞贝古城"><a href="#庞贝古城" class="headerlink" title="庞贝古城"></a>庞贝古城</h2><blockquote>
+<p>在灰烬下保存了大量的出土城市，提供了一个独特的罗马生活的缩影，在它被埋葬的那一刻，它被冻结了，并提供了对其居民日常生活的异常详细的洞察，尽管许多证据在早期的挖掘中丢失了。这是一个富裕的城市，享有许多精美的公共建筑和豪华的私人住宅，其奢华的装饰、家具和艺术品是早期发掘者的主要吸引力。包括木制物品和人体在内的有机残骸被埋在灰烬中，腐烂后留下空隙，考古学家发现这些空隙可以用作模具，在生命的最后时刻制作独特的、往往是可怕的人物的石膏模型。墙壁上和房间内刻有大量的涂鸦，提供了大量的例子，说明了当时已基本失传的俗语拉丁语，与古典作家的正式语言形成鲜明对比。<br>庞贝是联合国教科文组织的世界文化遗产，是意大利最受欢迎的旅游景点之一，每年约有 250 万游客前来参观。</p>
+</blockquote>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-17.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-18.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-19.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-22.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-24.jpg" alt=""></div></div></div>
+
+<h2 id="维苏威火山大爆发"><a href="#维苏威火山大爆发" class="headerlink" title="维苏威火山大爆发"></a>维苏威火山大爆发</h2><blockquote>
+<p>下午 1 点左右，维苏威火山猛烈喷发，喷出高空的火山柱，火山灰和浮石开始落下，笼罩了整个地区。在此期间，发生了一些救援和逃生事件。在夜间或第二天早些时候，火山附近开始出现火成岩流。在山上看到的灯光被解释为火灾。远在米塞努姆的人们纷纷逃命。火山碎石流移动迅速、密度大、温度高，全部或部分地摧毁了路径上的所有结构，焚烧或窒息了剩余的人口，并改变了景观，包括海岸线。与此同时，那不勒斯湾还发生了轻微的地震和轻微的海啸。到了第二天傍晚，火山喷发已经结束，只在大气中留下了雾气，阳光微弱地照射着。<br>年轻的普林尼写了一篇关于火山喷发的记录。<br>宽大的火焰照亮了维苏威火山的许多地方；它们的光和亮度比黑夜更生动……世界其他地方现在是白天，但那里的黑暗比任何夜晚都要黑暗和浓重。</p>
+</blockquote>
+<h3 id="庞贝大剧院"><a href="#庞贝大剧院" class="headerlink" title="庞贝大剧院"></a>庞贝大剧院</h3><blockquote>
+<p>庞贝的剧场区位于城市的西南部地区。构成这一区域的主要建筑有三座：大剧院、颂歌厅（小剧场）和四合院。这里作为城市的娱乐和会议中心。<br>大剧院建于公元前二世纪的一座天然山丘上。这座剧院大约可容纳 5000 名观众，是罗马最初的永久性石质剧院之一。<br>剧院在现代一直被用来举办音乐会、歌剧和戏剧。2008 年，开始进行修复工作，以便能够进一步进行戏剧和音乐表演。重新开放后，2014 年上演了普契尼的《波西米亚》和比才的《卡门》。</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-27.jpg" alt=""></p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-26.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-29.jpg" alt=""></div></div></div>
+
+<p>远远到黑云压压的火山 🌋<br>很难想象岩浆可以覆盖到这里</p>
+<h3 id="庞贝竞技场"><a href="#庞贝竞技场" class="headerlink" title="庞贝竞技场"></a>庞贝竞技场</h3><blockquote>
+<p>现在的圆形剧场大约建于公元前 70 年，是目前已知最早的罗马圆形剧场，是用石头建造的，以前都是用木头建造的。<br>除了作为历史地标和考古研究对象外，露天剧场在现代还被用于举办音乐会和其他公共活动。</p>
+</blockquote>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-30.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-28.jpg" alt=""></div></div></div>
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-32.jpg" alt=""></p>
+<h2 id="维苏威火山"><a href="#维苏威火山" class="headerlink" title="维苏威火山"></a>维苏威火山</h2><blockquote>
+<p>公元 79 年维苏威火山的爆发摧毁了罗马的庞贝、赫库兰尼姆、奥普隆提斯和斯塔比亚等城市以及其他几个定居点，最终释放的热能是广岛和长崎原子弹爆炸所释放的热能的 10 万倍。<br>维苏威火山此后多次喷发，是欧洲大陆上唯一一座在过去一百年内喷发的火山。今天，维苏威火山被认为是世界上最危险的火山之一，因为它附近有 300 万人生活在足以受到火山爆发影响的地方，其中 60 万人处于危险区，使它成为世界上人口最稠密的火山地区，而且它还倾向于发生普利尼亚式的暴力爆炸性喷发。</p>
+</blockquote>
+<blockquote>
+<p>维苏威火山是由非洲板块和欧亚板块这两个板块碰撞形成的。前者在后者的下方俯冲，深入地底。当大洋性非洲板块的水饱和沉积物被推到地球内部更热的深处时，水沸腾了，降低了上层地幔的熔点，足以使岩石部分熔化。由于岩浆的密度比周围的固体岩石小，所以它被向上推。找到了地球表面的薄弱点，岩浆冲破了，从而形成了火山。</p>
+</blockquote>
+<blockquote>
+<p>1995 年 6 月 5 日，维苏威火山周围地区被正式宣布为国家公园。维苏威火山顶峰对游客开放，火山周围有一个小的道路网，周末由公园当局维护。在距离山顶 200 米(660 英尺)以内的地方(垂直测量)可以通过公路进入，但此后只能步行进入。从公路到火山口有一条环绕火山的螺旋形通道。</p>
+</blockquote>
+<p>之前以为是小山包<br>实际过来还是还蛮大的，海拔约 1km</p>
+<p>如上面所诉<br>做巴士盘山上升，最后一段斜坡需要自己走上去<br>最好穿紧致的鞋子，不然都是火山灰</p>
+<p>火山口内部没有岩浆，但有些地方在冒烟</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-35.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-38.jpg" alt=""></div></div><div class="group-picture-row"></div><div class="group-picture-row"></div></div>
+
+<p>有些云下面像是有东西托着一样整整齐齐<br>有些不时的迎面扑来<br>让人联想到 《降临》 里云飘过山峰的场景<br>这次真的站在云彩里了</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-40.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-41.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-48.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-49.jpg" alt=""></div></div></div>
+
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-50.jpg" alt=""></p>
+<h2 id="波西塔诺"><a href="#波西塔诺" class="headerlink" title="波西塔诺"></a>波西塔诺</h2><blockquote>
+<p>波西塔诺是一个梦乡，你在时，她不是很真切，你离开后，她变的栩栩如生。</p>
+</blockquote>
+<p>这种建在山上的小房子就很奇特，跑酷的绝佳场所<br>曾经玩刺客信条时， Ezio 就是在意大利翻檐走壁</p>
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-53.jpg" alt=""></p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-55.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-57.jpg" alt=""></div></div></div>
+
+<p>海边有小艇可以出海</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-62.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-63.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-68.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-69.jpg" alt=""></div></div></div>
+
+<p>回来时已经晚上了<br>灯火通明像是电影里的场景</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-65.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-66.jpg" alt=""></div></div></div>
+
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-67.jpg" alt=""></p>
+<blockquote>
+<p>丁达尔效应是胶体中或极细悬浮液中的粒子对光的散射。也被称为丁达尔散射，它与瑞利散射相似(Aldnoah Zero)，散射光的强度与波长的四次方成反比，所以蓝光比红光散射得更强烈。</p>
+</blockquote>
+<p>仿佛魔戒一样</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-70.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-71.jpg" alt=""></div></div></div>
+
+<h2 id="卡普里岛"><a href="#卡普里岛" class="headerlink" title="卡普里岛"></a>卡普里岛</h2><blockquote>
+<p>除了是作家和艺术家的天堂，卡普里也是外国男同性恋者相对安全的地方，他们可以过上更开放的生活；他们中的一小部分人被吸引到那里生活，在一定程度上与上面提到的创造性类型重叠。</p>
+</blockquote>
+<p>小艇绕行一周大概一小时<br>可惜小伙伴要提前回去赶飞机<br>所以只绕了 1/2 就回去了</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-74.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-76.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-77.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-86.jpg" alt=""></div></div></div>
+
+<h2 id="蓝洞"><a href="#蓝洞" class="headerlink" title="蓝洞"></a>蓝洞</h2><blockquote>
+<p>当光线通过水面进入洞窟时，红色的反射被过滤掉，只有蓝光进入洞窟。放在石窟水中的物体，著名的是呈现银色。这是由于细小的气泡造成的，当它们被放置在水下时，气泡覆盖在物体的外面。这些气泡导致光线折射的方式与周围的水不同，从而产生了银色效果。</p>
+</blockquote>
+<blockquote>
+<p>部分原因是由于水面上的洞口发出的光有耀眼的效果，洞中的水比空气中的光更充沛。游客将手放在水中，可以看到水在这种光线下诡异地 “发光”。</p>
+</blockquote>
+<p>小艇的人和我们介绍岛上有最蓝的蓝洞<br>信以为真<br>晚上回去听隔海相望的在西班牙 🇪🇸 旅游的财务总监也说看到了最蓝的蓝洞</p>
+<p>和她说一定是被骗子骗了<br>毕竟蓝洞只有</p>
+<ul>
+<li>蓝色洞穴（Biševo），克罗地亚的 Biševo 岛上的一个山洞</li>
+<li>蓝色洞穴（卡普里岛），意大利卡普里岛上的一个山洞</li>
+<li>蓝色洞穴（Kastelorizo​​），希腊的梅吉斯蒂岛（Kastelorizo​​）上的一个洞穴</li>
+<li>蓝洞（马耳他），在马耳他的一个山洞</li>
+<li>蓝洞，布鲁克林大桥曼哈顿尽头的区域</li>
+<li>Grotta dello Smeraldo，在意大利阿马尔菲海岸的一个山洞</li>
+</ul>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-88.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-89.jpg" alt=""></div></div></div>
+
+<h2 id="地中海蓝"><a href="#地中海蓝" class="headerlink" title="地中海蓝"></a>地中海蓝</h2><p>不同于之前在加州见到的太平洋蓝<br>这地中海蓝像是浓稠的染料</p>
+<blockquote>
+<p>地中海几乎是内陆，这影响了地中海的条件：例如，由于与大西洋的狭窄连接，潮汐非常有限。地中海的特点是，它的深蓝色让人一目了然。</p>
+</blockquote>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-83.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-79.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-78.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-85.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-84.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-0-93.jpg" alt=""></div></div></div>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+        <tag>LittleMaster</tag>
+        <tag>Italy</tag>
+        <tag>🇮🇹</tag>
+      </tags>
+  </entry>
 </search>
