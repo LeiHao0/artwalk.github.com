@@ -13265,7 +13265,7 @@
   <entry>
     <title>🇯🇵-0-1</title>
     <url>/cn/japan-0-1/</url>
-    <content><![CDATA[<div id="googleMap6365" style="
+    <content><![CDATA[<div id="googleMap6617" style="
             height: 450px;
             width: 100%;
             margin: 0px;
@@ -13275,13 +13275,13 @@
 <style>.gmnoprint img {max-width: none !important;}</style>
 <script defer="defer">
   window.hexoGmaps = window.hexoGmaps || { maps: {}};
-  window.hexoGmaps.maps['initgoogleMap6365'] = function init() {
+  window.hexoGmaps.maps['initgoogleMap6617'] = function init() {
     var mapOptions = {
        'scrollwheel': false,
        'zoom': 12.5,
        'center': new window.google.maps.LatLng( 35.6888043 , 139.7464185 ),
      },
-     target = document.getElementById('googleMap6365'),
+     target = document.getElementById('googleMap6617'),
      map = new window.google.maps.Map(target, mapOptions);
       
      
@@ -13380,7 +13380,7 @@
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-15.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-18.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-19.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-20.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-21.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-22.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-23.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-24.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-25.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-26.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-27.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-28.jpg" alt=""></div></div></div>
 
 <p>以往出门，说都会带上 1.5L 的动脉<br>日本到处都有贩卖机，所以不用带水<br>唯一尴尬的是没有垃圾桶，喝完只能拿着瓶子，期待下一个贩卖机有回收桶</p>
-<p>WC 还有 LGBT 🏳️‍🌈 人群</p>
+<p>WC 还提供 LGBT 🏳️‍🌈</p>
 <p>路过 雷门，旁边有小火车展览海报</p>
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-31.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-32.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-33.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-30.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-34.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-35.jpg" alt=""></div></div></div>
 
@@ -13416,7 +13416,7 @@
 <p>耳闻这边老年人开出租车 🚕<br>目睹怎么忍心让老爷爷去搬运行李 🧳 呢</p>
 <p>检票后时间还早，来到全日空头等舱休息室<br>水果 牛奶 饮料 面包 蛋糕 无限供应<br>🍉 🥛 🥤 🍞 🍰<br>就差真的去洗澡了<br>🛀 😂</p>
 <p>在飞机上看到了富士山 🗻<br>因为在休息室已经吃饱了<br>只好放平睡觉 💤</p>
-<p>结束这第一次短暂的 🇯🇵 之旅</p>
+<p>然后就结束了这第一次短暂的 🇯🇵 日本之旅</p>
 <p>十分喜欢日本的洁净以及秩序井然<br>买的鞋子直到离开还是像刚买的一样</p>
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-68.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-69.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-70.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-71.jpg" alt=""></div></div></div>
 
