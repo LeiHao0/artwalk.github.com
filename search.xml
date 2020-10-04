@@ -8248,4 +8248,200 @@
         <tag>🇮🇹</tag>
       </tags>
   </entry>
+  <entry>
+    <title>🇮🇹-0-1</title>
+    <url>/italy-0-1/</url>
+    <content><![CDATA[<div id="googleMap1024" style="
+            height: 450px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px
+            ">
+</div>
+<style>.gmnoprint img {max-width: none !important;}</style>
+<script defer="defer">
+  window.hexoGmaps = window.hexoGmaps || { maps: {}};
+  window.hexoGmaps.maps['initgoogleMap1024'] = function init() {
+    var mapOptions = {
+       'scrollwheel': false,
+       'zoom': 10,
+       'center': new window.google.maps.LatLng( 40.6973724 , 14.1294367 ),
+     },
+     target = document.getElementById('googleMap1024'),
+     map = new window.google.maps.Map(target, mapOptions);
+      
+     
+     
+     var opts0 = {
+        'position': new window.google.maps.LatLng( 40.8419781 , 14.2592937 ),
+        'map': map,
+        'title': 'Naples',
+        'zIndex' : 0,
+        'icon': ''
+      };
+
+     var infowindow0 = new window.google.maps.InfoWindow({
+       content: 'Naples'
+     });
+
+     var marker0 = new window.google.maps.Marker(opts0);
+
+     marker0.addListener('click', function(){
+       infowindow0.open(map, marker0)
+     })
+     
+     
+     var opts1 = {
+        'position': new window.google.maps.LatLng( 40.8223812 , 14.4113963 ),
+        'map': map,
+        'title': 'Mount Vesuvius',
+        'zIndex' : 1,
+        'icon': ''
+      };
+
+     var infowindow1 = new window.google.maps.InfoWindow({
+       content: 'Mount Vesuvius'
+     });
+
+     var marker1 = new window.google.maps.Marker(opts1);
+
+     marker1.addListener('click', function(){
+       infowindow1.open(map, marker1)
+     })
+     
+     
+     var opts2 = {
+        'position': new window.google.maps.LatLng( 40.7466183 , 14.4761726 ),
+        'map': map,
+        'title': 'Pompei',
+        'zIndex' : 2,
+        'icon': ''
+      };
+
+     var infowindow2 = new window.google.maps.InfoWindow({
+       content: 'Pompei'
+     });
+
+     var marker2 = new window.google.maps.Marker(opts2);
+
+     marker2.addListener('click', function(){
+       infowindow2.open(map, marker2)
+     })
+     
+     
+     var opts3 = {
+        'position': new window.google.maps.LatLng( 40.6237862 , 14.3576818 ),
+        'map': map,
+        'title': 'Sorrento',
+        'zIndex' : 3,
+        'icon': ''
+      };
+
+     var infowindow3 = new window.google.maps.InfoWindow({
+       content: 'Sorrento'
+     });
+
+     var marker3 = new window.google.maps.Marker(opts3);
+
+     marker3.addListener('click', function(){
+       infowindow3.open(map, marker3)
+     })
+     
+     
+     var opts4 = {
+        'position': new window.google.maps.LatLng( 40.5489025 , 14.1960389 ),
+        'map': map,
+        'title': 'Capri',
+        'zIndex' : 4,
+        'icon': ''
+      };
+
+     var infowindow4 = new window.google.maps.InfoWindow({
+       content: 'Capri'
+     });
+
+     var marker4 = new window.google.maps.Marker(opts4);
+
+     marker4.addListener('click', function(){
+       infowindow4.open(map, marker4)
+     })
+     
+     
+     var opts5 = {
+        'position': new window.google.maps.LatLng( 0.6295773 , 14.4769233 ),
+        'map': map,
+        'title': 'Positano',
+        'zIndex' : 5,
+        'icon': ''
+      };
+
+     var infowindow5 = new window.google.maps.InfoWindow({
+       content: 'Positano'
+     });
+
+     var marker5 = new window.google.maps.Marker(opts5);
+
+     marker5.addListener('click', function(){
+       infowindow5.open(map, marker5)
+     })
+   
+
+  }
+  function makeMaps() {
+    for (var map in window.hexoGmaps.maps) {
+       console.log('map #', map);
+       window.hexoGmaps.maps[map]();
+    }
+  }
+  function loadScript() {
+    window.hexoGmaps.googleScriptLoaded = true;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+        script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&callback=makeMaps&key=AIzaSyB6JxSOGlpKd-7pPtKKG_BIEOiLlaRHxMQ';
+    document.body.appendChild(script);
+  }
+  if (!window.hexoGmaps.googleScriptLoaded) {
+    loadScript();
+  }
+</script>
+
+<a id="more"></a>
+
+<h2 id="Naples-Molo-Immacolatella-Vecchia"><a href="#Naples-Molo-Immacolatella-Vecchia" class="headerlink" title="Naples (Molo Immacolatella Vecchia)"></a>Naples (Molo Immacolatella Vecchia)</h2><h2 id="Palermo"><a href="#Palermo" class="headerlink" title="Palermo"></a>Palermo</h2><h2 id="Taormina"><a href="#Taormina" class="headerlink" title="Taormina"></a>Taormina</h2><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-00.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-01.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-02.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-03.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-04.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-05.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-06.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-07.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-08.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-09.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-10.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-11.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-12.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-13.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-14.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-15.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-16.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-17.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-18.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-19.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-20.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-21.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-22.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-23.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-24.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-25.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-26.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-27.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-28.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-29.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-30.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-31.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-32.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-33.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-34.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-35.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-36.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-37.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-38.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-39.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-40.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-41.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-42.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-43.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-44.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-45.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-46.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-47.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-48.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-49.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-50.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-51.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-52.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-53.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-54.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-55.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-56.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-57.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-58.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-59.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-60.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-61.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-62.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-63.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-64.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-65.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-66.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-67.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-68.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-69.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-70.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-71.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-72.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-73.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-74.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-75.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-76.jpg" alt=""></div></div></div>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+        <tag>LittleMaster</tag>
+        <tag>Italy</tag>
+        <tag>🇮🇹</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode Binary Search Tree</title>
+    <url>/LeetCode-Binary-Search-Tree/</url>
+    <content><![CDATA[<h2 id="Validate-Binary-Search-Tree"><a href="#Validate-Binary-Search-Tree" class="headerlink" title="Validate Binary Search Tree"></a>Validate Binary Search Tree</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">isValidBST</span><span class="params">(<span class="number">_</span> root: TreeNode?)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> helper(root, <span class="type">Int</span>.<span class="built_in">min</span>, <span class="type">Int</span>.<span class="built_in">max</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">helper</span><span class="params">(<span class="number">_</span> node: TreeNode?, <span class="number">_</span> lower: Int, <span class="number">_</span> upper: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> n = node <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">true</span> &#125;</span><br><span class="line">        <span class="keyword">if</span> n.val &lt;= lower || n.val &gt;= upper &#123; <span class="keyword">return</span> <span class="literal">false</span> &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> helper(n.<span class="keyword">left</span>, lower, n.val) &amp;&amp; helper(n.<span class="keyword">right</span>, n.val, upper)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Binary-Search-Tree-Iterator"><a href="#Binary-Search-Tree-Iterator" class="headerlink" title="Binary Search Tree Iterator"></a>Binary Search Tree Iterator</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BSTIterator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> queue = [<span class="type">Int</span>]()</span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">helper</span><span class="params">(<span class="number">_</span> root: TreeNode?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> root = root <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        helper(root.<span class="keyword">left</span>)</span><br><span class="line">        queue.append(root.val)</span><br><span class="line">        helper(root.<span class="keyword">right</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(<span class="number">_</span> root: <span class="type">TreeNode?</span>) &#123;</span><br><span class="line">        helper(root)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">next</span><span class="params">()</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> queue.removeFirst()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">hasNext</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> !queue.isEmpty</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Search-in-a-Binary-Search-Tree"><a href="#Search-in-a-Binary-Search-Tree" class="headerlink" title="Search in a Binary Search Tree"></a>Search in a Binary Search Tree</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">searchBST</span><span class="params">(<span class="number">_</span> root: TreeNode?, <span class="number">_</span> val: Int)</span></span> -&gt; <span class="type">TreeNode?</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> root = root <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">        <span class="keyword">if</span> root.val == val &#123; <span class="keyword">return</span> root &#125;</span><br><span class="line">        <span class="keyword">if</span> val &lt; root.val &#123;</span><br><span class="line">            <span class="keyword">return</span> searchBST(root.<span class="keyword">left</span>, val)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> searchBST(root.<span class="keyword">right</span>, val)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Insert-into-a-Binary-Search-Tree"><a href="#Insert-into-a-Binary-Search-Tree" class="headerlink" title="Insert into a Binary Search Tree"></a>Insert into a Binary Search Tree</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">insertIntoBST</span><span class="params">(<span class="number">_</span> root: TreeNode?, <span class="number">_</span> val: Int)</span></span> -&gt; <span class="type">TreeNode?</span> &#123;</span><br><span class="line">        <span class="function"><span class="keyword">func</span> <span class="title">insert</span><span class="params">(<span class="number">_</span> root: TreeNode? = root, <span class="number">_</span> val: Int = val)</span></span> &#123;</span><br><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> root = root <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">            <span class="keyword">if</span> val &lt; root.val &#123;</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">let</span> l = root.<span class="keyword">left</span> &#123;</span><br><span class="line">                    insert(l, val)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    root.<span class="keyword">left</span> = <span class="type">TreeNode</span>(val)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">let</span> r = root.<span class="keyword">right</span> &#123;</span><br><span class="line">                    insert(r, val)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    root.<span class="keyword">right</span> = <span class="type">TreeNode</span>(val)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        insert()</span><br><span class="line">        <span class="keyword">return</span> root ?? <span class="type">TreeNode</span>(val)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Delete-Node-in-a-BST"><a href="#Delete-Node-in-a-BST" class="headerlink" title="Delete Node in a BST"></a>Delete Node in a BST</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">deleteNode</span><span class="params">(<span class="number">_</span> root: TreeNode?, <span class="number">_</span> key: Int)</span></span> -&gt; <span class="type">TreeNode?</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> root = root <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">        <span class="keyword">if</span> root.val == key &#123;</span><br><span class="line">            <span class="keyword">if</span> root.<span class="keyword">left</span> != <span class="literal">nil</span> &amp;&amp; root.<span class="keyword">right</span> != <span class="literal">nil</span> &#123;</span><br><span class="line">                <span class="keyword">var</span> p = root.<span class="keyword">right</span></span><br><span class="line">                <span class="keyword">while</span> p?.<span class="keyword">left</span> != <span class="literal">nil</span> &#123;  p = p?.<span class="keyword">left</span> &#125;</span><br><span class="line">                p?.<span class="keyword">left</span> = root.<span class="keyword">left</span></span><br><span class="line">                <span class="keyword">return</span> root.<span class="keyword">right</span></span><br><span class="line">            &#125; <span class="keyword">else</span>  &#123;</span><br><span class="line">                <span class="keyword">return</span> root.<span class="keyword">left</span> != <span class="literal">nil</span> ? root.<span class="keyword">left</span> : root.<span class="keyword">right</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> key &lt; root.val &#123;</span><br><span class="line">            root.<span class="keyword">left</span> = deleteNode(root.<span class="keyword">left</span>, key)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            root.<span class="keyword">right</span> = deleteNode(root.<span class="keyword">right</span>, key)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Kth-Largest-Element-in-a-Stream"><a href="#Kth-Largest-Element-in-a-Stream" class="headerlink" title="Kth Largest Element in a Stream"></a>Kth Largest Element in a Stream</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">KthLargest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> arr = [<span class="type">Int</span>]()</span><br><span class="line">    <span class="keyword">var</span> k = <span class="number">0</span></span><br><span class="line">    <span class="keyword">init</span>(<span class="number">_</span> k: <span class="type">Int</span>, <span class="number">_</span> nums: [<span class="type">Int</span>]) &#123;</span><br><span class="line">        <span class="keyword">self</span>.k = k</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums &#123; add(i) &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">(<span class="number">_</span> val: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> arr.<span class="built_in">count</span> &lt; k || val &gt; arr.first! &#123;</span><br><span class="line">            <span class="keyword">var</span> i = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; arr.<span class="built_in">count</span>, val &gt; arr[i] &#123;</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            arr.insert(val, at: i)</span><br><span class="line">            <span class="keyword">if</span> arr.<span class="built_in">count</span> &gt; k &#123;</span><br><span class="line">                arr.removeFirst()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr.first!</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Lowest-Common-Ancestor-of-a-Binary-Search-Tree"><a href="#Lowest-Common-Ancestor-of-a-Binary-Search-Tree" class="headerlink" title="Lowest Common Ancestor of a Binary Search Tree"></a>Lowest Common Ancestor of a Binary Search Tree</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">lowestCommonAncestor</span><span class="params">(<span class="number">_</span> root: TreeNode?, <span class="number">_</span> p: TreeNode?, <span class="number">_</span> q: TreeNode?)</span></span> -&gt; <span class="type">TreeNode?</span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> root = root, <span class="keyword">let</span> pv = p?.val, <span class="keyword">let</span> qv = q?.val <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">        <span class="keyword">if</span> root.val &gt;= <span class="built_in">min</span>(pv, qv) &amp;&amp; root.val &lt;= <span class="built_in">max</span>(pv, qv) &#123; <span class="keyword">return</span> root &#125;</span><br><span class="line">        <span class="keyword">return</span> root.val &gt; <span class="built_in">max</span>(pv, qv) ? lowestCommonAncestor(root.<span class="keyword">left</span>, p, q) : lowestCommonAncestor(root.<span class="keyword">right</span>, p, q)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Contains-Duplicate-III"><a href="#Contains-Duplicate-III" class="headerlink" title="Contains Duplicate III"></a>Contains Duplicate III</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Balanced-Binary-Tree"><a href="#Balanced-Binary-Tree" class="headerlink" title="Balanced Binary Tree"></a>Balanced Binary Tree</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">isBalanced</span><span class="params">(<span class="number">_</span> root: TreeNode?)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> helper(root).<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">helper</span><span class="params">(<span class="number">_</span> root: TreeNode?)</span></span> -&gt; (<span class="type">Int</span>, <span class="type">Bool</span>) &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> r = root <span class="keyword">else</span> &#123; <span class="keyword">return</span> (<span class="number">0</span>, <span class="literal">true</span>) &#125;</span><br><span class="line">        <span class="keyword">let</span> rl = helper(r.<span class="keyword">left</span>), rr = helper(r.<span class="keyword">right</span>)</span><br><span class="line">        <span class="keyword">return</span> (<span class="number">1</span> + <span class="built_in">max</span>(rl.<span class="number">0</span>, rr.<span class="number">0</span>), rl.<span class="number">1</span> &amp;&amp; rr.<span class="number">1</span> &amp;&amp; <span class="built_in">abs</span>(rl.<span class="number">0</span> - rr.<span class="number">0</span>) &lt;= <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Convert-Sorted-Array-to-Binary-Search-Tree"><a href="#Convert-Sorted-Array-to-Binary-Search-Tree" class="headerlink" title="Convert Sorted Array to Binary Search Tree"></a>Convert Sorted Array to Binary Search Tree</h2><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sortedArrayToBST</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">TreeNode?</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> nums.isEmpty &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">        <span class="keyword">let</span> n = nums.<span class="built_in">count</span>, h = n/<span class="number">2</span>, h1 = h+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> r = <span class="type">TreeNode</span>(nums[n/<span class="number">2</span>])</span><br><span class="line">        r.<span class="keyword">left</span> = sortedArrayToBST(<span class="type">Array</span>(nums[<span class="number">0</span>..&lt;h]))</span><br><span class="line">        r.<span class="keyword">right</span> = sortedArrayToBST(<span class="type">Array</span>(nums[h1...]))</span><br><span class="line">        <span class="keyword">return</span> r</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Swift</tag>
+      </tags>
+  </entry>
 </search>
