@@ -8251,7 +8251,7 @@
   <entry>
     <title>🇮🇹-0-1</title>
     <url>/italy-0-1/</url>
-    <content><![CDATA[<div id="googleMap1024" style="
+    <content><![CDATA[<div id="googleMap9873" style="
             height: 450px;
             width: 100%;
             margin: 0px;
@@ -8261,19 +8261,19 @@
 <style>.gmnoprint img {max-width: none !important;}</style>
 <script defer="defer">
   window.hexoGmaps = window.hexoGmaps || { maps: {}};
-  window.hexoGmaps.maps['initgoogleMap1024'] = function init() {
+  window.hexoGmaps.maps['initgoogleMap9873'] = function init() {
     var mapOptions = {
        'scrollwheel': false,
-       'zoom': 10,
-       'center': new window.google.maps.LatLng( 40.6973724 , 14.1294367 ),
+       'zoom': 6.5,
+       'center': new window.google.maps.LatLng( 39.286304 , 13.3756614 ),
      },
-     target = document.getElementById('googleMap1024'),
+     target = document.getElementById('googleMap9873'),
      map = new window.google.maps.Map(target, mapOptions);
       
      
      
      var opts0 = {
-        'position': new window.google.maps.LatLng( 40.8419781 , 14.2592937 ),
+        'position': new window.google.maps.LatLng( 40.8419184 , 14.2594855 ),
         'map': map,
         'title': 'Naples',
         'zIndex' : 0,
@@ -8292,15 +8292,15 @@
      
      
      var opts1 = {
-        'position': new window.google.maps.LatLng( 40.8223812 , 14.4113963 ),
+        'position': new window.google.maps.LatLng( 38.1405228 , 13.2872492 ),
         'map': map,
-        'title': 'Mount Vesuvius',
+        'title': 'Palermo',
         'zIndex' : 1,
         'icon': ''
       };
 
      var infowindow1 = new window.google.maps.InfoWindow({
-       content: 'Mount Vesuvius'
+       content: 'Palermo'
      });
 
      var marker1 = new window.google.maps.Marker(opts1);
@@ -8311,78 +8311,21 @@
      
      
      var opts2 = {
-        'position': new window.google.maps.LatLng( 40.7466183 , 14.4761726 ),
+        'position': new window.google.maps.LatLng( 37.8548943 , 15.2784163 ),
         'map': map,
-        'title': 'Pompei',
+        'title': 'Taormina',
         'zIndex' : 2,
         'icon': ''
       };
 
      var infowindow2 = new window.google.maps.InfoWindow({
-       content: 'Pompei'
+       content: 'Taormina'
      });
 
      var marker2 = new window.google.maps.Marker(opts2);
 
      marker2.addListener('click', function(){
        infowindow2.open(map, marker2)
-     })
-     
-     
-     var opts3 = {
-        'position': new window.google.maps.LatLng( 40.6237862 , 14.3576818 ),
-        'map': map,
-        'title': 'Sorrento',
-        'zIndex' : 3,
-        'icon': ''
-      };
-
-     var infowindow3 = new window.google.maps.InfoWindow({
-       content: 'Sorrento'
-     });
-
-     var marker3 = new window.google.maps.Marker(opts3);
-
-     marker3.addListener('click', function(){
-       infowindow3.open(map, marker3)
-     })
-     
-     
-     var opts4 = {
-        'position': new window.google.maps.LatLng( 40.5489025 , 14.1960389 ),
-        'map': map,
-        'title': 'Capri',
-        'zIndex' : 4,
-        'icon': ''
-      };
-
-     var infowindow4 = new window.google.maps.InfoWindow({
-       content: 'Capri'
-     });
-
-     var marker4 = new window.google.maps.Marker(opts4);
-
-     marker4.addListener('click', function(){
-       infowindow4.open(map, marker4)
-     })
-     
-     
-     var opts5 = {
-        'position': new window.google.maps.LatLng( 0.6295773 , 14.4769233 ),
-        'map': map,
-        'title': 'Positano',
-        'zIndex' : 5,
-        'icon': ''
-      };
-
-     var infowindow5 = new window.google.maps.InfoWindow({
-       content: 'Positano'
-     });
-
-     var marker5 = new window.google.maps.Marker(opts5);
-
-     marker5.addListener('click', function(){
-       infowindow5.open(map, marker5)
      })
    
 
@@ -8407,7 +8350,48 @@
 
 <a id="more"></a>
 
-<h2 id="Naples-Molo-Immacolatella-Vecchia"><a href="#Naples-Molo-Immacolatella-Vecchia" class="headerlink" title="Naples (Molo Immacolatella Vecchia)"></a>Naples (Molo Immacolatella Vecchia)</h2><h2 id="Palermo"><a href="#Palermo" class="headerlink" title="Palermo"></a>Palermo</h2><h2 id="Taormina"><a href="#Taormina" class="headerlink" title="Taormina"></a>Taormina</h2><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-00.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-01.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-02.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-03.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-04.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-05.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-06.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-07.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-08.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-09.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-10.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-11.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-12.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-13.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-14.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-15.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-16.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-17.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-18.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-19.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-20.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-21.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-22.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-23.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-24.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-25.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-26.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-27.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-28.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-29.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-30.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-31.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-32.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-33.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-34.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-35.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-36.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-37.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-38.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-39.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-40.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-41.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-42.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-43.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-44.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-45.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-46.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-47.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-48.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-49.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-50.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-51.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-52.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-53.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-54.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-55.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-56.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-57.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-58.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-59.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-60.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-61.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-62.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-63.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-64.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-65.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-66.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-67.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-68.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-69.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-70.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-71.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-72.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-73.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-74.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-75.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-76.jpg" alt=""></div></div></div>
+<h2 id="Naples-Molo-Immacolatella-Vecchia"><a href="#Naples-Molo-Immacolatella-Vecchia" class="headerlink" title="Naples (Molo Immacolatella Vecchia)"></a>Naples (Molo Immacolatella Vecchia)</h2><p>In the evening, leave Naples and go to Palermo by boat</p>
+<p>The suspended lifebuoy and lifeboat can not help but remind people of the Titanic</p>
+<p>In fact, this ship is much bigger than the Titanic<br>Can handle the entire parking lot next to the car<br>In the calm Mediterranean again, there are no icebergs, don’t worry about sinking ships<br>You can also see this huge cruise ship on Google Map<br>The cabin is small but has a separate toilet, and can also be hot and rainy</p>
+<p>The shaking cabin and the siren are very hypnotic</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-22.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-03.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-00.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-02.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-04.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-05.jpg" alt=""></div></div></div>
+
+<p>Struggling to get up the next day to watch the sunrise 🌄</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-08.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-11.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-07.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-10.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-16.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-14.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-17.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-21.jpg" alt=""></div></div></div>
+
+<p>No Tenet at that time<br>No temporal pincer movement<br>No waves shrink<br>No Seagull flying backwards</p>
+<p>🌊 🐦</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-12.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-18.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-23.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-24.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-26.jpg" alt=""></div></div></div>
+
+<h2 id="Sicilia"><a href="#Sicilia" class="headerlink" title="Sicilia"></a>Sicilia</h2><h3 id="Palermo"><a href="#Palermo" class="headerlink" title="Palermo"></a>Palermo</h3><p>My friends rented a sea view room by the sea<br>About three floors, there is an echo<br>The decor is very Sicilian</p>
+<p>Not far from Al Cantastorie<br>Although the score is very low, and the seaside smell is very strong<br>But this lobster spaghetti is really delicious<br>I never encountered this practice in my subsequent journey</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-27.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-28.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-29.jpg" alt=""></div></div></div>
+
+<ul>
+<li>B &amp; B Teatro del Sole</li>
+<li>Quattro Canti</li>
+<li>Cattedrale di Palermo</li>
+</ul>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-30.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-31.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-32.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-34.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-35.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-36.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-37.jpg" alt=""></div></div></div>
+
+<p>Just like a sticky note with scarlet letters<br>A few streets next to the residence, you need to be careful to step on the shit everywhere<br>Greatly affected the play experience</p>
+<p>Of course, in order to avoid unnecessary trouble, the sticky note was secretly torn off by another friend before leaving</p>
+<p>But I can’t stand it. Sicily’s capital Palermo has become a shit town.</p>
+<h3 id="Taormina"><a href="#Taormina" class="headerlink" title="Taormina"></a>Taormina</h3><p>Fed up after shit<br>The summary analysis should be due to the Airbnb address<br>Unsubscribed from all next Airbnb<br>Hurry up Booking Eurostars Monte Tauro and Rome Marriott Park Hotel</p>
+<p>Wait until Taormina<br>I feel happy instantly because I live comfortably<br>Play UNO by the pool at night</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-39.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-40.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-41.jpg" alt=""></div></div></div>
+
+<h3 id="Gelato"><a href="#Gelato" class="headerlink" title="Gelato"></a>Gelato</h3><p>Italian ice cream is something special.<br>We’ll eat as we go along. We’ll buy whatever we see.<br>I’m afraid I’ll never eat again.</p>
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-47.jpg" alt=""></p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-42.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-43.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-44.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-45.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-46.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-48.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-51.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-52.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-53.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-54.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-55.jpg" alt=""></div></div></div>
+
+<h3 id="Istmo-di-Isola-Bella"><a href="#Istmo-di-Isola-Bella" class="headerlink" title="Istmo di Isola Bella"></a>Istmo di Isola Bella</h3><p>There is a narrow path, the sea is constantly scouring, you can walk to the island<br>Seeing others back and forth is like walking on water<br>I tried it myself and sinked steadily<br>When the sea washed up, there were signs of slipping</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-63.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-64.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-65.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-66.jpg" alt=""></div></div></div>
+
+<h2 id="Corte-Suprema-di-Cassazione"><a href="#Corte-Suprema-di-Cassazione" class="headerlink" title="Corte Suprema di Cassazione"></a>Corte Suprema di Cassazione</h2><p>Fly back to Rome<br>Passing by the Supreme Court<br>It really has historical characteristics</p>
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-75.jpg" alt=""><br><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-74.jpg" alt=""></p>
+<p>Arrived at Marriott and found that the facilities were a bit poor<br>There is also no free Wi-Fi, and additional fees are required for activation<br>The Book of Mormon and the New Testament are in the drawer</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-69.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-76.jpg" alt=""></div></div><div class="group-picture-row"></div></div>
 ]]></content>
       <tags>
         <tag>Travel</tag>

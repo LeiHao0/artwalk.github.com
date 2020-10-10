@@ -13725,4 +13725,156 @@
         <tag>Swift</tag>
       </tags>
   </entry>
+  <entry>
+    <title>🇮🇹-0-1</title>
+    <url>/cn/italy-0-1/</url>
+    <content><![CDATA[<div id="googleMap5671" style="
+            height: 450px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px
+            ">
+</div>
+<style>.gmnoprint img {max-width: none !important;}</style>
+<script defer="defer">
+  window.hexoGmaps = window.hexoGmaps || { maps: {}};
+  window.hexoGmaps.maps['initgoogleMap5671'] = function init() {
+    var mapOptions = {
+       'scrollwheel': false,
+       'zoom': 6.5,
+       'center': new window.google.maps.LatLng( 39.286304 , 13.3756614 ),
+     },
+     target = document.getElementById('googleMap5671'),
+     map = new window.google.maps.Map(target, mapOptions);
+      
+     
+     
+     var opts0 = {
+        'position': new window.google.maps.LatLng( 40.8419184 , 14.2594855 ),
+        'map': map,
+        'title': 'Naples',
+        'zIndex' : 0,
+        'icon': ''
+      };
+
+     var infowindow0 = new window.google.maps.InfoWindow({
+       content: 'Naples'
+     });
+
+     var marker0 = new window.google.maps.Marker(opts0);
+
+     marker0.addListener('click', function(){
+       infowindow0.open(map, marker0)
+     })
+     
+     
+     var opts1 = {
+        'position': new window.google.maps.LatLng( 38.1405228 , 13.2872492 ),
+        'map': map,
+        'title': 'Palermo',
+        'zIndex' : 1,
+        'icon': ''
+      };
+
+     var infowindow1 = new window.google.maps.InfoWindow({
+       content: 'Palermo'
+     });
+
+     var marker1 = new window.google.maps.Marker(opts1);
+
+     marker1.addListener('click', function(){
+       infowindow1.open(map, marker1)
+     })
+     
+     
+     var opts2 = {
+        'position': new window.google.maps.LatLng( 37.8548943 , 15.2784163 ),
+        'map': map,
+        'title': 'Taormina',
+        'zIndex' : 2,
+        'icon': ''
+      };
+
+     var infowindow2 = new window.google.maps.InfoWindow({
+       content: 'Taormina'
+     });
+
+     var marker2 = new window.google.maps.Marker(opts2);
+
+     marker2.addListener('click', function(){
+       infowindow2.open(map, marker2)
+     })
+   
+
+  }
+  function makeMaps() {
+    for (var map in window.hexoGmaps.maps) {
+       console.log('map #', map);
+       window.hexoGmaps.maps[map]();
+    }
+  }
+  function loadScript() {
+    window.hexoGmaps.googleScriptLoaded = true;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+        script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&callback=makeMaps&key=AIzaSyB6JxSOGlpKd-7pPtKKG_BIEOiLlaRHxMQ';
+    document.body.appendChild(script);
+  }
+  if (!window.hexoGmaps.googleScriptLoaded) {
+    loadScript();
+  }
+</script>
+
+<a id="more"></a>
+
+<h2 id="那不勒斯"><a href="#那不勒斯" class="headerlink" title="那不勒斯"></a>那不勒斯</h2><p>傍晚 离开 那不勒斯 坐船去 巴勒莫</p>
+<p>悬挂的救生圈和救生艇不禁让人联想到 泰坦尼克号</p>
+<p>实际上这船比 泰坦尼克号 大太多<br>可以吞吐旁边整个停车场的汽车<br>又在平静的地中海，没有冰山，不用担心沉船<br>在 Google Map 也可以看到这艘巨大的邮轮<br>船舱很小但有独立卫生间，还可以热水淋雨</p>
+<p>摇晃的船舱和汽笛十分催眠</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-22.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-03.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-00.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-02.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-04.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-05.jpg" alt=""></div></div></div>
+
+<p>第二天挣扎着起床看日出 🌄</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-08.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-11.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-07.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-10.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-16.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-14.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-17.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-21.jpg" alt=""></div></div></div>
+
+<p>那时还没 天能<br>没有时间钳形战术<br>没有浪花收缩<br>海鸥倒向飞行</p>
+<p>🌊 🐦</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-12.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-18.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-23.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-24.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-26.jpg" alt=""></div></div></div>
+
+<h2 id="西西里"><a href="#西西里" class="headerlink" title="西西里"></a>西西里</h2><h3 id="巴勒莫"><a href="#巴勒莫" class="headerlink" title="巴勒莫"></a>巴勒莫</h3><p>小伙伴们在海边租了海景房<br>大概三层楼，说话有回音<br>装饰很西西里</p>
+<p>不远的 Al Cantastorie<br>虽然评分很低，而且海边腥味很重<br>但是这个 lobster spaghetti 真的好吃到爆<br>后来的旅程再也没碰到过这种做法</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-27.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-28.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-29.jpg" alt=""></div></div></div>
+
+<ul>
+<li>B＆B 剧院剧院</li>
+<li>四首歌广场 (巴勒莫)</li>
+<li>巴勒莫大教堂</li>
+</ul>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-30.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-31.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-32.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-34.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-35.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-36.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-37.jpg" alt=""></div></div></div>
+
+<p>正如 红字的便签<br>住所旁边的几条街，需要随时小心踩到遍地的狗屎<br>大大影响了游玩体验</p>
+<p>当然，为了避免不必要的麻烦，临走前便签被另一个小伙伴偷偷撕掉了</p>
+<p>但顶不住 西西里 首府 巴勒莫 已沦为 狗屎镇</p>
+<h3 id="陶尔米纳"><a href="#陶尔米纳" class="headerlink" title="陶尔米纳"></a>陶尔米纳</h3><p>受够了 狗屎后<br>总结分析应该是 Airbnb 住址所致<br>便退订了接下来的所有 Airbnb<br>赶紧 Booking 了 欧洲之星蒙特道罗 和 罗马万豪公园</p>
+<p>等到 陶尔米纳 时<br>因为住的舒服，瞬间就开心了起来<br>晚上在泳池边打 UNO</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-39.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-40.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-41.jpg" alt=""></div></div></div>
+
+<h3 id="Gelato"><a href="#Gelato" class="headerlink" title="Gelato"></a>Gelato</h3><p>意大利的冰淇淋真是特殊的存在<br>一路逛一路吃，碰到就买<br>生怕回去了再也吃不到</p>
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-47.jpg" alt=""></p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-42.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-43.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-44.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-45.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-46.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-48.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-51.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-52.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-53.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-54.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-55.jpg" alt=""></div></div></div>
+
+<h3 id="爱奥尼亚海的珍珠"><a href="#爱奥尼亚海的珍珠" class="headerlink" title="爱奥尼亚海的珍珠"></a>爱奥尼亚海的珍珠</h3><p>有一条狭窄的小路，海水不停的冲刷，可以走到岛上去<br>看着别人来来回回像是水上行走<br>自己试了下，稳稳的沉下去<br>海水一冲，还有滑倒的迹象</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-63.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-64.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-65.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-66.jpg" alt=""></div></div></div>
+
+<h2 id="最高法院"><a href="#最高法院" class="headerlink" title="最高法院"></a>最高法院</h2><p>飞回罗马<br>路上经过 最高法院<br>真是有历史特色呢</p>
+<p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-75.jpg" alt=""><br><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-74.jpg" alt=""></p>
+<p>到了万豪发现设施有点差<br>也没免费 Wi-Fi，开通还需额外羊毛<br>抽屉里放着 摩门经 和 新约</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-69.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/ita-0-1-76.jpg" alt=""></div></div><div class="group-picture-row"></div></div>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+        <tag>LittleMaster</tag>
+        <tag>Italy</tag>
+        <tag>🇮🇹</tag>
+      </tags>
+  </entry>
 </search>
