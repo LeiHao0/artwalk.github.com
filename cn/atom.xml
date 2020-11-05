@@ -6,7 +6,7 @@
   <link href="/cn/atom.xml" rel="self"/>
   
   <link href="https://leihao0.github.io/cn/"/>
-  <updated>2020-09-16T18:20:00.598Z</updated>
+  <updated>2020-11-05T16:12:14.472Z</updated>
   <id>https://leihao0.github.io/cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何美股开户</title>
+    <link href="https://leihao0.github.io/cn/how-to-buy-us-stocks/"/>
+    <id>https://leihao0.github.io/cn/how-to-buy-us-stocks/</id>
+    <published>2020-11-05T15:00:03.000Z</published>
+    <updated>2020-11-05T16:12:14.472Z</updated>
+    
+    <content type="html"><![CDATA[<p>这两天美国大选<br>作为韭菜的就不分享因为时差<br>高位接盘，半夜大跌惊醒割肉<br>现在眼看着 🚀 一般的往上涨，又不敢入市的尴尬</p><p>只分享一下当时开户的心酸历程吧</p><h2 id="美国券商"><a href="#美国券商" class="headerlink" title="美国券商"></a>美国券商</h2><p>因为不少美国券商可免佣金，所以先看的</p><ul><li>Robinhood (用户界面比较好)</li><li>TD Ameritrade (老牌)</li><li>Firstrade (中文客服)</li></ul><p>Robinhood 因为被邀请双方都可以送股票，我问美国的小伙伴要到了码，然后去官网发现只能美国境内提交…<br>TD Ameritrade 倒是有 SG，网站，但是提交了资料不知道怎么卡在最后一步，邮件过去也没人审核<br>Firstrade ，非美国人自动帮提交 免税表格，提交了资料后，账户过了几个工作日终于开好了，然后发现 存款只能 ACH，Check, Wire Trannsfer</p><p>ACH，Check 都需要本人美国银行都账户转账，所以肯定不行<br>Wire Trannsfer 又要手续费</p><h2 id="新加坡券商"><a href="#新加坡券商" class="headerlink" title="新加坡券商"></a>新加坡券商</h2><p>然后又调研了 新加坡，发现这些人竟然走 UOB 或者 DBS 银行的 Trading Account<br>只听说手续费贵到天上去了，不值</p><h2 id="国内券商"><a href="#国内券商" class="headerlink" title="国内券商"></a>国内券商</h2><p>好吧，绕了一圈又回来了…</p><ul><li>小米的老虎</li><li>腾讯的富途</li><li>雪球的雪盈</li></ul><p>比较高兴的 🐯 支持新加坡开户，可以</p><ul><li>美股，港股，坡股，澳股…</li><li>支持 pre post market, 期货</li><li>杠杆</li></ul><p>我本来还打算上传护照什么的资料，反正之前也准备好了<br>结果发现支持 Singpass 认证，点了来回跳转了一下，就认证好了…</p><p>天呐早知道这么容易<br>我去年就开了不香吗</p><p>不然这时候已然翻了数倍<br>或者已经从天台跳下去了</p><h2 id="交易费"><a href="#交易费" class="headerlink" title="交易费"></a>交易费</h2><p>因为我不(敢)买期权<br>正常买卖额外支出分三块</p><ul><li>买 2$</li><li>股票总额 0.1%</li><li>卖 2$</li></ul><p>所以就算你陪光底裤， 🐯 也会盆满钵满</p><h2 id="Refer-code"><a href="#Refer-code" class="headerlink" title="Refer code"></a>Refer code</h2><p>可以用我的 code <code>0CM1QE</code></p><p>我看目前的活动是双方</p><ul><li>免 5 笔佣金</li><li>充 2000SGD 送 30SGD，3W 送 100SGD</li></ul><p>好吧，完全没 refer 的欲望<br>我记得以前是送一股阿里的股票啊，莫非现在涨太高给不起了？</p><h2 id="成绩单"><a href="#成绩单" class="headerlink" title="成绩单"></a>成绩单</h2><p>且看我在这两天全球股市大涨，夜里担惊受怕睡不着，一顿猛如虎的操作后的成绩单</p><p><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/how-to-buy-us-stocks.jpeg" alt=""></p><p>所以还等什么呢，快快注册吧</p><p>我在天台等你额～～～</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这两天美国大选&lt;br&gt;作为韭菜的就不分享因为时差&lt;br&gt;高位接盘，半夜大跌惊醒割肉&lt;br&gt;现在眼看着 🚀 一般的往上涨，又不敢入市的尴尬&lt;/p&gt;
+&lt;p&gt;只分享一下当时开户的心酸历程吧&lt;/p&gt;
+&lt;h2 id=&quot;美国券商&quot;&gt;&lt;a href=&quot;#美国券商&quot; class=&quot;hea
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Stock" scheme="https://leihao0.github.io/cn/tags/stock/"/>
+    
+      <category term="Broker" scheme="https://leihao0.github.io/cn/tags/broker/"/>
+    
+  </entry>
   
   <entry>
     <title>Python 的用途是什么</title>
@@ -466,30 +494,6 @@
       <category term="LeetCode" scheme="https://leihao0.github.io/cn/tags/leetcode/"/>
     
       <category term="Swift" scheme="https://leihao0.github.io/cn/tags/swift/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习课程 5</title>
-    <link href="https://leihao0.github.io/cn/Deep-Learning-Course-5/"/>
-    <id>https://leihao0.github.io/cn/Deep-Learning-Course-5/</id>
-    <published>2019-12-03T13:28:38.000Z</published>
-    <updated>2020-09-16T13:52:49.842Z</updated>
-    
-    <content type="html"><![CDATA[<p>哇，我在截止日期之前完成了它们。</p><p>😃😃😃</p><p><a href="https://www.coursera.org/account/accomplishments/specialization/8BQ77WBNDVQH">Deep Learning Specialization Certificate</a></p><h2 id="Week-1"><a href="#Week-1" class="headerlink" title="Week 1"></a>Week 1</h2><h3 id="Building-a-recurrent-neural-network-step-by-step"><a href="#Building-a-recurrent-neural-network-step-by-step" class="headerlink" title="Building a recurrent neural network - step by step"></a>Building a recurrent neural network - step by step</h3><h3 id="1-1-RNN-cell"><a href="#1-1-RNN-cell" class="headerlink" title="1.1 - RNN cell"></a>1.1 - RNN cell</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a_next = np.tanh(np.matmul(Waa, a_prev) + np.matmul(Wax, xt) + ba)</span><br><span class="line"></span><br><span class="line">yt_pred = softmax(np.matmul(Wya, a_next) + by)</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="1-2-RNN-forward-pass"><a href="#1-2-RNN-forward-pass" class="headerlink" title="1.2 - RNN forward pass"></a>1.2 - RNN forward pass</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xt = x[:,:,t]</span><br><span class="line">a_next, yt_pred, cache = rnn_cell_forward(xt, a_next, parameters)</span><br><span class="line"></span><br><span class="line">a[:,:,t] = a_next</span><br><span class="line"></span><br><span class="line">y_pred[:,:,t] = yt_pred</span><br><span class="line"></span><br><span class="line">caches.append(cache)</span><br></pre></td></tr></table></figure><h3 id="2-Long-Short-Term-Memory-LSTM-network"><a href="#2-Long-Short-Term-Memory-LSTM-network" class="headerlink" title="2 - Long Short-Term Memory (LSTM) network"></a>2 - Long Short-Term Memory (LSTM) network</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">concat = np.concatenate((a_prev, xt), axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">ft = sigmoid(np.matmul(Wf, concat) + bf)        <span class="comment"># forget gate</span></span><br><span class="line">it = sigmoid(np.matmul(Wi, concat) + bi)        <span class="comment"># update gate</span></span><br><span class="line">cct = np.tanh(np.matmul(Wc, concat) + bc)       <span class="comment"># candidate value</span></span><br><span class="line">c_next = ft*c_prev + it*cct    <span class="comment"># cell state</span></span><br><span class="line">ot = sigmoid(np.matmul(Wo, concat) + bo)        <span class="comment"># output gate</span></span><br><span class="line">a_next = ot * np.tanh(c_next)    <span class="comment"># hidden state</span></span><br><span class="line"></span><br><span class="line">yt_pred = softmax(np.matmul(Wy, a_next) + by)</span><br></pre></td></tr></table></figure><h3 id="2-2-Forward-pass-for-LSTM"><a href="#2-2-Forward-pass-for-LSTM" class="headerlink" title="2.2 - Forward pass for LSTM"></a>2.2 - Forward pass for LSTM</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Wy = parameters[<span class="string">'Wy'</span>]</span><br><span class="line">n_x, m, T_x = x.shape</span><br><span class="line">n_y, n_a = parameters[<span class="string">'Wy'</span>].shape</span><br><span class="line"></span><br><span class="line">a = np.zeros((n_a, m, T_x))</span><br><span class="line">c = np.zeros((n_a, m, T_x))</span><br><span class="line">y = np.zeros((n_y, m, T_x))</span><br><span class="line"></span><br><span class="line">a_next = a0</span><br><span class="line">c_next = c[:,:,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> range(T_x):</span><br><span class="line">    xt = x[:,:,t]</span><br><span class="line">    a_next, c_next, yt, cache = lstm_cell_forward(xt, a_next, c_next, parameters)</span><br><span class="line">    a[:,:,t] = a_next</span><br><span class="line">    c[:,:,t]  = c_next</span><br><span class="line">    y[:,:,t] = yt</span><br><span class="line">    caches.append(cache)</span><br></pre></td></tr></table></figure><p>…</p><p>Too much code and didn’t have time to record them as I have got the Certificate.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;哇，我在截止日期之前完成了它们。&lt;/p&gt;
-&lt;p&gt;😃😃😃&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.coursera.org/account/accomplishments/specialization/8BQ77WBNDVQH&quot;&gt;Deep Learning Specialization Certificate&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Week-1&quot;&gt;&lt;a href=&quot;#Week-1&quot; class=&quot;headerlink&quot; title=&quot;Week 1&quot;&gt;&lt;/a&gt;Week 1&lt;/h2&gt;&lt;h3 id=&quot;Building-a-recurrent-neural-network-step-by-step&quot;&gt;&lt;a href=&quot;#Building-a-recurrent-neural-network-step-by-step&quot; class=&quot;headerlink&quot; title=&quot;Building a recurrent neural network - step by step&quot;&gt;&lt;/a&gt;Building a recurrent neural network - step by step&lt;/h3&gt;&lt;h3 id=&quot;1-1-RNN-cell&quot;&gt;&lt;a href=&quot;#1-1-RNN-cell&quot; class=&quot;headerlink&quot; title=&quot;1.1 - RNN cell&quot;&gt;&lt;/a&gt;1.1 - RNN cell&lt;/h3&gt;&lt;figure class=&quot;highlight py&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;a_next = np.tanh(np.matmul(Waa, a_prev) + np.matmul(Wax, xt) + ba)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yt_pred = softmax(np.matmul(Wya, a_next) + by)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Deep Learning" scheme="https://leihao0.github.io/cn/tags/deep-learning/"/>
     
   </entry>
   

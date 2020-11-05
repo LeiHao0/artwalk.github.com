@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>https://leihao0.github.io/tags/broker/</loc>
+        <lastmod>2020-11-05T16:12:23.113Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/tags/stock/</loc>
+        <lastmod>2020-11-05T16:12:23.113Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/tags/tech/</loc>
         <lastmod>2020-11-05T11:17:42.264Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -215,13 +229,6 @@
     <url>
         <loc>https://leihao0.github.io/tags/reading/</loc>
         <lastmod>2020-09-16T17:38:10.182Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/tags/interview/</loc>
-        <lastmod>2020-09-16T17:37:22.076Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>https://leihao0.github.io/cn/tags/broker/</loc>
+        <lastmod>2020-11-05T16:12:14.472Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://leihao0.github.io/cn/tags/stock/</loc>
+        <lastmod>2020-11-05T16:12:14.472Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/cn/tags/tech/</loc>
         <lastmod>2020-11-05T11:17:42.264Z</lastmod>
         <changefreq>weekly</changefreq>

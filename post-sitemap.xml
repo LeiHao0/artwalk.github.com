@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://leihao0.github.io/how-to-buy-us-stocks/</loc>
+        <lastmod>2020-11-05T16:12:23.113Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://leihao0.github.io/how-to-install-reaver-on-mac-os-x/</loc>
         <lastmod>2020-11-05T11:17:42.264Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -202,22 +210,6 @@
     <url>
         <loc>https://leihao0.github.io/The-Graveyard-Book/</loc>
         <lastmod>2020-09-16T17:38:10.182Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/Threading-Programming-Guide/</loc>
-        <lastmod>2020-09-16T17:37:22.076Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://leihao0.github.io/Concurrency-Programming-Guide/</loc>
-        <lastmod>2020-09-16T17:37:11.532Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
