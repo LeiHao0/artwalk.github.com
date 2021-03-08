@@ -24,12 +24,12 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Particles on iOS need SpriteKit.">
+  <meta name="description" content="Particles on iOS require SpriteKit.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SKEmitterNode in SpriteKit Scene sks">
 <meta property="og:url" content="https://leihao0.github.io/SKEmitterNode-in-SpriteKit-Scene-sks/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="Particles on iOS need SpriteKit.">
+<meta property="og:description" content="Particles on iOS require SpriteKit.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.imgur.com/33lUmpg.gif">
 <meta property="og:image" content="https://i.imgur.com/LYmt4PZ.png">
@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://i.imgur.com/PHiz4VU.png">
 <meta property="og:image" content="https://i.imgur.com/qtYdAsH.png">
 <meta property="article:published_time" content="2018-12-12T15:24:48.000Z">
-<meta property="article:modified_time" content="2020-09-09T11:23:32.302Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.543Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="Xcode">
 <meta property="article:tag" content="SpriteKit">
@@ -293,11 +293,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -367,13 +362,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -458,7 +453,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 19:23:32" itemprop="dateModified" datetime="2020-09-09T19:23:32+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -483,7 +478,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>618</span>
+      <span>656</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -501,24 +496,24 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img src="https://i.imgur.com/33lUmpg.gif" alt=""><br>Particles on iOS need SpriteKit.</p>
+        <p><img src="https://i.imgur.com/33lUmpg.gif" alt=""><br>Particles on iOS require SpriteKit. </p>
 <a id="more"></a>
 
 <ol>
-<li>Add a file <code>MyScene.sks</code> in project</li>
-<li>Drag a SpriteKit View into Storyboard</li>
-<li>Drag two Emitters into <code>MyScene.sks</code></li>
-<li>Setup Emitter properties</li>
-<li>Drag actions you want to add on each Emitter</li>
+<li>Add the file MyScene.sks to the project </li>
+<li>Drag the SpriteKit view to the storyboard </li>
+<li>Drag the two launchers to <code>MyScene.sks</code> </li>
+<li>Set transmitter properties </li>
+<li>Drag the action you want to add on each launcher </li>
 </ol>
-<p>My previous understanding is that.</p>
+<p>My previous understanding is. </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> node = <span class="type">SKEmitterNode</span>(fileNamed: <span class="string">&quot;Fire&quot;</span>)</span><br><span class="line"><span class="keyword">let</span> scene = <span class="type">SKScene</span>(fileNamed: <span class="string">&quot;MyScene&quot;</span>)</span><br><span class="line">scene?.addChild(node)</span><br><span class="line"><span class="comment">// SKAction(...</span></span><br></pre></td></tr></table></figure>
 
-<p>To me, the surprise is that SpriteKit can have similar development experience, just like using Storyboard.</p>
-<p>The main reason I surrender to iOS Dev is Storyboard when I saw Paul Hegarty ctrl drag a button to code in his class.</p>
-<p>That’s amazing!</p>
-<p>Also, I saw many UIDynamic things I used to set up by code.</p>
-<p>Glad 😄 to have this brief exploring.</p>
+<p>To me, it is surprising that SpriteKit can have similar development experience as using Storyboard. </p>
+<p>When I saw Paul Hegarty ctrl drag the button to code in his class, the main reason I surrendered to iOS Dev was Storyboard. </p>
+<p>Excellent! </p>
+<p>In addition, I saw a lot of UIDynamic things that I used to set through code. </p>
+<p>It is a pleasure to carry out this brief exploration. </p>
 <p><img src="https://i.imgur.com/LYmt4PZ.png" alt=""></p>
 <p><img src="https://i.imgur.com/eL15HjC.png" alt=""></p>
 <p><img src="https://i.imgur.com/PHiz4VU.png" alt=""></p>
@@ -533,16 +528,10 @@ mjx-container[display="true"] + br {
   <div class="popular-posts-header">Related Posts</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/Segmentation-fault-11/" rel="bookmark">Segmentation fault: 11</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/How-to-add-Xib-on-StoryBoard/" rel="bookmark">How to add Xib on StoryBoard</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/UITextField-and-UILabel-Tips/" rel="bookmark">UITextField And UILabel Tips</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/Batch-replace-NamedColors-to-RGB-in-Storyboard/" rel="bookmark">Batch replace NamedColors to RGB in Storyboard</a></div>
     </li>
   </ul>
 
@@ -641,7 +630,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -652,13 +641,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

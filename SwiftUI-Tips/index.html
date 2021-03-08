@@ -32,7 +32,7 @@
 <meta property="og:description" content="Binding to UserDefaults1234567class UD: ObservableObject &amp;#123;    @Published var date: Date &#x3D; UserDefaults.standard.value(forKey: &quot;date&quot;) as? Date ?? Date() &amp;#123;        didSet &amp;#123;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-24T11:49:41.000Z">
-<meta property="article:modified_time" content="2020-09-09T11:07:10.568Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.550Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="SwiftUI">
 <meta name="twitter:card" content="summary">
@@ -286,11 +286,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -361,13 +356,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -452,7 +447,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 19:07:10" itemprop="dateModified" datetime="2020-09-09T19:07:10+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -499,7 +494,7 @@ mjx-container[display="true"] + br {
 
 <a id="more"></a>
 
-<h2 id="AppDelegate-gt-SceneDelegate"><a href="#AppDelegate-gt-SceneDelegate" class="headerlink" title="AppDelegate -&gt; SceneDelegate"></a>AppDelegate -&gt; SceneDelegate</h2><p>Many Delegates moved from <code>AppDelegate.swift</code> to <code>SceneDelegate.swift</code></p>
+<h2 id="AppDelegate-gt-SceneDelegate"><a href="#AppDelegate-gt-SceneDelegate" class="headerlink" title="AppDelegate -&gt; SceneDelegate"></a>AppDelegate -&gt; SceneDelegate</h2><p>Many Delegates moved from <code>AppDelegate.swift</code> to <code>SceneDelegate.swift</code> </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">application</span><span class="params">(<span class="number">_</span> app: UIApplication, <span class="keyword">open</span> url: URL, options: [UIApplication.OpenURLOptionsKey : <span class="keyword">Any</span>] = [:])</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// to</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scene</span><span class="params">(<span class="number">_</span> scene: UIScene, openURLContexts URLContexts: Set&lt;UIOpenURLContext&gt;)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="NavigationView-NavigationBarItems-NavigationLink"><a href="#NavigationView-NavigationBarItems-NavigationLink" class="headerlink" title="NavigationView, NavigationBarItems, NavigationLink"></a>NavigationView, NavigationBarItems, NavigationLink</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ContentView</span>: <span class="title">View</span> </span>&#123;</span><br><span class="line">    @<span class="type">EnvironmentObject</span> <span class="keyword">var</span> ud: <span class="type">UD</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> body: some <span class="type">View</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> url = <span class="string">&quot;Title:status?date=\(String(ud.firstDate.timeIntervalSince1970))&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="type">NavigationView</span> &#123;</span><br><span class="line">            <span class="type">VStack</span> &#123;</span><br><span class="line">                qrCodeImage(<span class="keyword">for</span>: url)!</span><br><span class="line"></span><br><span class="line">                <span class="type">Spacer</span>().frame(height: <span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">                <span class="type">Text</span>(<span class="string">&quot;\(ud.firstDate)&quot;</span>)</span><br><span class="line">            &#125;.navigationBarTitle(<span class="string">&quot;Title&quot;</span>)</span><br><span class="line">                .navigationBarItems(trailing:</span><br><span class="line">                    <span class="type">HStack</span> &#123;</span><br><span class="line">                        <span class="type">NavigationLink</span>(destination: <span class="type">PickerView</span>(firstDate: $ud.firstDate)) &#123;</span><br><span class="line">                            <span class="type">Image</span>(systemName: <span class="string">&quot;gear&quot;</span>)</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -547,13 +542,13 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/How-to-reduce-iCloud-storage-by-shrink-videos/" rel="prev" title="How to reduce iCloud storage by shrink videos">
-                  <i class="fa fa-chevron-left"></i> How to reduce iCloud storage by shrink videos
+                <a href="/How-to-reduce-iCloud-storage-by-shrink-videos/" rel="prev" title="How to reduce iCloud storage by shrinking videos">
+                  <i class="fa fa-chevron-left"></i> How to reduce iCloud storage by shrinking videos
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/The-Graveyard-Book/" rel="next" title="The Graveyard Book">
-                  The Graveyard Book <i class="fa fa-chevron-right"></i>
+                <a href="/The-Graveyard-Book/" rel="next" title="Cemetery Book">
+                  Cemetery Book <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -609,7 +604,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -620,13 +615,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

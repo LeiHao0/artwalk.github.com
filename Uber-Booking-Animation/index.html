@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="In June this year, I was in San Jose to join WWDC, that’s the time I saw the waiting animation when I was using Uber to meet a friend at Cupertino Library. The animation is awe-inspiring! I’m so curio">
+  <meta name="description" content="In June of this year, I joined WWDC in San Jose. It was the waiting animation I saw when I met my friends at the Cupertino Library using Uber.  The animation is awesome!  I was curious how they did it">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Uber Booking Animation">
+<meta property="og:title" content="Uber booking animation">
 <meta property="og:url" content="https://leihao0.github.io/Uber-Booking-Animation/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="In June this year, I was in San Jose to join WWDC, that’s the time I saw the waiting animation when I was using Uber to meet a friend at Cupertino Library. The animation is awe-inspiring! I’m so curio">
+<meta property="og:description" content="In June of this year, I joined WWDC in San Jose. It was the waiting animation I saw when I met my friends at the Cupertino Library using Uber.  The animation is awesome!  I was curious how they did it">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-10-03T01:45:19.000Z">
-<meta property="article:modified_time" content="2020-09-09T11:22:09.719Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.545Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="MapKit">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>Uber Booking Animation | LeiHao's Blog</title>
+  <title>Uber booking animation | LeiHao's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
     <script>
@@ -287,11 +287,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -348,7 +343,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preview"><span class="nav-number">1.</span> <span class="nav-text">Preview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-by-Step"><span class="nav-number">2.</span> <span class="nav-text">Step by Step</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rotate-Map"><span class="nav-number">2.1.</span> <span class="nav-text">Rotate Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pin-Animation"><span class="nav-number">2.2.</span> <span class="nav-text">Pin Animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Draw-Polyline-on-map"><span class="nav-number">2.3.</span> <span class="nav-text">Draw Polyline on map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Animate-Polyline"><span class="nav-number">2.4.</span> <span class="nav-text">Animate Polyline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Update"><span class="nav-number">2.4.1.</span> <span class="nav-text">Update</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preview"><span class="nav-number">1.</span> <span class="nav-text">Preview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-by-step"><span class="nav-number">2.</span> <span class="nav-text">Step by step</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rotate-the-map"><span class="nav-number">2.1.</span> <span class="nav-text">Rotate the map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fixed-animation"><span class="nav-number">2.2.</span> <span class="nav-text">Fixed animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Draw-a-polyline-on-the-map"><span class="nav-number">2.3.</span> <span class="nav-text">Draw a polyline on the map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Animated-polyline"><span class="nav-number">2.4.</span> <span class="nav-text">Animated polyline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Updates"><span class="nav-number">2.4.1.</span> <span class="nav-text">Updates</span></a></li></ol></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -362,13 +357,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -435,7 +430,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Uber Booking Animation
+          Uber booking animation
         </h1>
 
         <div class="post-meta-container">
@@ -453,7 +448,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 19:22:09" itemprop="dateModified" datetime="2020-09-09T19:22:09+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -478,7 +473,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>4.6k</span>
+      <span>4.7k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -496,43 +491,43 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>In June this year, I was in San Jose to join WWDC, that’s the time I saw the waiting animation when I was using Uber to meet a friend at Cupertino Library.</p>
-<p>The animation is awe-inspiring!</p>
-<p>I’m so curious how they did it, so I do a little bit of exploration.</p>
+        <p>In June of this year, I joined WWDC in San Jose. It was the waiting animation I saw when I met my friends at the Cupertino Library using Uber. </p>
+<p>The animation is awesome! </p>
+<p>I was curious how they did it, so I did some exploration. </p>
 <h2 id="Preview"><a href="#Preview" class="headerlink" title="Preview"></a>Preview</h2><video width="360" autoplay loop muted="true" >
 <source type="video/mp4" src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/UberBookingAnimation.mp4">
 </video>
 
-<p>Well, the polyline animation still not smooth enough. Does anyone have a better idea?</p>
+<p>Well, the polyline animation is still not smooth enough. Does anyone have a better idea? </p>
 <a id="more"></a>
 
-<h2 id="Step-by-Step"><a href="#Step-by-Step" class="headerlink" title="Step by Step"></a>Step by Step</h2><h3 id="Rotate-Map"><a href="#Rotate-Map" class="headerlink" title="Rotate Map"></a>Rotate Map</h3><p>I chose Map as the default map to demo because of two reasons:</p>
+<h2 id="Step-by-step"><a href="#Step-by-step" class="headerlink" title="Step by step"></a>Step by step</h2><h3 id="Rotate-the-map"><a href="#Rotate-the-map" class="headerlink" title="Rotate the map"></a>Rotate the map</h3><p>I chose Map as the default map to demonstrate for the following two reasons: </p>
 <ul>
-<li>After WWDC19, Simulator build on top of Meta, Core layer under all of Apple’s frameworks which MapKit included, Metal takes advantage of GPU of the underlying Mac system</li>
-<li>Google Map need a developer key to get access, which means you cannot run it directly on the simulator after forking the repository from GitHub</li>
+<li>After WWDC19, Simulator is built on the Meta and Core layers of all Apple frameworks included in MapKit, and Metal uses the GPU of the underlying Mac system. </li>
+<li>Google Map requires a developer key to access, which means that after forking the repository from GitHub, you cannot run it directly on the emulator </li>
 </ul>
-<p>Map transactions can be tuned by embed in <code>UIView.animate</code> block.</p>
+<p> Map transactions can be adjusted by embedding in the <code>UIView.animate</code> block </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UIView</span>.animate(withDuration: <span class="number">1</span>, delay: <span class="number">0</span>, options: .curveEaseInOut, animations: &#123;  [<span class="keyword">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">self</span>?.mapView.setCamera(<span class="type">MKMapCamera</span>(lookingAtCenter: center, fromDistance: fromDistance, pitch: pitch, heading: <span class="number">0</span>), animated: <span class="literal">true</span>)</span><br><span class="line">&#125;) &#123; b <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">self</span>.pinAnimation()</span><br><span class="line">    <span class="type">UIView</span>.animate(withDuration: <span class="number">180</span>, delay: <span class="number">0</span>, options: [.curveLinear, .autoreverse], animations: &#123;  [<span class="keyword">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">self</span>?.mapView.setCamera(<span class="type">MKMapCamera</span>(lookingAtCenter: center, fromDistance: fromDistance, pitch: pitch, heading: heading), animated: <span class="literal">true</span>)</span><br><span class="line">    &#125;, completion: <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Google Map has to use <code>CATransaction</code></p>
+<p>Google Map must use <code>CATransaction</code> </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">CATransaction</span>.begin()</span><br><span class="line"><span class="type">CATransaction</span>.setValue(<span class="type">NSNumber</span>(float: <span class="number">1.0</span>), forKey: kCATransactionAnimationDuration)</span><br><span class="line"><span class="comment">// change the camera, set the zoom, whatever.</span></span><br><span class="line"><span class="type">CATransaction</span>.commit()</span><br></pre></td></tr></table></figure>
 
-<h3 id="Pin-Animation"><a href="#Pin-Animation" class="headerlink" title="Pin Animation"></a>Pin Animation</h3><p>We need two `CAShapeLayer’s to do the animation, one for circle, the other for the pin.<br>Notice that the circle disappears after it reaches to maximum, and the pin has an easeIn curve.</p>
+<h3 id="Fixed-animation"><a href="#Fixed-animation" class="headerlink" title="Fixed animation"></a>Fixed animation</h3><p>We need two <code>CAShapeLayer</code> to make the animation, one for the circle and the other for the pushpin.<br>Note that the circle disappears after reaching the maximum value, and the pin has an <code>easyIn</code> curve. </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//   Pin Animation</span></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">MainViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setUpLayers</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        circleLayer.lineWidth = <span class="number">1.5</span></span><br><span class="line">        circleLayer.strokeColor = <span class="type">UIColor</span>.white.cgColor</span><br><span class="line">        circleLayer.fillColor = <span class="type">UIColor</span>.clear.cgColor</span><br><span class="line">        circleLayer.path = <span class="type">UIBezierPath</span>(ovalIn: circleView.bounds).cgPath</span><br><span class="line"></span><br><span class="line">        circleLayer.shadowColor = <span class="type">UIColor</span>.white.cgColor</span><br><span class="line"></span><br><span class="line">        pinLayer.fillColor = <span class="type">UIColor</span>.white.cgColor</span><br><span class="line">        pinLayer.path = <span class="type">UIBezierPath</span>(roundedRect: pinView.bounds, cornerRadius: <span class="number">1</span>).cgPath</span><br><span class="line">        pinLayer.opacity = <span class="number">0.9</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">pinAnimation</span><span class="params">()</span></span> &#123;</span><br><span class="line">        setUpLayers()</span><br><span class="line"></span><br><span class="line">        circleView.layer.addSublayer(circleLayer)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">self</span>.circleView.transform = <span class="type">CGAffineTransform</span>(scaleX: <span class="number">0.01</span>, y: <span class="number">0.01</span>)</span><br><span class="line">        <span class="keyword">self</span>.circleView.alpha = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="type">UIView</span>.animate(withDuration: <span class="number">2</span>, delay: <span class="number">0</span>, options: [.<span class="keyword">repeat</span>], animations: &#123; [<span class="keyword">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">self</span>?.circleView.transform = <span class="type">CGAffineTransform</span>(scaleX: <span class="number">1</span>, y: <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">self</span>?.circleView.alpha = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        &#125;, completion: <span class="literal">nil</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        pinView.layer.addSublayer(pinLayer)</span><br><span class="line">        <span class="type">UIView</span>.animate(withDuration: <span class="number">1</span>, delay: <span class="number">0</span>, options: [.curveEaseIn, .<span class="keyword">repeat</span>, .autoreverse], animations: &#123;  [<span class="keyword">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">self</span>?.pinView.transform = <span class="type">CGAffineTransform</span>(translationX: <span class="number">0</span>, y: -<span class="number">4</span>)</span><br><span class="line">            <span class="keyword">self</span>?.pinView.transform = <span class="type">CGAffineTransform</span>(scaleX: <span class="number">0.5</span>, y: <span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;, completion: <span class="literal">nil</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Draw-Polyline-on-map"><a href="#Draw-Polyline-on-map" class="headerlink" title="Draw Polyline on map"></a>Draw Polyline on map</h3><p>Map use <code>MKMapViewDelegate</code> to handle drawing.</p>
+<h3 id="Draw-a-polyline-on-the-map"><a href="#Draw-a-polyline-on-the-map" class="headerlink" title="Draw a polyline on the map"></a>Draw a polyline on the map</h3><p> The map uses <code>MKMapViewDelegate</code> to handle the drawing. </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">func</span> <span class="title">mapView</span><span class="params">(<span class="number">_</span> mapView: MKMapView, rendererFor overlay: MKOverlay)</span></span> -&gt; <span class="type">MKOverlayRenderer</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> overlay = overlay <span class="keyword">as</span>? <span class="type">MKPolyline</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> polyline = <span class="type">MKPolylineRenderer</span>(overlay: overlay)</span><br><span class="line">        polyline.strokeColor = .white</span><br><span class="line">        polyline.lineWidth = <span class="number">1.5</span></span><br><span class="line">        <span class="keyword">return</span> polyline</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="type">MKOverlayRenderer</span>(overlay: overlay)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Here is how to add polyline</p>
+<p>This is how to add polyline </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> currentSegment = <span class="type">MKPolyline</span>(coordinates: subCoordinates, <span class="built_in">count</span>: subCoordinates.<span class="built_in">count</span>)</span><br><span class="line"><span class="keyword">self</span>.mapView.addOverlay(currentSegment)</span><br></pre></td></tr></table></figure>
 
-<h3 id="Animate-Polyline"><a href="#Animate-Polyline" class="headerlink" title="Animate Polyline"></a>Animate Polyline</h3><p>That’s the tricky part.</p>
-<p>As we see Uber’s animation closely enough, the polyline rotating with the map, so that draws on the map.</p>
-<p>What I do is continuing add and remove polylines on the map to pretend it’s an animation.<br>Also, the line has a header and a tail when appearing at the beginning and ending at the pin.</p>
+<h3 id="Animated-polyline"><a href="#Animated-polyline" class="headerlink" title="Animated polyline"></a>Animated polyline</h3><p>That is the tricky part. </p>
+<p>When we see that Uber’s animation is close enough, the polyline will rotate with the map to draw on the map. </p>
+<p>What I want to do is continue to add and delete polylines on the map to pretend it is an animation.<br>Likewise, when it appears at the beginning and end of the pushpin, the line has a title and a tail. </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">animate</span><span class="params">(route: [CLLocationCoordinate2D], duration: TimeInterval, completion: <span class="params">(<span class="params">()</span></span></span></span> -&gt; <span class="type">Void</span>)? = <span class="literal">nil</span>) &#123;</span><br><span class="line">    <span class="keyword">guard</span> route.<span class="built_in">count</span> &gt; <span class="number">0</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> currentStep = <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> delta = <span class="number">25</span>, opt = <span class="number">3.0</span></span><br><span class="line">    <span class="keyword">let</span> totalSteps = route.<span class="built_in">count</span> + delta</span><br><span class="line">    <span class="keyword">let</span> stepDrawDur = duration / <span class="type">TimeInterval</span>(totalSteps) * opt</span><br><span class="line">    <span class="keyword">var</span> prePolyline: <span class="type">MKPolyline?</span></span><br><span class="line"></span><br><span class="line">    drawingTimer = <span class="type">Timer</span>.scheduledTimer(withTimeInterval: stepDrawDur, repeats: <span class="literal">true</span>) &#123; [<span class="keyword">weak</span> <span class="keyword">self</span>] timer <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">defer</span> &#123; completion?() &#125;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> <span class="keyword">self</span> = <span class="keyword">self</span> <span class="keyword">else</span> &#123;</span><br><span class="line">            timer.invalidate()</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> previous = prePolyline &#123;</span><br><span class="line">            <span class="keyword">self</span>.mapView.removeOverlay(previous)</span><br><span class="line">            prePolyline = <span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> currentStep &gt; totalSteps &#123;</span><br><span class="line">            timer.invalidate()</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> start = currentStep-delta &lt; <span class="number">0</span> ? <span class="number">0</span> : currentStep-delta</span><br><span class="line">        <span class="keyword">let</span> end = currentStep &gt; route.<span class="built_in">count</span> ? route.<span class="built_in">count</span> : currentStep</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> subCoordinates = <span class="type">Array</span>(route[start..&lt;end])</span><br><span class="line">        <span class="keyword">let</span> currentSegment = <span class="type">MKPolyline</span>(coordinates: subCoordinates, <span class="built_in">count</span>: subCoordinates.<span class="built_in">count</span>)</span><br><span class="line">        <span class="keyword">self</span>.mapView.addOverlay(currentSegment)</span><br><span class="line"></span><br><span class="line">        prePolyline = currentSegment</span><br><span class="line">        currentStep += <span class="type">Int</span>(opt)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Here is the <a target="_blank" rel="noopener" href="https://github.com/leihao0/UberBookingAnimation">repository</a>, if you have an any better idea, please let me know :)</p>
-<h4 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h4><p>Well, As screen refresh rate is 60 fps, so it should make total steps/duration ≈ 60</p>
+<p>Here is <a target="_blank" rel="noopener" href="https://github.com/leihao0/UberBookingAnimation">repository</a>, if you have a better idea, please let me know :) </p>
+<h4 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h4><p>Well, since the screen refresh rate is 60 fps, it should make the total steps/duration ≈ 60 </p>
 
     </div>
 
@@ -549,13 +544,13 @@ mjx-container[display="true"] + br {
       <div class="popular-posts-title"><a href="/Pull-to-Refresh-UIViewController-in-iOS/" rel="bookmark">Pull to Refresh UIViewController in iOS</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/iOS-CI-Jenkins-Phabricator-Slack/" rel="bookmark">iOS CI (Jenkins + Phabricator + Slack)</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/View-blurred-after-CGAffineTransformMakeRotation/" rel="bookmark">View blurred after CGAffineTransformMakeRotation</a></div>
+      <div class="popular-posts-title"><a href="/iOS-CI-Jenkins-Phabricator-Slack/" rel="bookmark">iOS CI (Jenkins + pH AB Rica Tor + slack)</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/How-to-add-Xib-on-StoryBoard/" rel="bookmark">How to add Xib on StoryBoard</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/Reflection-in-Swift-via-Mirror/" rel="bookmark">Reflection in Swift by mirroring</a></div>
     </li>
   </ul>
 
@@ -597,8 +592,8 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/How-to-auto-reply-send-msg-with-telegram/" rel="next" title="How to auto-reply & send msg with telegram">
-                  How to auto-reply & send msg with telegram <i class="fa fa-chevron-right"></i>
+                <a href="/How-to-auto-reply-send-msg-with-telegram/" rel="next" title="How to use Telegram to reply automatically">
+                  How to use Telegram to reply automatically <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -654,7 +649,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -665,13 +660,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 
@@ -732,7 +727,7 @@ mjx-container[display="true"] + br {
   var disqus_config = function() {
     this.page.url = "https://leihao0.github.io/Uber-Booking-Animation/";
     this.page.identifier = "Uber-Booking-Animation/";
-    this.page.title = "Uber Booking Animation";
+    this.page.title = "Uber booking animation";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

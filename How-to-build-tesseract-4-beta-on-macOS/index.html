@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="1234brew info tesseracttesseract: stable 3.05.01 (bottled), HEADOCR (Optical Character Recognition) engine  The result of the recognition of Chinese - Simplified is a little bit terrifying.I noticed t">
+  <meta name="description" content="1234brew info tesseracttesseract: stable 3.05.01 (bottled), HEADOCR (Optical Character Recognition) engine  The result of identifying Simplified Chinese is a bit scary.I noticed that it added a new ne">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to build tesseract 4 beta on macOS">
 <meta property="og:url" content="https://leihao0.github.io/How-to-build-tesseract-4-beta-on-macOS/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="1234brew info tesseracttesseract: stable 3.05.01 (bottled), HEADOCR (Optical Character Recognition) engine  The result of the recognition of Chinese - Simplified is a little bit terrifying.I noticed t">
+<meta property="og:description" content="1234brew info tesseracttesseract: stable 3.05.01 (bottled), HEADOCR (Optical Character Recognition) engine  The result of identifying Simplified Chinese is a bit scary.I noticed that it added a new ne">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-05-06T13:19:16.000Z">
-<meta property="article:modified_time" content="2020-09-09T11:26:39.967Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.541Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="LSTM">
@@ -287,11 +287,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -362,13 +357,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -453,7 +448,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 19:26:39" itemprop="dateModified" datetime="2020-09-09T19:26:39+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -478,7 +473,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1k</span>
+      <span>998</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -498,19 +493,19 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
         <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew info tesseract</span><br><span class="line"></span><br><span class="line">tesseract: stable 3.05.01 (bottled), HEAD</span><br><span class="line">OCR (Optical Character Recognition) engine</span><br></pre></td></tr></table></figure>
 
-<p>The result of the recognition of <code>Chinese - Simplified</code> is a little bit terrifying.<br>I noticed that it added a new neural network system based on LSTMs after 4.0.0+<br>But it needs to be built from source code on macOS.<br>Thankfully, the manual is quite specifying on their README.md</p>
+<p>The result of identifying <code>Simplified Chinese</code> is a bit scary.<br>I noticed that it added a new neural network system based on LSTM after 4.0.0+<br>But it needs to be built from source code on macOS.<br>Fortunately, the manual has a detailed description on its README.md </p>
 <a id="more"></a>
 
 <h2 id="Install-dependencies"><a href="#Install-dependencies" class="headerlink" title="Install dependencies"></a>Install dependencies</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">brew install automake autoconf autoconf-archive libtool</span><br><span class="line">brew install pkgconfig</span><br><span class="line">brew install icu4c</span><br><span class="line">brew install leptonica</span><br><span class="line">brew install gcc</span><br></pre></td></tr></table></figure>
 
 <h2 id="Compile"><a href="#Compile" class="headerlink" title="Compile"></a>Compile</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/tesseract-ocr/tesseract/</span><br><span class="line"><span class="built_in">cd</span> tesseract</span><br><span class="line">./autogen.sh</span><br><span class="line">./configure CC=gcc CXX=g++ CPPFLAGS=-I/usr/<span class="built_in">local</span>/opt/icu4c/include LDFLAGS=-L/usr/<span class="built_in">local</span>/opt/icu4c/lib</span><br><span class="line">make -j</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 
-<p>Their best trained <a target="_blank" rel="noopener" href="https://github.com/tesseract-ocr/tessdata_best">modes</a>, download the language <code>chi_sim.traineddata</code> and put it under <code>tesseract/4.0.0.1/tessdata/</code></p>
+<p>Their best trained <a target="_blank" rel="noopener" href="https://github.com/tesseract-ocr/tessdata_best">modes</a>, download the language <code>chi_sim.traineddata</code> and put it under <code>tesseract/4.0.0.1/tessdata/</code> </p>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tesseract image.png image -l chi_sim</span><br><span class="line">cat image.txt</span><br></pre></td></tr></table></figure>
 
-<p>OK, it is still terrible under the <code>Song typeface</code> font. It needs to be trained with a new model by myself.</p>
+<p>Okay, it still sucks under the <code>song font</code> font. I need to train myself on the new model. </p>
 <hr>
-<p>Finally, ignoring the <code>tesseract</code>, I found drag the <strong>image</strong> to <strong>OneNote</strong>, and <code>Ctrl + Click</code> -&gt; <code>Copy Text from Picture</code> will get more Accuracy. 😓</p>
+<p>Finally, I ignored <code>tesseract</code>, I found that dragging <code>image</code> into <code>OneNote</code>, and <code>Ctrl + click</code>-&gt;<code>Copy text from picture</code> will get higher accuracy. 😓 </p>
 
     </div>
 
@@ -575,8 +570,8 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Rendezvous-with-Rama/" rel="next" title="Rendezvous with Rama">
-                  Rendezvous with Rama <i class="fa fa-chevron-right"></i>
+                <a href="/Rendezvous-with-Rama/" rel="next" title="Meet Rama">
+                  Meet Rama <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -632,7 +627,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -643,13 +638,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

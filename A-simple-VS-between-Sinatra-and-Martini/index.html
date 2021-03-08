@@ -24,21 +24,18 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Sinatra VS. Martini网上已经有许多对比的数据了但都不如自己来的实在 于是在 VPS 上分别用 Martini Martini 搭了两个 Hello World选了 Linux 上的 siege 作为测试工具">
+  <meta name="description" content="Sinatra VS. MartiniThere are already a lot of comparative data on the InternetBut it’s not as real  So on the VPS, I used Martini and Martini to set up two Hello WorldSelected siege on Linux as the te">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A simple VS. between Sinatra and Martini">
 <meta property="og:url" content="https://leihao0.github.io/A-simple-VS-between-Sinatra-and-Martini/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="Sinatra VS. Martini网上已经有许多对比的数据了但都不如自己来的实在 于是在 VPS 上分别用 Martini Martini 搭了两个 Hello World选了 Linux 上的 siege 作为测试工具">
+<meta property="og:description" content="Sinatra VS. MartiniThere are already a lot of comparative data on the InternetBut it’s not as real  So on the VPS, I used Martini and Martini to set up two Hello WorldSelected siege on Linux as the te">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://cl.ly/image/0t2P2B0T123a/sinatra.png">
-<meta property="og:image" content="http://cl.ly/image/401c0o2r1D0t/martini.png">
 <meta property="article:published_time" content="2014-10-15T00:07:40.000Z">
-<meta property="article:modified_time" content="2020-09-09T13:36:32.385Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.520Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="Programming">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://cl.ly/image/0t2P2B0T123a/sinatra.png">
 
 
 <link rel="canonical" href="https://leihao0.github.io/A-simple-VS-between-Sinatra-and-Martini/">
@@ -289,11 +286,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -350,7 +342,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Sinatra-VS-Martini"><span class="nav-number">1.</span> <span class="nav-text">Sinatra VS. Martini</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD"><span class="nav-number">1.1.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Martini"><span class="nav-number">1.1.1.</span> <span class="nav-text">Martini</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Martini-1"><span class="nav-number">1.1.2.</span> <span class="nav-text">Martini</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E9%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">代码量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">1.3.</span> <span class="nav-text">结论</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Sinatra-VS-Martini"><span class="nav-number">1.</span> <span class="nav-text">Sinatra VS. Martini</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#performance"><span class="nav-number">1.1.</span> <span class="nav-text">performance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Martini"><span class="nav-number">1.1.1.</span> <span class="nav-text">Martini</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Martini-1"><span class="nav-number">1.1.2.</span> <span class="nav-text">Martini</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amount-of-code"><span class="nav-number">1.2.</span> <span class="nav-text">Amount of code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in-conclusion"><span class="nav-number">1.3.</span> <span class="nav-text">in conclusion</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -364,13 +356,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -455,7 +447,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 21:36:32" itemprop="dateModified" datetime="2020-09-09T21:36:32+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -480,14 +472,14 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.1k</span>
+      <span>1.7k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>2 mins.</span>
     </span>
 </div>
 
@@ -498,29 +490,27 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Sinatra-VS-Martini"><a href="#Sinatra-VS-Martini" class="headerlink" title="Sinatra VS. Martini"></a>Sinatra VS. Martini</h1><p>网上已经有许多对比的数据了<br>但都不如自己来的实在</p>
-<p>于是在 <code>VPS</code> 上分别用 <code>Martini</code> <code>Martini</code> 搭了两个 <code>Hello World</code><br>选了 <code>Linux</code> 上的 <code>siege</code> 作为测试工具</p>
+        <h1 id="Sinatra-VS-Martini"><a href="#Sinatra-VS-Martini" class="headerlink" title="Sinatra VS. Martini"></a>Sinatra VS. Martini</h1><p>There are already a lot of comparative data on the Internet<br>But it’s not as real </p>
+<p>So on the <code>VPS</code>, I used <code>Martini</code> and <code>Martini</code> to set up two <code>Hello World</code><br>Selected <code>siege</code> on <code>Linux</code> as the test tool </p>
 <a id="more"></a>
 
-<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><h3 id="Martini"><a href="#Martini" class="headerlink" title="Martini"></a>Martini</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">siege -q -c 1000 -r 30 -f sinatra.url</span><br></pre></td></tr></table></figure>
+<h2 id="performance"><a href="#performance" class="headerlink" title="performance"></a>performance</h2><h3 id="Martini"><a href="#Martini" class="headerlink" title="Martini"></a>Martini</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">siege -q -c 1000 -r 30 -f sinatra.url</span><br></pre></td></tr></table></figure>
 
 <!--more-->
 
-<p><img src="http://cl.ly/image/0t2P2B0T123a/sinatra.png" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Transactions: 29332 hits</span><br><span class="line">Availability: 97.77 %</span><br><span class="line">Elapsed time: 107.10 secs</span><br><span class="line">Data transferred: 0.38 MB</span><br><span class="line">Response time: 1.73 secs</span><br><span class="line">Transaction rate: 273.87 trans&#x2F;sec</span><br><span class="line">Throughput: 0.00 MB&#x2F;sec</span><br><span class="line">Concurrency: 473.90</span><br><span class="line">Successful transactions: 29332</span><br><span class="line">Failed transactions: 668</span><br><span class="line">Longest transaction: 25.45</span><br><span class="line">Shortest transaction: 0.00</span><br></pre></td></tr></table></figure>
 
 <h3 id="Martini-1"><a href="#Martini-1" class="headerlink" title="Martini"></a>Martini</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">siege -q -c 1000 -r 30 -f martini.url</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://cl.ly/image/401c0o2r1D0t/martini.png" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Transactions: 29988 hits</span><br><span class="line">Availability: 99.96 %</span><br><span class="line">Elapsed time: 58.56 secs</span><br><span class="line">Data transferred: 0.34 MB</span><br><span class="line">Response time: 0.46 secs</span><br><span class="line">Transaction rate: 512.09 trans&#x2F;sec</span><br><span class="line">Throughput: 0.01 MB&#x2F;sec</span><br><span class="line">Concurrency: 235.70</span><br><span class="line">Successful transactions: 29988</span><br><span class="line">Failed transactions: 12</span><br><span class="line">Longest transaction: 31.10</span><br><span class="line">Shortest transaction: 0.00</span><br></pre></td></tr></table></figure>
 
-<h2 id="代码量"><a href="#代码量" class="headerlink" title="代码量"></a>代码量</h2><p>当然开发是不可能仅仅关注服务器性能的<br>《人件》中早就强调，相对于机器，<strong>程序员的速度</strong>要放在优先位置</p>
-<p>由于只是单纯的打印 _hello world_，无法对代码量做进一步详细的对比（<strong>欢迎留言</strong>）</p>
-<p><code>Go</code> 目前的库大部分是从 <code>Github</code> 上 <code>Get</code> 下来的，代码质量是否有保障？<br>反观 <code>Ruby</code>，已经比较成熟（好像几年前 <code>Python</code> 对比 <code>Ruby</code> 的结果…）</p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>所以如果确定日访问量在千万 PV 以下，<code>Ruby</code> 是完全没有问题的</p>
-<p>另外在 <a target="_blank" rel="noopener" href="http://book.douban.com/subject/6756090/">《松本行弘的程序世界》</a>这本书中提到，Ruby 的设计哲学是：开发效率大于运行效率，成为一个“人性化”的语言</p>
-<p>最最重要的是 <code>Ruby</code> 写起来真的很爽有木有…</p>
-<p>最后弱弱的问一句，您幸福嘛？</p>
+<h2 id="Amount-of-code"><a href="#Amount-of-code" class="headerlink" title="Amount of code"></a>Amount of code</h2><p>Of course development is impossible to focus solely on server performance<br>“Humanware” has long emphasized that compared to machines, the speed of the programmer should be given priority. </p>
+<p>Since it is just printing <em>hello world</em>, it is impossible to make a further detailed comparison of the amount of code (<strong>Welcome to leave a message</strong>) </p>
+<p>Most of the current libraries in <code>Go</code> are <code>Get</code> from <code>Github</code>. Is the code quality guaranteed?<br>On the other hand, <code>Ruby</code> is relatively mature (it seems like the result of comparing <code>Python</code> to <code>Ruby</code> a few years ago…) </p>
+<h2 id="in-conclusion"><a href="#in-conclusion" class="headerlink" title="in conclusion"></a>in conclusion</h2><p>So if it is determined that the number of daily visits is below tens of millions of PV, there is no problem with <code>Ruby</code> </p>
+<p>In addition, it is mentioned in the book <a target="_blank" rel="noopener" href="http://book.douban.com/subject/6756090/">“Matsumoto Yukihiro’s Program World”</a> that Ruby’s design philosophy is: development efficiency is greater than operation efficiency, becoming a “humanity” The language of </p>
+<p>The most important thing is that <code>Ruby</code> is really cool to write. There is wood… </p>
+<p>Finally, a weak question, are you happy? </p>
 
     </div>
 
@@ -537,13 +527,13 @@ mjx-container[display="true"] + br {
       <div class="popular-posts-title"><a href="/Learn-Go-in-20-days/" rel="bookmark">Learn Go in 20 days</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/global-gitignore/" rel="bookmark">global gitignore</a></div>
+      <div class="popular-posts-title"><a href="/ios-developer-account-and-app-store/" rel="bookmark">iOS developer account and how to list it</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ios-developer-account-and-app-store/" rel="bookmark">iOS developer account and app store</a></div>
+      <div class="popular-posts-title"><a href="/count-lines-of-code/" rel="bookmark">Number of lines of code</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ios-programming---big-nerd-ranch-guides/" rel="bookmark">iOS Programming - Big Nerd Ranch Guides</a></div>
+      <div class="popular-posts-title"><a href="/The-primary-principle-of-Delegate/" rel="bookmark">The primary principle of Delegate</a></div>
     </li>
   </ul>
 
@@ -579,8 +569,8 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/BeiJing/" rel="prev" title="BeiJing">
-                  <i class="fa fa-chevron-left"></i> BeiJing
+                <a href="/BeiJing/" rel="prev" title="Imperial Capital">
+                  <i class="fa fa-chevron-left"></i> Imperial Capital
                 </a>
             </div>
             <div class="post-nav-item">
@@ -641,7 +631,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -652,13 +642,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

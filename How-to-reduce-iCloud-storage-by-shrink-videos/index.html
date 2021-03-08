@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="When I gallery videos in Photos, it will show where and when did I take them That is a wonderful feature to help me to recall my memoryBut the original 4k takes too much space in iCloud For example, a">
+  <meta name="description" content="In fact, subtracting unnecessary clips from 4k video can save space more effectively   When I gallery videos in “Photos”, it will show when and where I took them  This is a great feature that can help">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to reduce iCloud storage by shrink videos">
+<meta property="og:title" content="How to reduce iCloud storage by shrinking videos">
 <meta property="og:url" content="https://leihao0.github.io/How-to-reduce-iCloud-storage-by-shrink-videos/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="When I gallery videos in Photos, it will show where and when did I take them That is a wonderful feature to help me to recall my memoryBut the original 4k takes too much space in iCloud For example, a">
+<meta property="og:description" content="In fact, subtracting unnecessary clips from 4k video can save space more effectively   When I gallery videos in “Photos”, it will show when and where I took them  This is a great feature that can help">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-29T16:04:51.000Z">
-<meta property="article:modified_time" content="2020-09-22T01:13:16.743Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.550Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="FFmpeg">
 <meta property="article:tag" content="Exiftool">
@@ -53,7 +53,7 @@
   };
 </script>
 
-  <title>How to reduce iCloud storage by shrink videos | LeiHao's Blog</title>
+  <title>How to reduce iCloud storage by shrinking videos | LeiHao's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
     <script>
@@ -288,11 +288,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -349,7 +344,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FFmpeg-converts-video-will-loss-GPS-even-with-metadata"><span class="nav-number">1.</span> <span class="nav-text">FFmpeg converts video will loss GPS even with metadata</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tools"><span class="nav-number">1.1.</span> <span class="nav-text">Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Export-original-videos-to-a-folder"><span class="nav-number">1.1.1.</span> <span class="nav-text">Export original videos to a folder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shrink-each-video"><span class="nav-number">1.1.2.</span> <span class="nav-text">shrink each video</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FFmpeg-converts-video-even-if-there-is-metadata-GPS-will-be-lost"><span class="nav-number">1.</span> <span class="nav-text">FFmpeg converts video, even if there is metadata, GPS will be lost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tools"><span class="nav-number">1.1.</span> <span class="nav-text">Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Export-original-video-to-folder"><span class="nav-number">1.1.1.</span> <span class="nav-text">Export original video to folder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shrink-each-video"><span class="nav-number">1.1.2.</span> <span class="nav-text">Shrink each video</span></a></li></ol></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -363,13 +358,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -436,7 +431,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          How to reduce iCloud storage by shrink videos
+          How to reduce iCloud storage by shrinking videos
         </h1>
 
         <div class="post-meta-container">
@@ -454,7 +449,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-22 09:13:16" itemprop="dateModified" datetime="2020-09-22T09:13:16+08:00">2020-09-22</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -479,7 +474,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>2.5k</span>
+      <span>2.7k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -497,38 +492,41 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>When I gallery videos in Photos, it will show where and when did I take them</p>
-<p>That is a wonderful feature to help me to recall my memory<br>But the original 4k takes too much space in iCloud</p>
-<p>For example, a 2:30 video will take 1GB, even powered by HEVC (High-Efficiency Video Coding)<br>My 200G iCloud plan almost full</p>
-<p>So I’m planning to compress videos a little bit to save some space.</p>
+        <p>In fact, subtracting unnecessary clips from 4k video can save space more effectively </p>
+<hr>
+<p>When I gallery videos in “Photos”, it will show when and where I took them </p>
+<p>This is a great feature that can help me recall my memories<br>But the original 4k takes up too much space in iCloud </p>
+<p>For example, even with HEVC (High Efficiency Video Coding), a 2:30 video will occupy 1GB of space<br>My 200G iCloud plan is almost full ​​ </p>
+<p>Therefore, I plan to compress the video a bit to save some space. </p>
 <a id="more"></a>
 
-<p>But,</p>
-<h2 id="FFmpeg-converts-video-will-loss-GPS-even-with-metadata"><a href="#FFmpeg-converts-video-will-loss-GPS-even-with-metadata" class="headerlink" title="FFmpeg converts video will loss GPS even with metadata"></a>FFmpeg converts video will loss GPS even with metadata</h2><p>Luckily, I found a way to do it</p>
+<p>but, </p>
+<h2 id="FFmpeg-converts-video-even-if-there-is-metadata-GPS-will-be-lost"><a href="#FFmpeg-converts-video-even-if-there-is-metadata-GPS-will-be-lost" class="headerlink" title="FFmpeg converts video, even if there is metadata, GPS will be lost"></a>FFmpeg converts video, even if there is metadata, GPS will be lost</h2><p>Fortunately, I found a way </p>
 <h3 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h3><ul>
-<li>FFmpeg</li>
-<li>Exiftool</li>
+<li>FFmpeg </li>
+<li>Exiftool </li>
 </ul>
-<h4 id="Export-original-videos-to-a-folder"><a href="#Export-original-videos-to-a-folder" class="headerlink" title="Export original videos to a folder"></a>Export original videos to a folder</h4><p>The common way to drag videos from <code>Photos</code> to a folder will let <code>Photos</code> convert the video</p>
-<p>So you have to select all your videos want to export and</p>
-<p><code>File -&gt; Export -&gt; Export Unmodified Original For...</code></p>
-<h4 id="shrink-each-video"><a href="#shrink-each-video" class="headerlink" title="shrink each video"></a>shrink each video</h4><p>iPhone default Stream is<br><code>#0:0(und): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709)</code></p>
-<p>so re-encoding to 10bit with <code>-pix_fmt yuv420p10le</code> does not help</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">ffmov</span></span>() &#123;</span><br><span class="line">    mkdir -p shrunk</span><br><span class="line"></span><br><span class="line">    <span class="comment"># ffmpeg with h265</span></span><br><span class="line">    ffmpeg -i <span class="string">&quot;<span class="variable">$1</span>&quot;</span> -c:v libx265 -crf 28 -c:a copy -c:s copy -tag:v hvc1 shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    overwriteExif <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">overwriteExif</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># copy Exif info from the original video to the shrunk *.mov</span></span><br><span class="line">    exiftool -tagsFromFile <span class="string">&quot;<span class="variable">$1</span>&quot;</span> shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    exiftool shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    rm shrunk/<span class="string">&quot;<span class="variable">$1_original</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">shrinkVideos</span></span>() &#123;</span><br><span class="line">    <span class="comment">## walk thought all *.mov</span></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> *.mov</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$f</span></span><br><span class="line">        ffmov <span class="variable">$f</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Export-original-video-to-folder"><a href="#Export-original-video-to-folder" class="headerlink" title="Export original video to folder"></a>Export original video to folder</h4><p>The common way to drag a video from “Photo” to a folder is to let “Photo” convert the video </p>
+<p>Therefore, you must select all the videos you want to export, </p>
+<p><code>File -&gt; Export -&gt; Export Unmodified Original For...</code> </p>
+<h4 id="Shrink-each-video"><a href="#Shrink-each-video" class="headerlink" title="Shrink each video"></a>Shrink each video</h4><p>iPhone default stream is </p>
+<p><code># 0: 0 (and): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p (tv, bt709)</code> </p>
+<p>So using <code>-pix_fmt yuv420p10le</code> to re-encode to 10bit does not help </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">ffmov</span></span>() &#123;</span><br><span class="line">    mkdir -p shrunk</span><br><span class="line"></span><br><span class="line">    <span class="comment"># ffmpeg with h265 </span></span><br><span class="line">    ffmpeg -i <span class="string">&quot;<span class="variable">$1</span>&quot;</span> -c:v libx265 -crf 28 -c:a copy -c:s copy -tag:v hvc1 shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    overwriteExif <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">overwriteExif</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># copy Exif info from the original video to the shrunk *.mov </span></span><br><span class="line">    exiftool -tagsFromFile <span class="string">&quot;<span class="variable">$1</span>&quot;</span> shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    exiftool shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    rm shrunk/<span class="string">&quot;<span class="variable">$1_original</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">shrinkVideos</span></span>() &#123;</span><br><span class="line">    <span class="comment">## walk through all *.mov </span></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> *.mov</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$f</span></span><br><span class="line">        ffmov <span class="variable">$f</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Then you can copy &amp; paste these code into <code>Terminal</code> and <code>cd VideoFolder</code>, then <code>shrinkVideos</code></p>
-<p>It will take a very long time to do the shrink</p>
-<p>On my MacBook Pro (15-inch, 2018), it’s only 0.3x<br>But usually, the video will shrink 5x without losing too much quality</p>
-<p>When all finished, shrunk videos will under <code>shrunk/</code> folder</p>
-<p>Then you can compare them, and delete original video first then import shrunk video</p>
-<p>OK Finally I cannot bear the extremely slow speed, so I use my Nvidia 1080 GPU to accelerate, for more: <a href="https://leihao0.github.io/CUDA-GPU-Accelerated-h264-h265-HEVC-Video-Encoding-with-Staxrip/">CUDA GPU Accelerated h264/h265/HEVC Video Encoding with Staxrip</a></p>
-<p>One more step is to tag the converted video to <code>hvc1</code>, otherwise, Photos will be imported with an error:</p>
-<p><strong>Invalid: The operation couldn’t be completed. (PHPhotosErrorDomain error -1.)</strong></p>
-<p>so the whole step is to</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">ffhvc1</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$1</span> -&gt; <span class="variable">$1</span>.mov&quot;</span></span><br><span class="line">    ffmpeg -i <span class="string">&quot;<span class="variable">$1</span>&quot;</span> -c:v copy -c:a copy -c:s copy -tag:v hvc1 <span class="string">&quot;<span class="variable">$1</span>.mov&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$1</span>.mov -&gt; <span class="variable">$1</span>&quot;</span></span><br><span class="line">    rm <span class="string">&quot;<span class="variable">$1</span>&quot;</span>; mv <span class="string">&quot;<span class="variable">$1</span>.mov&quot;</span> <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">overwriteExif</span></span>() &#123;</span><br><span class="line">    <span class="comment"># copy Exif info from the original video to the shrunk *.mov</span></span><br><span class="line">    exiftool -tagsFromFile <span class="string">&quot;<span class="variable">$1</span>&quot;</span> shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    exiftool shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    rm shrunk/<span class="string">&quot;<span class="variable">$1_original</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">shrinkVideos</span></span>() &#123;</span><br><span class="line">    <span class="comment">## walk thought all *.mov</span></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> *.mov</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$f</span>&quot;</span></span><br><span class="line">        ffhvc1 <span class="string">&quot;shrunk/<span class="variable">$f</span>&quot;</span></span><br><span class="line">        overwriteExif <span class="string">&quot;<span class="variable">$f</span>&quot;</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># use Staxrip to convert all videos to shrunk/</span></span><br><span class="line"><span class="comment"># then run `shrinkVideos`</span></span><br></pre></td></tr></table></figure>
+<p>Then, you can copy and paste these codes into <code>Terminal</code> and <code>cd VideoFolder</code>, then <code>shrinkVideos</code> </p>
+<p>Shrinking will take a long time </p>
+<p>On my MacBook Pro (15 inches, 2018), it’s only 0.3 times<br>But usually, the video will be reduced by 5 times without losing too much quality </p>
+<p>When all is done, the reduced video will be located under the <code>shrunk/</code> folder </p>
+<p>You can then compare them and delete the original video before importing the reduced video </p>
+<p>Okay, in the end I can’t stand the extremely slow speed, so I use Nvidia 1080 GPU for acceleration to learn more: [CUDA GPU Accelerated h264/h265/HEVC Video Encoding with Staxrip](<a href="https://leihao0.github.io">https://leihao0.github.io</a> /CUDA-GPU-Accelerated-h264-h265-HEVC-Video-Encoding-with-Staxrip/) </p>
+<p>The next step is to mark the converted video as <code>hvc1</code>, otherwise, an error will occur when importing photos: </p>
+<p><strong>Invalid: The operation couldn’t be completed. (PHPhotosErrorDomain error -1.)</strong> </p>
+<p>So the whole step is </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">ffhvc1</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$1</span> -&gt; <span class="variable">$1</span>.mov&quot;</span></span><br><span class="line">    ffmpeg -i <span class="string">&quot;<span class="variable">$1</span>&quot;</span> -c:v copy -c:a copy -c:s copy -tag:v hvc1 <span class="string">&quot;<span class="variable">$1</span>.mov&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$1</span>.mov -&gt; <span class="variable">$1</span>&quot;</span></span><br><span class="line">    rm <span class="string">&quot;<span class="variable">$1</span>&quot;</span>; mv <span class="string">&quot;<span class="variable">$1</span>.mov&quot;</span> <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">overwriteExif</span></span>() &#123;</span><br><span class="line">    <span class="comment"># copy Exif info from the original video to the shrunk *.mov </span></span><br><span class="line">    exiftool -tagsFromFile <span class="string">&quot;<span class="variable">$1</span>&quot;</span> shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    exiftool shrunk/<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    rm shrunk/<span class="string">&quot;<span class="variable">$1_original</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">shrinkVideos</span></span>() &#123;</span><br><span class="line">    <span class="comment">## walk through all *.mov </span></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> *.mov</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$f</span>&quot;</span></span><br><span class="line">        ffhvc1 <span class="string">&quot;shrunk/<span class="variable">$f</span>&quot;</span></span><br><span class="line">        overwriteExif <span class="string">&quot;<span class="variable">$f</span>&quot;</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># use Staxrip to convert all videos to shrunk/ </span></span><br><span class="line"><span class="comment"># then run `shrinkVideos` </span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>I hope this will be helpful to you</p>
+<p>hope it helps you </p>
 
     </div>
 
@@ -633,7 +631,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -644,13 +642,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 
@@ -711,7 +709,7 @@ mjx-container[display="true"] + br {
   var disqus_config = function() {
     this.page.url = "https://leihao0.github.io/How-to-reduce-iCloud-storage-by-shrink-videos/";
     this.page.identifier = "How-to-reduce-iCloud-storage-by-shrink-videos/";
-    this.page.title = "How to reduce iCloud storage by shrink videos";
+    this.page.title = "How to reduce iCloud storage by shrinking videos";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/fr/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/fr/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/fr/images/logo.png">
+  <link rel="mask-icon" href="/fr/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="rbaH_zC-qBwXaawJ10Mno3FHzv9HRFHGFdXx2f1BwyI">
+
+<link rel="stylesheet" href="/fr/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+
+<script data-ad-client="ca-pub-2317298287519457" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"leihao0.github.io","root":"/fr/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Recherche...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/fr/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="Il existe déjà de nombreux avantages et inconvénients.      Avantages Contre    React Native Rechargement à chaud  Correction à chaud en ligne  Compatible avec le front-end  Plate-forme croisée  Corre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Réagir Native &amp; Flutter">
+<meta property="og:url" content="https://leihao0.github.io/fr/React-Native-Flutter/index.html">
+<meta property="og:site_name" content="LeiHao&#39;s Blog">
+<meta property="og:description" content="Il existe déjà de nombreux avantages et inconvénients.      Avantages Contre    React Native Rechargement à chaud  Correction à chaud en ligne  Compatible avec le front-end  Plate-forme croisée  Corre">
+<meta property="og:locale" content="fr_FR">
+<meta property="article:published_time" content="2018-12-03T14:24:10.000Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.183Z">
+<meta property="article:author" content="LeiHao">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="React Native">
+<meta property="article:tag" content="Flutter">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leihao0.github.io/fr/React-Native-Flutter/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'fr'
+  };
+</script>
+
+  <title>Réagir Native & Flutter | LeiHao's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-159363268-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?25f016f633270b8e0baf56c4fe6f2dc1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/fr/atom.xml" title="LeiHao's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Basculer la barre de navigation">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/fr/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">LeiHao's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/fr/" rel="section"><i class="fa fa-home fa-fw"></i>Accueil</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/fr/about/" rel="section"><i class="fa fa-user fa-fw"></i>À propos</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/fr/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/fr/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Recherche
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Recherche..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table Des Matières
+        </li>
+        <li class="sidebar-nav-overview">
+          Aperçu
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reagir-natif"><span class="nav-number">1.</span> <span class="nav-text">Réagir natif</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Battement"><span class="nav-number">2.</span> <span class="nav-text">Battement</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">LeiHao</p>
+  <div class="site-description" itemprop="description">😃😃😃</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/fr/archives/">
+        
+          <span class="site-state-item-count">155</span>
+          <span class="site-state-item-name">articles</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/fr/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">mots clé</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leihao0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/leihao0" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/fr/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="fr">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/fr/React-Native-Flutter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/fr/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Réagir Native & Flutter
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posté le</span>
+
+      <time title="Article créé le: 2018-12-03 22:24:10" itemprop="dateCreated datePublished" datetime="2018-12-03T22:24:10+08:00">2018-12-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Édité le</span>
+        <time title="Mis à jour le: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/fr/React-Native-Flutter/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="React-Native-Flutter/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Caractères dans l'article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Caractères dans l'article: </span>
+      <span>4k</span>
+    </span>
+    <span class="post-meta-item" title="Temps de lecture">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Temps de lecture &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Il existe déjà de nombreux avantages et inconvénients. </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Avantages</th>
+<th>Contre</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>React Native</td>
+<td>Rechargement à chaud <br /> Correction à chaud en ligne <br /> Compatible avec le front-end <br /> Plate-forme croisée <br /> Correction une fois <br /></td>
+<td>JavaScript <br /> Connaissance native de l’interface utilisateur sur les deux plates-formes <br /> Débogage <br /></td>
+</tr>
+<tr>
+<td>Flutter</td>
+<td>Flutter Engine <br /> Multiplateforme <br /> Même UX et UI <br /></td>
+<td>Apprendre Dart <br /> Unstable (version 1.0) <br /> Style de code laid <br /> iOS 13? <br /> Débogage <br /></td>
+</tr>
+<tr>
+<td>Native</td>
+<td>Partie iOS <br /> Beaucoup plus facile <br /> AutoLayout, Storyboard <br /> Swift, écrivez moins et faites plus <br /> SpriteKit, UIDynamic</td>
+<td>Trois développeurs (fontend, iOS, android) triple budgets</td>
+</tr>
+</tbody></table>
+<a id="more"></a>
+
+<p>En tant que développeur iOS qui suit volontiers les étapes , lorsque j’ai mis les pieds pour la première fois en tant que développeur iOS, j’ai utilisé Swift, Storyboard et AutoLayout. </p>
+<p>Je pense que c’est pourquoi la plupart des développeurs natifs ne sont même pas disposés à apprendre React Native. </p>
+<p>Il y a deux ans, j’ai créé Mattermost et j’ai fait quelques changements dans la société précédente pour remplacer Slack.C’était le premier projet React Native avec lequel je suis entré en contact. </p>
+<p>Malheureusement, il est très facile de perdre du code, et chaque fois que je veux changer quelque chose, je dois chercher dans tout le projet. Il n’y a pas de Storyboard pour me dire qui a dit qui. </p>
+<p>J’ai discuté avec mon ancien collègue, qui était un frontal avancé. Il m’a aidé à démarrer le serveur de mise à jour, qui a également été écrit en Node.js. Je lui ai remis ce projet quand je suis parti. </p>
+<p>Selon lui, c’est parce qu’il ne sait pas écrire du code natif, tout comme React React est similaire à React.js, pourquoi ne pas l’utiliser pour essayer à la fois iOS et Android. Puis je lui ai demandé s’il savait comment se développer rapidement et quel type de technologie il aimerait. Vous pouvez deviner la réponse 😄. </p>
+<p>Parce que de mon point de vue, il est parfois difficile d’implémenter des fonctions même en code rapide, ce qui est certainement un long chemin à parcourir pour une autre technologie à réaliser. </p>
+<p>Ensuite, ces jours-ci, j’ai l’opportunité de faire une démonstration avec des vues de défilement d’aimants imbriqués, des boutons et une navigation. Au lieu d’utiliser du code natif, je suis sorti de ma zone de confort et j’ai essayé React Native et Flutter. </p>
+<ul>
+<li>Vues <ul>
+<li>ListView, ScrollView, étiquettes, textes, champs de texte </li>
+</ul>
+</li>
+<li>Actions <ul>
+<li>Faites glisser, cliquez, faites défiler </li>
+<li>Blocage de rappel ou délégué à la vue des événements </li>
+</ul>
+</li>
+</ul>
+<p>Par conséquent, si vous maîtrisez l’un d’entre eux, il ne reste plus qu’à la manière dont Google l’implémente dans le cadre ou à lire son manuel. </p>
+<h2 id="Reagir-natif"><a href="#Reagir-natif" class="headerlink" title="Réagir natif"></a>Réagir natif</h2><p>La chose impressionnante à propos de React Native est ** state ** </p>
+<p>Cela peut être réalisé via le <code>didSet</code> de variables dans Swift, et il existe de nombreux frameworks qui peuvent le faire, tels que RxSwift, PromiseKit </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> state: <span class="type">Any</span> &#123;</span><br><span class="line">    <span class="keyword">didSet</span> &#123;</span><br><span class="line">        updateViews()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Battement"><a href="#Battement" class="headerlink" title="Battement"></a>Battement</h2><p>J’étais curieux de savoir que l’UX est très similaire à celles développées par cette machine, mais cela me semble bizarre d’une certaine manière. Maintenant je sais que ça tremble. </p>
+<ul>
+<li>C’est ma première fois d’écrire et d’obtenir deux applications (j’ai beaucoup de mal à configurer React Native avec Android) </li>
+<li>0.9 Il y a une erreur sur l’installation à chaud </li>
+<li>Le développement sur Visual Studio Code est assez bon, ce qui me rappelle le passé de Golang </li>
+<li>Style de code laid (Sont-ils sérieux à ce sujet? Ceci est un exemple officiel) </li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HeroAnimation</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    timeDilation = <span class="number">5.0</span>; <span class="comment">// 1.0 means normal animation speed.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Const Text (<span class="string">&#x27;Animation de base de héros&#x27;</span>), </span><br><span class="line">      ),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: PhotoHero(</span><br><span class="line">          photo: <span class="string">&#x27;images/flippers-alpha.png&#x27;</span>,</span><br><span class="line">          width: <span class="number">300.0</span>,</span><br><span class="line">          onTap: () &#123;</span><br><span class="line">            Navigator.of(context).push(MaterialPageRoute&lt;<span class="keyword">void</span>&gt;(</span><br><span class="line">              builder: (BuildContext context) &#123;</span><br><span class="line">                <span class="keyword">return</span> Scaffold(</span><br><span class="line">                  appBar: AppBar(</span><br><span class="line">                    title: <span class="keyword">const</span> Text (<span class="string">&#x27;Page Flippers&#x27;</span>), </span><br><span class="line">                  ),</span><br><span class="line">                  body: Container(</span><br><span class="line">                    <span class="comment">// The blue background emphasizes that it&#x27;s a new route.</span></span><br><span class="line">                    color: Colors.lightBlueAccent,</span><br><span class="line">                    padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">16.0</span>),</span><br><span class="line">                    alignment: Alignment.topLeft,</span><br><span class="line">                    child: PhotoHero(</span><br><span class="line">                      photo: <span class="string">&#x27;images/flippers-alpha.png&#x27;</span>,</span><br><span class="line">                      width: <span class="number">100.0</span>,</span><br><span class="line">                      onTap: () &#123;</span><br><span class="line">                        Navigator.of(context).pop();</span><br><span class="line">                      &#125;,</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                );</span><br><span class="line">              &#125;</span><br><span class="line">            ));</span><br><span class="line">          &#125;,</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>En tout cas, j’ai été vraiment impressionné par cela, il a sauté les «composants natifs» et a écrit son propre moteur de rendu 2D. Beaucoup plus talentueux que React Native. </p>
+<p>Par conséquent, personnellement, je pense que Flutter a plus de potentiel que React Native. Et de nombreuses entreprises reviennent au niveau local. </p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Articles similaires</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/fr/ios-7-programming-cookbook/" rel="bookmark">Livre de recettes pour la programmation iOS 7</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/fr/Pull-to-Refresh-UIViewController-in-iOS/" rel="bookmark">Tirez pour actualiser UIViewController dans iOS</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/fr/iOS-CI-Jenkins-Phabricator-Slack/" rel="bookmark">iOS CI (Jenkins + pH AB Rica Tor + mou)</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/fr/How-to-add-Xib-on-StoryBoard/" rel="bookmark">Comment ajouter Xib sur StoryBoard</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/fr/Reflection-in-Swift-via-Mirror/" rel="bookmark">Réflexion dans Swift par mise en miroir</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me 👨‍💻 a coffee ☕️</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    Donner
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/wechat.png" alt="LeiHao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/alipay.png" alt="LeiHao Alipay">
+        <span>Alipay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/bitcoin.png" alt="LeiHao Bitcoin">
+        <span>Bitcoin</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/fr/tags/ios/" rel="tag"># iOS</a>
+              <a href="/fr/tags/react-native/" rel="tag"># React Native</a>
+              <a href="/fr/tags/flutter/" rel="tag"># Flutter</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/fr/CUDA-GPU-Accelerated-h264-h265-HEVC-Video-Encoding-with-Staxrip/" rel="prev" title="Le GPU CUDA avec Staxrip accélère l'encodage vidéo h264 / h265 / HEVC">
+                  <i class="fa fa-chevron-left"></i> Le GPU CUDA avec Staxrip accélère l'encodage vidéo h264 / h265 / HEVC
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/fr/SKEmitterNode-in-SpriteKit-Scene-sks/" rel="next" title="SKEmitterNode dans SpriteKit Scene sks">
+                  SKEmitterNode dans SpriteKit Scene sks <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2012 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-laptop-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeiHao</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Caractères total">577k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Temps total de lecture">8:44</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/fr/js/utils.js"></script><script src="/fr/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/fr/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Artwalk.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://leihao0.github.io/fr/React-Native-Flutter/";
+    this.page.identifier = "React-Native-Flutter/";
+    this.page.title = "Réagir Native & Flutter";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Artwalk.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

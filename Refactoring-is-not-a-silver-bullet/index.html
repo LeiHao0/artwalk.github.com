@@ -24,21 +24,19 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="重构不是银弹 成书时，面向对象尚是小众，而如今函数式编程已开始流行 时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 Java 程序员，更是不想知道都难发展至今，重构已经类似于编码的一部分了 此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下之后的章节大略过一下就行了">
+  <meta name="description" content="When the book was written, object-oriented was still a niche, but now functional programming has become popular  Today, most of the ideas and methods of refactoring are slightly heard by programmers w">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Refactoring is not a silver bullet">
 <meta property="og:url" content="https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="重构不是银弹 成书时，面向对象尚是小众，而如今函数式编程已开始流行 时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 Java 程序员，更是不想知道都难发展至今，重构已经类似于编码的一部分了 此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下之后的章节大略过一下就行了">
+<meta property="og:description" content="When the book was written, object-oriented was still a niche, but now functional programming has become popular  Today, most of the ideas and methods of refactoring are slightly heard by programmers w">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://cl.ly/image/0M1z2O0j0k3N/Image%202015-01-25%20at%2011.17.20%20PM.png">
 <meta property="article:published_time" content="2015-01-25T15:29:48.000Z">
-<meta property="article:modified_time" content="2020-09-09T13:33:55.044Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.522Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="Programming">
 <meta property="article:tag" content="Books">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://cl.ly/image/0M1z2O0j0k3N/Image%202015-01-25%20at%2011.17.20%20PM.png">
 
 
 <link rel="canonical" href="https://leihao0.github.io/Refactoring-is-not-a-silver-bullet/">
@@ -289,11 +287,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -338,7 +331,7 @@ mjx-container[display="true"] + br {
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -350,7 +343,6 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E6%9E%84%E4%B8%8D%E6%98%AF%E9%93%B6%E5%BC%B9"><span class="nav-number">1.</span> <span class="nav-text">重构不是银弹</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -364,13 +356,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -455,7 +447,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 21:33:55" itemprop="dateModified" datetime="2020-09-09T21:33:55+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -480,14 +472,14 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>657</span>
+      <span>2k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>2 mins.</span>
     </span>
 </div>
 
@@ -498,32 +490,31 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="重构不是银弹"><a href="#重构不是银弹" class="headerlink" title="重构不是银弹"></a>重构不是银弹</h1><p><img src="http://cl.ly/image/0M1z2O0j0k3N/Image%202015-01-25%20at%2011.17.20%20PM.png" alt=""></p>
-<p>成书时，面向对象尚是小众，而如今函数式编程已开始流行</p>
-<p>时至今日，重构的大部分思想以及方法，有点追求的程序员都略有耳闻，如果是 <code>Java</code> 程序员，更是不想知道都难<br>发展至今，重构已经类似于编码的一部分了</p>
-<p>此书 1 2 3 章已把重构是什么以及什么时候重构说清楚了，应该细看<br>4 5 6 7 8 9 10 11 都是具体的方法，熟悉 Java 的可以对应着看一下<br>之后的章节大略过一下就行了</p>
+        <p>When the book was written, object-oriented was still a niche, but now functional programming has become popular </p>
+<p>Today, most of the ideas and methods of refactoring are slightly heard by programmers who are a little bit pursuing. If you are a Java programmer, it is even harder not to know<br>So far, reconstruction has been similar to a part of coding </p>
+<p>Chapters 1 2 3 of this book have already explained what refactoring is and when, so you should read it carefully<br>4 5 6 7 8 9 10 11 are specific methods, those who are familiar with Java can take a look<br>Just skip over the following chapters </p>
 <a id="more"></a>
 
 <hr>
-<p>曾经在学校里刷了<a target="_blank" rel="noopener" href="http://book.douban.com/subject/1477390/">《代码大全》</a>，所以，再看此书，<strong>相对</strong>就没那么重要了</p>
-<p>比如虽然我 iOS 弱爆了，但看到现在公司的项目，上来蹭蹭蹭几百行的函数，大量的重复代码，各种神奇数字，也是醉了<br>当然这并不是说之前项目不好，毕竟大家都有被 <em>deadline</em> 逼成傻逼的时候</p>
-<p>总得来说，此书还是应该<strong>过一遍</strong>，毕竟封面印着：</p>
+<p>I once brushed <a target="_blank" rel="noopener" href="http://book.douban.com/subject/1477390/">“Code Encyclopedia”</a> in school, so, after reading this book, <strong>relative</strong> is not that important </p>
+<p>For example, although my iOS is weak, but seeing the project of the company now, I am drunk with hundreds of lines of functions, a lot of repetitive code, and various magic numbers<br>Of course, this is not to say that the previous project was not good. After all, everyone was forced to become stupid by <em>deadline</em> </p>
+<p>In general, this book should be <strong>passed over</strong>, after all, the cover is printed: </p>
 <blockquote>
-<p>普通程序员进阶到编程高手必须修炼的秘籍</p>
+<p>Cheats that ordinary programmers must practice to advance to programming masters </p>
 </blockquote>
-<p>因为不看的话，可能意识不到一些前人路过的坑</p>
-<p>像我对临时变量的理解就不妥<br>还有以前写函数<strong>过于随意</strong>，像参数不带 <code>let</code> ，不暴露的也没加 <code>private</code></p>
-<p>比较有启发的是：</p>
+<p>Because if you don’t look at it, you may not be aware of the pits that people passed by. </p>
+<p>Like my understanding of temporary variables is incorrect<br>There is also the previous writing of functions <strong>too random</strong>, like parameters without <code>let</code>, and without adding <code>private</code> for those that are not exposed </p>
+<p>The more instructive are: </p>
 <ul>
-<li>消除 临时变量</li>
-<li>多态 替换 Switch</li>
-<li>Null Object</li>
+<li>Eliminate temporary variables </li>
+<li>Polymorphism replaces Switch </li>
+<li>Null Object </li>
 </ul>
-<p>目前做 iOS 的时间尚短，属于初级程序员，不懂的地方巨多，每每在试错中做功能，写的时候这些东东也就统统忽略了<br>虽然时常想着功能 OK 后立即重构，但人都有惰性，往往看到能跑了就万事大吉，然后把整理代码的希望寄托在重构上</p>
-<p>比较理想的情况是：<br>版本控制 + Review + 结对 + 重构 （目前的公司好赞啊，已实现了大半）</p>
-<p>但这又让我想起了 Fred Brooks 在 1987 年所发表的一篇关于软件工程的经典论文 ——<a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/%E6%B2%A1%E6%9C%89%E9%93%B6%E5%BC%B9">《没有银弹》</a></p>
-<p>重构当然也不是银弹</p>
-<p>只能重写了少年</p>
+<p>At present, the time to make iOS is still short. I belong to junior programmers. There are so many things I don’t understand. Every time I do functions in trial and error, I ignore all these things when I write.<br>Although I often think about refactoring immediately after the function is OK, people are lazy, and often see that everything is fine if they can run, and then put the hope of organizing the code on refactoring </p>
+<p>The ideal situation is:<br>Version control + Review + pairing + refactoring (The current company is very good, it has been implemented mostly) </p>
+<p>But this reminds me of a classic paper on software engineering published by Fred Brooks in 1987-[“No Silver Bullet”](<a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/%E6%B2%">http://zh.wikipedia.org/wiki/%E6%B2%</a> A1%E6%9C%89%E9%93%B6%E5%BC%B9) </p>
+<p>Refactoring is certainly not a silver bullet </p>
+<p>Can only rewrite the boy </p>
 
     </div>
 
@@ -537,16 +528,16 @@ mjx-container[display="true"] + br {
       <div class="popular-posts-title"><a href="/Go-Web/" rel="bookmark">Go Web</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ios-programming---big-nerd-ranch-guides/" rel="bookmark">iOS Programming - Big Nerd Ranch Guides</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/Learn-Go-in-20-days/" rel="bookmark">Learn Go in 20 days</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/global-gitignore/" rel="bookmark">global gitignore</a></div>
+      <div class="popular-posts-title"><a href="/ios-developer-account-and-app-store/" rel="bookmark">iOS developer account and how to list it</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ios-developer-account-and-app-store/" rel="bookmark">iOS developer account and app store</a></div>
+      <div class="popular-posts-title"><a href="/count-lines-of-code/" rel="bookmark">Number of lines of code</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/A-simple-VS-between-Sinatra-and-Martini/" rel="bookmark">A simple VS. between Sinatra and Martini</a></div>
     </li>
   </ul>
 
@@ -583,13 +574,13 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/SB-on-Rails/" rel="prev" title="SB on Rails">
-                  <i class="fa fa-chevron-left"></i> SB on Rails
+                <a href="/An-indigestible-programming-language-is-a-bad-language/" rel="prev" title="An indigestible programming language is a bad language">
+                  <i class="fa fa-chevron-left"></i> An indigestible programming language is a bad language
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Ten-years-of-work-experience/" rel="next" title="Ten years of work experience">
-                  Ten years of work experience <i class="fa fa-chevron-right"></i>
+                <a href="/Ten-years-of-work-experience/" rel="next" title="10 years of work experience to save you">
+                  10 years of work experience to save you <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -645,7 +636,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -656,13 +647,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

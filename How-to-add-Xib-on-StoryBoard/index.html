@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="In the classic 1975 software project management book, The Mythical Man Month: Essays on Software Engineering, Fred Brooks states that, no matter the programming language chosen, a professional develo">
+  <meta name="description" content="In 1975, the classic software project management book “Mythical Man Month. In Essays on Software Engineering, Fred Brooks pointed out that no matter which programming language is chosen, a profession">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to add Xib on StoryBoard">
 <meta property="og:url" content="https://leihao0.github.io/How-to-add-Xib-on-StoryBoard/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="In the classic 1975 software project management book, The Mythical Man Month: Essays on Software Engineering, Fred Brooks states that, no matter the programming language chosen, a professional develo">
+<meta property="og:description" content="In 1975, the classic software project management book “Mythical Man Month. In Essays on Software Engineering, Fred Brooks pointed out that no matter which programming language is chosen, a profession">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-10-17T16:56:53.000Z">
-<meta property="article:modified_time" content="2020-09-09T13:20:59.050Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.532Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Xcode">
@@ -287,11 +287,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -361,13 +356,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -452,7 +447,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 21:20:59" itemprop="dateModified" datetime="2020-09-09T21:20:59+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -477,7 +472,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.4k</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -496,31 +491,31 @@ mjx-container[display="true"] + br {
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>
-<p>In the classic 1975 software project management book, The Mythical Man Month: Essays on Software Engineering, Fred Brooks states that, no matter the programming language chosen, a professional developer will write an average 10 lines of code (LoC) day.</p>
+<p>In 1975, the classic software project management book “Mythical Man Month. In Essays on Software Engineering, Fred Brooks pointed out that no matter which programming language is chosen, a professional developer writes an average of 10 lines of code (LoC) per day. </p>
 </blockquote>
-<p>StoryBoard is good for saving code lines and improve efficiency, as  strongly recommend in each WWDC and continually improve it.</p>
+<p>StoryBoard is conducive to saving lines of code and improving efficiency. Apple will strongly recommend it at every WWDC and continue to improve it. </p>
 <a id="more"></a>
 
-<p>I don’t understand why there are still lots of Team Leaders require their poor programmers to write the UIView in programmatic way.</p>
-<p>Maybe they thought some CustomViews are highly reuse usable, and cope paste in StoryBoard would cause the redundant side effect.</p>
-<p>So, The main idea of this solution is, cohesion the CustomViews to a Xib then add it on StoryBoard.</p>
-<p>This need a few steps as for  didn’t support it directly:</p>
+<p>I don’t understand why there are still many team leaders who ask their poor programmers to write UIView programmatically. </p>
+<p>Maybe they think that some CustomViews are very reusable, and if they are pasted into StoryBoard, they will cause unnecessary side effects. </p>
+<p>Therefore, the main idea of this solution is to condense CustomViews into Xib and then add it to StoryBoard. </p>
+<p>This requires several steps, because Apple does not directly support it. </p>
 <ol>
-<li>add a IBDesignable <code>CustomView.Swift</code> and <code>CustomView.Xib</code></li>
-<li>set the <code>CustomView.xib -&gt; Placeholders -&gt; File&#39;s Owner -&gt; Custom Class</code> to <code>CustomView</code></li>
-<li>new a <code>CustomView</code> programmatically and load the root view from <code>CustomView.Xib</code></li>
-<li>add the root view with equal width and height in both horizontal and vertical center on <code>CustomView</code> in init function</li>
-<li>now you can drag a View to StoryBoard, and set it’s class to <code>CustomView</code> which can generate a snapshot for preview</li>
+<li>Add an IBDesignable <code>CustomView.Swift</code> and <code>CustomView.Xib</code> </li>
+<li>Set <code>CustomView.xib-&gt;Placeholder-&gt;File Owner-&gt;Custom Class</code> to <code>CustomView</code> </li>
+<li>Create a new CustomView programmatically and load the root view from CustomView.Xib </li>
+<li>Add a root view with equal width and height in the horizontal and vertical centers on the <code>CustomView</code> of the init function </li>
+<li>Now you can drag View to StoryBoard and set its class to <code>CustomView</code>, which can generate a snapshot for preview </li>
 </ol>
-<p>But the subviews of CustomView like UIButton can’t wire to ViewController as an <code>@IBOutlet</code></p>
-<p><code>Delegate</code> or <code>Block</code> can solve this problem.</p>
-<p>As for me, I suggest <code>Block</code> way, cause I used <code>Delegate</code> for half a year, and found</p>
+<p>But the subviews of CustomView (such as UIButton) cannot be connected to ViewController<code>@IBOutlet</code> </p>
+<p><code>Delegate</code> or <code>Block</code> can solve this problem. </p>
+<p>As for me, I suggest the <code>Block</code> method, because I have used <code>Delegate</code> for half a year and found </p>
 <ul>
-<li>ViewController will have too many delegates</li>
-<li><code>delegate = self</code> have to written in <code>viewDidLoad</code> and sometimes <code>=nil</code> in <code>viewDidDisappear</code></li>
+<li>ViewController will have too many delegates </li>
+<li><code>delegate = self</code> must write <code>viewDidLoad</code> and sometimes <code>=nil</code> in <code>viewDidDisappear</code> </li>
 </ul>
-<p><code>Block</code> will have less code and more simpler.</p>
-<p>Here is the <a target="_blank" rel="noopener" href="https://github.com/leihao0/DesignableView">example</a> which may reduce your time.</p>
+<p>The code for <code>Block</code> will be less and simpler. </p>
+<p>Below is the <a target="_blank" rel="noopener" href="https://github.com/leihao0/DesignableView">example</a>, which may reduce your time. </p>
 
     </div>
 
@@ -534,16 +529,16 @@ mjx-container[display="true"] + br {
       <div class="popular-posts-title"><a href="/UITextField-and-UILabel-Tips/" rel="bookmark">UITextField And UILabel Tips</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/Batch-replace-NamedColors-to-RGB-in-Storyboard/" rel="bookmark">Batch replace NamedColors to RGB in Storyboard</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/ios-7-programming-cookbook/" rel="bookmark">iOS 7 Programming Cookbook</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/Pull-to-Refresh-UIViewController-in-iOS/" rel="bookmark">Pull to Refresh UIViewController in iOS</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/iOS-CI-Jenkins-Phabricator-Slack/" rel="bookmark">iOS CI (Jenkins + Phabricator + Slack)</a></div>
+      <div class="popular-posts-title"><a href="/iOS-CI-Jenkins-Phabricator-Slack/" rel="bookmark">iOS CI (Jenkins + pH AB Rica Tor + slack)</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/Reflection-in-Swift-via-Mirror/" rel="bookmark">Reflection in Swift by mirroring</a></div>
     </li>
   </ul>
 
@@ -580,8 +575,8 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/How-to-learn-English-as-a-Chinese/" rel="prev" title="How to learn English as a Chinese">
-                  <i class="fa fa-chevron-left"></i> How to learn English as a Chinese
+                <a href="/How-to-learn-English-as-a-Chinese/" rel="prev" title="How do Chinese learn English">
+                  <i class="fa fa-chevron-left"></i> How do Chinese learn English
                 </a>
             </div>
             <div class="post-nav-item">
@@ -642,7 +637,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -653,13 +648,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/tw/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/tw/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/tw/images/logo.png">
+  <link rel="mask-icon" href="/tw/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="rbaH_zC-qBwXaawJ10Mno3FHzv9HRFHGFdXx2f1BwyI">
+
+<link rel="stylesheet" href="/tw/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+
+<script data-ad-client="ca-pub-2317298287519457" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"leihao0.github.io","root":"/tw/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/tw/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="二元搜尋123456789101112class Solution &amp;#123;    func search(_ nums: [Int], _ target: Int) -&gt; Int &amp;#123;        var i &#x3D; 0, j &#x3D; nums.count-1        while i &lt;&#x3D; j &amp;#123;            let mid &#x3D; i + (j-i)&#x2F;2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode二進制搜索">
+<meta property="og:url" content="https://leihao0.github.io/tw/LeetCode-Binary-Search/index.html">
+<meta property="og:site_name" content="LeiHao&#39;s Blog">
+<meta property="og:description" content="二元搜尋123456789101112class Solution &amp;#123;    func search(_ nums: [Int], _ target: Int) -&gt; Int &amp;#123;        var i &#x3D; 0, j &#x3D; nums.count-1        while i &lt;&#x3D; j &amp;#123;            let mid &#x3D; i + (j-i)&#x2F;2">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-01-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.626Z">
+<meta property="article:author" content="LeiHao">
+<meta property="article:tag" content="Swift">
+<meta property="article:tag" content="LeetCode">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leihao0.github.io/tw/LeetCode-Binary-Search/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'tw'
+  };
+</script>
+
+  <title>LeetCode二進制搜索 | LeiHao's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-159363268-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?25f016f633270b8e0baf56c4fe6f2dc1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/tw/atom.xml" title="LeiHao's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/tw/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">LeiHao's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/tw/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/tw/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/tw/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/tw/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%85%83%E6%90%9C%E5%B0%8B"><span class="nav-number">1.</span> <span class="nav-text">二元搜尋</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E6%96%B9%E6%A0%B9-x"><span class="nav-number">2.</span> <span class="nav-text">平方根(x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8C%9C%E6%95%B8%E6%9B%B4%E9%AB%98%E6%88%96%E6%9B%B4%E4%BD%8E"><span class="nav-number">3.</span> <span class="nav-text">猜數更高或更低</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%89%E6%8E%92%E5%BA%8F%E6%95%B8%E7%B5%84"><span class="nav-number">4.</span> <span class="nav-text">搜索旋轉排序數組</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%80%8B%E9%8C%AF%E8%AA%A4%E7%89%88%E6%9C%AC"><span class="nav-number">5.</span> <span class="nav-text">第一個錯誤版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%B3%B0%E5%85%83%E7%B4%A0"><span class="nav-number">6.</span> <span class="nav-text">查找峰元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%97%8B%E8%BD%89%E6%8E%92%E5%BA%8F%E6%95%B8%E7%B5%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="nav-number">7.</span> <span class="nav-text">在旋轉排序數組中查找最小值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E7%AF%84%E5%9C%8D"><span class="nav-number">8.</span> <span class="nav-text">搜索範圍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BEK%E5%80%8B%E6%9C%80%E8%BF%91%E7%9A%84%E5%85%83%E7%B4%A0"><span class="nav-number">9.</span> <span class="nav-text">查找K個最近的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E8%BF%91%E7%9A%84%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%A8%B9%E5%80%BC"><span class="nav-number">10.</span> <span class="nav-text">最近的二分搜索樹值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%9C%AA%E7%9F%A5%E5%A4%A7%E5%B0%8F%E7%9A%84%E6%8E%92%E5%BA%8F%E6%95%B8%E7%B5%84%E4%B8%AD%E6%90%9C%E7%B4%A2"><span class="nav-number">11.</span> <span class="nav-text">在未知大小的排序數組中搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%B0%E4%BF%98-x%EF%BC%8Cn"><span class="nav-number">12.</span> <span class="nav-text">戰俘(x，n)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E5%AE%8C%E7%BE%8E%E5%BB%A3%E5%A0%B4"><span class="nav-number">13.</span> <span class="nav-text">有效完美廣場</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%A4%A7%E6%96%BC%E7%9B%AE%E6%A8%99%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%97%E6%AF%8D"><span class="nav-number">14.</span> <span class="nav-text">查找大於目標的最小字母</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%97%8B%E8%BD%89%E6%8E%92%E5%BA%8F%E6%95%B8%E7%B5%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%9C%80%E5%B0%8F%E5%80%BC-1"><span class="nav-number">15.</span> <span class="nav-text">在旋轉排序數組中查找最小值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%97%8B%E8%BD%89%E6%8E%92%E5%BA%8F%E6%95%B8%E7%B5%84II%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="nav-number">16.</span> <span class="nav-text">在旋轉排序數組II中查找最小值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A9%E5%80%8B%E6%95%B8%E7%B5%84%E7%9A%84%E4%BA%A4%E9%9B%86"><span class="nav-number">17.</span> <span class="nav-text">兩個數組的交集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A9%E5%80%8B%E6%95%B8%E7%B5%84%E7%9A%84%E4%BA%A4%E9%9B%86II"><span class="nav-number">18.</span> <span class="nav-text">兩個數組的交集II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A9%E5%80%8B%E5%92%8CII-%E8%BC%B8%E5%85%A5%E6%95%B8%E7%B5%84%E5%B7%B2%E6%8E%92%E5%BA%8F"><span class="nav-number">19.</span> <span class="nav-text">兩個和II-輸入數組已排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E9%87%8D%E8%A4%87%E7%9A%84%E8%99%9F%E7%A2%BC"><span class="nav-number">20.</span> <span class="nav-text">查找重複的號碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A9%E5%80%8B%E6%8E%92%E5%BA%8F%E6%95%B8%E7%B5%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B8"><span class="nav-number">21.</span> <span class="nav-text">兩個排序數組的中位數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E7%AC%ACK%E5%80%8B%E6%9C%80%E5%B0%8F%E5%B0%8D%E8%B7%9D%E9%9B%A2"><span class="nav-number">22.</span> <span class="nav-text">查找第K個最小對距離</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E6%95%B8%E7%B5%84%E6%9C%80%E5%A4%A7%E5%92%8C"><span class="nav-number">23.</span> <span class="nav-text">分割數組最大和</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">LeiHao</p>
+  <div class="site-description" itemprop="description">😃😃😃</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/tw/archives/">
+        
+          <span class="site-state-item-count">155</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tw/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leihao0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/leihao0" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/tw/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="tw">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/tw/LeetCode-Binary-Search/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode二進制搜索
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-01-07 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-07T00:00:00+08:00">2020-01-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/tw/LeetCode-Binary-Search/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode-Binary-Search/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>6.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="二元搜尋"><a href="#二元搜尋" class="headerlink" title="二元搜尋"></a>二元搜尋</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">search</span><span class="params">(<span class="number">_</span> nums: [Int], <span class="number">_</span> target: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = nums.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt;= j &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = i + (j-i)/<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] == target &#123; <span class="keyword">return</span> mid &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] &lt; target &#123; i = mid+<span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123; j = mid-<span class="number">1</span> &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="平方根-x"><a href="#平方根-x" class="headerlink" title="平方根(x)"></a>平方根(x)</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">mySqrt</span><span class="params">(<span class="number">_</span> x: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> target = <span class="type">Int</span>(sqrt(<span class="type">Double</span>(x)))</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = x</span><br><span class="line">        <span class="keyword">while</span> i &lt;= j &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = i + (j-i)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> mid == target &#123; <span class="keyword">return</span> mid &#125;</span><br><span class="line">            mid &lt; target ? (i=mid+<span class="number">1</span>) : (j=mid-<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="猜數更高或更低"><a href="#猜數更高或更低" class="headerlink" title="猜數更高或更低"></a>猜數更高或更低</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> : <span class="title">GuessGame</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">guessNumber</span><span class="params">(<span class="number">_</span> n: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">1</span>, j = n</span><br><span class="line">        <span class="keyword">while</span> i &lt;= j &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = i + (j-i)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">switch</span> guess(mid) &#123;</span><br><span class="line">                <span class="keyword">case</span> -<span class="number">1</span>:</span><br><span class="line">                    j = mid-<span class="number">1</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    i = mid+<span class="number">1</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">return</span> mid</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="搜索旋轉排序數組"><a href="#搜索旋轉排序數組" class="headerlink" title="搜索旋轉排序數組"></a>搜索旋轉排序數組</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">search</span><span class="params">(<span class="number">_</span> nums: [Int], <span class="number">_</span> target: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = nums.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt;= j &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = i + (j - i)/<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] == target &#123;</span><br><span class="line">                <span class="keyword">return</span> mid</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] &gt;= nums[i] &#123;</span><br><span class="line">                (target &gt;= nums[i] &amp;&amp; target &lt; nums[mid]) ? (j = mid-<span class="number">1</span>) : (i = mid+<span class="number">1</span>)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                (target &lt;= nums[j] &amp;&amp; target &gt; nums[mid]) ? (i = mid+<span class="number">1</span>) : (j = mid-<span class="number">1</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="第一個錯誤版本"><a href="#第一個錯誤版本" class="headerlink" title="第一個錯誤版本"></a>第一個錯誤版本</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>: <span class="title">VersionControl</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">firstBadVersion</span><span class="params">(<span class="number">_</span> n: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">1</span>, j = n</span><br><span class="line">        <span class="keyword">while</span> i &lt;= j &#123;</span><br><span class="line">            <span class="keyword">let</span> h = i + (j-i)/<span class="number">2</span></span><br><span class="line">            isBadVersion(h) ? (j = h-<span class="number">1</span>) : (i = h + <span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找峰元素"><a href="#查找峰元素" class="headerlink" title="查找峰元素"></a>查找峰元素</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findPeakElement</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> l = <span class="number">0</span>, r = nums.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = l+(r-l)&gt;&gt;<span class="number">1</span></span><br><span class="line">            nums[mid] &gt; nums[mid+<span class="number">1</span>] ? (r = mid) : (l = mid+<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findPeakElement</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="function"><span class="keyword">func</span> <span class="title">search</span><span class="params">(<span class="number">_</span> l: Int, <span class="number">_</span> r: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (l == r) &#123; <span class="keyword">return</span> l &#125;</span><br><span class="line">            <span class="keyword">let</span> mid = l + (r-l)&gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> (nums[mid] &gt; nums[mid+<span class="number">1</span>]) ? search(l, mid) : search(mid+<span class="number">1</span>, r)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> search(<span class="number">0</span>, nums.<span class="built_in">count</span>-<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在旋轉排序數組中查找最小值"><a href="#在旋轉排序數組中查找最小值" class="headerlink" title="在旋轉排序數組中查找最小值"></a>在旋轉排序數組中查找最小值</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findMin</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> l = <span class="number">0</span>, r = nums.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = l+(r-l)&gt;&gt;<span class="number">1</span></span><br><span class="line">            nums[mid] &gt; nums[r] ? (l = mid+<span class="number">1</span>) : (r = mid)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[l]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="搜索範圍"><a href="#搜索範圍" class="headerlink" title="搜索範圍"></a>搜索範圍</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">searchRange</span><span class="params">(<span class="number">_</span> nums: [Int], <span class="number">_</span> target: Int)</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">if</span> nums.isEmpty &#123; <span class="keyword">return</span> [-<span class="number">1</span>, -<span class="number">1</span>] &#125;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = nums.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; j &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = i+(j-i)/<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] == target &#123;</span><br><span class="line">                i = mid; j = mid</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] &lt; target &#123;</span><br><span class="line">                i = mid+<span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                j = mid-<span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> i-<span class="number">1</span> &gt;= <span class="number">0</span>, nums[i-<span class="number">1</span>] == target &#123; i -= <span class="number">1</span> &#125;</span><br><span class="line">        <span class="keyword">while</span> j+<span class="number">1</span> &lt; nums.<span class="built_in">count</span>, nums[j+<span class="number">1</span>] == target &#123; j += <span class="number">1</span> &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[i] == target ? [i, j] : [-<span class="number">1</span>, -<span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找K個最近的元素"><a href="#查找K個最近的元素" class="headerlink" title="查找K個最近的元素"></a>查找K個最近的元素</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findClosestElements</span><span class="params">(<span class="number">_</span> arr: [Int], <span class="number">_</span> k: Int, <span class="number">_</span> x: Int)</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">if</span> arr.isEmpty &#123; <span class="keyword">return</span> [] &#125;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = arr.<span class="built_in">count</span>, ans = [<span class="type">Int</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; j &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = i+(j-i)/<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> arr[mid] == x &#123; i = mid &#125;</span><br><span class="line">            arr[mid] &lt; x ? (i = mid+<span class="number">1</span>) : (j = mid-<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        j = i+k &lt; arr.<span class="built_in">count</span> ? i+k : arr.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        i = (i-k) &gt;= <span class="number">0</span> ? (i-k) : <span class="number">0</span></span><br><span class="line">        ans = <span class="type">Array</span>(arr[i...j])</span><br><span class="line">        <span class="keyword">while</span> ans.<span class="built_in">count</span> &gt; k &#123;</span><br><span class="line">            <span class="built_in">abs</span>(x-ans.first!) &lt;= <span class="built_in">abs</span>(x-ans.last!) ? ans.removeLast() : ans.removeFirst()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="最近的二分搜索樹值"><a href="#最近的二分搜索樹值" class="headerlink" title="最近的二分搜索樹值"></a>最近的二分搜索樹值</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">closestValue</span><span class="params">(<span class="number">_</span> root: TreeNode?, <span class="number">_</span> target: Double)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> p = root, v = p!.val</span><br><span class="line">        <span class="keyword">while</span> p != <span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">abs</span>(<span class="type">Double</span>(p!.val)-target) &lt; <span class="built_in">abs</span>(<span class="type">Double</span>(v)-target) &#123; v = p!.val &#125;</span><br><span class="line">            p = target &lt; <span class="type">Double</span>(p!.val) ? p!.<span class="keyword">left</span> : p!.<span class="keyword">right</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> v</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在未知大小的排序數組中搜索"><a href="#在未知大小的排序數組中搜索" class="headerlink" title="在未知大小的排序數組中搜索"></a>在未知大小的排序數組中搜索</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">search</span><span class="params">(<span class="number">_</span> reader: ArrayReader, <span class="number">_</span> target: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> reader.<span class="keyword">get</span>(<span class="number">0</span>) == target &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> reader.<span class="keyword">get</span>(j) &lt; target &#123;</span><br><span class="line">            i = j; j &lt;&lt;= <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> i &lt;= j &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = i+(j-i)&gt;&gt;<span class="number">1</span>, v = reader.<span class="keyword">get</span>(mid)</span><br><span class="line">            <span class="keyword">if</span> v == target &#123; <span class="keyword">return</span> mid &#125;</span><br><span class="line">            v &lt; target ? (i=mid+<span class="number">1</span>) : (j=mid-<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="戰俘-x，n"><a href="#戰俘-x，n" class="headerlink" title="戰俘(x，n)"></a>戰俘(x，n)</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">myPow</span><span class="params">(<span class="number">_</span> x: Double, <span class="number">_</span> n: Int)</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> dict = [<span class="number">0</span>: <span class="number">1.0</span>, <span class="number">1</span>: x]</span><br><span class="line">        <span class="function"><span class="keyword">func</span> <span class="title">fastPow</span><span class="params">(<span class="number">_</span> x: Double, <span class="number">_</span> n: Int)</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> v = dict[n] &#123; <span class="keyword">return</span> v &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">let</span> h = fastPow(x, n/<span class="number">2</span>), v = n&amp;<span class="number">1</span> == <span class="number">0</span> ? h*h : x*h*h</span><br><span class="line">            dict[n] = v</span><br><span class="line">            <span class="keyword">return</span> v</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> v = fastPow(x, <span class="built_in">abs</span>(n))</span><br><span class="line">        <span class="keyword">return</span> n &lt; <span class="number">0</span> ? <span class="number">1</span>/v : v</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="有效完美廣場"><a href="#有效完美廣場" class="headerlink" title="有效完美廣場"></a>有效完美廣場</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">isPerfectSquare</span><span class="params">(<span class="number">_</span> num: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> x = (num+<span class="number">1</span>)/<span class="number">2</span></span><br><span class="line">        <span class="keyword">while</span> x*x &gt; num &#123;</span><br><span class="line">            x = (x + num/x) / <span class="number">2</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x*x == num</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找大於目標的最小字母"><a href="#查找大於目標的最小字母" class="headerlink" title="查找大於目標的最小字母"></a>查找大於目標的最小字母</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">nextGreatestLetter</span><span class="params">(<span class="number">_</span> letters: [Character], <span class="number">_</span> target: Character)</span></span> -&gt; <span class="type">Character</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">c</span> <span class="keyword">in</span> letters &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">c</span> &gt; target &#123; <span class="keyword">return</span> <span class="built_in">c</span> &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> letters.first!</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在旋轉排序數組中查找最小值-1"><a href="#在旋轉排序數組中查找最小值-1" class="headerlink" title="在旋轉排序數組中查找最小值"></a>在旋轉排序數組中查找最小值</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findMin</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> l = <span class="number">0</span>, r = nums.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = l+(r-l)/<span class="number">2</span></span><br><span class="line">            nums[mid] &gt;= nums[r] ? (l = mid+<span class="number">1</span>) : (r = mid)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[l]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在旋轉排序數組II中查找最小值"><a href="#在旋轉排序數組II中查找最小值" class="headerlink" title="在旋轉排序數組II中查找最小值"></a>在旋轉排序數組II中查找最小值</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findMin</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> l = <span class="number">0</span>, r = nums.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r &#123;</span><br><span class="line">            <span class="keyword">let</span> mid = l+(r-l)/<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] &gt; nums[r] &#123; l = mid+<span class="number">1</span> &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] &lt; nums[r]  &#123; r = mid &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123; r -= <span class="number">1</span> &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[l]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="兩個數組的交集"><a href="#兩個數組的交集" class="headerlink" title="兩個數組的交集"></a>兩個數組的交集</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">intersection</span><span class="params">(<span class="number">_</span> nums1: [Int], <span class="number">_</span> nums2: [Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">let</span> set1 = <span class="type">Set</span>(nums1), set2 = <span class="type">Set</span>(nums2)</span><br><span class="line">        <span class="keyword">return</span> <span class="type">Array</span>(set1.intersection(set2))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="兩個數組的交集II"><a href="#兩個數組的交集II" class="headerlink" title="兩個數組的交集II"></a>兩個數組的交集II</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">intersect</span><span class="params">(<span class="number">_</span> nums1: [Int], <span class="number">_</span> nums2: [Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> dict = [<span class="type">Int</span>: <span class="type">Int</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums1 &#123;</span><br><span class="line">            dict[n, <span class="keyword">default</span>: <span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums2 &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> v = dict[n], v &gt; <span class="number">0</span> &#123;</span><br><span class="line">                ans.append(n)</span><br><span class="line">                dict[n] = v - <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="兩個和II-輸入數組已排序"><a href="#兩個和II-輸入數組已排序" class="headerlink" title="兩個和II-輸入數組已排序"></a>兩個和II-輸入數組已排序</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">twoSum</span><span class="params">(<span class="number">_</span> numbers: [Int], <span class="number">_</span> target: Int)</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = numbers.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; j &#123;</span><br><span class="line">            <span class="keyword">let</span> v =  numbers[i]+numbers[j]</span><br><span class="line">            <span class="keyword">if</span> v == target &#123; <span class="keyword">break</span> &#125;</span><br><span class="line">            v &lt; target ? (i+=<span class="number">1</span>) : (j-=<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> [i+<span class="number">1</span>, j+<span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找重複的號碼"><a href="#查找重複的號碼" class="headerlink" title="查找重複的號碼"></a>查找重複的號碼</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findDuplicate</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> <span class="keyword">set</span> = <span class="type">Set</span>&lt;<span class="type">Int</span>&gt;(), i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; nums.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">set</span>.<span class="built_in">contains</span>(nums[i]) &#123; <span class="keyword">break</span> &#125;</span><br><span class="line">            <span class="keyword">set</span>.insert(nums[i]); i+=<span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[i]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="兩個排序數組的中位數"><a href="#兩個排序數組的中位數" class="headerlink" title="兩個排序數組的中位數"></a>兩個排序數組的中位數</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="number">_</span> nums1: [Int], <span class="number">_</span> nums2: [Int])</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> nums = nums1+nums2</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; nums1.<span class="built_in">count</span>, j &lt; nums2.<span class="built_in">count</span> &#123;</span><br><span class="line">            nums1[i] &lt; nums2[j] ? (nums[k] = nums1[i], i+=<span class="number">1</span>) : (nums[k] = nums2[j], j+=<span class="number">1</span>); k+=<span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> i &lt; nums1.<span class="built_in">count</span> &#123; nums[k] = nums1[i]; i+=<span class="number">1</span>; k+=<span class="number">1</span> &#125;</span><br><span class="line">        <span class="keyword">while</span> j &lt; nums2.<span class="built_in">count</span> &#123; nums[k] = nums2[j]; j+=<span class="number">1</span>; k+=<span class="number">1</span> &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> h = nums.<span class="built_in">count</span>/<span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> nums.<span class="built_in">count</span>&amp;<span class="number">1</span> == <span class="number">1</span> ? <span class="type">Double</span>(nums[h]) : <span class="type">Double</span>(nums[h-<span class="number">1</span>]+nums[h])/<span class="number">2.0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找第K個最小對距離"><a href="#查找第K個最小對距離" class="headerlink" title="查找第K個最小對距離"></a>查找第K個最小對距離</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">smallestDistancePair</span><span class="params">(<span class="number">_</span> nums: [Int], <span class="number">_</span> k: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> nums = nums.sorted()</span><br><span class="line">        <span class="keyword">var</span> l = <span class="number">0</span>, h = nums.last!-nums.first!</span><br><span class="line">        <span class="keyword">while</span> l &lt; h &#123;</span><br><span class="line">            <span class="keyword">let</span> m = (l+h)/<span class="number">2</span></span><br><span class="line">            <span class="keyword">var</span> <span class="built_in">count</span> = <span class="number">0</span>, l1 = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> r1 <span class="keyword">in</span> <span class="number">0</span>..&lt;nums.<span class="built_in">count</span> &#123;</span><br><span class="line">                <span class="keyword">while</span> (nums[r1]-nums[l1]) &gt; m &#123; l1 += <span class="number">1</span> &#125;</span><br><span class="line">                <span class="built_in">count</span> += r1-l1</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">count</span> &gt;= k ? (h = m): (l = m+<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="分割數組最大和"><a href="#分割數組最大和" class="headerlink" title="分割數組最大和"></a>分割數組最大和</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/tw/LeetCode-Arrays-101/" rel="bookmark">LeetCode陣列101</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/tw/LeetCode-Binary-Tree/" rel="bookmark">LeetCode二叉樹</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/tw/LeetCode-Recursion-2/" rel="bookmark">LeetCode遞歸2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/tw/LeetCode-Recursion-1/" rel="bookmark">LeetCode遞歸1</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/tw/leetcode-n-ary-tree/" rel="bookmark">LeetCode N元樹</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me 👨‍💻 a coffee ☕️</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/wechat.png" alt="LeiHao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/alipay.png" alt="LeiHao Alipay">
+        <span>Alipay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/bitcoin.png" alt="LeiHao Bitcoin">
+        <span>Bitcoin</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tw/tags/swift/" rel="tag"># Swift</a>
+              <a href="/tw/tags/leetcode/" rel="tag"># LeetCode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/tw/LeetCode-Recursion-2/" rel="prev" title="LeetCode遞歸2">
+                  <i class="fa fa-chevron-left"></i> LeetCode遞歸2
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/tw/leetcode-n-ary-tree/" rel="next" title="LeetCode N元樹">
+                  LeetCode N元樹 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2012 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-laptop-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeiHao</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">286k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4:20</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/tw/js/utils.js"></script><script src="/tw/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/tw/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Artwalk.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://leihao0.github.io/tw/LeetCode-Binary-Search/";
+    this.page.identifier = "LeetCode-Binary-Search/";
+    this.page.title = "LeetCode二進制搜索";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Artwalk.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/es/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/es/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/es/images/logo.png">
+  <link rel="mask-icon" href="/es/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="rbaH_zC-qBwXaawJ10Mno3FHzv9HRFHGFdXx2f1BwyI">
+
+<link rel="stylesheet" href="/es/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+
+<script data-ad-client="ca-pub-2317298287519457" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"leihao0.github.io","root":"/es/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/es/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="Max Consecutive Ones12345class Solution &amp;#123;    func findMaxConsecutiveOnes(_ nums: [Int]) -&gt; Int &amp;#123;        return nums.split(separator: 0).map &amp;#123;$0.count&amp;#125;.max() ?? 0    &amp;#125;&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode Arrays 101">
+<meta property="og:url" content="https://leihao0.github.io/es/LeetCode-Arrays-101/index.html">
+<meta property="og:site_name" content="LeiHao&#39;s Blog">
+<meta property="og:description" content="Max Consecutive Ones12345class Solution &amp;#123;    func findMaxConsecutiveOnes(_ nums: [Int]) -&gt; Int &amp;#123;        return nums.split(separator: 0).map &amp;#123;$0.count&amp;#125;.max() ?? 0    &amp;#125;&amp;#125;">
+<meta property="og:locale" content="es_ES">
+<meta property="article:published_time" content="2019-12-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.101Z">
+<meta property="article:author" content="LeiHao">
+<meta property="article:tag" content="Swift">
+<meta property="article:tag" content="LeetCode">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leihao0.github.io/es/LeetCode-Arrays-101/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'es'
+  };
+</script>
+
+  <title>LeetCode Arrays 101 | LeiHao's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-159363268-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?25f016f633270b8e0baf56c4fe6f2dc1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/es/atom.xml" title="LeiHao's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/es/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">LeiHao's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/es/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/es/about/" rel="section"><i class="fa fa-user fa-fw"></i>Sobre mi</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/es/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archivo</a>
+
+  </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/es/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Buscando..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Tabla de contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Max-Consecutive-Ones"><span class="nav-number">1.</span> <span class="nav-text">Max Consecutive Ones</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Find-Numbers-with-Even-Number-of-Digits"><span class="nav-number">2.</span> <span class="nav-text">Find Numbers with Even Number of Digits</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Squares-of-a-Sorted-Array"><span class="nav-number">3.</span> <span class="nav-text">Squares of a Sorted Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Duplicate-Zeros"><span class="nav-number">4.</span> <span class="nav-text">Duplicate Zeros</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-Sorted-Array"><span class="nav-number">5.</span> <span class="nav-text">Merge Sorted Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Element"><span class="nav-number">6.</span> <span class="nav-text">Remove Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates-from-Sorted-Array"><span class="nav-number">7.</span> <span class="nav-text">Remove Duplicates from Sorted Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check-If-N-and-Its-Double-Exist"><span class="nav-number">8.</span> <span class="nav-text">Check If N and Its Double Exist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Valid-Mountain-Array"><span class="nav-number">9.</span> <span class="nav-text">Valid Mountain Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Replace-Elements-with-Greatest-Element-on-Right-Side"><span class="nav-number">10.</span> <span class="nav-text">Replace Elements with Greatest Element on Right Side</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates-from-Sorted-Array-1"><span class="nav-number">11.</span> <span class="nav-text">Remove Duplicates from Sorted Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Move-Zeroes"><span class="nav-number">12.</span> <span class="nav-text">Move Zeroes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sort-Array-By-Parity"><span class="nav-number">13.</span> <span class="nav-text">Sort Array By Parity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Squares-of-a-Sorted-Array-1"><span class="nav-number">14.</span> <span class="nav-text">Squares of a Sorted Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Height-Checker"><span class="nav-number">15.</span> <span class="nav-text">Height Checker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Max-Consecutive-Ones-II"><span class="nav-number">16.</span> <span class="nav-text">Max Consecutive Ones II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Third-Maximum-Number"><span class="nav-number">17.</span> <span class="nav-text">Third Maximum Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Find-All-Numbers-Disappeared-in-an-Array"><span class="nav-number">18.</span> <span class="nav-text">Find All Numbers Disappeared in an Array</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">LeiHao</p>
+  <div class="site-description" itemprop="description">😃😃😃</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/es/archives/">
+        
+          <span class="site-state-item-count">155</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/es/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leihao0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/leihao0" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/es/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/es/LeetCode-Arrays-101/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/es/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode Arrays 101
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
+
+      <time title="Creado por: 2020-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">2020-01-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Editado el</span>
+        <time title="Modificado por: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/es/LeetCode-Arrays-101/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode-Arrays-101/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Cantidad de caracteres en el articulo">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Cantidad de caracteres en el articulo: </span>
+      <span>5.1k</span>
+    </span>
+    <span class="post-meta-item" title="Tiempo de lectura">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Tiempo de lectura &asymp;</span>
+      <span>5 minutos.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Max-Consecutive-Ones"><a href="#Max-Consecutive-Ones" class="headerlink" title="Max Consecutive Ones"></a>Max Consecutive Ones</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findMaxConsecutiveOnes</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> nums.<span class="built_in">split</span>(separator: <span class="number">0</span>).<span class="built_in">map</span> &#123;$<span class="number">0</span>.<span class="built_in">count</span>&#125;.<span class="built_in">max</span>() ?? <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="Find-Numbers-with-Even-Number-of-Digits"><a href="#Find-Numbers-with-Even-Number-of-Digits" class="headerlink" title="Find Numbers with Even Number of Digits"></a>Find Numbers with Even Number of Digits</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findNumbers</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> nums.<span class="built_in">filter</span>(&#123;<span class="type">String</span>($<span class="number">0</span>).<span class="built_in">count</span> &amp; <span class="number">1</span> == <span class="number">0</span> &#125;).<span class="built_in">count</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Squares-of-a-Sorted-Array"><a href="#Squares-of-a-Sorted-Array" class="headerlink" title="Squares of a Sorted Array"></a>Squares of a Sorted Array</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sortedSquares</span><span class="params">(<span class="number">_</span> A: [Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = <span class="number">0</span>, ans = <span class="type">A</span></span><br><span class="line">        <span class="keyword">while</span> j &lt; <span class="type">A</span>.<span class="built_in">count</span>, <span class="type">A</span>[j] &lt; <span class="number">0</span> &#123;</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        i = j - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> i &gt;= <span class="number">0</span>, j &lt; <span class="type">A</span>.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> (ai, aj) = (<span class="type">A</span>[i]*<span class="type">A</span>[i], <span class="type">A</span>[j]*<span class="type">A</span>[j])</span><br><span class="line">            ai &lt; aj ? (ans[k] = ai, i -= <span class="number">1</span>) : (ans[k] = aj, j += <span class="number">1</span>)</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> i &gt;= <span class="number">0</span> &#123;</span><br><span class="line">            ans[k...] = <span class="type">A</span>[...i].reversed().<span class="built_in">map</span> &#123;$<span class="number">0</span>*$<span class="number">0</span>&#125;.suffix(from: <span class="number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> j &lt; <span class="type">A</span>.<span class="built_in">count</span> &#123;</span><br><span class="line">            ans[k...] = <span class="type">A</span>[k...].<span class="built_in">map</span> &#123; $<span class="number">0</span>*$<span class="number">0</span> &#125;.suffix(from: <span class="number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Duplicate-Zeros"><a href="#Duplicate-Zeros" class="headerlink" title="Duplicate Zeros"></a>Duplicate Zeros</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">duplicateZeros</span><span class="params">(<span class="number">_</span> arr: <span class="keyword">inout</span> [Int])</span></span> &#123;</span><br><span class="line">        <span class="keyword">var</span> na = <span class="type">Array</span>(repeating: <span class="number">0</span>, <span class="built_in">count</span>: arr.<span class="built_in">count</span>), i = <span class="number">0</span>, j = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j &lt; na.<span class="built_in">count</span> &#123;</span><br><span class="line">            na[j] = arr[i]</span><br><span class="line">            <span class="keyword">if</span> arr[i] == <span class="number">0</span>, j &lt; na.<span class="built_in">count</span>-<span class="number">1</span> &#123; j += <span class="number">1</span>; na[j] = <span class="number">0</span> &#125;</span><br><span class="line">            i += <span class="number">1</span>; j += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        arr = na</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Merge-Sorted-Array"><a href="#Merge-Sorted-Array" class="headerlink" title="Merge Sorted Array"></a>Merge Sorted Array</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(<span class="number">_</span> nums1: <span class="keyword">inout</span> [Int], <span class="number">_</span> m: Int, <span class="number">_</span> nums2: [Int], <span class="number">_</span> n: Int)</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> nums0 = nums1[..&lt;m]</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; nums0.<span class="built_in">count</span>, j &lt; nums2.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> nums0[i] &lt; nums2[j] &#123;</span><br><span class="line">                nums1[k] = nums0[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                nums1[k] = nums2[j]</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> i &lt; nums0.<span class="built_in">count</span> &#123;</span><br><span class="line">            nums1[k] = nums0[i]</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> j &lt; nums2.<span class="built_in">count</span> &#123;</span><br><span class="line">            nums1[k] = nums2[j]</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-Element"><a href="#Remove-Element" class="headerlink" title="Remove Element"></a>Remove Element</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">removeElement</span><span class="params">(<span class="number">_</span> nums: <span class="keyword">inout</span> [Int], <span class="number">_</span> val: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = nums.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; j &#123;</span><br><span class="line">            <span class="keyword">if</span> nums[i] == val &#123;</span><br><span class="line">                <span class="keyword">while</span> nums[j] == val &#123; j -= <span class="number">1</span> &#125;</span><br><span class="line">                nums.swapAt(i, j)</span><br><span class="line">            &#125;</span><br><span class="line">            i += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-Duplicates-from-Sorted-Array"><a href="#Remove-Duplicates-from-Sorted-Array" class="headerlink" title="Remove Duplicates from Sorted Array"></a>Remove Duplicates from Sorted Array</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">removeDuplicates</span><span class="params">(<span class="number">_</span> nums: <span class="keyword">inout</span> [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">0</span>..&lt;nums.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> nums[i] != nums[j] &#123;</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">                nums[i] = nums[j]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums.isEmpty ? <span class="number">0</span> : i+<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Check-If-N-and-Its-Double-Exist"><a href="#Check-If-N-and-Its-Double-Exist" class="headerlink" title="Check If N and Its Double Exist"></a>Check If N and Its Double Exist</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">checkIfExist</span><span class="params">(<span class="number">_</span> arr: [Int])</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> dict = <span class="type">Dictionary</span>&lt;<span class="type">Int</span>, <span class="type">Int</span>&gt;()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> arr &#123;</span><br><span class="line">            dict[i] = (dict[i] ?? <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> arr &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> v = dict[i*<span class="number">2</span>], v &gt;= ((i==<span class="number">0</span>) ? <span class="number">2</span> : <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Valid-Mountain-Array"><a href="#Valid-Mountain-Array" class="headerlink" title="Valid Mountain Array"></a>Valid Mountain Array</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">validMountainArray</span><span class="params">(<span class="number">_</span> A: [Int])</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; <span class="type">A</span>.<span class="built_in">count</span>-<span class="number">1</span>, <span class="type">A</span>[i] &lt; <span class="type">A</span>[i+<span class="number">1</span>] &#123; i += <span class="number">1</span> &#125;</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span> || i == <span class="type">A</span>.<span class="built_in">count</span>-<span class="number">1</span> &#123; <span class="keyword">return</span> <span class="literal">false</span> &#125;</span><br><span class="line">        <span class="keyword">while</span> i &lt; <span class="type">A</span>.<span class="built_in">count</span>-<span class="number">1</span>, <span class="type">A</span>[i] &gt; <span class="type">A</span>[i+<span class="number">1</span>] &#123; i += <span class="number">1</span> &#125;</span><br><span class="line">        <span class="keyword">return</span> i == <span class="type">A</span>.<span class="built_in">count</span>-<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Replace-Elements-with-Greatest-Element-on-Right-Side"><a href="#Replace-Elements-with-Greatest-Element-on-Right-Side" class="headerlink" title="Replace Elements with Greatest Element on Right Side"></a>Replace Elements with Greatest Element on Right Side</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">replaceElements</span><span class="params">(<span class="number">_</span> arr: [Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> i = arr.<span class="built_in">count</span>-<span class="number">1</span>, rMax = -<span class="number">1</span>, newArr = arr</span><br><span class="line">        <span class="keyword">while</span> i &gt;= <span class="number">0</span> &#123;</span><br><span class="line">            newArr[i] = rMax</span><br><span class="line">            rMax = <span class="built_in">max</span>(rMax, arr[i])</span><br><span class="line">            i -= <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newArr</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-Duplicates-from-Sorted-Array-1"><a href="#Remove-Duplicates-from-Sorted-Array-1" class="headerlink" title="Remove Duplicates from Sorted Array"></a>Remove Duplicates from Sorted Array</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">removeDuplicates</span><span class="params">(<span class="number">_</span> nums: <span class="keyword">inout</span> [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">0</span>..&lt;nums.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> nums[i] != nums[j] &#123;</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">                nums[i] = nums[j]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums.isEmpty ? <span class="number">0</span> : i+<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Move-Zeroes"><a href="#Move-Zeroes" class="headerlink" title="Move Zeroes"></a>Move Zeroes</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">moveZeroes</span><span class="params">(<span class="number">_</span> nums: <span class="keyword">inout</span> [Int])</span></span> &#123;</span><br><span class="line">        nums = <span class="type">Array</span>(nums.<span class="built_in">split</span>(separator: <span class="number">0</span>).joined()) + <span class="type">Array</span>(nums.<span class="built_in">filter</span>(&#123;$<span class="number">0</span> == <span class="number">0</span>&#125;))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sort-Array-By-Parity"><a href="#Sort-Array-By-Parity" class="headerlink" title="Sort Array By Parity"></a>Sort Array By Parity</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sortArrayByParity</span><span class="params">(<span class="number">_</span> A: [Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> even = [<span class="type">Int</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="type">A</span> &#123;</span><br><span class="line">            i &amp; <span class="number">1</span> == <span class="number">0</span> ? (even.append(i)) : (odd.append(i))</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> even + odd</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Squares-of-a-Sorted-Array-1"><a href="#Squares-of-a-Sorted-Array-1" class="headerlink" title="Squares of a Sorted Array"></a>Squares of a Sorted Array</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sortedSquares</span><span class="params">(<span class="number">_</span> A: [Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = <span class="number">0</span>, ans = <span class="type">A</span></span><br><span class="line">        <span class="keyword">while</span> j &lt; <span class="type">A</span>.<span class="built_in">count</span>, <span class="type">A</span>[j] &lt; <span class="number">0</span> &#123;</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        i = j - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> i &gt;= <span class="number">0</span>, j &lt; <span class="type">A</span>.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> (ai, aj) = (<span class="type">A</span>[i]*<span class="type">A</span>[i], <span class="type">A</span>[j]*<span class="type">A</span>[j])</span><br><span class="line">            ai &lt; aj ? (ans[k] = ai, i -= <span class="number">1</span>) : (ans[k] = aj, j += <span class="number">1</span>)</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> i &gt;= <span class="number">0</span> &#123;</span><br><span class="line">            ans[k...] = <span class="type">A</span>[...i].reversed().<span class="built_in">map</span> &#123;$<span class="number">0</span>*$<span class="number">0</span>&#125;.suffix(from: <span class="number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> j &lt; <span class="type">A</span>.<span class="built_in">count</span> &#123;</span><br><span class="line">            ans[k...] = <span class="type">A</span>[k...].<span class="built_in">map</span> &#123; $<span class="number">0</span>*$<span class="number">0</span> &#125;.suffix(from: <span class="number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Height-Checker"><a href="#Height-Checker" class="headerlink" title="Height Checker"></a>Height Checker</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">heightChecker</span><span class="params">(<span class="number">_</span> heights: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">zip</span>(heights, heights.sorted()).<span class="built_in">reduce</span>(<span class="number">0</span>) &#123; <span class="keyword">return</span> $<span class="number">0</span> + ($<span class="number">1.0</span> == $<span class="number">1.1</span> ? <span class="number">0</span> : <span class="number">1</span>) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Max-Consecutive-Ones-II"><a href="#Max-Consecutive-Ones-II" class="headerlink" title="Max Consecutive Ones II"></a>Max Consecutive Ones II</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findMaxConsecutiveOnes</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> z0 = <span class="number">0</span>, z1 = <span class="number">0</span>, maxZ = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums &#123;</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">1</span> &#123;</span><br><span class="line">                z1 += <span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                z0 = z1</span><br><span class="line">                z1 = <span class="number">0</span></span><br><span class="line">            &#125;</span><br><span class="line">            maxZ = <span class="built_in">max</span>(maxZ, z0+z1+<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(maxZ, nums.<span class="built_in">count</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Third-Maximum-Number"><a href="#Third-Maximum-Number" class="headerlink" title="Third Maximum Number"></a>Third Maximum Number</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">thirdMax</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> maxs = [<span class="type">Int</span>.<span class="built_in">min</span>, <span class="type">Int</span>.<span class="built_in">min</span>, <span class="type">Int</span>.<span class="built_in">min</span>]</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums &#123;</span><br><span class="line">            <span class="keyword">if</span> n &gt; maxs[<span class="number">2</span>], maxs.firstIndex(of: n) == <span class="literal">nil</span> &#123;</span><br><span class="line">                maxs[<span class="number">2</span>] = n</span><br><span class="line">                <span class="keyword">if</span> maxs[<span class="number">2</span>] &gt; maxs[<span class="number">1</span>] &#123;</span><br><span class="line">                    maxs.swapAt(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">                    <span class="keyword">if</span> maxs[<span class="number">1</span>] &gt; maxs[<span class="number">0</span>] &#123;</span><br><span class="line">                        maxs.swapAt(<span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxs[<span class="number">2</span>] == <span class="type">Int</span>.<span class="built_in">min</span> ? maxs[<span class="number">0</span>] : maxs[<span class="number">2</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Find-All-Numbers-Disappeared-in-an-Array"><a href="#Find-All-Numbers-Disappeared-in-an-Array" class="headerlink" title="Find All Numbers Disappeared in an Array"></a>Find All Numbers Disappeared in an Array</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">findDisappearedNumbers</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> nums = nums, ans = [<span class="type">Int</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span> ..&lt; nums.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> index = <span class="built_in">abs</span>(nums[i])-<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> nums[index] &gt; <span class="number">0</span> &#123; nums[index] *= -<span class="number">1</span> &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;nums.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> nums[i] &gt; <span class="number">0</span> &#123; ans.append(i+<span class="number">1</span>) &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Entradas relacionadas</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/es/LeetCode-Linked-List/" rel="bookmark">Lista vinculada de LeetCode</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/es/LeetCode-Binary-Tree/" rel="bookmark">Árbol binario de LeetCode</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/es/LeetCode-Recursion-1/" rel="bookmark">LeetCode Recursion 1</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/es/LeetCode-Recursion-2/" rel="bookmark">LeetCode Recursion 2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/es/LeetCode-Binary-Search/" rel="bookmark">LeetCode Binary Search</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me 👨‍💻 a coffee ☕️</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    Donar
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/wechat.png" alt="LeiHao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/alipay.png" alt="LeiHao Alipay">
+        <span>Alipay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/bitcoin.png" alt="LeiHao Bitcoin">
+        <span>Bitcoin</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/es/tags/swift/" rel="tag"># Swift</a>
+              <a href="/es/tags/leetcode/" rel="tag"># LeetCode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/es/Deep-Learning-Course-5/" rel="prev" title="Curso de aprendizaje profundo 5">
+                  <i class="fa fa-chevron-left"></i> Curso de aprendizaje profundo 5
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/es/LeetCode-Linked-List/" rel="next" title="Lista vinculada de LeetCode">
+                  Lista vinculada de LeetCode <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2012 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-laptop-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeiHao</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Cantidad total de caracteres">541k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Tiempo total de lectura">8:12</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/es/js/utils.js"></script><script src="/es/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/es/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Artwalk.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://leihao0.github.io/es/LeetCode-Arrays-101/";
+    this.page.identifier = "LeetCode-Arrays-101/";
+    this.page.title = "LeetCode Arrays 101";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Artwalk.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/fr/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/fr/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/fr/images/logo.png">
+  <link rel="mask-icon" href="/fr/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="rbaH_zC-qBwXaawJ10Mno3FHzv9HRFHGFdXx2f1BwyI">
+
+<link rel="stylesheet" href="/fr/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+
+<script data-ad-client="ca-pub-2317298287519457" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"leihao0.github.io","root":"/fr/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Recherche...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/fr/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="The Article _ est apparu à l’origine dans_ junilearning.com  Python et Java: utilisation, performances, apprentissageDans le domaine de l’informatique, il existe de nombreux langages de programmation,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python vs Java pour les enfants">
+<meta property="og:url" content="https://leihao0.github.io/fr/Python-vs-Java-for-Kids/index.html">
+<meta property="og:site_name" content="LeiHao&#39;s Blog">
+<meta property="og:description" content="The Article _ est apparu à l’origine dans_ junilearning.com  Python et Java: utilisation, performances, apprentissageDans le domaine de l’informatique, il existe de nombreux langages de programmation,">
+<meta property="og:locale" content="fr_FR">
+<meta property="article:published_time" content="2020-08-12T05:33:04.000Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.188Z">
+<meta property="article:author" content="LeiHao">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leihao0.github.io/fr/Python-vs-Java-for-Kids/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'fr'
+  };
+</script>
+
+  <title>Python vs Java pour les enfants | LeiHao's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-159363268-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?25f016f633270b8e0baf56c4fe6f2dc1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/fr/atom.xml" title="LeiHao's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Basculer la barre de navigation">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/fr/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">LeiHao's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/fr/" rel="section"><i class="fa fa-home fa-fw"></i>Accueil</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/fr/about/" rel="section"><i class="fa fa-user fa-fw"></i>À propos</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/fr/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/fr/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Recherche
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Recherche..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table Des Matières
+        </li>
+        <li class="sidebar-nav-overview">
+          Aperçu
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-et-Java-utilisation-performances-apprentissage"><span class="nav-number">1.</span> <span class="nav-text">Python et Java: utilisation, performances, apprentissage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Utilisation-et-praticite"><span class="nav-number">1.1.</span> <span class="nav-text">Utilisation et praticité</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#developpement-web"><span class="nav-number">1.2.</span> <span class="nav-text">développement web</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Developpement-d%E2%80%99applications-mobiles"><span class="nav-number">1.3.</span> <span class="nav-text">Développement d’applications mobiles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apprentissage-automatique-et-big-data"><span class="nav-number">1.4.</span> <span class="nav-text">Apprentissage automatique et big data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ou-commencer"><span class="nav-number">1.5.</span> <span class="nav-text">Où commencer</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">LeiHao</p>
+  <div class="site-description" itemprop="description">😃😃😃</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/fr/archives/">
+        
+          <span class="site-state-item-count">155</span>
+          <span class="site-state-item-name">articles</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/fr/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">mots clé</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leihao0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/leihao0" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/fr/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="fr">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/fr/Python-vs-Java-for-Kids/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/fr/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python vs Java pour les enfants
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posté le</span>
+
+      <time title="Article créé le: 2020-08-12 13:33:04" itemprop="dateCreated datePublished" datetime="2020-08-12T13:33:04+08:00">2020-08-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Édité le</span>
+        <time title="Mis à jour le: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/fr/Python-vs-Java-for-Kids/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Python-vs-Java-for-Kids/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Caractères dans l'article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Caractères dans l'article: </span>
+      <span>5.8k</span>
+    </span>
+    <span class="post-meta-item" title="Temps de lecture">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Temps de lecture &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><em>The</em> <a target="_blank" rel="noopener" href="https://junilearning.com/blog/guide/python-vs-java/"><em>Article</em></a> _ est apparu à l’origine dans_ <a target="_blank" rel="noopener" href="https://junilearning.com/"><em>junilearning.com</em></a> </p>
+<h1 id="Python-et-Java-utilisation-performances-apprentissage"><a href="#Python-et-Java-utilisation-performances-apprentissage" class="headerlink" title="Python et Java: utilisation, performances, apprentissage"></a>Python et Java: utilisation, performances, apprentissage</h1><p>Dans le domaine de l’informatique, il existe de nombreux langages de programmation, et aucun n’est supérieur à un autre. En d’autres termes, ** chaque langage est le meilleur pour résoudre certains problèmes *<em>. En fait, pour un projet de programmation donné, il n’y a généralement pas de meilleur langage à choisir. Par conséquent, pour les étudiants qui souhaitent développer des logiciels ou résoudre des problèmes intéressants par le code, il est très important d’avoir une base informatique solide pour tout langage de programmation *</em>. </p>
+<a id="more"></a>
+
+<p>Les langages de programmation ont tendance à partager certaines caractéristiques dans leur fonctionnement, par exemple, ils traitent de l’utilisation de la mémoire ou de l’intensité d’utilisation des objets. Au fur et à mesure que les élèves seront exposés à davantage de langues, ils commenceront à voir ces modèles. Cet article se concentrera sur Python et Java, les deux langages de programmation les plus utilisés au monde. Bien qu’il soit difficile de mesurer avec précision le taux de croissance de chaque langage de programmation, ** Ce sont les deux langages de programmation les plus utilisés dans l’industrie aujourd’hui **. </p>
+<p>La principale différence entre Python et Java est que Python est ** typé dynamiquement *<em>, tandis que Java est *</em> typé statiquement *<em>. En gros, cela signifie que Java est plus strict sur la façon de définir et d’utiliser des variables dans le code. *</em> En conséquence, la syntaxe de Java a tendance à être verbeuse, ce qui est l’une des raisons pour lesquelles nous recommandons aux débutants d’apprendre Python avant Java. ** Par exemple, voici comment <code>nombres</code> crée une variable de nom en Python qui contient les nombres 0 à 9: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">numbers.append(i)</span><br></pre></td></tr></table></figure>
+
+<p>Voici comment vous feriez la même chose en Java: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ArrayList numbers = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    numbers.add(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Une autre différence majeure est que Java est un ** langage compilé *<em>, donc il exécute généralement les programmes plus rapidement que Python. Cela signifie que le compilateur convertit le code Java en code au niveau de la machine avant d’exécuter réellement le programme. En revanche, Python est un langage *</em> interprété **, ce qui signifie qu’il n’y a pas d’étapes de compilation. </p>
+<h2 id="Utilisation-et-praticite"><a href="#Utilisation-et-praticite" class="headerlink" title="Utilisation et praticité"></a>Utilisation et praticité</h2><p>Historiquement, Java est devenu une langue plus populaire en partie à cause de sa longue histoire. Cependant, Python gagne rapidement en popularité. Selon <a target="_blank" rel="noopener" href="https://octoverse.github.com/">le rapport d’état d’octobre de Github</a>, il a récemment dépassé Java en tant que langage de programmation le plus utilisé. Selon l’enquête des développeurs 2018, ** Python est désormais le langage de programmation informatique à la croissance la plus rapide **. </p>
+<p>Python et Java ont tous deux une grande communauté de développeurs. Vous pouvez répondre aux questions sur les sites Web <a target="_blank" rel="noopener" href="https://stackoverflow.com/">Stack Overflow</a>. D’après <a target="_blank" rel="noopener" href="https://insights.stackoverflow.com/trends?tags=python%2Cjava">Stack Overflow Trends</a>, on peut voir que le pourcentage de questions posées par Python sur Stack Overflow en 2017 dépasse celui de Java **. Au moment de la rédaction de cet article, environ 13% des questions sur Stack Overflow sont marquées avec Python, et environ 8% avec Java! </p>
+<h2 id="developpement-web"><a href="#developpement-web" class="headerlink" title="développement web"></a>développement web</h2><p>** Python et Java peuvent être utilisés pour le développement Web back-end **. En général, les développeurs utiliseront le framework <a target="_blank" rel="noopener" href="https://stackify.com/python-frameworks/">Django et Flask</a> pour Python et <a target="_blank" rel="noopener" href="https://spring.io/">Spring</a> pour Java. Python est connu pour la lisibilité de son code, ce qui signifie que le code Python est propre, facile à lire et concis. Python possède également un grand nombre de modules, packages et bibliothèques complets. Ces modules, packages et bibliothèques sont développés par la communauté des passionnés de Python, en plus de sa bibliothèque standard. Java a un écosystème similaire, bien que dans une moindre mesure. </p>
+<h2 id="Developpement-d’applications-mobiles"><a href="#Developpement-d’applications-mobiles" class="headerlink" title="Développement d’applications mobiles"></a>Développement d’applications mobiles</h2><p>** Java domine le développement d’applications mobiles ** car ** Java ** est le principal langage utilisé pour créer des applications et des jeux Android. Avec les bibliothèques sur mesure mentionnées ci-dessus, les développeurs peuvent choisir d’écrire des applications Android à l’aide de cadres puissants et d’outils de développement spécialement conçus pour le système d’exploitation. Actuellement, bien qu’il existe des outils comme <a target="_blank" rel="noopener" href="https://kivy.org/">Kivy</a> et <a target="_blank" rel="noopener" href="https://beeware.org/">BeeWare 之</a> qui vous permettent d’écrire du code une fois et de l’exécuter sous Windows, OS X, iOS et Déployez des applications sur Android, mais Python n’est pas souvent utilisé pour le développement mobile. </p>
+<h2 id="Apprentissage-automatique-et-big-data"><a href="#Apprentissage-automatique-et-big-data" class="headerlink" title="Apprentissage automatique et big data"></a>Apprentissage automatique et big data</h2><p>En revanche, dans l’apprentissage automatique et la <a target="_blank" rel="noopener" href="https://junilearning.com/blog/coding-and-data-science">science des données</a>, Python est le langage le plus populaire. Python est couramment utilisé dans les projets de big data, de calcul scientifique et d’intelligence artificielle (IA). ** Lorsqu’ils travaillent sur des projets impliquant l’analyse des sentiments, la plupart des scientifiques des données et des programmeurs d’apprentissage automatique choisissent d’utiliser Python au lieu de Java **. Dans le même temps, il convient de noter que de nombreux programmeurs d’apprentissage automatique peuvent choisir d’utiliser Java lorsqu’ils travaillent sur des projets liés à la sécurité du réseau, à la prévention des attaques réseau et à la détection des fraudes. </p>
+<h2 id="Ou-commencer"><a href="#Ou-commencer" class="headerlink" title="Où commencer"></a>Où commencer</h2><p>Lors de l’apprentissage des bases de la programmation, ** de nombreuses études sont parvenues à la conclusion <strong>, en raison de la syntaxe simple et intuitive de Python, il est ** plus facile que Java ** ** \ * \ *</strong> [Apprendre Python](https : //junilearning.com/coding) *<em>, comme indiqué dans l’exemple précédent. Par rapport à Python, les programmes Java ont généralement plus de code standard - ils doivent contenir des parties du code avec peu ou pas de modifications à de nombreux endroits. Cela dit, Java présente des avantages importants, en particulier sa vitesse en tant que langage compilé. *</em> L’apprentissage de Python et de Java exposera les étudiants à deux langages, qui sont basés sur des concepts informatiques similaires mais diffèrent dans l’éducation. \ * \ * </p>
+<p>Dans l’ensemble, il est clair que Python et Java sont tous deux des langages de programmation puissants dans la pratique, donc pour tout développeur de logiciels en herbe, il est préférable d’apprendre les deux langages avec compétence. Les programmeurs doivent comparer Python et Java en fonction des besoins spécifiques de chaque projet de développement logiciel, plutôt que d’apprendre simplement un langage qu’ils aiment. En bref, ** Aucune langue n’est supérieure à une autre langue, les programmeurs doivent donc s’efforcer d’avoir les deux langues dans les deux encodages **. </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Python</th>
+<th>Java</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Performances d’exécution</td>
+<td></td>
+<td>Gagnant</td>
+</tr>
+<tr>
+<td>Facilité d’apprentissage</td>
+<td>Gagnant</td>
+<td></td>
+</tr>
+<tr>
+<td>Agilité pratique</td>
+<td>Cravate</td>
+<td>Cravate</td>
+</tr>
+<tr>
+<td>Développement d’applications mobiles</td>
+<td></td>
+<td>Gagnant</td>
+</tr>
+<tr>
+<td>Big Data</td>
+<td>Gagnant</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Articles similaires</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/fr/Codecademy/" rel="bookmark">Codecademy</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/fr/What-is-Python-Used-for/" rel="bookmark">Quel est le but de Python</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me 👨‍💻 a coffee ☕️</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    Donner
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/wechat.png" alt="LeiHao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/alipay.png" alt="LeiHao Alipay">
+        <span>Alipay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/bitcoin.png" alt="LeiHao Bitcoin">
+        <span>Bitcoin</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/fr/tags/python/" rel="tag"># Python</a>
+              <a href="/fr/tags/java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/fr/Raspberry-Pi-4/" rel="prev" title="树莓派 4">
+                  <i class="fa fa-chevron-left"></i> 树莓派 4
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/fr/How-to-Clean-MacBook-Dust-Fan/" rel="next" title="Comment nettoyer la poussière et les ventilateurs de MacBook">
+                  Comment nettoyer la poussière et les ventilateurs de MacBook <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2012 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-laptop-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeiHao</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Caractères total">577k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Temps total de lecture">8:44</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/fr/js/utils.js"></script><script src="/fr/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/fr/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Artwalk.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://leihao0.github.io/fr/Python-vs-Java-for-Kids/";
+    this.page.identifier = "Python-vs-Java-for-Kids/";
+    this.page.title = "Python vs Java pour les enfants";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Artwalk.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

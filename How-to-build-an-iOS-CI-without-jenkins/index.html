@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="I used Jenkins with some Xcode plugins as our iOS CI half a year ago. The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to P">
+  <meta name="description" content="I used Jenkins with some Xcode plugins as our iOS CI half a year ago.  The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to build an iOS CI without Jenkins">
 <meta property="og:url" content="https://leihao0.github.io/How-to-build-an-iOS-CI-without-jenkins/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="I used Jenkins with some Xcode plugins as our iOS CI half a year ago. The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to P">
+<meta property="og:description" content="I used Jenkins with some Xcode plugins as our iOS CI half a year ago.  The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2015-11-10T16:36:24.000Z">
-<meta property="article:modified_time" content="2020-09-09T13:28:39.186Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.526Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="Programming">
 <meta name="twitter:card" content="summary">
@@ -286,11 +286,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -361,13 +356,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -452,7 +447,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 21:28:39" itemprop="dateModified" datetime="2020-09-09T21:28:39+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -495,31 +490,31 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>I used Jenkins with some Xcode plugins as our iOS CI half a year ago.</p>
-<p>The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to <code>Phabricator</code>, if any of these steps is fail, it will post a notification to <code>Slack</code>.</p>
-<p>But after we are try to using <code>Carthage</code> instead of <code>CocoaPod</code>, it need to <code>Carthage update</code> before building. The Jenkins can’t run commands before building. So I tried using shell directly.</p>
+        <p>I used Jenkins with some Xcode plugins as our iOS CI half a year ago. </p>
+<p>The main function I want is to build our project daily in the middle night, and +1 on the build number, then push this commit to <code>Phabricator</code>, if any of these steps is fail, it will post a notification to <code>Slack</code>. </p>
+<p>But after we are try to using <code>Carthage</code> instead of <code>CocoaPod</code>, it need to <code>Carthage update</code> before building. The Jenkins can’t run commands before building. So I tried using shell directly. </p>
 <a id="more"></a>
 
-<h2 id="update-code"><a href="#update-code" class="headerlink" title="update code"></a>update code</h2><p>First it should <code>cd</code> into the project’s folder, then checkout new commits and update new frameworks</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(dirname <span class="variable">$0</span>)</span><br><span class="line">git checkout master</span><br><span class="line">git reset --hard origin/master</span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/carthage update</span><br></pre></td></tr></table></figure>
+<h2 id="update-code"><a href="#update-code" class="headerlink" title="update code"></a>update code</h2><p>First it should <code>cd</code> into the project’s folder, then checkout new commits and update new frameworks </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(dirname <span class="variable">$0</span>)</span><br><span class="line">git checkout master</span><br><span class="line">git reset --hard origin/master</span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/bin/carthage update</span><br></pre></td></tr></table></figure>
 
-<p>then check that whether the last author is a coworker or the bot itself</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">author=$(git <span class="built_in">log</span> -1 | head -2 | tail -1 | cut -d <span class="string">&#x27; &#x27;</span> -f2)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$author</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$author</span> != <span class="string">&quot;bot&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span></span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>then check that whether the last author is a coworker or the bot itself </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">author=$(git <span class="built_in">log</span> -1 | head -2 | tail -1 | cut -d <span class="string">&#x27; &#x27;</span> -f2)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$author</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$author</span> != <span class="string">&quot;bot&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line"><span class="comment"># EVERYTHING: </span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 
-<p>if it’s a coworker</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">projectName=$(find . -name <span class="string">&quot;*.xcodeproj&quot;</span> -depth 1 | cut -d <span class="string">&#x27;/&#x27;</span>  -f 2 | cut -d <span class="string">&#x27;.&#x27;</span> -f 1)</span><br><span class="line">plist=$(find <span class="variable">$projectName</span> -name <span class="string">&quot;*.plist&quot;</span> -d 1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># buildnum +1</span></span><br><span class="line">shortVersion=$(/usr/libexec/PlistBuddy -c <span class="string">&quot;Print CFBundleShortVersionString&quot;</span> <span class="string">&quot;<span class="variable">$&#123;plist&#125;</span>&quot;</span>)</span><br><span class="line">buildnum=$(/usr/libexec/PlistBuddy -c <span class="string">&quot;Print CFBundleVersion&quot;</span> <span class="string">&quot;<span class="variable">$&#123;plist&#125;</span>&quot;</span>)</span><br><span class="line">buildnum=$(expr <span class="variable">$buildnum</span> + 1)</span><br><span class="line"></span><br><span class="line">/usr/libexec/Plistbuddy -c <span class="string">&quot;Set CFBundleVersion <span class="variable">$buildnum</span>&quot;</span> <span class="string">&quot;<span class="variable">$&#123;plist&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for AppleWatch</span></span><br><span class="line">WatchAppPlist=$(find WatchApp -name <span class="string">&quot;*.plist&quot;</span> -d 1)</span><br><span class="line">WatchAppExtensionPlist=$(find <span class="string">&#x27;WatchApp Extension&#x27;</span> -name <span class="string">&quot;*.plist&quot;</span> -d 1)</span><br><span class="line"></span><br><span class="line">/usr/libexec/Plistbuddy -c <span class="string">&quot;Set CFBundleVersion <span class="variable">$buildnum</span>&quot;</span> <span class="string">&quot;<span class="variable">$&#123;WatchAppPlist&#125;</span>&quot;</span></span><br><span class="line">/usr/libexec/Plistbuddy -c <span class="string">&quot;Set CFBundleVersion <span class="variable">$buildnum</span>&quot;</span> <span class="string">&quot;<span class="variable">$&#123;WatchAppExtensionPlist&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>if it’s a coworker </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">projectName=$(find . -name <span class="string">&quot;*.xcodeproj&quot;</span> -depth 1 | cut -d <span class="string">&#x27;/&#x27;</span>  -f 2 | cut -d <span class="string">&#x27;.&#x27;</span> -f 1)</span><br><span class="line">plist=$(find <span class="variable">$projectName</span> -name <span class="string">&quot;*.plist&quot;</span> -d 1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># buildnum +1 </span></span><br><span class="line">shortVersion=$(/usr/libexec/PlistBuddy -c <span class="string">&quot;Print CFBundleShortVersionString&quot;</span> <span class="string">&quot;<span class="variable">$&#123;plist&#125;</span>&quot;</span>)</span><br><span class="line">buildnum=$(/usr/libexec/PlistBuddy -c <span class="string">&quot;Print CFBundleVersion&quot;</span> <span class="string">&quot;<span class="variable">$&#123;plist&#125;</span>&quot;</span>)</span><br><span class="line">buildnum=$(expr <span class="variable">$buildnum</span> + 1)</span><br><span class="line"></span><br><span class="line">/usr/libexec/Plistbuddy -c <span class="string">&quot;Set CFBundleVersion <span class="variable">$buildnum</span>&quot;</span> <span class="string">&quot;<span class="variable">$&#123;plist&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for Apple Watch </span></span><br><span class="line">WatchAppPlist=$(find WatchApp -name <span class="string">&quot;*.plist&quot;</span> -d 1)</span><br><span class="line">WatchAppExtensionPlist=$(find <span class="string">&#x27;WatchApp Extension&#x27;</span> -name <span class="string">&quot;*.plist&quot;</span> -d 1)</span><br><span class="line"></span><br><span class="line">/usr/libexec/Plistbuddy -c <span class="string">&quot;Set CFBundleVersion <span class="variable">$buildnum</span>&quot;</span> <span class="string">&quot;<span class="variable">$&#123;WatchAppPlist&#125;</span>&quot;</span></span><br><span class="line">/usr/libexec/Plistbuddy -c <span class="string">&quot;Set CFBundleVersion <span class="variable">$buildnum</span>&quot;</span> <span class="string">&quot;<span class="variable">$&#123;WatchAppExtensionPlist&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>Here is how to xcodebuild your ipa in the <em>build</em> folder</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rm -rf build</span><br><span class="line"></span><br><span class="line">xcodebuild clean archive -archivePath build/<span class="variable">$YourApp</span>-Beta \</span><br><span class="line">-scheme <span class="variable">$YourAppScheme</span></span><br><span class="line"></span><br><span class="line">xcodebuild -exportArchive \</span><br><span class="line">-exportFormat ipa \</span><br><span class="line">-archivePath <span class="string">&quot;build/<span class="variable">$YourApp</span>-Beta.xcarchive&quot;</span> \</span><br><span class="line">-exportPath <span class="string">&quot;build/<span class="variable">$YourApp</span>-Beta.ipa&quot;</span> \</span><br><span class="line">-exportProvisioningProfile <span class="string">&quot;<span class="variable">$YourtProvisioningProfile</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>Here is how to xcodebuild your ipa in the <em>build</em> folder </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rm -rf build</span><br><span class="line"></span><br><span class="line">xcodebuild clean archive -archivePath build/<span class="variable">$YourApp</span>-Beta \</span><br><span class="line">-scheme <span class="variable">$YourAppScheme</span></span><br><span class="line"></span><br><span class="line">xcodebuild -exportArchive \</span><br><span class="line">-exportFormat ipa \</span><br><span class="line">-archivePath <span class="string">&quot;build/<span class="variable">$YourApp</span>-Beta.xcarchive&quot;</span> \</span><br><span class="line">-exportPath <span class="string">&quot;build/<span class="variable">$YourApp</span>-Beta.ipa&quot;</span> \</span><br><span class="line">-exportProvisioningProfile <span class="string">&quot;<span class="variable">$YourtProvisioningProfile</span>&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>then you can upload your *.ipa to your server ( for instance using curl)</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rm -rf build <span class="comment"># clean up</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># push to remote</span></span><br><span class="line">git config user.email <span class="string">&quot;bot@yourdomain.com&quot;</span></span><br><span class="line">git config user.name <span class="string">&quot;bot&quot;</span></span><br><span class="line">git commit -a -m <span class="string">&quot;<span class="variable">$buildnum</span>&quot;</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>then you can upload your *.ipa to your server ( for instance using curl) </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rm -rf build <span class="comment"># clean up</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># push to remote </span></span><br><span class="line">git config user.email <span class="string">&quot;bot@yourdomain.com&quot;</span></span><br><span class="line">git config user.name <span class="string">&quot;bot&quot;</span></span><br><span class="line">git commit -a -m <span class="string">&quot;<span class="variable">$buildnum</span>&quot;</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
-<p>How to post a message to Slack</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post2Slack $msg</span></span><br><span class="line"><span class="function"><span class="title">post2Slack</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">	SLACK_HOSTNAME=<span class="string">&quot;hooks.slack.com&quot;</span></span><br><span class="line">	SLACK_CHANNEL=“<span class="comment">#YourChannel”</span></span><br><span class="line">	SLACK_BOTNAME=<span class="string">&quot;bot&quot;</span></span><br><span class="line">	ICON=<span class="string">&quot;:x:&quot;</span></span><br><span class="line">	SLACK_BOTEMOJI=<span class="string">&quot;:joy:&quot;</span></span><br><span class="line">	MESSAGE=<span class="variable">$1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Send message to Slack</span></span><br><span class="line">PAYLOAD=<span class="string">&quot;payload=&#123;\&quot;channel\&quot;: \&quot;<span class="variable">$&#123;SLACK_CHANNEL&#125;</span>\&quot;, \&quot;username\&quot;: \&quot;<span class="variable">$&#123;SLACK_BOTNAME&#125;</span>\&quot;, \&quot;text\&quot;: \&quot;<span class="variable">$&#123;ICON&#125;</span> <span class="variable">$&#123;MESSAGE&#125;</span>\&quot;, \&quot;icon_emoji\&quot;: \&quot;<span class="variable">$&#123;SLACK_BOTEMOJI&#125;</span>\&quot;&#125;&quot;</span>;</span><br><span class="line">curl -X POST --data-urlencode <span class="string">&quot;<span class="variable">$PAYLOAD</span>&quot;</span> <span class="variable">$getThisURLInYourSlackChannel</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># post2Slack &amp;&amp; exit</span></span><br><span class="line"><span class="function"><span class="title">post2SlackAndExitWithMsg</span></span>() &#123;</span><br><span class="line">	post2Slack <span class="string">&quot;<span class="variable">$&#123;1&#125;</span>&quot;</span> &amp;&amp; <span class="built_in">exit</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>How to post a message to Slack </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post Slack $message </span></span><br><span class="line"><span class="function"><span class="title">post2Slack</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">	SLACK_HOSTNAME=<span class="string">&quot;hooks.slack.com&quot;</span></span><br><span class="line">	SLACK_CHANNEL=“<span class="comment">#YourChannel”</span></span><br><span class="line">	SLACK_BOTNAME=<span class="string">&quot;bot&quot;</span></span><br><span class="line">	ICON=<span class="string">&quot;:x:&quot;</span></span><br><span class="line">	SLACK_BOTEMOJI=<span class="string">&quot;:joy:&quot;</span></span><br><span class="line">	MESSAGE=<span class="variable">$1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Send message to Slack </span></span><br><span class="line">PAYLOAD=<span class="string">&quot;payload=&#123;\&quot;channel\&quot;: \&quot;<span class="variable">$&#123;SLACK_CHANNEL&#125;</span>\&quot;, \&quot;username\&quot;: \&quot;<span class="variable">$&#123;SLACK_BOTNAME&#125;</span>\&quot;, \&quot;text\&quot;: \&quot;<span class="variable">$&#123;ICON&#125;</span> <span class="variable">$&#123;MESSAGE&#125;</span>\&quot;, \&quot;icon_emoji\&quot;: \&quot;<span class="variable">$&#123;SLACK_BOTEMOJI&#125;</span>\&quot;&#125;&quot;</span>;</span><br><span class="line">curl -X POST --data-urlencode <span class="string">&quot;<span class="variable">$PAYLOAD</span>&quot;</span> <span class="variable">$getThisURLInYourSlackChannel</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># post2Slack &amp;&amp; exit </span></span><br><span class="line"><span class="function"><span class="title">post2SlackAndExitWithMsg</span></span>() &#123;</span><br><span class="line">	post2Slack <span class="string">&quot;<span class="variable">$&#123;1&#125;</span>&quot;</span> &amp;&amp; <span class="built_in">exit</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>then you can combine any commands like this:</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master || post2SlackAndExitWithMsg <span class="string">&quot;git push failed&quot;</span></span><br></pre></td></tr></table></figure>
+<p>then you can combine any commands like this: </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master || post2SlackAndExitWithMsg <span class="string">&quot;git push failed&quot;</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -536,13 +531,13 @@ mjx-container[display="true"] + br {
       <div class="popular-posts-title"><a href="/Learn-Go-in-20-days/" rel="bookmark">Learn Go in 20 days</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/global-gitignore/" rel="bookmark">global gitignore</a></div>
+      <div class="popular-posts-title"><a href="/ios-developer-account-and-app-store/" rel="bookmark">iOS developer account and how to list it</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ios-developer-account-and-app-store/" rel="bookmark">iOS developer account and app store</a></div>
+      <div class="popular-posts-title"><a href="/count-lines-of-code/" rel="bookmark">Number of lines of code</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ios-programming---big-nerd-ranch-guides/" rel="bookmark">iOS Programming - Big Nerd Ranch Guides</a></div>
+      <div class="popular-posts-title"><a href="/A-simple-VS-between-Sinatra-and-Martini/" rel="bookmark">A simple VS. between Sinatra and Martini</a></div>
     </li>
   </ul>
 
@@ -578,13 +573,13 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/However-no-eggs/" rel="prev" title="However, no eggs">
-                  <i class="fa fa-chevron-left"></i> However, no eggs
+                <a href="/Summer-Ends/" rel="prev" title="Summer Ends">
+                  <i class="fa fa-chevron-left"></i> Summer Ends
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/How-to-update-the-default-ruby-on-Mac-OS-X/" rel="next" title="How to update the default ruby on Mac OS X">
-                  How to update the default ruby on Mac OS X <i class="fa fa-chevron-right"></i>
+                <a href="/Harvard-Positive-Psychology/" rel="next" title="Harvard Positive Psychology">
+                  Harvard Positive Psychology <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -640,7 +635,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -651,13 +646,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="The whole thing I want to do is to download some courses which help me a lot on youtube and embed Zh-Hans subtitle to the video then submit them to a Chinese website which does not support external su">
+  <meta name="description" content="All I have to do is to download some courses, which are very helpful to me on youtube, and embed Zh-Hans subtitles in the video, and then submit them to a Chinese website that does not support externa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to download videos concurrently from youtube and batch embed their subtitles">
+<meta property="og:title" content="How to download videos from Toutube at the same time and embed their subtitles in batch">
 <meta property="og:url" content="https://leihao0.github.io/How-to-download-videos-concurrently-from-youtube-and-batch-embed-their-subtitles/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="The whole thing I want to do is to download some courses which help me a lot on youtube and embed Zh-Hans subtitle to the video then submit them to a Chinese website which does not support external su">
+<meta property="og:description" content="All I have to do is to download some courses, which are very helpful to me on youtube, and embed Zh-Hans subtitles in the video, and then submit them to a Chinese website that does not support externa">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-08-09T16:07:17.000Z">
-<meta property="article:modified_time" content="2020-09-09T11:24:45.539Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.542Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="youtube">
 <meta property="article:tag" content="ffmpeg">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>How to download videos concurrently from youtube and batch embed their subtitles | LeiHao's Blog</title>
+  <title>How to download videos from Toutube at the same time and embed their subtitles in batch | LeiHao's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
     <script>
@@ -287,11 +287,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -348,7 +343,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Youtube-dl-config"><span class="nav-number">1.</span> <span class="nav-text">Youtube-dl config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-concurrently"><span class="nav-number">2.</span> <span class="nav-text">Download concurrently</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Batch-translate-filenames"><span class="nav-number">3.</span> <span class="nav-text">Batch translate filenames</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Batch-embed-subtitles"><span class="nav-number">4.</span> <span class="nav-text">Batch embed subtitles</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Youtube-dl-config"><span class="nav-number">1.</span> <span class="nav-text">Youtube-dl config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simultaneous-download"><span class="nav-number">2.</span> <span class="nav-text">Simultaneous download</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Batch-translate-file-names"><span class="nav-number">3.</span> <span class="nav-text">Batch translate file names</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Embed-subtitles-in-batch"><span class="nav-number">4.</span> <span class="nav-text">Embed subtitles in batch</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -362,13 +357,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -435,7 +430,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          How to download videos concurrently from youtube and batch embed their subtitles
+          How to download videos from Toutube at the same time and embed their subtitles in batch
         </h1>
 
         <div class="post-meta-container">
@@ -453,7 +448,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 19:24:45" itemprop="dateModified" datetime="2020-09-09T19:24:45+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -496,21 +491,21 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>The whole thing I want to do is to download some courses which help me a lot on youtube and embed Zh-Hans subtitle to the video then submit them to a Chinese website which does not support external subtitle.</p>
-<p>This thing may help the students in China who cannot speak English well and cannot access youtube.</p>
+        <p>All I have to do is to download some courses, which are very helpful to me on youtube, and embed Zh-Hans subtitles in the video, and then submit them to a Chinese website that does not support external subtitles. </p>
+<p>This tool can help Chinese students who don’t speak English well and cannot access YouTube. </p>
 <a id="more"></a>
 
-<h2 id="Youtube-dl-config"><a href="#Youtube-dl-config" class="headerlink" title="Youtube-dl config"></a>Youtube-dl config</h2><p>The file path is <code>~/.config/youtube-dl/config</code></p>
+<h2 id="Youtube-dl-config"><a href="#Youtube-dl-config" class="headerlink" title="Youtube-dl config"></a>Youtube-dl config</h2><p>The file path is <code>~/.config/youtube-dl/config</code> </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">--o <span class="string">&#x27;%(playlist_index)02ds - %(title)s.%(ext)s&#x27;</span></span><br><span class="line">--no-mtime</span><br><span class="line">--proxy socks5://127.0.0.1:1080</span><br><span class="line"></span><br><span class="line">--ignore-errors</span><br><span class="line"></span><br><span class="line">-f bestvideo[height&lt;=?1080]+bestaudio/best</span><br><span class="line"></span><br><span class="line">--merge-output-format <span class="string">&#x27;mkv&#x27;</span></span><br><span class="line"></span><br><span class="line">--write-auto-sub --sub-lang <span class="string">&#x27;zh-Hans&#x27;</span></span><br><span class="line"></span><br><span class="line">--convert-subs <span class="string">&#x27;ass&#x27;</span></span><br><span class="line"></span><br><span class="line">--embed-subs</span><br></pre></td></tr></table></figure>
 
-<h2 id="Download-concurrently"><a href="#Download-concurrently" class="headerlink" title="Download concurrently"></a>Download concurrently</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">playlist=<span class="string">&#x27;https://www.youtube.com/playlist?list=...&#x27;</span></span><br><span class="line">num=70</span><br><span class="line">i=1</span><br><span class="line"><span class="keyword">while</span> ((<span class="variable">$i</span> &lt;= <span class="variable">$num</span>))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    end=$(( i+<span class="number">1</span> ))</span><br><span class="line">    youtube-dl --playlist-start <span class="variable">$i</span> --playlist-end <span class="variable">$end</span> <span class="variable">$playlist</span> &gt; <span class="string">&quot;log-<span class="variable">$i</span>-<span class="variable">$end</span>.txt&quot;</span>  2&gt;&amp;1  &amp;</span><br><span class="line">    i=$((<span class="variable">$end</span>+<span class="number">1</span>))</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h2 id="Simultaneous-download"><a href="#Simultaneous-download" class="headerlink" title="Simultaneous download"></a>Simultaneous download</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">playlist=<span class="string">&#x27;https://www.youtube.com/playlist?list=...&#x27;</span></span><br><span class="line">num=70</span><br><span class="line">i=1</span><br><span class="line"><span class="keyword">while</span> ((<span class="variable">$i</span> &lt;= <span class="variable">$num</span>))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    end=$(( i+<span class="number">1</span> ))</span><br><span class="line">    youtube-dl --playlist-start <span class="variable">$i</span> --playlist-end <span class="variable">$end</span> <span class="variable">$playlist</span> &gt; <span class="string">&quot;log-<span class="variable">$i</span>-<span class="variable">$end</span>.txt&quot;</span>  2&gt;&amp;1  &amp;</span><br><span class="line">    i=$((<span class="variable">$end</span>+<span class="number">1</span>))</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Batch-translate-filenames"><a href="#Batch-translate-filenames" class="headerlink" title="Batch translate filenames"></a>Batch translate filenames</h2><p>After downloading all the videos in the list, get their names with</p>
-<p><code>ls | grep mkv | sed &quot;s/\.mkv//&quot;</code></p>
-<p>then copy &amp; paste to google to get the translated text, then save it to a <code>zh.txt</code></p>
-<h2 id="Batch-embed-subtitles"><a href="#Batch-embed-subtitles" class="headerlink" title="Batch embed subtitles"></a>Batch embed subtitles</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tmp=<span class="string">&quot;tmp.mkv&quot;</span></span><br><span class="line">mkdir -p embedSub</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> *.mkv; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">read</span> -r zh &lt;&amp;3</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$f</span>\n<span class="variable">$zh</span>&quot;</span></span><br><span class="line">  <span class="comment"># ass=&quot;$( echo $f | sed &#x27;s/\.mkv//&#x27;).zh-Hans.ass&quot;</span></span><br><span class="line">  cp <span class="variable">$f</span> <span class="variable">$tmp</span></span><br><span class="line">  ffmpeg -nostats -loglevel 24 -n -i <span class="variable">$tmp</span> -vf subtitles=<span class="variable">$tmp</span> <span class="string">&quot;embedSub/<span class="variable">$zh</span>.mkv&quot;</span>;</span><br><span class="line"><span class="keyword">done</span> 3&lt;zh.txt</span><br><span class="line"></span><br><span class="line">rm <span class="variable">$tmp</span></span><br></pre></td></tr></table></figure>
+<h2 id="Batch-translate-file-names"><a href="#Batch-translate-file-names" class="headerlink" title="Batch translate file names"></a>Batch translate file names</h2><p>After downloading all the videos in the list, use </p>
+<p><code>ls | grep mkv | sed &quot;s/\.mkv//&quot;</code> </p>
+<p>Then copy and paste to Google to get the translated text, then save it to <code>zh.txt</code> </p>
+<h2 id="Embed-subtitles-in-batch"><a href="#Embed-subtitles-in-batch" class="headerlink" title="Embed subtitles in batch"></a>Embed subtitles in batch</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tmp=<span class="string">&quot;tmp.mkv&quot;</span></span><br><span class="line">mkdir -p embedSub</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> *.mkv; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">read</span> -r zh &lt;&amp;3</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$f</span>\n<span class="variable">$zh</span>&quot;</span></span><br><span class="line">  <span class="comment"># ass=&quot;$( echo $f | sed &#x27;s/\.mkv//&#x27;).zh-Hans.ass&quot; </span></span><br><span class="line">  cp <span class="variable">$f</span> <span class="variable">$tmp</span></span><br><span class="line">  ffmpeg -nostats -loglevel 24 -n -i <span class="variable">$tmp</span> -vf subtitles=<span class="variable">$tmp</span> <span class="string">&quot;embedSub/<span class="variable">$zh</span>.mkv&quot;</span>;</span><br><span class="line"><span class="keyword">done</span> 3&lt;zh.txt</span><br><span class="line"></span><br><span class="line">rm <span class="variable">$tmp</span></span><br></pre></td></tr></table></figure>
 
-<p>It usually took me a whole night for 20 videos on Intel Core i7, and an hour video needs 20 minutes to embed its subtitle.</p>
+<p>On Intel Core i7, I usually spend an entire night recording 20 videos, and an hour of video takes 20 minutes to embed its subtitles. </p>
 
     </div>
 
@@ -557,8 +552,8 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/CUDA-GPU-Accelerated-h264-h265-HEVC-Video-Encoding-with-Staxrip/" rel="next" title="CUDA GPU Accelerated h264/h265/HEVC Video Encoding with Staxrip">
-                  CUDA GPU Accelerated h264/h265/HEVC Video Encoding with Staxrip <i class="fa fa-chevron-right"></i>
+                <a href="/CUDA-GPU-Accelerated-h264-h265-HEVC-Video-Encoding-with-Staxrip/" rel="next" title="CUDA GPU with Staxrip accelerates h264 / h265 / HEVC video encoding">
+                  CUDA GPU with Staxrip accelerates h264 / h265 / HEVC video encoding <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -614,7 +609,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -625,13 +620,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 
@@ -692,7 +687,7 @@ mjx-container[display="true"] + br {
   var disqus_config = function() {
     this.page.url = "https://leihao0.github.io/How-to-download-videos-concurrently-from-youtube-and-batch-embed-their-subtitles/";
     this.page.identifier = "How-to-download-videos-concurrently-from-youtube-and-batch-embed-their-subtitles/";
-    this.page.title = "How to download videos concurrently from youtube and batch embed their subtitles";
+    this.page.title = "How to download videos from Toutube at the same time and embed their subtitles in batch";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {

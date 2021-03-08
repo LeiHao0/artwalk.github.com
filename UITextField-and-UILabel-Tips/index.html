@@ -32,7 +32,7 @@
 <meta property="og:description" content="UITextField TipsAdd a top Line on Keyboard12345678extension UITextField &amp;#123;    func addTopLineOnKeyboard() &amp;#123;        let line &#x3D; UIView(frame: CGRect(x: 0, y: 0, width: 2000, height: 0.5))">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-10-19T06:35:22.000Z">
-<meta property="article:modified_time" content="2020-09-09T13:21:15.242Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.532Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Xcode">
@@ -287,11 +287,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -348,7 +343,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UITextField-Tips"><span class="nav-number">1.</span> <span class="nav-text">UITextField Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-a-top-Line-on-Keyboard"><span class="nav-number">1.1.</span> <span class="nav-text">Add a top Line on Keyboard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Only-allowed-a-price-number-with-exactly-two-decimals"><span class="nav-number">1.2.</span> <span class="nav-text">Only allowed a price number with exactly two decimals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Only-allowed-1-100-or-leave-blank"><span class="nav-number">1.3.</span> <span class="nav-text">Only allowed 1-100 or leave blank</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UILabel-Tips"><span class="nav-number">2.</span> <span class="nav-text">UILabel Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Formate-cell-phone-number-to-111-1111-111"><span class="nav-number">2.1.</span> <span class="nav-text">Formate cell-phone number to 111 1111 111</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Highlight-UILabel%E2%80%99s-substring-by-given-string"><span class="nav-number">2.2.</span> <span class="nav-text">Highlight UILabel’s substring by given string</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UITextField-Tips"><span class="nav-number">1.</span> <span class="nav-text">UITextField Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-a-top-Line-on-Keyboard"><span class="nav-number">1.1.</span> <span class="nav-text">Add a top Line on Keyboard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Only-allowed-a-price-number-with-exactly-two-decimals"><span class="nav-number">1.2.</span> <span class="nav-text">Only allowed a price number with exactly two decimals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Only-allowed-1-100-or-leave-blank"><span class="nav-number">1.3.</span> <span class="nav-text">Only allowed 1-100 or leave blank</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UILabel-Tips"><span class="nav-number">2.</span> <span class="nav-text">UILabel Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Format-cell-phone-number-to-111-1111-111"><span class="nav-number">2.1.</span> <span class="nav-text">Format cell-phone number to 111 1111 111</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Highlight-UILabel%E2%80%99s-substring-by-given-string"><span class="nav-number">2.2.</span> <span class="nav-text">Highlight UILabel’s substring by given string</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -362,13 +357,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -453,7 +448,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 21:21:15" itemprop="dateModified" datetime="2020-09-09T21:21:15+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -504,7 +499,7 @@ mjx-container[display="true"] + br {
 
 <h3 id="Only-allowed-1-100-or-leave-blank"><a href="#Only-allowed-1-100-or-leave-blank" class="headerlink" title="Only allowed 1-100 or leave blank"></a>Only allowed 1-100 or leave blank</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> str = (textField.text! <span class="keyword">as</span> <span class="type">NSString</span>).replacingCharacters(<span class="keyword">in</span>: range, with: string)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1-100 or leave blank</span></span><br><span class="line">    <span class="keyword">let</span> regex = <span class="string">&quot;^[1-9]?\\d|100|[1-9]?$&quot;</span></span><br><span class="line">    <span class="keyword">let</span> predicte = <span class="type">NSPredicate</span>(format: <span class="string">&quot;SELF MATCHES %@&quot;</span>, regex)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>  predicte.evaluate(with: str)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="UILabel-Tips"><a href="#UILabel-Tips" class="headerlink" title="UILabel Tips"></a>UILabel Tips</h2><h3 id="Formate-cell-phone-number-to-111-1111-111"><a href="#Formate-cell-phone-number-to-111-1111-111" class="headerlink" title="Formate cell-phone number to 111 1111 111"></a>Formate cell-phone number to <code>111 1111 111</code></h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> phoneNumberFormater: <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> s = <span class="keyword">self</span>.replacingOccurrences(of: <span class="string">&quot; &quot;</span>, with: <span class="string">&quot;&quot;</span>)</span><br><span class="line">            <span class="keyword">let</span> <span class="built_in">count</span> = s.characters.<span class="built_in">count</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">count</span> &gt; <span class="number">7</span> &#123;</span><br><span class="line">                s.insert(<span class="string">&quot; &quot;</span>, at: s.index(s.startIndex, offsetBy: <span class="number">3</span>))</span><br><span class="line">                s.insert(<span class="string">&quot; &quot;</span>, at: s.index(s.startIndex, offsetBy: <span class="number">8</span>))</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="built_in">count</span> &gt; <span class="number">3</span> &#123;</span><br><span class="line">                s.insert(<span class="string">&quot; &quot;</span>, at: s.index(s.startIndex, offsetBy: <span class="number">3</span>))</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="UILabel-Tips"><a href="#UILabel-Tips" class="headerlink" title="UILabel Tips"></a>UILabel Tips</h2><h3 id="Format-cell-phone-number-to-111-1111-111"><a href="#Format-cell-phone-number-to-111-1111-111" class="headerlink" title="Format cell-phone number to 111 1111 111"></a>Format cell-phone number to <code>111 1111 111</code></h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> phoneNumberFormater: <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> s = <span class="keyword">self</span>.replacingOccurrences(of: <span class="string">&quot; &quot;</span>, with: <span class="string">&quot;&quot;</span>)</span><br><span class="line">            <span class="keyword">let</span> <span class="built_in">count</span> = s.characters.<span class="built_in">count</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">count</span> &gt; <span class="number">7</span> &#123;</span><br><span class="line">                s.insert(<span class="string">&quot; &quot;</span>, at: s.index(s.startIndex, offsetBy: <span class="number">3</span>))</span><br><span class="line">                s.insert(<span class="string">&quot; &quot;</span>, at: s.index(s.startIndex, offsetBy: <span class="number">8</span>))</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="built_in">count</span> &gt; <span class="number">3</span> &#123;</span><br><span class="line">                s.insert(<span class="string">&quot; &quot;</span>, at: s.index(s.startIndex, offsetBy: <span class="number">3</span>))</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Highlight-UILabel’s-substring-by-given-string"><a href="#Highlight-UILabel’s-substring-by-given-string" class="headerlink" title="Highlight UILabel’s substring by given string"></a>Highlight UILabel’s substring by given string</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userInputPhoneNumber = <span class="string">&quot;123&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@IBOutlet</span> <span class="keyword">private</span> <span class="keyword">weak</span> <span class="keyword">var</span> phoneLabel: <span class="type">UILabel!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> phoneNumber:  <span class="type">String</span> = <span class="string">&quot;123456789&quot;</span> &#123;</span><br><span class="line"><span class="keyword">didSet</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> atrStr = <span class="type">NSMutableAttributedString</span>(string: phoneNumber.phoneNumberFormater)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">14</span>)</span><br><span class="line">    <span class="keyword">let</span> range = (phoneNumber.phoneNumberFormater <span class="keyword">as</span> <span class="type">NSString</span>).range(of: userInputPhoneNumber.phoneNumberFormater)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> range.location == <span class="number">0</span> &#123;</span><br><span class="line">        atrStr.addAttributes([<span class="type">NSFontAttributeName</span> :  font, <span class="type">NSForegroundColorAttributeName</span>: <span class="type">UIColor</span>.red], range: (phoneNumber.phoneNumberFormater <span class="keyword">as</span> <span class="type">NSString</span>).range(of: userInputPhoneNumber.phoneNumberFormater))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    phoneLabel.attributedText = atrStr</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -520,16 +515,16 @@ mjx-container[display="true"] + br {
       <div class="popular-posts-title"><a href="/How-to-add-Xib-on-StoryBoard/" rel="bookmark">How to add Xib on StoryBoard</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/Batch-replace-NamedColors-to-RGB-in-Storyboard/" rel="bookmark">Batch replace NamedColors to RGB in Storyboard</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/ios-7-programming-cookbook/" rel="bookmark">iOS 7 Programming Cookbook</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/Pull-to-Refresh-UIViewController-in-iOS/" rel="bookmark">Pull to Refresh UIViewController in iOS</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/iOS-CI-Jenkins-Phabricator-Slack/" rel="bookmark">iOS CI (Jenkins + Phabricator + Slack)</a></div>
+      <div class="popular-posts-title"><a href="/iOS-CI-Jenkins-Phabricator-Slack/" rel="bookmark">iOS CI (Jenkins + pH AB Rica Tor + slack)</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/Reflection-in-Swift-via-Mirror/" rel="bookmark">Reflection in Swift by mirroring</a></div>
     </li>
   </ul>
 
@@ -571,8 +566,8 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Reflection-in-Swift-via-Mirror/" rel="next" title="Reflection in Swift via Mirror">
-                  Reflection in Swift via Mirror <i class="fa fa-chevron-right"></i>
+                <a href="/Reflection-in-Swift-via-Mirror/" rel="next" title="Reflection in Swift by mirroring">
+                  Reflection in Swift by mirroring <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -628,7 +623,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -639,13 +634,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

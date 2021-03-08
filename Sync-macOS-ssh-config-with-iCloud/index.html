@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="As a developer, I have to restore backups sometime because of the beta system. Fortunately, most data was on the server these days. Not only Safari, Photos, Calendar, Note, Reminders, but also other a">
+  <meta name="description" content="As a developer, I sometimes have to restore the backup due to the “beta” system.  Fortunately, most of the data is on the server these days. Not only Safari, photos, calendar, Note, reminders, but oth">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sync macOS ssh config with iCloud">
 <meta property="og:url" content="https://leihao0.github.io/Sync-macOS-ssh-config-with-iCloud/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="As a developer, I have to restore backups sometime because of the beta system. Fortunately, most data was on the server these days. Not only Safari, Photos, Calendar, Note, Reminders, but also other a">
+<meta property="og:description" content="As a developer, I sometimes have to restore the backup due to the “beta” system.  Fortunately, most of the data is on the server these days. Not only Safari, photos, calendar, Note, reminders, but oth">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-08-22T15:17:28.000Z">
-<meta property="article:modified_time" content="2020-09-09T13:21:50.986Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.531Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="macOS">
 <meta property="article:tag" content="ssh">
@@ -288,11 +288,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -362,13 +357,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -453,7 +448,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 21:21:50" itemprop="dateModified" datetime="2020-09-09T21:21:50+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -496,16 +491,16 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>As a developer, I have to restore backups sometime because of the <code>beta</code> system.</p>
-<p>Fortunately, most data was on the server these days. Not only Safari, Photos, Calendar, Note, Reminders, but also other apps use iCloud storage. That was significant progress. I only have to re-download apps from App Store and <code>brew shell</code> after reinstalling the system.</p>
+        <p>As a developer, I sometimes have to restore the backup due to the “beta” system. </p>
+<p>Fortunately, most of the data is on the server these days. Not only Safari, photos, calendar, Note, reminders, but other applications also use iCloud storage. This is a major advancement. I just need to reinstall the system and re-download the app from the App Store and <code>brew shell</code>. </p>
 <a id="more"></a>
 
-<p>But the setting of ssh, configs, etc., was annoying. Furthermore, I may lose my private keys.</p>
-<p>So I new a folder which named <code>macOS</code> in iCloud Drive folder, and copied all the files without <code>.</code>, For example, <code>.gitconfig</code> ~&gt; <code>gitconfig</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">macOS=/Users/art/Library/Mobile\ Documents/com~apple~CloudDocs/macOS</span><br><span class="line"></span><br><span class="line">ln -sf <span class="variable">$macOS</span>/gitignore .gitignore</span><br><span class="line">ln -sf <span class="variable">$macOS</span>/gitignore .gitignore_global</span><br><span class="line">ln -sf <span class="variable">$macOS</span>/gitconfig .gitconfig</span><br><span class="line"></span><br><span class="line">ln -sf <span class="variable">$macOS</span>/zshrc .zshrc</span><br><span class="line">ln -sf <span class="variable">$macOS</span>/config  .config</span><br><span class="line">ln -sf <span class="variable">$macOS</span>/ssh  .ssh</span><br><span class="line"></span><br><span class="line">mkdir -p Blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># hexo</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init Blog</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line">npm install</span><br><span class="line">rm -rf <span class="built_in">source</span></span><br><span class="line">ln -s ~/Documents/Blog/<span class="built_in">source</span> ~/Blog/<span class="built_in">source</span></span><br><span class="line"></span><br><span class="line">brew install ruby python pandoc</span><br><span class="line"></span><br><span class="line">brew install openssl youtube-dl ffmpeg pyenv rbenv rclone autojump mp4box</span><br><span class="line"></span><br><span class="line"><span class="comment"># ruby</span></span><br><span class="line">rbenv install 2.7.0</span><br><span class="line">rbenv global 2.7.0</span><br><span class="line"></span><br><span class="line">brew cask install iterm2  sourcetree vmware-fusion flux sublime-text shadowsocksx-ng clashx wwdc spectacle losslesscut iina dropbox typora istat-menus 1password calibre imageoptim plex-media-server vscode osxfuse firefox chromium</span><br><span class="line"></span><br><span class="line"><span class="comment"># preview</span></span><br><span class="line">brew cask install qlvideo qlstephen qlcolorcode quicklook-json qlmarkdown qlprettypatch qlimagesize suspicious-package provisionql</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>But ssh, configuration, etc. settings are very annoying. Also, I may lose my private key. </p>
+<p>So I created a new folder named “macOS” in the iCloud Drive folder, and copied all the files without “. “, for example: <code>.gitconfig</code> ~&gt; <code>gitconfig</code>. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">macOS=/Users/art/Library/Mobile\ Documents/com~apple~CloudDocs/macOS</span><br><span class="line"></span><br><span class="line">ln -sf <span class="variable">$macOS</span>/gitignore .gitignore</span><br><span class="line">ln -sf <span class="variable">$macOS</span>/gitignore .gitignore_global</span><br><span class="line">ln -sf <span class="variable">$macOS</span>/gitconfig .gitconfig</span><br><span class="line"></span><br><span class="line">ln -sf <span class="variable">$macOS</span>/zshrc .zshrc</span><br><span class="line">ln -sf <span class="variable">$macOS</span>/config  .config</span><br><span class="line">ln -sf <span class="variable">$macOS</span>/ssh  .ssh</span><br><span class="line"></span><br><span class="line">mkdir -p Blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># hexo </span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init Blog</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line">npm install</span><br><span class="line">rm -rf <span class="built_in">source</span></span><br><span class="line">ln -s ~/Documents/Blog/<span class="built_in">source</span> ~/Blog/<span class="built_in">source</span></span><br><span class="line"></span><br><span class="line">brew install ruby python pandoc</span><br><span class="line"></span><br><span class="line">brew install openssl youtube-dl ffmpeg pyenv rbenv rclone autojump mp4box</span><br><span class="line"></span><br><span class="line"><span class="comment"># ruby </span></span><br><span class="line">rbenv install 2.7.0</span><br><span class="line">rbenv global 2.7.0</span><br><span class="line"></span><br><span class="line">brew cask install iterm2  sourcetree vmware-fusion flux sublime-text shadowsocksx-ng clashx wwdc spectacle losslesscut iina dropbox typora istat-menus 1password calibre imageoptim plex-media-server vscode osxfuse firefox chromium</span><br><span class="line"></span><br><span class="line"><span class="comment"># preview </span></span><br><span class="line">brew cask install qlvideo qlstephen qlcolorcode quicklook-json qlmarkdown qlprettypatch qlimagesize suspicious-package provisionql</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>Any cloud drive (like Dropbox) can do it, but<br>considering privacy and this letter <a target="_blank" rel="noopener" href="http://www.apple.com/customer-letter/">A Message to Our Customers</a> written by Tim Cook</p>
-<p>iCloud was my choice 😊</p>
+<p>Any cloud drive (such as Dropbox) can do this, but.<br>Considering privacy and this letter written by Tim Cook <a target="_blank" rel="noopener" href="http://www.apple.com/customer-letter/">Information for Customers</a> </p>
+<p>iCloud is my choice 😊 </p>
 
     </div>
 
@@ -553,8 +548,8 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/How-to-learn-English-as-a-Chinese/" rel="next" title="How to learn English as a Chinese">
-                  How to learn English as a Chinese <i class="fa fa-chevron-right"></i>
+                <a href="/How-to-learn-English-as-a-Chinese/" rel="next" title="How do Chinese learn English">
+                  How do Chinese learn English <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -610,7 +605,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -621,13 +616,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

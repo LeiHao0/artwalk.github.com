@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"leihao0.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Delegate 原理浅析B 的一个方法运行到某处，需要把自己的一个值告诉 A，并且做一定处理 怎么来实现呢？ 首先 B 要知道自己去告诉谁，然后再调用 A.aFunc() 我知道想知道原理的不想看代码，尽量简化了">
+  <meta name="description" content="Analysis of Delegate PrincipleWhen a method of B runs somewhere, it needs to tell A of its own value and do some processing  How to achieve it?  First, B needs to know whom to tell, and then call A.aF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The primary principle of Delegate">
 <meta property="og:url" content="https://leihao0.github.io/The-primary-principle-of-Delegate/index.html">
 <meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="Delegate 原理浅析B 的一个方法运行到某处，需要把自己的一个值告诉 A，并且做一定处理 怎么来实现呢？ 首先 B 要知道自己去告诉谁，然后再调用 A.aFunc() 我知道想知道原理的不想看代码，尽量简化了">
+<meta property="og:description" content="Analysis of Delegate PrincipleWhen a method of B runs somewhere, it needs to tell A of its own value and do some processing  How to achieve it?  First, B needs to know whom to tell, and then call A.aF">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2014-10-15T15:03:09.000Z">
-<meta property="article:modified_time" content="2020-09-09T13:35:52.286Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.520Z">
 <meta property="article:author" content="LeiHao">
 <meta property="article:tag" content="Programming">
 <meta name="twitter:card" content="summary">
@@ -286,11 +286,6 @@ mjx-container[display="true"] + br {
     <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
 
   </li>
-        <li class="menu-item menu-item-lan">
-
-    <a href="/cn/" rel="section"><i class="fa fa-language fa-fw"></i>简中</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -347,7 +342,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Delegate-%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">Delegate 原理浅析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Delegate"><span class="nav-number">1.1.</span> <span class="nav-text">Delegate</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Analysis-of-Delegate-Principle"><span class="nav-number">1.</span> <span class="nav-text">Analysis of Delegate Principle</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Delegate"><span class="nav-number">1.1.</span> <span class="nav-text">Delegate</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -361,13 +356,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -452,7 +447,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-09 21:35:52" itemprop="dateModified" datetime="2020-09-09T21:35:52+08:00">2020-09-09</time>
+        <time title="Modified: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
       </span>
 
   
@@ -477,14 +472,14 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.4k</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>2 mins.</span>
     </span>
 </div>
 
@@ -495,33 +490,33 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Delegate-原理浅析"><a href="#Delegate-原理浅析" class="headerlink" title="Delegate 原理浅析"></a>Delegate 原理浅析</h1><p>B 的一个方法运行到某处，需要把自己的一个值告诉 A，并且做一定处理</p>
-<p>怎么来实现呢？</p>
-<p>首先 B 要知道自己去告诉谁，然后再调用 A.aFunc()</p>
-<p>我知道想知道原理的不想看代码，尽量简化了</p>
+        <h1 id="Analysis-of-Delegate-Principle"><a href="#Analysis-of-Delegate-Principle" class="headerlink" title="Analysis of Delegate Principle"></a>Analysis of Delegate Principle</h1><p>When a method of B runs somewhere, it needs to tell A of its own value and do some processing </p>
+<p>How to achieve it? </p>
+<p>First, B needs to know whom to tell, and then call A.aFunc() </p>
+<p>I know I don’t want to look at the code if I want to know the principle, I try to simplify it </p>
 <a id="more"></a>
 
-<p>A, B 类</p>
+<p>Type A, B </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">A</span>.swift</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span> &#123;</span><br><span class="line">		<span class="built_in">println</span>(b.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">B</span>.swift</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> value = <span class="number">0</span></span><br><span class="line">	<span class="function"><span class="keyword">func</span> <span class="title">bFunc</span> <span class="params">()</span></span> &#123;</span><br><span class="line">        value = <span class="number">213</span> <span class="comment">// value 有变化，想通知 A 执行 aFunc()</span></span><br><span class="line">		a.aFunc(b) <span class="comment">// 错误</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <!--more-->
 
-<p>上面是不行的，为啥呢？<br>因为 b 里面并没有 a，如果直接把 A 传进去，就要修改 B 的代码，也就丢失了封装</p>
-<p>我们看下 <strong>Delegate</strong> 怎么实现这种机制的</p>
-<h2 id="Delegate"><a href="#Delegate" class="headerlink" title="Delegate"></a>Delegate</h2><p>既然是 B 要往外发送消息，就先从 B 下手：</p>
+<p>The above is not working, why?<br>Because there is no a in b, if A is directly passed in, the code of B must be modified, and the package will be lost </p>
+<p>Let’s see how <strong>Delegate</strong> implements this mechanism </p>
+<h2 id="Delegate"><a href="#Delegate" class="headerlink" title="Delegate"></a>Delegate</h2><p>Since B wants to send a message out, start with B first: </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">A</span>.swift</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span> &#123;</span><br><span class="line">		<span class="built_in">println</span>(b.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.swift</span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">BDelegate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span>  <span class="comment">// 1. 把 A 的 aFunc 声明成 BDelegate 的一个方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> delegate:<span class="type">BDelegate?</span>  <span class="comment">// 2. 声明一个 BDelegate 类型的 delegate 变量</span></span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bFunc</span> <span class="params">()</span></span> &#123;</span><br><span class="line">        value = <span class="number">213</span></span><br><span class="line">        delegate?.aFunc(<span class="keyword">self</span>) <span class="comment">// 3. 把自己 b，作为参数，调用 aFunc()</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>做了 1、2、3 后，还是不行，为啥呢？<br>因为 A 不知道 B 进行了委托，两者没关联起来</p>
+<p>After doing 1, 2, and 3, it still doesn’t work. Why?<br>Because A does not know that B has commissioned, the two are not related </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a.swift</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>: <span class="title">BDelegate</span> </span>&#123; <span class="comment">// 1. BDelegate</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span> &#123;</span><br><span class="line">        b.delegate = <span class="keyword">self</span> <span class="comment">// 2. 把 b 的 delegate 变量设置成 self，也就是 a</span></span><br><span class="line">        <span class="built_in">println</span>(b.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.swift</span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">BDelegate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">aFunc</span><span class="params">(b:B)</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> delegate:<span class="type">BDelegate?</span></span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bFunc</span> <span class="params">()</span></span> &#123;</span><br><span class="line">        value = <span class="number">213</span></span><br><span class="line">        delegate?.aFunc(<span class="keyword">self</span>) <span class="comment">// 3. 这下看懂了吧？delegate?.aFunc(self) 等价于  a.aFunc(b)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main.swift</span><br><span class="line"><span class="keyword">let</span> b = <span class="type">B</span>()</span><br><span class="line"><span class="keyword">let</span> a = <span class="type">A</span>()</span><br><span class="line">a.aFunc(b)</span><br><span class="line">b.bFunc()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个可以在 Playground 里看结果了</span></span><br></pre></td></tr></table></figure>
 
-<p>大功告成</p>
-<p>回想下常见的代码，比如：</p>
+<p>You’re done </p>
+<p>Recall the common code, such as: </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mScrollView.delegate = <span class="keyword">self</span></span><br><span class="line">...</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MYScrollView</span> : <span class="title">UIScrollView</span>, <span class="title">UIScrollViewDelegate</span> </span>&#123;</span><br><span class="line">...</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scrollViewDidEndDecelerating</span><span class="params">(scrollView: UIScrollView)</span></span> &#123;</span><br></pre></td></tr></table></figure>
 
-<p>是不是有种豁然开朗的感觉？</p>
-<p>过两天说说 <code>SEL</code> 和 <code>Block</code></p>
+<p>Is there a sense of sudden enlightenment? </p>
+<p>Let’s talk about <code>SEL</code> and <code>Block</code> in two days </p>
 <hr>
-<p>赶脚还是木说清楚呢，有不清楚的地方，欢迎留言探讨哈<del>~</del></p>
+<p>It’s better to make it clear. If there is something unclear, please leave a message to discuss it<del>~</del> </p>
 
     </div>
 
@@ -538,13 +533,13 @@ mjx-container[display="true"] + br {
       <div class="popular-posts-title"><a href="/Learn-Go-in-20-days/" rel="bookmark">Learn Go in 20 days</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/global-gitignore/" rel="bookmark">global gitignore</a></div>
+      <div class="popular-posts-title"><a href="/ios-developer-account-and-app-store/" rel="bookmark">iOS developer account and how to list it</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ios-developer-account-and-app-store/" rel="bookmark">iOS developer account and app store</a></div>
+      <div class="popular-posts-title"><a href="/count-lines-of-code/" rel="bookmark">Number of lines of code</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ios-programming---big-nerd-ranch-guides/" rel="bookmark">iOS Programming - Big Nerd Ranch Guides</a></div>
+      <div class="popular-posts-title"><a href="/A-simple-VS-between-Sinatra-and-Martini/" rel="bookmark">A simple VS. between Sinatra and Martini</a></div>
     </li>
   </ul>
 
@@ -585,8 +580,8 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/xmlParseEntityRef-no-name-AND-Input-is-not-proper-UTF-8/" rel="next" title="xmlParseEntityRef no name AND Input is not proper UTF-8">
-                  xmlParseEntityRef no name AND Input is not proper UTF-8 <i class="fa fa-chevron-right"></i>
+                <a href="/Pull-to-Refresh-UIViewController-in-iOS/" rel="next" title="Pull to Refresh UIViewController in iOS">
+                  Pull to Refresh UIViewController in iOS <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -642,7 +637,7 @@ mjx-container[display="true"] + br {
 <div class="copyright">
   
   &copy; 2012 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-laptop-code"></i>
   </span>
@@ -653,13 +648,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">384k</span>
+    <span title="Symbols count total">525k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:49</span>
+    <span title="Reading time total">7:58</span>
   </span>
 </div>
 

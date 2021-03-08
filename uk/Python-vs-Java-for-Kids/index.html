@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/uk/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uk/images/logo-192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uk/images/logo.png">
+  <link rel="mask-icon" href="/uk/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="rbaH_zC-qBwXaawJ10Mno3FHzv9HRFHGFdXx2f1BwyI">
+
+<link rel="stylesheet" href="/uk/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+
+<script data-ad-client="ca-pub-2317298287519457" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"leihao0.github.io","root":"/uk/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Пошук...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/uk/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="This article _ спочатку з’явився в_ junilearning.com  Python та Java: використання, продуктивність, навчанняУ галузі інформатики існує багато мов програмування, і жодна мова не перевершує іншу. Іншими">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python проти Java для дітей">
+<meta property="og:url" content="https://leihao0.github.io/uk/Python-vs-Java-for-Kids/index.html">
+<meta property="og:site_name" content="LeiHao&#39;s Blog">
+<meta property="og:description" content="This article _ спочатку з’явився в_ junilearning.com  Python та Java: використання, продуктивність, навчанняУ галузі інформатики існує багато мов програмування, і жодна мова не перевершує іншу. Іншими">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-08-12T05:33:04.000Z">
+<meta property="article:modified_time" content="2020-12-20T23:53:08.672Z">
+<meta property="article:author" content="LeiHao">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://leihao0.github.io/uk/Python-vs-Java-for-Kids/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'uk'
+  };
+</script>
+
+  <title>Python проти Java для дітей | LeiHao's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-159363268-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?25f016f633270b8e0baf56c4fe6f2dc1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/uk/atom.xml" title="LeiHao's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Показати/приховати меню">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/uk/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">LeiHao's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/uk/" rel="section"><i class="fa fa-home fa-fw"></i>Головна</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/uk/about/" rel="section"><i class="fa fa-user fa-fw"></i>Про сайт</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/uk/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Архів</a>
+
+  </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/uk/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Пошук
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Пошук..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Зміст
+        </li>
+        <li class="sidebar-nav-overview">
+          Огляд
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%D1%82%D0%B0-Java-%D0%B2%D0%B8%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F-%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D0%BD%D0%B0%D0%B2%D1%87%D0%B0%D0%BD%D0%BD%D1%8F"><span class="nav-number">1.</span> <span class="nav-text">Python та Java: використання, продуктивність, навчання</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%D0%92%D0%B8%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F-%D1%82%D0%B0-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%BD%D1%96%D1%81%D1%82%D1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">Використання та практичність</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%D0%B2%D0%B5%D0%B1-%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%B0"><span class="nav-number">1.2.</span> <span class="nav-text">веб-розробка</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%D0%A0%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%B0-%D0%BC%D0%BE%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D0%B8%D1%85-%D0%B4%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D1%96%D0%B2"><span class="nav-number">1.3.</span> <span class="nav-text">Розробка мобільних додатків</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B2%D1%87%D0%B0%D0%BD%D0%BD%D1%8F-%D1%82%D0%B0-%D0%B2%D0%B5%D0%BB%D0%B8%D0%BA%D1%96-%D0%B4%D0%B0%D0%BD%D1%96"><span class="nav-number">1.4.</span> <span class="nav-text">Машинне навчання та великі дані</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%D0%97-%D1%87%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D1%87%D0%B0%D1%82%D0%B8"><span class="nav-number">1.5.</span> <span class="nav-text">З чого почати</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">LeiHao</p>
+  <div class="site-description" itemprop="description">😃😃😃</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/uk/archives/">
+        
+          <span class="site-state-item-count">155</span>
+          <span class="site-state-item-name">Архів</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/uk/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">Теги</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/leihao0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/leihao0" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/uk/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="uk">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/uk/Python-vs-Java-for-Kids/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uk/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python проти Java для дітей
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Опубліковано</span>
+
+      <time title="Створено: 2020-08-12 13:33:04" itemprop="dateCreated datePublished" datetime="2020-08-12T13:33:04+08:00">2020-08-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Змінено</span>
+        <time title="Змінено: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/uk/Python-vs-Java-for-Kids/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Python-vs-Java-for-Kids/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="К-сть символів в статті">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">К-сть символів в статті: </span>
+      <span>5.2k</span>
+    </span>
+    <span class="post-meta-item" title="Час читання">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Час читання &asymp;</span>
+      <span>5 хв.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><em>This</em> <a target="_blank" rel="noopener" href="https://junilearning.com/blog/guide/python-vs-java/"><em>article</em></a> _ спочатку з’явився в_ <a target="_blank" rel="noopener" href="https://junilearning.com/"><em>junilearning.com</em></a> </p>
+<h1 id="Python-та-Java-використання-продуктивність-навчання"><a href="#Python-та-Java-використання-продуктивність-навчання" class="headerlink" title="Python та Java: використання, продуктивність, навчання"></a>Python та Java: використання, продуктивність, навчання</h1><p>У галузі інформатики існує багато мов програмування, і жодна мова не перевершує іншу. Іншими словами, ** кожна мова найкраще підходить для вирішення певних проблем *<em>. Насправді, для даного проекту програмування, як правило, немає жодної найкращої мови на вибір. Тому для студентів, які хочуть розробляти програмне забезпечення або вирішувати цікаві проблеми за допомогою коду, дуже важливо мати міцну основу в галузі інформатики *</em>, застосовної до будь-якої мови програмування **. </p>
+<a id="more"></a>
+
+<p>Мови програмування, як правило, поділяють певні характеристики в способі їх роботи, наприклад, вони мають справу з використанням пам’яті або інтенсивністю використання об’єктів. По мірі того, як студенти будуть піддаватися впливу більшої кількості мов, вони почнуть бачити ці закономірності. Ця стаття буде зосереджена на Python та Java, двох найбільш широко використовуваних мовах програмування у світі. Хоча важко точно виміряти темп зростання кожної мови програмування, ** Вони є двома найпопулярнішими мовами програмування, що використовуються сьогодні у промисловості **. </p>
+<p>Основна різниця між Python та Java полягає в тому, що Python ** динамічно набирається *<em>, тоді як Java *</em> статично *<em>. Якщо говорити вільно, це означає, що Java чіткіше визначає та використовує змінні в коді. *</em> В результаті синтаксис Java, як правило, є багатослівним, що є однією з причин, чому ми рекомендуємо початківцям вивчати Python перед Java. ** Наприклад, ось як <code>numbers</code> створює змінну імені в Python, яка містить цифри від 0 до 9: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">numbers.append(i)</span><br></pre></td></tr></table></figure>
+
+<p>Ось як ви могли б зробити те саме в Java: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ArrayList numbers = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    numbers.add(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Інша важлива відмінність полягає в тому, що Java є ** компільованою мовою *<em>, тому вона зазвичай запускає програми швидше, ніж Python. Це означає, що компілятор перетворює код Java у код машинного рівня перед тим, як фактично запустити програму. На відміну від цього, Python є *</em> інтерпретованою ** мовою, що означає відсутність кроків компіляції. </p>
+<h2 id="Використання-та-практичність"><a href="#Використання-та-практичність" class="headerlink" title="Використання та практичність"></a>Використання та практичність</h2><p>Історично Java стала більш популярною мовою, частково завдяки своїй довгій історії. Однак Python стрімко набирає популярність. Відповідно до <a target="_blank" rel="noopener" href="https://octoverse.github.com/">жовтневого звіту про статус Github</a>, нещодавно він перевершив Java як найбільш широко використовувану мову програмування. Згідно з опитуванням розробників 2018 року, ** Python зараз є найбільш швидкозростаючою мовою комп’ютерного програмування **. </p>
+<p>Як Python, так і Java мають велику спільноту розробників, і ви можете відповісти на запитання на веб-сайтах <a target="_blank" rel="noopener" href="https://stackoverflow.com/">Stack Overflow</a>. З <a target="_blank" rel="noopener" href="https://insights.stackoverflow.com/trends?tags=python%2Cjava">Тенденції переповнення стека</a> видно, що відсоток запитань, заданих Python при переповненні стеку в 2017 році, перевищує Java **. На момент написання статті близько 13% запитань щодо переповнення стека позначено Python, а близько 8% - Java! </p>
+<h2 id="веб-розробка"><a href="#веб-розробка" class="headerlink" title="веб-розробка"></a>веб-розробка</h2><p>** І Python, і Java можуть бути використані для внутрішньої веб-розробки **. Як правило, розробники будуть використовувати фреймворк <a target="_blank" rel="noopener" href="https://stackify.com/python-frameworks/">Django and Flask</a> для Python та <a target="_blank" rel="noopener" href="https://spring.io/">Spring</a> для Java. Python відомий читабельністю свого коду, а це означає, що код Python є чистим, простим для читання та стислим. Python також має велику кількість комплексних модулів, пакетів та бібліотек, які, на додаток до своєї стандартної бібліотеки, розробляються спільнотою ентузіастів Python. Java має подібну екосистему, хоча і в меншій мірі. </p>
+<h2 id="Розробка-мобільних-додатків"><a href="#Розробка-мобільних-додатків" class="headerlink" title="Розробка мобільних додатків"></a>Розробка мобільних додатків</h2><p>** Що стосується розробки мобільних додатків, Java має домінуюче положення *<em>, оскільки *</em> Java ** є основною мовою, що використовується для створення додатків та ігор для Android. За допомогою вищезазначених спеціально створених бібліотек розробники можуть писати програми для Android, використовуючи потужні фреймворки та засоби розробки, створені спеціально для операційної системи. В даний час, хоча існують такі інструменти, як <a target="_blank" rel="noopener" href="https://kivy.org/">Kivy</a> та <a target="_blank" rel="noopener" href="https://beeware.org/">BeeWare 之</a>, які дозволяють писати код один раз і запускати його в Windows, OS X, iOS та Розгортайте програми на Android, але Python не часто використовується для розробки мобільних пристроїв. </p>
+<h2 id="Машинне-навчання-та-великі-дані"><a href="#Машинне-навчання-та-великі-дані" class="headerlink" title="Машинне навчання та великі дані"></a>Машинне навчання та великі дані</h2><p>Натомість у машинному навчанні та <a target="_blank" rel="noopener" href="https://junilearning.com/blog/coding-and-data-science">науці про дані</a> Python є найпопулярнішою мовою. Python зазвичай використовується в проектах з обробки великих даних, наукових обчислень та штучного інтелекту. ** Працюючи над проектами, що включають аналіз настроїв, більшість вчених-дослідників даних та програмістів машинного навчання обирають використовувати Python замість Java **. Водночас варто зазначити, що багато програмістів машинного навчання можуть обрати використання Java під час роботи над проектами, пов’язаними з безпекою мережі, запобіганням мережевим атакам та виявленням шахрайства. </p>
+<h2 id="З-чого-почати"><a href="#З-чого-почати" class="headerlink" title="З чого почати"></a>З чого почати</h2><p>Вивчаючи основи програмування, ** багато досліджень дійшли висновку <strong>, оскільки завдяки простому та інтуїтивно зрозумілому синтаксису Python це ** легше, ніж Java ** ** \ * \ *</strong> [Вивчати Python](https : //junilearning.com/coding) *<em>, як показано в попередньому прикладі. Порівняно з Python, програми Java, як правило, мають більше типового коду - вони повинні містити частини коду з незначними змінами чи без змін у багатьох місцях. Сказавши це, Java має деякі суттєві переваги, особливо її швидкість як компільованої мови. *</em> Вивчення Python та Java призведе студентів до двох мов, які базуються на схожих концепціях інформатики, але відрізняються за освітою. \ * \ * </p>
+<p>Загалом, очевидно, що обидва Python та Java на практиці є потужними мовами програмування, тому для будь-якого розробника програм, що бажає, найкраще добре вивчити обидві мови. Програмісти повинні порівнювати Python та Java відповідно до конкретних потреб кожного проекту з розробки програмного забезпечення, а не просто вивчати мову, яка їм подобається. Коротше кажучи, ** Жодна мова не перевершує іншу, тому програмісти повинні прагнути мати обидві мови в обох кодуваннях **. </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Python</th>
+<th>Java</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Продуктивність виконання</td>
+<td></td>
+<td>Переможець</td>
+</tr>
+<tr>
+<td>Простота навчання</td>
+<td>Переможець</td>
+<td></td>
+</tr>
+<tr>
+<td>Практична спритність</td>
+<td>Краватка</td>
+<td>Краватка</td>
+</tr>
+<tr>
+<td>Розробка мобільних додатків</td>
+<td></td>
+<td>Переможець</td>
+</tr>
+<tr>
+<td>Великі дані</td>
+<td>Переможець</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Схожі записи</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/uk/Codecademy/" rel="bookmark">Codecademy</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/uk/What-is-Python-Used-for/" rel="bookmark">Яке призначення Python</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me 👨‍💻 a coffee ☕️</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    Донат
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/wechat.png" alt="LeiHao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/alipay.png" alt="LeiHao Alipay">
+        <span>Alipay</span>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/bitcoin.png" alt="LeiHao Bitcoin">
+        <span>Bitcoin</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/uk/tags/python/" rel="tag"># Python</a>
+              <a href="/uk/tags/java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/uk/Raspberry-Pi-4/" rel="prev" title="Малина 4">
+                  <i class="fa fa-chevron-left"></i> Малина 4
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/uk/How-to-Clean-MacBook-Dust-Fan/" rel="next" title="Як почистити пил та вентилятори MacBook">
+                  Як почистити пил та вентилятори MacBook <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2012 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-laptop-code"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeiHao</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Загальна к-сть символів">500k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Загальний час читання">7:34</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/uk/js/utils.js"></script><script src="/uk/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/uk/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Artwalk.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://leihao0.github.io/uk/Python-vs-Java-for-Kids/";
+    this.page.identifier = "Python-vs-Java-for-Kids/";
+    this.page.title = "Python проти Java для дітей";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://Artwalk.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
