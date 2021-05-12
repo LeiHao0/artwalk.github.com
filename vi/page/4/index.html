@@ -352,7 +352,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/vi/archives/">
         
-          <span class="site-state-item-count">157</span>
+          <span class="site-state-item-count">158</span>
           <span class="site-state-item-name">bài viết</span>
         </a>
       </div>
@@ -403,6 +403,120 @@ mjx-container[display="true"] + br {
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="vi">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/vi/Audio-File-to-Text-via-SFSpeechRecognizer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vi/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vi/Audio-File-to-Text-via-SFSpeechRecognizer/" class="post-title-link" itemprop="url">Tệp âm thanh thành văn bản qua SFSpeechRecognizer</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Tạo lúc</span>
+
+      <time title="Được tạo: 2018-12-20 20:50:35" itemprop="dateCreated datePublished" datetime="2018-12-20T20:50:35+08:00">2018-12-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Chỉnh sửa vào</span>
+        <time title="Được thay đổi: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/vi/Audio-File-to-Text-via-SFSpeechRecognizer/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Audio-File-to-Text-via-SFSpeechRecognizer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Số biểu tượng trong bài viết">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Số biểu tượng trong bài viết: </span>
+      <span>5.7k</span>
+    </span>
+    <span class="post-meta-item" title="Thời lượng đọc">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Thời lượng đọc &asymp;</span>
+      <span>5 phút.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Giống như việc gọi một API, nó dễ dàng hơn nhiều so với tôi nghĩ (thực ra) 😄😄😄 </p>
+<h3 id="import-Speech"><a href="#import-Speech" class="headerlink" title="import Speech"></a><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/speech/sfspeechrecognizer">import Speech</a></h3><h3 id="Info-plist"><a href="#Info-plist" class="headerlink" title="Info.plist"></a>Info.plist</h3><ul>
+<li>Quyền riêng tư - Mô tả cách sử dụng micrô </li>
+<li>Quyền riêng tư - Mô tả cách sử dụng nhận dạng giọng nói </li>
+</ul>
+<h3 id="Uy-quyen"><a href="#Uy-quyen" class="headerlink" title="Ủy quyền"></a>Ủy quyền</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">SFSpeechRecognizer</span>.requestAuthorization &#123; authStatus <span class="keyword">in</span></span><br><span class="line">    <span class="type">OperationQueue</span>.main.addOperation &#123; [<span class="keyword">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">switch</span> authStatus &#123;</span><br><span class="line">        <span class="keyword">case</span> .notDetermined, .denied, .restricted:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;.notDetermined, .denied, .restricted&quot;</span>)</span><br><span class="line">        <span class="keyword">case</span> .authorized:</span><br><span class="line">            <span class="keyword">self</span>?.startRecognizeFile()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vi/Audio-File-to-Text-via-SFSpeechRecognizer/#more" rel="contents">
+                Đọc tiếp &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -1424,117 +1538,6 @@ mjx-container[display="true"] + br {
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="vi">
-    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/vi/Struct-Codable-Alamofire-Generics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/vi/images/avatar.gif">
-      <meta itemprop="name" content="LeiHao">
-      <meta itemprop="description" content="😃😃😃">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LeiHao's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/vi/Struct-Codable-Alamofire-Generics/" class="post-title-link" itemprop="url">Struct Codable Alamofire Generics</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Tạo lúc</span>
-
-      <time title="Được tạo: 2018-04-16 20:16:23" itemprop="dateCreated datePublished" datetime="2018-04-16T20:16:23+08:00">2018-04-16</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Chỉnh sửa vào</span>
-        <time title="Được thay đổi: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/vi/Struct-Codable-Alamofire-Generics/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Struct-Codable-Alamofire-Generics/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Số biểu tượng trong bài viết">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Số biểu tượng trong bài viết: </span>
-      <span>3.3k</span>
-    </span>
-    <span class="post-meta-item" title="Thời lượng đọc">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Thời lượng đọc &asymp;</span>
-      <span>3 phút.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Tôi đã viết <a href="https://leihao0.github.io/Swift-Generics-in-protocol-and-enum/">Swift Generics in Protocols and Enumerations</a> nửa năm trước để giải quyết vấn đề chuyển đổi dữ liệu phản hồi mạng thành generics Gõ kiểu. </p>
-<p>Sau Swift 4, phương thức <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/foundation/jsonserialization">JSONSerialization</a> đã lỗi thời một chút </p>
-<p>Trong khi cập nhật tiến trình, tôi đã tìm thấy một cách tốt hơn </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/vi/Struct-Codable-Alamofire-Generics/#more" rel="contents">
-                Đọc tiếp &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
   
   <nav class="pagination">
@@ -1590,13 +1593,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Tổng số biểu tượng">505k</span>
+    <span title="Tổng số biểu tượng">508k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Tổng thời lượng đọc">7:39</span>
+    <span title="Tổng thời lượng đọc">7:42</span>
   </span>
 </div>
 

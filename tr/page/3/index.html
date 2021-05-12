@@ -352,7 +352,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/tr/archives/">
         
-          <span class="site-state-item-count">157</span>
+          <span class="site-state-item-count">158</span>
           <span class="site-state-item-name">gönderiler</span>
         </a>
       </div>
@@ -403,6 +403,115 @@ mjx-container[display="true"] + br {
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="tr">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/tr/LeetCode-Binary-Tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tr/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tr/LeetCode-Binary-Tree/" class="post-title-link" itemprop="url">LeetCode İkili Ağaç</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Yayınlandı</span>
+
+      <time title="Oluşturuldu: 2020-01-03 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-03T00:00:00+08:00">2020-01-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Düzenlendi</span>
+        <time title="Değiştirildi: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/tr/LeetCode-Binary-Tree/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode-Binary-Tree/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Makalede sayılan semboller">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Makalede sayılan semboller: </span>
+      <span>6.1k</span>
+    </span>
+    <span class="post-meta-item" title="Okuma Süresi">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Okuma Süresi &asymp;</span>
+      <span>6 dk.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Ikili-Agac-On-Siparis-Gecisi"><a href="#Ikili-Agac-On-Siparis-Gecisi" class="headerlink" title="İkili Ağaç Ön Sipariş Geçişi"></a>İkili Ağaç Ön Sipariş Geçişi</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// iterative</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">preorderTraversal</span><span class="params">(<span class="number">_</span> root: TreeNode?)</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> ans = [<span class="type">Int</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">let</span> p = stack.popLast() &#123;</span><br><span class="line">            ans.append(p.val)</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = p.<span class="keyword">right</span> &#123; stack.append(r) &#125;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> l = p.<span class="keyword">left</span> &#123; stack.append(l) &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// recursive</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">preorderTraversal0</span><span class="params">(<span class="number">_</span> root: TreeNode?)</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> root = root <span class="keyword">else</span> &#123; <span class="keyword">return</span> [] &#125;</span><br><span class="line">        <span class="keyword">return</span> [root.val] + preorderTraversal(root.<span class="keyword">left</span>) + preorderTraversal(root.<span class="keyword">right</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tr/LeetCode-Binary-Tree/#more" rel="contents">
+                Daha fazla oku &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -1419,120 +1528,6 @@ mjx-container[display="true"] + br {
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="tr">
-    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/tr/Audio-File-to-Text-via-SFSpeechRecognizer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/tr/images/avatar.gif">
-      <meta itemprop="name" content="LeiHao">
-      <meta itemprop="description" content="😃😃😃">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LeiHao's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/tr/Audio-File-to-Text-via-SFSpeechRecognizer/" class="post-title-link" itemprop="url">SFSpeechRecognizer ile Metne Ses Dosyası</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Yayınlandı</span>
-
-      <time title="Oluşturuldu: 2018-12-20 20:50:35" itemprop="dateCreated datePublished" datetime="2018-12-20T20:50:35+08:00">2018-12-20</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Düzenlendi</span>
-        <time title="Değiştirildi: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/tr/Audio-File-to-Text-via-SFSpeechRecognizer/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Audio-File-to-Text-via-SFSpeechRecognizer/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Makalede sayılan semboller">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Makalede sayılan semboller: </span>
-      <span>5.7k</span>
-    </span>
-    <span class="post-meta-item" title="Okuma Süresi">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Okuma Süresi &asymp;</span>
-      <span>5 dk.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Tıpkı bir API çağırmak gibi, düşündüğümden çok daha kolay (aslında) 😄😄😄 </p>
-<h3 id="Ice-Aktarma-Konusmasi"><a href="#Ice-Aktarma-Konusmasi" class="headerlink" title="İçe Aktarma Konuşması"></a><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/speech/sfspeechrecognizer">İçe Aktarma Konuşması</a></h3><h3 id="Info-plist"><a href="#Info-plist" class="headerlink" title="Info.plist"></a>Info.plist</h3><ul>
-<li>Gizlilik - Mikrofon Kullanım Açıklaması </li>
-<li>Gizlilik - Konuşma Tanıma Kullanım Açıklaması </li>
-</ul>
-<h3 id="yetki"><a href="#yetki" class="headerlink" title="yetki"></a>yetki</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">SFSpeechRecognizer</span>.requestAuthorization &#123; authStatus <span class="keyword">in</span></span><br><span class="line">    <span class="type">OperationQueue</span>.main.addOperation &#123; [<span class="keyword">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">switch</span> authStatus &#123;</span><br><span class="line">        <span class="keyword">case</span> .notDetermined, .denied, .restricted:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;.notDetermined, .denied, .restricted&quot;</span>)</span><br><span class="line">        <span class="keyword">case</span> .authorized:</span><br><span class="line">            <span class="keyword">self</span>?.startRecognizeFile()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/tr/Audio-File-to-Text-via-SFSpeechRecognizer/#more" rel="contents">
-                Daha fazla oku &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
   
   <nav class="pagination">
@@ -1588,13 +1583,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Sayılan toplan semboller">528k</span>
+    <span title="Sayılan toplan semboller">532k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Toplmada Okuma Süresi">8:01</span>
+    <span title="Toplmada Okuma Süresi">8:03</span>
   </span>
 </div>
 

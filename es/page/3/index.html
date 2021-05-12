@@ -352,7 +352,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/es/archives/">
         
-          <span class="site-state-item-count">157</span>
+          <span class="site-state-item-count">158</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
@@ -403,6 +403,115 @@ mjx-container[display="true"] + br {
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/es/LeetCode-Binary-Tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/es/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/es/LeetCode-Binary-Tree/" class="post-title-link" itemprop="url">Árbol binario de LeetCode</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
+
+      <time title="Creado por: 2020-01-03 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-03T00:00:00+08:00">2020-01-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Editado el</span>
+        <time title="Modificado por: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/es/LeetCode-Binary-Tree/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode-Binary-Tree/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Cantidad de caracteres en el articulo">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Cantidad de caracteres en el articulo: </span>
+      <span>6.2k</span>
+    </span>
+    <span class="post-meta-item" title="Tiempo de lectura">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Tiempo de lectura &asymp;</span>
+      <span>6 minutos.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Recorrido-de-preorden-de-arbol-binario"><a href="#Recorrido-de-preorden-de-arbol-binario" class="headerlink" title="Recorrido de preorden de árbol binario"></a>Recorrido de preorden de árbol binario</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// iterative</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">preorderTraversal</span><span class="params">(<span class="number">_</span> root: TreeNode?)</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> ans = [<span class="type">Int</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">let</span> p = stack.popLast() &#123;</span><br><span class="line">            ans.append(p.val)</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = p.<span class="keyword">right</span> &#123; stack.append(r) &#125;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> l = p.<span class="keyword">left</span> &#123; stack.append(l) &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// recursive</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">preorderTraversal0</span><span class="params">(<span class="number">_</span> root: TreeNode?)</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> root = root <span class="keyword">else</span> &#123; <span class="keyword">return</span> [] &#125;</span><br><span class="line">        <span class="keyword">return</span> [root.val] + preorderTraversal(root.<span class="keyword">left</span>) + preorderTraversal(root.<span class="keyword">right</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/es/LeetCode-Binary-Tree/#more" rel="contents">
+                Leer más &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -1419,120 +1528,6 @@ mjx-container[display="true"] + br {
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
-    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/es/Audio-File-to-Text-via-SFSpeechRecognizer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/es/images/avatar.gif">
-      <meta itemprop="name" content="LeiHao">
-      <meta itemprop="description" content="😃😃😃">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LeiHao's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/es/Audio-File-to-Text-via-SFSpeechRecognizer/" class="post-title-link" itemprop="url">Archivo de audio a texto a través de SFSpeechRecognizer</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Publicado el</span>
-
-      <time title="Creado por: 2018-12-20 20:50:35" itemprop="dateCreated datePublished" datetime="2018-12-20T20:50:35+08:00">2018-12-20</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Editado el</span>
-        <time title="Modificado por: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/es/Audio-File-to-Text-via-SFSpeechRecognizer/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Audio-File-to-Text-via-SFSpeechRecognizer/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Cantidad de caracteres en el articulo">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Cantidad de caracteres en el articulo: </span>
-      <span>5.7k</span>
-    </span>
-    <span class="post-meta-item" title="Tiempo de lectura">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Tiempo de lectura &asymp;</span>
-      <span>5 minutos.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Al igual que llamar a una API, es mucho más fácil de lo que pensaba (en realidad) 😄😄😄 </p>
-<h3 id="importar-voz"><a href="#importar-voz" class="headerlink" title="importar voz"></a><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/speech/sfspeechrecognizer">importar voz</a></h3><h3 id="Info-plist"><a href="#Info-plist" class="headerlink" title="Info.plist"></a>Info.plist</h3><ul>
-<li>Privacidad - Descripción del uso del micrófono </li>
-<li>Privacidad - Descripción del uso del reconocimiento de voz </li>
-</ul>
-<h3 id="Autorizacion"><a href="#Autorizacion" class="headerlink" title="Autorización"></a>Autorización</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">SFSpeechRecognizer</span>.requestAuthorization &#123; authStatus <span class="keyword">in</span></span><br><span class="line">    <span class="type">OperationQueue</span>.main.addOperation &#123; [<span class="keyword">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">switch</span> authStatus &#123;</span><br><span class="line">        <span class="keyword">case</span> .notDetermined, .denied, .restricted:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;.notDetermined, .denied, .restricted&quot;</span>)</span><br><span class="line">        <span class="keyword">case</span> .authorized:</span><br><span class="line">            <span class="keyword">self</span>?.startRecognizeFile()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/es/Audio-File-to-Text-via-SFSpeechRecognizer/#more" rel="contents">
-                Leer más &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
   
   <nav class="pagination">
@@ -1588,13 +1583,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Cantidad total de caracteres">546k</span>
+    <span title="Cantidad total de caracteres">549k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Tiempo total de lectura">8:16</span>
+    <span title="Tiempo total de lectura">8:20</span>
   </span>
 </div>
 

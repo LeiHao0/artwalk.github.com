@@ -352,7 +352,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/ru/archives/">
         
-          <span class="site-state-item-count">157</span>
+          <span class="site-state-item-count">158</span>
           <span class="site-state-item-name">Архив</span>
         </a>
       </div>
@@ -403,6 +403,120 @@ mjx-container[display="true"] + br {
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ru">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/ru/Audio-File-to-Text-via-SFSpeechRecognizer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ru/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ru/Audio-File-to-Text-via-SFSpeechRecognizer/" class="post-title-link" itemprop="url">Аудиофайл в текст через SFSpeechRecognizer</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Размещено</span>
+
+      <time title="Создано: 2018-12-20 20:50:35" itemprop="dateCreated datePublished" datetime="2018-12-20T20:50:35+08:00">2018-12-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Изменено</span>
+        <time title="Изменено: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/ru/Audio-File-to-Text-via-SFSpeechRecognizer/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Audio-File-to-Text-via-SFSpeechRecognizer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Кол-во символов в статье">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Кол-во символов в статье: </span>
+      <span>5.7k</span>
+    </span>
+    <span class="post-meta-item" title="Время чтения">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Время чтения &asymp;</span>
+      <span>5 мин.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Как и вызов API, это намного проще, чем я думал (на самом деле) 😄😄😄 </p>
+<h3 id="импортировать-речь"><a href="#импортировать-речь" class="headerlink" title="импортировать речь"></a><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/speech/sfspeechrecognizer">импортировать речь</a></h3><h3 id="Info-plist"><a href="#Info-plist" class="headerlink" title="Info.plist"></a>Info.plist</h3><ul>
+<li>Конфиденциальность - Описание использования микрофона </li>
+<li>Конфиденциальность - Описание использования распознавания речи </li>
+</ul>
+<h3 id="Авторизация"><a href="#Авторизация" class="headerlink" title="Авторизация"></a>Авторизация</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">SFSpeechRecognizer</span>.requestAuthorization &#123; authStatus <span class="keyword">in</span></span><br><span class="line">    <span class="type">OperationQueue</span>.main.addOperation &#123; [<span class="keyword">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">switch</span> authStatus &#123;</span><br><span class="line">        <span class="keyword">case</span> .notDetermined, .denied, .restricted:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;.notDetermined, .denied, .restricted&quot;</span>)</span><br><span class="line">        <span class="keyword">case</span> .authorized:</span><br><span class="line">            <span class="keyword">self</span>?.startRecognizeFile()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ru/Audio-File-to-Text-via-SFSpeechRecognizer/#more" rel="contents">
+                Читать полностью &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -1424,117 +1538,6 @@ mjx-container[display="true"] + br {
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ru">
-    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/ru/Struct-Codable-Alamofire-Generics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/ru/images/avatar.gif">
-      <meta itemprop="name" content="LeiHao">
-      <meta itemprop="description" content="😃😃😃">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LeiHao's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/ru/Struct-Codable-Alamofire-Generics/" class="post-title-link" itemprop="url">Структурированные кодируемые дженерики Alamofire</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Размещено</span>
-
-      <time title="Создано: 2018-04-16 20:16:23" itemprop="dateCreated datePublished" datetime="2018-04-16T20:16:23+08:00">2018-04-16</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Изменено</span>
-        <time title="Изменено: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/ru/Struct-Codable-Alamofire-Generics/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Struct-Codable-Alamofire-Generics/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Кол-во символов в статье">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Кол-во символов в статье: </span>
-      <span>3.4k</span>
-    </span>
-    <span class="post-meta-item" title="Время чтения">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Время чтения &asymp;</span>
-      <span>3 мин.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Я написал <a href="https://leihao0.github.io/Swift-Generics-in-protocol-and-enum/">Swift Generics в протоколах и перечислениях</a> полгода назад, чтобы решить проблему преобразования данных сетевых ответов в общие. Тип типа. </p>
-<p>После Swift 4 метод <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/foundation/jsonserialization">JSONSerialization</a> немного устарел. </p>
-<p>Обновляя прогресс, я нашел способ получше </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/ru/Struct-Codable-Alamofire-Generics/#more" rel="contents">
-                Читать полностью &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
   
   <nav class="pagination">
@@ -1590,13 +1593,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Общее кол-во символов">543k</span>
+    <span title="Общее кол-во символов">546k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Общее время чтения">8:13</span>
+    <span title="Общее время чтения">8:16</span>
   </span>
 </div>
 

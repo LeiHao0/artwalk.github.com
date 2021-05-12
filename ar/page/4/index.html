@@ -352,7 +352,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/ar/archives/">
         
-          <span class="site-state-item-count">157</span>
+          <span class="site-state-item-count">158</span>
           <span class="site-state-item-name">المقالات</span>
         </a>
       </div>
@@ -403,6 +403,120 @@ mjx-container[display="true"] + br {
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ar">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/ar/Audio-File-to-Text-via-SFSpeechRecognizer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ar/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ar/Audio-File-to-Text-via-SFSpeechRecognizer/" class="post-title-link" itemprop="url">تحويل ملف صوتي إلى نص عبر SFSpeechRecognizer</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">نُشر في</span>
+
+      <time title="أُنشأ: ٢٠١٨-١٢-٢٠ ٢٠:٥٠:٣٥" itemprop="dateCreated datePublished" datetime="٢٠١٨-١٢-٢٠T٢٠:٥٠:٣٥+٠٨:٠٠">٢٠١٨-١٢-٢٠</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">عُدل في</span>
+        <time title="عُدل: ٢٠٢٠-١٢-٢٢ ٠٨:٣٢:١٦" itemprop="dateModified" datetime="٢٠٢٠-١٢-٢٢T٠٨:٣٢:١٦+٠٨:٠٠">٢٠٢٠-١٢-٢٢</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/ar/Audio-File-to-Text-via-SFSpeechRecognizer/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Audio-File-to-Text-via-SFSpeechRecognizer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="عدد الحروف في المقال">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+      <span>5.7k</span>
+    </span>
+    <span class="post-meta-item" title="زمن القراءة">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+      <span>5 دقائق.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>تمامًا مثل استدعاء API ، إنه أسهل بكثير مما كنت أعتقد (في الواقع) 😄😄😄 </p>
+<h3 id="استيراد-الكلام"><a href="#استيراد-الكلام" class="headerlink" title="استيراد الكلام"></a><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/speech/sfspeechrecognizer">استيراد الكلام</a></h3><h3 id="Info-plist"><a href="#Info-plist" class="headerlink" title="Info.plist"></a>Info.plist</h3><ul>
+<li>الخصوصية - وصف استخدام الميكروفون </li>
+<li>الخصوصية - وصف استخدام التعرف على الكلام </li>
+</ul>
+<h3 id="تفويض"><a href="#تفويض" class="headerlink" title="تفويض"></a>تفويض</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">SFSpeechRecognizer</span>.requestAuthorization &#123; authStatus <span class="keyword">in</span></span><br><span class="line">    <span class="type">OperationQueue</span>.main.addOperation &#123; [<span class="keyword">weak</span> <span class="keyword">self</span>] <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">switch</span> authStatus &#123;</span><br><span class="line">        <span class="keyword">case</span> .notDetermined, .denied, .restricted:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;.notDetermined, .denied, .restricted&quot;</span>)</span><br><span class="line">        <span class="keyword">case</span> .authorized:</span><br><span class="line">            <span class="keyword">self</span>?.startRecognizeFile()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ar/Audio-File-to-Text-via-SFSpeechRecognizer/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -1401,117 +1515,6 @@ mjx-container[display="true"] + br {
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ar">
-    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/ar/Struct-Codable-Alamofire-Generics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/ar/images/avatar.gif">
-      <meta itemprop="name" content="LeiHao">
-      <meta itemprop="description" content="😃😃😃">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LeiHao's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/ar/Struct-Codable-Alamofire-Generics/" class="post-title-link" itemprop="url">هيكل Codable Alamofire Generics</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">نُشر في</span>
-
-      <time title="أُنشأ: ٢٠١٨-٠٤-١٦ ٢٠:١٦:٢٣" itemprop="dateCreated datePublished" datetime="٢٠١٨-٠٤-١٦T٢٠:١٦:٢٣+٠٨:٠٠">٢٠١٨-٠٤-١٦</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">عُدل في</span>
-        <time title="عُدل: ٢٠٢٠-١٢-٢٢ ٠٨:٣٢:١٦" itemprop="dateModified" datetime="٢٠٢٠-١٢-٢٢T٠٨:٣٢:١٦+٠٨:٠٠">٢٠٢٠-١٢-٢٢</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/ar/Struct-Codable-Alamofire-Generics/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Struct-Codable-Alamofire-Generics/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="عدد الحروف في المقال">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">عدد الحروف في المقال: </span>
-      <span>3.2k</span>
-    </span>
-    <span class="post-meta-item" title="زمن القراءة">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">زمن القراءة &asymp;</span>
-      <span>3 دقائق.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>لقد كتبت <a href="https://leihao0.github.io/Swift-Generics-in-protocol-and-enum/">Swift Generics in Protocol and Enumerations</a> قبل نصف عام لحل مشكلة تحويل بيانات استجابة الشبكة إلى أدوية اكتب نوع. </p>
-<p>بعد Swift 4 ، أصبحت طريقة <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/foundation/jsonserialization">JSONSerialization</a> قديمة بعض الشيء </p>
-<p>أثناء تحديث التقدم ، وجدت طريقة أفضل </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/ar/Struct-Codable-Alamofire-Generics/#more" rel="contents">
-                تابع القراءة &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
   
   <nav class="pagination">
@@ -1567,13 +1570,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="مُجمل عدد الحروف">475k</span>
+    <span title="مُجمل عدد الحروف">478k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="مُجمل زمن القراءة">7:12</span>
+    <span title="مُجمل زمن القراءة">7:14</span>
   </span>
 </div>
 
