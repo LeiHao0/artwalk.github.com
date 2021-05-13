@@ -352,7 +352,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/ko/archives/">
         
-          <span class="site-state-item-count">158</span>
+          <span class="site-state-item-count">159</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -403,6 +403,119 @@ mjx-container[display="true"] + br {
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/ko/Anomaly-Detection-Recommender-Systems/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ko/images/avatar.gif">
+      <meta itemprop="name" content="LeiHao">
+      <meta itemprop="description" content="😃😃😃">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeiHao's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ko/Anomaly-Detection-Recommender-Systems/" class="post-title-link" itemprop="url">이상 탐지 및 추천 시스템</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2018-02-11 11:29:35" itemprop="dateCreated datePublished" datetime="2018-02-11T11:29:35+08:00">2018-02-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Updated at: 2020-12-21 07:53:08" itemprop="dateModified" datetime="2020-12-21T07:53:08+08:00">2020-12-21</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/ko/Anomaly-Detection-Recommender-Systems/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Anomaly-Detection-Recommender-Systems/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>911</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="이상-탐지"><a href="#이상-탐지" class="headerlink" title="이상 탐지"></a>이상 탐지</h2><div style="width: 400px">
+<img src="https://i.imgur.com/slIPtvp.gif">
+</div>
+
+<h3 id="1-1-가우스-분포"><a href="#1-1-가우스-분포" class="headerlink" title="1.1 가우스 분포"></a>1.1 가우스 분포</h3><p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.308ex" xmlns="http://www.w3.org/2000/svg" width="27.169ex" height="5.385ex" role="img" focusable="false" viewBox="0 -1360.3 12008.8 2380.3"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></g><g data-mml-node="mo" transform="translate(503, 0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(892, 0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(1464, 0)"><path data-c="3B" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 85 94 103T137 121Q202 121 202 8Q202 -44 183 -94T144 -169T118 -194Q115 -194 106 -186T95 -174Q94 -171 107 -155T137 -107T160 -38Q161 -32 162 -22T165 -4T165 4Q165 5 161 4T142 0Q110 0 94 18T78 60Z"></path></g><g data-mml-node="mi" transform="translate(1908.7, 0)"><path data-c="1D707" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"></path></g><g data-mml-node="mo" transform="translate(2511.7, 0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="msup" transform="translate(2956.3, 0)"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="mn" transform="translate(571, 413) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(3930.9, 0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(4597.7, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mstyle" transform="translate(5653.4, 0)"><g data-mml-node="mfrac"><g data-mml-node="mn" transform="translate(1418.8, 676)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="msqrt" transform="translate(220, -962)"><g transform="translate(853, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500, 0)"><path data-c="1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path></g><g data-mml-node="msup" transform="translate(1070, 0)"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="mn" transform="translate(571, 289) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g><g data-mml-node="mo" transform="translate(0, 142)"><path data-c="221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path></g><rect width="2044.6" height="60" x="853" y="882"></rect></g><rect width="3097.6" height="60" x="120" y="220"></rect></g></g><g data-mml-node="msup" transform="translate(8991, 0)"><g data-mml-node="mi"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path></g><g data-mml-node="TeXAtom" transform="translate(466, 480.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mfrac" transform="translate(778, 0)"><g data-mml-node="mrow" transform="translate(220, 516.8) scale(0.707)"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(389, 0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(961, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(1739, 0)"><path data-c="1D707" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"></path></g><g data-mml-node="msup" transform="translate(2342, 0)"><g data-mml-node="mo"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mn" transform="translate(389, 363)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g><g data-mml-node="mrow" transform="translate(806.9, -515.3) scale(0.707)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="msup" transform="translate(500, 0)"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="mn" transform="translate(571, 289)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g><rect width="2520" height="60" x="120" y="220"></rect></g></g></g></g></g></svg></mjx-container></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ko/Anomaly-Detection-Recommender-Systems/#more" rel="contents">
+                더 읽어보기 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -1647,264 +1760,6 @@ mjx-container[display="true"] + br {
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
-    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/ko/japan-0-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/ko/images/avatar.gif">
-      <meta itemprop="name" content="LeiHao">
-      <meta itemprop="description" content="😃😃😃">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LeiHao's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/ko/japan-0-1/" class="post-title-link" itemprop="url">🇯🇵-0-1</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2017-07-11 00:00:00" itemprop="dateCreated datePublished" datetime="2017-07-11T00:00:00+08:00">2017-07-11</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Updated at: 2020-09-30 00:00:00" itemprop="dateModified" datetime="2020-09-30T00:00:00+08:00">2020-09-30</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/ko/japan-0-1/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="japan-0-1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>3.6k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div id="googleMap1720" style="
-            height: 450px;
-            width: 100%;
-            margin: 0px;
-            padding: 0px
-            ">
-</div>
-<style>.gmnoprint img {max-width: none !important;}</style>
-<script defer="defer">
-  window.hexoGmaps = window.hexoGmaps || { maps: {}};
-  window.hexoGmaps.maps['initgoogleMap1720'] = function init() {
-    var mapOptions = {
-       'scrollwheel': false,
-       'zoom': 12.5,
-       'center': new window.google.maps.LatLng( 35.6888043 , 139.7464185 ),
-     },
-     target = document.getElementById('googleMap1720'),
-     map = new window.google.maps.Map(target, mapOptions);
-      
-     
-     
-     var opts0 = {
-        'position': new window.google.maps.LatLng( 35.6599167 , 139.7287036 ),
-        'map': map,
-        'title': '六本木ヒルズ展望台',
-        'zIndex' : 0,
-        'icon': ''
-      };
-
-     var infowindow0 = new window.google.maps.InfoWindow({
-       content: '六本木ヒルズ展望台'
-     });
-
-     var marker0 = new window.google.maps.Marker(opts0);
-
-     marker0.addListener('click', function(){
-       infowindow0.open(map, marker0)
-     })
-     
-     
-     var opts1 = {
-        'position': new window.google.maps.LatLng( 35.6714459 , 139.6955955 ),
-        'map': map,
-        'title': '代々木公園',
-        'zIndex' : 1,
-        'icon': ''
-      };
-
-     var infowindow1 = new window.google.maps.InfoWindow({
-       content: '代々木公園'
-     });
-
-     var marker1 = new window.google.maps.Marker(opts1);
-
-     marker1.addListener('click', function(){
-       infowindow1.open(map, marker1)
-     })
-     
-     
-     var opts2 = {
-        'position': new window.google.maps.LatLng( 35.7099661 , 139.8098755 ),
-        'map': map,
-        'title': 'Tokyo Skytree',
-        'zIndex' : 2,
-        'icon': ''
-      };
-
-     var infowindow2 = new window.google.maps.InfoWindow({
-       content: 'Tokyo Skytree'
-     });
-
-     var marker2 = new window.google.maps.Marker(opts2);
-
-     marker2.addListener('click', function(){
-       infowindow2.open(map, marker2)
-     })
-   
-
-  }
-  function makeMaps() {
-    for (var map in window.hexoGmaps.maps) {
-       console.log('map #', map);
-       window.hexoGmaps.maps[map]();
-    }
-  }
-  function loadScript() {
-    window.hexoGmaps.googleScriptLoaded = true;
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-        script.src = '//maps.googleapis.com/maps/api/js?v=3.exp&callback=makeMaps&key=AIzaSyB6JxSOGlpKd-7pPtKKG_BIEOiLlaRHxMQ';
-    document.body.appendChild(script);
-  }
-  if (!window.hexoGmaps.googleScriptLoaded) {
-    loadScript();
-  }
-</script>
-
-<h2 id="롯폰기-힐즈-전망대-도쿄-시티-뷰"><a href="#롯폰기-힐즈-전망대-도쿄-시티-뷰" class="headerlink" title="롯폰기 힐즈 전망대 도쿄 시티 뷰"></a>롯폰기 힐즈 전망대 도쿄 시티 뷰</h2><p>도쿄를 둘러 볼 수있다 </p>
-<p>이 작품은 서로 연결된 건물의 그룹입니다.<br>오픈 샌드 박스 게임과는 다름<br>여기서 모델을 통해 매장에 들어갈 수 있습니다. </p>
-<p>이번에는 제가 어렸을 때 아버지가하신 말씀을 드디어 깨달았습니다<br>동방 명 주탑에 서서 내려다보고<br>차는 성냥갑 같고 남자는 개미 같고 </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-13.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-12.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-01.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-02.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-03.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-04.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-06.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-07.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-08.jpg" alt=""></div></div></div>
-
-<p>6 월인데 벌써 날씨가 더워<br>열을 발산하는 데 도움이되도록 물과 스프레이를 뿌릴 수있는 인공 분수를 보았습니다 </p>
-<p>건물 내부는 항상 디자인 감각을 가지고 있습니다.<br>손을 잡고있는 커플도 만났어요 </p>
-<p>그리고 진짜 와규 야키니쿠를 먹으러 갔어요<br>처음으로 입안에서 녹는 것을 경험했습니다 </p>
-<p>가장 놀라운 것은 가격입니다<br>풍경을보기 위해 여기에서 커피를 마실 수는 없었습니다.<br>습관적 사고는 바닥만큼 비쌀 것이라고 생각했습니다.<br>실제로 아래층보다 몇 달러 더 비쌉니다. </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-00.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-09.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-11.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-10.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-14.jpg" alt=""></div></div></div>
-
-<h2 id="요요-기-공원"><a href="#요요-기-공원" class="headerlink" title="요요 기 공원"></a>요요 기 공원</h2><blockquote>
-<p>1910 년 12 월 19 일, 도쿠가와 요시토시 선장이 일본 최초의 동력 비행기에 성공했습니다. 이 지역은 나중에 퍼레이드 장이되었습니다. 1945 년 9 월부터이 사이트에는 연합군이 일본을 점령하는 동안 미국 장교를 위해 “워싱턴 하이츠”라는 군사 막사가있었습니다.<br>2014 년 도쿄는 100 년 만에 최악의 뎅기열 발병을 경험했으며, 거의 200여 건의 확진 사례를 기록한 70 년 만에 처음으로 기록 된 사례였습니다. </p>
-</blockquote>
-<p>의외로 뎅기열이 발생했습니다 </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-15.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-18.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-19.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-20.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-21.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-22.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-23.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-24.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-25.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-26.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-27.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-28.jpg" alt=""></div></div></div>
-
-<p>1.5L 동맥으로 외출하곤 했어요<br>일본 전역에 자판기가 있으므로 물을 가져올 필요가 없습니다.<br>유일하게 부끄러운 점은 쓰레기통이 없다는 것입니다 술을 마신 후에는 병만 잡을 수 있습니다 재활용 쓰레기통이있는 다음 자판기가 기대됩니다. </p>
-<p>WC는 LGBT 🏳️‍🌈도 제공합니다. </p>
-<p>가미나리몬을지나 옆에 작은 기차 전시 포스터가 있습니다. </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-31.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-32.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-33.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-30.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-34.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-35.jpg" alt=""></div></div></div>
-
-<h2 id="스미다-수족관"><a href="#스미다-수족관" class="headerlink" title="스미다 수족관"></a>스미다 수족관</h2><p>스카이 트리 아래에는 수족관이 있습니다. </p>
-<p>니모를 찾아서의 니모?<br>소라게, 랍스터, 오징어<br>해저 전력 … </p>
-<p>🐠 🦞 🦑 </p>
-<p>수족관에서 바닥을 청소하는 직원 </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-57.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-37.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-39.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-41.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-42.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-43.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-44.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-47.jpg" alt=""></div></div></div>
-
-<p>물론 기념품으로 나왔어요<br>너무 귀엽고 온갖 털복숭이 해저 동물들<br>나는 베개로 하나를 다시 사는 것을 거의 도울 수 없었다. </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-48.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-49.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-50.jpg" alt=""></div></div></div>
-
-<h2 id="진격의-거인"><a href="#진격의-거인" class="headerlink" title="진격의 거인"></a>진격의 거인</h2><p>타이탄 공격 테마 시간에 맞춰<br>본 적이 없어서 아쉽다<br>이 두 사람이 누군지 모르겠어요<br>파도 없음 </p>
-<p>이 애니메이션을 추가 한 후<br>다행히도 저는 캡틴과 앨런을 두 드렸습니다. </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-53.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-36.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-52.jpg" alt=""></div></div></div>
-
-<h2 id="도쿄-스카이-트리"><a href="#도쿄-스카이-트리" class="headerlink" title="도쿄 스카이 트리"></a>도쿄 스카이 트리</h2><p>이 타워는 Gaohe 명승지뿐만 아니라 라디오 방송국을 위해 세워진 것으로 밝혀졌습니다. </p>
-<blockquote>
-<p>타워는 관동 지역의 주요 TV이자 방송국입니다. 구 도쿄 타워는 고층 건물로 둘러싸여있어 더 이상 완전한 디지털 지상파 방송을 제공 할 수 없습니다. 스카이 트리 빌딩은 2012 년 2 월 29 일에 완공되었습니다.<br>도쿄 스카이 트리는 일본의 역사적인 5 층 탑과도 비슷합니다. 타워의 바닥은 삼각대와 비슷한 구조로, 높이가 약 350m (1,150 피트) 이상인 원통 구조로 강과 도시를 한눈에 볼 수있다. 350m (1,150ft)에 2,000 명을 수용 할 수있는 전망대와 450m (1,480ft)에 900 명을 수용 할 수있는 전망대가 있습니다. 상부 전망대에는 나선형 유리로 덮인 스카이 워크가 있으며 방문객들은 마지막 5m 지점에서 상부 플랫폼의 가장 높은 지점까지 올라갈 수 있습니다. 유리 바닥의 일부를 통해 방문객은 아래 거리를 직접 볼 수 있습니다.<br>타워는 내진성이 있으며 철근 콘크리트로 만들어진 중앙 샤프트를 포함합니다. 주요 내부 기둥은 지상 125m (410 피트)에서 첫 번째 외부 타워 구조에 연결됩니다. 거기에서 최대 375m (1,230 피트)까지 기둥은 충격 흡수 장치에 의해 타워에 고정되며, 이는 지진 동안 쿠션 역할을합니다. “추가 품질 관리 메커니즘”(또는 조정 된 매스 댐퍼)을 통해 추가적인 탄성을 얻을 수 있습니다. 댐핑 시스템은 지진 발생시 무게 중심을 타워에 최대한 가깝게 유지하기 위해 건물 구조와 동기화되지 않습니다. 하단. 설계자에 따르면 댐퍼는 지진시 에너지의 50 %를 흡수 할 수 있습니다. </p>
-</blockquote>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-38.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-58.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-60.jpg" alt=""></div></div></div>
-
-<p>나는 고소 공포증이있다<br>환상인지 궁금해<br>타워가 약간 흔들리는 느낌 </p>
-<p>두렵지 않다<br>사실 떨리는<br>올라간 후 몸은 계속 걸어<br>용기를내어 밖에서 유리를 바라보세요 </p>
-<p>가장 높은 지점의 유리 바닥은 괜찮아 약간 비현실적<br>잠정적으로 발을 밟았다 🦶 </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-51.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-55.jpg" alt=""></div></div></div>
-
-<h2 id="반환"><a href="#반환" class="headerlink" title="반환"></a>반환</h2><p>돌아온 후 호텔을 이용하여 온갖 쓰레기를 버렸습니다.<br>쓰레기는 정말 아프지 않습니다 😂 </p>
-<p>창 밖을 내다 보았다<br>좋은 시간 </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-63.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-64.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-66.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-65.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-67.jpg" alt=""></div></div></div>
-
-<p>그런 다음 하네다 공항까지 택시를 타십시오.<br>10w 엔 💴 그게 다야 </p>
-<p>여기 노인들이 택시를 운전한다고 들었어요 🚕<br>할아버지가 짐을 나르도록 마음을 참는 방법을 목격하십시오 🧳 </p>
-<p>체크인 후 아직 일찍이라 ANA 퍼스트 클래스 라운지에 왔습니다<br>과일, 우유, 음료, 빵 및 케이크 무제한 공급<br>🍉 🥛 🥤 🍞 🍰<br>나는 정말로 샤워를 놓쳤다<br>🛀 😂 </p>
-<p>비행기에서 후지산을 봤어요 🗻<br>라운지에 가득 차서<br>나는 평평하게 자야했다 💤 </p>
-<p>그리고이 첫 짧은 🇯🇵 일본 여행을 마쳤습니다. </p>
-<p>일본의 청결과 질서가 정말 마음에 들어요<br>내가 샀던 신발은 내가 떠날 때까지 샀던 신발 그대로 </p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-68.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-69.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-70.jpg" alt=""></div><div class="group-picture-column"><img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/japan-0-1-71.jpg" alt=""></div></div></div>
-
-<p>3 년 왕복 비자<br>다음에 또 올거야 </p>
-<p>✌️✌️✌️ </p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
   
   <nav class="pagination">
@@ -1960,13 +1815,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">329k</span>
+    <span title="Symbols count total">330k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:59</span>
+    <span title="Reading time total">5:01</span>
   </span>
 </div>
 
