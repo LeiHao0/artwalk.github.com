@@ -1,935 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/ar/images/logo-192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/ar/images/logo-192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/ar/images/logo.png">
-  <link rel="mask-icon" href="/ar/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="rbaH_zC-qBwXaawJ10Mno3FHzv9HRFHGFdXx2f1BwyI">
-
-<link rel="stylesheet" href="/ar/css/main.css">
-
-
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
-
-<script data-ad-client="ca-pub-2317298287519457" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<script class="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"leihao0.github.io","root":"/ar/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"بحث...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/ar/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
-  </script>
-
-  <meta name="description" content="محتوى البحث   قراءة NTFS MFT  بناء جدول التجزئة  مسار النظام للملف  خيوط واجهة المستخدم الرسومية والعامل  طرق بحث متعددة  واجهة MFC   خطة البحث   من أوائل أبريل إلى منتصف أبريل لتحديد اتجاه البحث  من">
-<meta property="og:type" content="article">
-<meta property="og:title" content="مبدأ التخمين وإدراك كل شيء">
-<meta property="og:url" content="https://leihao0.github.io/ar/QSearch/index.html">
-<meta property="og:site_name" content="LeiHao&#39;s Blog">
-<meta property="og:description" content="محتوى البحث   قراءة NTFS MFT  بناء جدول التجزئة  مسار النظام للملف  خيوط واجهة المستخدم الرسومية والعامل  طرق بحث متعددة  واجهة MFC   خطة البحث   من أوائل أبريل إلى منتصف أبريل لتحديد اتجاه البحث  من">
-<meta property="og:locale">
-<meta property="article:published_time" content="2012-05-26T14:44:42.000Z">
-<meta property="article:modified_time" content="2020-12-22T00:32:16.848Z">
-<meta property="article:author" content="LeiHao">
-<meta property="article:tag" content="Programming">
-<meta property="article:tag" content="Everything">
-<meta property="article:tag" content="NTFS">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://leihao0.github.io/ar/QSearch/">
-
-
-<script class="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'ar'
-  };
-</script>
-
-  <title>مبدأ التخمين وإدراك كل شيء | LeiHao's Blog</title>
-  
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159363268-1"></script>
-    <script>
-      if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-159363268-1');
-      }
-    </script>
-
-
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?25f016f633270b8e0baf56c4fe6f2dc1";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  <noscript>
-  <style>
-  body { margin-top: 2rem; }
-
-  .use-motion .menu-item,
-  .use-motion .sidebar,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
-  .use-motion .footer { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle,
-  .use-motion .custom-logo-image {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line {
-    transform: scaleX(1);
-  }
-
-  .search-pop-overlay, .sidebar-nav { display: none; }
-  .sidebar-panel { display: block; }
-  </style>
-</noscript>
-
-<style>mjx-container[jax="SVG"] {
-  direction: ltr;
-}
-
-mjx-container[jax="SVG"] > svg {
-  overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
-}
-
-mjx-container[jax="SVG"][display="true"] {
-  display: block;
-  text-align: center;
-  margin: 1em 0;
-}
-
-mjx-container[jax="SVG"][justify="left"] {
-  text-align: left;
-}
-
-mjx-container[jax="SVG"][justify="right"] {
-  text-align: right;
-}
-
-g[data-mml-node="merror"] > g {
-  fill: red;
-  stroke: red;
-}
-
-g[data-mml-node="merror"] > rect[data-background] {
-  fill: yellow;
-  stroke: none;
-}
-
-g[data-mml-node="mtable"] > line[data-line] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > rect[data-frame] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > .mjx-dashed {
-  stroke-dasharray: 140;
-}
-
-g[data-mml-node="mtable"] > .mjx-dotted {
-  stroke-linecap: round;
-  stroke-dasharray: 0,140;
-}
-
-g[data-mml-node="mtable"] > svg {
-  overflow: visible;
-}
-
-[jax="SVG"] mjx-tool {
-  display: inline-block;
-  position: relative;
-  width: 0;
-  height: 0;
-}
-
-[jax="SVG"] mjx-tool > mjx-tip {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-mjx-tool > mjx-tip {
-  display: inline-block;
-  padding: .2em;
-  border: 1px solid #888;
-  font-size: 70%;
-  background-color: #F8F8F8;
-  color: black;
-  box-shadow: 2px 2px 5px #AAAAAA;
-}
-
-g[data-mml-node="maction"][data-toggle] {
-  cursor: pointer;
-}
-
-mjx-status {
-  display: block;
-  position: fixed;
-  left: 1em;
-  bottom: 1em;
-  min-width: 25%;
-  padding: .2em .4em;
-  border: 1px solid #888;
-  font-size: 90%;
-  background-color: #F8F8F8;
-  color: black;
-}
-
-foreignObject[data-mjx-xml] {
-  font-family: initial;
-  line-height: normal;
-  overflow: visible;
-}
-
-.MathJax path {
-  stroke-width: 3;
-}
-
-mjx-container[display="true"] {
-  overflow: auto hidden;
-}
-
-mjx-container[display="true"] + br {
-  display: none;
-}
-</style><link rel="alternate" href="/ar/atom.xml" title="LeiHao's Blog" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="headband"></div>
-
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/ar/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">LeiHao's Blog</h1>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/ar/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/ar/about/" rel="section"><i class="fa fa-user fa-fw"></i>معلومات</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/ar/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
-
-  </li>
-        <li class="menu-item menu-item-rss">
-
-    <a href="/ar/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>بحث
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="بحث..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-        
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          المحتويات
-        </li>
-        <li class="sidebar-nav-overview">
-          عام
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9-%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%B9-%D9%84%D9%85%D9%84%D9%81%D8%A7%D8%AA-%D9%82%D8%B1%D8%B5-NTFS"><span class="nav-number">1.</span> <span class="nav-text">الموقع السريع لملفات قرص NTFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%D8%A7%D9%84%D9%85%D9%82%D8%AF%D9%85%D8%A9"><span class="nav-number">1.1.</span> <span class="nav-text">1 المقدمة</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%D9%85%D9%82%D8%AF%D9%85%D8%A9-%D9%85%D9%88%D8%AC%D8%B2%D8%A9-%D8%B9%D9%86-NTFS"><span class="nav-number">1.2.</span> <span class="nav-text">2 مقدمة موجزة عن NTFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-NTFS"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 NTFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%D8%A7%D9%84%D9%88%D8%B6%D8%B9-%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D9%8A"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 الوضع الحالي</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%D8%A7%D9%84%D8%AA%D8%AD%D8%B6%D9%8A%D8%B1"><span class="nav-number">1.3.</span> <span class="nav-text">3 التحضير</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%D8%A3%D9%81%D9%83%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 أفكار التصميم</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%D9%85%D8%A7-%D9%87%D9%88-USN"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 ما هو USN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D9%87%D9%88-%D8%B3%D8%B1%D9%8A%D8%B9"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 لماذا هو سريع</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%D8%A7%D9%84%D8%A8%D9%8A%D8%A6%D8%A9"><span class="nav-number">1.3.4.</span> <span class="nav-text">3.4 البيئة</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%D8%AA%D9%86%D9%81%D9%8A%D8%B0-%D8%A7%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC"><span class="nav-number">1.4.</span> <span class="nav-text">4 تنفيذ البرنامج</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%D8%A7%D9%82%D8%B1%D8%A3-USN"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1 اقرأ USN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-1-%D8%AA%D8%AD%D8%AF%D9%8A%D8%AF-%D8%AA%D9%86%D8%B3%D9%8A%D9%82-%D8%A7%D9%84%D9%82%D8%B1%D8%B5"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">4.1.1 تحديد تنسيق القرص</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-2-%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D9%85%D9%82%D8%A8%D8%B6-%D9%82%D8%B1%D8%B5-%D9%85%D8%AD%D8%B1%D9%83-%D8%A7%D9%84%D8%A3%D9%82%D8%B1%D8%A7%D8%B5"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">4.1.2 الحصول على مقبض قرص محرك الأقراص</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-3-%D8%AA%D9%87%D9%8A%D8%A6%D8%A9-%D8%B3%D8%AC%D9%84-USN"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">4.1.3 تهيئة سجل USN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-4-%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%B3%D8%AC%D9%84-USN"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">4.1.4 الحصول على معلومات سجل USN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-5-%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D9%85%D9%84%D9%81-%D8%AF%D9%81%D8%AA%D8%B1-%D9%8A%D9%88%D9%85%D9%8A%D8%A9-USN"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">4.1.5 الحصول على معلومات ملف دفتر يومية USN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-6-%D8%AD%D8%B0%D9%81-%D9%85%D9%84%D9%81-%D8%B3%D8%AC%D9%84-USN"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">4.1.6 حذف ملف سجل USN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-7-%D9%86%D8%AA%D8%A7%D8%A6%D8%AC-%D8%AD%D8%B5%D8%B1-%D8%AC%D9%85%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D9%84%D9%81%D8%A7%D8%AA"><span class="nav-number">1.4.1.7.</span> <span class="nav-text">4.1.7 نتائج حصر جميع الملفات</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%D8%A8%D9%86%D8%A7%D8%A1-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D8%A8%D8%AD%D8%AB"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2 بناء بيانات البحث</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-%D8%A8%D9%86%D8%A7%D8%A1-%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D9%87%D8%A7%D8%AA"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">4.2.1 بناء المتجهات</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2-%D8%A8%D9%86%D8%A7%D8%A1-%D8%AC%D8%AF%D9%88%D9%84-%D8%AA%D8%AC%D8%B2%D8%A6%D8%A9"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">4.2.2 بناء جدول تجزئة</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-3-%D8%A5%D8%AF%D8%AE%D8%A7%D9%84-%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">4.2.3 إدخال البيانات:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%D8%A7%D9%84%D9%88%D8%A7%D8%AC%D9%87%D8%A9"><span class="nav-number">1.4.3.</span> <span class="nav-text">4.3 الواجهة</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-1-%D9%85%D8%A8%D8%AF%D8%A3-KISS"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">4.3.1 مبدأ KISS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-2-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D8%A9"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">4.3.2 الوظيفة</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%D8%B1%D8%A8%D8%B7-%D8%A7%D9%84%D9%85%D9%88%D8%B6%D9%88%D8%B9"><span class="nav-number">1.4.4.</span> <span class="nav-text">4.4 ربط الموضوع</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-1-%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%B1%D8%A8%D8%B7-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B6%D9%8A%D8%B9"><span class="nav-number">1.4.4.1.</span> <span class="nav-text">4.4.1 لماذا ربط المواضيع</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-2-%D8%A8%D8%AF%D8%A1-%D8%AA%D8%B4%D8%BA%D9%8A%D9%84-%D9%85%D8%A4%D8%B4%D8%B1-%D8%AA%D8%B1%D8%A7%D8%A8%D8%B7-%D8%B9%D8%A7%D9%85%D9%84-%D9%81%D9%8A-MFC"><span class="nav-number">1.4.4.2.</span> <span class="nav-text">4.4.2 بدء تشغيل مؤشر ترابط عامل في MFC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-3-%D8%AA%D8%B5%D8%BA%D9%8A%D8%B1-%D8%A5%D9%84%D9%89-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%85"><span class="nav-number">1.4.4.3.</span> <span class="nav-text">4.4.3 تصغير إلى منطقة الإعلام</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-%D8%A7%D9%84%D8%A8%D8%AD%D8%AB"><span class="nav-number">1.4.5.</span> <span class="nav-text">4.5 البحث</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-1-%D8%AD%D8%B1%D9%81-%D8%A7%D9%84%D8%A8%D8%AF%D9%84"><span class="nav-number">1.4.5.1.</span> <span class="nav-text">4.5.1 حرف البدل</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-2-%D8%AD%D8%A7%D9%84%D8%A9-%D8%8C-%D8%A3%D9%85%D8%B1"><span class="nav-number">1.4.5.2.</span> <span class="nav-text">4.5.2 حالة ، أمر</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-3-%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85-%D9%88%D9%85%D8%B3%D8%A7%D8%B1-%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85"><span class="nav-number">1.4.5.3.</span> <span class="nav-text">4.5.3 خصوصية المستخدم ومسار النظام</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-4-%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0"><span class="nav-number">1.4.5.4.</span> <span class="nav-text">4.5.4 التنفيذ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-5-%D8%A5%D8%AE%D8%B1%D8%A7%D8%AC-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B1"><span class="nav-number">1.4.5.5.</span> <span class="nav-text">4.5.5 إخراج المسار</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D8%AA%D8%B9%D9%82%D9%8A%D8%AF"><span class="nav-number">1.5.</span> <span class="nav-text">5 تحليل التعقيد</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%D8%AA%D8%B9%D9%82%D9%8A%D8%AF-%D8%A7%D9%84%D9%88%D9%82%D8%AA"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 تعقيد الوقت</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%D8%AA%D8%B9%D9%82%D9%8A%D8%AF-%D8%A7%D9%84%D9%81%D8%B6%D8%A7%D8%A1"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 تعقيد الفضاء</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%D9%85%D8%B4%D8%A7%D9%83%D9%84-%D9%85%D8%B5%D8%A7%D8%AF%D9%81%D8%A9"><span class="nav-number">1.6.</span> <span class="nav-text">6 مشاكل مصادفة</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%D8%BA%D9%8A%D8%B1-%D9%82%D8%A7%D8%AF%D8%B1-%D8%B9%D9%84%D9%89-%D8%AA%D9%87%D9%8A%D8%A6%D8%A9-%D9%85%D9%84%D9%81-USN"><span class="nav-number">1.6.1.</span> <span class="nav-text">6.1 غير قادر على تهيئة ملف USN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%D9%85%D8%B4%D9%83%D9%84%D8%A9-wchar-%D9%88-char-%D8%AA%D8%AD%D8%AA-unicode"><span class="nav-number">1.6.2.</span> <span class="nav-text">6.2 مشكلة wchar و char تحت unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-ifdef-%D8%A7%D9%84%D9%85%D9%88%D9%82%D9%81-%D8%A7%D9%84%D9%85%D8%B4%D9%83%D9%84%D8%A9"><span class="nav-number">1.6.3.</span> <span class="nav-text">6.3 #ifdef الموقف المشكلة</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-%D9%86%D9%82%D9%84-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%85%D8%A9"><span class="nav-number">1.6.4.</span> <span class="nav-text">6.4 نقل المعلمة</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%D8%AA%D8%AD%D8%B3%D9%8A%D9%86%D8%A7%D8%AA-%D8%B5%D8%BA%D9%8A%D8%B1%D8%A9"><span class="nav-number">1.7.</span> <span class="nav-text">7 تحسينات صغيرة</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%D8%B3%D8%B1%D8%B9%D8%A9-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%A1%D8%A9"><span class="nav-number">1.7.1.</span> <span class="nav-text">7.1 سرعة القراءة</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D9%81%D8%AA%D8%AD-%D8%A7%D9%84%D9%85%D9%84%D9%81"><span class="nav-number">1.7.2.</span> <span class="nav-text">7.2 طريقة فتح الملف</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-%D8%B4%D8%B1%D9%8A%D8%B7-%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%85"><span class="nav-number">1.7.3.</span> <span class="nav-text">7.3 شريط التقدم</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D8%B5%D8%A9"><span class="nav-number">2.</span> <span class="nav-text">8 الخلاصة</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D8%AC%D8%B9"><span class="nav-number">3.</span> <span class="nav-text">المراجع</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%D9%85%D9%84%D8%AE%D8%B5-%D8%A8%D8%A7%D9%84%D9%84%D8%BA%D8%A9-%D8%A7%D9%84%D8%A5%D9%86%D8%AC%D9%84%D9%8A%D8%B2%D9%8A%D8%A9"><span class="nav-number">4.</span> <span class="nav-text">ملخص باللغة الإنجليزية</span></a></li></ol></div>
-      </section>
-      <!--/noindex-->
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">LeiHao</p>
-  <div class="site-description" itemprop="description">😃😃😃</div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/ar/archives/">
-        
-          <span class="site-state-item-count">160</span>
-          <span class="site-state-item-name">المقالات</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/ar/tags/">
-        <span class="site-state-item-count">81</span>
-        <span class="site-state-item-name">الوسوم</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/leihao0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/leihao0" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/leihao0" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;leihao0" rel="noopener" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
-      </span>
-  </div>
-  <div class="cc-license site-overview-item animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/ar/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
-
-
-
-      </section>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner post posts-expand">
-      
-
-      
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ar">
-    <link itemprop="mainEntityOfPage" href="https://leihao0.github.io/ar/QSearch/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/ar/images/avatar.gif">
-      <meta itemprop="name" content="LeiHao">
-      <meta itemprop="description" content="😃😃😃">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LeiHao's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          مبدأ التخمين وإدراك كل شيء
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">نُشر في</span>
-
-      <time title="أُنشأ: ٢٠١٢-٠٥-٢٦ ٢٢:٤٤:٤٢" itemprop="dateCreated datePublished" datetime="٢٠١٢-٠٥-٢٦T٢٢:٤٤:٤٢+٠٨:٠٠">٢٠١٢-٠٥-٢٦</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">عُدل في</span>
-        <time title="عُدل: ٢٠٢٠-١٢-٢٢ ٠٨:٣٢:١٦" itemprop="dateModified" datetime="٢٠٢٠-١٢-٢٢T٠٨:٣٢:١٦+٠٨:٠٠">٢٠٢٠-١٢-٢٢</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/ar/QSearch/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="QSearch/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="عدد الحروف في المقال">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">عدد الحروف في المقال: </span>
-      <span>21k</span>
-    </span>
-    <span class="post-meta-item" title="زمن القراءة">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">زمن القراءة &asymp;</span>
-      <span>19 دقائق.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>محتوى البحث </p>
-<ol>
-<li>قراءة NTFS MFT </li>
-<li>بناء جدول التجزئة </li>
-<li>مسار النظام للملف </li>
-<li>خيوط واجهة المستخدم الرسومية والعامل </li>
-<li>طرق بحث متعددة </li>
-<li>واجهة MFC </li>
-</ol>
-<p>خطة البحث </p>
-<ul>
-<li>من أوائل أبريل إلى منتصف أبريل لتحديد اتجاه البحث </li>
-<li>من نهاية أبريل إلى نهاية أبريل التحضير لكل نقطة معرفية اختبار بسيط </li>
-<li>في بداية مايو ، تصميم البرنامج وتطوير التصحيح والتشغيل </li>
-<li>منتصف مايو - نهاية مايو كتابة أطروحة تصميم التخرج </li>
-</ul>
-<p>الميزات والابتكار </p>
-<ol>
-<li>استخدام وحدة المعالجة المركزية والذاكرة ضمن نطاق معقول </li>
-<li>البرنامج مستقر ويوفر خيارات بحث مختلفة </li>
-<li>بالمقارنة مع وظيفة البحث في windows ، فإن سرعة تحديد موقع الملفات فائقة السرعة </li>
-</ol>
-<h1 id="الموقع-السريع-لملفات-قرص-NTFS"><a href="#الموقع-السريع-لملفات-قرص-NTFS" class="headerlink" title="الموقع السريع لملفات قرص NTFS"></a>الموقع السريع لملفات قرص NTFS</h1><p><strong>ملخص</strong> </p>
-<blockquote>
-<p>تقدم هذه المقالة كيفية تعداد أسماء جميع الملفات والمجلدات الموجودة على القرص الثابت تحت تنسيق قرص Windows NTFS ، واستخدام STL لـ C ++ لإنشاء جدول تجزئة ، بالإضافة إلى واجهة المستخدم الرسومية وخيوط العامل الخاصة بـ MFC ، وأخيراً تحقيق التنفيذ بناءً على الكلمات الرئيسية التي أدخلها المستخدم ابحث بطريقة بسيطة مثل البحث عن الكلمات الرئيسية من google ، ثم أعد على الفور جميع الملفات / المجلدات المطابقة واحصل على مسار النظام للملف / المجلد بشكل متكرر. </p>
-</blockquote>
-<p>** الكلمات الرئيسية *<em>: *</em> NTFS، fast، keyword، search، file path ** </p>
-<h2 id="1-المقدمة"><a href="#1-المقدمة" class="headerlink" title="1 المقدمة"></a>1 المقدمة</h2><p>بنية دليل Windows. في وحدة تخزين NTFS ، الملفات هي<br>قم بالترتيب على شكل شجرة B + ، اضغط عند البحث عن الملفات في الدليل<br>تبحث طريقة البحث الشجري B + أولاً في العقدة الجذرية (بدءًا من الدليل الجذر) ، ثم تقارن اسم الملف الذي سيتم العثور عليه مع اسم الملف المقابل للعقدة الفرعية في عقدة الجذر لتحديد العقدة الفرعية التي تتوافق مع منطقة التخزين المراد البحث عنها ، ثم استخدم العقدة الفرعية كعقدة الجذر الحالية وابحث مرة أخرى حتى يتم العثور على الملف. ^ [1] ^ </p>
-<p>على الرغم من أن البحث الذي يوفره نظام Microsoft يمكنه البحث في محتوى النص ، إلا أن السرعة غير مرضية للغاية. في معظم الحالات ، نريد فقط معرفة المجلد الموجود على الكمبيوتر الذي تم تخزين الملف فيه ، وهذا البرنامج يحل هذا الأمر جيدًا. </p>
-<h2 id="2-مقدمة-موجزة-عن-NTFS"><a href="#2-مقدمة-موجزة-عن-NTFS" class="headerlink" title="2 مقدمة موجزة عن NTFS"></a>2 مقدمة موجزة عن NTFS</h2><h3 id="2-1-NTFS"><a href="#2-1-NTFS" class="headerlink" title="2.1 NTFS"></a>2.1 NTFS</h3><p>NTFS (نظام ملفات التكنولوجيا الجديدة) 是 Windows<br>نظام الملفات القياسي لـ NT والإصدارات الأحدث من Windows. يستبدل NTFS نظام ملفات جدول تخصيص الملفات (FAT) ويوفر نظام ملفات لأنظمة تشغيل سلسلة Windows من Microsoft. قام NTFS بإجراء العديد من التحسينات على FAT و HPFS (نظام الملفات عالي الأداء). على سبيل المثال ، يدعم البيانات الوصفية ويستخدم هياكل البيانات المتقدمة لتحسين الأداء والموثوقية واستخدام مساحة القرص. ^ [2] ^ </p>
-<h3 id="2-2-الوضع-الحالي"><a href="#2-2-الوضع-الحالي" class="headerlink" title="2.2 الوضع الحالي"></a>2.2 الوضع الحالي</h3><p>مع نظام التشغيل Windows المستند إلى NT<br>مع شعبية 2000 / XP ، بدأ العديد من المستخدمين الأفراد في استخدام NTFS. يستخدم NTFS أيضًا الكتل كوحدة لتخزين ملفات البيانات ، لكن حجم الكتلة في NTFS لا يعتمد على القرص أو حجم القسم. لا يؤدي تقليص حجم الكتلة إلى تقليل إهدار مساحة القرص فحسب ، بل يقلل أيضًا من إمكانية تجزئة القرص. يدعم NTFS وظيفة إدارة تشفير الملفات ، والتي يمكن أن توفر للمستخدمين مستوى أعلى من ضمان الأمان. ^ [3] ^ </p>
-<h2 id="3-التحضير"><a href="#3-التحضير" class="headerlink" title="3 التحضير"></a>3 التحضير</h2><h3 id="3-1-أفكار-التصميم"><a href="#3-1-أفكار-التصميم" class="headerlink" title="3.1 أفكار التصميم"></a>3.1 أفكار التصميم</h3><p>اقرأ جميع أسماء ملفات القرص كبيانات ، ومطابقتها في البيانات حسب الكلمات الأساسية التي أدخلها المستخدم يتم إرجاع المسار الصحيح للمستخدم مع المسار لتسهيل فتح الملف. </p>
-<p>تظهر فكرة التصميم المحددة في الشكل 3-1. </p>
-<p>! <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/QSearch_00.jpg">الشكل 3-1 أفكار التصميم</a> </p>
-<p>أكبر ميزة لجدول التجزئة هي أنه يقلل بشكل كبير من الوقت المستغرق في تخزين البيانات والبحث ، والذي يمكن اعتباره تقريبًا وقتًا ثابتًا ؛ التكلفة هي فقط لاستهلاك المزيد من الذاكرة. ومع ذلك ، مع توفر المزيد والمزيد من الذاكرة ، من المفيد استبدال المساحة بالوقت. بالإضافة إلى ذلك ، فإن سهولة التشفير هي أيضًا إحدى خصائصه. </p>
-<h3 id="3-2-ما-هو-USN"><a href="#3-2-ما-هو-USN" class="headerlink" title="3.2 ما هو USN"></a>3.2 ما هو USN</h3><p>الأولوية القصوى للبرنامج هي قراءة USN. </p>
-<p>USN 是 تحديث دفتر اليومية لرقم الخدمة أو التغيير<br>اختصار Journal ، وظيفة تسجيل المعلومات المعدلة في وحدة تخزين NTFS ، يمكنك تعيين عدد الملفات والأدلة المراد مراقبتها في القسم ، وتسجيل وقت التعديل ومحتوى الكائن المرصود. </p>
-<p>عند تمكين سجل USN ، لكل وحدة تخزين NTFS ، عندما تكون هناك معلومات حول إضافة الملفات وحذفها وتعديلها ، يستخدم NTFS سجل USN لتسجيله وتخزينه على أنه<br>تنسيق USN_RECORD. </p>
-<h3 id="3-3-لماذا-هو-سريع"><a href="#3-3-لماذا-هو-سريع" class="headerlink" title="3.3 لماذا هو سريع"></a>3.3 لماذا هو سريع</h3><p>سجل USN يكافئ دليل WORD ويوفر فهرسًا. بالطبع ، عندما يتغير محتوى المقالة ، سيسجل سجل USN عند إجراء التعديل ، لكنه لا يسجل ما تم تعديله فيه ، لذا فإن ملف الفهرس صغير جدًا. وعندما تريد العثور على فقرة معينة من المقالة ، فلن تحتاج إلى قلب عجلة الماوس بعنف ، فقط انظر إلى جدول المحتويات مباشرة ، وتحتاج فقط إلى الضغط باستمرار على ctrl + النقر بالماوس لتحديد الموقع. </p>
-<p>بالطريقة نفسها ، عندما تريد العثور على ملف معين ، يمكنك معرفة ما إذا كان الملف موجودًا مباشرةً من خلال البحث في سجل USN (أي الفهرس الذي تم إنشاؤه). </p>
-<p>ملاحظة: على الرغم من أن الويندوز ليست “كل شيء عبارة عن ملف” (Unix / Linux<br>أحد الفلسفة الأساسية) ، ولكن المجلد موجود أيضًا في شكل ملفات ، لذلك يمكنك أيضًا العثور على الموقع من خلال USN. </p>
-<h3 id="3-4-البيئة"><a href="#3-4-البيئة" class="headerlink" title="3.4 البيئة"></a>3.4 البيئة</h3><p>نظرًا لأن تنسيق NTFS هو في الأصل براءة اختراع لشركة Microsoft ، يتم توفير سلسلة من وظائف API للوصول المريح. </p>
-<p>كبرنامج Visual C ++ 6.0 قديم ولكنه كلاسيكي<br>أداة البرمجة ، ولكن لم يكن هناك تنسيق NTFS في ذلك الوقت ، لذلك اخترت VC2005 كبيئة تطوير متكاملة ، ويمكن تشغيلها فقط على أنظمة Windows بعد عام 2000. </p>
-<h2 id="4-تنفيذ-البرنامج"><a href="#4-تنفيذ-البرنامج" class="headerlink" title="4 تنفيذ البرنامج"></a>4 تنفيذ البرنامج</h2><h3 id="4-1-اقرأ-USN"><a href="#4-1-اقرأ-USN" class="headerlink" title="4.1 اقرأ USN"></a>4.1 اقرأ USN</h3><p>فيما يلي جميع وظائف API التي توفرها Microsoft ^ [4] ^ ، والتي تم تضمينها في ملف الرأس <code>&lt;Winioctl.h&gt;</code>. </p>
-<h4 id="4-1-1-تحديد-تنسيق-القرص"><a href="#4-1-1-تحديد-تنسيق-القرص" class="headerlink" title="4.1.1 تحديد تنسيق القرص"></a>4.1.1 تحديد تنسيق القرص</h4><p>اتصل بالوظيفة التالية لمعرفة القرص بتنسيق NTFS </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">GetVolumeInformation(</span><br><span class="line">	lpRootPathName: PChar;               <span class="comment">// 磁盘驱动器代码字符串</span></span><br><span class="line">	lpVolumeNameBuffer: PChar;           <span class="comment">// 磁盘驱动器卷标名称</span></span><br><span class="line">	nVolumeNameSize: DWORD;              <span class="comment">// 磁盘驱动器卷标名称长度</span></span><br><span class="line">	lpVolumeSerialNumber: PDWORD;        <span class="comment">// 磁盘驱动器卷标序列号</span></span><br><span class="line">	var lpMaximumComponentLength: DWORD; <span class="comment">// 系统允许的最大文件名长度</span></span><br><span class="line">    var lpFileSystemFlags: DWORD;        <span class="comment">// 文件系统标识</span></span><br><span class="line">	lpFileSystemNameBuffer: PChar;       <span class="comment">// 格式类型</span></span><br><span class="line">	nFileSystemNameSize: DWORD           <span class="comment">// 文件操作系统名称长度</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<p>سيعيد lpFileSystemNameBuffer ، وهو ما نريده ، “FAT32” و “NTFS” وسلاسل أخرى. </p>
-<p>ثم استخدم حلقة لعد أحرف محركات الأقراص من A إلى Z بتنسيق NTFS ، ثم قم بالتهيئة </p>
-<h4 id="4-1-2-الحصول-على-مقبض-قرص-محرك-الأقراص"><a href="#4-1-2-الحصول-على-مقبض-قرص-محرك-الأقراص" class="headerlink" title="4.1.2 الحصول على مقبض قرص محرك الأقراص"></a>4.1.2 الحصول على مقبض قرص محرك الأقراص</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">HANDLE hVol = CreateFile(</span><br><span class="line">	<span class="string">&quot;盘符字符串&quot;</span>,  <span class="comment">// 必须如\.\C: (A-Z)的形式</span></span><br><span class="line">	GENERIC_READ | GENERIC_WRITE, <span class="comment">// 可以为</span></span><br><span class="line">	FILE_SHARE_READ | FILE_SHARE_WRITE, <span class="comment">// 必须包含有FILE_SHARE_WRITE</span></span><br><span class="line">	<span class="literal">NULL</span>, <span class="comment">// 这里不需要</span></span><br><span class="line">	OPEN_EXISTING, <span class="comment">// 必须包含OPEN_EXISTING, CREATE_ALWAYS可能会导致错误</span></span><br><span class="line">	FILE_ATTRIBUTE_READONLY, <span class="comment">// FILE_ATTRIBUTE_NORMAL可能会导致错误</span></span><br><span class="line">	<span class="literal">NULL</span>); <span class="comment">// 这里不需要</span></span><br></pre></td></tr></table></figure>
-
-<p>النقاط التي يجب ملاحظتها: </p>
-<ol>
-<li>يقوم CreateFile بإرجاع مؤشر ، والذي سيتم استخدامه أدناه ؛ </li>
-<li>نظرًا لأن حرف محرك الأقراص يجب أن يكون على شكل “\. \ C:` ، فإن الشرطة المائلة للخلف “/“ في لغة “C ++” تمثل “/“ ؛ </li>
-<li>حقوق المسؤول مطلوبة (فيستا ، UAC سيظهر في win7) </li>
-</ol>
-<p>إذا كان <code>hVol! = INVALID_HANDLE_VALUE</code> ، فهذا يعني أنه تم الحصول على المؤشر بنجاح ويمكنك المتابعة إلى الخطوة التالية. </p>
-<h4 id="4-1-3-تهيئة-سجل-USN"><a href="#4-1-3-تهيئة-سجل-USN" class="headerlink" title="4.1.3 تهيئة سجل USN"></a>4.1.3 تهيئة سجل USN</h4><p>استخدم <code>FSCTL_CREATE_USN_JOURNAL</code> كرمز تحكم لـ” DeviceIoControl “. </p>
-<p>“Cujd” هو مؤشر إلى مخزن الإدخال المؤقت ، يشير إلى بنية “CREATE_USN_JOURNAL_DATA”. </p>
-<h4 id="4-1-4-الحصول-على-معلومات-سجل-USN"><a href="#4-1-4-الحصول-على-معلومات-سجل-USN" class="headerlink" title="4.1.4 الحصول على معلومات سجل USN"></a>4.1.4 الحصول على معلومات سجل USN</h4><p>استخدم “FSCTL_QUERY_USN_JOURNAL” كرمز تحكم “DeviceIoControl”. </p>
-<p>يعرض “lpOutBuffer” “USN_JOURNAL_DATA” ، وهو بنية </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    DWORDLONG UsnJournalID;</span><br><span class="line">    USN       FirstUsn;</span><br><span class="line">    USN       NextUsn;</span><br><span class="line">    USN       LowestValidUsn;</span><br><span class="line">    USN       MaxUsn;</span><br><span class="line">    DWORDLONG MaximumSize;</span><br><span class="line">    DWORDLONG AllocationDelta;</span><br><span class="line">&#125; USN_JOURNAL_DATA, *PUSN_JOURNAL_DATA;</span><br></pre></td></tr></table></figure>
-
-<p>سيتم استخدام “UsnJournalID” و “FirstUsn” و “NextUsn” في الخطوة التالية </p>
-<h4 id="4-1-5-الحصول-على-معلومات-ملف-دفتر-يومية-USN"><a href="#4-1-5-الحصول-على-معلومات-ملف-دفتر-يومية-USN" class="headerlink" title="4.1.5 الحصول على معلومات ملف دفتر يومية USN"></a>4.1.5 الحصول على معلومات ملف دفتر يومية USN</h4><p>نظرًا لأنه يتم تخزين “USN” في شكل “USN_RECORD” ، فإن هيكلها هو: </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	DWORD RecordLength; <span class="comment">// 记录长度</span></span><br><span class="line">	WORD MajorVersion; <span class="comment">// 主版本</span></span><br><span class="line">	WORD MinorVersion; <span class="comment">// 次版本</span></span><br><span class="line">	DWORDLONG FileReferenceNumber; <span class="comment">// 文件引用数</span></span><br><span class="line">	DWORDLONG ParentFileReferenceNumber; <span class="comment">// 父目录引用数</span></span><br><span class="line">	USN Usn; <span class="comment">// USN</span></span><br><span class="line">	LARGE_INTEGER TimeStamp; <span class="comment">// 时间戳</span></span><br><span class="line">	DWORD Reason; <span class="comment">// 原因</span></span><br><span class="line">	DWORD SourceInfo; <span class="comment">// 源信息</span></span><br><span class="line">	DWORD SecurityId; <span class="comment">// 安全</span></span><br><span class="line">	ID DWORD FileAttributes; <span class="comment">// 文件属性</span></span><br><span class="line">	WORD FileNameLength; <span class="comment">// 文件长度</span></span><br><span class="line">	WORD FileNameOffset; <span class="comment">// 文件名偏移</span></span><br><span class="line">	DWORD ExtraInfo1;</span><br><span class="line">	DWORD ExtraInfo2; DWORD ExtraInfo3; <span class="comment">// Hypothetically added in version 2.3</span></span><br><span class="line">	WCHAR FileName[<span class="number">1</span>]; <span class="comment">// 文件名第一位的指针</span></span><br><span class="line">&#125; USN_RECORD, *PUSN_RECORD;</span><br></pre></td></tr></table></figure>
-
-<p>لاحظ “FileReferenceNumber” ، “ParentFileReferenceNumber” ، “FileNameLength” ، “FileName” </p>
-<p>هذه المتغيرات مهمة جدا </p>
-<p>يتعاون “DeviceIoControl ()` مع “FSCTL_ENUM_USN_DATA” </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="number">0</span>!=DeviceIoControl(hVol,</span><br><span class="line">	 	FSCTL_ENUM_USN_DATA,</span><br><span class="line">	 	&amp;med,</span><br><span class="line">	 	<span class="keyword">sizeof</span> (med),</span><br><span class="line">	 	Buffer,</span><br><span class="line">	 	BUF_LEN,</span><br><span class="line">	 	&amp;usnDataSize,</span><br><span class="line">	 	<span class="literal">NULL</span>)) &#123;</span><br><span class="line"></span><br><span class="line">	 	DWORD dwRetBytes = usnDataSize - <span class="keyword">sizeof</span> (USN);</span><br><span class="line">	 	<span class="comment">// 找到第一个 USN 记录</span></span><br><span class="line">	 	UsnRecord = (PUSN_RECORD)(((PCHAR)Buffer)+<span class="keyword">sizeof</span> (USN));</span><br><span class="line"></span><br><span class="line">	 	<span class="keyword">while</span> (dwRetBytes&gt;<span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">	 		<span class="comment">// 获取到的信息</span></span><br><span class="line">	 		<span class="function">CString <span class="title">CfileName</span><span class="params">(UsnRecord-&gt;FileName, UsnRecord-&gt;FileNameLength/<span class="number">2</span>)</span></span>;</span><br><span class="line">	 		pfrnName.filename = nameCur.filename = CfileName;</span><br><span class="line">	 		pfrnName.pfrn = nameCur.pfrn = UsnRecord-&gt;ParentFileReferenceNumber;</span><br><span class="line"></span><br><span class="line">	 		<span class="comment">// Vector</span></span><br><span class="line">	 		VecNameCur.push_back(nameCur);</span><br><span class="line"></span><br><span class="line">	 		<span class="comment">// 构建hash...</span></span><br><span class="line">	 		frnPfrnNameMap[UsnRecord-&gt;FileReferenceNumber] = pfrnName;</span><br><span class="line">	 		<span class="comment">// 获取下一个记录</span></span><br><span class="line">	 		DWORD recordLen = UsnRecord-&gt;RecordLength;</span><br><span class="line">	 		dwRetBytes -= recordLen;</span><br><span class="line">	 		UsnRecord = (PUSN_RECORD)(((PCHAR)UsnRecord)+recordLen);</span><br><span class="line"></span><br><span class="line">	 	&#125;</span><br><span class="line">	 	<span class="comment">// 获取下一页数据</span></span><br><span class="line">	 	med.StartFileReferenceNumber = \*(USN \*)&amp;Buffer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>من بينها ، “Med”: </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MFT_ENUM_DATA med;</span><br><span class="line"></span><br><span class="line">med.StartFileReferenceNumber = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">med.LowUsn = <span class="number">0</span>;<span class="comment">//UsnInfo.FirstUsn;</span></span><br></pre></td></tr></table></figure>
-
-<p>بعد الاختبار هنا ، تبين أنه إذا كان استخدام “FirstUsn” غير صحيح في بعض الأحيان ، مما يؤدي إلى بيانات غير كاملة ، فمن الأفضل كتابة 0 مباشرةً. </p>
-<p>“med.HighUsn = UsnInfo.NextUsn ؛<code></code> </p>
-<p>في هذه الحلقة ، يتم إدخال اسم الملف الذي تم الحصول عليه في كل مرة في جدول المتجه وجدول التجزئة على التوالي (كما هو موضح أدناه). </p>
-<h4 id="4-1-6-حذف-ملف-سجل-USN"><a href="#4-1-6-حذف-ملف-سجل-USN" class="headerlink" title="4.1.6 حذف ملف سجل USN"></a>4.1.6 حذف ملف سجل USN</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DeviceIoControl(hVol,</span><br><span class="line">	FSCTL_DELETE_USN_JOURNAL,</span><br><span class="line">	&amp;dujd,</span><br><span class="line">	<span class="keyword">sizeof</span> (dujd),</span><br><span class="line">	<span class="literal">NULL</span>,</span><br><span class="line">	<span class="number">0</span>,</span><br><span class="line">	&amp;br,</span><br><span class="line">	<span class="literal">NULL</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-1-7-نتائج-حصر-جميع-الملفات"><a href="#4-1-7-نتائج-حصر-جميع-الملفات" class="headerlink" title="4.1.7 نتائج حصر جميع الملفات"></a>4.1.7 نتائج حصر جميع الملفات</h4><p>احفظ البيانات باسم Allfile.txt للتحليل ، كما هو موضح في الشكل 4-1. </p>
-<p>! <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/QSearch_01.jpg">图 4-1 Allfile.txt</a> </p>
-<p>! <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/QSearch_02.jpg">图 4-1 Allfile.txt</a> </p>
-<p>لقد استخدمت محرك الأقراص D على جهاز الكمبيوتر الخاص بي كاختبار وعددت جميع الملفات. كما هو موضح في الشكل ، يوجد حوالي 40 واط ملف ، إجمالي أكثر من 100 واط بيانات ، وحجم الملف حوالي 20 ميجا بايت. يحتوي هذا على تقدير غامض لمقدار الذاكرة التي تشغلها البرامج اللاحقة ، والتي تبلغ حوالي 50 مليونًا. حتى 1 جيجا بايت من الذاكرة تكون ضمن نطاق معقول. مع البيانات الأصلية يكون التحليل كما يلي: </p>
-<p>على سبيل المثال ، ملف Practice.isz لبرمجة Linux ، مسار نظامه هو: <code>D: \ Ghost \ Linux \ Linux برمجة Practice.isz</code> ، انظر إلى النتيجة في الملف: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">D:\</span><br><span class="line">Frn: 5000000000005</span><br><span class="line">Pfrn: NULL</span><br><span class="line">……</span><br><span class="line">……</span><br><span class="line">Ghost</span><br><span class="line">Frn: 20000000000fd</span><br><span class="line">Pfrn: 5000000000005</span><br><span class="line">……</span><br><span class="line">……</span><br><span class="line">Linux</span><br><span class="line">Frn: e0000000010d2</span><br><span class="line">Pfrn: 20000000000fd</span><br><span class="line">……</span><br><span class="line">……</span><br><span class="line">Linux编程实践.isz</span><br><span class="line">Frn: 190000000003b2</span><br><span class="line">Pfrn: e0000000010d2</span><br><span class="line">可以得出：</span><br><span class="line">Linux编程实践.isz-&gt;Pfrn &#x3D;&#x3D; Linux-&gt;Frn</span><br><span class="line">Linux-&gt;Pfrn &#x3D;&#x3D; Ghost-&gt;Frn</span><br><span class="line">Ghost-&gt;Pfrn &#x3D;&#x3D; D:\ -&gt; Frn</span><br><span class="line">D:\ -&gt; Pfrn 停止</span><br></pre></td></tr></table></figure>
-
-<p>لذلك باستخدام دالة تكرارية (استدعاء وظيفتها الخاصة بشكل مباشر أو غير مباشر) ، يمكنك الحصول على المسار الكامل. </p>
-<h3 id="4-2-بناء-بيانات-البحث"><a href="#4-2-بناء-بيانات-البحث" class="headerlink" title="4.2 بناء بيانات البحث"></a>4.2 بناء بيانات البحث</h3><h4 id="4-2-1-بناء-المتجهات"><a href="#4-2-1-بناء-المتجهات" class="headerlink" title="4.2.1 بناء المتجهات"></a>4.2.1 بناء المتجهات</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">name_cur</span> &#123;</span></span><br><span class="line">    CString filename;</span><br><span class="line">    DWORDLONG pfrn;</span><br><span class="line">&#125;Name_Cur;</span><br></pre></td></tr></table></figure>
-
-<p>المتجه: </p>
-<p>حاوية متسلسلة. يتم الوصول إلى العناصر الموجودة في المتجه عبر فهرس موضعها. يمكنك استدعاء push_back أو<br>تضيف وظيفة الإدراج عناصر إلى المتجه. في ناقلات<br>قد تؤدي إضافة عناصر إلى الحاوية إلى إعادة تخصيص مساحة الذاكرة للحاوية ، وقد تؤدي أيضًا إلى إبطال جميع التكرارات. في<br>المتجه<br>ستؤدي إضافة (أو حذف) العناصر في منتصف الحاوية إلى إبطال جميع التكرارات التي تشير إلى العناصر بعد نقطة الإدراج (أو الحذف). </p>
-<p>استخدم Vector لتخزين &lt;اسم الملف ، الدليل الحالي&gt; نظرًا لمتطلبات البحث الغامض ، فإن طرق البحث السريعة مثل البحث الثنائي غير قابلة للتطبيق هنا ، وطريقة الاجتياز الخطية لـ Vector من البداية إلى النهاية تلبي هذا المطلب. . </p>
-<h4 id="4-2-2-بناء-جدول-تجزئة"><a href="#4-2-2-بناء-جدول-تجزئة" class="headerlink" title="4.2.2 بناء جدول تجزئة"></a>4.2.2 بناء جدول تجزئة</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">pfrn_name</span> &#123;</span></span><br><span class="line">    DWORDLONG pfrn;</span><br><span class="line">    CString filename;</span><br><span class="line">&#125;Pfrn_Name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">map</span>&lt;DWORDLONG, Pfrn_Name&gt; Frn_Pfrn_Name_Map;</span><br></pre></td></tr></table></figure>
-
-<p>هنا نستخدم وظيفة مكتبة الخرائط ^ [5] ^ المقدمة من STL ، الخريطة عبارة عن مجموعة من أزواج المفتاح والقيمة. خريطة<br>يمكن فهم النوع عادةً على أنه مصفوفة ترابطية (ترابطية<br>صفيف): يمكنك استخدام المفتاح كمنخفض للحصول على قيمة ، تمامًا مثل نوع المصفوفة المضمنة. جوهر الارتباط هو أن قيمة عنصر ما مرتبطة بمفتاح معين ، بدلاً من الحصول عليها من خلال موضع العنصر في المصفوفة. </p>
-<ol>
-<li>بالنظر إلى أنه إذا قمت بتنفيذ وظيفة التجزئة بنفسك ، فقد يكون هناك العديد من الأخطاء التي تؤثر على التقدم ، فمن الأفضل استخدام الخريطة الثابتة التي توفرها STL لتنفيذها. </li>
-<li>“لا تقم بإعادة اختراع العجلة” لا تقم بإعادة اختراع العجلة ^ [6] ^ <ol>
-<li>على سبيل المثال ، Android من Google ، هل عجز Google عن تطوير نواة النظام وحدها ، لذا فهي تستخدم نواة Linux ناضجة جدًا؟ أعتقد أنه من المستحيل على عملاق عالمي مثل Google أن يكون بدون هذه القدرة ، وبدلاً من ذلك ، فإنه يحترم مبدأ عدم إعادة اختراع العجلة. </li>
-</ol>
-</li>
-</ol>
-<h4 id="4-2-3-إدخال-البيانات"><a href="#4-2-3-إدخال-البيانات" class="headerlink" title="4.2.3 إدخال البيانات:"></a>4.2.3 إدخال البيانات:</h4><p>يتم استخدام هذا هنا في القسم 4.1.5 ، احصل على USN Journal<br>في حلقة معلومات الملف ، يتم الحصول على معلومات <code>USN_RECORD</code> في كل مرة ،<code>اسم الملف</code> ،<br>يتم إدراج <code>pfrn</code> و<code>frn</code> في المتجه وجدول التجزئة على التوالي. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pfrnName.filename &#x3D; nameCur.filename &#x3D; CfileName;</span><br><span class="line">pfrnName.pfrn &#x3D; nameCur.pfrn &#x3D; UsnRecord-&gt;ParentFileReferenceNumber;</span><br><span class="line">VecNameCur.push_back(nameCur);</span><br><span class="line">frnPfrnNameMap[UsnRecord-&gt;FileReferenceNumber] &#x3D; pfrnName;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-الواجهة"><a href="#4-3-الواجهة" class="headerlink" title="4.3 الواجهة"></a>4.3 الواجهة</h3><p>عند بدء المشروع ، يوفر VC2005 مشاريع سطر الأوامر (وحدة التحكم) ومشاريع واجهة المستخدم الرسومية. برمجة سطر الأوامر مريحة للغاية وسريعة وعملية وبسيطة نسبيًا. إذا كانت وحدة التحكم قادرة على تلبية المتطلبات ، فلن تكون الواجهة ضرورية. أو في بعض الأحيان لا تستطيع المنصة المستهدفة عرض واجهة المستخدم الرسومية. لكن،<br>تتمتع واجهة المستخدم الرسومية بمزايا أكثر وضوحًا ، مثل نظام القائمة وتفاعلية أفضل. بالإضافة إلى ذلك ، في عملية اختيار القائمة ونقل البيانات بين الحقول ،<br>الماوس مفيد للغاية ، وواجهة المستخدم الرسومية هي السبيل للذهاب لذلك ، عند كتابة البرنامج ، جربت أولاً بعض البيانات الوسيطة أسفل وحدة التحكم ، ثم تحولت إلى واجهة المستخدم الرسومية عندما انتهى الأمر. </p>
-<p>MFC: فئات مؤسسة Microsoft ، والمعروفة أيضًا باسم MFC<br>، هل رد Microsoft على “خفض Windows<br>أكبر مساهمة قدمها “تصميم البرنامج ، الملل ، الملل والصعوبة”<br>يجعل إنشاء مربعات الحوار أمرًا بسيطًا للغاية. كما يقوم بتنفيذ نظام تسليم الرسائل (message<br>إيفاد) ، والتعامل مع الأخطاء السهلة لـ WPARAM و LP ARAM. MFC<br>إنها حتى القوة الدافعة لجذب بعض الناس إلى C ++.<br>يتم تنفيذ هذا البرنامج بواسطة MFC المقدمة من Microsoft ، كما هو موضح في الشكل 4-2: </p>
-<p>! <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/QSearch_04.jpg">الشكل 4-2 واجهة MFC</a> </p>
-<h4 id="4-3-1-مبدأ-KISS"><a href="#4-3-1-مبدأ-KISS" class="headerlink" title="4.3.1 مبدأ KISS"></a>4.3.1 مبدأ KISS</h4><p>مبدأ KISS هو “Keep It Sample And<br>يعد اختصار كلمة “غبي” والبساطة وسهولة التشغيل من أهم مبادئ التصميم. </p>
-<p>ربما يكون مبدأ KISS هو الأكثر احترامًا في التصميم وتصميم تحسين المنزل وتصميم الواجهة<br>فيما يتعلق بالتصميم التشغيلي ، أصبحت الأشياء المعقدة أكثر شيوعًا ، بينما أصبحت الأشياء البسيطة معروفة أكثر فأكثر. على سبيل المثال ، تعد تصميمات واجهة المستخدم وصفحات الويب الصينية الخاصة بنا أمثلة سلبية. “IKEA” (IKEA) أفكار تصميم وإنتاج منزلي بسيطة وفعالة ؛ “Microsoft” (Microsoft) “ما تراه هو ما تحصل عليه” مفهوم “Google” (Google) أسلوب عمل بسيط ومباشر ، بدون استثناء ، اتبع مبدأ “القبلة”. ^ [7] ^ </p>
-<h4 id="4-3-2-الوظيفة"><a href="#4-3-2-الوظيفة" class="headerlink" title="4.3.2 الوظيفة"></a>4.3.2 الوظيفة</h4><p>بموجب مبدأ القبلة ، كن موجزا قدر الإمكان. إضافة مربع قائمة زر Editbox<br>menu ^ [8] ^ وظائف هذه الضوابط هي كما يلي: </p>
-<ul>
-<li>صندوق التحرير <ul>
-<li>احصل على السلسلة التي يحتاج المستخدم إلى البحث عنها </li>
-</ul>
-</li>
-<li>زر <ol>
-<li>احصل على السلسلة في EditBox </li>
-<li>الشخصية أقصر من أن تظهر مطالبة </li>
-<li>إضافة صورة عدسة مكبرة ، وظيفة واضحة في لمحة </li>
-</ol>
-</li>
-<li>مربع القائمة <ol>
-<li>اعرض اسم الملف المطابق والمسار ، انقر نقرًا مزدوجًا لفتح الملف </li>
-<li>نظرًا لأن المسار قد يكون طويلًا نسبيًا ، أضف شريط تمرير أفقي </li>
-<li>انقر نقرًا مزدوجًا فوق مسار ملف النتيجة في مربع القائمة لفتح الملف الذي تم النقر فوقه نقرًا مزدوجًا </li>
-</ol>
-</li>
-<li>قائمة طعام <ul>
-<li>القائمة ، يمكنك تحديد الحالة ، ترتيب البحث </li>
-</ul>
-</li>
-</ul>
-<h3 id="4-4-ربط-الموضوع"><a href="#4-4-ربط-الموضوع" class="headerlink" title="4.4 ربط الموضوع"></a>4.4 ربط الموضوع</h3><h4 id="4-4-1-لماذا-ربط-المواضيع"><a href="#4-4-1-لماذا-ربط-المواضيع" class="headerlink" title="4.4.1 لماذا ربط المواضيع"></a>4.4.1 لماذا ربط المواضيع</h4><p>فوائد الخيوط: الخيوط رخيصة. يبدأ مؤشر الترابط بشكل أسرع ، ويخرج بشكل أسرع ، ويكون له تأثير أقل على موارد النظام. </p>
-<p>يعتبر ايضا: </p>
-<ol>
-<li>نظرًا لقيود io ، فليس من المنطقي استخدام خيوط متعددة لقراءة MFT في وقت واحد على نفس القرص الثابت. </li>
-<li>قد يؤثر وصول القرص إلى MFT الموجود في أقسام مختلفة من نفس القرص الثابت على السرعة بدلاً من ذلك. بالنسبة لأجهزة الكمبيوتر المزودة بأقراص صلبة متعددة ، يجب تحسين الكفاءة بشكل كبير. ومع ذلك ، قد يشكل مستخدمو محركات أقراص ثابتة متعددة مجموعة RAID. يجب أن يكون أفضل حل هو قراءة الأقراص من الألف إلى الياء بالتتابع. </li>
-<li>عندما تم إنشاء MFC لأول مرة ، تم تنفيذه بالتتابع ، ونتيجة لذلك ، لا يمكن عرض الواجهة حتى يتم الانتهاء من جميع إحصائيات البيانات ، وخلال هذه العملية ، سيفقد المستخدمون صبرهم بسهولة. </li>
-<li>أخيرًا حدد مؤشر ترابط واجهة المستخدم ، إحصائيات خلفية مؤشر ترابط العامل. </li>
-</ol>
-<h4 id="4-4-2-بدء-تشغيل-مؤشر-ترابط-عامل-في-MFC"><a href="#4-4-2-بدء-تشغيل-مؤشر-ترابط-عامل-في-MFC" class="headerlink" title="4.4.2 بدء تشغيل مؤشر ترابط عامل في MFC"></a>4.4.2 بدء تشغيل مؤشر ترابط عامل في MFC</h4><p>لطالما أضاف MFC دعمًا لتعدد مؤشرات الترابط. في نموذجي MFC<br>في البرنامج ، يتم إخفاء دعم multithreading وراء الكثير من العمل المذهل. MFC<br>حتى محاولات لتقوية بعض مفاهيم Win32 المتعلقة بتعدد مؤشرات الترابط. </p>
-<p>يتم بدء كل من مؤشرات ترابط GUI و worker مع AfxBeginThread () ، ولكن MFC يستخدم طبيعة التحميل الزائد لوظائف C ++ لتوفير تعريفين مختلفين لهذه الوظيفة. سيحدد المترجم تلقائيًا الخيار الصحيح لاستخدامه بناءً على المعلمات التي تقدمها. ^ [9] ^ </p>
-<p>استخدم AfxBeginThread لبدء الموضوع.<br>pParam أي قيمة 4 بايت ، تُستخدم لتمريرها إلى مؤشر الترابط الجديد. يمكن أن يكون عددًا صحيحًا أو مؤشرًا أو مجرد صفر. </p>
-<p>يتم استخدام المعلمتين الأوليين فقط هنا ، وظيفة مؤشر الترابط في الكائن ، ومؤشر الكائن </p>
-<p>يمكنك رؤية موضوعين في مدير المهام ، كما هو موضح في الشكل 4-3 </p>
-<p>! <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/QSearch_03.jpg">الشكل 4-3 مدير المهام يعرض عدد المواضيع</a> </p>
-<p>عندما ينتهي مؤشر ترابط العامل من مهمته ، سينتهي تلقائيًا ويعود إلى الموضوع. </p>
-<h4 id="4-4-3-تصغير-إلى-منطقة-الإعلام"><a href="#4-4-3-تصغير-إلى-منطقة-الإعلام" class="headerlink" title="4.4.3 تصغير إلى منطقة الإعلام"></a>4.4.3 تصغير إلى منطقة الإعلام</h4><p>المزيد والمزيد من البرامج تنقر فوق إغلاق في الزاوية اليمنى العليا ، والتي يتم تصغيرها فعليًا إلى أيقونة العلبة. للخروج من البرنامج ، تحتاج إلى النقر بزر الماوس الأيمن على أيقونة العلبة للخروج. </p>
-<p>تحقيق التصغير دون الخروج من البرنامج ، يمكنك العثور على الملفات بسهولة. </p>
-<p>1) تصغير العرض على شريط المهام. </p>
-<p>2) انقر فوق “إغلاق” للخروج إلى أيقونة العلبة دون عرضها في شريط المهام ؛ انقر نقرًا مزدوجًا للرد على نافذة العرض. </p>
-<p>3) إضافة قائمة إلى رمز علبة. </p>
-<h3 id="4-5-البحث"><a href="#4-5-البحث" class="headerlink" title="4.5 البحث"></a>4.5 البحث</h3><h4 id="4-5-1-حرف-البدل"><a href="#4-5-1-حرف-البدل" class="headerlink" title="4.5.1 حرف البدل"></a>4.5.1 حرف البدل</h4><p>في التطبيقات الفعلية ، من المستحيل تذكر اسم الملف بوضوح ، مثل test.2012-5-14.txt ، والذي غالبًا ما يعني “اختبار<br>.txt “، لذا يلزم إجراء بحث غامض. لأنه أسفل وحدة التحكم ، يكون اسم الملف هو &lt;اسم الملف ،<br>pfrn&gt; إنشاء جدول تجزئة. إذا كنت تريد تنفيذ بحث غامض ، يصبح جدول التجزئة غير ضروري ، ويمكنك استخدام متجه الحاوية مباشرة. </p>
-<p>وفقًا للوضع الفعلي ، لا يلزم استخدام حرف بدل صارم ، “\ *؟”<br>يمكنه حل معظم مشاكل البحث ، بالإضافة إلى أن المستخدمين عمومًا قد لا يعرفون استخدام أحرف البدل ، ناهيك عن التعبيرات العادية. لذا ابدأ بـ “الفضاء”<br>بدلاً من “\ *؟” ، قم بتنفيذ بايدو<br>تعد طريقة بحث Google لفصل الكلمات الرئيسية بمسافات حلاً جيدًا. \ * \ * \ * \ * </p>
-<h4 id="4-5-2-حالة-،-أمر"><a href="#4-5-2-حالة-،-أمر" class="headerlink" title="4.5.2 حالة ، أمر"></a>4.5.2 حالة ، أمر</h4><p>بشكل عام هناك الحالتان التاليتان: </p>
-<ol>
-<li>قد لا يتذكر المستخدم حالة اسم الملف أو المسار </li>
-<li>أحيانًا يكون هناك عدد كبير جدًا من الملفات ، وقد يلزم استخدام الأحرف الكبيرة الصارمة لتصفية الملفات الصحيحة </li>
-<li>لا أتذكر ترتيب الكلمات الرئيسية </li>
-</ol>
-<p>لذلك قدم الخيارين التاليين: </p>
-<ol>
-<li>حالة صارمة </li>
-<li>لا يوجد ترتيب </li>
-</ol>
-<p>وفقًا للموقف العام ، يكون الوضع الافتراضي هو: بحث متسلسل غير حساس لحالة الأحرف </p>
-<h4 id="4-5-3-خصوصية-المستخدم-ومسار-النظام"><a href="#4-5-3-خصوصية-المستخدم-ومسار-النظام" class="headerlink" title="4.5.3 خصوصية المستخدم ومسار النظام"></a>4.5.3 خصوصية المستخدم ومسار النظام</h4><ol>
-<li>ضع في اعتبارك أن بعض المجلدات تُستخدم لتخزين ملفات المستخدمين الخاصة. </li>
-<li>مجلد النظام ، مثل: <code>c: \ windows \ *</code> لا يستخدم من قبل المستخدمين العاديين ، ولن يؤدي البحث نفسه إلا إلى زيادة الملفات غير الضرورية وإثقال كاهل النظام. </li>
-</ol>
-<p>لذلك من الضروري إضافة خيار استبعاد مجلد ، كما هو موضح في الشكل 4-4 </p>
-<p>! <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/QSearch_06.jpg">الشكل 4-4 استبعاد واجهة المجلد</a> </p>
-<p>الوظيفة المقابلة هي: </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isIgnore</span><span class="params">( <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;\* pignorelist )</span> </span>&#123;</span><br><span class="line">	<span class="built_in">string</span> tmp = CW2A(path);</span><br><span class="line">	<span class="keyword">for</span> ( <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;::iterator it = pignorelist-&gt;begin();</span><br><span class="line">		it != pignorelist-&gt;end(); ++it ) &#123;</span><br><span class="line">			<span class="keyword">size_t</span> i = it-&gt;length();</span><br><span class="line">			<span class="keyword">if</span> ( !tmp.compare(<span class="number">0</span>, i, \*it,<span class="number">0</span>, i) ) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-5-4-التنفيذ"><a href="#4-5-4-التنفيذ" class="headerlink" title="4.5.4 التنفيذ"></a>4.5.4 التنفيذ</h4><p>فئة سلسلة مطابقة جديدة </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">cmpStrStr</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	cmpStrStr(<span class="keyword">bool</span> uplow, <span class="keyword">bool</span> inorder) &#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;uplow = uplow;</span><br><span class="line">		<span class="keyword">this</span>-&gt;isOrder = inorder;</span><br><span class="line">	&#125;</span><br><span class="line">	~cmpStrStr() &#123;&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">cmpStrFilename</span><span class="params">(CString str, CString filename)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">infilename</span><span class="params">(CString &amp;strtmp, CString &amp;filenametmp)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">bool</span> uplow;</span><br><span class="line">	<span class="keyword">bool</span> isOrder;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>اجتياز VecNameCur في ** 4.2.1 ** ، مرر وظيفة مطابقة cmpStrFilename ، والحصول على اسم الملف المطابق </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( <span class="built_in">vector</span>&lt;Name_Cur&gt;::const_iterator cit = VecNameCur.begin();</span><br><span class="line">	cit != VecNameCur.end(); ++cit) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ( cmpstrstr.cmpStrFilename(str, cit-&gt;filename) ) &#123;</span><br><span class="line">		path.Empty();</span><br><span class="line">		<span class="comment">// 还原 路径</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// vol:\  path \ cit-&gt;filename</span></span><br><span class="line">		getPath(cit-&gt;pfrn, path);</span><br><span class="line">		path += cit-&gt;filename;</span><br><span class="line">		<span class="comment">// path已是全路径</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> ( isIgnore(pignorelist) ) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		rightFile.push_back(path);</span><br><span class="line">		<span class="comment">//path.Empty();</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cmpStrFilename函数：</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> end = str.GetLength();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> ( pos &lt; end ) &#123;</span><br><span class="line">	<span class="comment">// 对于str，取得 每个空格分开为的关键词</span></span><br><span class="line">	pos = str.Find( _T(<span class="string">&#x27; &#x27;</span>) );</span><br><span class="line"></span><br><span class="line">	CString strtmp;</span><br><span class="line">	<span class="keyword">if</span> ( pos == <span class="number">-1</span> ) &#123;</span><br><span class="line">		<span class="comment">// 无空格</span></span><br><span class="line">		strtmp = str;</span><br><span class="line">		pos = end;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		strtmp = str.Mid(<span class="number">0</span>, pos<span class="number">-0</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ( !infilename(strtmp, filename) ) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	str.Delete(<span class="number">0</span>, pos);</span><br><span class="line">	str.TrimLeft(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>يمكنك بسهولة إعادة كتابة خوارزمية مطابقة السلسلة في وظيفة infilename لتحقيق بعض الامتدادات </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CString <span class="title">filenametmp</span><span class="params">(filename)</span></span>;</span><br><span class="line"><span class="keyword">int</span> pos;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ( !uplow ) &#123;</span><br><span class="line">	<span class="comment">// 大小写敏感</span></span><br><span class="line">	filenametmp.MakeLower();</span><br><span class="line">	pos = filenametmp.Find(strtmp.MakeLower());</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	pos = filenametmp.Find(strtmp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ( <span class="number">-1</span> == pos ) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ( !isOrder ) &#123;</span><br><span class="line">	<span class="comment">// 无顺序</span></span><br><span class="line">	filename.Delete(<span class="number">0</span>, pos+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-5-5-إخراج-المسار"><a href="#4-5-5-إخراج-المسار" class="headerlink" title="4.5.5 إخراج المسار"></a>4.5.5 إخراج المسار</h4><p>بعد الحصول على اسم الملف المطابق ، فإن الخطوة التالية هي الحصول على مسار النظام للملف. قم بتمرير الاسم الكامل لاسم الملف المطابق الذي تم الحصول عليه أعلاه إلى جدول تجزئة frnPfrnNameMap الذي تم إنشاؤه في ** 4.2.2 ** ، واحصل على المسار بشكل متكرر. </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CString <span class="title">Volume::getPath</span><span class="params">(DWORDLONG frn, CString &amp;path)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找2</span></span><br><span class="line">	Frn_Pfrn_Name_Map::iterator it = frnPfrnNameMap.find(frn);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (it != frnPfrnNameMap.end()) &#123;</span><br><span class="line"></span><br><span class="line">		  <span class="keyword">if</span> ( <span class="number">0</span> != it-&gt;second.pfrn ) &#123;</span><br><span class="line">		 	  getPath(it-&gt;second.pfrn, path);</span><br><span class="line">		  &#125;</span><br><span class="line"></span><br><span class="line">		  path += it-&gt;second.filename;</span><br><span class="line">		  path += ( _T(<span class="string">&quot;\&quot;) );</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	return path;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="5-تحليل-التعقيد"><a href="#5-تحليل-التعقيد" class="headerlink" title="5 تحليل التعقيد"></a>5 تحليل التعقيد</h2><h3 id="5-1-تعقيد-الوقت"><a href="#5-1-تعقيد-الوقت" class="headerlink" title="5.1 تعقيد الوقت"></a>5.1 تعقيد الوقت</h3><p>من الناحية النظرية ، فإن تعقيد الوقت هو: </p>
-<p>! <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/QSearch_05.jpg">تحليل التعقيد بالشكل 5-1</a> </p>
-<p>على معالج AMD Athlon (tm) II X2 245 بسرعة 2.9 جيجاهرتز ، تكون النتيجة فورية تقريبًا. </p>
-<h3 id="5-2-تعقيد-الفضاء"><a href="#5-2-تعقيد-الفضاء" class="headerlink" title="5.2 تعقيد الفضاء"></a>5.2 تعقيد الفضاء</h3><p>نظرًا للعدد الهائل من ملفات الكمبيوتر - عادةً 10W-100W ، يمكن تجاهل استخدام الذاكرة للبرنامج نفسه. </p>
-<p>234708 ملفات حوالي 43 م. </p>
-<p>بالنسبة لأنظمة اليوم التي تحتوي على ذاكرة 2G على الأقل ، فهي ليست عبئًا. </p>
-<h2 id="6-مشاكل-مصادفة"><a href="#6-مشاكل-مصادفة" class="headerlink" title="6 مشاكل مصادفة"></a>6 مشاكل مصادفة</h2><h3 id="6-1-غير-قادر-على-تهيئة-ملف-USN"><a href="#6-1-غير-قادر-على-تهيئة-ملف-USN" class="headerlink" title="6.1 غير قادر على تهيئة ملف USN"></a>6.1 غير قادر على تهيئة ملف USN</h3><p>تعذر على القرص O الموجود على الكمبيوتر تهيئة ملف سجل USN. من خلال التصحيح ، تم العثور على ما يلي: </p>
-<p>إرجاع DeviceIoControl 0 ، GetLastError 0x70 </p>
-<p>تحقق من msdn ، السبب هو ERROR_SHARING_PAUSED </p>
-<p>اتضح أنني نسيت التهيئة وإضافة الكود التالي ، يمكن للبرنامج الوصول إلى قرص O بشكل طبيعي </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE_USN_JOURNAL_DATA cujd;</span><br><span class="line">cujd.MaximumSize = <span class="number">0</span>; <span class="comment">// 0表示使用默认值</span></span><br><span class="line">cujd.AllocationDelta = <span class="number">0</span>; <span class="comment">// 0表示使用默认值</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="6-2-مشكلة-wchar-و-char-تحت-unicode"><a href="#6-2-مشكلة-wchar-و-char-تحت-unicode" class="headerlink" title="6.2 مشكلة wchar و char تحت unicode"></a>6.2 مشكلة wchar و char تحت unicode</h3><p>في البداية ، فيما يتعلق بمعالجة السلسلة ، تم استخدام سلسلة وظيفة المكتبة القياسية كطريقة معالجة ، ولكن في unicode<br>التالي هو wchar مزدوج البايت ، والذي واجه الكثير من المشاكل في تحويل السلسلة. أخيرًا ، يتم استخدام CString كسلسلة افتراضية و \ _T (“”) تستخدم لتهيئة السلسلة. </p>
-<h3 id="6-3-ifdef-الموقف-المشكلة"><a href="#6-3-ifdef-الموقف-المشكلة" class="headerlink" title="6.3 #ifdef الموقف المشكلة"></a>6.3 #ifdef الموقف المشكلة</h3><p>\ #ifdef ، لا يمكن تعيين نقاط توقف فيه ، ثم لاحظت أنه تمت كتابة #define أمام include. </p>
-<h3 id="6-4-نقل-المعلمة"><a href="#6-4-نقل-المعلمة" class="headerlink" title="6.4 نقل المعلمة"></a>6.4 نقل المعلمة</h3><p>بدأت في التصميم باستخدام التفكير الموجه نحو العمليات ، وواجهت مشكلة في تمرير نفس المقبض عن طريق تمرير المعلمات. وفي وقت لاحق ، تغيرت إلى أسلوب الفصل لتحسين الكثير. </p>
-<h2 id="7-تحسينات-صغيرة"><a href="#7-تحسينات-صغيرة" class="headerlink" title="7 تحسينات صغيرة"></a>7 تحسينات صغيرة</h2><h3 id="7-1-سرعة-القراءة"><a href="#7-1-سرعة-القراءة" class="headerlink" title="7.1 سرعة القراءة"></a>7.1 سرعة القراءة</h3><p>عند إنشاء دالة التجزئة ، تم التفكير في ثلاث طرق وأجريت التجارب على التوالي ، واستخدمت وظيفة الوقت لحساب الوقت المنقضي ، وكانت النتائج كما يلي: </p>
-<p>1) بعد تعديل الكود ، اقرأ USN مرة واحدة ، واحفظه في ملف مؤقت ، واقرأ وابني جدول التجزئة </p>
-<p>في كل شوط ، يبلغ متوسط ​​الوقت حوالي 27 ثانية </p>
-<p>2) استخدم المتجه لتخزين البيانات في الذاكرة ، بعد الإصدار ، </p>
-<p>كانت النتيجة مرضية ، وزاد الوقت بنحو 10 مرات! ! ! كما هو موضح في الشكل 7-1: </p>
-<p>! <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/QSearch_06.jpg">7-1 اجتياز كافة الأقراص</a> </p>
-<p>إنه تمامًا ضمن النطاق المقبول. </p>
-<p>من الواضح أن التشغيل الأول كان مستهلكًا للوقت ، ثم تمت قراءة الملف مسبقًا من ذاكرة التخزين المؤقت على القرص ، وارتفعت السرعة. يجب أن تقع نقطة التحليل الفعالة في قرص البحث عن الوقت وقراءة الملف. </p>
-<h3 id="7-2-طريقة-فتح-الملف"><a href="#7-2-طريقة-فتح-الملف" class="headerlink" title="7.2 طريقة فتح الملف"></a>7.2 طريقة فتح الملف</h3><p>في ** 4.3.2 ** ، انقر نقرًا مزدوجًا فوق مسار الملف في ListBox لفتح ملف الاستجابة. في البداية ، تم استخدام وظيفة النظام () ، ولكن ستظهر نافذة وحدة تحكم سوداء ، وسيتم قفل النافذة الرئيسية ، إلخ. لا يمكن متابعة التنفيذ إلا بعد إغلاق الملف ، مما يضر بشدة بتجربة المستخدم. اتصل بوظيفة ShellExecute بدلاً من ذلك لفتح عملية جديدة ويمكن أن تستمر النافذة الرئيسية في التنفيذ. </p>
-<h3 id="7-3-شريط-التقدم"><a href="#7-3-شريط-التقدم" class="headerlink" title="7.3 شريط التقدم"></a>7.3 شريط التقدم</h3><p>بعد إصدار الإصدار V1.0 ، لم تكن هناك مطالبة عندما أبلغ بعض الطلاب عن ملف إحصائيات الخلفية ، لذلك لا أعرف متى سيتم الانتهاء منه. لذلك يتم إضافة شريط تقدم في الجزء السفلي من الواجهة الرئيسية لتعزيز التفاعل ، كما هو موضح في الشكل<br>7-2: </p>
-<p>! <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/QSearch_07.jpg">شريط التقدم بالشكل 7-2</a> </p>
-<p>بالطبع ، أجرت وظيفة الخيط أيضًا التغييرات اللازمة: </p>
-<h1 id="8-الخلاصة"><a href="#8-الخلاصة" class="headerlink" title="8 الخلاصة"></a>8 الخلاصة</h1><p>في هذه المرحلة ، اكتملت الوظائف الأساسية للبرنامج.تم اختباره على أجهزة كمبيوتر متعددة وأنظمة مختلفة (XP وما بعده من سلسلة windows) ، ولا توجد رسوم متحركة معلقة وتوقف البرنامج. </p>
-<p>نظرًا للوقت ولأسباب أخرى ، لا يزال هناك العديد من الوظائف التي لم يتم تنفيذها ، مثل لا يمكن تمديد الواجهة ، ولا يمكن جمع بيانات الملف ديناميكيًا. </p>
-<h1 id="المراجع"><a href="#المراجع" class="headerlink" title="المراجع"></a>المراجع</h1><p>[1] المستند التقني للأجهزة ، مواصفات نظام الملفات NTFS [OL] ، مكتبة بايدو ، 2011: 30.<br>[2] Beiyu بحث حول عدة تقنيات لنظام ملفات NTFS [OL] 2007: 7.<br>[3] الأطفال. الموسوعة التفاعلية [OL]. <a target="_blank" rel="noopener" href="http://www.hudong.com/wiki/ntfs">http://www.hudong.com/wiki/ntfs</a><br>[4] مايكروسوفت. مكتبة MSDN [OL]. 2012:<br>[5] ستانلي بي ليبمان / خوسيه لاجوي / باربرا إي مو. C \ + \ + التمهيدي [M]. Addison-Wesley Professional، 2006: 10.3<br>[6] إريك س. ريموند. المترجمون: جيانغ هونغ ، هي يوان ، كاي شياو جون. فن برمجة UNIX [م] دار النشر لصناعة الإلكترونيات ، 2006:<br>[7] Chen Hao. بعض مبادئ تصميم البرامج [OL]. <a target="_blank" rel="noopener" href="http://coolshell.cn/articles/4535.html">http://coolshell.cn/articles/4535.html</a><br>[8] Sun Xin. VC ++ شرح تفصيلي متعمق [م] صناعة الإلكترونيات ، 2006<br>[9] جيم بيفريدج / روبرت وينر. تطبيقات Multithreading في Win32: الدليل الكامل للخيوط<br>[10] أديسون ويسلي بروفيشنال ، 1996: 223-243 </p>
-<h1 id="ملخص-باللغة-الإنجليزية"><a href="#ملخص-باللغة-الإنجليزية" class="headerlink" title="ملخص باللغة الإنجليزية"></a>ملخص باللغة الإنجليزية</h1><p>** تحديد المواقع السريع لملفات قرص NTFS ** </p>
-<p>LE IH النمسا </p>
-<p>(كلية المعلومات والحاسوب ، جامعة آنهوي الزراعية ، خفي 230036) </p>
-<p>** الملخص ** ： توضح هذه المقالة على قرص Windows NTFS ، ملف<br>تعداد جميع أسماء الملفات والمجلدات الموجودة على القرص الصلب ،<br>ولإنشاء جدول تجزئة باستخدام C ++ STL و MFC GUI وخيط عامل.<br>في النهاية يقوم المستخدم بإدخال الكلمات الرئيسية ، كبحث بسيط مثل google<br>البحث عن الكلمات الرئيسية ، ثم إرجاع جميع الملفات / المجلدات المطابقة على الفور<br>ومسار نظامهم. </p>
-<p>** الكلمات الأساسية: ** NTFS ، سريع ، بحث ، كلمات مفتاحية ، مسار الملف </p>
-
-    </div>
-
-    
-    
-    
-      
-  <div class="popular-posts-header">مقالات مشابهة</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ar/Go-Web/" rel="bookmark">اذهب إلى الويب</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ar/Learn-Go-in-20-days/" rel="bookmark">Learn Go في 20 يومًا</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ar/ios-developer-account-and-app-store/" rel="bookmark">حساب مطور iOS وكيفية إدراجه</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ar/count-lines-of-code/" rel="bookmark">عدد سطور الكود</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/ar/A-simple-VS-between-Sinatra-and-Martini/" rel="bookmark">مقابل بسيط. بين سيناترا ومارتيني</a></div>
-    </li>
-  </ul>
-
-
-    <footer class="post-footer">
-          <div class="reward-container">
-  <div>Buy me 👨‍💻 a coffee ☕️</div>
-  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
-    تبرّع
-  </button>
-  <div class="post-reward">
-      <div>
-        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/wechat.png" alt="LeiHao WeChat Pay">
-        <span>WeChat Pay</span>
-      </div>
-      <div>
-        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/alipay.png" alt="LeiHao Alipay">
-        <span>Alipay</span>
-      </div>
-      <div>
-        <img src="https://raw.githubusercontent.com/LeiHao0/BlogAssets/assets/bitcoin.png" alt="LeiHao Bitcoin">
-        <span>Bitcoin</span>
-      </div>
-
-  </div>
-</div>
-
-          <div class="post-tags">
-              <a href="/ar/tags/programming/" rel="tag"># Programming</a>
-              <a href="/ar/tags/everything/" rel="tag"># Everything</a>
-              <a href="/ar/tags/ntfs/" rel="tag"># NTFS</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-            </div>
-            <div class="post-nav-item">
-                <a href="/ar/Before-graduation/" rel="next" title="أكثر من عشرة أيام قبل التخرج">
-                  أكثر من عشرة أيام قبل التخرج <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-      
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      
-
-      
-
-<div class="copyright">
-  
-  &copy; 2012 – 
-  <span itemprop="copyrightYear">٢٠٢٢</span>
-  <span class="with-love">
-    <i class="fa fa-laptop-code"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">LeiHao</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="مُجمل عدد الحروف">481k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="مُجمل زمن القراءة">7:17</span>
-  </span>
-</div>
-
-    </div>
-  </footer>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
-<script src="/ar/js/utils.js"></script><script src="/ar/js/next-boot.js"></script>
-
-  
-
-
-
-
-  <script src="/ar/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://Artwalk.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://leihao0.github.io/ar/QSearch/";
-    this.page.identifier = "QSearch/";
-    this.page.title = "مبدأ التخمين وإدراك كل شيء";
-    };
-  NexT.utils.loadComments('#disqus_thread', () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://Artwalk.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
-
-</body>
-</html>

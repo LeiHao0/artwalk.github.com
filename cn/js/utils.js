@@ -22,7 +22,7 @@ if (typeof DOMTokenList.prototype.replace !== 'function') {
   );
 
   if (document.readyState === 'loading') {
-    document.addEventListener('readystatechange', onPageLoaded, {once: true});
+    document.addEventListener('readystatechange', onPageLoaded, { once: true });
   } else {
     onPageLoaded();
   }
@@ -189,7 +189,7 @@ NexT.utils = {
         index--;
       }
       this.activateNavByIndex(index);
-    });
+    }, { passive: true });
 
     backToTop && backToTop.addEventListener('click', () => {
       window.anime({
@@ -279,6 +279,14 @@ NexT.utils = {
         });
       });
       return target;
+    });
+  },
+
+  registerPostReward: function() {
+    const button = document.querySelector('.reward-container button');
+    if (!button) return;
+    button.addEventListener('click', () => {
+      document.querySelector('.post-reward').classList.toggle('active');
     });
   },
 
@@ -392,7 +400,7 @@ NexT.utils = {
     if (legacyCallback) {
       return this.loadComments(selector).then(legacyCallback);
     }
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const element = document.querySelector(selector);
       if (!CONFIG.comments.lazyload || !element) {
         resolve();
